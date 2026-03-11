@@ -8,7 +8,6 @@ import { HEADER_UI } from '../../data/header';
 import { useCart } from '../../context/CartContext';
 import { Button } from '../ui/button';
 import { ThemeToggle } from '../common/ThemeToggle';
-import { FigmaClean } from '../common/FigmaClean';
 import headerTexture from 'figma:asset/59f5f21fc3ab664ddea62e2cde218d15718c0a5b.png';
 import {
   Sheet,
@@ -145,21 +144,7 @@ export const Header = memo(() => {
       </div>
 
       {/* Main Header Area - Logo & Functional Icons */}
-      <div className="relative overflow-hidden text-white border-b border-gray-800"
-           style={{
-             background: 'var(--gradient-brand-red)'
-           }}>
-        {/* Textured Background Overlay - Full width, behind content */}
-        <div 
-          className="absolute inset-0 z-0 pointer-events-none mix-blend-multiply opacity-100"
-          style={{
-            backgroundImage: `url(${headerTexture})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center'
-          }}
-        />
-
+      <div className="relative overflow-hidden bg-white dark:bg-brand-navy text-brand-navy dark:text-white border-b border-gray-200 dark:border-gray-800">
         <div className="w-full max-w-[1440px] mx-auto relative" style={{ paddingLeft: 'clamp(1rem, 4vw, 2rem)', paddingRight: 'clamp(1rem, 4vw, 2rem)' }}>
           <div className="flex justify-between items-center h-[80px] lg:h-[124px] relative z-10">
             
@@ -184,12 +169,12 @@ export const Header = memo(() => {
                       onChange={(e) => setSearchQuery(e.target.value)}
                       placeholder={HEADER_UI.search.placeholder}
                       autoFocus
-                      className="w-full px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent text-lg"
+                      className="w-full px-4 py-3 bg-gray-100 dark:bg-white/10 dark:backdrop-blur-sm border border-gray-300 dark:border-white/20 text-brand-navy dark:text-white placeholder-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent text-lg"
                     />
                     <button 
                       type="button"
                       onClick={() => { setSearchOpen(false); setSearchQuery(''); }}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white"
+                      className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-brand-navy dark:hover:text-white"
                     >
                       <X size={20} />
                     </button>
@@ -228,12 +213,12 @@ export const Header = memo(() => {
             {/* Right Side: Utility Icons + Mobile Menu */}
             <div className="flex items-center gap-1 lg:gap-3 ml-auto">
               {/* Theme toggle - desktop only, mobile uses MobileMenu */}
-              <ThemeToggle variant="icon" className="hidden lg:flex text-white hover:text-yellow-300" />
+              <ThemeToggle variant="icon" className="hidden lg:flex text-brand-navy dark:text-white hover:text-yellow-600 dark:hover:text-yellow-300" />
 
               {/* Search toggle */}
               {!searchOpen && (
                 <button 
-                  className="flex p-2 text-white hover:text-red-400 items-center gap-1 transition-colors" 
+                  className="flex p-2 text-brand-navy dark:text-white hover:text-brand-red dark:hover:text-red-400 items-center gap-1 transition-colors" 
                   onClick={handleSearchToggle}
                   title="Soek"
                   aria-label="Soek"
@@ -244,21 +229,13 @@ export const Header = memo(() => {
 
               {/* Cart - visible on all sizes */}
               <Sheet>
-                <SheetTrigger asChild>
-                  <FigmaClean>
-                    <button 
-                      className="p-2 text-white hover:text-red-400 flex items-center gap-1 transition-colors relative"
-                      title="Mandjie"
-                      aria-label="Mandjie"
-                    >
-                      <ShoppingCart size={22} />
-                      {count > 0 && (
-                        <span className="absolute -top-1 -right-1 bg-brand-red text-white text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center">
-                          {count}
-                        </span>
-                      )}
-                    </button>
-                  </FigmaClean>
+                <SheetTrigger className="p-2 text-brand-navy dark:text-white hover:text-brand-red dark:hover:text-red-400 flex items-center gap-1 transition-colors relative" title="Mandjie" aria-label="Mandjie">
+                  <ShoppingCart size={22} />
+                  {count > 0 && (
+                    <span className="absolute -top-1 -right-1 bg-brand-red text-white text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center">
+                      {count}
+                    </span>
+                  )}
                 </SheetTrigger>
                 <SheetContent>
                   <SheetHeader>
@@ -332,7 +309,7 @@ export const Header = memo(() => {
 
               <Link 
                 to="/my-rekening" 
-                className="flex p-2 text-white hover:text-red-400 items-center gap-1 transition-colors"
+                className="flex p-2 text-brand-navy dark:text-white hover:text-brand-red dark:hover:text-red-400 items-center gap-1 transition-colors"
                 title="My rekening"
                 aria-label="My rekening"
               >
