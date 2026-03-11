@@ -1,0 +1,15 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"title": "Card Compact",
+	"slug": "card-compact",
+	"blockTypes": ["core/heading"],
+	"styles": {
+		"typography": {
+			"fontFamily": "var:preset|font-family|brand-serif",
+			"fontSize": "var:preset|font-size|base",
+			"fontWeight": "400",
+			"lineHeight": "1.3"
+		}
+	}
+}

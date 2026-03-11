@@ -1,0 +1,20 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"title": "Rounded",
+	"slug": "rounded",
+	"blockTypes": ["core/cover"],
+	"styles": {
+		"border": {
+			"radius": "var(--wp--custom--border-radius--300)"
+		},
+		"spacing": {
+			"padding": {
+				"top": "var:preset|spacing|x-large",
+				"right": "var:preset|spacing|large",
+				"bottom": "var:preset|spacing|x-large",
+				"left": "var:preset|spacing|large"
+			}
+		}
+	}
+}

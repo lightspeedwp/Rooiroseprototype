@@ -1,0 +1,47 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"settings": {
+		"spacing": {
+			"defaultSpacingSizes": false,
+			"units": [ "%", "px", "em", "rem", "vh", "vw" ],
+			"spacingSizes": [
+				{
+					"name": "Extra Small",
+					"slug": "x-small",
+					"size": "clamp(0.25rem, 1vw, 0.5rem)"
+				},
+				{
+					"name": "Small",
+					"slug": "small",
+					"size": "clamp(0.5rem, 2vw, 0.75rem)"
+				},
+				{
+					"name": "Medium",
+					"slug": "medium",
+					"size": "clamp(0.75rem, 2.5vw, 1rem)"
+				},
+				{
+					"name": "Large",
+					"slug": "large",
+					"size": "clamp(1rem, 4vw, 2rem)"
+				},
+				{
+					"name": "Extra Large",
+					"slug": "x-large",
+					"size": "clamp(1.5rem, 5vw, 3rem)"
+				},
+				{
+					"name": "2XL",
+					"slug": "xx-large",
+					"size": "clamp(2rem, 7vw, 5rem)"
+				},
+				{
+					"name": "3XL",
+					"slug": "xxx-large",
+					"size": "clamp(3rem, 10vw, 7rem)"
+				}
+			]
+		}
+	}
+}

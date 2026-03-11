@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"title": "Minimal",
+	"slug": "minimal",
+	"blockTypes": ["core/quote"],
+	"styles": {
+		"border": {
+			"color": "var:preset|color|primary",
+			"width": "0 0 0 3px",
+			"style": "solid"
+		},
+		"spacing": {
+			"padding": {
+				"left": "var:preset|spacing|medium"
+			}
+		},
+		"typography": {
+			"fontStyle": "normal",
+			"fontSize": "var:preset|font-size|base",
+			"lineHeight": "1.6"
+		}
+	}
+}

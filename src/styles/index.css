@@ -1,0 +1,69 @@
+@import "./fonts.css";
+@import "./tailwind.css";
+
+/* ── Theme Partials (split from theme.css — 2026-03-05) ──────────────────── */
+/* Order matters: tokens → dark → exports → base → utilities → content        */
+@import "./theme-tokens.css";
+@import "./theme-dark.css";
+@import "./theme-exports.css";
+@import "./theme-base.css";
+@import "./wp-utilities.css";
+@import "./block-style-variations.css";
+@import "./article-content.css";
+@import "./dark-mode-utilities.css";
+@import "./font-enforcement.css";
+
+@import "./markdown-prose.css";
+@import "./print.css";
+
+/* CSS animations — replaces Motion library (PERF-042) */
+@keyframes dp-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes dp-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes dp-stagger-item {
+  from {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.mobile-menu-enter {
+  animation: dp-fade-in 0.25s ease-out forwards;
+}
+.mobile-menu-exit {
+  animation: dp-fade-out 0.2s ease-in forwards;
+}
+.dp-stagger-item {
+  opacity: 0;
+  animation: dp-stagger-item 0.25s ease-out forwards;
+}
+
+/* ── Reduced Motion Support (WCAG 2.1 SC 2.3.3) ──────────────────────────── */
+/* Disables all animations and transitions when the user has enabled           */
+/* "Reduce motion" in their OS accessibility settings.                         */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

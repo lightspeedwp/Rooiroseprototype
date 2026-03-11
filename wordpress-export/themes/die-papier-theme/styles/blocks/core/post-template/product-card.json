@@ -1,0 +1,14 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"title": "Product Card",
+	"slug": "product-card",
+	"blockTypes": ["core/post-template"],
+	"styles": {
+		"blocks": {
+			"core/post-template": {
+				"css": "& { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--wp--preset--spacing--medium); } & > li { list-style: none; background: var(--wp--preset--color--base); border: 1px solid var(--wp--preset--color--border-light); border-radius: 12px; padding: var(--wp--preset--spacing--small); transition: all 0.2s ease; } & > li:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); transform: translateY(-2px); } & .wc-block-components-product-image { margin-bottom: var(--wp--preset--spacing--x-small); border-radius: 8px; overflow: hidden; } & .wc-block-components-product-title { font-size: var(--wp--preset--font-size--medium); font-weight: 600; margin-bottom: var(--wp--preset--spacing--x-small); } & .wc-block-components-product-price { font-size: var(--wp--preset--font-size--large); font-weight: 700; color: var(--wp--preset--color--primary); } & .wc-block-components-product-button { margin-top: var(--wp--preset--spacing--small); }"
+			}
+		}
+	}
+}

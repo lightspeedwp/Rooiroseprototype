@@ -1,0 +1,120 @@
+{
+  "key": "group_dp_eedition",
+  "title": "E-Uitgawe Velde",
+  "fields": [
+    {
+      "key": "field_eedition_number",
+      "label": "Uitgawenommer",
+      "name": "edition_number",
+      "type": "number",
+      "required": 1,
+      "min": 1,
+      "instructions": "Die opeenvolgende uitgawenommer."
+    },
+    {
+      "key": "field_eedition_publication_date",
+      "label": "Publikasiedatum",
+      "name": "publication_date",
+      "type": "date_picker",
+      "required": 1,
+      "display_format": "d F Y",
+      "return_format": "Y-m-d",
+      "instructions": "Die amptelike publikasiedatum van hierdie uitgawe."
+    },
+    {
+      "key": "field_eedition_pdf_url",
+      "label": "PDF URL",
+      "name": "pdf_url",
+      "type": "file",
+      "required": 1,
+      "return_format": "url",
+      "mime_types": "pdf",
+      "instructions": "Laai die PDF-leer van hierdie uitgawe op."
+    },
+    {
+      "key": "field_eedition_price",
+      "label": "Prys",
+      "name": "price",
+      "type": "text",
+      "required": 1,
+      "placeholder": "R29.99",
+      "instructions": "Vertoonprys (bv. 'R29.99' of 'Gratis')."
+    },
+    {
+      "key": "field_eedition_price_value",
+      "label": "Pryswaarde (sent)",
+      "name": "price_value",
+      "type": "number",
+      "required": 0,
+      "min": 0,
+      "instructions": "Numeriese pryswaarde in sent vir WooCommerce-integrasie (bv. 2999 = R29.99)."
+    },
+    {
+      "key": "field_eedition_is_free",
+      "label": "Gratis Uitgawe?",
+      "name": "is_free",
+      "type": "true_false",
+      "default_value": 0,
+      "ui": 1,
+      "instructions": "Merk as dit 'n gratis proefuitgawe is."
+    },
+    {
+      "key": "field_eedition_page_count",
+      "label": "Bladsytelling",
+      "name": "page_count",
+      "type": "number",
+      "required": 0,
+      "min": 1,
+      "instructions": "Totale aantal bladsye in hierdie uitgawe."
+    },
+    {
+      "key": "field_eedition_product_id",
+      "label": "WooCommerce Produk-ID",
+      "name": "product_id",
+      "type": "number",
+      "required": 0,
+      "instructions": "Opsionele WooCommerce produk-ID vir e-handel integrasie."
+    },
+    {
+      "key": "field_eedition_meta_title",
+      "label": "SEO Titel",
+      "name": "eedition_meta_title",
+      "type": "text",
+      "required": 0,
+      "maxlength": 70,
+      "instructions": "Opsionele SEO-titel. Val terug na postitel."
+    },
+    {
+      "key": "field_eedition_meta_description",
+      "label": "SEO Beskrywing",
+      "name": "eedition_meta_description",
+      "type": "textarea",
+      "required": 0,
+      "rows": 2,
+      "maxlength": 160
+    },
+    {
+      "key": "field_eedition_meta_keywords",
+      "label": "SEO Sleutelwoorde",
+      "name": "eedition_meta_keywords",
+      "type": "text",
+      "required": 0
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "dp_eedition"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "active": true,
+  "show_in_rest": 1
+}

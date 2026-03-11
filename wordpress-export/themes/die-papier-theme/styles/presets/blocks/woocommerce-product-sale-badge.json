@@ -1,0 +1,13 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"styles": {
+		"blocks": {
+			"woocommerce/product-sale-badge": {
+				"typography": { "fontSize": "var:preset|font-size|small", "lineHeight": "1.7", "fontWeight": "400", "textTransform": "none" },
+				"color": { "background": "var:preset|color|primary", "text": "var:preset|color|base" },
+				"border": { "radius": "0", "style": "solid", "width": "1px", "color": "var:preset|color|primary" }
+			}
+		}
+	}
+}

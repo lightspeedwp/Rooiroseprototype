@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"title": "Border Left",
+	"slug": "border-left",
+	"blockTypes": ["core/quote"],
+	"styles": {
+		"border": {
+			"left": {
+				"color": "var:preset|color|primary",
+				"width": "4px",
+				"style": "solid"
+			}
+		},
+		"spacing": {
+			"padding": {
+				"left": "24px"
+			}
+		},
+		"color": {
+			"background": "transparent"
+		}
+	}
+}

@@ -1,0 +1,79 @@
+/* ── Base Layer — Body & Heading Defaults ──────────────────────────────────── */
+/* Split from theme.css for memory optimization (2026-03-05)                   */
+/* Contains: @layer base — global resets, body, .alignwide, h1-h6 defaults     */
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+    font-family: var(--font-inter);
+    font-size: var(--text-p2);
+    line-height: var(--lh-p2);
+  }
+
+  /* ── Align-wide container utility ────────────────────────── */
+  /* WordPress FSE naming convention: .alignwide                */
+  /* 1440px max-width, no horizontal padding (parent provides)  */
+  .alignwide {
+    width: 100%;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ── Heading Element Defaults ───────────────────────────────
+   * T-009: Bare h1–h6 elements get their full typography from
+   * --wp--preset-- and --wp--custom-- variables. Scoped rules
+   * (e.g. .article-content h2) override these via specificity.
+   * ──────────────────────────────────────────────────────────── */
+  h1 {
+    font-family: var(--font-heading);
+    font-size: var(--wp--preset--font-size--900);
+    line-height: var(--wp--custom--line-height--900);
+    letter-spacing: var(--wp--custom--letter-spacing--900);
+    font-weight: 400;
+    font-variation-settings: var(--wp--custom--fvs--900);
+  }
+  h2 {
+    font-family: var(--font-heading);
+    font-size: var(--wp--preset--font-size--800);
+    line-height: var(--wp--custom--line-height--800);
+    letter-spacing: var(--wp--custom--letter-spacing--800);
+    font-weight: 400;
+    font-variation-settings: var(--wp--custom--fvs--800);
+  }
+  h3 {
+    font-family: var(--font-heading);
+    font-size: var(--wp--preset--font-size--700);
+    line-height: var(--wp--custom--line-height--700);
+    letter-spacing: var(--wp--custom--letter-spacing--700);
+    font-weight: 400;
+    font-variation-settings: var(--wp--custom--fvs--700);
+  }
+  h4 {
+    font-family: var(--font-heading);
+    font-size: var(--wp--preset--font-size--600);
+    line-height: var(--wp--custom--line-height--600);
+    letter-spacing: var(--wp--custom--letter-spacing--600);
+    font-weight: 400;
+    font-variation-settings: var(--wp--custom--fvs--600);
+  }
+  h5 {
+    font-family: var(--font-inter);
+    font-size: var(--wp--preset--font-size--500);
+    line-height: var(--wp--custom--line-height--500);
+    letter-spacing: var(--wp--custom--letter-spacing--500);
+    font-weight: 700;
+  }
+  h6 {
+    font-family: var(--font-inter);
+    font-size: var(--wp--preset--font-size--400);
+    line-height: var(--wp--custom--line-height--400);
+    letter-spacing: var(--wp--custom--letter-spacing--400);
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+}

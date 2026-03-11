@@ -1,0 +1,67 @@
+/**
+ * Die Papier — WooCommerce Supplemental Styles
+ *
+ * Supplements theme.json block styles with WooCommerce-specific CSS
+ * that cannot be expressed in theme.json.
+ *
+ * Loaded conditionally via inc/woocommerce.php only on WC pages.
+ *
+ * @package DiePapier
+ * @since 1.0.0
+ */
+
+/* -------------------------------------------------------------------------
+ * Product Card — Hover Add-to-Cart Overlay
+ * ------------------------------------------------------------------------- */
+
+.wc-block-grid__product .wp-block-woocommerce-product-button {
+	opacity: 0;
+	transition: opacity 0.2s ease;
+}
+
+.wc-block-grid__product:hover .wp-block-woocommerce-product-button {
+	opacity: 1;
+}
+
+/* -------------------------------------------------------------------------
+ * Mini Cart — Badge Alignment
+ * ------------------------------------------------------------------------- */
+
+.wc-block-mini-cart__badge {
+	font-size: 0.625rem;
+}
+
+/* -------------------------------------------------------------------------
+ * Checkout — Distraction-Free Adjustments
+ * ------------------------------------------------------------------------- */
+
+.wc-block-checkout .wc-block-components-checkout-step__heading {
+	margin-bottom: 0.5rem;
+}
+
+/* -------------------------------------------------------------------------
+ * Cart — Table Adjustments
+ * ------------------------------------------------------------------------- */
+
+.wc-block-cart .wc-block-cart-items__row {
+	border-bottom: 1px solid var(--wp--preset--color--border-light);
+}
+
+/* -------------------------------------------------------------------------
+ * Product Gallery — Thumbnails
+ * ------------------------------------------------------------------------- */
+
+.wc-block-product-gallery-large-image img {
+	border-radius: var(--wp--preset--border-radius--small, 4px);
+}
+
+/* -------------------------------------------------------------------------
+ * Sale Badge — Positioning Inside Product Image
+ * ------------------------------------------------------------------------- */
+
+.wc-block-components-product-sale-badge {
+	position: absolute;
+	top: 0.75rem;
+	right: 0.75rem;
+	z-index: 1;
+}

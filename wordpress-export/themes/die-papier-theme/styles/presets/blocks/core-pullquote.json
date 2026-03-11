@@ -1,0 +1,31 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"styles": {
+		"blocks": {
+			"core/pullquote": {
+				"typography": {
+					"fontFamily": "var:preset|font-family|brand-serif",
+					"fontSize": "var:preset|font-size|xx-large",
+					"fontStyle": "italic",
+					"lineHeight": "1.2"
+				},
+				"elements": {
+					"cite": {
+						"typography": {
+							"fontFamily": "var:preset|font-family|brand-sans",
+							"fontSize": "var:preset|font-size|small",
+							"fontStyle": "normal"
+						}
+					}
+				},
+				"spacing": {
+					"padding": {
+						"bottom": "var:preset|spacing|medium",
+						"top": "var:preset|spacing|medium"
+					}
+				}
+			}
+		}
+	}
+}

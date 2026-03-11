@@ -1,0 +1,17 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"title": "Accent",
+	"slug": "accent",
+	"blockTypes": ["woocommerce/product-price"],
+	"styles": {
+		"color": {
+			"text": "var:preset|color|primary"
+		},
+		"typography": {
+			"fontSize": "var:preset|font-size|x-large",
+			"fontWeight": "700",
+			"fontFamily": "var:preset|font-family|brand-sans"
+		}
+	}
+}

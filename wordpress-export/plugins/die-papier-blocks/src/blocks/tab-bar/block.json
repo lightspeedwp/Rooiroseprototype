@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "dp/tab-bar",
+	"version": "1.0.0",
+	"title": "Oortjie Balk",
+	"category": "die-papier",
+	"icon": "table-row-after",
+	"description": "Oortjiebalk met Interactivity API. Wissel sigbaarheid van binneblokke op grond van die aktiewe oortjie.",
+	"textdomain": "die-papier-blocks",
+	"keywords": [ "tab", "oortjie", "tabs", "navigation", "toggler" ],
+	"attributes": {
+		"tabs": {
+			"type": "array",
+			"default": [
+				{ "label": "Oortjie 1", "value": "tab-1" },
+				{ "label": "Oortjie 2", "value": "tab-2" }
+			]
+		},
+		"defaultTab": {
+			"type": "string",
+			"default": "tab-1"
+		}
+	},
+	"supports": {
+		"align": [ "wide" ],
+		"html": false,
+		"interactivity": true,
+		"anchor": true
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php",
+	"viewScriptModule": "file:./view.js"
+}

@@ -1,0 +1,358 @@
+adding h1-h6 values to wordpress theme.json
+To add individual styles for H1-H6 headings in your WordPress theme.json, you must define them within the elements section of the styles object. 
+WordPress Developer Resources
+WordPress Developer Resources
+ +1
+Implementation Structure
+You can apply global styles to all headings using the heading element, or target specific levels (H1, H2, etc.) individually to override those defaults. 
+groundworx.dev
+groundworx.dev
+ +1
+json
+{
+  "version": 3,
+  "styles": {
+    "elements": {
+      "heading": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--sans-serif)",
+          "fontWeight": "700"
+        }
+      },
+      "h1": {
+        "typography": {
+          "fontSize": "var(--wp--preset--font-size--7-xl)",
+          "lineHeight": "1.2"
+        },
+        "spacing": {
+          "margin": { "top": "2rem", "bottom": "1rem" }
+        }
+      },
+      "h2": {
+        "typography": {
+          "fontSize": "var(--wp--preset--font-size--6-xl)"
+        }
+      }
+      // Repeat for h3 through h6 as needed
+    }
+  }
+}
+Use code with caution.
+
+Key Considerations
+The elements Key: This is where you target specific HTML tags like h1 through h6.
+Specificity & Overrides: Styles defined in elements.h1 will override styles defined in the broader elements.heading.
+Block Overrides: Be aware that if you apply styles directly to the core/heading block (under styles.blocks.core/heading), those may override your element-level styles in certain contexts within the editor.
+Using Presets: It is best practice to reference your font sizes and families using CSS variables (e.g., var(--wp--preset--font-size--huge)) defined in the settings section of your theme.json. 
+GitHub
+GitHub
+ +6
+Would you like to see how to define the custom font size presets that these heading values should reference?
+
+
+
+
+undefined
+undefined
+undefined
+8 sites
+Applying Styles – Theme Handbook | Developer.WordPress.org
+17 Oct 2023 — Styling elements. WordPress has a standard system for styling elements via theme. json . In this case, “elements” usually maps to ...
+
+WordPress Developer Resources
+
+Theme.json Tutorial for Beginners - Groundworx
+12 Nov 2025 — When to use heading vs individual heading elements: * Use heading for properties shared by ALL headings (font family, color, weigh...
+
+groundworx.dev
+
+Changes to theme.json #29891 - WordPress/gutenberg - GitHub
+16 Mar 2021 — Being able to target blocks and elements ... color. link we can target a elements directly. The idea is that these elements are th...
+
+GitHub
+
+Show all
+help me verify theme.json of the heading values, use the theme.json snippet I have provided
+
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"settings": {
+		"appearanceTools": true,
+		"color": {
+			"defaultPalette": false,
+			"defaultGradients": false
+		},
+		"spacing": {
+			"defaultSpacingSizes": false,
+			"useRootPaddingAwareAlignments": true
+		},
+		"typography": {
+			"defaultFontSizes": false,
+			"fluid": true
+		}
+	},
+	"styles": {
+		"color": {
+			"background": "var:preset|color|base",
+			"text": "var:preset|color|main"
+		},
+		"spacing": {
+			"blockGap": "1.2rem",
+			"padding": {
+				"left": "var:preset|spacing|large",
+				"right": "var:preset|spacing|large"
+			}
+		},
+		"typography": {
+			"fontFamily": "var:preset|font-family|brand-sans",
+			"fontSize": "var:preset|font-size|base",
+			"lineHeight": "1.5"
+		},
+		"elements": {
+			"button": {
+				"color": {
+					"background": "var(--wp--preset--color--primary)",
+					"text": "var(--wp--preset--color--base)"
+				},
+				"border": {
+					"radius": "var(--wp--custom--border-radius--200)",
+					"width": "0px"
+				},
+				"spacing": {
+					"padding": {
+						"top": "0.75rem",
+						"right": "1.5rem",
+						"bottom": "0.75rem",
+						"left": "1.5rem"
+					}
+				},
+				"typography": {
+					"fontFamily": "var:preset|font-family|brand-sans",
+					"fontWeight": "600"
+				},
+				":hover": {
+					"color": {
+						"background": "color-mix(in srgb, var(--wp--preset--color--primary) 90%, #000)"
+					}
+				}
+			},
+			"link": {
+				"color": {
+					"text": "var:preset|color|accent"
+				},
+				":hover": {
+					"typography": {
+						"textDecoration": "underline"
+					}
+				}
+			},
+			"caption": {
+				"color": {
+					"text": "var:preset|color|main-accent"
+				},
+				"typography": {
+					"fontSize": "var:preset|font-size|x-small"
+				},
+				"spacing": {
+					"padding": {
+						"top": "0.5rem"
+					}
+				}
+			},
+			"cite": {
+				"color": {
+					"text": "var:preset|color|main-accent"
+				},
+				"typography": {
+					"fontSize": "var:preset|font-size|x-small",
+					"fontStyle": "normal"
+				}
+			},
+			"heading": {
+				"color": {
+					"text": "var:preset|color|main"
+				},
+				"typography": {
+					"fontFamily": "var:preset|font-family|brand-serif",
+					"fontWeight": "700",
+					"lineHeight": "1.2"
+				},
+				"css": "&.has-background { padding: 0; }"
+			},
+			"h1": {
+				"typography": {
+					"fontSize": "var:preset|font-size|xxx-large"
+				}
+			},
+			"h2": {
+				"typography": {
+					"fontSize": "var:preset|font-size|xx-large"
+				}
+			},
+			"h3": {
+				"typography": {
+					"fontSize": "var:preset|font-size|x-large"
+				}
+			},
+			"h4": {
+				"typography": {
+					"fontSize": "var:preset|font-size|large"
+				}
+			},
+			"h5": {
+				"typography": {
+					"fontSize": "var:preset|font-size|medium"
+				}
+			},
+			"h6": {
+				"typography": {
+					"fontSize": "var:preset|font-size|base"
+				}
+			}
+		},
+Your theme.json structure for headings is technically correct and follows WordPress best practices for version 3. You have correctly nested the specific h1-h6 levels inside elements and successfully used the heading element for shared styles (font family, weight, and line height).
+1. Verification Checklist
+Hierarchy: Your h1-h6 tags will inherit the brand-serif font and 1.2 line-height from the heading element, which is perfect for consistency.
+Variable Syntax: You are using the shorthand var:preset|category|slug (e.g., var:preset|font-size|xxx-large). This is valid in theme.json and cleaner than the long-form CSS variable.
+Schema Version: You've correctly targeted version 3, which is the current standard.
+2. Required Fixes
+The snippet you provided is missing closing braces for the styles object and the main JSON object. Ensure your file ends like this:
+json
+      } // Ends h6
+    } // Ends elements
+  } // Ends styles
+} // Ends theme.json
+Use code with caution.
+
+3. Pro-Tip: Vertical Rhythm
+Your heading element contains a custom CSS rule for background padding, but you might want to add a default margin to all headings to ensure they don't stick to paragraphs.
+You can add this to your existing heading block:
+json
+"heading": {
+    "spacing": {
+        "margin": { "top": "1.5rem", "bottom": "1rem" }
+    },
+    ...
+}
+Use code with caution.
+
+Do you have the font-size presets (like xxx-large) already defined in the settings.typography.fontSizes section of this file?
+
+
+
+typically I have a no margin approach to styling, but for headings and paragraph it makes sense. Where else is margin useful, the button of lists? maybe provide me with a number of margin suggestions for adding to my block styles
+In a "no margin" or "reset" approach, adding specific margins to select blocks is essential for vertical rhythm—the visual flow and "breathing room" between content.
+While headings and paragraphs are the most common, here are several other blocks where purposeful margins prevent a "cluttered" look:
+1. Lists (core/list)
+Lists often need a left margin to ensure bullets or numbers are properly indented, especially if you've reset global margins to zero.
+Recommendation: Add a left margin (e.g., 1.5rem) to ensure visibility and a bottom margin (e.g., 1rem) to separate the list from the following block.
+2. Buttons (core/buttons or core/button)
+Buttons often sit too close to the text above them, especially if they are call-to-action (CTA) elements.
+Recommendation: Add a top margin (e.g., 1.5rem) to create a clear "break" between descriptive text and the action button.
+3. Quotes and Pullquotes (core/quote)
+Quotes are meant to stand out. Without margins, they blend into the surrounding body text, losing their impact.
+Recommendation: Use symmetrical top and bottom margins (e.g., 2rem) to frame the quote as a distinct "interruptor" in the layout.
+4. Separators (core/separator)
+Separators often have very small default margins, which can make them look like they are touching the blocks above or below.
+Recommendation: Increase the vertical margins (top/bottom) to at least 2rem to make the section break feel intentional.
+5. Media & Text (core/media-text)
+When stacking these blocks, they can feel "heavy."
+Recommendation: Add a bottom margin (e.g., var:preset|spacing|70) to ensure subsequent sections don't start immediately after the image ends.
+Implementation in theme.json
+Since you are using version 3, you should add these to the styles.blocks section of your file:
+json
+"styles": {
+    "blocks": {
+        "core/list": {
+            "spacing": {
+                "margin": { "left": "1.5rem", "bottom": "1.2rem" }
+            }
+        },
+        "core/buttons": {
+            "spacing": {
+                "margin": { "top": "2rem" }
+            }
+        },
+        "core/quote": {
+            "spacing": {
+                "margin": { "top": "3rem", "bottom": "3rem" }
+            }
+        }
+    }
+}
+Use code with caution.
+
+Pro Tip: Consider using blockGap (defined in styles.spacing.blockGap) as your primary tool for spacing between most blocks. It acts as a universal margin that only applies between blocks, preventing the need for individual "last-child" margin resets.
+Would you like to see how to configure blockGap to handle most of your spacing automatically while keeping your "no margin" philosophy?
+
+
+
+
+undefined
+undefined
+undefined
+6 sites
+Dimensions: Padding, margin and block spacing - Learn WordPress
+29 Nov 2024 — Transcript * Introduction. In this lesson, we will focus on dimension settings, namely padding, margin, and block spacing. One of ...
+
+Learn WordPress
+
+Everything you need to know about spacing in block themes
+22 Mar 2023 — Creating a vertical rhythm (block spacing) A huge part of creating a pleasing design is getting the vertical rhythm of the page ju...
+
+WordPress Developer Resources
+
+Vertical Rhythm and Responsive Typography: A Starting Point
+31 Jan 2014 — 1. 2. 3. 4. 5. 6. 7. 8. 9. 10. 11. table { border-collapse : collapse ; } th{ line-height : 2.5 rem; /* 40px */ padding : 0 0.625 ...
+
+Theme Foundation
+Show all
+Would you like to see how to configure blockGap to handle most of your spacing automatically while keeping your "no margin" philosophy
+Since you prefer a no-margin philosophy, blockGap is your best friend. It acts like a CSS gap for the vertical flow of your site, adding space between blocks without adding "dead air" at the top of the first block or the bottom of the last. 
+By using blockGap, you can keep your global margins at 0 and let the system handle the spacing dynamically. 
+1. Define Global blockGap
+In your styles object, you already have blockGap: "1.2rem". This ensures that every block (paragraphs, headings, images) has exactly 1.2rem of space between them automatically. 
+2. Block-Specific blockGap
+Some blocks, like Buttons or Columns, might need tighter or wider spacing between their internal child elements. You can override the global gap for specific blocks: 
+json
+"styles": {
+    "spacing": {
+        "blockGap": "1.5rem" 
+    },
+    "blocks": {
+        "core/buttons": {
+            "spacing": {
+                "blockGap": "0.75rem"
+            }
+        },
+        "core/social-links": {
+            "spacing": {
+                "blockGap": "0.5rem"
+            }
+        },
+        "core/navigation": {
+            "spacing": {
+                "blockGap": "1rem"
+            }
+        }
+    }
+}
+Use code with caution.
+
+3. Handling "The Exception" (The Paragraph)
+Even with a strict blockGap approach, Paragraphs often benefit from a bottom margin to distinguish "body flow" from "structural flow" (like a paragraph followed by a large image). 
+If you find blockGap isn't enough for text-heavy areas, you can add a surgical margin just to the paragraph:
+json
+"core/paragraph": {
+    "spacing": {
+        "margin": { "bottom": "1rem" }
+    }
+}
+Use code with caution.
+
+Why this fits your style:
+Cleaner DOM: You won't have to fight margin-top on the first element of a container.
+Consistency: Every section of your site will feel mathematically aligned because the "gap" is a constant variable. 
+Do you want to see how to enable spacing presets so you can use values like var:preset|spacing|medium for your gaps instead of hardcoded rem values?
+

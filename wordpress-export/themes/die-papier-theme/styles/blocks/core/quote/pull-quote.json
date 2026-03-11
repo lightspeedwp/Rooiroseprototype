@@ -1,0 +1,52 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"title": "Pull Quote",
+	"slug": "pull-quote",
+	"blockTypes": ["core/quote"],
+	"styles": {
+		"typography": {
+			"fontFamily": "var:preset|font-family|brand-serif",
+			"fontSize": "var:preset|font-size|large",
+			"fontStyle": "italic",
+			"fontWeight": "400"
+		},
+		"border": {
+			"top": {
+				"width": "4px",
+				"style": "solid",
+				"color": "var:preset|color|primary"
+			},
+			"bottom": {
+				"width": "4px",
+				"style": "solid",
+				"color": "var:preset|color|primary"
+			},
+			"left": {
+				"width": "0"
+			},
+			"right": {
+				"width": "0"
+			}
+		},
+		"spacing": {
+			"padding": {
+				"top": "var:preset|spacing|medium",
+				"bottom": "var:preset|spacing|medium"
+			}
+		},
+		"elements": {
+			"cite": {
+				"typography": {
+					"fontSize": "var:preset|font-size|x-small",
+					"fontFamily": "var:preset|font-family|brand-sans",
+					"fontStyle": "normal"
+				},
+				"color": {
+					"text": "var:preset|color|main-accent"
+				}
+			}
+		},
+		"css": "text-align: center;"
+	}
+}

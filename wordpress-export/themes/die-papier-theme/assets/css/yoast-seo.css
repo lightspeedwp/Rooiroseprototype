@@ -1,0 +1,111 @@
+/**
+ * Yoast SEO FAQ Block Styling
+ * Die Papier WordPress Theme
+ *
+ * @package DiePapierTheme
+ * @since 1.0.0
+ */
+
+/* === 1. FAQ Container === */
+.yoast-faq-block {
+    margin-bottom: var(--wp--preset--spacing--large);
+}
+
+/* === 2. Question / Answer Structure === */
+.yoast-faq-block .schema-faq-section {
+    border-bottom: 1px solid var(--wp--preset--color--base-3);
+}
+
+.yoast-faq-block .schema-faq-question {
+    display: block;
+    width: 100%;
+    padding: 16px 0;
+    margin: 0;
+    font-family: var(--wp--preset--font-family--brand-sans);
+    font-size: 18px;
+    font-weight: 600;
+    text-align: left;
+    color: var(--wp--preset--color--contrast);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.yoast-faq-block .schema-faq-question:hover {
+    color: var(--wp--preset--color--primary);
+}
+
+.yoast-faq-block .schema-faq-answer {
+    padding: 0 0 24px 0;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--wp--preset--color--contrast);
+    display: none; /* Hidden by default if JS enabled */
+}
+
+/* === 3. Details/Summary Native Support (if used) === */
+.yoast-faq-block details summary {
+    list-style: none;
+    outline: none;
+}
+
+.yoast-faq-block details summary::-webkit-details-marker {
+    display: none;
+}
+
+.yoast-faq-block details summary::marker {
+    display: none;
+}
+
+.yoast-faq-block details summary::before {
+    content: '▶ ';
+    font-size: 12px;
+    margin-right: 8px;
+    color: var(--wp--preset--color--primary);
+    vertical-align: middle;
+}
+
+.yoast-faq-block details[open] summary::before {
+    content: '▼ ';
+}
+
+.yoast-faq-block details[open] summary {
+    margin-bottom: 12px;
+    color: var(--wp--preset--color--primary);
+}
+
+/* === 4. Section Style Overrides === */
+
+/* Navy section */
+.is-style-section-navy .yoast-faq-block .schema-faq-question {
+    color: #FFFFFF;
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.is-style-section-navy .yoast-faq-block .schema-faq-answer {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.is-style-section-navy .yoast-faq-block .schema-faq-question:hover {
+    color: var(--wp--preset--color--secondary-accent);
+}
+
+/* Red section */
+.is-style-section-red .yoast-faq-block .schema-faq-question {
+    color: #FFFFFF;
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+.is-style-section-red .yoast-faq-block .schema-faq-answer {
+    color: #FFFFFF;
+}
+
+/* FAQ section (custom style) */
+.is-style-section-faq {
+    background-color: var(--wp--preset--color--tertiary);
+    padding: var(--wp--preset--spacing--large);
+    border-radius: 8px;
+}

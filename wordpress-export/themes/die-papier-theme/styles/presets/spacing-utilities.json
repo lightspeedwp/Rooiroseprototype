@@ -1,0 +1,7 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"styles": {
+		"css": ".mt-auto { margin-top: auto; } .mb-auto { margin-bottom: auto; } .ml-auto { margin-left: auto; } .mr-auto { margin-right: auto; } .mx-auto { margin-left: auto; margin-right: auto; } .my-auto { margin-top: auto; margin-bottom: auto; } .gap-0 { gap: 0; } .gap-tight { gap: var(--wp--preset--spacing--x-small); } .gap-normal { gap: var(--wp--preset--spacing--medium); } .gap-wide { gap: var(--wp--preset--spacing--large); }"
+	}
+}

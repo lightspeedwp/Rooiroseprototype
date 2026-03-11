@@ -1,0 +1,110 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"title": "Cover Hero",
+	"slug": "section-cover-hero",
+	"blockTypes": ["core/cover"],
+	"styles": {
+		"color": {
+			"text": "var:preset|color|base"
+		},
+		"dimensions": {
+			"minHeight": "500px"
+		},
+		"spacing": {
+			"padding": {
+				"top": "var:preset|spacing|xxx-large",
+				"bottom": "var:preset|spacing|xxx-large"
+			},
+			"blockGap": {
+				"top": "var:preset|spacing|medium",
+				"left": "var:preset|spacing|medium"
+			}
+		},
+		"elements": {
+			"button": {
+				"color": {
+					"background": "var:preset|color|primary",
+					"text": "var:preset|color|base"
+				},
+				":hover": {
+					"color": {
+						"background": "var:preset|color|primary-alt"
+					}
+				},
+				"variations": {
+					"outline": {
+						"color": {
+							"text": "var:preset|color|base",
+							"background": "transparent"
+						},
+						"border": {
+							"color": "var:preset|color|base"
+						},
+						":hover": {
+							"color": {
+								"text": "var:preset|color|secondary",
+								"background": "var:preset|color|base"
+							}
+						}
+					}
+				}
+			},
+			"link": {
+				"color": {
+					"text": "currentColor"
+				},
+				":hover": {
+					"color": {
+						"text": "color-mix(in srgb, currentColor 75%, transparent)"
+					}
+				}
+			},
+			"heading": {
+				"color": {
+					"text": "var:preset|color|base"
+				}
+			}
+		},
+		"blocks": {
+			"core/heading": {
+				"color": {
+					"text": "var:preset|color|base"
+				}
+			},
+			"core/paragraph": {
+				"color": {
+					"text": "color-mix(in srgb, var(--wp--preset--color--base) 90%, transparent)"
+				}
+			},
+			"core/button": {
+				"color": {
+					"background": "var:preset|color|primary",
+					"text": "var:preset|color|base"
+				},
+				":hover": {
+					"color": {
+						"background": "var:preset|color|primary-alt"
+					}
+				},
+				"variations": {
+					"outline": {
+						"color": {
+							"text": "var:preset|color|base",
+							"background": "transparent"
+						},
+						"border": {
+							"color": "var:preset|color|base"
+						},
+						":hover": {
+							"color": {
+								"text": "var:preset|color|secondary",
+								"background": "var:preset|color|base"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

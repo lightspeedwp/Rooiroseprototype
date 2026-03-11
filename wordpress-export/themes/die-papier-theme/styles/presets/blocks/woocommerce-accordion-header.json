@@ -1,0 +1,13 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"styles": {
+		"blocks": {
+			"woocommerce/accordion-header": {
+				"color": { "text": "var:preset|color|main" },
+				"spacing": { "padding": { "top": "0.75rem", "bottom": "0.75rem" } },
+				"typography": { "fontSize": "var:preset|font-size|base", "fontWeight": "400" }
+			}
+		}
+	}
+}

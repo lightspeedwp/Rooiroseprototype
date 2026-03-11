@@ -1,0 +1,16 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"title": "Shadowed",
+	"slug": "shadowed",
+	"blockTypes": ["core/gallery"],
+	"styles": {
+		"border": {
+			"radius": "var(--wp--custom--border-radius--200)"
+		},
+		"shadow": "var(--wp--preset--shadow--300)",
+		"spacing": {
+			"blockGap": "var:preset|spacing|small"
+		}
+	}
+}

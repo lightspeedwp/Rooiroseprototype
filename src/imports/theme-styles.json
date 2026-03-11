@@ -1,0 +1,92 @@
+This theme.json snippet targets the core block style variations you requested. Since WordPress 6.2, you can customize these directly by nesting a variations property within the specific block's style. 
+WordPress Developer Resources
+WordPress Developer Resources
+ +3
+I have used your preferred shorthand notation (var:preset|...) and included some example properties to show how each variation can be uniquely styled.
+json
+{
+  "version": 3,
+  "styles": {
+    "blocks": {
+      "core/button": {
+        "variations": {
+          "fill": {
+            "color": { "background": "var:preset|color|primary", "text": "var:preset|color|base" }
+          },
+          "outline": {
+            "border": { "width": "2px", "style": "solid", "color": "var:preset|color|primary" },
+            "color": { "background": "transparent", "text": "var:preset|color|primary" }
+          }
+        }
+      },
+      "core/separator": {
+        "variations": {
+          "wide": {
+            "border": { "width": "4px" },
+            "typography": { "fontSize": "2rem" }
+          },
+          "dots": {
+            "color": { "text": "var:preset|color|accent" },
+            "typography": { "fontSize": "3rem" }
+          }
+        }
+      },
+      "core/image": {
+        "variations": {
+          "rounded": {
+            "border": { "radius": "20px" }
+          }
+        }
+      },
+      "core/quote": {
+        "variations": {
+          "plain": {
+            "border": { "left": { "width": "0px" } },
+            "spacing": { "padding": { "left": "0" } }
+          }
+        }
+      },
+      "core/site-logo": {
+        "variations": {
+          "rounded": {
+            "border": { "radius": "9999px" }
+          }
+        }
+      },
+      "core/social-links": {
+        "variations": {
+          "logos-only": {
+            "color": { "background": "transparent" }
+          },
+          "pill-shape": {
+            "border": { "radius": "40px" }
+          }
+        }
+      },
+      "core/table": {
+        "variations": {
+          "stripes": {
+            "color": { "background": "var:preset|color|base-2" }
+          }
+        }
+      },
+      "core/tag-cloud": {
+        "variations": {
+          "outline": {
+            "border": { "width": "1px", "style": "solid" },
+            "spacing": { "padding": { "top": "0.25rem", "bottom": "0.25rem", "left": "0.5rem", "right": "0.5rem" } }
+          }
+        }
+      }
+    }
+  }
+}
+Use code with caution.
+
+Key Implementation Details:
+Version 3: Ensures compatibility with the latest features like JSON-based custom variations introduced in WordPress 6.6.
+Core Exclusivity: This method works specifically for core-registered style variations; custom styles registered via PHP or JS may require additional setup.
+CSS Specificity: Styles defined in variations will automatically target the correct CSS classes (e.g., .is-style-outline or .is-style-rounded). 
+WordPress Developer Resources
+WordPress Developer Resources
+ +4

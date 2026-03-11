@@ -1,0 +1,16 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"title": "Borderless",
+	"slug": "borderless",
+	"blockTypes": ["core/table"],
+	"styles": {
+		"border": {
+			"top": { "width": "0px", "style": "none" },
+			"right": { "width": "0px", "style": "none" },
+			"bottom": { "width": "0px", "style": "none" },
+			"left": { "width": "0px", "style": "none" }
+		},
+		"css": "& table, & td, & th { border: none; } & tr:nth-child(even) { background: var(--wp--preset--color--tertiary); }"
+	}
+}

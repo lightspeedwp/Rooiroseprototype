@@ -1,0 +1,26 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"title": "Bordered",
+	"slug": "bordered",
+	"blockTypes": ["core/table"],
+	"styles": {
+		"typography": {
+			"fontSize": "var:preset|font-size|base"
+		},
+		"border": {
+			"color": "var:preset|color|border-light",
+			"width": "1px",
+			"radius": "var(--wp--custom--border-radius--100)"
+		},
+		"spacing": {
+			"padding": {
+				"top": "var:preset|spacing|small",
+				"right": "var:preset|spacing|small",
+				"bottom": "var:preset|spacing|small",
+				"left": "var:preset|spacing|small"
+			}
+		},
+		"css": "& td, & th { border: 1px solid var(--wp--preset--color--border-light); padding: var(--wp--preset--spacing--small); }"
+	}
+}

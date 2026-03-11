@@ -1,0 +1,46 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"title": "Default",
+	"settings": {
+		"custom": {
+			"iconSizes": [
+				{
+					"name": "Extra Small",
+					"size": "12px",
+					"slug": "xs"
+				},
+				{
+					"name": "Small",
+					"size": "16px",
+					"slug": "sm"
+				},
+				{
+					"name": "Medium",
+					"size": "20px",
+					"slug": "md"
+				},
+				{
+					"name": "Large",
+					"size": "24px",
+					"slug": "lg"
+				},
+				{
+					"name": "Extra Large",
+					"size": "32px",
+					"slug": "xl"
+				},
+				{
+					"name": "2X Large",
+					"size": "40px",
+					"slug": "2xl"
+				},
+				{
+					"name": "3X Large",
+					"size": "48px",
+					"slug": "3xl"
+				}
+			]
+		}
+	}
+}

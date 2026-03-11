@@ -1,0 +1,59 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "dp/slider",
+	"version": "1.0.0",
+	"title": "Slider",
+	"category": "die-papier",
+	"description": "Generic carousel/slider block using InnerBlocks. Supports autoplay, navigation arrows, dots, swipe gestures, and keyboard navigation via the Interactivity API.",
+	"keywords": [ "carousel", "slider", "slideshow", "gallery" ],
+	"textdomain": "die-papier-blocks",
+	"attributes": {
+		"autoplay": {
+			"type": "boolean",
+			"default": false
+		},
+		"interval": {
+			"type": "number",
+			"default": 5000
+		},
+		"showArrows": {
+			"type": "boolean",
+			"default": true
+		},
+		"showDots": {
+			"type": "boolean",
+			"default": true
+		},
+		"loop": {
+			"type": "boolean",
+			"default": true
+		},
+		"slidesToShow": {
+			"type": "number",
+			"default": 1
+		},
+		"align": {
+			"type": "string",
+			"default": "wide"
+		}
+	},
+	"supports": {
+		"align": [ "wide", "full" ],
+		"html": false,
+		"color": {
+			"background": true,
+			"text": true
+		},
+		"spacing": {
+			"padding": true,
+			"margin": true
+		},
+		"interactivity": true
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php",
+	"viewScriptModule": "file:./view.js"
+}

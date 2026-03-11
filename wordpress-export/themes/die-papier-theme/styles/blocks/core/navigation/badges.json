@@ -1,0 +1,10 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Badges",
+	"slug": "badges",
+	"blockTypes": ["core/navigation"],
+	"styles": {
+		"css": "& .wp-block-navigation-item .wp-block-navigation-item__content{text-decoration:none !important;font-size:var(--wp--preset--font-size--base);padding:var(--wp--preset--spacing--x-small) var(--wp--preset--spacing--medium);border-radius:var(--wp--custom--border-radius--9999);border:var(--wp--custom--border-width--100) solid var(--wp--preset--color--border-light);background-color:var(--wp--preset--color--base);color:var(--wp--preset--color--secondary) !important;transition:background-color 0.15s ease;} & .wp-block-navigation-item .wp-block-navigation-item__content:hover{background-color:var(--wp--preset--color--tertiary);text-decoration:none !important;} & .wp-block-navigation-item.current-menu-item .wp-block-navigation-item__content{background-color:var(--wp--preset--color--primary);color:var(--wp--preset--color--base) !important;border-color:var(--wp--preset--color--primary);} & .wp-block-navigation-item.current-menu-item .wp-block-navigation-item__content:hover{background-color:var(--wp--preset--color--primary-alt);color:var(--wp--preset--color--base) !important;text-decoration:none !important;}"
+	}
+}

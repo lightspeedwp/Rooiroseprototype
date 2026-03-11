@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"title": "Primary",
+	"slug": "primary",
+	"blockTypes": ["woocommerce/product-button"],
+	"styles": {
+		"border": {
+			"radius": "var(--wp--custom--border-radius--200)",
+			"width": "0px"
+		},
+		"color": {
+			"background": "var:preset|color|primary",
+			"text": "var:preset|color|base"
+		},
+		"spacing": {
+			"padding": {
+				"top": "0.75rem",
+				"right": "1.5rem",
+				"bottom": "0.75rem",
+				"left": "1.5rem"
+			}
+		},
+		"typography": {
+			"fontFamily": "var:preset|font-family|brand-sans",
+			"fontSize": "var:preset|font-size|base",
+			"fontWeight": "700",
+			"textTransform": "uppercase",
+			"letterSpacing": "0.05em"
+		},
+		"shadow": "var(--wp--preset--shadow--200)",
+		":hover": {
+			"color": {
+				"background": "var:preset|color|primary-alt"
+			},
+			"shadow": "var(--wp--preset--shadow--300)"
+		}
+	}
+}

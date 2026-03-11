@@ -1,0 +1,15 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"title": "Compact",
+	"slug": "compact",
+	"blockTypes": ["core/gallery"],
+	"styles": {
+		"spacing": {
+			"blockGap": "var:preset|spacing|x-small"
+		},
+		"border": {
+			"radius": "var(--wp--custom--border-radius--100)"
+		}
+	}
+}

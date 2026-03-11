@@ -1,0 +1,28 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
+<main class="wp-block-group">
+    <!-- wp:template-part {"slug":"breadcrumbs","tagName":"nav"} /-->
+    <!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|medium"}}} -->
+    <div class="wp-block-columns alignwide">
+        <!-- wp:column {"width":"70%"} -->
+        <div class="wp-block-column" style="flex-basis:70%">
+            <!-- wp:pattern {"slug":"die-papier/hidden-article-hero"} /-->
+            <!-- wp:pattern {"slug":"die-papier/part-post-meta-top"} /-->
+            <!-- wp:post-content {"layout":{"type":"constrained"}} /-->
+            <!-- wp:pattern {"slug":"die-papier/part-post-meta-bottom"} /-->
+            <!-- wp:pattern {"slug":"die-papier/section-related-articles"} /-->
+        </div>
+        <!-- /wp:column -->
+
+        <!-- wp:column {"width":"30%"} -->
+        <div class="wp-block-column" style="flex-basis:30%">
+            <!-- wp:template-part {"slug":"sidebar","tagName":"aside"} /-->
+        </div>
+        <!-- /wp:column -->
+    </div>
+    <!-- /wp:columns -->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

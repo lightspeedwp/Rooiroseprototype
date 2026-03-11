@@ -1,0 +1,20 @@
+{
+  "name": "Die Papier",
+  "short_name": "Die Papier",
+  "description": "Die Papier - Jou betroubare bron vir Afrikaanse nuus",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#172134",
+  "orientation": "portrait-primary",
+  "categories": ["news"],
+  "lang": "af",
+  "icons": [
+    {
+      "src": "/newspaper.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

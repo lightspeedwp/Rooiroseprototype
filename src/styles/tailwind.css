@@ -1,0 +1,13 @@
+@import "tailwindcss" source(none);
+
+/* FM-001: Restrict @source to component/page/context files only.
+   Excludes /src/app/data/ (76+ files containing markdown strings with
+   embedded Tailwind-like class patterns that bloat CSS output). */
+@source '../app/App.tsx';
+@source '../app/routes.tsx';
+@source '../app/components/**/*.{tsx}';
+@source '../app/pages/**/*.{tsx}';
+@source '../app/context/**/*.{tsx}';
+@source '../main.tsx';
+
+@import "./tw-animate.css";

@@ -1,0 +1,19 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"title": "Uppercase",
+	"slug": "uppercase",
+	"blockTypes": ["core/heading"],
+	"styles": {
+		"color": {
+			"text": "var:preset|color|main"
+		},
+		"typography": {
+			"fontFamily": "var:preset|font-family|brand-sans",
+			"fontWeight": "700",
+			"lineHeight": "1.2",
+			"textTransform": "uppercase",
+			"letterSpacing": "0.05em"
+		}
+	}
+}

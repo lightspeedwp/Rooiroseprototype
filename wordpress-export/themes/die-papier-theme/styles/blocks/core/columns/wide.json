@@ -1,0 +1,12 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"title": "Wide",
+	"slug": "wide",
+	"blockTypes": ["core/columns"],
+	"styles": {
+		"spacing": {
+			"blockGap": "var:preset|spacing|x-large"
+		}
+	}
+}

@@ -1,0 +1,102 @@
+/**
+ * Sponsor Banner — Frontend & Editor Styles
+ *
+ * Tokens map to the V2 Design System (theme.json presets).
+ *
+ * @package DiePapierBlocks
+ */
+
+.dp-sponsor-banner {
+	display: flex;
+	align-items: center;
+	gap: var(--wp--preset--spacing--20, 0.5rem);
+
+	/* ── Alignment modifiers ── */
+	&--align-left {
+		justify-content: flex-start;
+		text-align: left;
+	}
+
+	&--align-center {
+		justify-content: center;
+		text-align: center;
+		flex-direction: column;
+	}
+
+	&--align-right {
+		justify-content: flex-end;
+		text-align: right;
+		flex-direction: row-reverse;
+	}
+
+	/* ── Size modifiers ── */
+	&--size-small img {
+		max-height: 2rem;
+	}
+
+	&--size-medium img {
+		max-height: 3rem;
+	}
+
+	&--size-large img {
+		max-height: 5rem;
+	}
+
+	/* ── Align full/wide overrides ── */
+	&.alignfull,
+	&.alignwide {
+		padding-block: var(--wp--preset--spacing--40, 1rem);
+	}
+}
+
+/* ── Label ── */
+.dp-sponsor-label {
+	margin: 0 0 var(--wp--preset--spacing--10, 0.25rem);
+	font-family: var(--wp--preset--font-family--brand-sans);
+	font-size: var(--wp--preset--font-size--100, 0.6875rem);
+	line-height: 1rem;
+	color: var(--wp--preset--color--contrast-2);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+/* ── Logo image ── */
+.dp-sponsor-banner img {
+	display: block;
+	width: auto;
+	object-fit: contain;
+}
+
+/* ── Link wrapper ── */
+.dp-sponsor-banner a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: inherit;
+	transition: opacity 0.15s ease;
+
+	&:hover,
+	&:focus-visible {
+		opacity: 0.8;
+	}
+}
+
+/* ── Editor preview ── */
+.dp-sponsor-banner__preview {
+	padding: 1rem;
+	background: var(--wp--preset--color--base-2, #f0f0f0);
+	border: 1px dashed var(--wp--preset--color--base-3, #ddd);
+	border-radius: 4px;
+}
+
+.dp-sponsor-banner__preview-name {
+	margin: 0;
+	font-weight: 700;
+	color: var(--wp--preset--color--brand-navy, #172134);
+	font-size: 0.875rem;
+}
+
+.dp-sponsor-banner__preview-size {
+	font-weight: 400;
+	color: var(--wp--preset--color--contrast-2);
+	font-size: 0.75rem;
+}

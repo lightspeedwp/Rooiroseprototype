@@ -1,0 +1,67 @@
+/* ── Block Style Variation Classes ─────────────────────────────────────────── */
+/* Split from theme.css for memory optimization (2026-03-05)                   */
+/* Contains: .is-style-* typography and color block variations                 */
+/* Maps to WordPress block style variations (T-012/T-013/T-014)                */
+
+@layer components {
+  /* Section title — H6 visual treatment (Inter SemiBold, uppercase) */
+  .is-style-section-title {
+    font-family: var(--font-inter);
+    font-size: var(--wp--preset--font-size--400);
+    line-height: var(--wp--custom--line-height--400);
+    letter-spacing: var(--wp--custom--letter-spacing--400);
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  /* Display heading — H1 visual treatment on any element */
+  .is-style-display {
+    font-family: var(--font-heading);
+    font-size: var(--wp--preset--font-size--900);
+    line-height: var(--wp--custom--line-height--900);
+    letter-spacing: var(--wp--custom--letter-spacing--900);
+    font-weight: 400;
+    font-variation-settings: var(--wp--custom--fvs--900);
+  }
+
+  /* Card compact — Roboto Serif at 16px for small card titles */
+  .is-style-card-compact {
+    font-family: var(--font-heading);
+    font-size: var(--wp--preset--font-size--400);
+    line-height: var(--wp--custom--line-height--compact);
+    letter-spacing: var(--wp--custom--letter-spacing--compact);
+    font-weight: 400;
+    font-variation-settings: var(--wp--custom--fvs--compact);
+  }
+
+  /* ── Color-Based Block Style Variations ─────────────────────
+   * Common color patterns for WordPress block style variations.
+   * ──────────────────────────────────────────────────────────── */
+
+  /* Navy background section — brand navy with white text */
+  .is-style-navy-background {
+    background-color: var(--wp--preset--color--brand-navy);
+    color: var(--wp--preset--color--base);
+  }
+
+  .is-style-navy-background h1,
+  .is-style-navy-background h2,
+  .is-style-navy-background h3,
+  .is-style-navy-background h4,
+  .is-style-navy-background h5,
+  .is-style-navy-background h6 {
+    color: var(--wp--preset--color--base);
+  }
+
+  /* Red accent — left border accent for callouts */
+  .is-style-red-accent {
+    border-left: 4px solid var(--wp--preset--color--primary);
+    padding-left: var(--wp--preset--spacing--60);
+  }
+
+  /* Muted background section — soft gray background */
+  .is-style-muted-background {
+    background-color: var(--wp--preset--color--base-2);
+    color: var(--wp--preset--color--contrast);
+  }
+}

@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "dp/filter-bar",
+	"version": "1.0.0",
+	"title": "Filter Balk",
+	"category": "die-papier",
+	"icon": "filter",
+	"description": "Kliëntsy-filterbalk vir argief-bladsye. Gebruik die Interactivity API om navraagparameters op te dateer.",
+	"textdomain": "die-papier-blocks",
+	"keywords": [ "filter", "archive", "argief", "category", "kategorie" ],
+	"attributes": {
+		"filters": {
+			"type": "array",
+			"default": []
+		},
+		"showSearch": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"supports": {
+		"align": [ "wide" ],
+		"html": false,
+		"interactivity": true,
+		"anchor": true
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php",
+	"viewScriptModule": "file:./view.js"
+}

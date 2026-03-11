@@ -1,0 +1,15 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"title": "Checkmark",
+	"slug": "checkmark",
+	"blockTypes": ["core/list"],
+	"styles": {
+		"spacing": {
+			"padding": {
+				"left": "0"
+			}
+		},
+		"css": "list-style: none; & li::before { content: '✓ '; color: var(--wp--preset--color--primary); font-weight: 700; margin-right: 0.5rem; }"
+	}
+}

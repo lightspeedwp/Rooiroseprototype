@@ -1,0 +1,11 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"settings": {
+		"blocks": {
+			"woocommerce/cart": {
+				"spacing": { "blockGap": "var(--wp--preset--spacing--large)" }
+			}
+		}
+	}
+}

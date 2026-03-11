@@ -1,0 +1,14 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"styles": {
+		"blocks": {
+			"yoast/faq-block": {
+				"spacing": {
+					"blockGap": "0"
+				},
+				"css": "& .schema-faq-section { border-bottom: 1px solid var(--wp--preset--color--border-light); padding: var(--wp--preset--spacing--small) 0; } & .schema-faq-question { font-weight: 600; cursor: pointer; } & .schema-faq-answer { color: var(--wp--preset--color--main-accent); margin-top: var(--wp--preset--spacing--x-small); }"
+			}
+		}
+	}
+}

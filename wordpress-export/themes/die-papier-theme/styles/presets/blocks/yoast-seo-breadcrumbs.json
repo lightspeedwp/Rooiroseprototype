@@ -1,0 +1,22 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"styles": {
+		"blocks": {
+			"yoast-seo/breadcrumbs": {
+				"typography": { "fontSize": "var:preset|font-size|small" },
+				"color": { "text": "var:preset|color|main-accent" },
+				"elements": {
+					"link": {
+						"color": { "text": "var:preset|color|main-accent" },
+						"typography": { "textDecoration": "none" },
+						":hover": {
+							"typography": { "textDecoration": "underline" },
+							"color": { "text": "var:preset|color|primary" }
+						}
+					}
+				}
+			}
+		}
+	}
+}

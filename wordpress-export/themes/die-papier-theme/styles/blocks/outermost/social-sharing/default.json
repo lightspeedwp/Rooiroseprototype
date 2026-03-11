@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"title": "Default",
+	"slug": "outermost-social-sharing-default",
+	"blockTypes": ["outermost/social-sharing"],
+	"styles": {
+		"spacing": {
+			"blockGap": "var:preset|spacing|small"
+		},
+		"elements": {
+			"button": {
+				"border": {
+					"radius": "var:custom|border-radius|200"
+				},
+				"spacing": {
+					"padding": {
+						"top": "0.5rem",
+						"right": "0.75rem",
+						"bottom": "0.5rem",
+						"left": "0.75rem"
+					}
+				},
+				"typography": {
+					"fontSize": "var:preset|font-size|small",
+					"fontWeight": "600"
+				},
+				"color": {
+					"background": "var:preset|color|tertiary",
+					"text": "var:preset|color|main"
+				},
+				":hover": {
+					"color": {
+						"background": "var:preset|color|primary",
+						"text": "var:preset|color|base"
+					}
+				}
+			}
+		},
+		"css": ".wp-block-outermost-social-sharing { gap: var(--wp--preset--spacing--small); } .wp-block-outermost-social-sharing .social-sharing-button { transition: all 0.2s ease; }"
+	}
+}

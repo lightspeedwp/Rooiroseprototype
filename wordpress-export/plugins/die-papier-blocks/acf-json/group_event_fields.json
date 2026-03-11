@@ -1,0 +1,133 @@
+{
+  "key": "group_dp_event",
+  "title": "Gebeurtenis Velde",
+  "fields": [
+    {
+      "key": "field_event_date",
+      "label": "Gebeurtenisdatum",
+      "name": "event_date",
+      "type": "date_picker",
+      "required": 1,
+      "display_format": "d/m/Y",
+      "return_format": "Y-m-d",
+      "instructions": "Die begindatum van die gebeurtenis."
+    },
+    {
+      "key": "field_event_end_date",
+      "label": "Einddatum",
+      "name": "event_end_date",
+      "type": "date_picker",
+      "required": 0,
+      "display_format": "d/m/Y",
+      "return_format": "Y-m-d",
+      "instructions": "Opsionele einddatum vir meerdaagse gebeure."
+    },
+    {
+      "key": "field_event_time",
+      "label": "Tyd",
+      "name": "event_time",
+      "type": "text",
+      "required": 1,
+      "placeholder": "14:00 - 17:00",
+      "instructions": "Die tydgleuf van die gebeurtenis."
+    },
+    {
+      "key": "field_event_location",
+      "label": "Plek",
+      "name": "event_location",
+      "type": "text",
+      "required": 1,
+      "placeholder": "Stadspark, Bloemfontein",
+      "instructions": "Die naam van die plek."
+    },
+    {
+      "key": "field_event_address",
+      "label": "Adres",
+      "name": "event_address",
+      "type": "textarea",
+      "required": 0,
+      "rows": 2,
+      "instructions": "Volledige straatadres vir die kaart."
+    },
+    {
+      "key": "field_event_map_url",
+      "label": "Kaart URL",
+      "name": "event_map_url",
+      "type": "url",
+      "required": 0,
+      "instructions": "Google Maps of ander kaart-skakel."
+    },
+    {
+      "key": "field_event_organiser",
+      "label": "Organiseerder",
+      "name": "event_organiser",
+      "type": "text",
+      "required": 0,
+      "instructions": "Naam van die organiseerder of groep."
+    },
+    {
+      "key": "field_event_contact_email",
+      "label": "Kontak E-pos",
+      "name": "event_contact_email",
+      "type": "email",
+      "required": 0
+    },
+    {
+      "key": "field_event_contact_phone",
+      "label": "Kontak Telefoon",
+      "name": "event_contact_phone",
+      "type": "text",
+      "required": 0
+    },
+    {
+      "key": "field_event_ticket_url",
+      "label": "Kaartjie URL",
+      "name": "event_ticket_url",
+      "type": "url",
+      "required": 0,
+      "instructions": "Skakel na kaartjieverkope."
+    },
+    {
+      "key": "field_event_price",
+      "label": "Prys",
+      "name": "event_price",
+      "type": "text",
+      "required": 0,
+      "placeholder": "R50 volwassenes, R20 kinders",
+      "instructions": "Prysbeskrywing. Laat leeg as dit gratis is."
+    },
+    {
+      "key": "field_event_is_free",
+      "label": "Gratis?",
+      "name": "event_is_free",
+      "type": "true_false",
+      "default_value": 0,
+      "ui": 1
+    },
+    {
+      "key": "field_event_is_featured",
+      "label": "Uitgelig?",
+      "name": "event_is_featured",
+      "type": "true_false",
+      "default_value": 0,
+      "ui": 1,
+      "instructions": "Vertoon hierdie gebeurtenis prominent op die argiefbladsy."
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "dp_event"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "active": true,
+  "show_in_rest": 1
+}

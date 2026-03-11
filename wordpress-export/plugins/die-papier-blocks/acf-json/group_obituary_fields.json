@@ -1,0 +1,104 @@
+{
+  "key": "group_dp_obituary",
+  "title": "Doodsberig Velde",
+  "fields": [
+    {
+      "key": "field_obituary_age",
+      "label": "Ouderdom",
+      "name": "obituary_age",
+      "type": "number",
+      "required": 1,
+      "min": 0,
+      "max": 150,
+      "instructions": "Ouderdom van die oorledene."
+    },
+    {
+      "key": "field_obituary_date_of_birth",
+      "label": "Geboortedatum",
+      "name": "obituary_date_of_birth",
+      "type": "date_picker",
+      "required": 1,
+      "display_format": "d F Y",
+      "return_format": "Y-m-d"
+    },
+    {
+      "key": "field_obituary_date_of_death",
+      "label": "Sterftedatum",
+      "name": "obituary_date_of_death",
+      "type": "date_picker",
+      "required": 1,
+      "display_format": "d F Y",
+      "return_format": "Y-m-d"
+    },
+    {
+      "key": "field_obituary_location",
+      "label": "Plek",
+      "name": "obituary_location",
+      "type": "text",
+      "required": 1,
+      "placeholder": "Stellenbosch",
+      "instructions": "Stad of dorp van oorlye."
+    },
+    {
+      "key": "field_obituary_survived_by",
+      "label": "Oorleef deur",
+      "name": "obituary_survived_by",
+      "type": "textarea",
+      "required": 0,
+      "rows": 3,
+      "instructions": "Oorlewende familielede. bv. 'Sy vrou Elsa, drie kinders — Johan, Annemarie en Willem — en sewe kleinkinders.'"
+    },
+    {
+      "key": "field_obituary_funeral_details",
+      "label": "Begrafnisbesonderhede",
+      "name": "obituary_funeral_details",
+      "type": "textarea",
+      "required": 0,
+      "rows": 4,
+      "instructions": "Datum, tyd, plek van begrafnis en enige bydrae-inligting."
+    },
+    {
+      "key": "field_obituary_meta_title",
+      "label": "SEO Titel",
+      "name": "obituary_meta_title",
+      "type": "text",
+      "required": 0,
+      "maxlength": 70,
+      "instructions": "Opsionele SEO-titel. Val terug na postitel."
+    },
+    {
+      "key": "field_obituary_meta_description",
+      "label": "SEO Beskrywing",
+      "name": "obituary_meta_description",
+      "type": "textarea",
+      "required": 0,
+      "rows": 2,
+      "maxlength": 160,
+      "instructions": "Opsionele meta-beskrywing."
+    },
+    {
+      "key": "field_obituary_meta_keywords",
+      "label": "SEO Sleutelwoorde",
+      "name": "obituary_meta_keywords",
+      "type": "text",
+      "required": 0,
+      "instructions": "Komma-geskeide sleutelwoorde."
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "dp_obituary"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "active": true,
+  "show_in_rest": 1
+}

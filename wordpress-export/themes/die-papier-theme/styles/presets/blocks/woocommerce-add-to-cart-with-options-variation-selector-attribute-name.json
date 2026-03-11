@@ -1,0 +1,12 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"styles": {
+		"blocks": {
+			"woocommerce/add-to-cart-with-options-variation-selector-attribute-name": {
+				"color": { "text": "var:preset|color|main-accent" },
+				"typography": { "fontSize": "var:preset|font-size|small", "lineHeight": "1.5" }
+			}
+		}
+	}
+}

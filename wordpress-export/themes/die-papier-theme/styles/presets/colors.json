@@ -1,0 +1,69 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"settings": {
+		"color": {
+			"defaultPalette": false,
+			"defaultGradients": false,
+			"palette": [
+				{
+					"slug": "primary",
+					"color": "#E82C27",
+					"name": "Brand Red"
+				},
+				{
+					"slug": "primary-alt",
+					"color": "#C41F20",
+					"name": "Brand Red (Darker)"
+				},
+				{
+					"slug": "secondary",
+					"color": "#172134",
+					"name": "Brand Navy"
+				},
+				{
+					"slug": "secondary-accent",
+					"color": "#1A3A5F",
+					"name": "Navy Light"
+				},
+				{
+					"slug": "base",
+					"color": "#FFFFFF",
+					"name": "White"
+				},
+				{
+					"slug": "tertiary",
+					"color": "#F0F0F0",
+					"name": "Brand Light"
+				},
+				{
+					"slug": "border-light",
+					"color": "#DDDDDD",
+					"name": "Border Base"
+				},
+				{
+					"slug": "main",
+					"color": "#2c2c2c",
+					"name": "Foreground"
+				},
+				{
+					"slug": "main-accent",
+					"color": "#636375",
+					"name": "Muted Foreground"
+				},
+				{
+					"slug": "accent",
+					"color": "#C41F20",
+					"name": "Text Link Red"
+				}
+			],
+			"gradients": [
+				{
+					"slug": "primary-gradient",
+					"gradient": "linear-gradient(81.87deg, #CE0400 0.24%, #FF0600 18.33%, #E82C27 45.03%, #801917 71.74%, #420200 99.32%)",
+					"name": "Primary Gradient"
+				}
+			]
+		}
+	}
+}

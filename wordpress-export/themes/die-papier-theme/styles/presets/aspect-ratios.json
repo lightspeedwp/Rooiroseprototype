@@ -1,0 +1,7 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"styles": {
+		"css": ".aspect-square { aspect-ratio: 1 / 1; } .aspect-video { aspect-ratio: 16 / 9; } .aspect-4-3 { aspect-ratio: 4 / 3; } .aspect-3-2 { aspect-ratio: 3 / 2; } .aspect-3-4 { aspect-ratio: 3 / 4; } .aspect-newspaper { aspect-ratio: 210 / 297; }"
+	}
+}

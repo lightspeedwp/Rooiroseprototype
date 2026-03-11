@@ -1,0 +1,28 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"title": "Default",
+	"slug": "yoast-seo-breadcrumbs-default",
+	"blockTypes": ["yoast-seo/breadcrumbs"],
+	"styles": {
+		"typography": {
+			"fontSize": "var:preset|font-size|small"
+		},
+		"color": {
+			"text": "var:preset|color|main-accent"
+		},
+		"elements": {
+			"link": {
+				"color": {
+					"text": "var:preset|color|main-accent"
+				},
+				":hover": {
+					"typography": {
+						"textDecoration": "underline"
+					}
+				}
+			}
+		},
+		"css": ".yoast-breadcrumbs { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; } .yoast-breadcrumbs span { display: inline; }"
+	}
+}

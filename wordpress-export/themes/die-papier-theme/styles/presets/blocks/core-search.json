@@ -1,0 +1,15 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"styles": {
+		"blocks": {
+			"core/search": {
+				"css": "& .wp-block-search__input { border-radius: var(--wp--custom--border-radius--200); border-color: var(--wp--preset--color--border-light); }",
+				"typography": {
+					"fontSize": "var:preset|font-size|base",
+					"lineHeight": "1.6"
+				}
+			}
+		}
+	}
+}

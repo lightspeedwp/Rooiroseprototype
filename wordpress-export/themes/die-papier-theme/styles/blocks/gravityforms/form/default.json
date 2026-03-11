@@ -1,0 +1,41 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"title": "Default",
+	"slug": "gravityforms-form-default",
+	"blockTypes": ["gravityforms/form"],
+	"styles": {
+		"spacing": {
+			"blockGap": "var:preset|spacing|medium"
+		},
+		"elements": {
+			"button": {
+				"color": {
+					"background": "var:preset|color|primary",
+					"text": "var:preset|color|base"
+				},
+				"border": {
+					"radius": "var:custom|border-radius|200"
+				},
+				"spacing": {
+					"padding": {
+						"top": "0.75rem",
+						"right": "1.5rem",
+						"bottom": "0.75rem",
+						"left": "1.5rem"
+					}
+				},
+				"typography": {
+					"fontSize": "var:preset|font-size|base",
+					"fontWeight": "600"
+				},
+				":hover": {
+					"color": {
+						"background": "var:preset|color|primary-alt"
+					}
+				}
+			}
+		},
+		"css": ".gform_wrapper input[type=\"text\"], .gform_wrapper input[type=\"email\"], .gform_wrapper input[type=\"tel\"], .gform_wrapper input[type=\"url\"], .gform_wrapper textarea, .gform_wrapper select { border: 1px solid var(--wp--preset--color--border-light); border-radius: var(--wp--custom--border-radius--200); padding: 0.75rem; font-size: var(--wp--preset--font-size--base); } .gform_wrapper label { color: var(--wp--preset--color--main); font-weight: 600; margin-bottom: 0.5rem; display: block; } .gform_wrapper .gfield_description { color: var(--wp--preset--color--main-accent); font-size: var(--wp--preset--font-size--small); margin-top: 0.25rem; }"
+	}
+}

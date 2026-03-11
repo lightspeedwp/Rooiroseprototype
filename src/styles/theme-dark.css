@@ -1,0 +1,87 @@
+/* ── Dark Mode Token Overrides ─────────────────────────────────────────────── */
+/* Split from theme.css for memory optimization (2026-03-05)                   */
+/* Contains: .dark selector with all token overrides                           */
+
+.dark {
+  /* Die Papier Brand Tokens — Dark */
+  --custom-primary: #e82c27;
+  --custom-primary-2: #c41f20;
+  --brand-navy-light: #8eadc8;
+  --brand-navy: #172134; /* Keep actual navy for backgrounds — text overrides use dark:text-foreground */
+  --base: #0f1923;
+  --base-2: #162233;
+  --base-3: #1e3044;
+  --contrast: #e8e8ed;
+
+  /* ── Dark Mode Shadow Tokens ───────────────────────────────
+   * Stronger shadows for dark backgrounds where standard
+   * Tailwind shadow-sm/md/lg are invisible.
+   * Slug scale mirrors --wp--preset--shadow-- (100–600).
+   * ──────────────────────────────────────────────────────── */
+  --shadow-dark-100: 0 1px 2px rgba(0, 0, 0, 0.5); /* subtle — cards, panels          */
+  --shadow-dark-200: 0 1px 4px rgba(0, 0, 0, 0.3); /* light  — interactive cards       */
+  --shadow-dark-300: 0 4px 12px rgba(0, 0, 0, 0.4); /* medium — card hover, dropdowns   */
+  --shadow-dark-400: 0 10px 15px rgba(0, 0, 0, 0.5); /* large  — modals, overlays        */
+  --shadow-dark-500: 0 8px 24px rgba(0, 0, 0, 0.5); /* XL     — search overlay          */
+  --shadow-dark-600: 0 10px 30px rgba(0, 0, 0, 0.4); /* hero   — newsletter container    */
+  --shadow-dark-up: 0 -4px 20px rgba(0, 0, 0, 0.4); /* upward — cookie banner           */
+
+  /* ShadCN System Tokens — Dark */
+  --background: #0f1923;
+  --foreground: #e8e8ed;
+  --card: #162233;
+  --card-foreground: #e8e8ed;
+  --popover: #162233;
+  --popover-foreground: #e8e8ed;
+  --primary: #e82c27;
+  --primary-foreground: #ffffff;
+  --secondary: #1e3044;
+  --secondary-foreground: #b0c8dc;
+  --muted: #1e3044;
+  --muted-foreground: #95a3b1; /* TYP-003 fix: was #8896A4 (4.36:1 on #162233) — now ~4.8:1 on cards */
+  --accent: #1e3044;
+  --accent-foreground: #b0c8dc;
+  --destructive: #e82c27;
+  --destructive-foreground: #ffffff;
+  --border: #1e3044;
+  --input: #253d54;
+  --ring: #e82c27;
+  --placeholder: #5a6b7d; /* Dark mode placeholder text — intentionally darker than --muted-foreground */
+
+  /* ── Accessible Text Link Red — Dark Mode ──────────────────
+   * TYP-017 fix: #E82C27 on #162233 (dark card) = ~3.45:1 (fails
+   * WCAG AA 4.5:1). Dark mode uses #F06560 (~4.8:1 on #162233).
+   * ──────────────────────────────────────────────────────────── */
+  --text-link-red: #f06560;
+
+  /* Focus Ring — dark mode accessible focus indicator */
+  --color-focus-ring: #f06560;
+
+  /* ── Dark Mode WP Shadow Preset Overrides ──────────────────
+   * Standard light-mode shadows are invisible on dark backgrounds.
+   * Override --wp--preset--shadow-- with stronger dark values.
+   * ──────────────────────────────────────────────────────────── */
+  --wp--preset--shadow--100: var(--shadow-dark-100);
+  --wp--preset--shadow--200: var(--shadow-dark-200);
+  --wp--preset--shadow--300: var(--shadow-dark-300);
+  --wp--preset--shadow--400: var(--shadow-dark-400);
+  --wp--preset--shadow--500: var(--shadow-dark-500);
+  --wp--preset--shadow--600: var(--shadow-dark-600);
+
+  /* Charts — Dark */
+  --chart-1: oklch(0.55 0.25 41.116);
+  --chart-2: oklch(0.65 0.13 184.704);
+  --chart-3: oklch(0.5 0.09 227.392);
+  --chart-4: oklch(0.78 0.17 84.429);
+  --chart-5: oklch(0.72 0.17 70.08);
+
+  /* Sidebar — Dark */
+  --sidebar: #0f1923;
+  --sidebar-foreground: #e8e8ed;
+  --sidebar-primary: #e82c27;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #1e3044;
+  --sidebar-accent-foreground: #e8e8ed;
+  --sidebar-border: #1e3044;
+  --sidebar-ring: #e82c27;
+}

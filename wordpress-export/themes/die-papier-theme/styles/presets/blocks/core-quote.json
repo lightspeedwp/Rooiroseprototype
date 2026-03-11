@@ -1,0 +1,59 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"styles": {
+		"blocks": {
+			"core/quote": {
+				"border": {
+					"style": "solid",
+					"width": "0 0 0 4px",
+					"color": "var:preset|color|primary"
+				},
+				"spacing": {
+					"blockGap": "var:preset|spacing|small",
+					"margin": {
+						"left": "0",
+						"right": "0"
+					},
+					"padding": {
+						"top": "var:preset|spacing|small",
+						"right": "var:preset|spacing|medium",
+						"bottom": "var:preset|spacing|small",
+						"left": "var:preset|spacing|medium"
+					}
+				},
+				"typography": {
+					"fontStyle": "italic"
+				},
+				"elements": {
+					"cite": {
+						"typography": {
+							"fontSize": "var:preset|font-size|small",
+							"fontStyle": "normal",
+							"fontWeight": "400"
+						}
+					}
+				},
+				"css": "&.has-text-align-right { border-width: 0 4px 0 0; } &.has-text-align-center { border-width: 0; border-inline: 0; padding-inline: 0; }",
+				"variations": {
+					"plain": {
+						"border": {
+							"color": "transparent",
+							"style": "none",
+							"width": "0",
+							"radius": "0"
+						},
+						"spacing": {
+							"padding": {
+								"top": "0",
+								"right": "0",
+								"bottom": "0",
+								"left": "0"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,15 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"title": "Brand Line",
+	"slug": "brand-line",
+	"blockTypes": ["core/separator"],
+	"styles": {
+		"color": {
+			"text": "var:preset|color|primary"
+		},
+		"border": {
+			"width": "0px"
+		}
+	}
+}

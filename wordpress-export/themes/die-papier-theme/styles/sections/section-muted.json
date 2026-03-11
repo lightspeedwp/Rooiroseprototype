@@ -1,0 +1,147 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"title": "Gedempte afdeling",
+	"slug": "section-muted",
+	"blockTypes": ["core/group", "core/columns", "core/column", "core/stack", "core/grid"],
+	"styles": {
+		"color": {
+			"background": "var:preset|color|tertiary",
+			"text": "var:preset|color|main"
+		},
+		"spacing": {
+			"blockGap": {
+				"top": "var:preset|spacing|medium",
+				"left": "var:preset|spacing|medium"
+			}
+		},
+		"elements": {
+			"button": {
+				"color": {
+					"background": "var:preset|color|primary",
+					"text": "var:preset|color|base"
+				},
+				":hover": {
+					"color": {
+						"background": "var:preset|color|primary-alt"
+					}
+				}
+			},
+			"link": {
+				"color": {
+					"text": "var:preset|color|accent"
+				},
+				":hover": {
+					"color": {
+						"text": "var:preset|color|primary"
+					}
+				}
+			},
+			"heading": {
+				"color": {
+					"text": "var:preset|color|main"
+				}
+			}
+		},
+		"blocks": {
+			"core/separator": {
+				"color": {
+					"text": "var:preset|color|border-light"
+				},
+				"border": {
+					"color": "var:preset|color|border-light"
+				}
+			},
+			"core/heading": {
+				"color": {
+					"text": "var:preset|color|main"
+				}
+			},
+			"core/paragraph": {
+				"color": {
+					"text": "var:preset|color|main"
+				}
+			},
+			"core/details": {
+				"color": {
+					"text": "var:preset|color|main"
+				},
+				"border": {
+					"color": "var:preset|color|border-light",
+					"width": "0 0 1px 0",
+					"style": "solid"
+				}
+			},
+			"core/search": {
+				"color": {
+					"text": "var:preset|color|main"
+				},
+				"border": {
+					"color": "var:preset|color|border-light",
+					"width": "1px"
+				},
+				"elements": {
+					"button": {
+						"color": {
+							"background": "var:preset|color|primary",
+							"text": "var:preset|color|base"
+						},
+						":hover": {
+							"color": {
+								"background": "var:preset|color|primary-alt"
+							}
+						}
+					}
+				}
+			},
+			"core/image": {
+				"color": {
+					"text": "var:preset|color|main-accent"
+				}
+			},
+			"core/gallery": {
+				"color": {
+					"text": "var:preset|color|main-accent"
+				}
+			},
+			"core/quote": {
+				"color": {
+					"text": "var:preset|color|main"
+				},
+				"border": {
+					"color": "var:preset|color|primary"
+				}
+			},
+			"core/pullquote": {
+				"color": {
+					"text": "var:preset|color|main"
+				},
+				"border": {
+					"color": "var:preset|color|primary"
+				}
+			},
+			"core/list": {
+				"color": {
+					"text": "var:preset|color|main"
+				}
+			},
+			"core/navigation": {
+				"color": {
+					"text": "var:preset|color|main"
+				},
+				"elements": {
+					"link": {
+						"color": {
+							"text": "var:preset|color|main"
+						},
+						":hover": {
+							"color": {
+								"text": "var:preset|color|primary"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

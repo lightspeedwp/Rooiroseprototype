@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"title": "No Bullets",
+	"slug": "no-bullets",
+	"blockTypes": ["core/list"],
+	"styles": {
+		"spacing": {
+			"padding": {
+				"left": "0"
+			},
+			"margin": {
+				"left": "0"
+			}
+		},
+		"css": "list-style-type: none;"
+	}
+}

@@ -1,0 +1,20 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"title": "3:2 Aspect Ratio",
+	"slug": "aspect-3-2",
+	"blockTypes": ["core/image"],
+	"styles": {
+		"dimensions": {
+			"aspectRatio": "3/2"
+		},
+		"spacing": {
+			"margin": {
+				"top": "0",
+				"right": "0",
+				"bottom": "0",
+				"left": "0"
+			}
+		}
+	}
+}

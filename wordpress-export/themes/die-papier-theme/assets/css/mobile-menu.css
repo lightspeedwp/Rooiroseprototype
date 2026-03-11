@@ -1,0 +1,170 @@
+/**
+ * Mobile Menu Styles
+ * 
+ * Slide-in mobile menu panel with overlay.
+ * 
+ * @package DiePapierTheme
+ * @since 1.0.0
+ */
+
+/* Mobile Menu Toggle Button (Hamburger Icon) */
+.mobile-menu-toggle {
+	display: none; /* Hidden by default, shown only on mobile */
+	background: transparent;
+	border: none;
+	padding: 8px;
+	cursor: pointer;
+	color: var(--wp--preset--color--main);
+	z-index: 1001;
+}
+
+.mobile-menu-toggle svg {
+	display: block;
+	width: 24px;
+	height: 24px;
+}
+
+.mobile-menu-toggle:hover {
+	color: var(--wp--preset--color--primary);
+}
+
+.mobile-menu-toggle:focus {
+	outline: 2px solid var(--wp--preset--color--primary);
+	outline-offset: 2px;
+}
+
+/* Show hamburger only on mobile (<768px) */
+@media (max-width: 767px) {
+	.mobile-menu-toggle {
+		display: block;
+	}
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(20, 33, 53, 0.6); /* Navy with 60% opacity */
+	z-index: 1000;
+	display: none; /* Hidden by default, shown via JS */
+	cursor: pointer;
+}
+
+/* Mobile Menu Panel */
+.mobile-menu-panel {
+	position: fixed;
+	top: 0;
+	right: -320px; /* Hidden off-screen */
+	bottom: 0;
+	width: 320px;
+	max-width: 85vw;
+	overflow-y: auto;
+	z-index: 1001;
+	transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	box-shadow: -4px 0 12px rgba(0, 0, 0, 0.15);
+}
+
+.mobile-menu-panel.is-active {
+	right: 0; /* Slide in */
+}
+
+/* Close Button */
+.mobile-menu-close-btn {
+	background: transparent;
+	border: none;
+	padding: 8px;
+	cursor: pointer;
+	color: var(--wp--preset--color--base);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: auto;
+}
+
+.mobile-menu-close-btn:hover {
+	color: var(--wp--preset--color--primary);
+}
+
+.mobile-menu-close-btn:focus {
+	outline: 2px solid var(--wp--preset--color--base);
+	outline-offset: 2px;
+	border-radius: 4px;
+}
+
+/* Navigation Links in Mobile Menu */
+.mobile-menu-panel .wp-block-navigation {
+	font-size: var(--wp--preset--font-size--medium);
+	font-weight: 600;
+}
+
+.mobile-menu-panel .wp-block-navigation a {
+	color: var(--wp--preset--color--base);
+	text-decoration: none;
+	display: block;
+	padding: 8px 0;
+}
+
+.mobile-menu-panel .wp-block-navigation a:hover,
+.mobile-menu-panel .wp-block-navigation a:focus {
+	color: var(--wp--preset--color--primary);
+	text-decoration: underline;
+}
+
+/* Utility Links */
+.mobile-menu-panel .wp-block-paragraph a {
+	color: var(--wp--preset--color--tertiary);
+	text-decoration: none;
+}
+
+.mobile-menu-panel .wp-block-paragraph a:hover,
+.mobile-menu-panel .wp-block-paragraph a:focus {
+	color: var(--wp--preset--color--base);
+	text-decoration: underline;
+}
+
+/* Subscribe CTA Card */
+.mobile-menu-panel .wp-block-group.has-primary-background-color {
+	margin-top: auto; /* Push to bottom if space allows */
+}
+
+/* Separator in Mobile Menu */
+.mobile-menu-panel .wp-block-separator {
+	opacity: 0.3;
+}
+
+/* Scrollbar Styling for Mobile Menu Panel */
+.mobile-menu-panel::-webkit-scrollbar {
+	width: 6px;
+}
+
+.mobile-menu-panel::-webkit-scrollbar-track {
+	background: rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu-panel::-webkit-scrollbar-thumb {
+	background: rgba(255, 255, 255, 0.3);
+	border-radius: 3px;
+}
+
+.mobile-menu-panel::-webkit-scrollbar-thumb:hover {
+	background: rgba(255, 255, 255, 0.5);
+}
+
+/* Hide Desktop Navigation on Mobile */
+@media (max-width: 767px) {
+	.wp-block-navigation:not(.mobile-menu-panel .wp-block-navigation) {
+		display: none;
+	}
+}
+
+/* Accessibility: Reduce Motion */
+@media (prefers-reduced-motion: reduce) {
+	.mobile-menu-panel {
+		transition: none;
+	}
+}
+
+/* Fix for body scroll when menu is open */
+body.mobile-menu-open {
+	overflow: hidden;
+}

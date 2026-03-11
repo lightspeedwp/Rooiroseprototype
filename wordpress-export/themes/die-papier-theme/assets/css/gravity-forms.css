@@ -1,0 +1,237 @@
+/**
+ * Gravity Forms Theme Styling
+ * Die Papier WordPress Theme
+ *
+ * @package DiePapierTheme
+ * @since 1.0.0
+ */
+
+/* === 1. Form Container === */
+.gform_wrapper {
+    font-family: var(--wp--preset--font-family--inter);
+}
+
+/* === 2. Field Layout === */
+.gform_wrapper .gform_fields {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.gform_wrapper .gfield {
+    margin: 0 !important;
+}
+
+/* === 3. Labels === */
+.gform_wrapper label.gfield_label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--wp--preset--color--contrast);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.gform_wrapper .gfield_required {
+    color: var(--wp--preset--color--primary);
+}
+
+/* === 4. Input Fields === */
+.gform_wrapper input[type="text"],
+.gform_wrapper input[type="email"],
+.gform_wrapper input[type="tel"],
+.gform_wrapper input[type="url"],
+.gform_wrapper input[type="number"],
+.gform_wrapper textarea,
+.gform_wrapper select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid var(--wp--preset--color--base-3);
+    background: var(--wp--preset--color--base);
+    color: var(--wp--preset--color--contrast);
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gform_wrapper input[type="text"]:focus,
+.gform_wrapper input[type="email"]:focus,
+.gform_wrapper input[type="tel"]:focus,
+.gform_wrapper input[type="url"]:focus,
+.gform_wrapper input[type="number"]:focus,
+.gform_wrapper textarea:focus,
+.gform_wrapper select:focus {
+    outline: none;
+    border-color: var(--wp--preset--color--primary);
+    box-shadow: 0 0 0 3px rgba(215, 0, 37, 0.1);
+}
+
+.gform_wrapper textarea {
+    resize: vertical;
+    min-height: 150px;
+    line-height: 1.6;
+}
+
+/* === 5. Submit Button === */
+.gform_wrapper .gform_footer {
+    margin-top: 8px !important;
+    padding: 0 !important;
+}
+
+.gform_wrapper input[type="submit"] {
+    background-color: var(--wp--preset--color--primary);
+    color: #FFFFFF;
+    border: none;
+    padding: 14px 40px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.gform_wrapper input[type="submit"]:hover {
+    background-color: #b8001f; /* Darker red */
+}
+
+.gform_wrapper input[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+.gform_wrapper input[type="submit"]:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* === 6. Validation Errors === */
+.gform_wrapper .gfield_error {
+    background-color: rgba(215, 0, 37, 0.05);
+    border-left: 3px solid var(--wp--preset--color--primary);
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 16px !important;
+}
+
+.gform_wrapper .gfield_error .gfield_label {
+    color: var(--wp--preset--color--primary);
+}
+
+.gform_wrapper .validation_message {
+    color: var(--wp--preset--color--primary);
+    font-size: 14px;
+    margin-top: 8px;
+    display: block;
+}
+
+.gform_wrapper .gfield_error input,
+.gform_wrapper .gfield_error textarea,
+.gform_wrapper .gfield_error select {
+    border-color: var(--wp--preset--color--primary);
+}
+
+/* === 7. Confirmation Message === */
+.gform_confirmation_wrapper {
+    background-color: rgba(76, 175, 80, 0.1); /* Green tint */
+    border-left: 3px solid #4CAF50;
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 24px;
+}
+
+.gform_confirmation_message {
+    color: var(--wp--preset--color--contrast);
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* === 8. AJAX Loading === */
+.gform_ajax_spinner {
+    margin-left: 12px;
+    vertical-align: middle;
+}
+
+/* === 9. Newsletter Form (Footer Variant) === */
+.is-style-section-red .gform_wrapper form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.is-style-section-red .gform_wrapper .gform_fields {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.is-style-section-red .gform_wrapper .gfield {
+    flex: 1;
+    margin: 0 !important;
+}
+
+.is-style-section-red .gform_wrapper .gfield_label {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0;
+    border: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+.is-style-section-red .gform_wrapper input[type="email"] {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    color: #FFFFFF;
+}
+
+.is-style-section-red .gform_wrapper input[type="email"]::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.is-style-section-red .gform_wrapper input[type="submit"] {
+    background-color: var(--wp--preset--color--secondary); /* Navy */
+    color: #FFFFFF;
+    padding: 12px 32px;
+}
+
+.is-style-section-red .gform_wrapper input[type="submit"]:hover {
+    background-color: #0f1825;
+}
+
+/* Mobile responsive for newsletter footer */
+@media (max-width: 768px) {
+    .is-style-section-red .gform_wrapper .gform_fields {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .is-style-section-red .gform_wrapper input[type="submit"] {
+        width: 100%;
+    }
+}
+
+/* === 10. Dark Section Overrides === */
+.is-style-section-navy .gform_wrapper .gfield_label,
+.is-style-section-image .gform_wrapper .gfield_label {
+    color: #FFFFFF;
+}
+
+.is-style-section-navy .gform_wrapper input[type="text"],
+.is-style-section-navy .gform_wrapper input[type="email"],
+.is-style-section-navy .gform_wrapper textarea,
+.is-style-section-image .gform_wrapper input[type="text"],
+.is-style-section-image .gform_wrapper input[type="email"],
+.is-style-section-image .gform_wrapper textarea {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #FFFFFF;
+}
+
+.is-style-section-navy .gform_wrapper input::placeholder,
+.is-style-section-navy .gform_wrapper textarea::placeholder,
+.is-style-section-image .gform_wrapper input::placeholder,
+.is-style-section-image .gform_wrapper textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}

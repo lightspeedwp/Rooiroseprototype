@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"title": "No Border",
+	"slug": "no-border",
+	"blockTypes": ["woocommerce/product-filters"],
+	"styles": {
+		"spacing": {
+			"blockGap": "var:preset|spacing|large",
+			"padding": {
+				"top": "0",
+				"right": "0",
+				"bottom": "0",
+				"left": "0"
+			}
+		},
+		"border": {
+			"width": "0"
+		}
+	}
+}

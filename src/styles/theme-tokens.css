@@ -1,0 +1,435 @@
+/* ── Theme Tokens — CSS Custom Properties ─────────────────────────────────── */
+/* Split from theme.css for memory optimization (2026-03-05)                   */
+/* Contains: @custom-variant, :root light-mode tokens                          */
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* nm-theme / Die Papier Tokens */
+  --custom-primary: #e82c27; /* Updated Brand Red */
+  --custom-primary-2: #c41f20; /* Darker shade of new red */
+  --brand-navy-light: #1a3a5f;
+  --brand-navy: #172134; /* Updated Navy from #142135 */
+  --brand-navy-dark: #0f1923; /* Darkest navy — pressed/active states */
+  --brand-warm-gray: #ebe7e7; /* Warm off-white — social post backgrounds */
+  --competition-dark-from: #2a2518; /* Competition gradient dark-from (dark mode) */
+  --competition-dark-to: #2a1e18; /* Competition gradient dark-to  (dark mode) */
+  --gradient-brand-red: linear-gradient(
+    81.87deg,
+    #ce0400 0.24%,
+    #ff0600 18.33%,
+    #e82c27 45.03%,
+    #801917 71.74%,
+    #420200 99.32%
+  );
+  --base: #ffffff;
+  --base-2: #f0f0f0;
+  --base-3: #dddddd;
+  --contrast: #2c2c2c;
+
+  /* Typography */
+  --font-inter: "Inter", sans-serif;
+  --font-heading: "Roboto Serif", serif;
+  --font-raleway: var(--font-heading); /* Backwards compat */
+
+  /* ── V2 Typography Scale ─────────────────────────────────── */
+  /* Source: Figma "Desktop/Mobile Font Styles" frames (2026-02-20) */
+  /* Viewport range: 390px (mobile) → 1280px (desktop)            */
+
+  /* H1: 36px → 48px | line-height: 36px → 48px */
+  --text-h1: clamp(2.25rem, 1.92rem + 1.35vw, 3rem);
+  --lh-h1: clamp(
+    2.5rem,
+    2.14rem + 1.46vw,
+    3.25rem
+  ); /* 40px → 52px (~110% of font-size) — TYP-008 fix: was 1:1 ratio */
+  --ls-h1: -0.24px;
+  --fvs-h1:
+    "GRAD" -50, "wdth" 64, "opsz" 48; /* mobile opsz: 36 */
+
+  /* H2: 28px → 30px | line-height: 32px → 35px */
+  --text-h2: clamp(1.75rem, 1.69rem + 0.22vw, 1.875rem);
+  --lh-h2: clamp(
+    2rem,
+    1.94rem + 0.25vw,
+    2.1875rem
+  ); /* 32px → 35px (~1.14-1.17x) — TYP-009 fix: was 1.07x */
+  --ls-h2: -0.24px;
+  --fvs-h2:
+    "GRAD" -50, "wdth" 64, "opsz" 30; /* mobile opsz: 28 */
+
+  /* H3: 20px → 24px | line-height: 28px | fluid */
+  --text-h3: clamp(
+    1.25rem,
+    1.14rem + 0.45vw,
+    1.5rem
+  ); /* 20px → 24px fluid — T-001 */
+  --lh-h3: 1.75rem; /* 28px */
+  --ls-h3: 0; /* TYP-004 fix: was -0.24px — condensed wdth 64 already provides visual density */
+  --fvs-h3:
+    "GRAD" 0, "wdth" 64, "opsz" 24; /* TYP-012 fix: was GRAD -50 — neutral grade preserves stroke weight at 24px */
+
+  /* H4: 18px → 20px | line-height: 28px | fluid */
+  --text-h4: clamp(
+    1.125rem,
+    1.07rem + 0.22vw,
+    1.25rem
+  ); /* 18px → 20px fluid — T-002 */
+  --lh-h4: 1.75rem; /* 28px */
+  --ls-h4: 0; /* TYP-004 fix: was -0.24px — condensed wdth 64 already provides visual density */
+  --fvs-h4: "GRAD" 0, "wdth" 64, "opsz" 20;
+
+  /* H5: Inter Bold 700 | 16px → 18px | line-height: 24px | fluid */
+  --text-h5: clamp(
+    1rem,
+    0.94rem + 0.22vw,
+    1.125rem
+  ); /* 16px → 18px fluid — T-003 */
+  --lh-h5: 1.5rem; /* 24px */
+  --ls-h5: -0.09px;
+
+  /* H6: Inter SemiBold 600 | 16px | line-height: 24px | UPPERCASE */
+  --text-h6: 1rem; /* 16px */
+  --lh-h6: 1.5rem; /* 24px */
+  --ls-h6: 0.8px;
+
+  /* Body — Inter Regular 400 */
+  --text-p1: clamp(
+    1rem,
+    0.94rem + 0.22vw,
+    1.125rem
+  ); /* 16px → 18px fluid — T-004 */
+  --lh-p1: 1.6875rem; /* 27px — TYP-010 fix: was 26px (1.44x), now 1.50x for WCAG AAA compliance */
+
+  --text-p2: 1rem; /* 16px */
+  --lh-p2: 1.5rem; /* 24px */
+
+  --text-p3: 0.875rem; /* 14px */
+  --lh-p3: 1.375rem; /* 22px */
+
+  --text-p4: 0.75rem; /* 12px */
+  --lh-p4: 1.125rem; /* 18px */
+
+  --text-small: 0.6875rem; /* 11px */
+  --lh-small: 1rem; /* 16px */
+
+  /* Compact Card Heading — Roboto Serif at 16px for small card titles — T-035 */
+  --text-h-compact: 1rem; /* 16px */
+  --lh-h-compact: 1.5rem; /* 24px */
+  --fvs-h-compact:
+    "GRAD" 0, "wdth" 64, "opsz" 16; /* opsz matched to 16px */
+  --ls-h-compact: 0; /* neutral */
+
+  /* ShadCN / System Defaults */
+  --font-size: 16px;
+  --background: #ffffff;
+  --foreground: #2c2c2c; /* Mapped to contrast */
+  --card: #ffffff;
+  --card-foreground: #2c2c2c;
+  --popover: #ffffff;
+  --popover-foreground: #2c2c2c;
+  --primary: #e82c27; /* Mapped to custom-primary */
+  --primary-foreground: #ffffff;
+  --secondary: #f0f0f0; /* Mapped to base-2 */
+  --secondary-foreground: #1a3a5f;
+  --muted: #f0f0f0;
+  --muted-foreground: #636375; /* TYP-002 fix: was #717182 (4.22:1 on #F0F0F0) — now ~5.0:1 on gray, ~5.7:1 on white */
+  --accent: #f0f0f0;
+  --accent-foreground: #1a3a5f;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: #dddddd; /* Mapped to base-3 */
+  --input: #dddddd;
+  --ring: #e82c27;
+
+  /* ── Accessible Text Link Red ────────────────────────────────
+   * TYP-001 fix: #E82C27 on white = ~4.35:1 (fails WCAG AA 4.5:1
+   * for normal-size text). --text-link-red uses the darker brand
+   * red #C41F20 (~5.2:1) for body-size text links.
+   * Keep --primary (#E82C27) for buttons, badges, large display.
+   * ──────────────────────────────────────────────────────────── */
+  --text-link-red: #c41f20;
+
+  /* Focus Ring — accessible focus indicator token */
+  --color-focus-ring: #e82c27;
+
+  --radius: 0.5rem;
+
+  /* Spacing (Matches nm-theme typically) */
+  --space-10: 0.25rem;
+  --space-20: 0.5rem;
+  --space-30: 0.75rem;
+  --space-40: 1rem;
+  --space-50: 1.25rem;
+  --space-60: 1.5rem;
+  --space-80: 2rem;
+  --space-100: 2.5rem;
+
+  /* Charts */
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: #030213;
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+
+  /* ── WordPress Preset Bridge Variables ──────────────────────────
+   * These mirror the CSS custom properties that WordPress generates
+   * from theme.json presets (--wp--preset--{feature}--{slug}).
+   * Defined here so React components can reference the same variable
+   * names that will exist in the WordPress environment.
+   * Source convention: /guidelines/wordpress-migration/presets-and-tokens.md
+   * DO NOT define values here directly — point to existing tokens.
+   * ──────────────────────────────────────────────────────────────── */
+
+  /* Colours — semantic slugs */
+  --wp--preset--color--base: var(--base); /* #FFFFFF */
+  --wp--preset--color--base-2: var(--base-2); /* #F0F0F0 */
+  --wp--preset--color--base-3: var(--base-3); /* #DDDDDD */
+  --wp--preset--color--contrast: var(--contrast); /* #2c2c2c */
+  --wp--preset--color--contrast-2: var(
+    --muted-foreground
+  ); /* #636375 (was #717182, TYP-002 fix) */
+  --wp--preset--color--primary: var(
+    --custom-primary
+  ); /* #E82C27 */
+  --wp--preset--color--primary-hover: var(
+    --custom-primary-2
+  ); /* #C41F20 */
+  --wp--preset--color--brand-navy: var(
+    --brand-navy
+  ); /* #172134 */
+  --wp--preset--color--brand-navy-light: var(
+    --brand-navy-light
+  ); /* #1A3A5F */
+  --wp--preset--color--foreground: var(
+    --foreground
+  ); /* #2c2c2c light, #E8E8ED dark */
+  --wp--preset--color--background: var(
+    --background
+  ); /* #ffffff light, #0F1923 dark */
+  --wp--preset--color--card: var(
+    --card
+  ); /* #ffffff light, #162233 dark */
+  --wp--preset--color--card-foreground: var(
+    --card-foreground
+  ); /* #2c2c2c light, #E8E8ED dark */
+  --wp--preset--color--muted: var(
+    --muted
+  ); /* #F0F0F0 light, #1E3044 dark */
+  --wp--preset--color--muted-foreground: var(
+    --muted-foreground
+  ); /* #636375 light, #95A3B1 dark */
+  --wp--preset--color--accent: var(
+    --accent
+  ); /* #F0F0F0 light, #1E3044 dark */
+  --wp--preset--color--accent-foreground: var(
+    --accent-foreground
+  ); /* #1A3A5F light, #B0C8DC dark */
+  --wp--preset--color--border: var(
+    --border
+  ); /* #DDDDDD light, #1E3044 dark */
+  --wp--preset--color--input: var(
+    --input
+  ); /* #DDDDDD light, #253D54 dark */
+  --wp--preset--color--destructive: var(
+    --destructive
+  ); /* #d4183d light, #E82C27 dark */
+  --wp--preset--color--text-link: var(
+    --text-link-red
+  ); /* #C41F20 light, #F06560 dark — TYP-001/TYP-017 accessible links */
+
+  /* Gradients — semantic slugs */
+  --wp--preset--gradient--brand-red: var(--gradient-brand-red);
+
+  /* Font Families — semantic slugs (brand-serif / brand-sans) */
+  --wp--preset--font-family--brand-serif: var(
+    --font-heading
+  ); /* 'Roboto Serif', serif */
+  --wp--preset--font-family--brand-sans: var(
+    --font-inter
+  ); /* 'Inter', sans-serif   */
+
+  /* Font Sizes — numeric-only slugs (Die Papier scale)
+   * 100=11px  200=12px  300=14px  400=16px  500=16→18px
+   * 600=18→20px  700=20→24px  800=H2fluid  900=H1fluid  */
+  --wp--preset--font-size--100: var(
+    --text-small
+  ); /* 0.6875rem / 11px — Small / P5  */
+  --wp--preset--font-size--200: var(
+    --text-p4
+  ); /* 0.75rem   / 12px — P4          */
+  --wp--preset--font-size--300: var(
+    --text-p3
+  ); /* 0.875rem  / 14px — P3          */
+  --wp--preset--font-size--400: var(
+    --text-p2
+  ); /* 1rem      / 16px — P2, H6      */
+  --wp--preset--font-size--500: var(
+    --text-p1
+  ); /* clamp 16→18px    — P1, H5 fluid — T-008 */
+  --wp--preset--font-size--600: var(
+    --text-h4
+  ); /* clamp 18→20px    — H4 fluid    — T-008 */
+  --wp--preset--font-size--700: var(
+    --text-h3
+  ); /* clamp 20→24px    — H3 fluid    — T-008 */
+  --wp--preset--font-size--800: var(
+    --text-h2
+  ); /* clamp 28→30px    — H2 fluid    */
+  --wp--preset--font-size--900: var(
+    --text-h1
+  ); /* clamp 36→48px    — H1 fluid    */
+
+  /* ── Line Height Scale — numeric-only slugs ─────────────────
+   * Parallels --wp--preset--font-size-- scale.
+   * Slugs 400-500: heading LH used; body text LH provided
+   * by body/article-content context (P1: 27px ≠ H5: 24px).
+   * T-005
+   * ──────────────────────────────────────────────────────────── */
+  --wp--custom--line-height--100: var(
+    --lh-small
+  ); /* 16px  — Small/11px  */
+  --wp--custom--line-height--200: var(
+    --lh-p4
+  ); /* 18px  — P4/12px     */
+  --wp--custom--line-height--300: var(
+    --lh-p3
+  ); /* 22px  — P3/14px     */
+  --wp--custom--line-height--400: var(
+    --lh-h6
+  ); /* 24px  — H6/P2/16px  */
+  --wp--custom--line-height--500: var(
+    --lh-h5
+  ); /* 24px  — H5/18px     */
+  --wp--custom--line-height--600: var(
+    --lh-h4
+  ); /* 28px  — H4/20px     */
+  --wp--custom--line-height--700: var(
+    --lh-h3
+  ); /* 28px  — H3/24px     */
+  --wp--custom--line-height--800: var(
+    --lh-h2
+  ); /* 32→35px fluid — H2  */
+  --wp--custom--line-height--900: var(
+    --lh-h1
+  ); /* 40→52px fluid — H1  */
+  --wp--custom--line-height--compact: var(
+    --lh-h-compact
+  ); /* 24px — compact cards */
+
+  /* ── Letter Spacing Scale — numeric-only slugs ──────────────
+   * Heading letter-spacing at each slug.
+   * 100–300 omitted (body text — always 0, no variable needed).
+   * T-006
+   * ──────────────────────────────────────────────────────────── */
+  --wp--custom--letter-spacing--400: var(
+    --ls-h6
+  ); /* +0.8px   — H6 uppercase */
+  --wp--custom--letter-spacing--500: var(
+    --ls-h5
+  ); /* -0.09px  — H5           */
+  --wp--custom--letter-spacing--600: var(
+    --ls-h4
+  ); /* 0        — H4           */
+  --wp--custom--letter-spacing--700: var(
+    --ls-h3
+  ); /* 0        — H3           */
+  --wp--custom--letter-spacing--800: var(
+    --ls-h2
+  ); /* -0.24px  — H2           */
+  --wp--custom--letter-spacing--900: var(
+    --ls-h1
+  ); /* -0.24px  — H1           */
+  --wp--custom--letter-spacing--compact: var(
+    --ls-h-compact
+  ); /* 0 — compact     */
+
+  /* ── Font Variation Settings — numeric-only slugs ───────────
+   * Roboto Serif heading FVS at each slug.
+   * 100–500 omitted (Inter — no variable font axes).
+   * T-007
+   * ──────────────────────────────────────────────────────────── */
+  --wp--custom--fvs--600: var(
+    --fvs-h4
+  ); /* 'GRAD' 0, 'wdth' 64, 'opsz' 20   */
+  --wp--custom--fvs--700: var(
+    --fvs-h3
+  ); /* 'GRAD' 0, 'wdth' 64, 'opsz' 24   */
+  --wp--custom--fvs--800: var(
+    --fvs-h2
+  ); /* 'GRAD' -50, 'wdth' 64, 'opsz' 30 */
+  --wp--custom--fvs--900: var(
+    --fvs-h1
+  ); /* 'GRAD' -50, 'wdth' 64, 'opsz' 48 */
+  --wp--custom--fvs--compact: var(
+    --fvs-h-compact
+  ); /* 'GRAD' 0, 'wdth' 64, 'opsz' 16   */
+
+  /* Spacing — numeric-only slugs (matching --space-* tokens) */
+  --wp--preset--spacing--10: var(
+    --space-10
+  ); /* 0.25rem /  4px */
+  --wp--preset--spacing--20: var(
+    --space-20
+  ); /* 0.5rem  /  8px */
+  --wp--preset--spacing--30: var(
+    --space-30
+  ); /* 0.75rem / 12px */
+  --wp--preset--spacing--40: var(
+    --space-40
+  ); /* 1rem    / 16px */
+  --wp--preset--spacing--50: var(
+    --space-50
+  ); /* 1.25rem / 20px */
+  --wp--preset--spacing--60: var(
+    --space-60
+  ); /* 1.5rem  / 24px */
+  --wp--preset--spacing--80: var(
+    --space-80
+  ); /* 2rem    / 32px */
+  --wp--preset--spacing--100: var(
+    --space-100
+  ); /* 2.5rem  / 40px */
+
+  /* Shadows — numeric-only slugs (100=subtle → 600=hero) */
+  --wp--preset--shadow--100: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --wp--preset--shadow--200:
+    0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px 0 rgb(0 0 0 / 0.06);
+  --wp--preset--shadow--300:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --wp--preset--shadow--400:
+    0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --wp--preset--shadow--500:
+    0 20px 25px -5px rgb(0 0 0 / 0.12),
+    0 10px 10px -5px rgb(0 0 0 / 0.08);
+  --wp--preset--shadow--600: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+
+  /* Border Radius — numeric-only slugs */
+  --wp--custom--border-radius--0: 0;
+  --wp--custom--border-radius--100: 0.125rem; /*  2px */
+  --wp--custom--border-radius--200: 0.25rem; /*  4px — radius-sm */
+  --wp--custom--border-radius--300: 0.375rem; /*  6px — radius-md */
+  --wp--custom--border-radius--400: 0.5rem; /*  8px — radius-lg (default) */
+  --wp--custom--border-radius--500: 0.75rem; /* 12px — radius-xl */
+  --wp--custom--border-radius--900: 9999px; /* pill — rounded-full */
+
+  /* Border Widths — custom tokens (no preset list in WP) */
+  --wp--custom--border-width--100: 1px; /* default */
+  --wp--custom--border-width--200: 2px; /* emphasis */
+  --wp--custom--border-width--300: 4px; /* blockquote accent */
+
+  /* Layout widths */
+  --wp--style--global--content-size: 1440px;
+  --wp--style--global--wide-size: 1440px;
+}

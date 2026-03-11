@@ -1,0 +1,117 @@
+{
+  "key": "group_dp_sponsor",
+  "title": "Borg Velde",
+  "fields": [
+    {
+      "key": "field_sponsor_name",
+      "label": "Borgnaam",
+      "name": "sponsor_name",
+      "type": "text",
+      "required": 1,
+      "instructions": "Die amptelike naam van die borg."
+    },
+    {
+      "key": "field_sponsor_logo",
+      "label": "Logo",
+      "name": "sponsor_logo",
+      "type": "image",
+      "required": 0,
+      "return_format": "url",
+      "preview_size": "thumbnail",
+      "instructions": "Die borg se logo (by voorkeur SVG of deursigtige PNG)."
+    },
+    {
+      "key": "field_sponsor_website_url",
+      "label": "Webwerf URL",
+      "name": "sponsor_website_url",
+      "type": "url",
+      "required": 0,
+      "instructions": "Die borg se webwerf-skakel."
+    },
+    {
+      "key": "field_sponsor_description",
+      "label": "Beskrywing",
+      "name": "sponsor_description",
+      "type": "textarea",
+      "required": 0,
+      "rows": 3,
+      "instructions": "Kort beskrywing van die borg vir argiefsbladsye."
+    },
+    {
+      "key": "field_sponsor_tier",
+      "label": "Borgvlak",
+      "name": "sponsor_tier",
+      "type": "select",
+      "required": 0,
+      "choices": {
+        "platinum": "Platinum",
+        "gold": "Goud",
+        "silver": "Silwer",
+        "bronze": "Brons",
+        "community": "Gemeenskap"
+      },
+      "default_value": "community",
+      "instructions": "Die borgvlak bepaal vertoonprioriteit."
+    },
+    {
+      "key": "field_sponsor_is_active",
+      "label": "Aktief?",
+      "name": "sponsor_is_active",
+      "type": "true_false",
+      "default_value": 1,
+      "ui": 1,
+      "instructions": "Onaktiewe borge verskyn nie op die webwerf nie."
+    },
+    {
+      "key": "field_sponsor_display_order",
+      "label": "Vertoonvolgorde",
+      "name": "sponsor_display_order",
+      "type": "number",
+      "required": 0,
+      "default_value": 0,
+      "instructions": "Laer nommers verskyn eerste. 0 = verstek."
+    },
+    {
+      "key": "field_sponsor_contact_email",
+      "label": "Kontak E-pos",
+      "name": "sponsor_contact_email",
+      "type": "email",
+      "required": 0
+    },
+    {
+      "key": "field_sponsor_start_date",
+      "label": "Borgskap Begindatum",
+      "name": "sponsor_start_date",
+      "type": "date_picker",
+      "required": 0,
+      "display_format": "d/m/Y",
+      "return_format": "Y-m-d"
+    },
+    {
+      "key": "field_sponsor_end_date",
+      "label": "Borgskap Einddatum",
+      "name": "sponsor_end_date",
+      "type": "date_picker",
+      "required": 0,
+      "display_format": "d/m/Y",
+      "return_format": "Y-m-d",
+      "instructions": "Laat leeg vir deurlopende borgskap."
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "dp_sponsor"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "active": true,
+  "show_in_rest": 1
+}

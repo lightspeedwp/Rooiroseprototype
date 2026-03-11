@@ -1,0 +1,70 @@
+/* ── Dark Mode Global Utilities ────────────────────────────────────────────── */
+/* Split from theme.css for memory optimization (2026-03-05)                   */
+/* Contains: Sitewide dark mode overrides (forms, scrollbar, prose, etc.)      */
+
+@layer utilities {
+  /* ── Sitewide Dark Mode Utilities ──────────────────────── */
+
+  /* Form elements in dark mode */
+  .dark input,
+  .dark textarea,
+  .dark select {
+    color-scheme: dark;
+  }
+
+  /* Selection colour */
+  .dark ::selection {
+    background: color-mix(
+      in srgb,
+      var(--custom-primary) 30%,
+      transparent
+    ); /* #E82C27 at 30% opacity */
+    color: var(--foreground); /* #E8E8ED */
+  }
+
+  /* Scrollbar in dark mode (webkit) */
+  .dark ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .dark ::-webkit-scrollbar-track {
+    background: var(--background); /* #0F1923 */
+  }
+  .dark ::-webkit-scrollbar-thumb {
+    background: var(--input); /* #253D54 — dark input token */
+    border-radius: 4px;
+  }
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: var(
+      --brand-navy-light
+    ); /* #8EADC8 — dark navy-light token */
+  }
+
+  /* Placeholder text in dark mode */
+  .dark ::placeholder {
+    color: var(
+      --placeholder
+    ); /* #5A6B7D — defined in .dark block above */
+  }
+
+  /* HR / divider */
+  .dark hr {
+    border-color: var(--border); /* #1E3044 */
+  }
+
+  /* Prose / markdown rendered content */
+  .dark .prose {
+    color: var(--foreground); /* #E8E8ED */
+  }
+  .dark .prose strong {
+    color: var(--foreground); /* #E8E8ED */
+  }
+  .dark .prose a {
+    color: var(--custom-primary); /* #E82C27 */
+  }
+  .dark .prose h2,
+  .dark .prose h3,
+  .dark .prose h4 {
+    color: var(--foreground); /* #E8E8ED */
+  }
+}

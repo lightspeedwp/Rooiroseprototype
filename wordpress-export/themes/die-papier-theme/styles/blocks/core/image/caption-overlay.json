@@ -1,0 +1,13 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"title": "Caption Overlay",
+	"slug": "caption-overlay",
+	"blockTypes": ["core/image"],
+	"styles": {
+		"border": {
+			"radius": "var(--wp--custom--border-radius--400)"
+		},
+		"css": "& { position: relative; overflow: hidden; } & img { border-radius: var(--wp--custom--border-radius--400); } & figcaption { position: absolute; bottom: 0; left: 0; right: 0; padding: var(--wp--preset--spacing--medium, 1rem); background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 100%); color: var(--wp--preset--color--base); font-family: var(--wp--preset--font-family--brand-sans); font-size: var(--wp--preset--font-size--x-small, 0.875rem); border-radius: 0 0 var(--wp--custom--border-radius--400) var(--wp--custom--border-radius--400); }"
+	}
+}

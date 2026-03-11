@@ -1,0 +1,14 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"styles": {
+		"blocks": {
+			"woocommerce/accordion-item": {
+				"border": {
+					"bottom": { "color": "var:preset|color|border-light", "style": "solid", "width": "1px" }
+				},
+				"spacing": { "blockGap": "0" }
+			}
+		}
+	}
+}

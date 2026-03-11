@@ -1,0 +1,23 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"title": "Compact",
+	"slug": "compact",
+	"blockTypes": ["woocommerce/product-filters"],
+	"styles": {
+		"spacing": {
+			"blockGap": "var:preset|spacing|small",
+			"padding": {
+				"top": "var:preset|spacing|small",
+				"right": "var:preset|spacing|small",
+				"bottom": "var:preset|spacing|small",
+				"left": "var:preset|spacing|small"
+			}
+		},
+		"border": {
+			"color": "var:preset|color|border-light",
+			"width": "1px",
+			"radius": "var(--wp--custom--border-radius--100)"
+		}
+	}
+}

@@ -1,0 +1,31 @@
+/* ── Font Family Enforcement ───────────────────────────────────────────────── */
+/* Split from theme.css for memory optimization (2026-03-05)                   */
+/* Contains: Font family utility classes and UI element enforcement rules       */
+/* Note: h1-h6 font-family is defined in theme-base.css — not duplicated here  */
+/* Reference: /guidelines/design-tokens/typography-implementation-guide.md     */
+
+@layer base {
+  /* ── Font Family Utility Classes ──────────────────────────── */
+
+  .font-inter {
+    font-family: var(--font-inter) !important;
+  }
+
+  .font-heading {
+    font-family: var(--font-heading) !important;
+  }
+
+  /* All buttons, forms, navigation, and UI elements use Inter */
+  button,
+  [role="button"],
+  input,
+  textarea,
+  select,
+  .nav-link,
+  .menu-item,
+  [role="menuitem"],
+  [role="tab"],
+  [role="option"] {
+    font-family: var(--font-inter);
+  }
+}

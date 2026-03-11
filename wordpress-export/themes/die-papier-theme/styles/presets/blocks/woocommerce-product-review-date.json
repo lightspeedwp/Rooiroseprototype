@@ -1,0 +1,11 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"styles": {
+		"blocks": {
+			"woocommerce/product-review-date": {
+				"typography": { "fontSize": "var:preset|font-size|small", "lineHeight": "1.7" }
+			}
+		}
+	}
+}

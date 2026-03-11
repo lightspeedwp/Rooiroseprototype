@@ -1,0 +1,84 @@
+/**
+ * Tab Bar — Frontend & Editor Styles
+ *
+ * @package DiePapierBlocks
+ */
+
+.dp-tab-bar {
+	width: 100%;
+}
+
+.dp-tab-bar__tabs {
+	display: flex;
+	border-bottom: 2px solid var(--wp--preset--color--base-3);
+	overflow-x: auto;
+	scrollbar-width: none;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+.dp-tab-bar__tab {
+	padding: var(--wp--preset--spacing--40, 0.625rem) var(--wp--preset--spacing--80, 1.25rem);
+	background: none;
+	border: none;
+	border-bottom: 2px solid transparent;
+	margin-bottom: -2px;
+	font-family: var(--wp--preset--font-family--brand-sans);
+	font-size: 0.875rem;
+	font-weight: 600;
+	color: var(--wp--preset--color--contrast-2);
+	cursor: pointer;
+	white-space: nowrap;
+	transition: color 0.15s, border-color 0.15s;
+
+	&:hover {
+		color: var(--wp--preset--color--contrast);
+	}
+
+	&--active,
+	&[aria-selected="true"] {
+		color: var(--wp--preset--color--primary);
+		border-bottom-color: var(--wp--preset--color--primary);
+	}
+}
+
+.dp-tab-bar__panels {
+	padding-top: var(--wp--preset--spacing--80, 1.25rem);
+}
+
+.dp-tab-bar__panel[hidden] {
+	display: none;
+}
+
+/* ── Editor styles ── */
+.dp-tab-bar-editor__tabs {
+	display: flex;
+	border-bottom: 2px solid #ddd;
+	margin-bottom: 1rem;
+}
+
+.dp-tab-bar-editor__tab {
+	padding: 0.5rem 1rem;
+	background: none;
+	border: none;
+	border-bottom: 2px solid transparent;
+	margin-bottom: -2px;
+	font-size: 0.875rem;
+	font-weight: 600;
+	color: #636375;
+	cursor: pointer;
+
+	&--active {
+		color: var(--wp--preset--color--primary, #E82C27);
+		border-bottom-color: var(--wp--preset--color--primary, #E82C27);
+	}
+}
+
+.dp-tab-bar-editor__content {
+	min-height: 100px;
+	padding: 1rem;
+	border: 1px dashed #ddd;
+	border-radius: 4px;
+}

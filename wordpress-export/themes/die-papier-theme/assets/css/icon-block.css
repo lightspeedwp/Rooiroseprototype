@@ -1,0 +1,128 @@
+/**
+ * Outermost Icon Block Styling
+ * Die Papier WordPress Theme
+ *
+ * @package DiePapierTheme
+ * @since 1.0.0
+ */
+
+/* === 1. Icon Container === */
+.outermost-icon-block {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* === 2. Icon SVG === */
+.outermost-icon-block svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* === 3. Icon Sizes (if not using theme.json presets) === */
+.outermost-icon-block--size-xs {
+    width: 12px;
+    height: 12px;
+}
+
+.outermost-icon-block--size-sm {
+    width: 16px;
+    height: 16px;
+}
+
+.outermost-icon-block--size-md {
+    width: 20px;
+    height: 20px;
+}
+
+.outermost-icon-block--size-lg {
+    width: 24px;
+    height: 24px;
+}
+
+.outermost-icon-block--size-xl {
+    width: 32px;
+    height: 32px;
+}
+
+.outermost-icon-block--size-2xl {
+    width: 40px;
+    height: 40px;
+}
+
+.outermost-icon-block--size-3xl {
+    width: 48px;
+    height: 48px;
+}
+
+/* === 4. Icon Link Wrapper === */
+.outermost-icon-block a {
+    display: inline-flex;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.outermost-icon-block a:hover {
+    opacity: 0.8;
+}
+
+.outermost-icon-block a:focus {
+    outline: 2px solid var(--wp--preset--color--primary);
+    outline-offset: 2px;
+}
+
+/* === 5. Icon in Button === */
+.wp-block-button__link .outermost-icon-block {
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+/* === 6. Icon in Feature List === */
+.feature-list .outermost-icon-block {
+    flex-shrink: 0;
+    margin-right: 12px;
+}
+
+/* === 7. Section Style: Dark Sections === */
+.is-style-section-navy .outermost-icon-block svg,
+.is-style-section-image .outermost-icon-block svg {
+    fill: #FFFFFF;
+}
+
+.is-style-section-red .outermost-icon-block svg {
+    fill: #FFFFFF;
+}
+
+/* Override for brand-colored icons in dark sections (preserve color) */
+.is-style-section-navy .outermost-icon-block.has-primary-color svg,
+.is-style-section-image .outermost-icon-block.has-primary-color svg {
+    fill: var(--wp--preset--color--primary);
+}
+
+/* === 8. Mobile Responsive === */
+@media (max-width: 768px) {
+    /* Scale down large icons on mobile */
+    .outermost-icon-block--size-3xl {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .outermost-icon-block--size-2xl {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+/* === 9. Accessibility === */
+/* Hide decorative icons from screen readers (via aria-hidden) */
+.outermost-icon-block[aria-hidden="true"] {
+    pointer-events: none;
+}
+
+/* Focus styles for linked icons */
+.outermost-icon-block a:focus-visible {
+    outline: 2px solid var(--wp--preset--color--primary);
+    outline-offset: 4px;
+    border-radius: 2px;
+}

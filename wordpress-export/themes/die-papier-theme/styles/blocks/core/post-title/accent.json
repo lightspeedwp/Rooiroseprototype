@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"title": "Accent",
+	"slug": "accent",
+	"blockTypes": ["core/post-title"],
+	"styles": {
+		"typography": {
+			"fontFamily": "var:preset|font-family|brand-serif",
+			"fontSize": "var:preset|font-size|xx-large",
+			"fontWeight": "700",
+			"lineHeight": "1.2"
+		},
+		"color": {
+			"text": "var:preset|color|primary"
+		}
+	}
+}

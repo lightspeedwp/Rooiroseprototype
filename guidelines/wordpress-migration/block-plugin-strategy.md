@@ -1,0 +1,128 @@
+# Block Plugin Strategy
+
+**Last updated**: 2026-03-02
+**Version**: 1.0
+
+This document outlines the strategy for migrating *Die Papier*'s custom React components into a WordPress Block Plugin. This ensures that the editorial team can build pages using the Gutenberg editor while maintaining the strict design system.
+
+**Version Compatibility:**
+- WordPress: **6.9+**
+- Block API: **Version 3**
+
+## 1. Plugin Architecture
+
+*   **Plugin Name**: `die-papier-blocks`
+*   **Description**: Custom Gutenberg blocks for Die Papier design system.
+*   **Structure**: See [Theme & Plugin Structure](./theme-structure.md) for full file layout.
+    ```
+    die-papier-blocks/
+    ├── src/
+    │   ├── blocks/
+    │   │   ├── slider/
+    │   │   │   ├── block.json
+    │   │   │   ├── index.js      (Edit component)
+    │   │   │   ├── save.js       (Save component - usually null for dynamic)
+    │   │   │   ├── render.php    (Server-side render)
+    │   │   │   ├── view.js       (Interactivity API carousel logic)
+    │   │   │   └── style.scss    (Block specific styles)
+    │   │   ├── newsletter-cta/
+    │   │   └── ...
+    │   ├── components/       (Shared internal components)
+    │   └── utils/
+    ├── build/
+    ├── die-papier-blocks.php (Main plugin file)
+    └── package.json
+    ```
+
+## 2. Block Mapping (React -> Gutenberg)
+
+The following React components should be converted into custom blocks.
+
+### 2.1 Hero Sections (Patterns, not custom blocks)
+
+> **Note**: Hero sections are implemented as **patterns** (not custom blocks). Each page type gets a purpose-built hero pattern using core blocks + the `dp/slider` custom block for carousel functionality where needed. See `/guidelines/wordpress-migration/block-mapping.md` section 3.1 for the full hero pattern inventory.
+
+| Pattern Slug | Page Context | Carousel? |
+| :--- | :--- | :--- |
+| `die-papier/hero-home` | Homepage | Yes (`dp/slider`) |
+| `die-papier/hero-category` | Category archive | Yes (`dp/slider`) |
+| `die-papier/hero-article` | Single article | No (static layout) |
+| `die-papier/hero-page` | Static pages | No (`core/cover`) |
+| `die-papier/hero-eedition` | E-edition single | No (static layout) |
+| `die-papier/hero-sponsor` | Sponsor archive | No (static layout) |
+
+The only custom block involved is `dp/slider` — a generic carousel block that accepts InnerBlocks as slides and uses the WordPress Interactivity API for client-side behaviour.
+
+### 2.2 Content Components
+
+| React Component | Block Name | Attributes (Props) | Notes |
+| :--- | :--- | :--- | :--- |
+| `NewsletterCTA` | `dp/newsletter-cta` | `title` (string), `description` (string), `variant` (select: 'full', 'sidebar') | The red/navy subscription bands. |
+| `PageFAQSection` | `yoast/faq-block` | — | Yoast FAQ block provides Schema.org FAQPage structured data. Wrapped in `is-style-section-faq` group. See `/guidelines/components/faq-sections.md`. |
+| `QuoteSlider` | Pattern `die-papier/brand-quotes` | — | Pattern using `dp/slider` block with brand quote cards as InnerBlocks slides. |
+| `CompetitionStatusBadge` | `dp/competition-badge` | `status` (select) | Dynamic block based on meta field. |
+| *Subscription CTA* | `dp/subscription-cta` | `heading` (string), `description` (string), `features` (array), `buttonText` (string), `buttonUrl` (string), `showPlanSummary` (boolean) | Navy CTA banner with value proposition, feature bullets, and optional plan price sidebar. Used on single e-edition (unpurchased) pages. `render.php` can pull live prices from WooCommerce Subscription products. |
+
+### 2.3 Post Lists (Query Loop Variations)
+
+Instead of building custom PHP blocks for lists, extend the core **Query Loop** block with **Block Variations**:
+
+*   **Variation**: "Nuus Grid" (3 columns, card layout)
+*   **Variation**: "Sidebar List" (Compact, no images)
+*   **Variation**: "Featured Slider" (Embla carousel wrapper for query results)
+
+### 2.4 Ads — DEPRECATED (Use Advanced Ads)
+
+> **⚠️ DEPRECATED**: All custom ad blocks (`dp/ad-leaderboard`, `dp/ad-mrec`, `dp/sticky-footer` for ads) have been replaced by the **Advanced Ads** plugin. Advanced Ads provides its own Gutenberg block (`advanced-ads/ad-block`) and auto-injection placements. See `/guidelines/wordpress-migration/third-party-plugins/advanced-ads.md`.
+>
+> For sticky/popup ad formats, use **Advanced Ads Pro** add-on. For in-content ads, use the `post_content` auto-injection placement type (no block needed in templates).
+
+## 3. Block Development Guidelines
+
+1.  **Dynamic Rendering**: Use `render.php` for all blocks that rely on Post Data (e.g., Article Heroes) or global settings (Ads). This ensures updates to the PHP logic reflect immediately without re-saving posts.
+2.  **Tailwind CSS**: The block plugin should **not** bundle its own Tailwind. It should rely on the utility classes provided by the *Theme*.
+    *   *Editor*: Enqueue the theme's `editor-style.css` (generated by Tailwind) so blocks look correct in Gutenberg.
+3.  **Attributes**: Map React props 1:1 to `attributes` in `block.json`.
+4.  **Icons**: Export SVG icons from `lucide-react` usage to WordPress Dashicons or SVG components in `index.js`.
+
+## 4. Migration Steps
+
+1.  **Audit**: Run the "Audit Prompt" to identify all props for a component.
+2.  **Scaffold**: Use `@wordpress/create-block` to scaffold the block structure.
+3.  **Attributes**: Define `attributes` in `block.json` matching the React interface.
+4.  **Edit Component**: Port the React JSX to the `Edit` function. Replace `<a>` links with `<RichText>` or `<URLInput>`.
+5.  **Render**: Port the logic to `render.php` (for dynamic) or `save.js` (for static content).
+6.  **Styles**: Extract component-specific CSS (if any non-Tailwind exists) to `style.scss`.
+
+## 5. Example: Newsletter CTA Block (`block.json`)
+
+```json
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "dp/newsletter-cta",
+  "version": "1.0.0",
+  "title": "Nuusbrief CTA",
+  "category": "widgets",
+  "icon": "email",
+  "description": "Die Papier newsletter subscription band.",
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Kry ons gratis nuusbrief"
+    },
+    "description": {
+      "type": "string",
+      "default": "Ontvang die jongste nuus elke Dinsdag en Vrydag."
+    },
+    "variant": {
+      "type": "string",
+      "default": "full"
+    }
+  },
+  "textdomain": "die-papier-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "render": "file:./render.php"
+}
+```

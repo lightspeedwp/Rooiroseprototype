@@ -1,0 +1,187 @@
+/**
+ * Outermost Social Sharing Block Styling
+ * Die Papier WordPress Theme
+ *
+ * @package DiePapierTheme
+ * @since 1.0.0
+ */
+
+/* === 1. Block Container === */
+.outermost-social-sharing {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+}
+
+/* === 2. Individual Share Button === */
+.outermost-social-sharing__button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: transparent;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    font-family: var(--wp--preset--font-family--inter);
+    font-size: 16px;
+    color: var(--wp--preset--color--contrast);
+    text-decoration: none;
+}
+
+.outermost-social-sharing__button:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: scale(1.05);
+}
+
+.outermost-social-sharing__button:active {
+    transform: scale(0.98);
+}
+
+/* === 3. Icon Sizing === */
+.outermost-social-sharing__icon {
+    width: 24px; /* default */
+    height: 24px;
+}
+
+.outermost-social-sharing__icon--small {
+    width: 16px;
+    height: 16px;
+}
+
+.outermost-social-sharing__icon--large {
+    width: 36px;
+    height: 36px;
+}
+
+/* === 4. Network-Specific Colors === */
+.outermost-social-sharing__button--facebook {
+    color: #1877F2; /* Facebook blue */
+}
+
+.outermost-social-sharing__button--facebook:hover {
+    background-color: rgba(24, 119, 242, 0.1);
+}
+
+.outermost-social-sharing__button--whatsapp {
+    color: #25D366; /* WhatsApp green */
+}
+
+.outermost-social-sharing__button--whatsapp:hover {
+    background-color: rgba(37, 211, 102, 0.1);
+}
+
+.outermost-social-sharing__button--twitter,
+.outermost-social-sharing__button--x {
+    color: #000000; /* X black */
+}
+
+.outermost-social-sharing__button--twitter:hover,
+.outermost-social-sharing__button--x:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.outermost-social-sharing__button--email {
+    color: var(--wp--preset--color--main-accent);
+}
+
+.outermost-social-sharing__button--email:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.outermost-social-sharing__button--copy {
+    color: var(--wp--preset--color--main-accent);
+}
+
+.outermost-social-sharing__button--copy:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Copy button success state (after copying) */
+.outermost-social-sharing__button--copy.is-copied {
+    color: #4CAF50; /* Green checkmark */
+}
+
+/* === 5. Labels (when showLabels: true) === */
+.outermost-social-sharing__label {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* === 6. Alignment === */
+.outermost-social-sharing--align-left {
+    justify-content: flex-start;
+}
+
+.outermost-social-sharing--align-center {
+    justify-content: center;
+}
+
+.outermost-social-sharing--align-right {
+    justify-content: flex-end;
+}
+
+/* === 7. Section Style: Dark Sections === */
+.is-style-section-navy .outermost-social-sharing__button,
+.is-style-section-image .outermost-social-sharing__button {
+    color: #FFFFFF;
+}
+
+.is-style-section-navy .outermost-social-sharing__button:hover,
+.is-style-section-image .outermost-social-sharing__button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.is-style-section-navy .outermost-social-sharing__label,
+.is-style-section-image .outermost-social-sharing__label {
+    color: #FFFFFF;
+}
+
+/* Preserve network brand colors in dark sections */
+.is-style-section-navy .outermost-social-sharing__button--facebook,
+.is-style-section-image .outermost-social-sharing__button--facebook {
+    color: #1877F2;
+}
+
+.is-style-section-navy .outermost-social-sharing__button--whatsapp,
+.is-style-section-image .outermost-social-sharing__button--whatsapp {
+    color: #25D366;
+}
+
+/* Override dark X icon to white on dark sections */
+.is-style-section-navy .outermost-social-sharing__button--twitter,
+.is-style-section-navy .outermost-social-sharing__button--x,
+.is-style-section-image .outermost-social-sharing__button--twitter,
+.is-style-section-image .outermost-social-sharing__button--x {
+    color: #FFFFFF;
+}
+
+/* === 8. Section Style: Red Section === */
+.is-style-section-red .outermost-social-sharing__button {
+    color: #FFFFFF;
+}
+
+.is-style-section-red .outermost-social-sharing__button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.is-style-section-red .outermost-social-sharing__label {
+    color: #FFFFFF;
+}
+
+/* === 9. Mobile Responsive === */
+@media (max-width: 768px) {
+    .outermost-social-sharing {
+        gap: 12px;
+    }
+    
+    .outermost-social-sharing__button {
+        padding: 6px 10px;
+    }
+    
+    .outermost-social-sharing__label {
+        font-size: 14px;
+    }
+}

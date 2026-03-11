@@ -1,0 +1,37 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"title": "Secondary",
+	"slug": "secondary",
+	"blockTypes": ["core/button"],
+	"styles": {
+		"border": {
+			"radius": "var(--wp--custom--border-radius--200)",
+			"width": "0px"
+		},
+		"color": {
+			"background": "var:preset|color|secondary",
+			"text": "var:preset|color|base"
+		},
+		"spacing": {
+			"padding": {
+				"top": "0.75rem",
+				"right": "1.5rem",
+				"bottom": "0.75rem",
+				"left": "1.5rem"
+			}
+		},
+		"typography": {
+			"fontFamily": "var:preset|font-family|brand-sans",
+			"fontSize": "var:preset|font-size|base",
+			"fontWeight": "600"
+		},
+		"shadow": "var(--wp--preset--shadow--200)",
+		":hover": {
+			"color": {
+				"background": "color-mix(in srgb, var(--wp--preset--color--secondary) 90%, #000)"
+			},
+			"shadow": "var(--wp--preset--shadow--300)"
+		}
+	}
+}

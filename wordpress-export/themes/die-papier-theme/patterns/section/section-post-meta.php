@@ -1,0 +1,26 @@
+<?php
+/**
+ * Title: Pos Meta
+ * Slug: die-papier/section-post-meta
+ * Categories: die-papier-sections
+ * Keywords: meta, author, date, category, artikel
+ * Inserter: false
+ * Description: Post metadata row: author avatar, name, date, category badge. Used in single.html template.
+ */
+?>
+
+<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|x-small","padding":{"top":"var:preset|spacing|small","bottom":"var:preset|spacing|small"}},"border":{"bottom":{"color":"var:preset|color|border-light","width":"1px"}}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"left"}} -->
+<div class="wp-block-group" style="border-bottom-color:var(--wp--preset--color--border-light);border-bottom-width:1px;padding-top:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small)">
+
+    <!-- wp:post-author {"showAvatar":true,"showBio":false,"avatarSize":32,"byline":"","isLink":true,"linkTarget":"_self","fontSize":"small"} /-->
+
+    <!-- wp:group {"style":{"spacing":{"blockGap":"4px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+    <div class="wp-block-group">
+        <!-- wp:post-date {"format":"j F Y","fontSize":"small","style":{"elements":{"link":{"color":{"text":"var:preset|color|main-accent"}}}},"textColor":"main-accent"} /-->
+    </div>
+    <!-- /wp:group -->
+
+    <!-- wp:post-terms {"term":"category","separator":" ","fontSize":"small","style":{"elements":{"link":{"color":{"text":"var:preset|color|primary"},":hover":{"color":{"text":"var:preset|color|primary-alt"}}}}}} /-->
+
+</div>
+<!-- /wp:group -->

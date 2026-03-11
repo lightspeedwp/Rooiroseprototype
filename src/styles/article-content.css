@@ -1,0 +1,126 @@
+/* ── Article Content Styles ────────────────────────────────────────────────── */
+/* Split from theme.css for memory optimization (2026-03-05)                   */
+/* Contains: .article-content typography (light + dark mode)                   */
+
+@layer components {
+  /* Article Content Styles - Die Papier V2 */
+  .article-content {
+    font-family: var(--font-inter);
+    font-size: var(--text-p1); /* 18px */
+    line-height: var(--lh-p1); /* 26px — exact Figma P1 spec */
+    color: var(--foreground);
+  }
+
+  .article-content p {
+    margin-bottom: 24px;
+  }
+
+  .article-content h2 {
+    font-family: var(--font-heading);
+    font-size: var(--text-h2);
+    line-height: var(--lh-h2);
+    font-weight: 400; /* Roboto Serif Regular */
+    letter-spacing: var(--ls-h2);
+    color: var(--foreground);
+    margin-top: 48px;
+    margin-bottom: 24px;
+    font-variation-settings:
+      "GRAD" -50,
+      "wdth" 64,
+      "opsz" 30;
+  }
+
+  .article-content h3 {
+    font-family: var(--font-heading);
+    font-size: var(--text-h3);
+    line-height: var(--lh-h3);
+    font-weight: 400;
+    letter-spacing: var(--ls-h3);
+    color: var(--foreground);
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-variation-settings:
+      "GRAD" 0,
+      "wdth" 64,
+      "opsz" 24; /* TYP-012: matches --fvs-h3 token */
+  }
+
+  /* Pull quotes with left border */
+  .article-content blockquote {
+    border-left: 4px solid var(--primary);
+    padding-left: 24px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin: 32px 0;
+    font-style: italic;
+    background: var(--background);
+  }
+
+  .article-content ul,
+  .article-content ol {
+    margin: 24px 0;
+    padding-left: 32px;
+  }
+
+  .article-content li {
+    margin-bottom: 12px;
+  }
+
+  .article-content strong {
+    font-weight: 600;
+  }
+
+  .article-content a {
+    color: var(
+      --text-link-red
+    ); /* TYP-001: accessible text link red (#C41F20 light, #F06560 dark) */
+    text-decoration: underline;
+  }
+
+  .article-content a:hover {
+    color: var(
+      --custom-primary
+    ); /* Hover uses full brand red — acceptable on hover interaction */
+  }
+
+  /* ── :visited link styles — Intentional Omission ───────────
+   * Decision (2026-03-06): No :visited styles for article links.
+   * Rationale:
+   *   1. Article body links use --text-link-red (#C41F20 light,
+   *      #F06560 dark) — adding a :visited variant would require
+   *      a fourth accessible red shade.
+   *   2. News articles have few repeated inline links — users
+   *      rarely revisit the same link within an article.
+   *   3. The WordPress production theme can add :visited styles
+   *      via theme.json elements.link if needed post-launch.
+   *   4. Browser default :visited (purple) is suppressed by the
+   *      explicit color declaration above.
+   * ──────────────────────────────────────────────────────────── */
+
+  /* Article Content — Dark Mode */
+  .dark .article-content {
+    color: var(--foreground);
+  }
+
+  .dark .article-content h2,
+  .dark .article-content h3 {
+    color: var(--foreground);
+  }
+
+  .dark .article-content blockquote {
+    border-left-color: var(--primary);
+    background: var(--card);
+  }
+
+  .dark .article-content a {
+    color: var(
+      --text-link-red
+    ); /* TYP-017: dark mode accessible red (#F06560) */
+  }
+
+  .dark .article-content a:hover {
+    color: var(
+      --custom-primary
+    ); /* #E82C27 — hover is interactive, full red acceptable */
+  }
+}

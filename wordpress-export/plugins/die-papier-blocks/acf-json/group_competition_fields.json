@@ -1,0 +1,180 @@
+{
+  "key": "group_dp_competition",
+  "title": "Kompetisie Velde",
+  "fields": [
+    {
+      "key": "field_competition_prize",
+      "label": "Prys",
+      "name": "competition_prize",
+      "type": "text",
+      "required": 1,
+      "placeholder": "R10,000 Makro-inkopiebeurt",
+      "instructions": "Beskrywing van die prys."
+    },
+    {
+      "key": "field_competition_prize_value",
+      "label": "Pryswaarde",
+      "name": "competition_prize_value",
+      "type": "text",
+      "required": 1,
+      "placeholder": "R10,000",
+      "instructions": "Rand-waarde van die prys."
+    },
+    {
+      "key": "field_competition_sponsor",
+      "label": "Borg",
+      "name": "competition_sponsor",
+      "type": "text",
+      "required": 0,
+      "placeholder": "Makro"
+    },
+    {
+      "key": "field_competition_sponsor_logo",
+      "label": "Borg Logo",
+      "name": "competition_sponsor_logo",
+      "type": "image",
+      "required": 0,
+      "return_format": "url",
+      "preview_size": "thumbnail"
+    },
+    {
+      "key": "field_competition_open_date",
+      "label": "Openingsdatum",
+      "name": "competition_open_date",
+      "type": "date_picker",
+      "required": 1,
+      "display_format": "d F Y",
+      "return_format": "Y-m-d"
+    },
+    {
+      "key": "field_competition_closing_date",
+      "label": "Sluitingsdatum",
+      "name": "competition_closing_date",
+      "type": "date_picker",
+      "required": 1,
+      "display_format": "d F Y",
+      "return_format": "Y-m-d"
+    },
+    {
+      "key": "field_competition_winner_date",
+      "label": "Wenner Aankondigingsdatum",
+      "name": "competition_winner_announcement_date",
+      "type": "date_picker",
+      "required": 0,
+      "display_format": "d F Y",
+      "return_format": "Y-m-d"
+    },
+    {
+      "key": "field_competition_status",
+      "label": "Status",
+      "name": "competition_status",
+      "type": "select",
+      "required": 1,
+      "choices": {
+        "active": "Aktief",
+        "closed": "Gesluit",
+        "winner-announced": "Wenner Aangekondig"
+      },
+      "default_value": "active"
+    },
+    {
+      "key": "field_competition_winner_name",
+      "label": "Wenner Naam",
+      "name": "competition_winner_name",
+      "type": "text",
+      "required": 0,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_competition_status",
+            "operator": "==",
+            "value": "winner-announced"
+          }
+        ]
+      ]
+    },
+    {
+      "key": "field_competition_winner_location",
+      "label": "Wenner Ligging",
+      "name": "competition_winner_location",
+      "type": "text",
+      "required": 0,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_competition_status",
+            "operator": "==",
+            "value": "winner-announced"
+          }
+        ]
+      ]
+    },
+    {
+      "key": "field_competition_entry_question",
+      "label": "Inskrywingsvraag",
+      "name": "competition_entry_question",
+      "type": "text",
+      "required": 0,
+      "instructions": "Die vraag wat deelnemers moet beantwoord."
+    },
+    {
+      "key": "field_competition_rules",
+      "label": "Reëls",
+      "name": "competition_rules",
+      "type": "repeater",
+      "required": 0,
+      "min": 0,
+      "max": 20,
+      "layout": "table",
+      "sub_fields": [
+        {
+          "key": "field_competition_rule_text",
+          "label": "Reël",
+          "name": "rule_text",
+          "type": "textarea",
+          "rows": 2
+        }
+      ]
+    },
+    {
+      "key": "field_competition_meta_title",
+      "label": "SEO Titel",
+      "name": "competition_meta_title",
+      "type": "text",
+      "required": 0,
+      "maxlength": 70
+    },
+    {
+      "key": "field_competition_meta_description",
+      "label": "SEO Beskrywing",
+      "name": "competition_meta_description",
+      "type": "textarea",
+      "required": 0,
+      "rows": 2,
+      "maxlength": 160
+    },
+    {
+      "key": "field_competition_meta_keywords",
+      "label": "SEO Sleutelwoorde",
+      "name": "competition_meta_keywords",
+      "type": "text",
+      "required": 0
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "dp_competition"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "active": true,
+  "show_in_rest": 1
+}

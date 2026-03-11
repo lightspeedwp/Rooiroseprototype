@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /ontwikkelaar/
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /templates/
+
+Sitemap: https://diepapier.co.za/sitemap.xml

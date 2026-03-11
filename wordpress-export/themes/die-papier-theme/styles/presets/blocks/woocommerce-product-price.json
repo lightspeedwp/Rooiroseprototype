@@ -1,0 +1,12 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"styles": {
+		"blocks": {
+			"woocommerce/product-price": {
+				"typography": { "fontSize": "var:preset|font-size|medium", "lineHeight": "1.5", "fontWeight": "700" },
+				"color": { "text": "var:preset|color|main" }
+			}
+		}
+	}
+}

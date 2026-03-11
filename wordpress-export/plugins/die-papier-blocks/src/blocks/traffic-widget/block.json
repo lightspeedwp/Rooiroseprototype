@@ -1,0 +1,37 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "dp/traffic-widget",
+	"version": "1.0.0",
+	"title": "Verkeer Widget",
+	"category": "die-papier",
+	"icon": "car",
+	"description": "Verkeervoorval-lys-legstuk. Bediener-gerendeer met kliëntsy-interaktiwiteit vir filtrering en uitbreiding.",
+	"textdomain": "die-papier-blocks",
+	"keywords": [ "traffic", "verkeer", "incident", "voorval", "road" ],
+	"attributes": {
+		"maxItems": {
+			"type": "number",
+			"default": 6
+		},
+		"region": {
+			"type": "string",
+			"default": "boland"
+		},
+		"apiEndpoint": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"supports": {
+		"align": [ "wide", "full" ],
+		"html": false,
+		"interactivity": true,
+		"anchor": true
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php",
+	"viewScriptModule": "file:./view.js"
+}

@@ -1,0 +1,7 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"styles": {
+		"css": ".flex-center { display: flex; align-items: center; justify-content: center; } .flex-between { display: flex; align-items: center; justify-content: space-between; } .flex-start { display: flex; align-items: flex-start; } .flex-end { display: flex; align-items: flex-end; } .flex-col { display: flex; flex-direction: column; } .grid-auto-fit { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--wp--preset--spacing--medium); } .grid-auto-fill { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: var(--wp--preset--spacing--medium); }"
+	}
+}
