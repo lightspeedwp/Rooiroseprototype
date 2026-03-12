@@ -101,7 +101,7 @@ const NuusflitseSidebar = memo(() => (
     {/* Header */}
     <div className="flex items-center gap-3 px-6 pt-6 pb-4">
       <div className="w-1.5 self-stretch bg-brand-red rounded-full" />
-      <h3 className="font-normal text-brand-navy dark:text-foreground font-heading">
+      <h3 className="font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family">
         {HOME_CONTENT.hero.sidebarTitle}
       </h3>
     </div>
@@ -121,7 +121,7 @@ const NuusflitseSidebar = memo(() => (
             <span className="text-gray-300 dark:text-gray-600 text-xs">&bull;</span>
             <span className="text-gray-400 dark:text-gray-500 text-xs">{news.time}</span>
           </div>
-          <h3 className="font-normal text-brand-navy dark:text-foreground leading-snug group-hover:text-brand-red transition-colors font-heading is-style-card-compact">
+          <h3 className="font-normal text-brand-navy dark:text-foreground leading-snug group-hover:text-brand-red transition-colors has-brand-serif-font-family is-style-card-compact">
             {news.title}
           </h3>
         </Link>
@@ -149,8 +149,8 @@ const NuusflitseMobile = memo(() => (
     <div className="flex items-center gap-2 mb-2">
       <div className="w-1 h-6 bg-brand-red rounded-full shrink-0" />
       <h3
-        className="font-normal text-brand-navy dark:text-foreground font-heading text-xl"
-        style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)' }}
+        className="font-normal text-brand-navy dark:text-foreground text-xl"
+        style={{ fontFamily: 'var(--font-display)', lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)' }}
       >
         {HOME_CONTENT.hero.sidebarTitle}
       </h3>
@@ -178,7 +178,7 @@ const NuusflitseMobile = memo(() => (
             <span className="text-gray-300 dark:text-gray-600 text-[10px]">&bull;</span>
             <span className="text-gray-400 dark:text-gray-500 text-[10px]">{news.time}</span>
           </div>
-          <h3 className="font-normal text-brand-navy dark:text-foreground leading-snug group-hover:text-brand-red transition-colors font-heading text-sm line-clamp-1">
+          <h3 className="font-normal text-brand-navy dark:text-foreground leading-snug group-hover:text-brand-red transition-colors has-brand-serif-font-family text-sm line-clamp-1">
             {news.title}
           </h3>
         </Link>

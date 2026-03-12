@@ -3,7 +3,7 @@
  * https://github.com/OllieWP/ollie (v1.5.4)
  *
  * Covers: patterns, template parts, templates, style variations,
- * block styles, and Die Papier migration decisions.
+ * block styles, and rooi rose migration decisions.
  *
  * Updated: 2026-03-02 (OllieWP slug alignment)
  */
@@ -38,12 +38,12 @@ export interface OlliePatternEntry {
   /** What Ollie provides */
   descEn: string;
   descAf: string;
-  /** Die Papier migration decision */
+  /** rooi rose migration decision */
   decision: MigrationDecision;
   /** Migration notes */
   noteEn: string;
   noteAf: string;
-  /** Die Papier replacement slug (if applicable) */
+  /** rooi rose replacement slug (if applicable) */
   dpSlug?: string;
   /** Core blocks used */
   blocks?: string[];
@@ -54,34 +54,34 @@ export const OLLIE_PATTERNS: OlliePatternEntry[] = [
   {
     slug: 'ollie/template-page-404', nameEn: '404 Template Pattern', nameAf: '404 Sjabloon Patroon',
     category: 'Pages', descEn: 'Full 404 page layout with header, search, and footer.', descAf: 'Volledige 404-bladsy-uitleg met kopstuk, soek en voetskrif.',
-    decision: 'replace', noteEn: 'Replace with Die Papier 404 — secondary background, Roboto Serif heading, category links.', noteAf: 'Vervang met Die Papier 404 — secondary agtergrond, Roboto Serif opskrif, kategorieskakels.',
+    decision: 'replace', noteEn: 'Replace with rooi rose 404 — secondary background, Roboto Serif heading, category links.', noteAf: 'Vervang met rooi rose 404 — secondary agtergrond, Roboto Serif opskrif, kategorieskakels.',
     dpSlug: 'die-papier/template-page-404',
     blocks: ['core/template-part', 'core/group', 'core/heading', 'core/paragraph', 'core/search'],
   },
   {
     slug: 'ollie/template-page-archive', nameEn: 'Archive Template Pattern', nameAf: 'Argief Sjabloon Patroon',
     category: 'Pages', descEn: 'Archive page with query loop, pagination, header/footer parts.', descAf: 'Argiefbladsy met navraag-lus, paginering, kopstuk/voetskrif.',
-    decision: 'modify', noteEn: 'Reuse query loop structure. Replace post card with Die Papier news card pattern. Add sidebar filters.', noteAf: 'Hergebruik navraag-lus struktuur. Vervang poskaart met Die Papier nuuskaart patroon. Voeg sybalk filters by.',
+    decision: 'modify', noteEn: 'Reuse query loop structure. Replace post card with rooi rose news card pattern. Add sidebar filters.', noteAf: 'Hergebruik navraag-lus struktuur. Vervang poskaart met rooi rose nuuskaart patroon. Voeg sybalk filters by.',
     dpSlug: 'die-papier/template-page-archive',
     blocks: ['core/template-part', 'core/query', 'core/post-template', 'core/query-pagination'],
   },
   {
     slug: 'ollie/template-index-grid', nameEn: 'Index Grid Template Pattern', nameAf: 'Indeks Rooster Sjabloon Patroon',
     category: 'Pages', descEn: 'Blog index with 2-column grid of post cards.', descAf: 'Blog-indeks met 2-kolom rooster van poskaarte.',
-    decision: 'modify', noteEn: 'Keep grid layout, replace post cards with Die Papier news card. Change to 3-column grid.', noteAf: 'Behou rooster-uitleg, vervang poskaarte met Die Papier nuuskaart. Verander na 3-kolom rooster.',
+    decision: 'modify', noteEn: 'Keep grid layout, replace post cards with rooi rose news card. Change to 3-column grid.', noteAf: 'Behou rooster-uitleg, vervang poskaarte met rooi rose nuuskaart. Verander na 3-kolom rooster.',
     dpSlug: 'die-papier/template-index-grid',
     blocks: ['core/template-part', 'core/query', 'core/post-template', 'core/query-pagination'],
   },
   {
     slug: 'ollie/template-page-full', nameEn: 'Full Width Page (No Title)', nameAf: 'Volwydte Bladsy (Geen Titel)',
     category: 'Pages', descEn: 'Full-width page without title — used for landing pages.', descAf: 'Volwydte bladsy sonder titel — gebruik vir bestemmingsbladsye.',
-    decision: 'keep', noteEn: 'Keep as-is. Perfect for Die Papier landing pages (homepage, e-editions). Only header/footer parts change.', noteAf: 'Behou soos-is. Perfek vir Die Papier bestemmingsbladsye. Slegs kopstuk/voetskrif onderdele verander.',
+    decision: 'keep', noteEn: 'Keep as-is. Perfect for rooi rose landing pages (homepage, e-editions). Only header/footer parts change.', noteAf: 'Behou soos-is. Perfek vir rooi rose bestemmingsbladsye. Slegs kopstuk/voetskrif onderdele verander.',
     blocks: ['core/template-part', 'core/post-content'],
   },
   {
     slug: 'ollie/template-page-right-sidebar', nameEn: 'Page with Right Sidebar', nameAf: 'Bladsy met Regte Sybalk',
     category: 'Pages', descEn: 'Two-column layout with content left, sidebar template part right.', descAf: 'Twee-kolom uitleg met inhoud links, sybalk sjabloon-onderdeel regs.',
-    decision: 'modify', noteEn: 'Keep layout structure. Replace sidebar part content with Die Papier widgets (popular articles, categories, newsletter mini-form).', noteAf: 'Behou uitleg struktuur. Vervang sybalk-onderdeel inhoud met Die Papier legstukke.',
+    decision: 'modify', noteEn: 'Keep layout structure. Replace sidebar part content with rooi rose widgets (popular articles, categories, newsletter mini-form).', noteAf: 'Behou uitleg struktuur. Vervang sybalk-onderdeel inhoud met rooi rose legstukke.',
     dpSlug: 'die-papier/template-page-right-sidebar',
     blocks: ['core/template-part', 'core/columns', 'core/column', 'core/post-content'],
   },
@@ -94,7 +94,7 @@ export const OLLIE_PATTERNS: OlliePatternEntry[] = [
   {
     slug: 'ollie/template-page-search', nameEn: 'Search Results Pattern', nameAf: 'Soekresultate Patroon',
     category: 'Pages', descEn: 'Search results layout with search form, query loop, and no-results message.', descAf: 'Soekresultate-uitleg met soekvorm, navraag-lus en geen-resultate boodskap.',
-    decision: 'modify', noteEn: 'Keep structure. Add Die Papier faceted filters (category, date, content type). Restyle with brand typography.', noteAf: 'Behou struktuur. Voeg Die Papier gefasetteerde filters by. Herstyl met merk-tipografie.',
+    decision: 'modify', noteEn: 'Keep structure. Add rooi rose faceted filters (category, date, content type). Restyle with brand typography.', noteAf: 'Behou struktuur. Voeg rooi rose gefasetteerde filters by. Herstyl met merk-tipografie.',
     dpSlug: 'die-papier/template-page-search',
     blocks: ['core/template-part', 'core/search', 'core/query', 'core/post-template', 'core/query-no-results'],
   },
@@ -110,7 +110,7 @@ export const OLLIE_PATTERNS: OlliePatternEntry[] = [
   {
     slug: 'ollie/header-light', nameEn: 'Header Light', nameAf: 'Kopstuk Lig',
     category: 'Header', descEn: 'Light header with site logo, navigation, and search button. Default header pattern.', descAf: 'Ligte kopstuk met webwerf-logo, navigasie en soekknoppie. Verstek kopstuk patroon.',
-    decision: 'replace', noteEn: 'Replace entirely with Die Papier 3-row newspaper header: Row 1 (top bar — weather, date, social), Row 2 (logo + nav + search), Row 3 (category strip).', noteAf: 'Vervang heeltemal met Die Papier 3-ry koerantkopstuk.',
+    decision: 'replace', noteEn: 'Replace entirely with rooi rose 3-row newspaper header: Row 1 (top bar — weather, date, social), Row 2 (logo + nav + search), Row 3 (category strip).', noteAf: 'Vervang heeltemal met rooi rose 3-ry koerantkopstuk.',
     dpSlug: 'die-papier/header',
     blocks: ['core/group', 'core/site-logo', 'core/site-title', 'core/navigation', 'core/search'],
   },
@@ -119,7 +119,7 @@ export const OLLIE_PATTERNS: OlliePatternEntry[] = [
   {
     slug: 'ollie/footer-light', nameEn: 'Footer Light', nameAf: 'Voetskrif Lig',
     category: 'Footer', descEn: 'Light footer with 3-column layout: about, links, social icons.', descAf: 'Ligte voetskrif met 3-kolom uitleg: oor ons, skakels, sosiale ikone.',
-    decision: 'replace', noteEn: 'Replace with Die Papier 4-column footer: logo + about, quick links, categories, newsletter + social. secondary background.', noteAf: 'Vervang met Die Papier 4-kolom voetskrif: logo + oor ons, vinnige skakels, kategorieë, nuusbrief + sosiaal. secondary agtergrond.',
+    decision: 'replace', noteEn: 'Replace with rooi rose 4-column footer: logo + about, quick links, categories, newsletter + social. secondary background.', noteAf: 'Vervang met rooi rose 4-kolom voetskrif: logo + oor ons, vinnige skakels, kategorieë, nuusbrief + sosiaal. secondary agtergrond.',
     dpSlug: 'die-papier/footer',
     blocks: ['core/group', 'core/columns', 'core/column', 'core/site-logo', 'core/paragraph', 'core/navigation', 'core/social-links'],
   },

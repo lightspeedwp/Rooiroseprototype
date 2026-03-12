@@ -19,7 +19,7 @@ export const ContactPage = () => {
     <div className="bg-white dark:bg-background min-h-screen pb-20">
       <SEO
         title="Kontak ons"
-        description="Kontak Die Papier - ons adres, e-posadresse en kontakvorm."
+        description="Kontak rooi rose - ons adres, e-posadresse en kontakvorm."
         keywords="kontak, adres, e-pos, navrae, die papier"
       />
       <PageContainer breadcrumbs={[{ label: 'Kontak ons' }]} noPadding />
@@ -148,7 +148,7 @@ export const ContactPage = () => {
               >
                 <ImageWithFallback
                   src={HERO_IMAGES.contactMap}
-                  alt="Kaart: Die Papier kantoor by The Zone @ Rosebank, Johannesburg"
+                  alt="Kaart: rooi rose kantoor by The Zone @ Rosebank, Johannesburg"
                   className="w-full h-48 object-cover group-hover:opacity-90 transition-opacity"
                 />
                 <div className="bg-white dark:bg-card px-4 py-3 flex items-center gap-2 text-sm text-text-link-red dark:text-text-link-red font-medium">

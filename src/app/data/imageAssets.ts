@@ -1,6 +1,6 @@
 /**
  * Image Asset Registry — Catalogue of all hero images, figma assets,
- * and Unsplash images used across the Die Papier site.
+ * and Unsplash images used across the rooi rose site.
  *
  * Used by the Image Asset Browser dev tool at /ontwikkelaar/beelde
  */

@@ -10,9 +10,9 @@ export const CompetitionTermsPage = () => {
   return (
     <div className="bg-white dark:bg-background min-h-screen">
       <SEO
-        title="Kompetisie terme en voorwaardes - Die Papier"
-        description="Lees Die Papier se kompetisie terme en voorwaardes."
-        keywords="kompetisie, terme, voorwaardes, reels, die papier"
+        title="Kompetisie terme en voorwaardes - rooi rose"
+        description="Lees rooi rose se kompetisie terme en voorwaardes."
+        keywords="kompetisie, terme, voorwaardes, reëls, die papier"
       />
 
       <PageContainer
@@ -34,7 +34,7 @@ export const CompetitionTermsPage = () => {
           <div className="bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-700/40 rounded-lg p-5 mb-8 flex gap-3">
             <AlertCircle size={20} className="text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
             <p className="text-amber-800 dark:text-amber-300 text-sm">
-              Hierdie terme en voorwaardes is van toepassing op alle kompetisies wat deur <em>Die Papier</em> aangebied word, tensy anders vermeld in 'n spesifieke kompetisie se reëls.
+              Hierdie terme en voorwaardes is van toepassing op alle kompetisies wat deur <em>rooi rose</em> aangebied word, tensy anders vermeld in 'n spesifieke kompetisie se reëls.
             </p>
           </div>
 
@@ -42,7 +42,7 @@ export const CompetitionTermsPage = () => {
             <section>
               <h2 className="text-2xl font-normal text-brand-navy dark:text-foreground font-heading mb-3" style={H2_STYLE}>1. Algemene Reëls</h2>
               <ol className="list-decimal list-inside space-y-2 text-sm">
-                <li>Alle kompetisies word aangebied deur Novus Media (Edms) Bpk, h/a <em>Die Papier</em> (hierna "die Organiseerder").</li>
+                <li>Alle kompetisies word aangebied deur Novus Media (Edms) Bpk, h/a <em>rooi rose</em> (hierna "die Organiseerder").</li>
                 <li>Deur aan 'n kompetisie deel te neem, aanvaar die deelnemer hierdie terme en voorwaardes.</li>
                 <li>Kompetisies is oop vir alle Suid-Afrikaanse inwoners, tensy anders vermeld.</li>
                 <li>Deelnemers moet ten minste 18 jaar oud wees, tensy anders vermeld.</li>
@@ -84,7 +84,7 @@ export const CompetitionTermsPage = () => {
               <ol className="list-decimal list-inside space-y-2 text-sm">
                 <li>Persoonlike inligting wat tydens inskrywing versamel word, sal in ooreenstemming met die Organiseerder se Privaatheidsbeleid hanteer word.</li>
                 <li>Deelnemers se inligting mag met die borg gedeel word vir die doel van pryslewering.</li>
-                <li>Deelnemers kan kies om op <em>Die Papier</em> se nuusbrief in te teken tydens inskrywing.</li>
+                <li>Deelnemers kan kies om op <em>rooi rose</em> se nuusbrief in te teken tydens inskrywing.</li>
               </ol>
             </section>
 

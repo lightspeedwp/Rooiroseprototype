@@ -36,9 +36,9 @@ export const CompetitionsPage = () => {
   return (
     <div className="bg-gray-50 dark:bg-background min-h-screen pb-16">
       <SEO
-        title="Kompetisies - Die Papier"
-        description="Wen groot met Die Papier se kompetisies! Sien alle huidige en vorige kompetisies en wenners."
-        keywords="kompetisies, wen, pryse, die papier, inskrywing"
+        title="Kompetisies - rooi rose"
+        description="Wen groot met rooi rose se kompetisies! Sien alle huidige en vorige kompetisies en wenners."
+        keywords="kompetisies, wen, pryse, competitions, die papier, trekking"
       />
 
       {/* Leaderboard Ad */}
@@ -52,7 +52,7 @@ export const CompetitionsPage = () => {
             <h1 className="text-4xl font-normal text-brand-navy dark:text-foreground font-heading" style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}>Kompetisies</h1>
           </div>
           <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl">
-            Wen groot met <em>Die Papier</em>! Sien alle aktiewe kompetisies hieronder en skryf in
+            Wen groot met <em>rooi rose</em>! Sien alle aktiewe kompetisies hieronder en skryf in
             vir jou kans om fantastiese pryse te wen.
           </p>
         </header>
@@ -97,7 +97,7 @@ export const CompetitionsPage = () => {
                   <div className="text-center py-16 bg-white dark:bg-card rounded-lg border border-gray-200 dark:border-border">
                     <Trophy size={48} className="mx-auto text-gray-300 dark:text-gray-600 mb-4" />
                     <h3 className="text-xl font-normal text-brand-navy dark:text-foreground mb-2 font-heading" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)', fontSize: 'var(--text-h3)' }}>Geen aktiewe kompetisies</h3>
-                    <p className="text-gray-600 dark:text-gray-400">Hou <em>Die Papier</em> dop vir opwindende nuwe kompetisies!</p>
+                    <p className="text-gray-600 dark:text-gray-400">Hou <em>rooi rose</em> dop vir opwindende nuwe kompetisies!</p>
                   </div>
                 )}
               </TabsContent>

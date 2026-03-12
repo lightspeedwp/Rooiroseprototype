@@ -42,8 +42,9 @@ export const SponsoredContentPage = () => {
           <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
             Geborgde inhoud is een van die mees doeltreffende maniere om jou teikenmark te bereik.
             In plaas van 'n tradisionele advertensie, vertel jy jou verhaal deur boeiende, 
-            informatiewe inhoud wat deur <em>Die Papier</em> se ervare redaksionele span geskep word — 
-            en deur ons betrokke lesers vertrou word.
+            informatiewe inhoud wat deur <em>rooi rose</em> se ervare redaksionele span geskep word — 
+            spesiaal ontwerp om jou handelsmerk op 'n outentieke en betrokke manier te bemark.
+            Bereik ons lesers met inhoud wat waarde toevoeg terwyl dit jou boodskap kommunikeer.
           </p>
         </div>
 
@@ -134,7 +135,7 @@ export const SponsoredContentPage = () => {
             {[
               'Alle inhoud word professioneel geredigeer en nagelees.',
               'Inhoud moet feitelik korrek en nie misleidend wees nie.',
-              'Die Papier behou die reg om inhoud te weier wat nie aan ons standaarde voldoen nie.',
+              'rooi rose behou die reg om inhoud te weier wat nie aan ons standaarde voldoen nie.',
               'Geborgde inhoud mag nie as onafhanklike joernalistiek voorgestel word nie.',
             ].map((standard) => (
               <div key={standard} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
@@ -185,7 +186,7 @@ export const SponsoredContentPage = () => {
           </Link>
         </div>
       </div>
-      <PageFAQSection items={SPONSORED_CONTENT_FAQS} description="Vrae oor geborgde inhoud in Die Papier." />
+      <PageFAQSection items={SPONSORED_CONTENT_FAQS} description="Vrae oor geborgde inhoud in rooi rose." />
     </div>
   );
 };

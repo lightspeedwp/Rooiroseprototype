@@ -1,10 +1,10 @@
-# Die Papier — Canonical Design System Guide
+# rooi rose — Canonical Design System Guide
 
-> **Version**: 2.0 — 2026-02-20 (V2 Figma update: Roboto Serif + Inter, new Red, GRAD -50)
-> **Last updated**: 2026-03-06
+> **Version**: 3.0 — 2026-03-12 (rooi rose Redesign: Playfair Display SC + Karla, new Red #e01e12)
+> **Last updated**: 2026-03-12
 > **Scope**: Every design token used across the React prototype and WordPress block theme.
 > **Rule**: This file is the single source of truth. If a value here conflicts with `theme.css` or `theme.json`, fix the implementation — not this document.
-> **Source frames**: `DesktopFontStyles-2395-83` and `MobileFontStyles-2395-166` (imported 2026-02-20).
+> **Source**: rooi rose Magazine Redesign (Phases 0-5 complete)
 > **Cross-reference**: For WordPress preset mechanics (CSS variable naming, slug rules, JSON syntax), see `/guidelines/wordpress-migration/presets-and-tokens.md`.
 
 ---
@@ -38,8 +38,8 @@
 
 | Token | CSS Variable | Value | Usage |
 |:---|:---|:---|:---|
-| `heading` | `--font-heading` | `'Roboto Serif', serif` | H1–H4, brand display headings |
-| `body` | `--font-inter` | `'Inter', sans-serif` | H5–H6, body text, paragraphs, lists, metadata, UI elements |
+| `heading` | `--font-heading` | `'Playfair Display SC', serif` | H1–H4, brand display headings |
+| `body` | `--font-inter` | `'Karla', sans-serif` | H5–H6, body text, paragraphs, lists, metadata, UI elements |
 
 > **Deprecated**: `--font-raleway` resolves to `--font-heading` for backward compatibility only. Never use `Raleway` in new code.
 
@@ -47,14 +47,14 @@
 
 | Token | Numeric | Font | Usage |
 |:---|:---|:---|:---|
-| `regular` | `400` | Roboto Serif | H1–H4 headings |
-| `regular` | `400` | Inter | P1–P5 body text |
-| `bold` | `700` | Inter | H5 |
-| `semibold` | `600` | Inter | H6 |
+| `regular` | `400` | Playfair Display SC | H1–H4 headings |
+| `regular` | `400` | Karla | P1–P5 body text |
+| `bold` | `700` | Karla | H5 |
+| `semibold` | `600` | Karla | H6 |
 
-> **Deprecated weight**: `500 (Medium)` for Roboto Serif was a V1 token. V2 uses `400` for all Roboto Serif headings.
+> **Deprecated weight**: `500 (Medium)` for Playfair Display SC was a V1 token. V2 uses `400` for all Playfair Display SC headings.
 
-### 1.3 Variable Font Axes — Roboto Serif (4 tokens)
+### 1.3 Variable Font Axes — Playfair Display SC (4 tokens)
 
 | Level | `font-variation-settings` | CSS Token |
 |:---|:---|:---|
@@ -70,17 +70,17 @@
 
 | Level | Font | Weight | Size | Line Height | Letter Spacing | CSS Size Token | CSS LH Token |
 |:---|:---|:---|:---|:---|:---|:---|:---|
-| **H1** | Roboto Serif | 400 | 48px | 48px | -0.24px | `--text-h1` | `--lh-h1` |
-| **H2** | Roboto Serif | 400 | 30px | 32px | -0.24px | `--text-h2` | `--lh-h2` |
-| **H3** | Roboto Serif | 400 | 24px | 28px | -0.24px | `--text-h3` | `--lh-h3` |
-| **H4** | Roboto Serif | 400 | 20px | 28px | -0.24px | `--text-h4` | `--lh-h4` |
-| **H5** | Inter | 700 | 18px | 24px | -0.09px | `--text-h5` | `--lh-h5` |
-| **H6** | Inter | 600 | 16px | 24px | 0.8px | `--text-h6` | `--lh-h6` |
-| **P1** | Inter | 400 | 18px | 26px | — | `--text-p1` | `--lh-p1` |
-| **P2** | Inter | 400 | 16px | 24px | — | `--text-p2` | `--lh-p2` |
-| **P3** | Inter | 400 | 14px | 22px | — | `--text-p3` | `--lh-p3` |
-| **P4** | Inter | 400 | 12px | 18px | — | `--text-p4` | `--lh-p4` |
-| **Small** | Inter | 400 | 11px | 16px | — | `--text-small` | `--lh-small` |
+| **H1** | Playfair Display SC | 400 | 48px | 48px | -0.24px | `--text-h1` | `--lh-h1` |
+| **H2** | Playfair Display SC | 400 | 30px | 32px | -0.24px | `--text-h2` | `--lh-h2` |
+| **H3** | Playfair Display SC | 400 | 24px | 28px | -0.24px | `--text-h3` | `--lh-h3` |
+| **H4** | Playfair Display SC | 400 | 20px | 28px | -0.24px | `--text-h4` | `--lh-h4` |
+| **H5** | Karla | 700 | 18px | 24px | -0.09px | `--text-h5` | `--lh-h5` |
+| **H6** | Karla | 600 | 16px | 24px | 0.8px | `--text-h6` | `--lh-h6` |
+| **P1** | Karla | 400 | 18px | 26px | — | `--text-p1` | `--lh-p1` |
+| **P2** | Karla | 400 | 16px | 24px | — | `--text-p2` | `--lh-p2` |
+| **P3** | Karla | 400 | 14px | 22px | — | `--text-p3` | `--lh-p3` |
+| **P4** | Karla | 400 | 12px | 18px | — | `--text-p4` | `--lh-p4` |
+| **Small** | Karla | 400 | 11px | 16px | — | `--text-small` | `--lh-small` |
 
 ### 1.5 Mobile Type Scale (differences from desktop)
 
@@ -105,8 +105,8 @@
 
 | Rule | Value |
 |:---|:---|
-| H1–H4 font | `Roboto Serif` — always via `var(--font-heading)` |
-| H5–H6 font | `Inter` |
+| H1–H4 font | `Playfair Display SC` — always via `var(--font-heading)` |
+| H5–H6 font | `Karla` |
 | Heading case | **Sentence case** everywhere (never Title Case for Afrikaans) |
 | H6 exception | `text-transform: uppercase` (the only uppercase heading) |
 | Brand name | `<em>Die Papier</em>` — always italicised in running body text |
@@ -144,18 +144,20 @@
 
 | Token | Slug | Hex | Dark Mode Hex | Usage |
 |:---|:---|:---|:---|:---|
-| `Brand Red` | `primary` | `#E82C27` | `#E82C27` | CTAs, links, badges, accents |
-| `Brand Red (Darker)` | `primary-alt` | `#C41F20` | `#C41F20` | Hover/pressed state for red |
-| `Brand Navy` | `secondary` | `#172134` | `#B0C8DC` | Headers, primary text, dark backgrounds |
-| `Navy Light` | `secondary-accent` | `#1A3A5F` | `#8EADC8` | Accent bars, secondary backgrounds |
-| `Primary Gradient` | `primary-gradient` | `linear-gradient(81.87deg, #CE0400 0.24%, #FF0600 18.33%, #E82C27 45.03%, #801917 71.74%, #420200 99.32%)` | — | Header masthead, hero overlays |
+| `rooi rose Red` | `primary` | `#E01E12` | `#FF4D42` | CTAs, links, badges, accents |
+| `rooi rose Red (Darker)` | `primary-alt` | `#B51410` | `#FF6961` | Hover/pressed state for red |
+| `Tagline Grey` | `tagline-grey` | `#424242` | `#B0B0B0` | Metadata, captions, dates |
+| `Navy (Background)` | `navy` | `#142135` | `#0A1018` | Dark mode backgrounds |
+| `Navy Light` | `navy-light` | `#1E3044` | `#162233` | Dark mode cards |
 | `White` | `base` | `#FFFFFF` | `#0F1923` | Page background |
-| `Tint` | `tertiary` | `#F0F0F0` | `#162233` | Card backgrounds, alternate sections |
-| `Border Base` | `border-light` | `#DDDDDD` | `#1E3044` | Borders, dividers |
+| `Muted Grey` | `muted` | `#F5F5F5` | `#162233` | Card backgrounds, alternate sections |
+| `Border Base` | `border` | `#E0E0E0` | `#1E3044` | Borders, dividers |
 
-> **Migration Note (2026-03-02)**: All legacy prototype tokens (`brand-navy`, `brand-red`, `base-2`, `base-3`, etc.) have been migrated to OllieWP-aligned slugs (`primary`, `secondary`, `tertiary`, `border-light`). See `/guidelines/design-tokens/colors.md` for the complete migration reference table.
+> **Rebranding Note (2026-03-12)**: All brand colors updated for rooi rose magazine redesign. Primary red changed from Die Papier navy/red (#172134/#E82C27) to rooi rose lifestyle red (#E01E12) with tagline grey (#424242) for metadata.
 
-> **Deprecated**: `#D70025` was the V1 brand red. It must NOT appear anywhere in the codebase.
+> **Color Accessibility**: All colors maintain WCAG AA contrast (4.5:1) on their respective backgrounds. The primary red (#E01E12) is used sparingly for accents; body text uses high-contrast black/white.
+
+> **Deprecated**: `#D70025` and `#E82C27` were the V1/V2 brand reds. They must NOT appear anywhere in the codebase.
 
 ---
 

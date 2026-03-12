@@ -46,7 +46,7 @@ export const SingleEventPage = () => {
   return (
     <div className="bg-gray-50 dark:bg-background min-h-screen pb-20">
       <SEO 
-        title={`${event.title} | Gebeure | Die Papier`}
+        title={`${event.title} | Gebeure | rooi rose`}
         description={event.description}
         keywords={`gebeure, ${event.category.toLowerCase()}, bloemfontein, ${event.title.toLowerCase()}`}
       />

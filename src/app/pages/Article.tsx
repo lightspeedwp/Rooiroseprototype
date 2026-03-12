@@ -18,9 +18,17 @@ import { LeaderboardAd, SidebarAds, StickyMobileFooter } from '../components/ads
 import { injectArticleAds } from '../utils/injectArticleAds';
 import { RelatedContent } from '../components/common/RelatedContent';
 import { SocialShare } from '../components/common/SocialShare';
+import { NewsCard } from '../components/home/NewsCard';
 import { EVENTS } from '../data/events';
 import { LATEST_EDITIONS } from '../data/eEditions';
 import { getAllSponsoredArticles } from '../data/categoryArticles';
+
+/* ── rooi rose Magazine Article Page ──────────────────────────────
+ * Editorial design: Single-column magazine article template
+ * Typography: Playfair Display SC headings, Karla body text
+ * Layout: Hero image → Editorial typography → Related articles grid
+ * Features: Pull quotes, author bio, magazine spacing
+ * ────────────────────────────────────────────────────────────────── */
 
 export const ArticlePage = () => {
   const { slug } = useParams();

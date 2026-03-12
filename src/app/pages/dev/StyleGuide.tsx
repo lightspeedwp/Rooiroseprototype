@@ -190,7 +190,7 @@ export const StyleGuide = () => {
                         <div>
                           <p className="text-[10px] text-white/30 uppercase tracking-widest mb-1">H1 — Roboto Serif 400 (Fluid)</p>
                           <h1 className="font-heading font-normal" style={{ fontSize: 'var(--text-h1)', lineHeight: 'var(--lh-h1)', fontVariationSettings: 'var(--fvs-h1)', letterSpacing: 'var(--ls-h1)' }}>
-                            Die Papier Opskrif Een
+                            rooi rose Opskrif Een
                           </h1>
                         </div>
                         <Separator className="bg-white/10" />
@@ -232,7 +232,7 @@ export const StyleGuide = () => {
                         <div>
                           <p className="text-[10px] text-white/30 uppercase tracking-widest mb-1">P1 — Inter 400 (Body)</p>
                           <p className="font-inter text-white/70" style={{ fontSize: 'var(--text-p1)', lineHeight: 'var(--lh-p1)' }}>
-                            Dit is liggaamsteks in P1-grootte. Die Papier is &apos;n weeklikse nasionale koerant op die voorpunt van die week se nuus.
+                            Dit is liggaamsteks in P1-grootte. rooi rose is &apos;n weeklikse nasionale tydskrif op die voorpunt van die week se leefstyl en stories.
                           </p>
                         </div>
                         <div>

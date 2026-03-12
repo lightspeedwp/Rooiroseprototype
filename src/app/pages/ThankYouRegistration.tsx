@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle, UserCheck, Mail } from 'lucide-react';
+import { CheckCircle, UserPlus, Mail } from 'lucide-react';
 import { ThankYouLayout } from '../components/layouts/ThankYouLayout';
 import { THANKYOU_REGISTRATION_FAQS } from '../data/pageFaqs';
 
@@ -10,19 +10,19 @@ export const ThankYouRegistrationPage = () => {
         { label: 'Registreer', href: '/registreer' },
         { label: 'Dankie vir jou registrasie' },
       ]}
-      title={<>Welkom by <em>Die Papier</em>!</>}
+      title={<>Welkom by <em>rooi rose</em>!</>}
       subtitle="Jou rekening is suksesvol geskep."
-      primaryAction={{ label: 'Gaan na my rekening', href: '/my-rekening' }}
-      secondaryAction={{ label: 'Begin lees', href: '/' }}
+      primaryAction={{ label: 'Besoek my rekening', href: '/my-rekening' }}
+      secondaryAction={{ label: 'Teken in op e-uitgawe', href: '/inteken-op-e-uitgawe' }}
       faqItems={THANKYOU_REGISTRATION_FAQS}
-      faqDescription="Vrae oor jou Die Papier-rekening."
+      faqDescription="Vrae oor jou rooi rose-rekening."
     >
       <div className="bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-900/50 rounded-lg p-6 mb-8 flex gap-4 items-start">
-        <UserCheck size={24} className="text-green-600 shrink-0 mt-0.5" />
+        <UserPlus size={24} className="text-green-600 shrink-0 mt-0.5" />
         <div>
-          <p className="text-green-800 dark:text-green-300 font-medium mb-1">Registrasie voltooi!</p>
+          <p className="text-green-800 dark:text-green-300 font-medium mb-1">Registrasie geslaag!</p>
           <p className="text-green-700 dark:text-green-400 text-sm leading-relaxed">
-            Dankie dat jy by <em>Die Papier</em> geregistreer het. Jou rekening is gereed om te gebruik.
+            Dankie dat jy by <em>rooi rose</em> geregistreer het. Jou rekening is gereed om te gebruik.
           </p>
         </div>
       </div>
@@ -45,7 +45,7 @@ export const ThankYouRegistrationPage = () => {
         </h3>
         <ul className="space-y-2.5">
           {[
-            <>Inteken op die e-uitgawe van <em>Die Papier</em></>,
+            <>Inteken op die e-uitgawe van <em>rooi rose</em></>,
             'Kommentaar lewer op artikels',
             'Jou intekeninge en bestellings bestuur',
             'Vinniger deur die betaalpunt beweeg',

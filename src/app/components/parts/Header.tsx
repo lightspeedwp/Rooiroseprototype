@@ -266,7 +266,7 @@ export const Header = memo(() => {
                               <img src={item.image} alt={item.title} className="w-16 h-20 object-cover rounded bg-gray-100 dark:bg-muted" loading="lazy" decoding="async" />
                             )}
                             <div className="flex-1">
-                              <h4 className="font-normal text-sm text-brand-navy dark:text-foreground font-heading" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)' }}>{item.title}</h4>
+                              <h4 className="font-normal text-sm text-brand-navy dark:text-foreground has-brand-serif-font-family" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)' }}>{item.title}</h4>
                               <p className="text-xs text-gray-500 dark:text-gray-400 mb-2">
                                 {item.type === 'subscription' ? HEADER_UI.cart.itemLabelSubscription : HEADER_UI.cart.itemLabelSingle}
                               </p>

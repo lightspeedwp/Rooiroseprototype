@@ -12,9 +12,9 @@ export const ComplaintsProcedurePage = () => {
   return (
     <div className="bg-white dark:bg-background min-h-screen">
       <SEO
-        title="Klagteprosedure - Die Papier"
-        description="Hoe om 'n klagte in te dien oor redaksionele inhoud, advertensies of dienste van Die Papier."
-        keywords="klagte, prosedure, redaksioneel, ombudsman, persraad, die papier"
+        title="Klagteprosedure - rooi rose"
+        description="Hoe om 'n klagte in te dien oor redaksionele inhoud, advertensies of dienste van rooi rose."
+        keywords="klagte, terugvoer, prosedure, ombudsman, press code"
       />
 
       <PageContainer
@@ -39,7 +39,7 @@ export const ComplaintsProcedurePage = () => {
           <div className="bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800/40 rounded-lg p-5 mb-8 flex gap-3">
             <AlertCircle size={20} className="text-blue-600 dark:text-blue-400 shrink-0 mt-0.5" />
             <p className="text-blue-800 dark:text-blue-300 text-sm">
-              <em>Die Papier</em> is verbind tot die hoogste standaarde van joernalistiek en kliëntediens. Indien jy ontevrede is met enige aspek van ons diens, moedig ons jou aan om die onderstaande prosedure te volg.
+              <em>rooi rose</em> is verbind tot die hoogste standaarde van joernalistiek en kliëntediens. Indien jy ontevrede is met enige aspek van ons diens, moedig ons jou aan om die onderstaande prosedure te volg.
             </p>
           </div>
 

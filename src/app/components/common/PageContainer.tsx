@@ -13,7 +13,7 @@ interface PageContainerProps {
 }
 
 /**
- * Standard align-wide page container for Die Papier.
+ * Standard align-wide page container for *rooi rose*.
  *
  * Provides:
  * - `.alignwide` container (1440px max-width, 16→32px fluid padding)

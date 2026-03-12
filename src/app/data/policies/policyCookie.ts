@@ -121,7 +121,7 @@ export const POLICY_COOKIE = {
   children: "Ons webwerf is nie ontwerp om kinders te trek nie en dit is nie ons bedoeling om persoonlike data van kinders onder die ouderdom van toestemming in hul land van verblyf te versamel nie. Ons versoek dus dat kinders onder die ouderdom van toestemming geen persoonlike data aan ons indien nie.",
 
   contact: {
-    entity: 'Die Papier',
+    entity: 'rooi rose',
     address: 'Loft Office East (LOE4), Tweede verdieping, The Zone, Oxfordstraat 187, Rosebank',
     advertising: '+27 51 404 7600',
     editorial: 'lesers@diepapier.co.za',
@@ -163,9 +163,9 @@ export const POLICY_COOKIE = {
 
   /** SEO metadata */
   seo: {
-    title: 'Koekiebeleid - Die Papier',
-    description: 'Lees meer oor hoe Die Papier koekies gebruik in ooreenstemming met POPIA wetgewing.',
-    keywords: 'koekiebeleid, cookies, popia, privaatheid, die papier',
+    title: 'Koekiebeleid - rooi rose',
+    description: 'Lees meer oor hoe rooi rose koekies gebruik in ooreenstemming met POPIA wetgewing.',
+    keywords: 'koekiebeleid, cookies, popia, privaatheid, rooi rose',
   },
 
   /** Contact block labels */
@@ -178,7 +178,7 @@ export const POLICY_COOKIE = {
   },
 
   cta: {
-    heading: 'Dankie dat jy deel is van Die Papier',
+    heading: 'Dankie dat jy deel is van rooi rose',
     text: "Ons waardeer jou deelname en jou pogings om ons platforms informatief, respektvol en genietbaar vir almal te help maak. Jou nakoming van hierdie reëls help ons om 'n gesonde, florerende leserskap te handhaaf.",
   },
 };

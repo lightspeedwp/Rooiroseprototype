@@ -11,13 +11,13 @@ export const PostInYourHands = () => {
       {/* Top Content */}
       <div className="relative z-10 p-6 pt-12 text-center flex flex-col items-center">
         <h3 className="font-heading font-normal text-4xl md:text-5xl text-black leading-tight tracking-tight mb-2" style={{ fontVariationSettings: "var(--fvs-h1)" }}>
-          <span className="text-primary italic">Die Papier</span>
+          <span className="text-primary italic">rooi rose</span>
           {SOCIAL_POSTS.inYourHands.titlePart1}
         </h3>
         
         <div className="flex flex-col items-center gap-1">
           <span className="text-primary font-heading font-normal text-3xl tracking-tight italic" style={{ fontVariationSettings: "var(--fvs-h3)" }}>
-            Die Papier
+            rooi rose
           </span>
           <p className="font-heading font-normal text-sm text-black max-w-[200px] leading-tight mt-2" style={{ fontVariationSettings: "var(--fvs-h4)" }}>
             {SOCIAL_POSTS.inYourHands.subtitle}

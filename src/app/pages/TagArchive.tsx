@@ -104,7 +104,7 @@ export const TagArchivePage = () => {
   return (
     <div className="bg-gray-50 dark:bg-background min-h-screen">
       <SEO 
-        title={`${tagName} - Die Papier`}
+        title={`${tagName} - rooi rose`}
         description={tagline}
         keywords={`${tagName.toLowerCase()}, nuus, afrikaans, die papier`}
       />

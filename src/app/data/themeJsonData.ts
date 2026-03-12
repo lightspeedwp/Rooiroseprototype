@@ -1,5 +1,5 @@
 /**
- * themeJsonData.ts — Typed Die Papier theme.json data for dev tools.
+ * themeJsonData.ts — Typed rooi rose theme.json data for dev tools.
  *
  * CANONICAL SOURCE: /wordpress-export/themes/die-papier-theme/theme.json
  * This file provides typed interfaces and the data for the ThemeJsonViewer dev tool.
@@ -114,7 +114,7 @@ export interface ThemeJsonV3 {
   customTemplates: ThemeJsonCustomTemplate[];
 }
 
-// ─── Die Papier theme.json data ─────────────────────────────────────────────
+// ─── rooi rose theme.json data ─────────────────────────────────────────────
 
 export const DIE_PAPIER_THEME_JSON: ThemeJsonV3 = {
   $schema: "https://schemas.wp.org/wp/6.8/theme.json",

@@ -1,5 +1,5 @@
 /**
- * Article data — Die Papier
+ * Article data — *rooi rose*
  *
  * @wordpress-patterns page-home (hero, feature grid), archive-default, archive-category-*
  * @wordpress-cards card-post-grid-3col, card-post-list, card-post-featured-hero

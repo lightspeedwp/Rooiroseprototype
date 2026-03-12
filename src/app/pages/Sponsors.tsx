@@ -11,7 +11,7 @@ export const SponsorsPage = () => {
     <div className="bg-gray-50 dark:bg-background min-h-screen">
       <SEO 
         title="Ons Borge"
-        description="Ontmoet die maatskappye wat Die Papier moontlik maak. Kyk na hul profiele en jongste artikels."
+        description="Ontmoet die maatskappye wat rooi rose moontlik maak. Kyk na hul profiele en jongste artikels."
         keywords="borge, vennote, adverteerders, die papier"
       />
       
@@ -21,7 +21,7 @@ export const SponsorsPage = () => {
             Ons Borge
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl">
-            Die Papier se borge speel 'n deurslaggewende rol om onafhanklike gemeenskapsjoernalistiek volhoubaar te maak. Ondersteun hulle soos hulle ons ondersteun.
+            rooi rose se borge speel 'n deurslaggewende rol om onafhanklike gemeenskapsjoernalistiek volhoubaar te maak. Ondersteun hulle soos hulle ons ondersteun.
           </p>
         </div>
 

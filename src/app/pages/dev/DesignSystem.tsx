@@ -990,7 +990,7 @@ const WpTokenMappingTab = ({ isAf, onCopy }: { isAf: boolean; onCopy: (text: str
       <div className="bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-200 dark:border-indigo-500/20 p-4 rounded-xl flex items-start gap-3">
         <FileCode className="text-indigo-500 shrink-0 mt-0.5" size={16} />
         <div className="text-xs text-indigo-700 dark:text-indigo-300">
-          <p className="mb-1">{isAf ? 'Volledige kartering tussen Die Papier se CSS-veranderlikes en WordPress theme.json-voorinstellings.' : "Complete mapping between Die Papier's CSS variables and WordPress theme.json presets."}</p>
+          <p className="mb-1">{isAf ? 'Volledige kartering tussen rooi rose se CSS-veranderlikes en WordPress theme.json-voorinstellings.' : "Complete mapping between rooi rose's CSS variables and WordPress theme.json presets."}</p>
           <p className="text-indigo-600 dark:text-indigo-300/80">{isAf ? 'Gebruik hierdie verwysing om tokens konsekwent tussen die prototipe en produksie te hou.' : 'Use this reference to keep tokens consistent between prototype and production.'}</p>
         </div>
       </div>

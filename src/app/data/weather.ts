@@ -1,5 +1,5 @@
 /**
- * Weather data for Die Papier
+ * Weather data for *rooi rose*
  * Canonical source for weather page city data and forecasts.
  *
  * Icons are stored as string identifiers so this file remains

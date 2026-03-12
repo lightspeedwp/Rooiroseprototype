@@ -22,9 +22,9 @@ export const ObituariesPage = () => {
   return (
     <div className="bg-gray-50 dark:bg-background min-h-screen font-inter">
       <SEO
-        title="Doodsberrigte - Die Papier"
-        description="Doodsberrigte en begrafniskennisgewings in Die Papier. Eerbetuigings aan geliefdes wat ons ontval het."
-        keywords="doodsberrigte, begrafnis, kennisgewings, obituaries, die papier"
+        title="Doodsberrigte - rooi rose"
+        description="Doodsberrigte en begrafniskennisgewings in rooi rose. Eerbetuigings aan geliefdes wat ons ontval het."
+        keywords="doodsberrigte, obituaries, begrafnis, afsterwe, herdenking, die papier"
       />
 
       {/* Leaderboard Ad */}
@@ -148,7 +148,7 @@ export const ObituariesPage = () => {
                 </h3>
               </div>
               <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
-                Eerbetuig 'n geliefde met 'n persoonlike doodsberig in <em>Die Papier</em>. Stuur ons die oorledene se besonderhede, 'n lewensbeskrywing en foto.
+                Eerbetuig 'n geliefde met 'n persoonlike doodsberig in <em>rooi rose</em>. Stuur ons die oorledene se besonderhede, 'n lewensbeskrywing en foto.
               </p>
               <div className="bg-gray-50 dark:bg-background rounded-lg p-4 mb-4 text-sm">
                 <p className="font-bold text-brand-navy dark:text-foreground mb-2">Tariewe:</p>

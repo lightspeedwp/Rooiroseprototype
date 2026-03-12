@@ -143,12 +143,12 @@ export const ThemeJsonViewer = () => {
         <div className="space-y-6">
           <div className="bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl p-5">
             <h2 className="text-sm text-gray-900 dark:text-white mb-1">
-              {isAf ? 'Die Papier theme.json — Weergawe 3' : 'Die Papier theme.json — Version 3'}
+              {isAf ? 'rooi rose theme.json — Weergawe 3' : 'rooi rose theme.json — Version 3'}
             </h2>
             <p className="text-xs text-gray-500 dark:text-white/40 leading-relaxed">
               {isAf
-                ? 'Hierdie lêer definieer die volledige ontwerpstelsel vir die WordPress FSE-tema. Dit beheer kleure, tipografie, spasiëring, skaduwees, rande, element-style, en sjablone. Gebaseer op die Ollie-tema met Die Papier aanpassings.'
-                : 'This file defines the complete design system for the WordPress FSE theme. It controls colors, typography, spacing, shadows, borders, element styles, and templates. Based on the Ollie theme with Die Papier customizations.'}
+                ? 'Hierdie lêer definieer die volledige ontwerpstelsel vir die WordPress FSE-tema. Dit beheer kleure, tipografie, spasiëring, skaduwees, rande, element-style, en sjablone. Gebaseer op die Ollie-tema met rooi rose aanpassings.'
+                : 'This file defines the complete design system for the WordPress FSE theme. It controls colors, typography, spacing, shadows, borders, element styles, and templates. Based on the Ollie theme with rooi rose customizations.'}
             </p>
           </div>
 

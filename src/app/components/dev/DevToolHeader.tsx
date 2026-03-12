@@ -70,7 +70,7 @@ export const DevToolHeader: React.FC<DevToolHeaderProps> = ({
                 Dev Tools
               </span>
               <span className="text-[9px] text-gray-400 dark:text-white/30 leading-none mt-0.5">
-                Die Papier
+                rooi rose
               </span>
             </div>
           </Link>

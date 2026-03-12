@@ -115,7 +115,7 @@ const WordPressCoreSection: React.FC<{ locale: 'af' | 'en' }> = ({ locale }) => 
       title={locale === 'af' ? 'Algemene Instellings' : 'General Settings'}
       icon={Settings}
     >
-      <ConfigItem label={locale === 'af' ? 'Werf Titel' : 'Site Title'} value="Die Papier" />
+      <ConfigItem label={locale === 'af' ? 'Werf Titel' : 'Site Title'} value="rooi rose" />
       <ConfigItem label={locale === 'af' ? 'Slagspreuk' : 'Tagline'} value="Jou gemeenskapskoerant" />
       <ConfigItem label={locale === 'af' ? 'WordPress Adres' : 'WordPress Address'} value="https://diepapier.co.za" />
       <ConfigItem label={locale === 'af' ? 'Administrasie E-pos' : 'Admin Email'} value="admin@diepapier.co.za" />
@@ -539,16 +539,16 @@ const YoastSEOSection: React.FC<{ locale: 'af' | 'en' }> = ({ locale }) => (
       icon={Settings}
     >
       <ConfigItem label={locale === 'af' ? 'SEO Titel Skeier' : 'SEO Title Separator'} value="— (em dash)" />
-      <ConfigItem label={locale === 'af' ? 'Tuisblad Titel' : 'Homepage Title'} value="Die Papier — Jou gemeenskapskoerant" />
-      <ConfigItem label={locale === 'af' ? 'Tuisblad Meta Beskrywing' : 'Homepage Meta Description'} value={locale === 'af' ? 'Die Papier is jou gemeenskapskoerant vir Bellville, Brackenfell, Durbanville, en omgewing.' : 'Die Papier is your community newspaper for Bellville, Brackenfell, Durbanville, and surroundings.'} />
+      <ConfigItem label={locale === 'af' ? 'Tuisblad Titel' : 'Homepage Title'} value="rooi rose — Jou gemeenskapstydskrif" />
+      <ConfigItem label={locale === 'af' ? 'Tuisblad Meta Beskrywing' : 'Homepage Meta Description'} value={locale === 'af' ? 'rooi rose is jou gemeenskapstydskrif vir Bellville, Brackenfell, Durbanville, en omgewing.' : 'rooi rose is your community magazine for Bellville, Brackenfell, Durbanville, and surroundings.'} />
     </ConfigCard>
 
     <ConfigCard
       title={locale === 'af' ? 'Inhoud Tipes' : 'Content Types'}
       icon={Settings}
     >
-      <ConfigItem label={locale === 'af' ? 'Pos (dp_article)' : 'Posts (dp_article)'} value="%%title%% — Die Papier" />
-      <ConfigItem label={locale === 'af' ? 'Bladsye' : 'Pages'} value="%%title%% — Die Papier" />
+      <ConfigItem label={locale === 'af' ? 'Pos (dp_article)' : 'Posts (dp_article)'} value="%%title%% — rooi rose" />
+      <ConfigItem label={locale === 'af' ? 'Bladsye' : 'Pages'} value="%%title%% — rooi rose" />
       <ConfigItem label={locale === 'af' ? 'E-Uitgawes (dp_eedition)' : 'E-Editions (dp_eedition)'} value="%%title%% — E-Uitgawes" />
       <ConfigItem label={locale === 'af' ? 'Kompetisies (dp_competition)' : 'Competitions (dp_competition)'} value="%%title%% — Kompetisies" />
       <ConfigItem label={locale === 'af' ? 'Gebeure (dp_event)' : 'Events (dp_event)'} value="%%title%% — Gebeure" />
@@ -577,7 +577,7 @@ const YoastSEOSection: React.FC<{ locale: 'af' | 'en' }> = ({ locale }) => (
       title={locale === 'af' ? 'Skema Instellings' : 'Schema Settings'}
       icon={Settings}
     >
-      <ConfigItem label={locale === 'af' ? 'Organisasie' : 'Organization'} value="Die Papier" />
+      <ConfigItem label={locale === 'af' ? 'Organisasie' : 'Organization'} value="rooi rose" />
       <ConfigItem label={locale === 'af' ? 'Webwerf Tipe' : 'Website Type'} value="News Media Organization" />
       <ConfigItem label="Logo" value={locale === 'af' ? '(URL na logo-beeld)' : '(URL to logo image)'} />
     </ConfigCard>

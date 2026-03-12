@@ -32,7 +32,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* nm-theme / Die Papier Tokens */
+  /* nm-theme / *rooi rose* Tokens */
   --custom-primary: #e82c27; /* Updated Brand Red */
   --custom-primary-2: #c41f20; /* Darker shade of new red */
   --brand-navy-light: #1a3a5f;
@@ -55,9 +55,12 @@
   --contrast: #2c2c2c;
 
   /* Typography */
-  --font-inter: "Inter", sans-serif;
-  --font-heading: "Roboto Serif", serif;
-  --font-raleway: var(--font-heading); /* Backwards compat */
+  --font-karla: "Karla", sans-serif;
+  --font-display: "Playfair Display SC", serif;
+  --font-body: var(--font-karla); /* Primary body font */
+  --font-inter: var(--font-karla); /* Backwards compat alias */
+  --font-heading: var(--font-display); /* Backwards compat alias */
+  --font-raleway: var(--font-display); /* Backwards compat alias */
 
   /* ── V2 Typography Scale ─────────────────────────────────── */
   /* Source: Figma "Desktop/Mobile Font Styles" frames (2026-02-20) */
@@ -279,13 +282,13 @@
 
   /* Font Families — semantic slugs (brand-serif / brand-sans) */
   --wp--preset--font-family--brand-serif: var(
-    --font-heading
-  ); /* 'Roboto Serif', serif */
+    --font-display
+  ); /* 'Playfair Display SC', serif — rooi rose display headings */
   --wp--preset--font-family--brand-sans: var(
-    --font-inter
-  ); /* 'Inter', sans-serif   */
+    --font-body
+  ); /* 'Karla', sans-serif — rooi rose body text */
 
-  /* Font Sizes — numeric-only slugs (Die Papier scale)
+  /* Font Sizes — numeric-only slugs (rooi rose scale)
    * 100=11px  200=12px  300=14px  400=16px  500=16→18px
    * 600=18→20px  700=20→24px  800=H2fluid  900=H1fluid  */
   --wp--preset--font-size--100: var(
@@ -462,7 +465,7 @@
 }
 
 .dark {
-  /* Die Papier Brand Tokens — Dark */
+  /* rooi rose Brand Tokens — Dark */
   --custom-primary: #e82c27;
   --custom-primary-2: #c41f20;
   --brand-navy-light: #8eadc8;
@@ -967,7 +970,7 @@
     color: var(--wp--preset--color--contrast);
   }
 
-  /* Article Content Styles - Die Papier V2 */
+  /* Article Content Styles - rooi rose V2 */
   .article-content {
     font-family: var(--font-inter);
     font-size: var(--text-p1); /* 18px */

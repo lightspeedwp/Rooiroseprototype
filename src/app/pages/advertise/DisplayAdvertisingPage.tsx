@@ -26,7 +26,7 @@ export const DisplayAdvertisingPage = () => {
 
       <ContentHero
         title="Vertoonadvertensies"
-        subtitle="Maak 'n impak met visueel kragtige advertensies in Die Papier se gedrukte en digitale platforms."
+        subtitle="Maak 'n impak met visueel kragtige advertensies in rooi rose se gedrukte en digitale platforms."
         image={HERO_IMAGES.advertise}
         height="small"
       />
@@ -35,7 +35,7 @@ export const DisplayAdvertisingPage = () => {
         {/* Intro */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-            <em>Die Papier</em> se vertoonadvertensies bied jou die geleentheid om jou handelsmerk visueel te vertoon
+            <em>rooi rose</em> se vertoonadvertensies bied jou die geleentheid om jou handelsmerk visueel te vertoon
             aan ons betrokke lesersmark. Van volbladsy gedrukte advertensies tot dinamiese digitale baniere — 
             ons bied plasing-opsies wat by elke begroting en veldtog pas.
           </p>
@@ -70,7 +70,7 @@ export const DisplayAdvertisingPage = () => {
             </h2>
           </div>
           <p className="text-gray-600 dark:text-gray-400 mb-8 max-w-3xl">
-            Ons gedrukte vertoonadvertensies verskyn in <em>Die Papier</em> se weeklikse uitgawe wat nasionaal versprei word.
+            Ons gedrukte vertoonadvertensies verskyn in <em>rooi rose</em> se weeklikse uitgawe wat nasionaal versprei word.
             Kies uit verskeie groottes en plasingsopsies om jou teikenmark te bereik.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -212,7 +212,7 @@ export const DisplayAdvertisingPage = () => {
           </Link>
         </div>
       </div>
-      <PageFAQSection items={DISPLAY_ADS_FAQS} description="Vrae oor vertoonadvertensies in Die Papier." />
+      <PageFAQSection items={DISPLAY_ADS_FAQS} description="Vrae oor vertoonadvertensies in rooi rose." />
     </div>
   );
 };

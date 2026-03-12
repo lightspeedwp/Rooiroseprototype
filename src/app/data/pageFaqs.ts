@@ -1,5 +1,5 @@
 /**
- * Page-specific FAQ data for Die Papier
+ * Page-specific FAQ data for rooi rose
  * Each page has its own FAQ section with relevant questions in Afrikaans
  */
 
@@ -20,7 +20,7 @@ export interface PageFAQSection {
 export const ABOUT_FAQS: PageFAQItem[] = [
   {
     id: 'about-1',
-    question: 'Hoe teken ek in op <em>Die Papier</em>?',
+    question: 'Hoe teken ek in op <em>rooi rose</em>?',
     answer: 'Vir huisaflewering klik op die knoppie "Huisaflewering" bo-aan die tuisblad. Die skakel vir die e-koerant is op die tuisblad.'
   },
   {
@@ -54,7 +54,7 @@ export const ABOUT_FAQS: PageFAQItem[] = [
 export const CONTACT_FAQS: PageFAQItem[] = [
   {
     id: 'contact-1',
-    question: 'Wat is <em>Die Papier</em> se kantoorure?',
+    question: 'Wat is <em>rooi rose</em> se kantoorure?',
     answer: 'Ons kantoor is oop Maandag tot Vrydag van 08:00 tot 17:00. Naweke en openbare vakansiedae is ons gesluit, maar u kan steeds \'n e-pos stuur en ons sal so gou moontlik reageer.'
   },
   {
@@ -83,13 +83,13 @@ export const CONTACT_FAQS: PageFAQItem[] = [
 export const ADVERTISE_FAQS: PageFAQItem[] = [
   {
     id: 'adv-1',
-    question: 'Watter advertensie-opsies bied <em>Die Papier</em> aan?',
+    question: 'Watter advertensie-opsies bied <em>rooi rose</em> aan?',
     answer: 'Ons bied \'n wye reeks advertensie-opsies aan, insluitend vertoonadvertensies (druk en aanlyn), geklassifiseerde advertensies, geborgde inhoud, pamflette, bylaes en borgskappe. Elke opsie kan aangepas word om by jou begroting en doelgehoor te pas.'
   },
   {
     id: 'adv-2',
-    question: 'Hoe groot is <em>Die Papier</em> se leserstal?',
-    answer: 'Novus Media se publikasies het \'n gesamentlike weeklikse bereik van byna 4 miljoen lesers in beide druk- en aanlynformate. <em>Die Papier</em> bied \'n nasionale platform wat spesifiek Afrikaanse lesers teiken.'
+    question: 'Hoe groot is <em>rooi rose</em> se leserstal?',
+    answer: 'Novus Media se publikasies het \'n gesamentlike weeklikse bereik van byna 4 miljoen lesers in beide druk- en aanlynformate. <em>rooi rose</em> bied \'n nasionale platform wat spesifiek Afrikaanse lesers teiken.'
   },
   {
     id: 'adv-3',
@@ -137,7 +137,7 @@ export const EEDITIONS_FAQS: PageFAQItem[] = [
   {
     id: 'eed-1',
     question: 'Wat is \'n e-uitgawe?',
-    answer: '\'n e-uitgawe is \'n volledige digitale weergawe van <em>Die Papier</em> se gedrukte koerant. Dit bevat alle inhoud van die drukkoerant en kan op enige toestel gelees word — rekenaars, tablette en slimfone. Die drukkoerant verskyn Vrydag in die winkels.'
+    answer: '\'n e-uitgawe is \'n volledige digitale weergawe van <em>rooi rose</em> se gedrukte koerant. Dit bevat alle inhoud van die drukkoerant en kan op enige toestel gelees word — rekenaars, tablette en slimfone. Die drukkoerant verskyn Vrydag in die winkels.'
   },
   {
     id: 'eed-2',
@@ -171,7 +171,7 @@ export const WEATHER_FAQS: PageFAQItem[] = [
   {
     id: 'weer-2',
     question: 'Watter streke se weer word gedek?',
-    answer: 'Ons dek die weer vir alle groot stede en dorpe in Suid-Afrika, met \'n fokus op die streke waar <em>Die Papier</em> se lesers woon, insluitend die Vrystaat, Kaapse Skiereiland, Boland, Oos-Kaap en Noord-Kaap.'
+    answer: 'Ons dek die weer vir alle groot stede en dorpe in Suid-Afrika, met \'n fokus op die streke waar <em>rooi rose</em> se lesers woon, insluitend die Vrystaat, Kaapse Skiereiland, Boland, Oos-Kaap en Noord-Kaap.'
   },
   {
     id: 'weer-3',
@@ -189,13 +189,13 @@ export const TEAM_FAQS: PageFAQItem[] = [
   },
   {
     id: 'team-2',
-    question: 'Aanvaar <em>Die Papier</em> vryskutwerk?',
+    question: 'Aanvaar <em>rooi rose</em> vryskutwerk?',
     answer: 'Ja, ons is altyd op die uitkyk vir talentvolle vryskutjoernaliste en bydraers. Stuur jou CV en voorbeelde van vorige werk na <a href="mailto:redaksie@diepapier.co.za">redaksie@diepapier.co.za</a>.'
   },
   {
     id: 'team-3',
     question: 'Hoe word die redaksionele onafhanklikheid verseker?',
-    answer: '<em>Die Papier</em> se redaksie werk onafhanklik van die besigheids- en advertensie-afdelings. Alle redaksionele besluite word geneem op grond van nuuswaardigheid en joernalistieke meriete.'
+    answer: '<em>rooi rose</em> se redaksie werk onafhanklik van die besigheids- en advertensie-afdelings. Alle redaksionele besluite word geneem op grond van nuuswaardigheid en joernalistieke meriete.'
   }
 ];
 
@@ -253,7 +253,7 @@ export const SUBSCRIBE_DELIVERY_FAQS: PageFAQItem[] = [
   {
     id: 'del-3',
     question: 'Wanneer word die koerant afgelewer?',
-    answer: '<em>Die Papier</em> word elke Vrydag tussen 05:00 en 08:00 by jou voordeur afgelewer. In sommige landelike gebiede kan aflewering tot 10:00 neem.'
+    answer: '<em>rooi rose</em> word elke Vrydag tussen 05:00 en 08:00 by jou voordeur afgelewer. In sommige landelike gebiede kan aflewering tot 10:00 neem.'
   },
   {
     id: 'del-4',
@@ -275,19 +275,19 @@ export const SUBSCRIBE_DELIVERY_FAQS: PageFAQItem[] = [
 // ─── Ontwerp Grondslag (Design Foundations) ─────────────────
 export const FOUNDATIONS_FAQS: PageFAQItem[] = [
   {
-    id: 'found-1',
-    question: 'Wat is die doel van hierdie bladsy?',
-    answer: 'Die Ontwerp Grondslag-bladsy dokumenteer die ontwerp-tokens en standaarde vir <em>Die Papier</em> se webwerf. Dit dien as verwysing vir ontwerpers en ontwikkelaars om konsekwente visuele implementering te verseker.'
+    id: 'foundations-1',
+    question: 'Hoe kan ek \'n advertensie plaas vir \'n welsynsorganisasie?',
+    answer: '<em>rooi rose</em> ondersteun verskeie welsynsorganisasies deur gratis of afslag-advertensies. Kontak ons advertensie-afdeling by <a href="mailto:advertensies@diepapier.co.za">advertensies@diepapier.co.za</a> vir meer inligting.'
   },
   {
-    id: 'found-2',
-    question: 'Watter lettertipes gebruik <em>Die Papier</em>?',
-    answer: '<em>Die Papier</em> gebruik twee hooflettertipes: Roboto Serif vir opskrifte en merknaam-elemente, en Inter vir liggaamsteks en UI-elemente. Beide lettertipes word via Google Fonts gelaai.'
+    id: 'foundations-2',
+    question: 'Ondersteun <em>rooi rose</em> plaaslike gemeenskappe?',
+    answer: 'Ja, <em>rooi rose</em> is trots daarop om plaaslike gemeenskappe te ondersteun deur verslagdoening oor gemeenskapsgeleenthede, welsynsprojekte, en kulturele aktiwiteite.'
   },
   {
-    id: 'found-3',
-    question: 'Wat is die handelsmerkkleure?',
-    answer: 'Die primêre handelsmerkkleure is Navy (#172134) vir hoofopskrifte en die hoofkop, en Rooi (#E82C27) vir aksent-elemente, knoppies en interaktiewe hoogtepunte.'
+    id: 'foundations-3',
+    question: 'Hoe kan my organisasie met <em>rooi rose</em> saamwerk?',
+    answer: 'Organisasies wat met <em>rooi rose</em> wil saamwerk kan ons kontak by <a href="mailto:redaksie@diepapier.co.za">redaksie@diepapier.co.za</a> of <a href="mailto:advertensies@diepapier.co.za">advertensies@diepapier.co.za</a> afhangende van die aard van die samewerking.'
   }
 ];
 
@@ -295,7 +295,7 @@ export const FOUNDATIONS_FAQS: PageFAQItem[] = [
 export const OBITUARIES_FAQS: PageFAQItem[] = [
   {
     id: 'obit-1',
-    question: 'Hoe plaas ek \'n doodsberig in <em>Die Papier</em>?',
+    question: 'Hoe plaas ek \'n doodsberig in <em>rooi rose</em>?',
     answer: 'Stuur die oorledene se besonderhede, \'n kort lewensbeskrywing, en \'n foto (opsioneel) na <a href="mailto:doodsberrigte@diepapier.co.za">doodsberrigte@diepapier.co.za</a>. Ons sal u kontak om die plasing en koste te bespreek.'
   },
   {
@@ -314,7 +314,7 @@ export const OBITUARIES_FAQS: PageFAQItem[] = [
 export const MULTIMEDIA_FAQS: PageFAQItem[] = [
   {
     id: 'media-1',
-    question: 'Watter tipe multimedia-inhoud bied <em>Die Papier</em> aan?',
+    question: 'Watter tipe multimedia-inhoud bied <em>rooi rose</em> aan?',
     answer: 'Ons bied video-verslae, foto-galerye en podcasts aan. Dit sluit in nuusonderhoude, dokumentêre kortverhale, foto-essays van plaaslike gebeure, en ons weeklikse podcast-reeks.'
   },
   {
@@ -371,12 +371,12 @@ export const NEWSLETTER_ARCHIVE_FAQS: PageFAQItem[] = [
 export const POLICIES_FAQS: PageFAQItem[] = [
   {
     id: 'pol-1',
-    question: 'Hoe beskerm <em>Die Papier</em> my persoonlike inligting?',
+    question: 'Hoe beskerm <em>rooi rose</em> my persoonlike inligting?',
     answer: 'Ons voldoen aan die Beskerming van Persoonlike Inligting Wet (POPIA) en neem streng maatreëls om u data te beskerm. Lees ons volledige Privaatheidsbeleid vir meer besonderhede.'
   },
   {
     id: 'pol-2',
-    question: 'Wat is <em>Die Papier</em> se kommentaarbeleid?',
+    question: 'Wat is <em>rooi rose</em> se kommentaarbeleid?',
     answer: 'Ons moedig respekvolle dialoog aan. Kommentare word gemodereer en moet voldoen aan ons Kommentaarbeleid. Haatspraak, beledigings en misleidende inligting word nie toegelaat nie.'
   },
   {
@@ -433,7 +433,7 @@ export const COMPETITIONS_FAQS: PageFAQItem[] = [
 export const SUBMIT_FAQS: PageFAQItem[] = [
   {
     id: 'submit-1',
-    question: 'Wat kan ek by <em>Die Papier</em> instuur?',
+    question: 'Wat kan ek by <em>rooi rose</em> instuur?',
     answer: 'Jy kan nuusstories, lesersbriefs (briefs aan die redakteur), terugvoer oor ons dekking, en shoutouts aan spesiale mense instuur. Besoek die "Stuur in" bladsy vir al die opsies.'
   },
   {
@@ -444,7 +444,7 @@ export const SUBMIT_FAQS: PageFAQItem[] = [
   {
     id: 'submit-3',
     question: 'Word my persoonlike inligting vertroulik gehou?',
-    answer: 'Ja, jou persoonlike besonderhede word vertroulik hanteer volgens <em>Die Papier</em> se privaatheidsbeleid. Ons publiseer slegs jou naam en dorp as jy toestemming gee.'
+    answer: 'Ja, jou persoonlike besonderhede word vertroulik hanteer volgens <em>rooi rose</em> se privaatheidsbeleid. Ons publiseer slegs jou naam en dorp as jy toestemming gee.'
   }
 ];
 
@@ -452,13 +452,13 @@ export const SUBMIT_FAQS: PageFAQItem[] = [
 export const SUBMIT_STORY_FAQS: PageFAQItem[] = [
   {
     id: 'story-1',
-    question: 'Watter soort stories soek <em>Die Papier</em>?',
-    answer: '<em>Die Papier</em> verwelkom nuuswenke, menseverhale, ondersoekende joernalistiek-wenke en plaaslike nuus wat ons lesers raak. Ons fokus op stories wat relevant is vir Afrikaanse lesers regoor Suid-Afrika.'
+    question: 'Watter soort stories soek <em>rooi rose</em>?',
+    answer: '<em>rooi rose</em> verwelkom nuuswenke, menseverhale, ondersoekende joernalistiek-wenke en plaaslike nuus wat ons lesers raak. Ons fokus op stories wat relevant is vir Afrikaanse lesers regoor Suid-Afrika.'
   },
   {
     id: 'story-2',
     question: 'Moet ek \'n joernalis wees om \'n storie in te stuur?',
-    answer: 'Nee, enigeen kan \'n nuuswenk of storie by <em>Die Papier</em> instuur. Ons redaksionele span sal die inhoud verwerk en verfyn vir publikasie. Ons waardeer bydraes van alle lesers.'
+    answer: 'Nee, enigeen kan \'n nuuswenk of storie by <em>rooi rose</em> instuur. Ons redaksionele span sal die inhoud verwerk en verfyn vir publikasie. Ons waardeer bydraes van alle lesers.'
   },
   {
     id: 'story-3',
@@ -477,12 +477,12 @@ export const SUBMIT_LETTER_FAQS: PageFAQItem[] = [
   {
     id: 'letter-1',
     question: 'Hoe lank mag my lesersbrief wees?',
-    answer: '<em>Die Papier</em> beveel aan dat lesersbriefs korter as 300 woorde is. Langer briewe mag ingekort word deur die redaksie.'
+    answer: '<em>rooi rose</em> beveel aan dat lesersbriefs korter as 300 woorde is. Langer briewe mag ingekort word deur die redaksie.'
   },
   {
     id: 'letter-2',
     question: 'Sal my brief geredigeer word?',
-    answer: 'Ja, <em>Die Papier</em> behou die reg om briewe te redigeer vir lengte, grammatika en styl. Die kernboodskap van jou brief sal behoue bly.'
+    answer: 'Ja, <em>rooi rose</em> behou die reg om briewe te redigeer vir lengte, grammatika en styl. Die kernboodskap van jou brief sal behoue bly.'
   },
   {
     id: 'letter-3',
@@ -496,17 +496,17 @@ export const SUBMIT_FEEDBACK_FAQS: PageFAQItem[] = [
   {
     id: 'feedback-1',
     question: 'Watter tipe terugvoer kan ek stuur?',
-    answer: 'Jy kan terugvoer stuur oor <em>Die Papier</em> se dekking, feitlike foute in artikels, voorstelle vir verbetering, of algemene kommentaar. Ons waardeer alle konstruktiewe terugvoer.'
+    answer: 'Jy kan terugvoer stuur oor <em>rooi rose</em> se dekking, feitlike foute in artikels, voorstelle vir verbetering, of algemene kommentaar. Ons waardeer alle konstruktiewe terugvoer.'
   },
   {
     id: 'feedback-2',
     question: 'Sal ek \'n antwoord ontvang op my terugvoer?',
-    answer: '<em>Die Papier</em> se redaksie lees alle terugvoer, maar ons kan nie op elke boodskap individueel reageer nie. As jou terugvoer \'n spesifieke regstelling vereis, sal ons jou kontak.'
+    answer: '<em>rooi rose</em> se redaksie lees alle terugvoer, maar ons kan nie op elke boodskap individueel reageer nie. As jou terugvoer \'n spesifieke regstelling vereis, sal ons jou kontak.'
   },
   {
     id: 'feedback-3',
     question: 'Hoe verskil terugvoer van \'n formele klagte?',
-    answer: 'Terugvoer is informeel en help ons om te verbeter. Vir \'n formele klagte oor \'n artikel, gebruik <em>Die Papier</em> se klagteprosedure of kontak die Persraad van Suid-Afrika direk.'
+    answer: 'Terugvoer is informeel en help ons om te verbeter. Vir \'n formele klagte oor \'n artikel, gebruik <em>rooi rose</em> se klagteprosedure of kontak die Persraad van Suid-Afrika direk.'
   }
 ];
 
@@ -515,17 +515,17 @@ export const SUBMIT_SHOUTOUT_FAQS: PageFAQItem[] = [
   {
     id: 'shoutout-1',
     question: 'Wat is \'n shoutout?',
-    answer: '\'n Shoutout is \'n kort erkenning of gelukwensing aan \'n spesiale persoon wat in <em>Die Papier</em> gepubliseer word. Dit kan vir \'n verjaarsdag, prestasie, of bloot om iemand te bedank wees.'
+    answer: '\'n Shoutout is \'n kort erkenning of gelukwensing aan \'n spesiale persoon wat in <em>rooi rose</em> gepubliseer word. Dit kan vir \'n verjaarsdag, prestasie, of bloot om iemand te bedank wees.'
   },
   {
     id: 'shoutout-2',
     question: 'Kos dit iets om \'n shoutout te plaas?',
-    answer: 'Basiese shoutouts word gratis geplaas in <em>Die Papier</em> se aanlynuitgawe. Vir plasing in die gedrukte koerant, kontak ons advertensiespan vir tariewe.'
+    answer: 'Basiese shoutouts word gratis geplaas in <em>rooi rose</em> se aanlynuitgawe. Vir plasing in die gedrukte koerant, kontak ons advertensiespan vir tariewe.'
   },
   {
     id: 'shoutout-3',
     question: 'Hoe lank neem dit voor my shoutout verskyn?',
-    answer: 'Aanlyn-shoutouts word gewoonlik binne 2-3 werksdae verwerk. Gedrukte shoutouts verskyn in die volgende beskikbare Vrydag-uitgawe van <em>Die Papier</em>.'
+    answer: 'Aanlyn-shoutouts word gewoonlik binne 2-3 werksdae verwerk. Gedrukte shoutouts verskyn in die volgende beskikbare Vrydag-uitgawe van <em>rooi rose</em>.'
   }
 ];
 
@@ -534,27 +534,27 @@ export const SUBMIT_EVENT_FAQS: PageFAQItem[] = [
   {
     id: 'event-sub-1',
     question: 'Watter tipe gebeurtenisse kan ek indien?',
-    answer: 'Jy kan enige plaaslike of streeksgebeurtenis by <em>Die Papier</em> indien, insluitend plaaslike geleenthede, sportwedstryde, kunsfeeste, markte, sake-geleenthede, skoolaktiwiteite en meer.'
+    answer: 'Jy kan enige plaaslike of streeksgebeurtenis by <em>rooi rose</em> indien, insluitend plaaslike geleenthede, sportwedstryde, kunsfeeste, markte, sake-geleenthede, skoolaktiwiteite en meer.'
   },
   {
     id: 'event-sub-2',
     question: 'Is dit gratis om \'n gebeurtenis te lys?',
-    answer: 'Ja, basiese gebeurtenislysting op <em>Die Papier</em> se webwerf is gratis. Vir prominente plasing of geborgte gebeurtenisse in die gedrukte koerant, kontak ons advertensiespan vir tariewe.'
+    answer: 'Ja, basiese gebeurtenislysting op <em>rooi rose</em> se webwerf is gratis. Vir prominente plasing of geborgte gebeurtenisse in die gedrukte koerant, kontak ons advertensiespan vir tariewe.'
   },
   {
     id: 'event-sub-3',
     question: 'Hoe lank voor die tyd moet ek \'n gebeurtenis indien?',
-    answer: 'Ons beveel aan dat jy jou gebeurtenis minstens twee weke voor die datum by <em>Die Papier</em> indien om voldoende tyd vir hersiening en publisering te gee.'
+    answer: 'Ons beveel aan dat jy jou gebeurtenis minstens twee weke voor die datum by <em>rooi rose</em> indien om voldoende tyd vir hersiening en publisering te gee.'
   },
   {
     id: 'event-sub-4',
     question: 'Kan ek \'n plakkaat of foto saam stuur?',
-    answer: 'Ja, laai \'n hoëresolusie-beeld (JPG of PNG, tot 5MB) op saam met jou indiening. Dit sal saam met jou gebeurtenis op <em>Die Papier</em> se kalender vertoon word.'
+    answer: 'Ja, laai \'n hoëresolusie-beeld (JPG of PNG, tot 5MB) op saam met jou indiening. Dit sal saam met jou gebeurtenis op <em>rooi rose</em> se kalender vertoon word.'
   },
   {
     id: 'event-sub-5',
     question: 'Kan ek my ingediende gebeurtenis wysig of kanselleer?',
-    answer: 'Kontak <em>Die Papier</em> by <a href="mailto:gebeure@diepapier.co.za">gebeure@diepapier.co.za</a> met die besonderhede van die wysiging of kansellasie. Ons sal die veranderinge vir jou aanbring.'
+    answer: 'Kontak <em>rooi rose</em> by <a href="mailto:gebeure@diepapier.co.za">gebeure@diepapier.co.za</a> met die besonderhede van die wysiging of kansellasie. Ons sal die veranderinge vir jou aanbring.'
   }
 ];
 
@@ -562,23 +562,23 @@ export const SUBMIT_EVENT_FAQS: PageFAQItem[] = [
 export const CLASSIFIEDS_FAQS: PageFAQItem[] = [
   {
     id: 'class-1',
-    question: 'Hoe plaas ek \'n geklassifiseerde advertensie in <em>Die Papier</em>?',
-    answer: 'Stuur jou advertensieteks na <a href="mailto:geklassifiseerd@diepapier.co.za">geklassifiseerd@diepapier.co.za</a> of vul die navraagvorm op <em>Die Papier</em> se adverteerbladsy in. Ons span sal jou binnekort kontak met \'n kwotasie.'
+    question: 'Hoe plaas ek \'n geklassifiseerde advertensie in <em>rooi rose</em>?',
+    answer: 'Stuur jou advertensieteks na <a href="mailto:geklassifiseerd@diepapier.co.za">geklassifiseerd@diepapier.co.za</a> of vul die navraagvorm op <em>rooi rose</em> se adverteerbladsy in. Ons span sal jou binnekort kontak met \'n kwotasie.'
   },
   {
     id: 'class-2',
     question: 'Watter kategorieë is beskikbaar vir geklassifiseerde advertensies?',
-    answer: '<em>Die Papier</em> bied geklassifiseerde kategorieë aan soos Vakatures, Eiendom, Voertuie, Dienste, Kennisgewings en meer. Kontak ons vir die volledige lys.'
+    answer: '<em>rooi rose</em> bied geklassifiseerde kategorieë aan soos Vakatures, Eiendom, Voertuie, Dienste, Kennisgewings en meer. Kontak ons vir die volledige lys.'
   },
   {
     id: 'class-3',
     question: 'Verskyn my geklassifiseerde advertensie ook aanlyn?',
-    answer: 'Ja, alle geklassifiseerde advertensies in <em>Die Papier</em> se gedrukte uitgawe word ook outomaties aanlyn gelys vir bykomende blootstelling.'
+    answer: 'Ja, alle geklassifiseerde advertensies in <em>rooi rose</em> se gedrukte uitgawe word ook outomaties aanlyn gelys vir bykomende blootstelling.'
   },
   {
     id: 'class-4',
     question: 'Wat is die spertyd vir geklassifiseerde advertensies?',
-    answer: 'Geklassifiseerde materiaal moet teen Dinsdag om 12:00 ontvang word vir plasing in <em>Die Papier</em> se Vrydag-uitgawe.'
+    answer: 'Geklassifiseerde materiaal moet teen Dinsdag om 12:00 ontvang word vir plasing in <em>rooi rose</em> se Vrydag-uitgawe.'
   }
 ];
 
@@ -649,7 +649,7 @@ export const THANKYOU_NEWSLETTER_FAQS: PageFAQItem[] = [
   {
     id: 'ty-news-2',
     question: 'Sal my e-posadres met derde partye gedeel word?',
-    answer: 'Nee, ons deel nooit u inligting met derde partye nie. U e-posadres word slegs gebruik om <em>Die Papier</em> se nuusbriewe te stuur.'
+    answer: 'Nee, ons deel nooit u inligting met derde partye nie. U e-posadres word slegs gebruik om <em>rooi rose</em> se nuusbriewe te stuur.'
   },
   {
     id: 'ty-news-3',
@@ -700,18 +700,18 @@ export const THANKYOU_SUBMISSION_FAQS: PageFAQItem[] = [
 export const DISPLAY_ADS_FAQS: PageFAQItem[] = [
   {
     id: 'disp-1',
-    question: 'Watter vertoonadvertensie-formate bied <em>Die Papier</em> aan?',
-    answer: '<em>Die Papier</em> bied verskeie formate aan, insluitend volbladsy, halfbladsy, kwartbladsy en strookadvertensies in beide die gedrukte koerant en aanlyn. Digitale opsies sluit banier- en mediumreghoekadvertensies in.'
+    question: 'Watter vertoonadvertensie-formate bied <em>rooi rose</em> aan?',
+    answer: '<em>rooi rose</em> bied verskeie formate aan, insluitend volbladsy, halfbladsy, kwartbladsy en strookadvertensies in beide die gedrukte koerant en aanlyn. Digitale opsies sluit banier- en mediumreghoekadvertensies in.'
   },
   {
     id: 'disp-2',
     question: 'Kan ek \'n spesifieke posisie in die koerant kies?',
-    answer: 'Ja, voorkeursposisies soos die voorblad, agterblad en spesifieke afdelings is beskikbaar teen \'n premietarief. Kontak <em>Die Papier</em> se advertensiespan vir beskikbaarheid.'
+    answer: 'Ja, voorkeursposisies soos die voorblad, agterblad en spesifieke afdelings is beskikbaar teen \'n premietarief. Kontak <em>rooi rose</em> se advertensiespan vir beskikbaarheid.'
   },
   {
     id: 'disp-3',
-    question: 'Bied <em>Die Papier</em> ontwerpsdienste vir advertensies aan?',
-    answer: 'Ja, <em>Die Papier</em> se kreatiewe span kan jou advertensie ontwerp teen \'n addisionele fooi. Stuur jou logo, beelde en teks na <a href="mailto:advertensies@diepapier.co.za">advertensies@diepapier.co.za</a>.'
+    question: 'Bied <em>rooi rose</em> ontwerpsdienste vir advertensies aan?',
+    answer: 'Ja, <em>rooi rose</em> se kreatiewe span kan jou advertensie ontwerp teen \'n addisionele fooi. Stuur jou logo, beelde en teks na <a href="mailto:advertensies@diepapier.co.za">advertensies@diepapier.co.za</a>.'
   }
 ];
 
@@ -719,18 +719,18 @@ export const DISPLAY_ADS_FAQS: PageFAQItem[] = [
 export const LEAFLETS_FAQS: PageFAQItem[] = [
   {
     id: 'leaf-1',
-    question: 'Hoe werk pamfletverspreiding met <em>Die Papier</em>?',
-    answer: 'Jou pamflette word saam met <em>Die Papier</em> se weeklikse gedrukte uitgawe versprei aan intekenare en winkelpunte. Dit verseker direkte bereiking van ons aktiewe lesersmark.'
+    question: 'Hoe werk pamfletverspreiding met <em>rooi rose</em>?',
+    answer: 'Jou pamflette word saam met <em>rooi rose</em> se weeklikse gedrukte uitgawe versprei aan intekenare en winkelpunte. Dit verseker direkte bereiking van ons aktiewe lesersmark.'
   },
   {
     id: 'leaf-2',
     question: 'Wat is die minimum bestelling vir pamflette?',
-    answer: 'Die minimum bestelling hang af van die verspreidingsgebied. Kontak <em>Die Papier</em> se advertensiespan by <a href="mailto:advertensies@diepapier.co.za">advertensies@diepapier.co.za</a> vir spesifieke hoeveelhede en tariewe.'
+    answer: 'Die minimum bestelling hang af van die verspreidingsgebied. Kontak <em>rooi rose</em> se advertensiespan by <a href="mailto:advertensies@diepapier.co.za">advertensies@diepapier.co.za</a> vir spesifieke hoeveelhede en tariewe.'
   },
   {
     id: 'leaf-3',
     question: 'Kan ek kies in watter areas my pamflette versprei word?',
-    answer: 'Ja, <em>Die Papier</em> bied geografiese teikening aan. Jy kan spesifieke streke of dorpe kies waar jou pamflette versprei moet word.'
+    answer: 'Ja, <em>rooi rose</em> bied geografiese teikening aan. Jy kan spesifieke streke of dorpe kies waar jou pamflette versprei moet word.'
   }
 ];
 
@@ -738,18 +738,18 @@ export const LEAFLETS_FAQS: PageFAQItem[] = [
 export const SPONSORED_CONTENT_FAQS: PageFAQItem[] = [
   {
     id: 'spon-cont-1',
-    question: 'Wat is geborgde inhoud by <em>Die Papier</em>?',
-    answer: 'Geborgde inhoud is redaksioneel-gestileerde artikels wat deur jou besigheid geborg word. <em>Die Papier</em> se joernaliste skryf die inhoud in samewerking met jou om jou boodskap outentiek oor te dra.'
+    question: 'Wat is geborgde inhoud by <em>rooi rose</em>?',
+    answer: 'Geborgde inhoud is redaksioneel-gestileerde artikels wat deur jou besigheid geborg word. <em>rooi rose</em> se joernaliste skryf die inhoud in samewerking met jou om jou boodskap outentiek oor te dra.'
   },
   {
     id: 'spon-cont-2',
     question: 'Word geborgde inhoud duidelik gemerk?',
-    answer: 'Ja, alle geborgde inhoud word duidelik as "Geborgde inhoud" gemerk in ooreenstemming met <em>Die Papier</em> se redaksionele riglyne en die Perskode van Suid-Afrika.'
+    answer: 'Ja, alle geborgde inhoud word duidelik as "Geborgde inhoud" gemerk in ooreenstemming met <em>rooi rose</em> se redaksionele riglyne en die Perskode van Suid-Afrika.'
   },
   {
     id: 'spon-cont-3',
     question: 'Hoe lank bly geborgde inhoud aanlyn?',
-    answer: 'Geborgde artikels op <em>Die Papier</em> se webwerf bly permanent beskikbaar, net soos enige ander artikel. Dit bied langtermyn-sigbaarheid vir jou handelsmerk.'
+    answer: 'Geborgde artikels op <em>rooi rose</em> se webwerf bly permanent beskikbaar, net soos enige ander artikel. Dit bied langtermyn-sigbaarheid vir jou handelsmerk.'
   }
 ];
 
@@ -757,18 +757,18 @@ export const SPONSORED_CONTENT_FAQS: PageFAQItem[] = [
 export const SPONSORSHIPS_FAQS: PageFAQItem[] = [
   {
     id: 'spons-1',
-    question: 'Watter borgskapsopsies bied <em>Die Papier</em> aan?',
-    answer: '<em>Die Papier</em> bied borgskappe aan vir ons nuusbriewe, webwerfafdelings, spesiale beriggewing-projekte, podcasts en gebeure. Elke borgskap word pasgemaak vir jou handelsmerk se behoeftes.'
+    question: 'Watter borgskapsopsies bied <em>rooi rose</em> aan?',
+    answer: '<em>rooi rose</em> bied borgskappe aan vir ons nuusbriewe, webwerfafdelings, spesiale beriggewing-projekte, podcasts en gebeure. Elke borgskap word pasgemaak vir jou handelsmerk se behoeftes.'
   },
   {
     id: 'spons-2',
     question: 'Wat is die minimum borgskaptermyn?',
-    answer: 'Borgskappe by <em>Die Papier</em> begin tipies by \'n minimum van 3 maande om effektiewe handelsmerkbou te verseker. Korter termyne is beskikbaar vir spesifieke projekte of gebeure.'
+    answer: 'Borgskappe by <em>rooi rose</em> begin tipies by \'n minimum van 3 maande om effektiewe handelsmerkbou te verseker. Korter termyne is beskikbaar vir spesifieke projekte of gebeure.'
   },
   {
     id: 'spons-3',
     question: 'Watter verslagdoening ontvang ek as borg?',
-    answer: '<em>Die Papier</em> verskaf maandelikse prestasieverslagte wat bereik, bladsyvertonings, klik-deur-koerse en gehoordemografie insluit. Ons glo in deursigtige vennootskappe.'
+    answer: '<em>rooi rose</em> verskaf maandelikse prestasieverslagte wat bereik, bladsyvertonings, klik-deur-koerse en gehoordemografie insluit. Ons glo in deursigtige vennootskappe.'
   }
 ];
 
@@ -777,16 +777,16 @@ export const SUPPLEMENTS_FAQS: PageFAQItem[] = [
   {
     id: 'supp-1',
     question: 'Wat is \'n koerantbylae?',
-    answer: '\'n Bylae is \'n aparte, temagedrewe afdeling wat saam met <em>Die Papier</em> se hoofkoerant gedruk en versprei word. Dit bied \'n eksklusiewe platform vir diepgaande inhoud oor \'n spesifieke onderwerp.'
+    answer: '\'n Bylae is \'n aparte, temagedrewe afdeling wat saam met <em>rooi rose</em> se hoofkoerant gedruk en versprei word. Dit bied \'n eksklusiewe platform vir diepgaande inhoud oor \'n spesifieke onderwerp.'
   },
   {
     id: 'supp-2',
     question: 'Kan ek \'n hele bylae borg?',
-    answer: 'Ja, <em>Die Papier</em> bied eksklusiewe bylaeborgskap aan. Jou handelsmerk kry prominente plasing deur die hele bylae, insluitend die voorblad en interne advertensiespasie.'
+    answer: 'Ja, <em>rooi rose</em> bied eksklusiewe bylaeborgskap aan. Jou handelsmerk kry prominente plasing deur die hele bylae, insluitend die voorblad en interne advertensiespasie.'
   },
   {
     id: 'supp-3',
-    question: 'Watter temas dek <em>Die Papier</em> se bylaes?',
-    answer: '<em>Die Papier</em> publiseer gereeld bylaes oor onderwerpe soos eiendom, motors, gesondheid, onderwys, landbou en feestyddekorasies. Pasgemaakte temas is ook moontlik.'
+    question: 'Watter temas dek <em>rooi rose</em> se bylaes?',
+    answer: '<em>rooi rose</em> publiseer gereeld bylaes oor onderwerpe soos eiendom, motors, gesondheid, onderwys, landbou en feestyddekorasies. Pasgemaakte temas is ook moontlik.'
   }
 ];

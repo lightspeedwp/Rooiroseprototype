@@ -37,9 +37,9 @@ export const TermsAndConditionsPage = () => {
           {/* Introduction */}
           <section className="mb-12">
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
-              Welkom by <em>Die Papier</em>. Hierdie Terme en voorwaardes ("Terme", "Ooreenkoms") reguleer jou 
+              Welkom by <em>rooi rose</em>. Hierdie Terme en voorwaardes ("Terme", "Ooreenkoms") reguleer jou 
               gebruik van ons webwerf by <strong>www.diepapier.co.za</strong> (die "Diens") wat deur 
-              <em>Die Papier</em> (Edms) Bpk ("ons", "ons" of "onse") bedryf word.
+              <em>rooi rose</em> (Edms) Bpk ("ons", "ons" of "onse") bedryf word.
             </p>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
               Deur toegang tot of gebruik van die Diens, stem jy in om gebonde te wees aan hierdie Terme. 
@@ -136,7 +136,7 @@ export const TermsAndConditionsPage = () => {
             <h3 className="text-xl font-normal text-brand-navy dark:text-foreground mt-6 mb-3 font-heading" style={TC_H3}>4.1 Ons inhoud</h3>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
               Alle inhoud op hierdie webwerf, insluitend maar nie beperk tot teks, grafika, logo's, ikone, 
-              beelde, oudioklippe, video klippe en sagteware, is die eiendom van <em>Die Papier</em> of sy 
+              beelde, oudioklippe, video klippe en sagteware, is die eiendom van <em>rooi rose</em> of sy 
               inhoudverskaffers en word beskerm deur Suid-Afrikaanse en internasionale outeursreg wette.
             </p>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
@@ -237,7 +237,7 @@ export const TermsAndConditionsPage = () => {
               8. Beperking van aanspreeklikheid
             </h2>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-              In geen geval sal <em>Die Papier</em>, sy direkteure, werknemers of agente aanspreeklik wees vir enige 
+              In geen geval sal <em>rooi rose</em>, sy direkteure, werknemers of agente aanspreeklik wees vir enige 
               indirekte, toevallige, spesiale, gevolglike of strafbare skadevergoeding, insluitend sonder 
               beperking, verlies van winste, data, gebruik, goodwill of ander ontasbare verliese, wat voortspruit uit:
             </p>
@@ -255,7 +255,7 @@ export const TermsAndConditionsPage = () => {
               9. Vrywaring
             </h2>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-              Jy stem in om <em>Die Papier</em> en sy geaffilieerdes, direkteure, beamptes, werknemers en agente te verdedig, 
+              Jy stem in om <em>rooi rose</em> en sy geaffilieerdes, direkteure, beamptes, werknemers en agente te verdedig, 
               vry te stel en skadeloos te hou teen enige en alle eise, skades, verpligtinge, verliese, aanspreeklikhede, 
               koste of skuld, en uitgawes (insluitend maar nie beperk tot regsfooie nie), wat voortspruit uit of verband 
               hou met:
@@ -323,7 +323,7 @@ export const TermsAndConditionsPage = () => {
               As jy enige vrae oor hierdie Terme het, kontak ons asseblief:
             </p>
             <div className="bg-gray-50 dark:bg-card p-6 rounded-lg">
-              <p className="text-gray-700 dark:text-gray-300 mb-2"><strong><em>Die Papier</em> (Edms) Bpk</strong></p>
+              <p className="text-gray-700 dark:text-gray-300 mb-2"><strong><em>rooi rose</em> (Edms) Bpk</strong></p>
               <p className="text-gray-700 dark:text-gray-300 mb-2">E-pos: <a href="mailto:info@diepapier.co.za" className="text-text-link-red font-bold hover:underline">info@diepapier.co.za</a></p>
               <p className="text-gray-700 dark:text-gray-300">Adres: Loft Office East (LOE4), 2nd Floor, The Zone Rosebank, 187 Oxford Road, Rosebank, 2196</p>
             </div>

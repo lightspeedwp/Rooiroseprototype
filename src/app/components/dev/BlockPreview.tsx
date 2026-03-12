@@ -265,7 +265,7 @@ const WidgetPreview: React.FC<{ block: BlockEntry }> = ({ block }) => {
   if (block.id.includes('site-title')) {
     return (
       <PreviewShell label="site-title">
-        <div className="text-sm text-white/40" style={{ fontFamily: 'serif' }}>Die Papier</div>
+        <div className="text-sm text-white/40" style={{ fontFamily: 'serif' }}>rooi rose</div>
       </PreviewShell>
     );
   }
@@ -778,7 +778,7 @@ const PatternPreview: React.FC<{ block: BlockEntry }> = ({ block }) => {
     return (
       <PreviewShell label="faq">
         <div className="space-y-1">
-          {['Wat is Die Papier?', 'Hoe teken ek in?', 'Kontak ons'].map((q, i) => (
+          {['Wat is rooi rose?', 'Hoe teken ek in?', 'Kontak ons'].map((q, i) => (
             <div key={q} className="flex items-center justify-between py-1 border-b border-white/5">
               <span className="text-[9px] text-white/30">{q}</span>
               <ChevronRight size={8} className={`text-white/15 ${i === 0 ? 'rotate-90' : ''}`} />
@@ -819,7 +819,7 @@ const PartsPreview: React.FC<{ block: BlockEntry }> = ({ block }) => {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="w-6 h-4 bg-[#D70025]/20 rounded" />
-            <span className="text-[9px] text-white/30" style={{ fontFamily: 'serif' }}>Die Papier</span>
+            <span className="text-[9px] text-white/30" style={{ fontFamily: 'serif' }}>rooi rose</span>
           </div>
           <div className="flex items-center gap-3">
             {['Nuus', 'Sport', 'Sake'].map(l => (
@@ -894,8 +894,8 @@ const SocialPreview: React.FC<{ block: BlockEntry }> = ({ block }) => {
       <PreviewShell label="social-share" interactive={true} bg="bg-white dark:bg-neutral-900">
         <div className="pt-3">
           <SocialShare 
-            title="Die Papier - Latest News" 
-            description="Stay up to date with the latest news from Die Papier"
+            title="rooi rose - Latest News" 
+            description="Stay up to date with the latest news from rooi rose"
             url="https://diepapier.com"
           />
         </div>
@@ -935,9 +935,9 @@ const CommonPreview: React.FC<{ block: BlockEntry }> = ({ block }) => {
       <PreviewShell label="logo">
         <div className="flex items-center gap-2">
           <div className="w-8 h-6 bg-[#D70025]/15 rounded flex items-center justify-center">
-            <span className="text-[7px] text-[#D70025]/40">DP</span>
+            <span className="text-[7px] text-[#D70025]/40">RR</span>
           </div>
-          <span className="text-[10px] text-white/30" style={{ fontFamily: 'serif' }}>Die Papier</span>
+          <span className="text-[10px] text-white/30" style={{ fontFamily: 'serif' }}>rooi rose</span>
         </div>
       </PreviewShell>
     );

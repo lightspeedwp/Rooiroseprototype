@@ -37,8 +37,8 @@ export const About = () => {
   return (
     <div className="bg-white dark:bg-background min-h-screen">
       <SEO
-        title="Oor ons - Die Papier"
-        description="Die Papier is 'n nasionale Afrikaanse weeklikse koerant wat gehalte-joernalistiek en diskoers oor die aspirasies en frustrasies van Afrikaanse lesers bied."
+        title="Oor ons - rooi rose"
+        description="rooi rose is 'n nasionale Afrikaanse weeklikse koerant wat gehalte-joernalistiek en diskoers oor die aspirasies en frustrasies van Afrikaanse lesers bied."
         keywords="oor ons, die papier, afrikaanse nuus, novus media, pers"
       />
 
@@ -50,7 +50,7 @@ export const About = () => {
         <div className="absolute inset-0">
           <img
             src={ABOUT_HERO.image}
-            alt="Die Papier drukpers"
+            alt="rooi rose drukpers"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/90 via-brand-navy/70 to-brand-navy/40" />
@@ -135,14 +135,14 @@ export const About = () => {
               Wat die mense sê
             </h2>
             <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              {renderWithBrandItalics("Die Papier is meer as net 'n koerant. Dit is 'n platform vir gesprek, debat en ingeligte leserskap.")}
+              {renderWithBrandItalics("rooi rose is meer as net 'n koerant. Dit is 'n platform vir gesprek, debat en ingeligte leserskap.")}
             </p>
           </div>
           <MarketingGrid />
         </div>
       </section>
 
-      {/* ─── Introduction — Die Papier ─────────────────────── */}
+      {/* ─── Introduction — rooi rose ─────────────────────── */}
       <section className="bg-gray-50 dark:bg-background">
         <div className="alignwide py-12 md:py-16">
           <div className="max-w-3xl">
@@ -173,7 +173,7 @@ export const About = () => {
             </h2>
             <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
               {NOVUS_MEDIA.paragraphs.map((para, index) => (
-                <p key={index} dangerouslySetInnerHTML={{ __html: para.replace('novanews.co.za', '<a href="https://novanews.co.za" target="_blank" rel="noopener noreferrer" class="text-text-link-red dark:text-text-link-red hover:underline font-medium">novanews.co.za</a>').replace('rooi rose', '<em class="not-italic font-medium">rooi rose</em>').replace('Soccer Laduma', '<em class="not-italic font-medium">Soccer Laduma</em>').replace('Kick Off', '<em class="not-italic font-medium">Kick Off</em>').replace('Die Papier', '<em>Die Papier</em>') }} />
+                <p key={index} dangerouslySetInnerHTML={{ __html: para.replace('novanews.co.za', '<a href="https://novanews.co.za" target="_blank" rel="noopener noreferrer" class="text-text-link-red dark:text-text-link-red hover:underline font-medium">novanews.co.za</a>').replace('rooi rose', '<em class="not-italic font-medium">rooi rose</em>').replace('Soccer Laduma', '<em class="not-italic font-medium">Soccer Laduma</em>').replace('Kick Off', '<em class="not-italic font-medium">Kick Off</em>') }} />
               ))}
             </div>
           </div>
@@ -445,7 +445,7 @@ export const About = () => {
       {/* ─── FAQ Section ──────────────────────────────────── */}
       <PageFAQSection
         items={ABOUT_FAQS}
-        description="Antwoorde op algemene vrae oor Die Papier, ons agtergrond en dienste."
+        description="Antwoorde op algemene vrae oor rooi rose, ons agtergrond en dienste."
         variant="muted"
       />
 
@@ -456,7 +456,7 @@ export const About = () => {
             className="text-3xl font-normal mb-4 font-heading"
             style={{ fontVariationSettings: "var(--fvs-h2)", lineHeight: 'var(--lh-h2)', letterSpacing: 'var(--ls-h2)' }}
           >
-            Dankie dat u <em>Die Papier</em> besoek!
+            Dankie dat u <em>rooi rose</em> besoek!
           </h2>
           <p className="text-lg text-gray-300 mb-8 max-w-xl mx-auto">
             Indien u enige vrae het of met ons wil skakel, kontak ons gerus.

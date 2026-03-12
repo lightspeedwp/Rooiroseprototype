@@ -28,8 +28,8 @@ export const SubscribeEEdition = () => {
   return (
     <div className="bg-gray-50 dark:bg-background min-h-screen pb-24 font-inter">
       <SEO 
-        title="Teken in - Die Papier" 
-        description="Teken in op Die Papier se digitale e-koerant. Kies uit ons buigsame opsies."
+        title="Teken in - rooi rose" 
+        description="Teken in op rooi rose se digitale e-koerant. Kies uit ons buigsame opsies."
         keywords="teken in, subscribe, die papier, e-koerant, e-uitgawe"
       />
       
@@ -58,10 +58,10 @@ export const SubscribeEEdition = () => {
             Kies jou pakket
           </span>
           <h1 className="text-4xl md:text-6xl font-heading font-normal text-brand-navy dark:text-foreground mb-6" style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}>
-            <em>Die Papier</em> se e-koerant
+            <em>rooi rose</em> se e-koerant
           </h1>
           <p className="text-xl text-gray-500 dark:text-foreground max-w-2xl mx-auto leading-relaxed mb-8">
-            Kry toegang tot die e-koerant elke week. Bevat alle inhoud van die drukkoerant. <em>Die Papier</em> is Vrydag op die rak in uitgesoekte winkels.
+            Kry toegang tot die e-koerant elke week. Bevat alle inhoud van die drukkoerant. <em>rooi rose</em> is Vrydag op die rak in uitgesoekte winkels.
           </p>
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-gray-600 dark:text-gray-400 mb-2">
             <span className="flex items-center gap-2"><Check size={16} className="text-green-600" /> Volledige inhoud van drukkoerant</span>

@@ -45,7 +45,7 @@ export const Hero = () => {
                     {mainStory.category}
                   </span>
                   <h1
-                    className="text-white text-2xl md:text-3xl lg:text-4xl font-normal mb-3 font-heading"
+                    className="text-white text-2xl md:text-3xl lg:text-4xl font-normal mb-3 has-brand-serif-font-family"
                     style={{
                       fontVariationSettings: "var(--fvs-h1)",
                       lineHeight: 'var(--lh-h1)',
@@ -54,7 +54,7 @@ export const Hero = () => {
                   >
                     {mainStory.title}
                   </h1>
-                  <p className="text-gray-200 text-base md:text-lg mb-4 line-clamp-2 max-w-2xl font-inter">
+                  <p className="text-gray-200 text-base md:text-lg mb-4 line-clamp-2 max-w-2xl has-brand-sans-font-family">
                     {mainStory.excerpt}
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4">
@@ -76,7 +76,7 @@ export const Hero = () => {
               <div className="flex items-center gap-2 mb-6 border-b border-gray-200 dark:border-custom-base-3 pb-4">
                 <div className="w-2 h-8 bg-brand-red"></div>
                 <h2
-                  className="font-normal text-brand-navy dark:text-custom-contrast font-heading"
+                  className="font-normal text-brand-navy dark:text-custom-contrast has-brand-serif-font-family"
                   style={{
                     fontVariationSettings: "var(--fvs-h2)",
                     lineHeight: 'var(--lh-h2)',
@@ -94,7 +94,7 @@ export const Hero = () => {
                       <span className="text-gray-400 dark:text-gray-600 text-xs">•</span>
                       <span className="text-gray-500 dark:text-gray-400 text-xs">{news.time}</span>
                     </div>
-                    <h3 className="text-sm text-brand-navy dark:text-custom-contrast group-hover:text-brand-red transition-colors font-inter leading-snug">
+                    <h3 className="text-sm text-brand-navy dark:text-custom-contrast group-hover:text-brand-red transition-colors has-brand-sans-font-family leading-snug">
                       <Link to={`/artikel/${generateArticleSlug(news.id, news.title)}`}>{news.title}</Link>
                     </h3>
                   </div>

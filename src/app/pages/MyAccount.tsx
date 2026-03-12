@@ -407,7 +407,7 @@ export const MyAccount = () => {
                     </div>
                     <div>
                       <p className="text-sm font-medium text-green-800 dark:text-green-300">
-                        Jy is tans ingeteken op <strong><em>Die Papier</em> Nuusbrief</strong>
+                        Jy is tans ingeteken op <strong><em>rooi rose</em> Nuusbrief</strong>
                       </p>
                       <p className="text-xs text-green-600 dark:text-green-400 mt-0.5">
                         Ingeteken sedert 19 Desember 2025
@@ -418,7 +418,7 @@ export const MyAccount = () => {
                   {/* Newsletter info card */}
                   <div className="border border-gray-200 dark:border-border rounded-lg overflow-hidden">
                     <div className="bg-gray-50 dark:bg-background p-4 border-b border-gray-200 dark:border-border flex justify-between items-center">
-                      <span className="font-bold text-brand-navy-light dark:text-brand-navy-light"><em>Die Papier</em> Nuusbrief</span>
+                      <span className="font-bold text-brand-navy-light dark:text-brand-navy-light"><em>rooi rose</em> Nuusbrief</span>
                       <span className="bg-green-100 dark:bg-green-950/40 text-green-700 dark:text-green-400 px-2 py-1 rounded text-xs font-bold uppercase">Aktief</span>
                     </div>
                     <div className="p-4 space-y-3">

@@ -9,9 +9,9 @@ export const SubmitFeedbackPage = () => {
   return (
     <SubmitFormLayout
       seo={{
-        title: 'Terugvoer - Die Papier',
-        description: "Gee terugvoer aan Die Papier. Ons waardeer jou kommentaar en voorstelle.",
-        keywords: 'terugvoer, kommentaar, voorstel, klagte, die papier',
+        title: 'Terugvoer - rooi rose',
+        description: "Gee terugvoer aan rooi rose. Ons waardeer jou kommentaar en voorstelle.",
+        keywords: 'terugvoer, kommentaar, voorstel, klagte, rooi rose',
       }}
       breadcrumbs={[
         { label: 'Stuur in', href: '/stuur-in' },
@@ -27,7 +27,7 @@ export const SubmitFeedbackPage = () => {
         <p>Jou terugvoer word vertroulik hanteer. Ons sal probeer om binne 48 werkure te reageer.</p>
       }
       faqItems={SUBMIT_FEEDBACK_FAQS}
-      faqDescription="Vrae oor terugvoer by Die Papier."
+      faqDescription="Vrae oor terugvoer by rooi rose."
     >
       <div className="space-y-2">
         <Label htmlFor="type">Tipe Terugvoer *</Label>

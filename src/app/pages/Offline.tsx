@@ -16,7 +16,7 @@ export const OfflinePage = () => {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-background flex flex-col items-center justify-center p-4 text-center">
       <SEO 
-        title="Geen internetverbinding - Die Papier" 
+        title="Geen internetverbinding - rooi rose" 
         description="Dit lyk of jy nie aan die internet gekoppel is nie."
       />
       

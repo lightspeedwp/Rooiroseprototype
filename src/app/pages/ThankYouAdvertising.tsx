@@ -15,7 +15,7 @@ export const ThankYouAdvertisingPage = () => {
       primaryAction={{ label: 'Terug na tuisblad', href: '/' }}
       secondaryAction={{ label: 'Meer oor adverteer', href: '/adverteer' }}
       faqItems={THANKYOU_ADVERTISING_FAQS}
-      faqDescription="Vrae oor advertensie-navrae by Die Papier."
+      faqDescription="Vrae oor advertensie-navrae by rooi rose."
     >
       <div className="bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-900/50 rounded-lg p-6 mb-8 flex gap-4 items-start">
         <Megaphone size={24} className="text-green-600 shrink-0 mt-0.5" />

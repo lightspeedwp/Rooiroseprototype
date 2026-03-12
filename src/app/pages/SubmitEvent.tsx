@@ -49,7 +49,7 @@ export const SubmitEventPage = () => {
   if (submitted) {
     return (
       <div className="bg-gray-50 dark:bg-background min-h-screen pb-20">
-        <SEO title="Dankie | Gebeure | Die Papier" />
+        <SEO title="Dankie | Gebeure | rooi rose" />
         <div className="w-full bg-white dark:bg-background border-b border-gray-200 dark:border-border py-3 mb-10">
           <div className="alignwide">
             <Breadcrumb>
@@ -90,7 +90,7 @@ export const SubmitEventPage = () => {
           </div>
         </div>
       </div>
-      <PageFAQSection items={SUBMIT_EVENT_FAQS} description="Vrae oor gebeurtenisse indien by Die Papier." />
+      <PageFAQSection items={SUBMIT_EVENT_FAQS} description="Vrae oor gebeurtenisse indien by rooi rose." />
       </div>
     );
   }
@@ -98,8 +98,8 @@ export const SubmitEventPage = () => {
   return (
     <div className="bg-gray-50 dark:bg-background min-h-screen pb-20">
       <SEO 
-        title="Dien gebeurtenis in | Die Papier" 
-        description="Dien jou plaaslike gebeurtenis, sportbyeenkoms of fees in vir plasing op Die Papier se kalender."
+        title="Dien gebeurtenis in | rooi rose" 
+        description="Dien jou plaaslike gebeurtenis, sportbyeenkoms of fees in vir plasing op rooi rose se kalender."
       />
 
       {/* Full width left-aligned breadcrumbs */}
@@ -303,7 +303,7 @@ export const SubmitEventPage = () => {
         </div>
       </div>
 
-      <PageFAQSection items={SUBMIT_EVENT_FAQS} description="Vrae oor gebeurtenisse indien by Die Papier." />
+      <PageFAQSection items={SUBMIT_EVENT_FAQS} description="Vrae oor gebeurtenisse indien by rooi rose." />
     </div>
   );
 };

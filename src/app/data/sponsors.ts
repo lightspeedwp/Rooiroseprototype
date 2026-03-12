@@ -1,5 +1,5 @@
 /**
- * Sponsored content data for Die Papier
+ * Sponsored content data for rooi rose
  * Tracks sponsors and their associated content
  *
  * @wordpress-patterns archive-sponsors, archive-sponsor-tier

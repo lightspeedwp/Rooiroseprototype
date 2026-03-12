@@ -216,4 +216,17 @@
   .has-900-font-size {
     font-size: var(--wp--preset--font-size--900) !important;
   }
+
+  /* ── WordPress Font Family Utility Classes ──────────────────
+   * .has-{slug}-font-family — sets font-family from theme.json.
+   * Mirrors what WordPress generates from theme.json fontFamilies.
+   * rooi rose magazine fonts: brand-serif (Playfair Display SC),
+   * brand-sans (Karla).
+   * ──────────────────────────────────────────────────────────── */
+  .has-brand-serif-font-family {
+    font-family: var(--wp--preset--font-family--brand-serif) !important;
+  }
+  .has-brand-sans-font-family {
+    font-family: var(--wp--preset--font-family--brand-sans) !important;
+  }
 }

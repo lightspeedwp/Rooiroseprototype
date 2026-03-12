@@ -1,59 +1,57 @@
-/* ── Article Content Styles ────────────────────────────────────────────────── */
-/* Split from theme.css for memory optimization (2026-03-05)                   */
-/* Contains: .article-content typography (light + dark mode)                   */
-
+/* ── rooi rose Magazine Article Content Styles ──────────────────
+ * Editorial typography: Karla body text, Playfair Display SC headings
+ * Magazine spacing: Generous line-height (1.7), larger paragraphs
+ * Pull quotes: rooi rose red with italic Playfair Display SC
+ * ──────────────────────────────────────────────────────────────── */
 @layer components {
-  /* Article Content Styles - Die Papier V2 */
   .article-content {
-    font-family: var(--font-inter);
-    font-size: var(--text-p1); /* 18px */
-    line-height: var(--lh-p1); /* 26px — exact Figma P1 spec */
-    color: var(--foreground);
+    font-family: var(--font-body); /* Karla for magazine body text */
+    font-size: var(--text-p1); /* 16→18px fluid */
+    line-height: 1.7; /* Magazine line-height for readability */
+    color: var(--body-text); /* Pure black for magazine readability */
   }
 
   .article-content p {
-    margin-bottom: 24px;
+    margin-bottom: 28px; /* Magazine paragraph spacing */
   }
 
   .article-content h2 {
-    font-family: var(--font-heading);
+    font-family: var(--font-display); /* Playfair Display SC */
     font-size: var(--text-h2);
     line-height: var(--lh-h2);
-    font-weight: 400; /* Roboto Serif Regular */
-    letter-spacing: var(--ls-h2);
-    color: var(--foreground);
-    margin-top: 48px;
-    margin-bottom: 24px;
-    font-variation-settings:
-      "GRAD" -50,
-      "wdth" 64,
-      "opsz" 30;
+    font-weight: 700; /* Bold for subheadings */
+    letter-spacing: 0.05em; /* Small caps tracking */
+    color: var(--contrast);
+    margin-top: 56px; /* Generous top spacing */
+    margin-bottom: 28px;
+    text-transform: uppercase; /* Magazine editorial style */
   }
 
   .article-content h3 {
-    font-family: var(--font-heading);
+    font-family: var(--font-display); /* Playfair Display SC */
     font-size: var(--text-h3);
     line-height: var(--lh-h3);
-    font-weight: 400;
-    letter-spacing: var(--ls-h3);
-    color: var(--foreground);
-    margin-top: 40px;
-    margin-bottom: 20px;
-    font-variation-settings:
-      "GRAD" 0,
-      "wdth" 64,
-      "opsz" 24; /* TYP-012: matches --fvs-h3 token */
+    font-weight: 400; /* Regular weight for h3 */
+    letter-spacing: 0.03em;
+    color: var(--contrast);
+    margin-top: 48px;
+    margin-bottom: 24px;
+    text-transform: uppercase;
   }
 
-  /* Pull quotes with left border */
+  /* Pull quotes with rooi rose magazine style */
   .article-content blockquote {
-    border-left: 4px solid var(--primary);
-    padding-left: 24px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    margin: 32px 0;
+    border-left: 4px solid var(--custom-primary); /* rooi rose red */
+    padding-left: 32px; /* Generous left padding */
+    padding-top: 16px;
+    padding-bottom: 16px;
+    margin: 48px 0; /* Generous vertical spacing */
+    font-family: var(--font-display); /* Playfair Display SC */
     font-style: italic;
-    background: var(--background);
+    font-size: 1.25rem; /* Larger pull quote text */
+    line-height: 1.6;
+    color: var(--custom-primary); /* rooi rose red text */
+    background: var(--accent-soft-grey); /* Soft grey background */
   }
 
   .article-content ul,

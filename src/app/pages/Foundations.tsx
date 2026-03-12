@@ -224,7 +224,7 @@ export const DesignFoundations = () => {
             </div>
           </div>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl">
-            Hierdie bladsy dokumenteer alle ontwerp-tokens vir <em>Die Papier</em>.
+            Hierdie bladsy dokumenteer alle ontwerp-tokens vir <em>rooi rose</em>.
             Lig- en donkermodus-waardes word langs mekaar vertoon.
             Alle waardes stem ooreen met <code className="bg-gray-100 dark:bg-muted px-1.5 py-0.5 rounded text-sm">theme.css</code>.
           </p>

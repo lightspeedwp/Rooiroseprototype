@@ -41,12 +41,12 @@ const PHASE_1: ChecklistPhase = {
   expanded: false,
   items: [
     // Business Readiness
-    { id: 'p1-br-1', text: 'Legal entity registration confirmed (Die Papier PTY Ltd)', checked: false },
+    { id: 'p1-br-1', text: 'Legal entity registration confirmed (rooi rose PTY Ltd)', checked: false },
     { id: 'p1-br-2', text: 'Business licenses obtained for digital publishing in South Africa', checked: false },
     { id: 'p1-br-3', text: 'Tax registration complete (VAT, PAYE, company tax)', checked: false },
     { id: 'p1-br-4', text: 'Banking setup finalized (merchant account, business accounts)', checked: false },
     { id: 'p1-br-5', text: 'Insurance policies active (professional indemnity, cyber liability)', checked: false },
-    { id: 'p1-br-6', text: 'Trademark registration filed for "Die Papier" brand', checked: false },
+    { id: 'p1-br-6', text: 'Trademark registration filed for "rooi rose" brand', checked: false },
     { id: 'p1-br-7', text: 'Domain ownership verified (diepapier.co.za and all variants)', checked: false },
     { id: 'p1-br-8', text: 'SSL certificates purchased (wildcard cert for all subdomains)', checked: false },
     { id: 'p1-br-9', text: 'Email hosting configured (admin@, support@, redaksie@, advertensies@)', checked: false },
@@ -363,7 +363,7 @@ const PHASE_7: ChecklistPhase = {
     // Search & Filtering
     { id: 'p7-sf-1', text: 'Build dp/search-filters \u2014 faceted sidebar block: taxonomy dropdowns, date ranges, post type selection (src/blocks/search-filters/ exists on disk)', checked: false },
     { id: 'p7-sf-2', text: 'Integrate dp/filter-bar block (see p7-bl-15) into archive templates for inline filter pills', checked: false },
-    { id: 'p7-sf-3', text: 'Style core/search block to match Die Papier design system', checked: false },
+    { id: 'p7-sf-3', text: 'Style core/search block to match rooi rose design system', checked: false },
     { id: 'p7-sf-4', text: 'Configure core/query-loop with taxonomy filtering (category, post_tag)', checked: false },
     { id: 'p7-sf-5', text: 'Map taxonomy filters: category (Nuus, Sport, Sake), post_tag, dp_event_category, dp_edition_type', checked: false },
     { id: 'p7-sf-6', text: 'Integrate filters into search.html template', checked: false },

@@ -138,8 +138,8 @@ export const DevLayout = () => {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-[#0F1923] text-gray-900 dark:text-white">
       <SEO
-        title={pageTitle ? `${pageTitle} — Dev Tools` : 'Dev Tools — Die Papier'}
-        description="Die Papier developer tools and migration dashboard"
+        title={pageTitle ? `${pageTitle} — Dev Tools` : 'Dev Tools — *rooi rose*'}
+        description="*rooi rose* developer tools and migration dashboard"
         noindex
       />
 

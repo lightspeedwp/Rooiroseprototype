@@ -287,7 +287,7 @@ function SubscriptionsTab({ isAf }: { isAf: boolean }) {
     if ( ! empty( $missing ) ) {
         add_action( 'admin_notices', function() use ( $missing ) {
             echo '<div class="notice notice-error"><p>';
-            echo '<strong>Die Papier Blocks:</strong> Missing: ' . implode( ', ', $missing );
+            echo '<strong>rooi rose Blocks:</strong> Missing: ' . implode( ', ', $missing );
             echo '. Commerce features are disabled.</p></div>';
         });
         return false;
@@ -728,7 +728,7 @@ add_filter( 'gettext', 'dp_subscription_checkout_strings', 20, 3 );`}
   );
 }
 
-// ─── Tab: Setup Guide ─────────────────────────────���─────────────────────────
+// ─── Tab: Setup Guide ──────────────────────────────────────────────────────
 
 function SetupTab({ isAf }: { isAf: boolean }) {
   return (

@@ -1,5 +1,5 @@
 /**
- * Design System Tokens — Die Papier
+ * Design System Tokens — rooi rose
  * ──────────────────────────────────
  * Centralized, single-source-of-truth for every design token used in the project.
  * Derived from /src/styles/theme-tokens.css, theme-dark.css, theme-exports.css
@@ -181,8 +181,8 @@ export interface TypographyToken {
   /** Letter spacing (CSS value) */
   letterSpacing: string;
   /** Font family */
-  font: 'Inter' | 'Roboto Serif';
-  /** Font variation settings string (Roboto Serif only) */
+  font: 'Karla' | 'Playfair Display SC';
+  /** Font variation settings string (Playfair Display SC only) */
   fontVariationSettings?: string;
   /** Text transform (H6 = uppercase) */
   textTransform?: string;
@@ -206,7 +206,7 @@ export interface TypographyToken {
 }
 
 export const TYPOGRAPHY_TOKENS: TypographyToken[] = [
-  // ── Fluid Headings (Roboto Serif 400) ──────────────────────────────────
+  // ── Fluid Headings (Playfair Display SC 400) ────────────────────────────────
   {
     name: 'H1',
     label: 'Opskrif 1',
@@ -218,7 +218,7 @@ export const TYPOGRAPHY_TOKENS: TypographyToken[] = [
     lineHeight: '1.1',
     lineHeightPx: 52,
     letterSpacing: '-0.24px',
-    font: 'Roboto Serif',
+    font: 'Playfair Display SC',
     fontVariationSettings: "'GRAD' -50, 'wdth' 64, 'opsz' 48",
     fluid: true,
     cssVars: {
@@ -243,7 +243,7 @@ export const TYPOGRAPHY_TOKENS: TypographyToken[] = [
     lineHeight: '1.2',
     lineHeightPx: 35,
     letterSpacing: '-0.24px',
-    font: 'Roboto Serif',
+    font: 'Playfair Display SC',
     fontVariationSettings: "'GRAD' -50, 'wdth' 64, 'opsz' 30",
     fluid: true,
     cssVars: {
@@ -267,7 +267,7 @@ export const TYPOGRAPHY_TOKENS: TypographyToken[] = [
     lineHeight: '1.3',
     lineHeightPx: 28,
     letterSpacing: '0',
-    font: 'Roboto Serif',
+    font: 'Playfair Display SC',
     fontVariationSettings: "'GRAD' 0, 'wdth' 64, 'opsz' 24",
     fluid: false,
     cssVars: {
@@ -291,7 +291,7 @@ export const TYPOGRAPHY_TOKENS: TypographyToken[] = [
     lineHeight: '1.4',
     lineHeightPx: 28,
     letterSpacing: '0',
-    font: 'Roboto Serif',
+    font: 'Playfair Display SC',
     fontVariationSettings: "'GRAD' 0, 'wdth' 64, 'opsz' 20",
     fluid: false,
     cssVars: {
@@ -306,7 +306,7 @@ export const TYPOGRAPHY_TOKENS: TypographyToken[] = [
     group: 'heading-serif',
   },
 
-  // ── UI Headings (Inter) ────────────────────────────────────────────────
+  // ── UI Headings (Karla) ────────────────────────────────────────────────
   {
     name: 'H5',
     label: 'Opskrif 5',
@@ -317,7 +317,7 @@ export const TYPOGRAPHY_TOKENS: TypographyToken[] = [
     lineHeight: '1.5',
     lineHeightPx: 24,
     letterSpacing: '-0.09px',
-    font: 'Inter',
+    font: 'Karla',
     fluid: false,
     cssVars: {
       fontSize: '--text-base',
@@ -325,7 +325,7 @@ export const TYPOGRAPHY_TOKENS: TypographyToken[] = [
       letterSpacing: '--ls-base',
     },
     sample: 'UI Opskrif Vetdruk',
-    usage: 'Inter Bold opskrifte, beklemtoning',
+    usage: 'Karla Bold opskrifte, beklemtoning',
     element: '<h5>',
     group: 'heading-sans',
   },
@@ -339,7 +339,7 @@ export const TYPOGRAPHY_TOKENS: TypographyToken[] = [
     lineHeight: '1.5',
     lineHeightPx: 24,
     letterSpacing: '0.8px',
-    font: 'Inter',
+    font: 'Karla',
     textTransform: 'uppercase',
     fluid: false,
     cssVars: {
@@ -353,7 +353,7 @@ export const TYPOGRAPHY_TOKENS: TypographyToken[] = [
     group: 'heading-sans',
   },
 
-  // ── Body Text (Inter 400) ─────────────────────────────────────────────
+  // ── Body Text (Karla 400) ─────────────────────────────────────────────
   {
     name: 'P1',
     label: 'Liggaam 1',
@@ -364,7 +364,7 @@ export const TYPOGRAPHY_TOKENS: TypographyToken[] = [
     lineHeight: '1.6',
     lineHeightPx: 27,
     letterSpacing: 'normal',
-    font: 'Inter',
+    font: 'Karla',
     fluid: false,
     cssVars: {
       fontSize: '--text-base',
@@ -385,7 +385,7 @@ export const TYPOGRAPHY_TOKENS: TypographyToken[] = [
     lineHeight: '1.5',
     lineHeightPx: 24,
     letterSpacing: 'normal',
-    font: 'Inter',
+    font: 'Karla',
     fluid: false,
     cssVars: {
       fontSize: '--text-small',
@@ -406,7 +406,7 @@ export const TYPOGRAPHY_TOKENS: TypographyToken[] = [
     lineHeight: '1.4',
     lineHeightPx: 22,
     letterSpacing: 'normal',
-    font: 'Inter',
+    font: 'Karla',
     fluid: false,
     cssVars: {
       fontSize: '--text-x-small',
@@ -578,22 +578,22 @@ export interface FontToken {
 
 export const FONT_TOKENS: FontToken[] = [
   {
-    name: 'font.inter',
-    cssVar: '--font-inter',
-    family: 'Inter',
+    name: 'font.karla',
+    cssVar: '--font-karla',
+    family: 'Karla',
     fallback: 'sans-serif',
     usage: 'Liggaamsteks, UI-elemente, metadata, knoppies',
-    googleFontsUrl: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700',
-    weights: [400, 500, 600, 700],
+    googleFontsUrl: 'https://fonts.googleapis.com/css2?family=Karla:wght@400;600;700',
+    weights: [400, 600, 700],
   },
   {
-    name: 'font.heading',
-    cssVar: '--font-heading',
-    family: 'Roboto Serif',
+    name: 'font.display',
+    cssVar: '--font-display',
+    family: 'Playfair Display SC',
     fallback: 'serif',
-    usage: 'Opskrifte, titels, prominente teks',
-    googleFontsUrl: 'https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght,GRAD@8..144,50..150,100..900,-50..100',
-    weights: [400],
+    usage: 'Opskrifte, titels, prominente teks — rooi rose magazine display headings',
+    googleFontsUrl: 'https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700',
+    weights: [400, 700],
   },
 ];
 
@@ -675,7 +675,7 @@ export function extractDesignTokensJSON(): DesignTokenExport {
 
   return {
     meta: {
-      project: 'Die Papier',
+      project: 'rooi rose',
       version: '1.1.0',
       generatedAt: new Date().toISOString(),
       source: '/src/styles/theme-tokens.css',

@@ -8,7 +8,7 @@ import { ImageWithFallback } from '../figma/ImageWithFallback';
 
 export default function FridayNewsletterTemplate() {
   return (
-    <NewsletterContainer title="Goeiemôre Ash! - Die Papier E-uitgawe">
+    <NewsletterContainer title="Goeiemôre Ash! - *rooi rose* E-uitgawe">
       {/* Header */}
       <div className="bg-white p-6 border-b border-gray-100">
         <div className="flex justify-between items-center mb-4">
@@ -19,17 +19,15 @@ export default function FridayNewsletterTemplate() {
 
       {/* Intro */}
       <div className="p-6 bg-gray-50 dark:bg-background">
-        <h2 className="font-heading font-normal mb-2" style={{ fontVariationSettings: "var(--fvs-h2)", lineHeight: 'var(--lh-h2)', letterSpacing: 'var(--ls-h2)', fontSize: 'var(--text-h2)' }}>Goeiemôre Ash!</h2>
+        <h2 className="has-brand-serif-font-family font-normal mb-2" style={{ fontVariationSettings: "var(--fvs-h2)", lineHeight: 'var(--lh-h2)', letterSpacing: 'var(--ls-h2)', fontSize: 'var(--text-h2)' }}>Goeiemôre Ash!</h2>
         <p className="text-sm text-gray-600 leading-relaxed">
-          Elke week bring ons jou 'n uitgesoekte keur van die jongste stories, opdaterings en hoogtepunte regoor Suid-Afrika en verder. Of dit nou belangrike plaaslike nuus, inspirerende menslike verhale of gebeure is wat jy nie wil misloop nie – alles is hier, direk in jou e-posbus.
-          <br /><br />
-          Bly ingelig, verbind en deel van die gesprek met stories wat saak maak.
+          Hier is die hoofopskrifte van die week.
         </p>
       </div>
 
-      {/* Top Stories */}
+      {/* Section: Hoofnuus */}
       <div className="p-6">
-        <h3 className="font-heading font-normal uppercase border-b border-dashed border-gray-300 pb-2 mb-4" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)', fontSize: 'var(--text-h3)' }}>Hoofnuus</h3>
+        <h3 className="has-brand-serif-font-family font-normal uppercase border-b border-dashed border-gray-300 pb-2 mb-4" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)', fontSize: 'var(--text-h3)' }}>Hoofnuus</h3>
         
         {/* Story 1 */}
         <div className="flex gap-4 mb-6">
@@ -40,7 +38,7 @@ export default function FridayNewsletterTemplate() {
             loading="lazy"
           />
           <div>
-            <h4 className="font-heading font-normal text-sm mb-2" style={{ fontVariationSettings: "var(--fvs-h4)", lineHeight: 'var(--lh-h4)', letterSpacing: 'var(--ls-h4)' }}>Drakenstein-munisipaliteit beplan om 50 poste te vries</h4>
+            <h4 className="has-brand-serif-font-family font-normal text-sm mb-2" style={{ fontVariationSettings: "var(--fvs-h4)", lineHeight: 'var(--lh-h4)', letterSpacing: 'var(--ls-h4)' }}>Drakenstein-munisipaliteit beplan om 50 poste te vries</h4>
             <p className="text-xs text-gray-600 mb-2 line-clamp-3">
               PAARL - Die Drakenstein-munisipaliteit (DM) het verlede week op 'n raadsvergadering onthul dat hulle beplan om minstens 50 poste te vries, wat onrus veroorsaak het.
             </p>
@@ -57,7 +55,7 @@ export default function FridayNewsletterTemplate() {
             loading="lazy"
           />
           <div>
-            <h4 className="font-heading font-normal text-sm mb-2" style={{ fontVariationSettings: "var(--fvs-h4)", lineHeight: 'var(--lh-h4)', letterSpacing: 'var(--ls-h4)' }}>Paarl-polisie soek verdagtes na plaasmoorde</h4>
+            <h4 className="has-brand-serif-font-family font-normal text-sm mb-2" style={{ fontVariationSettings: "var(--fvs-h4)", lineHeight: 'var(--lh-h4)', letterSpacing: 'var(--ls-h4)' }}>Paarl-polisie soek verdagtes na plaasmoorde</h4>
             <p className="text-xs text-gray-600 mb-2 line-clamp-3">
               Die Paarl-polisie is op soek na verdagtes na 'n reeks plaasmoorde die afgelope maand inwoners geskok het.
             </p>
@@ -74,7 +72,7 @@ export default function FridayNewsletterTemplate() {
             loading="lazy"
           />
           <div>
-            <h4 className="font-heading font-normal text-sm mb-2" style={{ fontVariationSettings: "var(--fvs-h4)", lineHeight: 'var(--lh-h4)', letterSpacing: 'var(--ls-h4)' }}>Willows-vakansieoord bly oop ten spyte van brandskade</h4>
+            <h4 className="has-brand-serif-font-family font-normal text-sm mb-2" style={{ fontVariationSettings: "var(--fvs-h4)", lineHeight: 'var(--lh-h4)', letterSpacing: 'var(--ls-h4)' }}>Willows-vakansieoord bly oop ten spyte van brandskade</h4>
             <p className="text-xs text-gray-600 mb-2 line-clamp-3">
               GQEBERHA - Die gewilde Willows-vakansieoord langs die Gqeberha-kuslyn sal hierdie vakansieseisoen soos gewoonlik oop bly, ten spyte van 'n brand.
             </p>
@@ -91,7 +89,7 @@ export default function FridayNewsletterTemplate() {
 
       {/* Sport */}
       <div className="p-6">
-        <h3 className="font-heading font-normal uppercase border-b border-dashed border-gray-300 pb-2 mb-4" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)', fontSize: 'var(--text-h3)' }}>Sport</h3>
+        <h3 className="has-brand-serif-font-family font-normal uppercase border-b border-dashed border-gray-300 pb-2 mb-4" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)', fontSize: 'var(--text-h3)' }}>Sport</h3>
         <div className="flex gap-4 mb-6">
           <ImageWithFallback
             src="https://images.unsplash.com/photo-1613330524291-3330afe5920e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=200" 
@@ -100,7 +98,7 @@ export default function FridayNewsletterTemplate() {
             loading="lazy"
           />
           <div>
-            <h4 className="font-heading font-normal text-sm mb-2" style={{ fontVariationSettings: "var(--fvs-h4)", lineHeight: 'var(--lh-h4)', letterSpacing: 'var(--ls-h4)' }}>JSA-inlywing groot vir somerseisoen vir Boland-sportveld</h4>
+            <h4 className="has-brand-serif-font-family font-normal text-sm mb-2" style={{ fontVariationSettings: "var(--fvs-h4)", lineHeight: 'var(--lh-h4)', letterSpacing: 'var(--ls-h4)' }}>JSA-inlywing groot vir somerseisoen vir Boland-sportveld</h4>
             <p className="text-xs text-gray-600 mb-2 line-clamp-3">
               Die plaaslike Boland-sportveld kyk uit na 'n besige somer na die suksesvolle JSA-inlywing verlede naweek.
             </p>
@@ -113,7 +111,7 @@ export default function FridayNewsletterTemplate() {
 
       {/* E-Editions - PROMINENT */}
       <div className="p-6 bg-gray-50 dark:bg-background">
-        <h3 className="font-heading font-normal uppercase mb-4 border-b border-gray-200 pb-2" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)', fontSize: 'var(--text-h3)' }}>E-Uitgawes</h3>
+        <h3 className="has-brand-serif-font-family font-normal uppercase mb-4 border-b border-gray-200 pb-2" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)', fontSize: 'var(--text-h3)' }}>E-Uitgawes</h3>
         
         {/* Large Prominent E-edition Image */}
         <div className="bg-white p-1 shadow-md mb-6 relative group cursor-pointer">
@@ -129,21 +127,20 @@ export default function FridayNewsletterTemplate() {
                  </div>
              </div>
              <div className="p-3 text-center">
-                <h4 className="font-heading font-normal mb-1 text-brand-navy-light" style={{ fontVariationSettings: "var(--fvs-h4)", lineHeight: 'var(--lh-h4)', letterSpacing: 'var(--ls-h4)', fontSize: 'var(--text-h4)' }}><em>Die Papier</em></h4>
+                <h4 className="has-brand-serif-font-family font-normal mb-1 text-brand-navy-light" style={{ fontVariationSettings: "var(--fvs-h4)", lineHeight: 'var(--lh-h4)', letterSpacing: 'var(--ls-h4)', fontSize: 'var(--text-h4)' }}><em>rooi rose</em></h4>
                 <p className="text-sm text-gray-500">19 Desember 2025</p>
              </div>
         </div>
 
         <div className="bg-red-50 border border-red-100 p-4 rounded text-center mb-6">
-            <h4 className="font-heading font-normal text-red-700 mb-2" style={{ fontVariationSettings: "var(--fvs-h4)", lineHeight: 'var(--lh-h4)', letterSpacing: 'var(--ls-h4)', fontSize: 'var(--text-h4)' }}>Moenie uitmis op die digitale uitgawe nie!</h4>
+            <h4 className="has-brand-serif-font-family font-normal text-red-700 mb-2" style={{ fontVariationSettings: "var(--fvs-h4)", lineHeight: 'var(--lh-h4)', letterSpacing: 'var(--ls-h4)', fontSize: 'var(--text-h4)' }}>Moenie uitmis op die digitale uitgawe nie!</h4>
             <p className="text-xs text-gray-600 mb-3">Kry volle toegang tot alle plaaslike nuus, geklassifiseerde advertensies en spesiale aanbiedinge direk op jou toestel.</p>
-            <Button className="bg-brand-red hover:bg-brand-red-hover text-white w-full">Lees die jongste e-uitgawe</Button>
         </div>
       </div>
 
        {/* Community News Links */}
        <div className="p-6 bg-white">
-        <h3 className="font-heading font-normal mb-4 border-b border-dashed border-gray-300 pb-2" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)', fontSize: 'var(--text-h3)' }}>Plaaslike nuus</h3>
+        <h3 className="has-brand-serif-font-family font-normal mb-4 border-b border-dashed border-gray-300 pb-2" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)', fontSize: 'var(--text-h3)' }}>Plaaslike nuus</h3>
         <ul className="list-disc pl-5 space-y-2 text-xs text-gray-700 underline decoration-gray-400">
             <li><a href="#">Paarl Proms-konsert samel R2.5 miljoen in vir liefdadigheid</a></li>
             <li><a href="#">Inwoners verwyder 1000 bome per dag om hitte te bekamp</a></li>
@@ -173,7 +170,7 @@ export default function FridayNewsletterTemplate() {
             </a>
          </div>
          <div className="text-[10px] text-gray-400 space-x-2">
-            <a href="#" className="hover:text-gray-600"><em>Die Papier</em></a> |
+            <a href="#" className="hover:text-gray-600"><em>rooi rose</em></a> |
             <a href="#" className="hover:text-gray-600">Kanselleer</a> |
             <a href="#" className="hover:text-gray-600">Bestuur intekening</a> |
             <a href="#" className="hover:text-gray-600">Besigtig in webblaaier</a>

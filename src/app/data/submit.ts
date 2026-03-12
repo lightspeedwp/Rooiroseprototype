@@ -8,7 +8,7 @@ import { Newspaper } from '../components/icons/NewspaperIcon';
 export const SUBMIT_OPTIONS = [
   {
     title: 'Nuuswenk of storie',
-    description: "Het jy 'n nuuswenk of storie vir <em>Die Papier</em>? Deel dit met ons redaksie en ons sal dit ondersoek.",
+    description: "Het jy 'n nuuswenk of storie vir <em>rooi rose</em>? Deel dit met ons redaksie en ons sal dit ondersoek.",
     icon: Newspaper,
     href: '/stuur-in/storie',
     cta: 'Stuur storie',
@@ -22,14 +22,14 @@ export const SUBMIT_OPTIONS = [
   },
   {
     title: 'Terugvoer',
-    description: "Het jy kommentaar, 'n voorstel of klagte oor <em>Die Papier</em>? Ons waardeer jou terugvoer.",
+    description: "Het jy kommentaar, 'n voorstel of klagte oor <em>rooi rose</em>? Ons waardeer jou terugvoer.",
     icon: MessageSquare,
     href: '/stuur-in/terugvoer',
     cta: 'Gee terugvoer',
   },
   {
     title: 'Shoutout',
-    description: "Wil jy iemand spesiaal gelukwens of bedank? Stuur 'n shoutout wat in <em>Die Papier</em> geplaas kan word.",
+    description: "Wil jy iemand spesiaal gelukwens of bedank? Stuur 'n shoutout wat in <em>rooi rose</em> geplaas kan word.",
     icon: Heart,
     href: '/stuur-in/shoutout',
     cta: 'Stuur shoutout',

@@ -40,9 +40,9 @@ export const CookieBanner = () => {
               <Cookie className="w-6 h-6 text-brand-red" />
             </div>
             <div className="space-y-2">
-              {/* V2: widget label → Inter SemiBold H6 style */}
+              {/* V2: widget label → Karla SemiBold H6 style */}
               <h3
-                className="font-inter font-semibold text-brand-navy dark:text-foreground"
+                className="has-brand-sans-font-family font-semibold text-brand-navy dark:text-foreground"
                 style={{ fontSize: 'var(--text-h6)', letterSpacing: 'var(--ls-h6)' }}
               >
                 {COOKIE_BANNER.title}

@@ -1,44 +1,38 @@
 import React, { useMemo, lazy, Suspense } from 'react';
 import { HeroSlider } from '../components/home/HeroSlider';
 import { FeatureGrid } from '../components/home/FeatureGrid';
-import { BreakingNews } from '../components/home/BreakingNews';
 import { CategorySection } from '../components/home/CategorySection';
+import { PullQuoteSection } from '../components/home/PullQuoteSection';
 import { NewsletterCTA } from '../components/patterns/NewsletterCTA';
 import { Poll } from '../components/home/Poll';
-import { MultimediaSection } from '../components/home/MultimediaSection';
-import { ObituariesSection } from '../components/home/ObituariesSection';
-import { ArchiveSection } from '../components/home/ArchiveSection';
-import { EventsSection } from '../components/home/EventsSection';
 import { TOP_STORIES } from '../data/articles';
 import { CATEGORY_ARTICLES } from '../data/categoryArticles';
 import { HOME_CONTENT, HOME_SEO } from '../data/home';
 import { getActivePoll } from '../data/polls';
 import { SEO } from '../components/common/SEO';
-import { LeaderboardAd, SidebarAds, TakeoverRails, StickyMobileFooter, MediumRectangleAd } from '../components/ads';
-import { Link, useNavigate } from 'react-router';
-import { ImageWithFallback } from '../components/figma/ImageWithFallback';
-import { Trophy, Clock, Truck, ArrowRight } from 'lucide-react';
-import { getActiveCompetitions } from '../data/competitions';
+import { LeaderboardAd, MediumRectangleAd, StickyMobileFooter } from '../components/ads';
 import { SidebarEEditionPromo } from '../components/home/SidebarEEditionPromo';
 import { SidebarFeaturedCompetition } from '../components/home/SidebarFeaturedCompetition';
-import { SidebarDeliveryCTA } from '../components/home/SidebarDeliveryCTA';
 
-// Lazy-load QuoteSlider
-const QuoteSlider = lazy(() =>
-  import('../components/brand-quotes/QuoteSlider').then(m => ({ default: m.QuoteSlider }))
-);
+/* ── rooi rose Magazine Homepage ──────────────────────────────────────
+ * Editorial design: Magazine-style layout with generous white space
+ * Typography: Playfair Display SC + Karla
+ * Layout: Hero slider, alternating category sections, pull quotes
+ * Background colors: Alternating editorial accent tones (blush, beige, grey)
+ * ────────────────────────────────────────────────────────────────── */
 
 export const Home = () => {
-  const navigate = useNavigate();
-  
-  // Memoize filtered data to prevent recalculation on every render
+  // Memoize filtered data for rooi rose categories
   const categorizedArticles = useMemo(() => {
     return {
-      nuus: CATEGORY_ARTICLES.Nuus || TOP_STORIES.filter(s => s.category === 'Nuus').slice(0, 3),
-      sport: CATEGORY_ARTICLES.Sport || TOP_STORIES.filter(s => s.category === 'Sport').slice(0, 3),
-      sake: CATEGORY_ARTICLES.Sake || TOP_STORIES.filter(s => s.category === 'Sake').slice(0, 3),
-      lewenstyl: CATEGORY_ARTICLES.Leefstyl || TOP_STORIES.filter(s => s.category === 'Leefstyl').slice(0, 3),
-      dink: CATEGORY_ARTICLES.Dink || TOP_STORIES.filter(s => s.category === 'Dink').slice(0, 3),
+      kos: CATEGORY_ARTICLES.Leefstyl || TOP_STORIES.filter(s => s.category === 'Kos' || s.category === 'Leefstyl').slice(0, 3),
+      mode: CATEGORY_ARTICLES.Nuus || TOP_STORIES.filter(s => s.category === 'Mode' || s.category === 'Nuus').slice(0, 3),
+      skoonheid: CATEGORY_ARTICLES.Leefstyl || TOP_STORIES.filter(s => s.category === 'Skoonheid' || s.category === 'Leefstyl').slice(0, 3),
+      gesondheid: CATEGORY_ARTICLES.Dink || TOP_STORIES.filter(s => s.category === 'Gesondheid' || s.category === 'Dink').slice(0, 3),
+      bekendes: CATEGORY_ARTICLES.Sake || TOP_STORIES.filter(s => s.category === 'Bekendes' || s.category === 'Sake').slice(0, 3),
+      leefstyl: CATEGORY_ARTICLES.Leefstyl || TOP_STORIES.filter(s => s.category === 'Leefstyl').slice(0, 3),
+      jouLewe: CATEGORY_ARTICLES.Dink || TOP_STORIES.filter(s => s.category === 'Jou lewe' || s.category === 'Dink').slice(0, 3),
+      ontspanning: CATEGORY_ARTICLES.Sport || TOP_STORIES.filter(s => s.category === 'Ontspanning' || s.category === 'Sport').slice(0, 3),
     };
   }, []);
 
@@ -60,131 +54,146 @@ export const Home = () => {
         keywords={HOME_SEO.keywords}
       />
       
-      {/* Takeover Rails (optional, desktop 1440px+ only) */}
-      <TakeoverRails section="home" enabled={false} />
-      
       {/* Header Leaderboard Ad */}
-      <LeaderboardAd section="home" />
+      <div className="bg-[var(--muted)] py-4">
+        <LeaderboardAd section="home" />
+      </div>
       
-      <BreakingNews />
-      
+      {/* === HERO SLIDER === */}
       <HeroSlider />
       
-      {/* Main Content with Sidebar */}
-      <div className="alignwide mb-8">
-        <div className="flex flex-col lg:flex-row gap-6">
-          {/* Main Content Area */}
-          <div className="flex-1 lg:min-w-0 space-y-6 pt-8">
-            <FeatureGrid />
+      {/* === FEATURED STORIES GRID === */}
+      <section className="bg-[var(--base)] py-12">
+        <div className="max-w-[1280px] mx-auto px-6 md:px-10">
+          <FeatureGrid />
+        </div>
+      </section>
+
+      <LeaderboardAd section="home" position="feature-grid" />
+
+      {/* === MAIN EDITORIAL CONTENT === */}
+      
+      {/* Kos Section (White background) */}
+      <CategorySection 
+        title="Kos" 
+        link="/kos" 
+        articles={categorizedArticles.kos}
+        bgColor="white"
+      />
+
+      {/* Pull Quote 1 */}
+      <PullQuoteSection 
+        quote="Kook met liefde, eet met vreugde"
+        bgColor="grey"
+      />
+
+      {/* Mode Section (Blush background) */}
+      <CategorySection 
+        title="Mode" 
+        link="/mode" 
+        articles={categorizedArticles.mode}
+        bgColor="blush"
+      />
+
+      <LeaderboardAd section="home" position="mode" />
+
+      {/* Skoonheid Section (Beige background) */}
+      <CategorySection 
+        title="Skoonheid" 
+        link="/skoonheid" 
+        articles={categorizedArticles.skoonheid}
+        bgColor="beige"
+      />
+
+      {/* Pull Quote 2 */}
+      <PullQuoteSection 
+        quote="Jou eie skoonheid is jou krag"
+        bgColor="grey"
+      />
+
+      {/* Gesondheid Section (White background) */}
+      <CategorySection 
+        title="Gesondheid" 
+        link="/gesondheid" 
+        articles={categorizedArticles.gesondheid}
+        bgColor="white"
+      />
+
+      <LeaderboardAd section="home" position="gesondheid" />
+
+      {/* Bekendes Section (Blush background) */}
+      <CategorySection 
+        title="Bekendes" 
+        link="/bekendes" 
+        articles={categorizedArticles.bekendes}
+        bgColor="blush"
+      />
+
+      {/* Leefstyl Section (Beige background) */}
+      <CategorySection 
+        title="Leefstyl" 
+        link="/leefstyl" 
+        articles={categorizedArticles.leefstyl}
+        bgColor="beige"
+      />
+
+      {/* Pull Quote 3 */}
+      <PullQuoteSection 
+        quote="Maak elke dag buitengewoon"
+        bgColor="grey"
+      />
+
+      <LeaderboardAd section="home" position="leefstyl" />
+
+      {/* Jou lewe Section (White background) */}
+      <CategorySection 
+        title="Jou lewe" 
+        link="/jou-lewe" 
+        articles={categorizedArticles.jouLewe}
+        bgColor="white"
+      />
+
+      {/* Ontspanning Section (Blush background) */}
+      <CategorySection 
+        title="Ontspanning" 
+        link="/ontspanning" 
+        articles={categorizedArticles.ontspanning}
+        bgColor="blush"
+      />
+
+      {/* === SIDEBAR CONTENT (Mobile: Below main content) === */}
+      <section className="bg-[var(--muted)] py-12">
+        <div className="max-w-[1280px] mx-auto px-6 md:px-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            {/* Leaderboard Ad between Top Stories and Nuus */}
-            <LeaderboardAd section="home" position="feature-grid" />
-
-            {/* Nuus Section */}
-            <CategorySection 
-              title="Nuus" 
-              link="/nuus" 
-              articles={categorizedArticles.nuus} 
-            />
-
-            <LeaderboardAd section="home" position="nuus" />
-
-            {/* Sport Section */}
-            <CategorySection 
-              title="Sport" 
-              link="/sport" 
-              articles={categorizedArticles.sport} 
-            />
-
-            <LeaderboardAd section="home" position="sport" />
-
-            {/* Dink Section */}
-            <CategorySection 
-              title="Dink" 
-              link="/dink" 
-              articles={categorizedArticles.dink} 
-            />
-
-            <LeaderboardAd section="home" position="dink" />
-
-            {/* Sake Section */}
-            <CategorySection 
-              title="Sake" 
-              link="/sake" 
-              articles={categorizedArticles.sake} 
-            />
-
-            <LeaderboardAd section="home" position="sake" />
-
-            {/* Leefstyl Section */}
-            <CategorySection 
-              title="Leefstyl" 
-              link="/leefstyl" 
-              articles={categorizedArticles.lewenstyl}
-            />
-
-            <LeaderboardAd section="home" position="leefstyl" />
-          </div>
-
-          {/* Sidebar Area */}
-          <div className="w-full lg:w-[300px] lg:flex-shrink-0 space-y-6">
-            
-            <SidebarEEditionPromo />
-
-            {/* Medium Rectangle Ad */}
-            <MediumRectangleAd slotName="home-sidebar-top" section="home" position="sidebar-top" />
+            {/* E-Edition Promo */}
+            <div className="bg-[var(--base)] p-6 rounded-lg shadow-sm">
+              <SidebarEEditionPromo />
+            </div>
 
             {/* National Poll */}
             {activePoll && (
-              <Poll 
-                question={activePoll.question}
-                options={activePoll.options}
-                labels={pollLabels}
-              />
+              <div className="bg-[var(--base)] p-6 rounded-lg shadow-sm">
+                <Poll 
+                  question={activePoll.question}
+                  options={activePoll.options}
+                  labels={pollLabels}
+                />
+              </div>
             )}
 
-            {/* Medium Rectangle Ad */}
-            <MediumRectangleAd slotName="home-sidebar-middle" section="home" position="sidebar-middle" />
+            {/* Featured Competition */}
+            <div className="bg-[var(--base)] p-6 rounded-lg shadow-sm">
+              <SidebarFeaturedCompetition />
+            </div>
 
-            <SidebarFeaturedCompetition />
-
-            <SidebarDeliveryCTA />
-
-            {/* Additional Sidebar Ads */}
-            <SidebarAds section="home" />
           </div>
         </div>
-      </div>
-      
-      {/* Launch Campaign Quote Slider */}
-      <div className="w-full bg-gray-100 dark:bg-brand-navy py-12 mb-12 border-y border-gray-200 dark:border-border">
-        <div className="alignwide">
-          <Suspense fallback={<div>Laai...</div>}>
-            <QuoteSlider className="rounded-xl overflow-hidden shadow-lg" />
-          </Suspense>
-        </div>
-      </div>
+      </section>
 
-      {/* NEW SECTIONS - Full Width Below Main Content */}
-      
-      {/* Multimedia Section */}
-      <MultimediaSection />
-      
-      {/* Leaderboard Ad */}
-      <div className="alignwide my-6">
-        <LeaderboardAd section="home" position="multimedia" />
-      </div>
-      
-      {/* Obituaries Section */}
-      <ObituariesSection />
-      
-      {/* Events Section */}
-      <EventsSection />
-      
-      {/* Archive Section */}
-      <ArchiveSection />
-      
-      {/* Full Width Newsletter CTA - Above Footer */}
+      <MediumRectangleAd slotName="home-sidebar-bottom" section="home" position="sidebar-bottom" />
+
+      {/* === NEWSLETTER CTA === */}
       <NewsletterCTA />
       
       {/* Sticky Mobile Footer Ad */}

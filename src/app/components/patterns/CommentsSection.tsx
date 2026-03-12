@@ -54,7 +54,7 @@ export const CommentsSection = ({ articleId, commentCount = 0 }: CommentsSection
           <div className="flex items-center gap-3">
             <MessageSquare className="w-6 h-6 text-brand-red" />
             <h2
-              className="font-normal text-brand-navy dark:text-foreground font-heading"
+              className="font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family"
               style={{
                 fontVariationSettings: "var(--fvs-h2)",
                 lineHeight: 'var(--lh-h2)',
@@ -99,7 +99,7 @@ export const CommentsSection = ({ articleId, commentCount = 0 }: CommentsSection
               </div>
               <div className="flex-1">
                 <h3
-                  className="font-normal text-brand-navy dark:text-foreground mb-2 font-heading"
+                  className="font-normal text-brand-navy dark:text-foreground mb-2 has-brand-serif-font-family"
                   style={{
                     fontVariationSettings: "var(--fvs-h3)",
                     lineHeight: 'var(--lh-h3)',

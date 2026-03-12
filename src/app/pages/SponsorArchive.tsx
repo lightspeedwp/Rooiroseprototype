@@ -137,7 +137,7 @@ export const SponsorArchivePage = () => {
     <div className="bg-gray-50 dark:bg-background min-h-screen">
       <SEO 
         title={`${sponsorName} - Geborgde inhoud`}
-        description={`Lees die jongste artikels en nuus geborg deur ${sponsorName} op Die Papier.`}
+        description={`Lees die jongste artikels en nuus geborg deur ${sponsorName} op rooi rose.`}
         keywords={`geborg, ${sponsorName}, nuus, afrikaans, die papier`}
       />
       

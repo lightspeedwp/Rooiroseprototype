@@ -1,5 +1,5 @@
 /**
- * Die Papier Ad Components
+ * *rooi rose* Ad Components
  * Reusable ad slot components for GAM integration
  */
 

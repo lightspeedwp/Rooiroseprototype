@@ -1,12 +1,12 @@
 /**
- * Structured Data (JSON-LD) Utilities for Die Papier
+ * Structured Data (JSON-LD) Utilities for rooi rose
  *
  * Generates Schema.org structured data for:
  * - WebSite (global, with SearchAction for sitelinks search box)
  * - Organization / NewsMediaOrganization (global publisher info)
  * - BreadcrumbList (per-route navigation trail)
  *
- * NOTE: "Die Papier" is NOT italicised in structured data (Rule 13 exception).
+ * NOTE: "rooi rose" is NOT italicised in structured data (Rule 13 exception).
  */
 
 const BASE_URL = 'https://diepapier.co.za';
@@ -144,8 +144,8 @@ export function generateWebSiteSchema(): object {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    'name': 'Die Papier',
-    'alternateName': 'Die Papier Koerant',
+    'name': 'rooi rose',
+    'alternateName': 'rooi rose Tydskrif',
     'url': BASE_URL,
     'inLanguage': 'af',
     'potentialAction': {
@@ -167,7 +167,7 @@ export function generateOrganizationSchema(): object {
   return {
     '@context': 'https://schema.org',
     '@type': 'NewsMediaOrganization',
-    'name': 'Die Papier',
+    'name': 'rooi rose',
     'url': BASE_URL,
     'logo': {
       '@type': 'ImageObject',
@@ -403,7 +403,7 @@ export function generateEventSchema(event: {
     }),
     'organizer': {
       '@type': 'Organization',
-      'name': 'Die Papier',
+      'name': 'rooi rose',
       'url': BASE_URL,
     },
     'url': `${BASE_URL}/gebeure/${event.id}`,
@@ -451,7 +451,7 @@ export function generateCollectionPageSchema(opts: {
     'url': opts.url,
     'isPartOf': {
       '@type': 'WebSite',
-      'name': 'Die Papier',
+      'name': 'rooi rose',
       'url': BASE_URL,
     },
     'mainEntity': {

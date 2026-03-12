@@ -59,7 +59,7 @@ export const CheckoutLayout = memo(({ children }: CheckoutLayoutProps) => {
       {/* Footer */}
       <footer className="bg-white dark:bg-card border-t border-gray-200 dark:border-border py-8 mt-auto">
         <div className="w-full max-w-[1440px] mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
-          <p>© {new Date().getFullYear()} <em>Die Papier</em>. Alle regte voorbehou.</p>
+          <p>© {new Date().getFullYear()} <em>rooi rose</em>. Alle regte voorbehou.</p>
           
           <div className="flex items-center gap-6">
             <Link to="/beleid/privaatheidsbeleid" className="hover:text-brand-red underline">Privaatheidsbeleid</Link>

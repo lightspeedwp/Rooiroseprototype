@@ -37,7 +37,7 @@ export const CompetitionCard = ({ competition }: { competition: Competition }) =
             {competition.sponsor}
           </span>
         </div>
-        <h3 className="text-lg font-normal text-brand-navy dark:text-foreground mb-2 group-hover:text-custom-primary dark:group-hover:text-primary transition-colors font-heading line-clamp-2" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)', fontSize: 'var(--text-h3)' }}>
+        <h3 className="text-lg font-normal text-brand-navy dark:text-foreground mb-2 group-hover:text-custom-primary dark:group-hover:text-primary transition-colors has-brand-serif-font-family line-clamp-2" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)', fontSize: 'var(--text-h3)' }}>
           {competition.title}
         </h3>
         <p className="text-gray-600 dark:text-gray-400 text-sm line-clamp-2 mb-4">

@@ -51,9 +51,9 @@ export const NewsletterSubscribe = () => {
   return (
     <div className="bg-background min-h-screen pb-20">
       <SEO
-        title="Teken in op ons gratis nuusbrief | Die Papier"
-        description="Teken in op Die Papier se gratis nuusbrief en ontvang die jongste nuus, eksklusiewe stories en opdaterings direk in jou inkassie."
-        keywords="nuusbrief, inskrywing, e-pos, die papier, nuus, gratis"
+        title="Teken in op ons gratis nuusbrief | rooi rose"
+        description="Teken in op rooi rose se gratis nuusbrief en ontvang die jongste nuus, eksklusiewe stories en opdaterings direk in jou inkassie."
+        keywords="nuusbrief, inteken, subscribe, newsletter, die papier, afrikaans"
       />
 
       <PageContainer breadcrumbs={[{ label: 'Nuusbrief Inskrywing' }]} noPadding />
@@ -269,7 +269,7 @@ export const NewsletterSubscribe = () => {
 
               <div className="border-t border-white/10 mt-6 pt-5">
                 <p className="text-xs text-gray-400">
-                  Deur <em>Die Papier</em>-span &middot; Februarie 2026
+                  Deur <em>rooi rose</em>-span &middot; Februarie 2026
                 </p>
               </div>
             </div>

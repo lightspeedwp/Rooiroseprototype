@@ -41,7 +41,7 @@ export const EventsPage = () => {
   return (
     <div className="bg-gray-50 dark:bg-background min-h-screen">
       <SEO
-        title="Gebeure | Die Papier"
+        title="Gebeure | rooi rose"
         description="Vind uit wat gebeur in jou omgewing. Feeste, sport, markte en samekomste."
         keywords="gebeure, kalender, feeste, sport, bloemfontein, vrystaat, markte"
       />

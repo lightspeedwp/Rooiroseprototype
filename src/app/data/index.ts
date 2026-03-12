@@ -1,5 +1,5 @@
 /**
- * Data File Index — Die Papier
+ * Data File Index — rooi rose
  *
  * Centralised re-exports for all data modules. Organised by domain.
  * Each section includes WordPress pattern references showing where the

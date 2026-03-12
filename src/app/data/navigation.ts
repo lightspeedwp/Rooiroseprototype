@@ -1,5 +1,5 @@
 /**
- * Navigation data for Die Papier
+ * Navigation data for *rooi rose*
  * Header and Footer menu structures
  *
  * @wordpress-patterns header, header-transparent, header-masthead, footer, footer-simple
@@ -12,35 +12,47 @@ import pressCouncilLogo from "figma:asset/b65e04d9bca837fe59d564b9a5c81e06d132d3
 import wanIfraLogo from "figma:asset/f482683b284adea205ba8414607510526ef08307.png";
 import fcjLogo from "figma:asset/b829544a17c90494ed9a73fa9b4a127647d9301f.png";
 
+/* ── rooi rose Magazine Navigation Structure ────────────────────────
+ * Phase 0: Content Architecture Update (2026-03-11)
+ * Updated from newspaper categories to lifestyle magazine categories
+ * Categories: Kos, Mode, Skoonheid, Gesondheid, Bekendes, Leefstyl,
+ *             Jou lewe, Ontspanning, Rooiwarm wenners, Wen
+ * ──────────────────────────────────────────────────────────────────── */
+
 export const TOP_NAVIGATION = [
   { label: "Inhoudsopgawe", href: "/inhoudsopgawe" },
   { label: "E-uitgawes", href: "/e-uitgawes" },
   { label: "Beleid", href: "/beleid" },
-  { label: "Gebeure", href: "/gebeure" },
   { label: "Kontak", href: "/kontak" },
   { label: "Vrae", href: "/vrae" },
   { label: "Nuusbrief", href: "/nuusbrief-inteken" },
 ];
 
+/**
+ * rooi rose Magazine Categories — Main Navigation
+ * 8 editorial categories + Home + Competitions + Contact
+ */
 export const CATEGORY_NAVIGATION = [
   { label: "Tuis", href: "/" },
-  { label: "Nuus", href: "/nuus" },
-  { label: "Skole", href: "/skole" },
-  { label: "Sport", href: "/sport" },
-  { label: "Skolerugby", href: "/skolerugby" },
-  { label: "Sake", href: "/sake" },
+  { label: "Kos", href: "/kos" },
+  { label: "Mode", href: "/mode" },
+  { label: "Skoonheid", href: "/skoonheid" },
+  { label: "Gesondheid", href: "/gesondheid" },
+  { label: "Bekendes", href: "/bekendes" },
   { label: "Leefstyl", href: "/leefstyl" },
-  { label: "Dink", href: "/dink" },
+  { label: "Jou lewe", href: "/jou-lewe" },
+  { label: "Ontspanning", href: "/ontspanning" },
+  { label: "Wen", href: "/wen" },
 ];
 
 export const SOCIAL_LINKS = [
-  { label: "Facebook", href: "https://www.facebook.com/diepapier.za/about/", icon: "Facebook" },
-  { label: "Instagram", href: "https://instagram.com/die.papier", icon: "Instagram" },
-  { label: "X", href: "https://x.com/die_papier", icon: "XSocial" },
-  { label: "YouTube", href: "https://www.youtube.com/@diepapier", icon: "Youtube" },
-  { label: "LinkedIn", href: "https://linkedin.com/company/diepapier/", icon: "Linkedin" },
-  { label: "TikTok", href: "https://www.tiktok.com/@diepapier", icon: "TikTok" },
-  { label: "Email", href: "mailto:lesers@diepapier.co.za", icon: "Mail" },
+  { label: "Facebook", href: "https://www.facebook.com/rooirose.co.za", icon: "Facebook" },
+  { label: "Instagram", href: "https://instagram.com/rooirose", icon: "Instagram" },
+  { label: "X", href: "https://x.com/rooirose", icon: "XSocial" },
+  { label: "YouTube", href: "https://www.youtube.com/@rooirose", icon: "Youtube" },
+  { label: "LinkedIn", href: "https://linkedin.com/company/rooirose", icon: "Linkedin" },
+  { label: "TikTok", href: "https://www.tiktok.com/@rooirose", icon: "TikTok" },
+  { label: "Email", href: "mailto:redaksie@rooirose.co.za", icon: "Mail" },
 ];
 
 // Maintain compatibility if other components import MAIN_NAVIGATION
@@ -64,58 +76,49 @@ export const HEADER_TOP_BAR_LINKS = [
 /**
  * Desktop category bar links (horizontal nav below logo).
  * Single source of truth — used by Header.tsx.
+ * rooi rose Magazine: 11 items (Tuis + 8 categories + Wen + Kontak)
  */
 export const HEADER_CATEGORY_BAR_LINKS = [
   { label: "Tuis", href: "/" },
-  { label: "Nuus", href: "/nuus" },
-  { label: "Sport", href: "/sport" },
-  { label: "Dink", href: "/dink" },
-  { label: "Sake", href: "/sake" },
+  { label: "Kos", href: "/kos" },
+  { label: "Mode", href: "/mode" },
+  { label: "Skoonheid", href: "/skoonheid" },
+  { label: "Gesondheid", href: "/gesondheid" },
+  { label: "Bekendes", href: "/bekendes" },
   { label: "Leefstyl", href: "/leefstyl" },
-  { label: "Gebeure", href: "/gebeure" },
-  { label: "Multimedia", href: "/multimedia" },
-  { label: "Doodsberrigte", href: "/doodsberrigte" },
-  { label: "E-uitgawes", href: "/e-uitgawes" },
+  { label: "Jou lewe", href: "/jou-lewe" },
+  { label: "Ontspanning", href: "/ontspanning" },
+  { label: "Wen", href: "/wen" },
+  { label: "Kontak", href: "/kontak" },
 ];
 
 export const FOOTER_LINK_COLUMNS = [
   {
-    title: "Kategorieë",
+    title: "rooi rose Kategorieë",
     links: [
-      { label: "Nuus", href: "/nuus" },
-      { label: "Sport", href: "/sport" },
-      { label: "Sake", href: "/sake" },
+      { label: "Kos", href: "/kos" },
+      { label: "Mode", href: "/mode" },
+      { label: "Skoonheid", href: "/skoonheid" },
+      { label: "Gesondheid", href: "/gesondheid" },
+      { label: "Bekendes", href: "/bekendes" },
       { label: "Leefstyl", href: "/leefstyl" },
-      { label: "Dink", href: "/dink" },
-      { label: "Skole", href: "/skole" },
-      { label: "Skolerugby", href: "/skolerugby" },
-      { label: "Kompetisies", href: "/kompetisies" },
+      { label: "Jou lewe", href: "/jou-lewe" },
+      { label: "Ontspanning", href: "/ontspanning" },
     ],
   },
   {
-    title: "Inhoud",
+    title: "Kompetisies & Dienste",
     links: [
+      { label: "Wen", href: "/wen" },
+      { label: "Rooiwarm wenners", href: "/rooiwarm-wenners" },
       { label: "E-uitgawes", href: "/e-uitgawes" },
-      { label: "Gebeure", href: "/gebeure" },
-      { label: "Multimedia", href: "/multimedia" },
-      { label: "Doodsberrigte", href: "/doodsberrigte" },
-      { label: "Nuusbrief-argief", href: "/nuusbrief-argief" },
-      { label: "Stuur nuus in", href: "/stuur-in" },
-    ],
-  },
-  {
-    title: "Dienste",
-    links: [
-      { label: "Weer", href: "/weer" },
-      { label: "Verkeer", href: "/verkeer" },
-      { label: "Inteken", href: "/inteken" },
       { label: "Nuusbrief", href: "/nuusbrief-inteken" },
       { label: "My rekening", href: "/my-rekening" },
       { label: "Registreer", href: "/registreer" },
     ],
   },
   {
-    title: "Die Papier",
+    title: "Oor rooi rose",
     links: [
       { label: "Oor ons", href: "/oor-ons" },
       { label: "Ons span", href: "/oor-ons/redaksie" },
@@ -123,6 +126,16 @@ export const FOOTER_LINK_COLUMNS = [
       { label: "Adverteer", href: "/adverteer" },
       { label: "Algemene vrae", href: "/vrae" },
       { label: "Inhoudsopgawe", href: "/inhoudsopgawe" },
+    ],
+  },
+  {
+    title: "Beleid",
+    links: [
+      { label: "Privaatheidsbeleid", href: "/beleid/privaatheidsbeleid" },
+      { label: "Terme en voorwaardes", href: "/beleid/terme-en-voorwaardes" },
+      { label: "Koekiebeleid", href: "/beleid/koekiebeleid" },
+      { label: "Gebruikersreëls", href: "/beleid/gebruikersreels" },
+      { label: "Perskode", href: "/beleid/perskode" },
     ],
   },
 ];
@@ -142,7 +155,7 @@ export const FOOTER_CONTENT = {
     buttonText: "Nuusbrief"
   },
   brand: {
-    description: "Die Papier is 'n weeklikse nasionale koerant op die voorpunt van die week se nuus en die naweek se gebeure. Dit verskyn op Vrydae."
+    description: "*rooi rose* is 'n weeklikse nasionale tydskrif op die voorpunt van die week se nuus en die naweek se gebeure. Dit verskyn op Vrydae."
   },
   contact: {
     title: "Kontak",
@@ -173,27 +186,28 @@ export const FOOTER_NAVIGATION = {
     tiktok: "https://www.tiktok.com/@diepapier",
     email: "mailto:lesers@diepapier.co.za"
   },
-  copyright: `© ${new Date().getFullYear()} Die Papier. Alle regte voorbehou.`
+  copyright: `© ${new Date().getFullYear()} *rooi rose*. Alle regte voorbehou.`
 };
 
 /**
  * Mobile Menu — primary category grid.
  * Single source of truth — used by MobileMenu.tsx.
  * Icons are mapped separately inside the component.
+ * rooi rose Magazine: 13 items (Tuis + 8 categories + Wen + E-uitgawes + Rooiwarm wenners + Nuusbrief-argief)
  */
 export const MOBILE_CATEGORY_LINKS = [
   { label: "Tuis", href: "/" },
-  { label: "Nuus", href: "/nuus" },
-  { label: "Sport", href: "/sport" },
-  { label: "Skole", href: "/skole" },
-  { label: "Sake", href: "/sake" },
+  { label: "Kos", href: "/kos" },
+  { label: "Mode", href: "/mode" },
+  { label: "Skoonheid", href: "/skoonheid" },
+  { label: "Gesondheid", href: "/gesondheid" },
+  { label: "Bekendes", href: "/bekendes" },
   { label: "Leefstyl", href: "/leefstyl" },
-  { label: "Dink", href: "/dink" },
-  { label: "Gebeure", href: "/gebeure" },
-  { label: "Multimedia", href: "/multimedia" },
-  { label: "Doodsberrigte", href: "/doodsberrigte" },
+  { label: "Jou lewe", href: "/jou-lewe" },
+  { label: "Ontspanning", href: "/ontspanning" },
+  { label: "Wen", href: "/wen" },
+  { label: "Rooiwarm wenners", href: "/rooiwarm-wenners" },
   { label: "E-uitgawes", href: "/e-uitgawes" },
-  { label: "Kompetisies", href: "/kompetisies" },
   { label: "Nuusbrief-argief", href: "/nuusbrief-argief" },
 ];
 
@@ -244,14 +258,17 @@ export const SITEMAP_MAIN_PAGES = [
 ];
 
 export const SITEMAP_CATEGORY_PAGES = [
-  { name: "Nuus", path: "/nuus" },
-  { name: "Sport", path: "/sport" },
-  { name: "Sake", path: "/sake" },
+  /* rooi rose Magazine Categories — Phase 0 (2026-03-11) */
+  { name: "Kos", path: "/kos" },
+  { name: "Mode", path: "/mode" },
+  { name: "Skoonheid", path: "/skoonheid" },
+  { name: "Gesondheid", path: "/gesondheid" },
+  { name: "Bekendes", path: "/bekendes" },
   { name: "Leefstyl", path: "/leefstyl" },
-  { name: "Dink", path: "/dink" },
-  { name: "Skole", path: "/skole" },
-  { name: "Skolerugby", path: "/skolerugby" },
-  { name: "Kompetisies", path: "/kompetisies" },
+  { name: "Jou lewe", path: "/jou-lewe" },
+  { name: "Ontspanning", path: "/ontspanning" },
+  { name: "Wen", path: "/wen" },
+  { name: "Rooiwarm wenners", path: "/rooiwarm-wenners" },
 ];
 
 export const SITEMAP_EEDITION_PAGES = [

@@ -1,5 +1,5 @@
 /**
- * Team data for Die Papier
+ * Team data for rooi rose
  * Staff profiles and roles
  */
 

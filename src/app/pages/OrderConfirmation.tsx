@@ -19,7 +19,7 @@ export const OrderConfirmationPage = () => {
     email: "ashley@lightspeedwp.agency", // Mock email
     paymentMethod: "PayFast",
     products: [
-      { name: "Die Papier E-uitgawe — Vrydag, 7 Maart 2026", quantity: 1, price: 35.00, region: "Gauteng en Vrystaat" },
+      { name: "rooi rose E-uitgawe — Vrydag, 7 Maart 2026", quantity: 1, price: 35.00, region: "Gauteng en Vrystaat" },
     ],
     billing: {
       name: "Ash Shaw",
@@ -103,7 +103,7 @@ export const OrderConfirmationPage = () => {
             <div className="col-span-4 text-right">Aflaai</div>
           </div>
           <div className="grid grid-cols-12 p-4 items-center">
-            <div className="col-span-4 font-medium text-brand-navy dark:text-foreground"><em>Die Papier</em>: Vrydag, 7 Maart 2026</div>
+            <div className="col-span-4 font-medium text-brand-navy dark:text-foreground"><em>rooi rose</em>: Vrydag, 7 Maart 2026</div>
             <div className="col-span-4 text-gray-500 dark:text-gray-400">Nooit</div>
             <div className="col-span-4 text-right">
               <Button size="sm" className="bg-primary hover:bg-primary/90 text-white">
@@ -119,7 +119,7 @@ export const OrderConfirmationPage = () => {
       {isGuestMode && (
         <div className="border-2 border-gray-200 dark:border-border rounded-lg p-8 bg-white dark:bg-card flex flex-col md:flex-row gap-8 items-start md:items-center justify-between animate-in fade-in slide-in-from-bottom-4">
           <div className="space-y-4 max-w-lg">
-            <h3 className="font-heading text-2xl font-normal text-brand-navy dark:text-foreground" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)' }}>Skep 'n rekening by <em>Die Papier</em></h3>
+            <h3 className="font-heading text-2xl font-normal text-brand-navy dark:text-foreground" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)' }}>Skep 'n rekening by <em>rooi rose</em></h3>
              <ul className="space-y-2">
                 <li className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400">
                     <div className="w-5 flex justify-center"><Check size={16} className="text-green-600" /></div>

@@ -50,7 +50,7 @@ export const ThankYouCompetitionPage = () => {
                     <ul className="text-blue-700 dark:text-blue-400 text-sm space-y-1.5 list-disc list-inside">
                       <li>Die wenner sal na die sluitingsdatum ewekansig uit alle geldige inskrywings gekies word.</li>
                       <li>Die wenner sal per e-pos en telefoon in kennis gestel word.</li>
-                      <li>Die wenner sal ook op <em>Die Papier</em> se webwerf aangekondig word.</li>
+                      <li>Die wenner sal ook op <em>rooi rose</em> se webwerf aangekondig word.</li>
                     </ul>
                   </div>
                 </div>
@@ -73,7 +73,7 @@ export const ThankYouCompetitionPage = () => {
           </div>
         </div>
       </PageContainer>
-      <PageFAQSection items={THANKYOU_COMPETITION_FAQS} description="Vrae oor kompetisies by Die Papier." />
+      <PageFAQSection items={THANKYOU_COMPETITION_FAQS} description="Vrae oor kompetisies by rooi rose." />
     </div>
   );
 };

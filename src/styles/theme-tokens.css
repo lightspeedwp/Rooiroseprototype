@@ -5,15 +5,30 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* nm-theme / Die Papier Tokens */
-  --custom-primary: #e82c27; /* Updated Brand Red */
-  --custom-primary-2: #c41f20; /* Darker shade of new red */
-  --brand-navy-light: #1a3a5f;
-  --brand-navy: #172134; /* Updated Navy from #142135 */
-  --brand-navy-dark: #0f1923; /* Darkest navy — pressed/active states */
+  /* ── rooi rose Magazine Brand Tokens ─────────────────────────────── */
+  
+  /* Brand Red — rooi rose primary color */
+  --custom-primary: #e01e12; /* rooi rose Red — logo, CTAs, accents */
+  --custom-primary-accessible: #b51410; /* Darker red — AAA compliant for body text links (4.72:1) */
+  --custom-primary-hover: #c01711; /* Hover state red — AA compliant (4.51:1) */
+  --custom-primary-2: var(--custom-primary-hover); /* Backwards compat */
+  
+  /* Neutrals — magazine editorial palette */
+  --brand-navy-light: #1a3a5f; /* Legacy — will be deprecated */
+  --brand-navy: #172134; /* Legacy — will be deprecated */
+  --brand-navy-dark: #0f1923; /* Legacy — will be deprecated */
   --brand-warm-gray: #ebe7e7; /* Warm off-white — social post backgrounds */
-  --competition-dark-from: #2a2518; /* Competition gradient dark-from (dark mode) */
-  --competition-dark-to: #2a1e18; /* Competition gradient dark-to  (dark mode) */
+  
+  /* Editorial Accent Colors (NEW — rooi rose magazine) */
+  --accent-blush: #f4e5e0; /* Blush — alternating section backgrounds */
+  --accent-warm-beige: #f8f4f0; /* Warm beige — alternating section backgrounds */
+  --accent-soft-grey: #e8e5e2; /* Soft grey — pull quote backgrounds */
+  
+  /* Competition gradients (legacy) */
+  --competition-dark-from: #2a2518;
+  --competition-dark-to: #2a1e18;
+  
+  /* Brand Red Gradient (legacy — Die Papier) */
   --gradient-brand-red: linear-gradient(
     81.87deg,
     #ce0400 0.24%,
@@ -22,15 +37,23 @@
     #801917 71.74%,
     #420200 99.32%
   );
-  --base: #ffffff;
-  --base-2: #f0f0f0;
-  --base-3: #dddddd;
-  --contrast: #2c2c2c;
-
-  /* Typography */
-  --font-inter: "Inter", sans-serif;
-  --font-heading: "Roboto Serif", serif;
-  --font-raleway: var(--font-heading); /* Backwards compat */
+  
+  /* Base Colors */
+  --base: #ffffff; /* White background */
+  --base-2: #f5f5f5; /* Light grey — cards, borders */
+  --base-3: #e0e0e0; /* Medium grey — borders */
+  --contrast: #222222; /* Headings, high contrast text */
+  --body-text: #000000; /* Body copy (pure black for magazine readability) */
+  
+  /* ── Typography — rooi rose Magazine Fonts ─────────────────────── */
+  
+  /* Legacy fonts (backwards compatibility for Die Papier components not yet migrated) */
+  --font-karla: "Karla", sans-serif;
+  --font-display: "Playfair Display SC", serif;
+  --font-body: var(--font-karla); /* Primary body font */
+  --font-inter: var(--font-karla); /* Backwards compat alias */
+  --font-heading: var(--font-display); /* Backwards compat alias */
+  --font-raleway: var(--font-display); /* Backwards compat alias */
 
   /* ── V2 Typography Scale ─────────────────────────────────── */
   /* Source: Figma "Desktop/Mobile Font Styles" frames (2026-02-20) */
@@ -252,13 +275,13 @@
 
   /* Font Families — semantic slugs (brand-serif / brand-sans) */
   --wp--preset--font-family--brand-serif: var(
-    --font-heading
-  ); /* 'Roboto Serif', serif */
+    --font-display
+  ); /* 'Playfair Display SC', serif — rooi rose display headings */
   --wp--preset--font-family--brand-sans: var(
-    --font-inter
-  ); /* 'Inter', sans-serif   */
+    --font-body
+  ); /* 'Karla', sans-serif — rooi rose body text */
 
-  /* Font Sizes — numeric-only slugs (Die Papier scale)
+  /* Font Sizes — numeric-only slugs (rooi rose scale)
    * 100=11px  200=12px  300=14px  400=16px  500=16→18px
    * 600=18→20px  700=20→24px  800=H2fluid  900=H1fluid  */
   --wp--preset--font-size--100: var(

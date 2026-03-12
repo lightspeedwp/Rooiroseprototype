@@ -25,7 +25,7 @@ export const CheckoutPage = () => {
   const mockUser = {
     firstName: "John",
     lastName: "Doe",
-    company: "Die Papier",
+    company: "rooi rose",
     address: "123 Kerk Straat",
     city: "Kaapstad",
     province: "wc",
@@ -104,7 +104,7 @@ export const CheckoutPage = () => {
                 
                 <div className="flex items-center space-x-2 mt-4">
                   <Checkbox id="create-account" className="border-gray-300 dark:border-border data-[state=checked]:bg-foreground data-[state=checked]:text-white" />
-                  <Label htmlFor="create-account" className="text-lg font-light cursor-pointer text-foreground">Skep 'n rekening by <em>Die Papier</em></Label>
+                  <Label htmlFor="create-account" className="text-lg font-light cursor-pointer text-foreground">Skep 'n rekening by <em>rooi rose</em></Label>
                 </div>
               </div>
             </>

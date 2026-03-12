@@ -45,7 +45,7 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="font-inter">
+    <footer className="has-brand-sans-font-family">
       {/* ─── Newsletter CTA Band ─── */}
       <div
         className="bg-brand-red dark:bg-primary relative overflow-hidden"
@@ -64,7 +64,7 @@ export const Footer = () => {
               </div>
               <div>
                 <p
-                  className="font-normal font-heading leading-tight"
+                  className="font-normal has-brand-serif-font-family leading-tight"
                   style={{
                     fontVariationSettings: "var(--fvs-h3)",
                     lineHeight: 'var(--lh-h3)',
@@ -141,7 +141,7 @@ export const Footer = () => {
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-6">
                   {FOOTER_LINK_COLUMNS.map((column) => (
                     <div key={column.title}>
-                      <h3 className="text-xs font-normal uppercase tracking-[0.15em] text-brand-red mb-4 font-heading" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)' }}>
+                      <h3 className="text-xs font-normal uppercase tracking-[0.15em] text-brand-red mb-4 has-brand-serif-font-family" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)' }}>
                         {renderWithBrandItalics(column.title)}
                       </h3>
                       <ul className="space-y-2.5">

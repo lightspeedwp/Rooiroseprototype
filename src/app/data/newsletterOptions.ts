@@ -43,9 +43,9 @@ export const INITIAL_NEWSLETTERS: NewsletterOption[] = [
     subscribed: true,
   },
   {
-    id: 'promotions',
+    id: 'special',
     name: 'Spesiale Aanbiedinge & Kompetisies',
-    description: 'Eksklusiewe aanbiedings, afslag en kompetisies vir Die Papier-lesers.',
+    description: 'Eksklusiewe aanbiedings, afslag en kompetisies vir rooi rose-lesers.',
     frequency: 'Geleentheid',
     subscribed: false,
   },

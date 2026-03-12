@@ -38,7 +38,7 @@ export const TeamGrid = ({ members, columns = 3 }: TeamGridProps) => {
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
           </div>
-          <h3 className="text-xl font-normal text-brand-navy dark:text-foreground font-heading" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)', fontSize: 'var(--text-h3)' }}>{member.name}</h3>
+          <h3 className="text-xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)', fontSize: 'var(--text-h3)' }}>{member.name}</h3>
           <p className="text-brand-red font-medium mb-3 text-sm uppercase tracking-wide">{member.role}</p>
           {member.bio && (
             <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 leading-relaxed max-w-xs">{member.bio}</p>

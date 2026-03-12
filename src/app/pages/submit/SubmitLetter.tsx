@@ -9,8 +9,8 @@ export const SubmitLetterPage = () => {
   return (
     <SubmitFormLayout
       seo={{
-        title: 'Lesersbrief - Die Papier',
-        description: "Skryf 'n lesersbrief aan Die Papier se redakteur. Jou stem maak saak.",
+        title: 'Lesersbrief - rooi rose',
+        description: "Skryf 'n lesersbrief aan rooi rose se redakteur. Jou stem maak saak.",
         keywords: 'lesersbrief, brief aan redakteur, stuur in, die papier',
       }}
       breadcrumbs={[
@@ -19,7 +19,7 @@ export const SubmitLetterPage = () => {
       ]}
       hero={{
         title: 'Lesersbrief',
-        subtitle: "Laat jou stem hoor! Skryf 'n brief aan die redakteur oor 'n saak wat vir jou belangrik is. Lesersbriewe word in Die Papier se 'Dink' afdeling gepubliseer.",
+        subtitle: "Laat jou stem hoor! Skryf 'n brief aan die redakteur oor 'n saak wat vir jou belangrik is. Lesersbriewe word in rooi rose se 'Dink' afdeling gepubliseer.",
         image: HERO_IMAGES.submit,
       }}
       submitLabel="Stuur lesersbrief"
@@ -35,7 +35,7 @@ export const SubmitLetterPage = () => {
         </div>
       }
       faqItems={SUBMIT_LETTER_FAQS}
-      faqDescription="Vrae oor lesersbriefs by Die Papier."
+      faqDescription="Vrae oor lesersbriefs by rooi rose."
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-2">
@@ -73,7 +73,7 @@ export const SubmitLetterPage = () => {
           className="mt-1 w-4 h-4 text-custom-primary rounded border-gray-300 dark:border-border focus:ring-custom-primary"
         />
         <label htmlFor="consent" className="text-sm text-gray-700 dark:text-gray-300">
-          Ek bevestig dat hierdie my eie menings is en ek gee toestemming vir publikasie in <em>Die Papier</em>. Ek verstaan dat <em>Die Papier</em> die reg het om die brief te redigeer. *
+          Ek bevestig dat hierdie my eie menings is en ek gee toestemming vir publikasie in <em>rooi rose</em>. Ek verstaan dat <em>rooi rose</em> die reg het om die brief te redigeer. *
         </label>
       </div>
     </SubmitFormLayout>

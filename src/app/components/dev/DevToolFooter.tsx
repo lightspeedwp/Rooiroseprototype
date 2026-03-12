@@ -26,7 +26,7 @@ export const DevToolFooter: React.FC = () => {
             </div>
             <div>
               <p className="text-sm text-gray-800 dark:text-white/70">
-                Die Papier — Dev Tools
+                <em>rooi rose</em> — Dev Tools
               </p>
               <p className="text-[10px] text-gray-400 dark:text-white/30">
                 {isAf
@@ -74,7 +74,7 @@ export const DevToolFooter: React.FC = () => {
         {/* Copyright */}
         <div className="mt-6 pt-4 border-t border-gray-100 dark:border-white/[0.04]">
           <p className="text-[10px] text-gray-400 dark:text-white/20">
-            &copy; {new Date().getFullYear()} Die Papier / Novus Media.{' '}
+            &copy; {new Date().getFullYear()} <em>rooi rose</em> / Novus Media.{' '}
             {isAf
               ? 'Alle regte voorbehou. Hierdie gereedskap is slegs vir interne gebruik.'
               : 'All rights reserved. These tools are for internal use only.'}

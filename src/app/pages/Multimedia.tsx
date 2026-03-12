@@ -91,22 +91,22 @@ export const MultimediaPage = () => {
   return (
     <div className="bg-gray-50 dark:bg-background min-h-screen font-inter">
       <SEO
-        title="Multimedia - Die Papier"
-        description="Kyk video-verslae, blaai deur fotogalerye en luister na podcasts van Die Papier."
-        keywords="video, foto, podcast, multimedia, die papier, nuus"
+        title="Multimedia - rooi rose"
+        description="Kyk video-verslae, blaai deur fotogalerye en luister na podcasts van rooi rose."
+        keywords="video, multimedia, podcasts, fotogalerye, galleries, die papier, photos"
       />
 
       {/* Leaderboard Ad */}
       <LeaderboardAd section="multimedia" />
 
       <PageContainer breadcrumbs={[{ label: 'Multimedia' }]}>
-        {/* Page Header */}
+        {/* Header */}
         <header className="mb-10">
-          <h1 className="text-4xl font-normal text-brand-navy dark:text-foreground font-heading mb-4" style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}>
+          <h1 className="text-4xl md:text-5xl font-normal text-brand-navy dark:text-foreground font-heading mb-4" style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}>
             Multimedia
           </h1>
           <p className="text-gray-600 dark:text-gray-400 text-lg max-w-3xl">
-            Kyk, luister en ervaar die nuus. Video-verslae, fotogalerye en podcasts van <em>Die Papier</em> se redaksie.
+            Kyk, luister en ervaar die nuus. Video-verslae, fotogalerye en podcasts van <em>rooi rose</em> se redaksie.
           </p>
         </header>
 

@@ -64,9 +64,12 @@
   /* Accessible text link red — TYP-001/TYP-017 */
   --color-text-link-red: var(--text-link-red);
 
-  --font-inter: var(--font-inter);
+  --font-karla: var(--font-karla);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-inter: var(--font-inter); /* Backwards compat alias */
   --font-raleway: var(
     --font-heading
   ); /* Backward compatibility */
-  --font-heading: var(--font-heading);
+  --font-heading: var(--font-heading); /* Backwards compat alias */
 }

@@ -22,17 +22,18 @@ export const SubmitHubPage = () => {
   return (
     <div className="bg-gray-50 dark:bg-background min-h-screen pb-16">
       <SEO
-        title="Stuur in - Die Papier"
-        description="Stuur 'n nuuswenk, lesersbrief, terugvoer of shoutout aan Die Papier. Jou stem maak saak."
-        keywords="stuur in, nuuswenk, lesersbrief, terugvoer, shoutout, die papier"
+        title="Stuur in - rooi rose"
+        description="Stuur 'n nuuswenk, lesersbrief, terugvoer of shoutout aan rooi rose. Jou stem maak saak."
+        keywords="instuur, submit, nuuswenk, lesersbrief, shoutout, terugvoer, die papier"
       />
 
       <PageContainer breadcrumbs={[{ label: 'Stuur in' }]} noPadding />
 
       <ContentHero
         title="Stuur in"
-        subtitle="Die Papier nooi jou uit om deel te wees van ons redaksionele proses. Kies hieronder watter tipe indiening jy wil maak."
-        image={HERO_IMAGES.submit}
+        subtitle="rooi rose nooi jou uit om deel te wees van ons redaksionele proses. Kies hieronder watter tipe indiening jy wil maak."
+        image={HERO_IMAGES.hero_submit}
+        height="small"
       />
 
       <div className="alignwide py-12">
@@ -74,7 +75,7 @@ export const SubmitHubPage = () => {
               <ul className="text-gray-300 text-sm space-y-2 list-disc list-inside">
                 <li>Alle inskrywings word deur ons redaksie hersien voor publikasie.</li>
                 <li>Maak seker dat jy die reg het om enige foto's of inhoud te deel.</li>
-                <li>Deur in te dien, gee jy toestemming vir <em>Die Papier</em> om die inhoud te publiseer.</li>
+                <li>Deur in te dien, gee jy toestemming vir <em>rooi rose</em> om die inhoud te publiseer.</li>
                 <li>Ons behou die reg voor om inskrywings te redigeer vir lengte en duidelikheid.</li>
                 <li>
                   Wil jy 'n gebeurtenis indien?{' '}
@@ -91,7 +92,7 @@ export const SubmitHubPage = () => {
       {/* FAQ Section */}
       <PageFAQSection
         items={SUBMIT_FAQS}
-        description="Vrae oor hoe om inhoud by Die Papier in te dien."
+        description="Vrae oor hoe om inhoud by rooi rose in te dien."
       />
     </div>
   );

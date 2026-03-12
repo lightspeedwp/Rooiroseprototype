@@ -14,7 +14,7 @@ export const ObituariesSection = () => {
         <div className="flex items-center justify-between mb-8 pb-2 border-b-2 border-brand-red">
           <div className="flex items-center gap-3">
             <Flower2 className="text-brand-red" size={28} />
-            <h2 className="font-normal text-brand-navy dark:text-foreground font-heading">
+            <h2 className="font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family">
               Doodsberrigte
             </h2>
           </div>
@@ -42,7 +42,7 @@ export const ObituariesSection = () => {
                 />
               </div>
               <div className="flex-1 min-w-0">
-                <h3 className="font-normal text-brand-navy dark:text-foreground group-hover:text-brand-red transition-colors line-clamp-1 mb-1 font-heading is-style-card-compact">
+                <h3 className="font-normal text-brand-navy dark:text-foreground group-hover:text-brand-red transition-colors line-clamp-1 mb-1 has-brand-serif-font-family is-style-card-compact">
                   {obit.name}
                 </h3>
                 <p className="text-xs text-gray-500 dark:text-gray-400 mb-2 line-clamp-2 leading-relaxed">

@@ -34,7 +34,7 @@ export const NewsletterUnsubscribeSuccessPage = () => {
                   <div>
                     <p className="text-green-800 dark:text-green-300 font-medium mb-1">Uitskrywing bevestig</p>
                     <p className="text-green-700 dark:text-green-400 text-sm">
-                      Jy is suksesvol van <em>Die Papier</em> se nuusbrieflys verwyder. Jy sal nie meer nuusbrief-e-posse van ons ontvang nie.
+                      Jy is suksesvol van <em>rooi rose</em> se nuusbrieflys verwyder. Jy sal nie meer nuusbrief-e-posse van ons ontvang nie.
                     </p>
                   </div>
                 </div>

@@ -15,14 +15,14 @@ export const ThankYouContactPage = () => {
       primaryAction={{ label: 'Terug na tuisblad', href: '/' }}
       secondaryAction={{ label: 'Lees die nuus', href: '/nuus' }}
       faqItems={THANKYOU_CONTACT_FAQS}
-      faqDescription="Vrae oor kontak met Die Papier."
+      faqDescription="Vrae oor kontak met rooi rose."
     >
       <div className="bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-900/50 rounded-lg p-6 mb-8 flex gap-4 items-start">
         <MessageCircle size={24} className="text-green-600 shrink-0 mt-0.5" />
         <div>
           <p className="text-green-800 dark:text-green-300 font-medium mb-1">Boodskap suksesvol gestuur</p>
           <p className="text-green-700 dark:text-green-400 text-sm leading-relaxed">
-            Dankie dat jy <em>Die Papier</em> gekontak het. Ons span het jou boodskap ontvang en sal so spoedig moontlik daarop reageer.
+            Dankie dat jy <em>rooi rose</em> gekontak het. Ons span het jou boodskap ontvang en sal so spoedig moontlik daarop reageer.
           </p>
         </div>
       </div>

@@ -6,7 +6,7 @@
  */
 
 export const POLICY_PRESS_CODE = {
-  title: 'Die Papier se Perskode',
+  title: 'rooi rose se Perskode',
   breadcrumbLabel: 'Perskode',
   subtitle: 'Ons Verbintenis tot Joernalistieke Integriteit en AI-Etiek',
   intro: 'As lid van die Persraad van Suid-Afrika is Novus Media verbind tot die handhawing van die hoogste standaarde van joernalistieke etiek en integriteit. Ons is verbind tot die Perskode van Suid-Afrika, wat dien as die leidende raamwerk vir ons gedrukte en aanlyn publikasies. Hierdie Perskode verseker dat ons joernalistiek nie net informatief is nie, maar ook regverdig, akkuraat, en verantwoordelik. Ons streef daarna om hierdie waardes te handhaaf in alles wat ons publiseer egoor ons nasionale platform.',
@@ -15,7 +15,7 @@ export const POLICY_PRESS_CODE = {
 
   principles: {
     heading: 'Leidende Beginsels van Ons Joernalistiek',
-    intro: 'Die Perskode lei ons joernalistieke aktiwiteite en verseker dat ons inhoud ons toewyding aan etiese gedrag en deursigtigheid weerspieël. Hieronder is die kernbeginsels waaraan Novus Media en Die Papier hou in lyn met die Perskode.',
+    intro: 'Die Perskode lei ons joernalistieke aktiwiteite en verseker dat ons inhoud ons toewyding aan etiese gedrag en deursigtigheid weerspieël. Hieronder is die kernbeginsels waaraan Novus Media en rooi rose hou in lyn met die Perskode.',
     sections: [
       {
         heading: 'Vryheid van Uitdrukking en Openbare Belang',

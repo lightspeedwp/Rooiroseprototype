@@ -1,5 +1,5 @@
 /**
- * Ad data for Die Papier
+ * Ad data for rooi rose
  * Mock advertisements for various slots
  */
 

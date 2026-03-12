@@ -98,9 +98,9 @@ export const AD_OPTIONS = [
   },
   {
     title: "Sindikasie",
-    description: "Versterk jou boodskap deur jou inhoud oor veelvuldige Die Papier platforms te sindikeer.",
+    description: "Versterk jou boodskap deur jou inhoud oor veelvuldige rooi rose platforms te sindikeer.",
     icon: Repeat,
-    link: null
+    link: "/adverteer/sindikasie"
   }
 ];
 
@@ -362,7 +362,7 @@ export const SPONSORED_PROCESS_STEPS = [
 export const SPONSORSHIP_TYPES = [
   {
     title: 'Afdelingsborgskap',
-    description: "Borg 'n spesifieke redaksionele afdeling van Die Papier en belyn jou handelsmerk met inhoud wat by jou teikenmark aanklank vind.",
+    description: "Borg 'n spesifieke redaksionele afdeling van rooi rose en belyn jou handelsmerk met inhoud wat by jou teikenmark aanklank vind.",
     examples: ['Nuus-afdeling', 'Sport-afdeling', 'Sake-afdeling', 'Leefstyl-afdeling', 'Dink-afdeling'],
     includes: [
       'Jou logo op die afdelingsopskrif (druk & digitaal)',
@@ -374,7 +374,7 @@ export const SPONSORSHIP_TYPES = [
   },
   {
     title: 'Gebeurtenisborgskap',
-    description: "Borg 'n spesifieke gebeurtenis of reeks wat deur Die Papier gedek word, en kry prominente sigbaarheid voor, tydens en na die geleentheid.",
+    description: "Borg 'n spesifieke gebeurtenis of reeks wat deur rooi rose gedek word, en kry prominente sigbaarheid voor, tydens en na die geleentheid.",
     examples: ['Skole-rugbyreeks', 'Verkiesings-dekking', 'Boekefees-verslae', 'Landbouskou-dekking'],
     includes: [
       'Logo op alle verwante inhoud',
@@ -386,7 +386,7 @@ export const SPONSORSHIP_TYPES = [
   },
   {
     title: 'Nuusbriefborgskap',
-    description: 'Borg Die Papier se weeklikse nuusbrief en bereik duisende ingetekende lesers direk in hul inkassie.',
+    description: 'Borg rooi rose se weeklikse nuusbrief en bereik duisende ingetekende lesers direk in hul inkassie.',
     examples: ['Dinsdagnuusbrief', 'Vrydagnuusbrief', 'Spesiale uitgawes'],
     includes: [
       'Prominente logo-plasing bo-aan nuusbrief',
@@ -482,7 +482,7 @@ export const SUPPLEMENT_SERVICES = [
   },
   {
     title: 'Verspreiding',
-    description: 'Jou bylaag word saam met Die Papier se weeklikse uitgawe by winkels regoor die land versprei.',
+    description: 'Jou bylaag word saam met rooi rose se weeklikse uitgawe by winkels regoor die land versprei.',
     icon: BookOpen,
   },
 ];
@@ -491,5 +491,5 @@ export const SUPPLEMENT_TIMELINE = [
   { week: 'Week 1–2', task: 'Beplanning & konseptualisering', description: 'Strategiese sessies, inhoudsbeplanning en visuele konsepte.' },
   { week: 'Week 2–3', task: 'Inhoudskeppende & ontwerp', description: 'Skryf artikels, neem fotos, ontwerp bladsye.' },
   { week: 'Week 3–4', task: 'Hersiening & goedkeuring', description: 'Kliënt-hersiening, korreksies en finale goedkeuring.' },
-  { week: 'Week 4–5', task: 'Druk & verspreiding', description: 'Finale drukwerk en insluiting by Die Papier.' },
+  { week: 'Week 4–5', task: 'Druk & verspreiding', description: 'Finale drukwerk en insluiting by rooi rose.' },
 ];

@@ -5,7 +5,7 @@ import React from 'react';
  * 
  * Usage:
  * - Shows while lazy route component is being loaded
- * - Branded loading spinner matching Die Papier design
+ * - Branded loading spinner matching *rooi rose* design
  * - Optional title for context
  * 
  * Note: The LazyRoute wrapper was removed (2026-03-03) because

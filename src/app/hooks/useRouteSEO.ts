@@ -35,9 +35,9 @@ export function useRouteSEO() {
     if (!seoData) return; // Let per-page <SEO> handle it
 
     const baseUrl = 'https://diepapier.co.za';
-    const fullTitle = seoData.title.includes('Die Papier')
+    const fullTitle = seoData.title.includes('rooi rose')
       ? seoData.title
-      : `${seoData.title} | Die Papier`;
+      : `${seoData.title} | rooi rose`;
     const canonicalUrl = `${baseUrl}${pathname}`;
 
     // Set document title (will be overridden if page has its own <SEO>)
@@ -62,7 +62,7 @@ export function useRouteSEO() {
     setMeta('property', 'og:description', seoData.description);
     setMeta('property', 'og:url', canonicalUrl);
     setMeta('property', 'og:type', seoData.type || 'website');
-    setMeta('property', 'og:site_name', 'Die Papier');
+    setMeta('property', 'og:site_name', 'rooi rose');
     setMeta('property', 'og:locale', 'af_ZA');
 
     // Twitter

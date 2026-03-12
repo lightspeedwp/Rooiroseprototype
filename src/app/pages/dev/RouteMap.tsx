@@ -42,14 +42,23 @@ const ROUTE_CATEGORIES = [
 const ROUTES: RouteEntry[] = [
   // Main
   { path: '/', name: 'Tuis', component: 'Home', category: 'main', layout: 'main' },
-  // Categories
-  { path: '/nuus', name: 'Nuus', component: 'CategoryPage', category: 'categories', layout: 'main', legacy: '/news' },
-  { path: '/sport', name: 'Sport', component: 'CategoryPage', category: 'categories', layout: 'main' },
-  { path: '/sake', name: 'Sake', component: 'CategoryPage', category: 'categories', layout: 'main', legacy: '/business' },
+  
+  /* ── rooi rose Magazine Categories ──────────────────────────────────
+   * Phase 0: Content Architecture Update (2026-03-11)
+   * Updated from newspaper categories to lifestyle magazine categories
+   * ──────────────────────────────────────────────────────────────────── */
+  // Categories — rooi rose Magazine
+  { path: '/kos', name: 'Kos', component: 'CategoryPage', category: 'categories', layout: 'main' },
+  { path: '/mode', name: 'Mode', component: 'CategoryPage', category: 'categories', layout: 'main' },
+  { path: '/skoonheid', name: 'Skoonheid', component: 'CategoryPage', category: 'categories', layout: 'main' },
+  { path: '/gesondheid', name: 'Gesondheid', component: 'CategoryPage', category: 'categories', layout: 'main' },
+  { path: '/bekendes', name: 'Bekendes', component: 'CategoryPage', category: 'categories', layout: 'main' },
   { path: '/leefstyl', name: 'Leefstyl', component: 'CategoryPage', category: 'categories', layout: 'main', legacy: '/lifestyle' },
-  { path: '/dink', name: 'Dink', component: 'CategoryPage', category: 'categories', layout: 'main', legacy: '/opinion' },
-  { path: '/skole', name: 'Skole', component: 'CategoryPage', category: 'categories', layout: 'main', legacy: '/schools' },
-  { path: '/skolerugby', name: 'Skolerugby', component: 'CategoryPage', category: 'categories', layout: 'main', legacy: '/schools-rugby' },
+  { path: '/jou-lewe', name: 'Jou lewe', component: 'CategoryPage', category: 'categories', layout: 'main' },
+  { path: '/ontspanning', name: 'Ontspanning', component: 'CategoryPage', category: 'categories', layout: 'main' },
+  { path: '/wen', name: 'Wen', component: 'CompetitionsPage', category: 'competitions', layout: 'main', legacy: '/kompetisies' },
+  { path: '/rooiwarm-wenners', name: 'Rooiwarm wenners', component: 'CategoryPage', category: 'categories', layout: 'main' },
+  
   // Content
   { path: '/artikel/:slug', name: 'Artikel', component: 'ArticlePage', category: 'content', layout: 'main', dynamic: true, legacy: '/article/:slug' },
   { path: '/onderwerp/:tagSlug', name: 'Onderwerp', component: 'TagArchivePage', category: 'content', layout: 'main', dynamic: true },

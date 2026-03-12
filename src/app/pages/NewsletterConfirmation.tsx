@@ -51,7 +51,7 @@ export const NewsletterConfirmationPage = () => {
                     <span className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center shrink-0 text-sm font-bold">1</span>
                     <div>
                       <p className="font-medium text-brand-navy dark:text-foreground">Maak jou e-posbus oop</p>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">Soek vir 'n e-pos van <em>Die Papier</em>.</p>
+                      <p className="text-sm text-gray-500 dark:text-gray-400">Soek vir 'n e-pos van <em>rooi rose</em>.</p>
                     </div>
                   </li>
                   <li className="flex gap-4 items-start">

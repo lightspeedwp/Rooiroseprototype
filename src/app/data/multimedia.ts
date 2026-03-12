@@ -1,5 +1,5 @@
 /**
- * Multimedia data — Die Papier
+ * Multimedia data — *rooi rose*
  *
  * @wordpress-patterns archive-multimedia, archive-multimedia-category
  * @wordpress-cards card-multimedia-grid, card-multimedia-meta-compact
@@ -37,11 +37,11 @@ Die minister het ook vrae beantwoord oor die stygings in brandstofpryse en die p
   {
     id: 402,
     slug: 'agter-die-skerms-koerant',
-    title: 'Agter die skerms: Hoe ons koerant elke dag gemaak word',
+    title: 'Agter die skerms: Hoe ons tydskrif elke week gemaak word',
     category: 'Video',
-    description: `Kom kyk hoe Die Papier elke dag van nuusontvangs tot druk en aflewering beweeg. Ons wys die redaksievergadering, die redigeerproses, bladuitleg, die drukkery in aksie en die aflewering van koerante in die vroee oggendure.
+    description: `Kom kyk hoe *rooi rose* elke week van nuusontvangs tot druk en aflewering beweeg. Ons wys die redaksievergadering, die redigeerproses, bladuitleg, die drukkery in aksie en die aflewering van tydskrifte in die vroee oggendure.
 
-Hierdie agter-die-skerms kyk gee lesers 'n unieke blik op die toewyding en spoed wat nodig is om elke dag 'n vars koerant op jou voorstoep te kry.`,
+Hierdie agter-die-skerms kyk gee lesers 'n unieke blik op die toewyding en spoed wat nodig is om elke week 'n vars tydskrif op jou voorstoep te kry.`,
     duration: '8:30',
     imageUrl: 'https://images.unsplash.com/photo-1585829365295-ab7cd400c167?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800',
     views: 3210,
@@ -266,7 +266,7 @@ Hierdie galery toon die volle omvang van die skade — van oorstroomde paaie en 
   {
     id: 601,
     slug: 'podcast-politiek-onder-die-loep-ep42',
-    title: 'Die Papier Podcast: Politiek onder die loep',
+    title: '*rooi rose* Podcast: Politiek onder die loep',
     category: 'Podcast',
     episodeNumber: 'Episode 42',
     duration: '45:20',
@@ -282,7 +282,7 @@ Pieter gee ook sy ontleding van die president se jongste staatsrede en wat dit v
   {
     id: 602,
     slug: 'podcast-ekonomie-werkloosheid-ep41',
-    title: 'Die Papier Podcast: Werkloosheid — Feite en oplossings',
+    title: '*rooi rose* Podcast: Werkloosheid — Feite en oplossings',
     category: 'Podcast',
     episodeNumber: 'Episode 41',
     duration: '38:45',
@@ -296,7 +296,7 @@ Pieter gee ook sy ontleding van die president se jongste staatsrede en wat dit v
   {
     id: 603,
     slug: 'podcast-onderwys-ep40',
-    title: 'Die Papier Podcast: Onderwys in krisis — Wat kan ons doen?',
+    title: '*rooi rose* Podcast: Onderwys in krisis — Wat kan ons doen?',
     category: 'Podcast',
     episodeNumber: 'Episode 40',
     duration: '42:10',
@@ -310,7 +310,7 @@ Pieter gee ook sy ontleding van die president se jongste staatsrede en wat dit v
   {
     id: 604,
     slug: 'podcast-sport-rugby-ep39',
-    title: 'Die Papier Podcast: Springbok-seisoen — Wat verwag ons in 2026?',
+    title: '*rooi rose* Podcast: Springbok-seisoen — Wat verwag ons in 2026?',
     category: 'Podcast',
     episodeNumber: 'Episode 39',
     duration: '35:55',
@@ -324,7 +324,7 @@ Pieter gee ook sy ontleding van die president se jongste staatsrede en wat dit v
   {
     id: 605,
     slug: 'podcast-tegnologie-ki-ep38',
-    title: 'Die Papier Podcast: Kunsmatige Intelligensie in Suid-Afrika',
+    title: '*rooi rose* Podcast: Kunsmatige Intelligensie in Suid-Afrika',
     category: 'Podcast',
     episodeNumber: 'Episode 38',
     duration: '40:30',
@@ -338,7 +338,7 @@ Pieter gee ook sy ontleding van die president se jongste staatsrede en wat dit v
   {
     id: 606,
     slug: 'podcast-boekresensie-ep37',
-    title: 'Die Papier Podcast: Boekresensie — Die beste Afrikaanse boeke van 2025',
+    title: '*rooi rose* Podcast: Boekresensie — Die beste Afrikaanse boeke van 2025',
     category: 'Podcast',
     episodeNumber: 'Episode 37',
     duration: '33:20',
@@ -352,7 +352,7 @@ Pieter gee ook sy ontleding van die president se jongste staatsrede en wat dit v
   {
     id: 607,
     slug: 'podcast-gesondheid-ep36',
-    title: 'Die Papier Podcast: Gesondheidsorg — Wat werk en wat nie',
+    title: '*rooi rose* Podcast: Gesondheidsorg — Wat werk en wat nie',
     category: 'Podcast',
     episodeNumber: 'Episode 36',
     duration: '37:15',
@@ -366,7 +366,7 @@ Pieter gee ook sy ontleding van die president se jongste staatsrede en wat dit v
   {
     id: 608,
     slug: 'podcast-landbou-ep35',
-    title: 'Die Papier Podcast: Landbou in die Vrystaat — Uitdagings en geleenthede',
+    title: '*rooi rose* Podcast: Landbou in die Vrystaat — Uitdagings en geleenthede',
     category: 'Podcast',
     episodeNumber: 'Episode 35',
     duration: '41:50',
@@ -380,7 +380,7 @@ Pieter gee ook sy ontleding van die president se jongste staatsrede en wat dit v
   {
     id: 609,
     slug: 'podcast-misdaad-ep34',
-    title: 'Die Papier Podcast: Misdaad en veiligheid — Wat kan ons doen?',
+    title: '*rooi rose* Podcast: Misdaad en veiligheid — Wat kan ons doen?',
     category: 'Podcast',
     episodeNumber: 'Episode 34',
     duration: '39:00',

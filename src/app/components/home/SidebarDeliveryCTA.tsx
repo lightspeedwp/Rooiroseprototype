@@ -15,7 +15,7 @@ export const SidebarDeliveryCTA = () => {
             <div className="flex-shrink-0 w-10 h-10 bg-white/15 rounded-full flex items-center justify-center">
               <Truck size={20} className="text-white" />
             </div>
-            <h4 className="text-lg font-heading" style={{ fontVariationSettings: "var(--fvs-h4)" }}>
+            <h4 className="text-lg has-brand-serif-font-family" style={{ fontVariationSettings: "var(--fvs-h4)" }}>
               {HOME_CONTENT.sidebar.delivery.title}
             </h4>
           </div>

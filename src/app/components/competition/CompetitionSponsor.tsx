@@ -17,9 +17,11 @@ export const CompetitionSponsor = ({ competition }: { competition: Competition }
         </div>
         <div>
           <p className="font-bold text-brand-navy dark:text-foreground text-lg">{competition.sponsor}</p>
-          <p className="text-sm text-gray-600 dark:text-gray-400">
-            Hierdie kompetisie word aangebied deur <em>Die Papier</em> in samewerking met {competition.sponsor}.
-          </p>
+          <div className="space-y-3">
+            <p className="text-sm text-gray-600 dark:text-gray-400">
+              Hierdie kompetisie word aangebied deur <em>rooi rose</em> in samewerking met {competition.sponsor}.
+            </p>
+          </div>
         </div>
       </div>
     </div>

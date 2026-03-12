@@ -9,7 +9,7 @@
 
   body {
     @apply bg-background text-foreground overflow-x-hidden;
-    font-family: var(--font-inter);
+    font-family: var(--font-body); /* rooi rose: Karla for all body text */
     font-size: var(--text-p2);
     line-height: var(--lh-p2);
   }
@@ -25,51 +25,46 @@
   }
 
   /* ── Heading Element Defaults ───────────────────────────────
-   * T-009: Bare h1–h6 elements get their full typography from
-   * --wp--preset-- and --wp--custom-- variables. Scoped rules
-   * (e.g. .article-content h2) override these via specificity.
+   * rooi rose magazine: Playfair Display SC for display headings (h1-h4)
+   * Karla for subheadings (h5-h6)
    * ──────────────────────────────────────────────────────────── */
   h1 {
-    font-family: var(--font-heading);
+    font-family: var(--font-display); /* rooi rose: Playfair Display SC */
     font-size: var(--wp--preset--font-size--900);
     line-height: var(--wp--custom--line-height--900);
     letter-spacing: var(--wp--custom--letter-spacing--900);
     font-weight: 400;
-    font-variation-settings: var(--wp--custom--fvs--900);
   }
   h2 {
-    font-family: var(--font-heading);
+    font-family: var(--font-display); /* rooi rose: Playfair Display SC */
     font-size: var(--wp--preset--font-size--800);
     line-height: var(--wp--custom--line-height--800);
     letter-spacing: var(--wp--custom--letter-spacing--800);
     font-weight: 400;
-    font-variation-settings: var(--wp--custom--fvs--800);
   }
   h3 {
-    font-family: var(--font-heading);
+    font-family: var(--font-display); /* rooi rose: Playfair Display SC */
     font-size: var(--wp--preset--font-size--700);
     line-height: var(--wp--custom--line-height--700);
     letter-spacing: var(--wp--custom--letter-spacing--700);
     font-weight: 400;
-    font-variation-settings: var(--wp--custom--fvs--700);
   }
   h4 {
-    font-family: var(--font-heading);
+    font-family: var(--font-display); /* rooi rose: Playfair Display SC */
     font-size: var(--wp--preset--font-size--600);
     line-height: var(--wp--custom--line-height--600);
     letter-spacing: var(--wp--custom--letter-spacing--600);
     font-weight: 400;
-    font-variation-settings: var(--wp--custom--fvs--600);
   }
   h5 {
-    font-family: var(--font-inter);
+    font-family: var(--font-body); /* rooi rose: Karla for subheadings */
     font-size: var(--wp--preset--font-size--500);
     line-height: var(--wp--custom--line-height--500);
     letter-spacing: var(--wp--custom--letter-spacing--500);
     font-weight: 700;
   }
   h6 {
-    font-family: var(--font-inter);
+    font-family: var(--font-body); /* rooi rose: Karla for subheadings */
     font-size: var(--wp--preset--font-size--400);
     line-height: var(--wp--custom--line-height--400);
     letter-spacing: var(--wp--custom--letter-spacing--400);

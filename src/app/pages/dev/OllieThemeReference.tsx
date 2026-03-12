@@ -204,8 +204,8 @@ function OverviewTab({ isAf }: { isAf: boolean }) {
         </div>
         <p className="text-[13px] text-gray-600 dark:text-white/50 leading-relaxed">
           {isAf
-            ? 'Hierdie bladsy bevat die volledige inventaris van die Ollie WordPress FSE-tema (v1.5.4), direk vanaf die GitHub-bewaarplek. Dit sluit alle patrone, sjablone, sjabloon-onderdele, blokstyle, en stylvariasies in, elk met \'n Die Papier migrasie-besluit: Behou, Wysig, Vervang, of Verwyder.'
-            : 'This page contains the complete inventory of the Ollie WordPress FSE theme (v1.5.4), sourced directly from the GitHub repository. It covers all patterns, templates, template parts, block styles, and style variations, each with a Die Papier migration decision: Keep, Modify, Replace, or Delete.'
+            ? 'Hierdie bladsy bevat die volledige inventaris van die Ollie WordPress FSE-tema (v1.5.4), direk vanaf die GitHub-bewaarplek. Dit sluit alle patrone, sjablone, sjabloon-onderdele, blokstyle, en stylvariasies in, elk met \'n rooi rose migrasie-besluit: Behou, Wysig, Vervang, of Verwyder.'
+            : 'This page contains the complete inventory of the Ollie WordPress FSE theme (v1.5.4), sourced directly from the GitHub repository. It covers all patterns, templates, template parts, block styles, and style variations, each with a rooi rose migration decision: Keep, Modify, Replace, or Delete.'
           }
         </p>
         <div className="flex gap-2 mt-3">
@@ -461,10 +461,10 @@ function TemplatesPartsTab({ isAf }: { isAf: boolean }) {
         </div>
       </div>
 
-      {/* New Die Papier Templates */}
+      {/* New rooi rose Templates */}
       <div>
         <h3 className="text-xs text-gray-400 dark:text-white/30 uppercase tracking-wider mb-3 flex items-center gap-1.5">
-          ✨ {isAf ? `Nuwe Die Papier Sjablone (${DP_NEW_TEMPLATES.length})` : `New Die Papier Templates (${DP_NEW_TEMPLATES.length})`}
+          ✨ {isAf ? `Nuwe rooi rose Sjablone (${DP_NEW_TEMPLATES.length})` : `New rooi rose Templates (${DP_NEW_TEMPLATES.length})`}
         </h3>
         <div className="space-y-2">
           {DP_NEW_TEMPLATES.map((t, i) => (
@@ -574,8 +574,8 @@ function PatternsTab({ isAf }: { isAf: boolean }) {
           <Info size={14} className="text-indigo-500 dark:text-indigo-400 mt-0.5 shrink-0" />
           <p className="text-[11px] text-indigo-600 dark:text-indigo-400/80 leading-relaxed">
             {isAf
-              ? `${OLLIE_PATTERNS.length} patrone geïnventariseer vanuit Ollie v1.5.4. Elke patroon het \'n migrasie-besluit. Klik om gedetailleerde riglyne, blok-samestelling en Die Papier vervangingspatrone te sien.`
-              : `${OLLIE_PATTERNS.length} patterns inventoried from Ollie v1.5.4. Each has a migration decision. Click to see detailed guidelines, block composition, and Die Papier replacement patterns.`
+              ? `${OLLIE_PATTERNS.length} patrone geïnventariseer vanuit Ollie v1.5.4. Elke patroon het \\'n migrasie-besluit. Klik om gedetailleerde riglyne, blok-samestelling en rooi rose vervangingspatrone te sien.`
+              : `${OLLIE_PATTERNS.length} patterns inventoried from Ollie v1.5.4. Each has a migration decision. Click to see detailed guidelines, block composition, and rooi rose replacement patterns.`
             }
           </p>
         </div>
@@ -798,8 +798,8 @@ function StyleVariationsTab({ isAf }: { isAf: boolean }) {
           <Info size={14} className="text-violet-500 dark:text-violet-400 mt-0.5 shrink-0" />
           <p className="text-[11px] text-violet-600 dark:text-violet-400/80 leading-relaxed">
             {isAf
-              ? `Ollie bevat ${OLLIE_STYLE_VARIATIONS.length} stylvariasies in die styles/ gids — 4 globale variasies, 7 kleurpalette, 9 tipografie-voorinstellings, en 1 blok-vlak oorskrywing. Die Papier verwyder die meeste hiervan en vervang dit met eie brand-spesifieke variasies.`
-              : `Ollie ships ${OLLIE_STYLE_VARIATIONS.length} style variations in the styles/ directory — 4 global variations, 7 color palettes, 9 typography presets, and 1 block-level override. Die Papier deletes most of these, replacing them with brand-specific variations.`
+              ? `Ollie bevat ${OLLIE_STYLE_VARIATIONS.length} stylvariasies in die styles/ gids — 4 globale variasies, 7 kleurpalette, 9 tipografie-voorinstellings, en 1 blok-vlak oorskrywing. rooi rose verwyder die meeste hiervan en vervang dit met eie brand-spesifieke variasies.`
+              : `Ollie ships ${OLLIE_STYLE_VARIATIONS.length} style variations in the styles/ directory — 4 global variations, 7 color palettes, 9 typography presets, and 1 block-level override. rooi rose deletes most of these, replacing them with brand-specific variations.`
             }
           </p>
         </div>

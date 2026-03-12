@@ -69,8 +69,8 @@ export function ReferenceLanding() {
         iconColor="bg-emerald-500"
         title={isAf ? 'Verwysingsgereedskap' : 'Reference Tools'}
         description={isAf
-          ? 'Riglyne, inhoud, en beeldbates — die volledige verwysingsbibliotek vir Die Papier.'
-          : 'Guidelines, content, and image assets — the complete reference library for Die Papier.'
+          ? 'Riglyne, inhoud, en beeldbates — die volledige verwysingsbibliotek vir rooi rose.'
+          : 'Guidelines, content, and image assets — the complete reference library for rooi rose.'
         }
         stats={stats}
         badge={isAf ? `${TOOLS.length} gereedskap` : `${TOOLS.length} tools`}

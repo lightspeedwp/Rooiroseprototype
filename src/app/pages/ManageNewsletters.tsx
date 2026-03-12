@@ -50,7 +50,7 @@ export const ManageNewslettersPage = () => {
               Bestuur my nuusbriewe
             </h1>
             <p className="text-gray-600 dark:text-gray-400">
-              Kies watter nuusbriewe jy van <em>Die Papier</em> wil ontvang.
+              Kies watter nuusbriewe jy van <em>rooi rose</em> wil ontvang.
               Jy is tans op <strong className="text-primary">{subscribedCount}</strong> nuusbrief{subscribedCount !== 1 ? 'e' : ''} ingeteken.
             </p>
           </div>

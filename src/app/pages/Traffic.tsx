@@ -108,7 +108,7 @@ export const TrafficPage = () => {
   return (
     <div className="bg-gray-50 dark:bg-background min-h-screen">
       <SEO
-        title="Verkeer | Die Papier"
+        title="Verkeer | rooi rose"
         description="Lewendige verkeersinligting, padongelukke, padwerk en vertragings regoor Suid-Afrika."
         keywords="verkeer, padtoestande, ongelukke, padwerk, suid-afrika"
       />

@@ -36,9 +36,9 @@ export const SponsorshipsPage = () => {
         {/* Intro */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-            Borgskappe bied 'n unieke geleentheid om jou handelsmerk te assosieer met <em>Die Papier</em> se betroubare 
-            redaksionele stem. Anders as tradisionele advertensies, skep borgskappe 'n dieper verbintenis 
-            met ons lesers — en jou teikenmark.
+            Borgskappe bied 'n unieke geleentheid om jou handelsmerk te assosieer met <em>rooi rose</em> se betroubare 
+            platform en betrokke gehoor. Deur ons te borg, word jou handelsmerk 'n deel van ons verhaal — \n
+            en ons word 'n deel van joune.
           </p>
         </div>
 
@@ -201,7 +201,7 @@ export const SponsorshipsPage = () => {
           </Link>
         </div>
       </div>
-      <PageFAQSection items={SPONSORSHIPS_FAQS} description="Vrae oor borgskapsopsies by Die Papier." />
+      <PageFAQSection items={SPONSORSHIPS_FAQS} description="Vrae oor borgskapsopsies by rooi rose." />
     </div>
   );
 };

@@ -41,8 +41,9 @@ export const LeafletsPage = () => {
         <div className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
             Pamflet-insetsels bied 'n tasbare, hoë-impak manier om jou teikenmark te bereik.
-            Jou pamflet, flyer of katalogus word saam met <em>Die Papier</em> se weeklikse uitgawe versprei — 
-            direk in die hande van aktiewe, betrokke lesers wat waarde heg aan kwaliteit inhoud.
+            Jou pamflet, flyer of katalogus word saam met <em>rooi rose</em> se weeklikse uitgawe versprei — 
+            direk in die hande van duisende lesers landwyd. Dit is 'n kragtige manier om jou produk, 
+            diens of spesiale aanbod reg voor jou teikenmark te kry.
           </p>
         </div>
 
@@ -145,7 +146,7 @@ export const LeafletsPage = () => {
                 'Minimum bestel: 5 000 pamflette per streek.',
                 "Maksimum gewig per pamflet: 50g (vir insetsels bo 50g, kontak ons vir 'n kwotasie).",
                 'Afleweringsdatum: Minstens 5 werksdae voor publikasie.',
-                'Die Papier behou die reg om insetsels te weier wat nie aan ons advertensie-riglyne voldoen nie.',
+                'Rooi rose behou die reg om insetsels te weier wat nie aan ons advertensie-riglyne voldoen nie.',
               ].map((note) => (
                 <li key={note} className="flex items-start gap-2">
                   <CheckCircle size={14} className="text-green-600 shrink-0 mt-0.5" />
@@ -199,7 +200,7 @@ export const LeafletsPage = () => {
           </Link>
         </div>
       </div>
-      <PageFAQSection items={LEAFLETS_FAQS} description="Vrae oor pamfletverspreiding met Die Papier." />
+      <PageFAQSection items={LEAFLETS_FAQS} description="Vrae oor pamfletverspreiding met rooi rose." />
     </div>
   );
 };

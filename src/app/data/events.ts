@@ -1,5 +1,5 @@
 /**
- * Event data — Die Papier
+ * Event data — *rooi rose*
  *
  * @wordpress-patterns archive-events, archive-event-category
  * @wordpress-cards card-event-grid, card-event-meta
@@ -215,13 +215,13 @@ export const EVENTS: Event[] = [
     title: 'Senior geselligheid',
     date: 'Elke Woe',
     time: '10:00 - 12:00',
-    location: 'Gemeenskapsaal, Westdene',
+    location: 'rooi rose Kantore, Kaapstad',
     category: 'Plaaslik',
     description: "Weeklikse geselligheid vir senior burgers. Tee, koek, speletjies en goeie geselskap. Vervoer kan gereël word.",
     contactEmail: "info@diepapier.co.za",
     imageUrl: "https://images.unsplash.com/photo-1628155930542-4d7499648939?auto=format&fit=crop&q=80&w=800",
     eventDate: "2026-03-04",
-    organiser: "Die Papier",
+    organiser: "rooi rose",
     isFree: true
   },
   {

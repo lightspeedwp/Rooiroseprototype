@@ -145,7 +145,7 @@ export const RegisterPage = () => {
                     onCheckedChange={(checked) => setNewsletter(checked === true)}
                   />
                   <Label htmlFor="newsletter" className="text-sm text-gray-600 dark:text-gray-400 leading-tight">
-                    Ek wil <em>Die Papier</em> se nuusbrief ontvang met die jongste nuus en aanbiedings.
+                    Ek wil <em>rooi rose</em> se nuusbrief ontvang met die jongste nuus en aanbiedings.
                   </Label>
                 </div>
 

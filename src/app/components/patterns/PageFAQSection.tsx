@@ -44,7 +44,7 @@ export const PageFAQSection: React.FC<PageFAQSectionProps> = ({
         <div className="flex items-center justify-center gap-3 mb-2">
           <HelpCircle className="w-6 h-6 text-brand-red shrink-0" />
           <h2
-            className="font-normal text-brand-navy dark:text-foreground font-heading"
+            className="font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family"
             style={{
               fontVariationSettings: "var(--fvs-h2)",
               lineHeight: 'var(--lh-h2)',

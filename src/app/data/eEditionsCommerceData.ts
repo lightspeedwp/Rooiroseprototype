@@ -1,5 +1,5 @@
 /**
- * E-Editions Commerce Data — WooCommerce product configuration for Die Papier e-editions.
+ * E-Editions Commerce Data — WooCommerce product configuration for rooi rose e-editions.
  *
  * Sources:
  *  - /guidelines/content/pricing.md (canonical pricing)
@@ -393,7 +393,7 @@ export const PAYFAST_CONFIG: PayfastConfig[] = [
 ];
 
 export const EMAIL_NOTIFICATIONS: EmailNotification[] = [
-  { id: 'new-subscription', triggerAf: 'Aankoop voltooi', triggerEn: 'Purchase complete', subjectAf: 'Welkom by Die Papier E-Uitgawes!', subjectEn: 'Welcome to Die Papier E-Editions!', templatePath: 'woocommerce/emails/customer-new-subscription.php' },
+  { id: 'new-subscription', triggerAf: 'Aankoop voltooi', triggerEn: 'Purchase complete', subjectAf: 'Welkom by rooi rose E-Uitgawes!', subjectEn: 'Welcome to rooi rose E-Editions!', templatePath: 'woocommerce/emails/customer-new-subscription.php' },
   { id: 'renewal', triggerAf: 'Suksesvolle hernuwing', triggerEn: 'Successful renewal', subjectAf: 'Jou intekening is hernu', subjectEn: 'Your subscription has been renewed', templatePath: 'woocommerce/emails/customer-renewal-invoice.php' },
   { id: 'cancelled', triggerAf: 'Gebruiker kanselleer', triggerEn: 'User cancels', subjectAf: 'Jou intekening is gekanselleer', subjectEn: 'Your subscription has been cancelled', templatePath: 'woocommerce/emails/customer-subscription-cancelled.php' },
   { id: 'payment-failed', triggerAf: 'Kaart geweier', triggerEn: 'Card declined', subjectAf: 'Betaling onsuksesvol \u2014 werk asb jou kaartbesonderhede by', subjectEn: 'Payment unsuccessful \u2014 please update your card details', templatePath: 'woocommerce/emails/customer-payment-retry.php' },

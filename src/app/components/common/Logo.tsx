@@ -1,5 +1,5 @@
 import React from 'react';
-import rooiRoseLogo from 'figma:asset/6a6c42bb919ce382172aa054e9cc58de25b3ac26.png';
+import rooiRoseLogoSvg from '../../../imports/rooi-rose-logo.svg';
 
 interface LogoProps {
   className?: string;
@@ -7,10 +7,11 @@ interface LogoProps {
 }
 
 export const Logo = ({ className = "h-12 w-auto", variant = 'default' }: LogoProps) => {
-  // rooi rose uses the same logo for both light and dark modes
+  // SVG logo with built-in dark mode support
+  // The SVG contains red text which works on both light and dark backgrounds
   return (
     <img 
-      src={rooiRoseLogo}
+      src={rooiRoseLogoSvg}
       alt="rooi rose"
       className={className}
       loading="eager"

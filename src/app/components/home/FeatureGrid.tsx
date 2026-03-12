@@ -18,8 +18,8 @@ export const FeatureGrid = () => {
       <div className="w-full">
         {/* Section Header */}
         <div className="flex justify-between items-center mb-4 pb-2 border-b-2 border-brand-red">
-          {/* V2: uppercase section label → Inter SemiBold, H6 token scale */}
-          <h2 className="font-inter font-semibold text-brand-navy dark:text-custom-contrast uppercase is-style-section-title">{HOME_CONTENT.featureGrid.title}</h2>
+          {/* V2: uppercase section label → Karla SemiBold, H6 token scale */}
+          <h2 className="has-brand-sans-font-family font-semibold text-brand-navy dark:text-custom-contrast uppercase is-style-section-title">{HOME_CONTENT.featureGrid.title}</h2>
           <Link to="/nuus" className="text-brand-red font-bold text-sm hover:underline flex items-center gap-1">
             {HOME_CONTENT.featureGrid.viewAll} <ChevronRight size={16} />
           </Link>

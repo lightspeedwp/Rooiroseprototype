@@ -9,7 +9,7 @@ export const POLICY_PAIA = {
   title: 'PAIA Handleiding',
   subtitle: 'Wet op Bevordering van Toegang tot Inligting (Wet 2 van 2000)',
   intro: 'Hierdie handleiding is opgestel in ooreenstemming met Artikel 51 van die Wet op Bevordering van Toegang tot Inligting, Nr. 2 van 2000 ("PAIA"), en Artikel 23 van die Wet op Beskerming van Persoonlike Inligting, Nr. 4 van 2013 ("POPIA").',
-  purpose: "Die doel van hierdie handleiding is om die versoek om toegang tot rekords wat deur Die Papier (Edms) Bpk gehou word, te fasiliteer.",
+  purpose: "Die doel van hierdie handleiding is om die versoek om toegang tot rekords wat deur rooi rose (Edms) Bpk gehou word, te fasiliteer.",
 
   pdfDownload: {
     heading: 'Laai die volledige handleiding af',

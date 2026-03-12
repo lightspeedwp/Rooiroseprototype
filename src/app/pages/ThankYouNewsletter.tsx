@@ -12,18 +12,18 @@ export const ThankYouNewsletterPage = () => {
         { label: 'Dankie vir jou inskrywing' },
       ]}
       title="Dankie vir jou inskrywing!"
-      subtitle={<>Jy is nou ingeteken op <em>Die Papier</em> se nuusbrief.</>}
-      primaryAction={{ label: 'Begin lees', href: '/' }}
-      secondaryAction={{ label: 'Bestuur my nuusbriewe', href: '/bestuur-my-nuusbriewe' }}
+      subtitle={<>Jy is nou ingeteken op <em>rooi rose</em> se nuusbrief.</>}
+      primaryAction={{ label: 'Terug na tuisblad', href: '/' }}
+      secondaryAction={{ label: 'Lees die nuus', href: '/nuus' }}
       faqItems={THANKYOU_NEWSLETTER_FAQS}
-      faqDescription="Vrae oor Die Papier se nuusbrief."
+      faqDescription="Vrae oor rooi rose se nuusbrief."
     >
       <div className="bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-900/50 rounded-lg p-6 mb-8 flex gap-4 items-start">
         <Mail size={24} className="text-green-600 shrink-0 mt-0.5" />
         <div>
-          <p className="text-green-800 dark:text-green-300 font-medium mb-1">Inskrywing bevestig!</p>
+          <p className="text-green-800 dark:text-green-300 font-medium mb-1">Intekening geslaag!</p>
           <p className="text-green-700 dark:text-green-400 text-sm leading-relaxed">
-            Welkom by <em>Die Papier</em> se nuusbrief! Jy sal voortaan die jongste nuus, sport en plaaslike verhale direk in jou inkassie ontvang.
+            Welkom by <em>rooi rose</em> se nuusbrief! Jy sal voortaan die jongste nuus, sport en plaaslike verhale direk in jou inkassie ontvang.
           </p>
         </div>
       </div>

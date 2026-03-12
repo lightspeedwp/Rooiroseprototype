@@ -95,7 +95,7 @@ const MENU_FOOTER: TranslationMap = {
 const DEVHUB: TranslationMap = {
   'devhub.portalLabel': { af: 'Ontwikkelaar Portaal', en: 'Developer Portal' },
   'devhub.title': { af: 'Dev Hub', en: 'Dev Hub' },
-  'devhub.subtitle': { af: 'Ontwerp-tokens, komponentbiblioteke, roetes, en alles wat jy nodig het om vir <em>Die Papier</em> te ontwikkel.', en: 'Design tokens, component libraries, routes, and everything you need to develop for <em>Die Papier</em>.' },
+  'devhub.subtitle': { af: 'Ontwerp-tokens, komponentbiblioteke, roetes, en alles wat jy nodig het om vir <em>rooi rose</em> te ontwikkel.', en: 'Design tokens, component libraries, routes, and everything you need to develop for <em>rooi rose</em>.' },
 
   // Stats
   'devhub.statRoutes': { af: 'Roetes', en: 'Routes' },

@@ -98,7 +98,7 @@ export const TEMPLATE_PARTS: TemplatePartEntry[] = [
     filename: 'social-links.html',
     name: 'Social Links',
     area: 'footer',
-    description: 'Die Papier social media profile links (Facebook, Instagram, X, YouTube, etc.).',
+    description: 'rooi rose social media profile links (Facebook, Instagram, X, YouTube, etc.).',
     blocks: ['core/social-links'],
     patterns: ['die-papier/hidden-social-profiles'],
     priority: 'P1',

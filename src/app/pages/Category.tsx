@@ -15,6 +15,13 @@ import { getCategorySlug } from '../utils/navigation';
 import { injectCollectionPageSchema, cleanupCollectionPageSchema } from '../utils/structuredData';
 import { getResponsiveProps } from '../utils/responsiveImage';
 import { HeroSlideCard } from '../components/common/HeroSlideCard';
+import { NewsCard } from '../components/home/NewsCard';
+
+/* ── rooi rose Magazine Category Page ──────────────────────────────
+ * Editorial design: Magazine grid layout with generous spacing
+ * Typography: Playfair Display SC headings, Karla body
+ * Layout: Hero slider + 3-column masonry grid + sidebar
+ * ────────────────────────────────────────────────────────────────── */
 
 /** Hero slider for featured articles — falls back to single hero if ≤1 featured */
 const HeroSlider = ({ articles: rawArticles }: { articles: ArticleCardProps[] }) => {
@@ -259,11 +266,25 @@ export const CategoryPage = ({ categoryName = "Nuus" }: { categoryName?: string 
 
   // Category descriptions
   const categoryDescriptions: Record<string, string> = {
+    /* ── rooi rose Magazine Categories ──────────────────────────────
+     * Updated for lifestyle magazine positioning (Phase 0)
+     * ──────────────────────────────────────────────────────────────── */
+    'Kos': 'Heerlike resepte, kook-wenke en kuliniese inspirasie vir elke geleentheid.',
+    'Mode': 'Die nuutste modeneigings, stylwenke en mode-inspirasie vir elke seisoen.',
+    'Skoonheid': 'Skoonheidsprodukte, velsorg, grimering en skoonheidsroetines vir die moderne vrou.',
+    'Gesondheid': 'Gesonde leefstyl, oefeningswenke, voeding en welstandsadvies.',
+    'Bekendes': 'Eksklusiewe onderhoude, profiele en stories van Suid-Afrikaanse bekendes.',
+    'Leefstyl': 'Kuns, kultuur, kos en alles wat die lewe lekker maak.',
+    'Jou lewe': 'Werk-lewe balans, finansiële beplanning, verhoudings en persoonlike groei.',
+    'Ontspanning': 'Resensies, reis-idees, boeke, films en vermaak vir die hele gesin.',
+    'Wen': 'Kompetisies, pryse en wenners — neem deel en wen groot!',
+    'Rooiwarm wenners': 'Sien wie onlangs groot gewen het in ons Rooiwarm-kompetisies.',
+    
+    /* Legacy categories (redirected to homepage) */
     'Nuus': 'Die jongste plaaslike en internasionale nuus.',
     'Skole': 'Opvoeding, skoolgebeure en prestasies van ons leerlinge.',
     'Sport': 'Al die aksie op en af van die veld.',
     'Sake': 'Alle verwikkelings op die sakefront wat vir jou saak maak.',
-    'Leefstyl': 'Kuns, kultuur, kos en alles wat die lewe lekker maak.',
     'Dink': 'Ontledings van die sake van die dag, met \'n persoonlike aanslag',
     'NetNuus': 'Tegnologie, digitale tendense en aanlyn nuus.',
     'Skole rugby': 'Skolerugby wedstryde, uitslae en nuus van plaaslike skole.',
@@ -281,7 +302,7 @@ export const CategoryPage = ({ categoryName = "Nuus" }: { categoryName?: string 
     const categorySlug = getCategorySlug(categoryName);
     injectCollectionPageSchema({
       name: categoryName,
-      description: categoryDescriptions[categoryName] || `Lees die jongste ${categoryName.toLowerCase()} nuus en artikels op Die Papier.`,
+      description: categoryDescriptions[categoryName] || `Lees die jongste ${categoryName.toLowerCase()} nuus en artikels op rooi rose.`,
       url: `https://diepapier.co.za/${categorySlug}`,
       articles: categoryArticles.filter(a => a != null && a.id != null).map(article => ({
         id: article.id,
@@ -300,9 +321,9 @@ export const CategoryPage = ({ categoryName = "Nuus" }: { categoryName?: string 
   return (
     <div className="bg-gray-50 dark:bg-background min-h-screen w-full px-[0px] pt-[0px] pb-[60px]">
       <SEO 
-        title={`${categoryName} Nuus`}
-        description={categoryDescriptions[categoryName] || `Lees die jongste ${categoryName.toLowerCase()} nuus en artikels op Die Papier.`}
-        keywords={`${categoryName.toLowerCase()}, nuus, afrikaans, die papier, suid-afrika`}
+        title={`${categoryName} | rooi rose`}
+        description={categoryDescriptions[categoryName] || `Lees die jongste ${categoryName.toLowerCase()} artikels op rooi rose.`}
+        keywords={`${categoryName.toLowerCase()}, rooi rose, leefstyl, afrikaans, tydskrif, suid-afrika`}
         canonical={canonicalUrl}
       />
       
@@ -311,15 +332,18 @@ export const CategoryPage = ({ categoryName = "Nuus" }: { categoryName?: string 
       
       <PageContainer breadcrumbs={[{ label: capitalizedCategory }]}>
         {/* Category Header */}
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
           <div>
             <h1
-              className="text-4xl md:text-5xl font-normal text-brand-navy dark:text-foreground font-heading mb-2"
-              style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}
+              className="font-display font-normal text-[var(--contrast)] dark:text-foreground uppercase tracking-[0.15em] text-4xl md:text-5xl mb-3"
+              style={{ fontFamily: 'var(--font-display)', letterSpacing: '0.15em' }}
             >
               {categoryName}
             </h1>
-            <p className="text-gray-600 dark:text-gray-400 text-lg mb-4">
+            <p 
+              className="text-[var(--muted-foreground)] text-base md:text-lg mb-6 max-w-[680px]"
+              style={{ fontFamily: 'var(--font-body)', lineHeight: '1.6' }}
+            >
               {categoryDescriptions[categoryName] || `Die jongste ${categoryName.toLowerCase()} nuus en verhale.`}
             </p>
           </div>
@@ -336,115 +360,120 @@ export const CategoryPage = ({ categoryName = "Nuus" }: { categoryName?: string 
         )}
 
         {/* Main Content Grid */}
-        <div className="flex flex-col lg:flex-row gap-6">
-          {/* Main Article List - Full Width List Style */}
+        <div className="flex flex-col lg:flex-row gap-8">
+          {/* Main Article Grid - Magazine 3-column layout */}
           <div className="flex-1 min-w-0">
-            {/* Article List Container with white background */}
-            <div className="bg-white dark:bg-card border border-gray-100 dark:border-border h-full w-full flex flex-col rounded-lg px-[16px] py-[0px] shadow-sm dark:shadow-[var(--shadow-dark-200)]">
+            {/* Magazine Grid - 3 columns with generous spacing */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 mb-12">
               {paginatedArticles.filter(a => a != null && a.id != null).map((article, index) => (
-                <div key={article.id}>
-                  <ArticleCard 
-                    id={article.id}
-                    title={article.title}
-                    excerpt={article.excerpt}
-                    category={article.category}
-                    image={article.imageUrl}
-                    date={article.date}
-                    author={article.author}
-                    readTime={article.readTime}
-                    sponsored={article.sponsored}
-                    sponsorName={article.sponsorName}
-                    sponsorLogo={article.sponsorLogo}
+                <React.Fragment key={article.id}>
+                  <NewsCard 
+                    article={{
+                      id: article.id,
+                      title: article.title,
+                      excerpt: article.excerpt,
+                      category: article.category,
+                      imageUrl: article.imageUrl,
+                      date: article.date,
+                      time: article.date,
+                      author: article.author,
+                      readTime: article.readTime,
+                      tags: article.tags || [article.category],
+                      sponsored: article.sponsored,
+                      sponsorName: article.sponsorName,
+                      sponsorLogo: article.sponsorLogo,
+                    }}
+                    variant="compact"
                   />
-                  {/* Mobile In-Feed Ad after 4th article */}
-                  {index === 3 && (
-                    <div className="my-6">
+                  {/* Mobile In-Feed Ad after every 6 articles */}
+                  {(index + 1) % 6 === 0 && index < paginatedArticles.length - 1 && (
+                    <div className="col-span-full my-4">
                       <InFeedAd section={categoryName.toLowerCase()} premium={isPremium} />
                     </div>
                   )}
-                </div>
+                </React.Fragment>
               ))}
-              
-              {/* Pagination */}
-              {totalPages > 1 && (
-                <div className="mt-8 border-t border-gray-200 dark:border-border flex flex-col sm:flex-row items-center justify-between gap-4 px-[0px] py-[32px]">
-                  {/* Page Info */}
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Bladsy <span className="font-bold">{currentPage}</span> van <span className="font-bold">{totalPages}</span>
-                    <span className="mx-2">•</span>
-                    Totaal: <span className="font-bold">{restArticles.length}</span> artikels
-                  </p>
-
-                  {/* Pagination Controls */}
-                  <div className="flex items-center gap-2">
-                    {/* Previous Button */}
-                    <button
-                      onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
-                      disabled={currentPage === 1}
-                      className={`flex items-center gap-1 px-4 py-2 rounded-lg font-bold transition-colors ${
-                        currentPage === 1
-                          ? 'bg-gray-100 dark:bg-muted text-gray-400 cursor-not-allowed'
-                          : 'bg-white dark:bg-card border-2 border-brand-red dark:border-primary text-brand-red dark:text-primary hover:bg-brand-red hover:text-white'
-                      }`}
-                    >
-                      <ChevronLeft size={18} />
-                      <span className="hidden sm:inline">Vorige</span>
-                    </button>
-
-                    {/* Page Numbers */}
-                    <div className="flex items-center gap-1">
-                      {Array.from({ length: totalPages }, (_, i) => i + 1).map(pageNum => {
-                        // Show first page, last page, current page, and pages around current
-                        const showPage = 
-                          pageNum === 1 ||
-                          pageNum === totalPages ||
-                          (pageNum >= currentPage - 1 && pageNum <= currentPage + 1);
-
-                        // Show ellipsis
-                        const showEllipsisBefore = pageNum === currentPage - 2 && currentPage > 3;
-                        const showEllipsisAfter = pageNum === currentPage + 2 && currentPage < totalPages - 2;
-
-                        if (showEllipsisBefore || showEllipsisAfter) {
-                          return (
-                            <span key={pageNum} className="px-2 text-gray-400">...</span>
-                          );
-                        }
-
-                        if (!showPage) return null;
-
-                        return (
-                          <button
-                            key={pageNum}
-                            onClick={() => setCurrentPage(pageNum)}
-                            className={`w-10 h-10 rounded-lg font-bold transition-colors ${
-                              currentPage === pageNum
-                                ? 'bg-brand-red text-white'
-                                : 'bg-white dark:bg-card border border-gray-200 dark:border-border text-gray-700 dark:text-gray-300 hover:border-brand-red dark:hover:border-primary hover:text-brand-red dark:hover:text-primary'
-                            }`}
-                          >
-                            {pageNum}
-                          </button>
-                        );
-                      })}
-                    </div>
-
-                    {/* Next Button */}
-                    <button
-                      onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
-                      disabled={currentPage === totalPages}
-                      className={`flex items-center gap-1 px-4 py-2 rounded-lg font-bold transition-colors ${
-                        currentPage === totalPages
-                          ? 'bg-gray-100 dark:bg-muted text-gray-400 cursor-not-allowed'
-                          : 'bg-white dark:bg-card border-2 border-brand-red dark:border-primary text-brand-red dark:text-primary hover:bg-brand-red hover:text-white'
-                      }`}
-                    >
-                      <span className="hidden sm:inline">Volgende</span>
-                      <ChevronRight size={18} />
-                    </button>
-                  </div>
-                </div>
-              )}
             </div>
+            
+            {/* Pagination */}
+            {totalPages > 1 && (
+              <div className="mt-8 border-t border-gray-200 dark:border-border flex flex-col sm:flex-row items-center justify-between gap-4 px-[0px] py-[32px]">
+                {/* Page Info */}
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  Bladsy <span className="font-bold">{currentPage}</span> van <span className="font-bold">{totalPages}</span>
+                  <span className="mx-2">•</span>
+                  Totaal: <span className="font-bold">{restArticles.length}</span> artikels
+                </p>
+
+                {/* Pagination Controls */}
+                <div className="flex items-center gap-2">
+                  {/* Previous Button */}
+                  <button
+                    onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
+                    disabled={currentPage === 1}
+                    className={`flex items-center gap-1 px-4 py-2 rounded-lg font-bold transition-colors ${
+                      currentPage === 1
+                        ? 'bg-gray-100 dark:bg-muted text-gray-400 cursor-not-allowed'
+                        : 'bg-white dark:bg-card border-2 border-brand-red dark:border-primary text-brand-red dark:text-primary hover:bg-brand-red hover:text-white'
+                    }`}
+                  >
+                    <ChevronLeft size={18} />
+                    <span className="hidden sm:inline">Vorige</span>
+                  </button>
+
+                  {/* Page Numbers */}
+                  <div className="flex items-center gap-1">
+                    {Array.from({ length: totalPages }, (_, i) => i + 1).map(pageNum => {
+                      // Show first page, last page, current page, and pages around current
+                      const showPage = 
+                        pageNum === 1 ||
+                        pageNum === totalPages ||
+                        (pageNum >= currentPage - 1 && pageNum <= currentPage + 1);
+
+                      // Show ellipsis
+                      const showEllipsisBefore = pageNum === currentPage - 2 && currentPage > 3;
+                      const showEllipsisAfter = pageNum === currentPage + 2 && currentPage < totalPages - 2;
+
+                      if (showEllipsisBefore || showEllipsisAfter) {
+                        return (
+                          <span key={pageNum} className="px-2 text-gray-400">...</span>
+                        );
+                      }
+
+                      if (!showPage) return null;
+
+                      return (
+                        <button
+                          key={pageNum}
+                          onClick={() => setCurrentPage(pageNum)}
+                          className={`w-10 h-10 rounded-lg font-bold transition-colors ${
+                            currentPage === pageNum
+                              ? 'bg-brand-red text-white'
+                              : 'bg-white dark:bg-card border border-gray-200 dark:border-border text-gray-700 dark:text-gray-300 hover:border-brand-red dark:hover:border-primary hover:text-brand-red dark:hover:text-primary'
+                          }`}
+                        >
+                          {pageNum}
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  {/* Next Button */}
+                  <button
+                    onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
+                    disabled={currentPage === totalPages}
+                    className={`flex items-center gap-1 px-4 py-2 rounded-lg font-bold transition-colors ${
+                      currentPage === totalPages
+                        ? 'bg-gray-100 dark:bg-muted text-gray-400 cursor-not-allowed'
+                        : 'bg-white dark:bg-card border-2 border-brand-red dark:border-primary text-brand-red dark:text-primary hover:bg-brand-red hover:text-white'
+                    }`}
+                  >
+                    <span className="hidden sm:inline">Volgende</span>
+                    <ChevronRight size={18} />
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Sidebar */}

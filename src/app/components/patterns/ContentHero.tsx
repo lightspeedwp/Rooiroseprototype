@@ -39,7 +39,7 @@ export const ContentHero = ({
       
       <div className={`alignwide relative z-10 flex flex-col ${alignClasses[align]}`}>
         <h1
-          className="text-4xl md:text-6xl font-normal font-heading mb-6 max-w-4xl drop-shadow-md"
+          className="text-4xl md:text-6xl font-normal has-brand-serif-font-family mb-6 max-w-4xl drop-shadow-md"
           style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}
         >
           {renderWithBrandItalics(title)}

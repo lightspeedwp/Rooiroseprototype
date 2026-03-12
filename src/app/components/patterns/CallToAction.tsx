@@ -43,7 +43,7 @@ export const CallToAction = ({
       
       <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 max-w-[1440px] mx-auto">
         <div className="max-w-2xl">
-          <h2 className="text-2xl md:text-3xl font-normal mb-4 font-heading" style={{ fontVariationSettings: "var(--fvs-h2)", lineHeight: 'var(--lh-h2)', letterSpacing: 'var(--ls-h2)' }}>{title}</h2>
+          <h2 className="text-2xl md:text-3xl font-normal mb-4 has-brand-serif-font-family" style={{ fontVariationSettings: "var(--fvs-h2)", lineHeight: 'var(--lh-h2)', letterSpacing: 'var(--ls-h2)' }}>{title}</h2>
           <p className="text-lg opacity-90">{description}</p>
         </div>
         <div className="shrink-0">

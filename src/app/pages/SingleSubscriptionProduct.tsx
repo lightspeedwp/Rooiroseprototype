@@ -81,9 +81,9 @@ export const SingleSubscriptionProduct = () => {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-background pb-24">
       <SEO
-        title={`${plan.title} E-uitgawe Intekening - Die Papier`}
-        description={`Teken in op Die Papier se e-koerant vir ${plan.months} ${plan.months === 1 ? 'maand' : 'maande'}. ${plan.description}.`}
-        keywords="inteken, subscribe, die papier, e-koerant, e-uitgawe"
+        title={`${plan.title} E-uitgawe Intekening - rooi rose`}
+        description={`Teken in op rooi rose se e-tydskrif vir ${plan.months} ${plan.months === 1 ? 'maand' : 'maande'}. ${plan.description}.`}
+        keywords="inteken, subscribe, rooi rose, e-tydskrif, e-uitgawe"
       />
 
       {/* Breadcrumbs */}
@@ -211,7 +211,7 @@ export const SingleSubscriptionProduct = () => {
               className="text-gray-700 dark:text-gray-300 mb-8"
               style={{ fontSize: 'var(--text-p1)', lineHeight: 'var(--lh-p1)' }}
             >
-              Met 'n digitale intekening kry jy toegang tot elke nuwe <em>Die Papier</em> e-uitgawe
+              Met 'n digitale intekening kry jy toegang tot elke nuwe <em>rooi rose</em> e-uitgawe
               vir die duur van jou intekening — op enige toestel, oral en altyd.
             </p>
 

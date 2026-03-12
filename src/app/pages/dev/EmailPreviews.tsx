@@ -11,7 +11,7 @@ import { HERO_META, resolveHeroMeta, RELATED_TOOLS_MAP } from '../../data/devToo
 import { FORM_EMAIL_TEMPLATES, FORM_EMAIL_SUMMARY, FORM_REPLY_TEMPLATES, FORM_REPLY_SUMMARY } from '../../data/formEmailTemplates';
 
 /* ───────────────────────────────────────────────────────────
- * Email Template Previews — Die Papier
+ * Email Template Previews — rooi rose
  * Tab 1: WooCommerce commerce emails (7)
  * Tab 2: Form submission confirmations (10)
  * Tab 3: Staff reply / follow-up emails (13)
@@ -40,7 +40,7 @@ const EMAIL_TEMPLATES: EmailTemplate[] = [
   {
     id: 'new-subscription',
     title: 'Nuwe Intekening Bevestiging',
-    subject: 'Welkom by Die Papier — Jou digitale intekening is aktief!',
+    subject: 'Welkom by rooi rose — Jou digitale intekening is aktief!',
     icon: <CheckCircle2 size={20} />,
     iconColor: 'text-green-600',
     wcHook: 'woocommerce_subscription_status_active',
@@ -49,7 +49,7 @@ const EMAIL_TEMPLATES: EmailTemplate[] = [
   {
     id: 'renewal-confirmation',
     title: 'Hernuwing Bevestiging',
-    subject: 'Jou Die Papier-intekening is suksesvol hernieu',
+    subject: 'Jou rooi rose-intekening is suksesvol hernieu',
     icon: <CreditCard size={20} />,
     iconColor: 'text-blue-600',
     wcHook: 'woocommerce_subscription_renewal_payment_complete',
@@ -58,7 +58,7 @@ const EMAIL_TEMPLATES: EmailTemplate[] = [
   {
     id: 'subscription-cancelled',
     title: 'Intekening Gekanselleer',
-    subject: 'Jou Die Papier-intekening is gekanselleer',
+    subject: 'Jou rooi rose-intekening is gekanselleer',
     icon: <XCircle size={20} />,
     iconColor: 'text-red-600',
     wcHook: 'woocommerce_subscription_status_cancelled',
@@ -67,7 +67,7 @@ const EMAIL_TEMPLATES: EmailTemplate[] = [
   {
     id: 'payment-failed',
     title: 'Betaling Onsuksesvol',
-    subject: 'Aksie nodig: Jou Die Papier-betaling het gefaal',
+    subject: 'Aksie nodig: Jou rooi rose-betaling het gefaal',
     icon: <AlertTriangle size={20} />,
     iconColor: 'text-amber-600',
     wcHook: 'woocommerce_subscription_renewal_payment_failed',
@@ -76,7 +76,7 @@ const EMAIL_TEMPLATES: EmailTemplate[] = [
   {
     id: 'subscription-expired',
     title: 'Intekening Verstryk',
-    subject: 'Jou Die Papier-intekening het verstryk — hernieu om weer toegang te kry',
+    subject: 'Jou rooi rose-intekening het verstryk — hernieu om weer toegang te kry',
     icon: <Clock size={20} />,
     iconColor: 'text-gray-600',
     wcHook: 'woocommerce_subscription_status_expired',
@@ -85,7 +85,7 @@ const EMAIL_TEMPLATES: EmailTemplate[] = [
   {
     id: 'single-purchase',
     title: 'Enkel Uitgawe Aankoop Bevestiging',
-    subject: 'Jou Die Papier e-uitgawe is gereed om te lees!',
+    subject: 'Jou rooi rose e-uitgawe is gereed om te lees!',
     icon: <ShoppingBag size={20} />,
     iconColor: 'text-indigo-600',
     wcHook: 'woocommerce_order_status_completed',
@@ -94,7 +94,7 @@ const EMAIL_TEMPLATES: EmailTemplate[] = [
   {
     id: 'new-edition',
     title: 'Nuwe E-Uitgawe Beskikbaar',
-    subject: 'Nuwe uitgawe beskikbaar: Die Papier — 28 Februarie 2026',
+    subject: 'Nuwe uitgawe beskikbaar: rooi rose — 28 Februarie 2026',
     icon: <Bell size={20} />,
     iconColor: 'text-purple-600',
     wcHook: 'dp_new_eedition_published (custom hook)',
@@ -108,10 +108,10 @@ const EmailWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => 
     {/* Header */}
     <div style={{ backgroundColor: BRAND.navy, padding: '24px 32px', textAlign: 'center' }}>
       <h1 style={{ color: BRAND.white, margin: 0, fontSize: 24, fontWeight: 700, letterSpacing: 1 }}>
-        DIE PAPIER
+        ROOI ROSE
       </h1>
       <p style={{ color: 'rgba(255,255,255,0.6)', margin: '4px 0 0', fontSize: 12, letterSpacing: 2, textTransform: 'uppercase' }}>
-        E-Koerant · Digitale Uitgawes
+        E-Tydskrif · Digitale Uitgawes
       </p>
     </div>
     {/* Body */}
@@ -121,7 +121,7 @@ const EmailWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => 
     {/* Footer */}
     <div style={{ backgroundColor: BRAND.lightGray, padding: '24px 32px', borderTop: `1px solid ${BRAND.border}`, textAlign: 'center' }}>
       <p style={{ margin: '0 0 8px', fontSize: 12, color: BRAND.gray }}>
-        © 2026 Die Papier. Alle regte voorbehou.
+        © 2026 rooi rose. Alle regte voorbehou.
       </p>
       <p style={{ margin: 0, fontSize: 11, color: BRAND.gray }}>
         <a href="#" style={{ color: BRAND.navy, textDecoration: 'underline' }}>My Rekening</a>
@@ -131,7 +131,7 @@ const EmailWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => 
         <a href="#" style={{ color: BRAND.navy, textDecoration: 'underline' }}>Kontak Ons</a>
       </p>
       <p style={{ margin: '12px 0 0', fontSize: 10, color: '#9CA3AF' }}>
-        Hierdie e-pos is gestuur deur WooCommerce namens Die Papier.
+        Hierdie e-pos is gestuur deur WooCommerce namens rooi rose.
         <br />
         Jy ontvang hierdie e-pos omdat jy 'n rekening by ons het.
       </p>
@@ -163,7 +163,7 @@ const InfoBox: React.FC<{ children: React.ReactNode; bgColor?: string; borderCol
 
 const NewSubscriptionEmail = () => (
   <EmailWrapper>
-    <h2 style={{ color: BRAND.navy, margin: '0 0 16px', fontSize: 22 }}>Welkom by Die Papier! 🎉</h2>
+    <h2 style={{ color: BRAND.navy, margin: '0 0 16px', fontSize: 22 }}>Welkom by rooi rose! 🎉</h2>
     <p>Goeie nuus — jou digitale intekening is nou aktief. Jy het nou toegang tot alle e-uitgawes vanaf vandag.</p>
     <InfoBox>
       <table style={{ width: '100%', fontSize: 14 }}>
@@ -186,7 +186,7 @@ const NewSubscriptionEmail = () => (
 const RenewalConfirmationEmail = () => (
   <EmailWrapper>
     <h2 style={{ color: BRAND.navy, margin: '0 0 16px', fontSize: 22 }}>Intekening Suksesvol Hernieu ✓</h2>
-    <p>Jou Die Papier-intekening is suksesvol hernieu. Jy sal voortgaan om toegang te hê tot alle nuwe e-uitgawes.</p>
+    <p>Jou rooi rose-intekening is suksesvol hernieu. Jy sal voortgaan om toegang te hê tot alle nuwe e-uitgawes.</p>
     <InfoBox>
       <table style={{ width: '100%', fontSize: 14 }}>
         <tbody>
@@ -242,7 +242,7 @@ const PaymentFailedEmail = () => (
 const SubscriptionExpiredEmail = () => (
   <EmailWrapper>
     <h2 style={{ color: BRAND.navy, margin: '0 0 16px', fontSize: 22 }}>Jou Intekening het Verstryk</h2>
-    <p>Ongelukkig het jou Die Papier digitale intekening verstryk en jou toegang tot e-uitgawes is herroep.</p>
+    <p>Ongelukkig het jou rooi rose digitale intekening verstryk en jou toegang tot e-uitgawes is herroep.</p>
     <InfoBox bgColor="#F3F4F6" borderColor="#D1D5DB">
       <table style={{ width: '100%', fontSize: 14 }}>
         <tbody>
@@ -268,7 +268,7 @@ const SinglePurchaseEmail = () => (
       <table style={{ width: '100%', fontSize: 14 }}>
         <tbody>
           <tr><td style={{ padding: '4px 0', color: BRAND.gray }}>Bestelling #:</td><td style={{ fontWeight: 600 }}>DP-20260224-0043</td></tr>
-          <tr><td style={{ padding: '4px 0', color: BRAND.gray }}>Uitgawe:</td><td style={{ fontWeight: 600 }}>Die Papier — 21 Februarie 2026</td></tr>
+          <tr><td style={{ padding: '4px 0', color: BRAND.gray }}>Uitgawe:</td><td style={{ fontWeight: 600 }}>rooi rose — 21 Februarie 2026</td></tr>
           <tr><td style={{ padding: '4px 0', color: BRAND.gray }}>Bedrag:</td><td style={{ fontWeight: 600 }}>R35.00</td></tr>
           <tr><td style={{ padding: '4px 0', color: BRAND.gray }}>Toegang:</td><td style={{ fontWeight: 600 }}>Permanent (hierdie uitgawe)</td></tr>
         </tbody>
@@ -292,7 +292,7 @@ const SinglePurchaseEmail = () => (
 const NewEditionEmail = () => (
   <EmailWrapper>
     <h2 style={{ color: BRAND.navy, margin: '0 0 16px', fontSize: 22 }}>Nuwe Uitgawe Beskikbaar! 🗞️</h2>
-    <p>Die nuutste uitgawe van Die Papier is nou beskikbaar om te lees in jou biblioteek.</p>
+    <p>Die nuutste uitgawe van rooi rose is nou beskikbaar om te lees in jou biblioteek.</p>
     <div style={{ textAlign: 'center', margin: '24px 0' }}>
       <div style={{
         display: 'inline-block', width: 180, height: 240, backgroundColor: BRAND.lightGray,
@@ -304,7 +304,7 @@ const NewEditionEmail = () => (
           backgroundColor: BRAND.navy, color: BRAND.white, padding: '8px', borderRadius: '8px 8px 0 0',
           fontSize: 11, fontWeight: 700, letterSpacing: 1
         }}>
-          DIE PAPIER
+          ROOI ROSE
         </div>
         <div style={{ padding: '40px 16px', color: BRAND.gray, fontSize: 12 }}>
           28 Feb 2026
@@ -316,7 +316,7 @@ const NewEditionEmail = () => (
     <InfoBox>
       <table style={{ width: '100%', fontSize: 14 }}>
         <tbody>
-          <tr><td style={{ padding: '4px 0', color: BRAND.gray }}>Uitgawe:</td><td style={{ fontWeight: 600 }}>Die Papier — 28 Februarie 2026</td></tr>
+          <tr><td style={{ padding: '4px 0', color: BRAND.gray }}>Uitgawe:</td><td style={{ fontWeight: 600 }}>rooi rose — 28 Februarie 2026</td></tr>
           <tr><td style={{ padding: '4px 0', color: BRAND.gray }}>Bladsye:</td><td style={{ fontWeight: 600 }}>48</td></tr>
           <tr><td style={{ padding: '4px 0', color: BRAND.gray }}>Jou plan:</td><td style={{ fontWeight: 600 }}>Digitale Intekening — 3 Maande (Aktief)</td></tr>
         </tbody>
@@ -351,7 +351,7 @@ const FormEmailWrapper: React.FC<{ children: React.ReactNode }> = ({ children })
   <div style={{ maxWidth: 600, margin: '0 auto', fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif", backgroundColor: BRAND.white }}>
     <div style={{ backgroundColor: BRAND.navy, padding: '20px 32px', textAlign: 'center' }}>
       <h1 style={{ color: BRAND.white, margin: 0, fontSize: 22, fontWeight: 700, letterSpacing: 1 }}>
-        DIE PAPIER
+        ROOI ROSE
       </h1>
     </div>
     <div style={{ padding: '32px', color: '#1F2937', lineHeight: 1.7 }}>
@@ -359,7 +359,7 @@ const FormEmailWrapper: React.FC<{ children: React.ReactNode }> = ({ children })
     </div>
     <div style={{ backgroundColor: BRAND.lightGray, padding: '20px 32px', borderTop: `1px solid ${BRAND.border}`, textAlign: 'center' }}>
       <p style={{ margin: '0 0 6px', fontSize: 12, color: BRAND.gray }}>
-        © 2026 Die Papier. Alle regte voorbehou.
+        © 2026 rooi rose. Alle regte voorbehou.
       </p>
       <p style={{ margin: 0, fontSize: 11, color: BRAND.gray }}>
         <a href="#" style={{ color: BRAND.navy, textDecoration: 'underline' }}>Tuisblad</a>
@@ -399,7 +399,7 @@ const AdvertiseConfirmationEmail = () => (
   <FormEmailWrapper>
     <h2 style={{ color: BRAND.navy, margin: '0 0 16px', fontSize: 20 }}>Advertensie-navraag Ontvang 📢</h2>
     <p>Beste <strong>Maria Smit</strong>,</p>
-    <p>Baie dankie vir jou belangstelling om by Die Papier te adverteer. Ons bemarkingspan sal jou navraag beoordeel en binne <strong>3 werksdae</strong> met jou in aanraking kom.</p>
+    <p>Baie dankie vir jou belangstelling om by rooi rose te adverteer. Ons bemarkingspan sal jou navraag beoordeel en binne <strong>3 werksdae</strong> met jou in aanraking kom.</p>
     <InfoBox bgColor="#EFF6FF" borderColor="#BFDBFE">
       <table style={{ width: '100%', fontSize: 14 }}>
         <tbody>
@@ -421,7 +421,7 @@ const StoryConfirmationEmail = () => (
   <FormEmailWrapper>
     <h2 style={{ color: BRAND.navy, margin: '0 0 16px', fontSize: 20 }}>Storie-indiening Ontvang 📰</h2>
     <p>Beste <strong>Pieter Joubert</strong>,</p>
-    <p>Baie dankie dat jy 'n storie by Die Papier ingedien het. Ons redaksionele span sal dit binne <strong>5 werksdae</strong> beoordeel.</p>
+    <p>Baie dankie dat jy 'n storie by rooi rose ingedien het. Ons redaksionele span sal dit binne <strong>5 werksdae</strong> beoordeel.</p>
     <InfoBox bgColor="#F0FDF4" borderColor="#BBF7D0">
       <table style={{ width: '100%', fontSize: 14 }}>
         <tbody>
@@ -443,7 +443,7 @@ const LetterConfirmationEmail = () => (
   <FormEmailWrapper>
     <h2 style={{ color: BRAND.navy, margin: '0 0 16px', fontSize: 20 }}>Lesersbrief Ontvang ✉️</h2>
     <p>Beste <strong>Anna de Villiers</strong> (Stellenbosch),</p>
-    <p>Dankie dat jy die tyd geneem het om 'n brief aan Die Papier te skryf. Ons waardeer elke leser se bydrae tot die gesprek.</p>
+    <p>Dankie dat jy die tyd geneem het om 'n brief aan rooi rose te skryf. Ons waardeer elke leser se bydrae tot die gesprek.</p>
     <InfoBox bgColor="#EFF6FF" borderColor="#BFDBFE">
       <table style={{ width: '100%', fontSize: 14 }}>
         <tbody>
@@ -462,7 +462,7 @@ const FeedbackConfirmationEmail = () => (
   <FormEmailWrapper>
     <h2 style={{ color: BRAND.navy, margin: '0 0 16px', fontSize: 20 }}>Terugvoer Ontvang 💬</h2>
     <p>Beste <strong>Christo Nel</strong>,</p>
-    <p>Baie dankie vir jou terugvoer. Dit is baie waardevol vir ons om Die Papier voortdurend te verbeter.</p>
+    <p>Baie dankie vir jou terugvoer. Dit is baie waardevol vir ons om rooi rose voortdurend te verbeter.</p>
     <InfoBox bgColor="#F0FDF4" borderColor="#BBF7D0">
       <table style={{ width: '100%', fontSize: 14 }}>
         <tbody>
@@ -481,7 +481,7 @@ const ShoutoutConfirmationEmail = () => (
   <FormEmailWrapper>
     <h2 style={{ color: BRAND.navy, margin: '0 0 16px', fontSize: 20 }}>Shoutout Ontvang 📣</h2>
     <p>Beste <strong>Lizette Botha</strong>,</p>
-    <p>Jou shoutout is suksesvol ontvang! Ons sal dit beoordeel en dit kan in die volgende uitgawe van Die Papier verskyn.</p>
+    <p>Jou shoutout is suksesvol ontvang! Ons sal dit beoordeel en dit kan in die volgende uitgawe van rooi rose verskyn.</p>
     <InfoBox bgColor="#F5F3FF" borderColor="#DDD6FE">
       <table style={{ width: '100%', fontSize: 14 }}>
         <tbody>
@@ -501,7 +501,7 @@ const EventConfirmationEmail = () => (
   <FormEmailWrapper>
     <h2 style={{ color: BRAND.navy, margin: '0 0 16px', fontSize: 20 }}>Gebeurtenis Ontvang 📅</h2>
     <p>Beste <strong>Danie Steyn</strong>,</p>
-    <p>Dankie dat jy jou gebeurtenis by Die Papier ingedien het. Ons sal die besonderhede verifieer en dit na goedkeuring op ons gebeurteniskalender plaas.</p>
+    <p>Dankie dat jy jou gebeurtenis by rooi rose ingedien het. Ons sal die besonderhede verifieer en dit na goedkeuring op ons gebeurteniskalender plaas.</p>
     <InfoBox bgColor="#FFF7ED" borderColor="#FDBA74">
       <table style={{ width: '100%', fontSize: 14 }}>
         <tbody>
@@ -521,7 +521,7 @@ const EventConfirmationEmail = () => (
 
 const RegisterWelcomeEmail = () => (
   <FormEmailWrapper>
-    <h2 style={{ color: BRAND.navy, margin: '0 0 16px', fontSize: 20 }}>Welkom by Die Papier! 👤</h2>
+    <h2 style={{ color: BRAND.navy, margin: '0 0 16px', fontSize: 20 }}>Welkom by rooi rose! 👤</h2>
     <p>Beste <strong>Elize Marais</strong>,</p>
     <p>Jou rekening is suksesvol geskep. Jy kan nou aanmeld om toegang te kry tot eksklusiewe funksies.</p>
     <InfoBox bgColor="#F0FDF4" borderColor="#BBF7D0">
@@ -558,7 +558,7 @@ const NewsletterConfirmationEmail = () => (
   <FormEmailWrapper>
     <h2 style={{ color: BRAND.navy, margin: '0 0 16px', fontSize: 20 }}>Nuusbriefintekening Bevestig 📬</h2>
     <p>Beste <strong>Kobus Venter</strong>,</p>
-    <p>Welkom by die Die Papier-nuusbrief! Jy sal voortaan ons weeklikse nuusbrief ontvang met die belangrikste nuus, artikels en aanbiedinge.</p>
+    <p>Welkom by die rooi rose-nuusbrief! Jy sal voortaan ons weeklikse nuusbrief ontvang met die belangrikste nuus, artikels en aanbiedinge.</p>
     <InfoBox bgColor="#EFF6FF" borderColor="#BFDBFE">
       <table style={{ width: '100%', fontSize: 14 }}>
         <tbody>
@@ -596,7 +596,7 @@ const CompetitionConfirmationEmail = () => (
     </InfoBox>
     <InfoBox bgColor="#F3F4F6" borderColor="#D1D5DB">
       <p style={{ margin: 0, fontSize: 13 }}>
-        <strong>Kompetisiereëls:</strong> Slegs een inskrywing per persoon. Werknemers en familie van Die Papier mag nie deelneem nie. Wenners word binne 7 dae na die sluitingsdatum telefonies en per e-pos in kennis gestel. Die pryse is nie oordraagbaar of vir kontant inwisselbaar nie.
+        <strong>Kompetisiereëls:</strong> Slegs een inskrywing per persoon. Werknemers en familie van rooi rose mag nie deelneem nie. Wenners word binne 7 dae na die sluitingsdatum telefonies en per e-pos in kennis gestel. Die pryse is nie oordraagbaar of vir kontant inwisselbaar nie.
       </p>
     </InfoBox>
     <p style={{ fontSize: 13, color: BRAND.gray, textAlign: 'center' }}>
@@ -647,7 +647,7 @@ const ReplyEmailWrapper: React.FC<{ children: React.ReactNode; replyType: 'posit
       </div>
       <div style={{ backgroundColor: BRAND.lightGray, padding: '20px 32px', borderTop: `1px solid ${BRAND.border}`, textAlign: 'center' }}>
         <p style={{ margin: '0 0 6px', fontSize: 12, color: BRAND.gray }}>
-          © 2026 Die Papier. Alle regte voorbehou.
+          © 2026 rooi rose. Alle regte voorbehou.
         </p>
         <p style={{ margin: 0, fontSize: 11, color: BRAND.gray }}>
           <a href="#" style={{ color: BRAND.navy, textDecoration: 'underline' }}>Tuisblad</a>
@@ -657,7 +657,7 @@ const ReplyEmailWrapper: React.FC<{ children: React.ReactNode; replyType: 'posit
           <a href="#" style={{ color: BRAND.navy, textDecoration: 'underline' }}>Privaatheidsbeleid</a>
         </p>
         <p style={{ margin: '10px 0 0', fontSize: 10, color: '#9CA3AF' }}>
-          Hierdie e-pos is namens Die Papier gestuur as antwoord op jou indiening.
+          Hierdie e-pos is namens rooi rose gestuur as antwoord op jou indiening.
         </p>
       </div>
     </div>
@@ -674,11 +674,11 @@ const ContactReplyEmail = () => (
         Ons advertensietariewe wissel afhangende van die tipe en grootte van die plasing. Ek het ons volledige mediapak as aanhangsel aangeheg wat alle opsies en pryse uiteensit. Vir 'n kwart-bladsy drukadvertensie begin tariewe by R2 500 per uitgawe, met afslag vir meervoudige besprekings.
       </p>
     </InfoBox>
-    <p>As jy enige verdere vrae het, staan dit jou vry om direk op hierdie e-pos te antwoord.</p>
+    <p>As jy enige verdere vrage het, staan dit jou vry om direk op hierdie e-pos te antwoord.</p>
     <p style={{ margin: '24px 0 4px', fontSize: 14 }}>
       Vriendelike groete,<br />
       <strong>Anri Coetzee</strong><br />
-      <span style={{ fontSize: 13, color: BRAND.gray }}>Kliëntediens · Die Papier</span><br />
+      <span style={{ fontSize: 13, color: BRAND.gray }}>Kliëntediens · rooi rose</span><br />
       <span style={{ fontSize: 12, color: BRAND.gray }}>admin@diepapier.co.za · 021 000 0000</span>
     </p>
   </ReplyEmailWrapper>
@@ -688,7 +688,7 @@ const AdvertiseReplyEmail = () => (
   <ReplyEmailWrapper replyType="info">
     <h2 style={{ color: BRAND.navy, margin: '0 0 16px', fontSize: 20 }}>Advertensie-voorstel vir Kaap Boekwinkel 📊</h2>
     <p>Beste <strong>Maria Smit</strong>,</p>
-    <p>Baie dankie vir jou belangstelling om by Die Papier te adverteer. Gebaseer op jou navraag het ons die volgende voorstel saamgestel:</p>
+    <p>Baie dankie vir jou belangstelling om by rooi rose te adverteer. Gebaseer op jou navraag het ons die volgende voorstel saamgestel:</p>
     <InfoBox bgColor="#F0FDF4" borderColor="#BBF7D0">
       <table style={{ width: '100%', fontSize: 14 }}>
         <tbody>
@@ -705,7 +705,7 @@ const AdvertiseReplyEmail = () => (
     <p style={{ margin: '24px 0 4px', fontSize: 14 }}>
       Vriendelike groete,<br />
       <strong>Suzette Maritz</strong><br />
-      <span style={{ fontSize: 13, color: BRAND.gray }}>Bemarkingsbestuurder · Die Papier</span><br />
+      <span style={{ fontSize: 13, color: BRAND.gray }}>Bemarkingsbestuurder · rooi rose</span><br />
       <span style={{ fontSize: 12, color: BRAND.gray }}>adverteer@diepapier.co.za · 021 000 0001</span>
     </p>
   </ReplyEmailWrapper>
@@ -715,13 +715,13 @@ const StoryAcceptedEmail = () => (
   <ReplyEmailWrapper replyType="positive">
     <h2 style={{ color: '#16A34A', margin: '0 0 16px', fontSize: 20 }}>Jou Storie is Aanvaar vir Publikasie! ✅</h2>
     <p>Beste <strong>Pieter Joubert</strong>,</p>
-    <p>Ons is bly om jou mee te deel dat jou storie-indiening goedgekeur is vir publikasie in Die Papier.</p>
+    <p>Ons is bly om jou mee te deel dat jou storie-indiening goedgekeur is vir publikasie in rooi rose.</p>
     <InfoBox bgColor="#F0FDF4" borderColor="#BBF7D0">
       <table style={{ width: '100%', fontSize: 14 }}>
         <tbody>
           <tr><td style={{ padding: '4px 0', color: BRAND.gray, width: '40%' }}>Opskrif:</td><td style={{ fontWeight: 600 }}>Nuwe speelpark vir Kaapstad-kinders</td></tr>
           <tr><td style={{ padding: '4px 0', color: BRAND.gray }}>Verwysing #:</td><td style={{ fontWeight: 600 }}>DP-STO-20260227-003</td></tr>
-          <tr><td style={{ padding: '4px 0', color: BRAND.gray }}>Beoogde uitgawe:</td><td style={{ fontWeight: 600 }}>Die Papier — 7 Maart 2026</td></tr>
+          <tr><td style={{ padding: '4px 0', color: BRAND.gray }}>Beoogde uitgawe:</td><td style={{ fontWeight: 600 }}>rooi rose — 7 Maart 2026</td></tr>
           <tr><td style={{ padding: '4px 0', color: BRAND.gray }}>Afdeling:</td><td style={{ fontWeight: 600 }}>Gemeenskapsnuus</td></tr>
         </tbody>
       </table>
@@ -741,7 +741,7 @@ const StoryDeclinedEmail = () => (
   <ReplyEmailWrapper replyType="negative">
     <h2 style={{ color: BRAND.navy, margin: '0 0 16px', fontSize: 20 }}>Opdatering oor Jou Storie-indiening</h2>
     <p>Beste <strong>Pieter Joubert</strong>,</p>
-    <p>Dankie dat jy die tyd geneem het om 'n storie by Die Papier in te dien. Ongelukkig kan ons jou indiening op hierdie stadium nie vir publikasie oorweeg nie.</p>
+    <p>Dankie dat jy die tyd geneem het om 'n storie by rooi rose in te dien. Ongelukkig kan ons jou indiening op hierdie stadium nie vir publikasie oorweeg nie.</p>
     <InfoBox bgColor="#F3F4F6" borderColor="#D1D5DB">
       <table style={{ width: '100%', fontSize: 14 }}>
         <tbody>
@@ -763,12 +763,12 @@ const LetterPublishedEmail = () => (
   <ReplyEmailWrapper replyType="positive">
     <h2 style={{ color: '#16A34A', margin: '0 0 16px', fontSize: 20 }}>Jou Lesersbrief is Gepubliseer! 📰</h2>
     <p>Beste <strong>Anna de Villiers</strong> (Stellenbosch),</p>
-    <p>Ons is bly om jou in kennis te stel dat jou lesersbrief aanvaar is en in die volgende uitgawe van Die Papier sal verskyn.</p>
+    <p>Ons is bly om jou in kennis te stel dat jou lesersbrief aanvaar is en in die volgende uitgawe van rooi rose sal verskyn.</p>
     <InfoBox bgColor="#F0FDF4" borderColor="#BBF7D0">
       <table style={{ width: '100%', fontSize: 14 }}>
         <tbody>
           <tr><td style={{ padding: '4px 0', color: BRAND.gray, width: '40%' }}>Verwysing #:</td><td style={{ fontWeight: 600 }}>DP-LBR-20260227-004</td></tr>
-          <tr><td style={{ padding: '4px 0', color: BRAND.gray }}>Uitgawe:</td><td style={{ fontWeight: 600 }}>Die Papier — 7 Maart 2026</td></tr>
+          <tr><td style={{ padding: '4px 0', color: BRAND.gray }}>Uitgawe:</td><td style={{ fontWeight: 600 }}>rooi rose — 7 Maart 2026</td></tr>
           <tr><td style={{ padding: '4px 0', color: BRAND.gray }}>Afdeling:</td><td style={{ fontWeight: 600 }}>Lesersbriewe (Bladsy 12)</td></tr>
         </tbody>
       </table>
@@ -811,7 +811,7 @@ const EventDeclinedEmail = () => (
   <ReplyEmailWrapper replyType="negative">
     <h2 style={{ color: BRAND.navy, margin: '0 0 16px', fontSize: 20 }}>Opdatering oor Jou Gebeurtenis-indiening</h2>
     <p>Beste <strong>Danie Steyn</strong>,</p>
-    <p>Dankie dat jy jou gebeurtenis by Die Papier ingedien het. Ongelukkig kan ons hierdie gebeurtenis nie op ons kalender plaas nie.</p>
+    <p>Dankie dat jy jou gebeurtenis by rooi rose ingedien het. Ongelukkig kan ons hierdie gebeurtenis nie op ons kalender plaas nie.</p>
     <InfoBox bgColor="#FEF2F2" borderColor="#FECACA">
       <table style={{ width: '100%', fontSize: 14 }}>
         <tbody>
@@ -869,7 +869,7 @@ const PasswordResetEmail = () => (
   <ReplyEmailWrapper replyType="action-required">
     <h2 style={{ color: '#D97706', margin: '0 0 16px', fontSize: 20 }}>Wagwoordherstel Versoek 🔑</h2>
     <p>Beste <strong>Elize Marais</strong>,</p>
-    <p>Ons het 'n versoek ontvang om jou wagwoord vir jou Die Papier-rekening te herstel.</p>
+    <p>Ons het 'n versoek ontvang om jou wagwoord vir jou rooi rose-rekening te herstel.</p>
     <EmailButton text="Herstel My Wagwoord" color="#D97706" />
     <InfoBox bgColor="#FEF3C7" borderColor="#FDE68A">
       <p style={{ margin: '0 0 8px', fontSize: 14, fontWeight: 600 }}>Belangrik:</p>
@@ -881,7 +881,7 @@ const PasswordResetEmail = () => (
     </InfoBox>
     <InfoBox bgColor="#FEF2F2" borderColor="#FECACA">
       <p style={{ margin: 0, fontSize: 12 }}>
-        <strong>Sekuriteitswenk:</strong> Moet nooit jou wagwoord met enigiemand deel nie. Die Papier sal jou nooit per e-pos of telefoon vir jou wagwoord vra nie. As jy vermoed dat iemand anders toegang tot jou rekening gekry het, kontak ons onmiddellik.
+        <strong>Sekuriteitswenk:</strong> Moet nooit jou wagwoord met enigiemand deel nie. rooi rose sal jou nooit per e-pos of telefoon vir jou wagwoord vra nie. As jy vermoed dat iemand anders toegang tot jou rekening gekry het, kontak ons onmiddellik.
       </p>
     </InfoBox>
     <p style={{ fontSize: 12, color: BRAND.gray, textAlign: 'center' }}>
@@ -907,13 +907,13 @@ const FeedbackAcknowledgedEmail = () => (
     <InfoBox bgColor="#EFF6FF" borderColor="#BFDBFE">
       <p style={{ margin: '0 0 8px', fontSize: 14, fontWeight: 600 }}>Wat ons gedoen het:</p>
       <p style={{ margin: 0, fontSize: 13, lineHeight: 1.8 }}>
-        Jou voorstel om meer plaaslike sport-dekking in te sluit is met ons redaksionele span gedeel. Ons beplan reeds om vanaf volgende maand 'n toegewyde plaaslike sport-afdeling in te sluit. Dankie dat jy ons gehelp het om Die Papier beter te maak!
+        Jou voorstel om meer plaaslike sport-dekking in te sluit is met ons redaksionele span gedeel. Ons beplan reeds om vanaf volgende maand 'n toegewyde plaaslike sport-afdeling in te sluit. Dankie dat jy ons gehelp het om rooi rose beter te maak!
       </p>
     </InfoBox>
     <p style={{ margin: '24px 0 4px', fontSize: 14 }}>
       Vriendelike groete,<br />
       <strong>Anri Coetzee</strong><br />
-      <span style={{ fontSize: 13, color: BRAND.gray }}>Kliëntediens · Die Papier</span><br />
+      <span style={{ fontSize: 13, color: BRAND.gray }}>Kliëntediens · rooi rose</span><br />
       <span style={{ fontSize: 12, color: BRAND.gray }}>admin@diepapier.co.za · 021 000 0000</span>
     </p>
   </ReplyEmailWrapper>
@@ -923,19 +923,19 @@ const ShoutoutPublishedEmail = () => (
   <ReplyEmailWrapper replyType="positive">
     <h2 style={{ color: '#16A34A', margin: '0 0 16px', fontSize: 20 }}>Jou Shoutout is Gepubliseer! 📣</h2>
     <p>Beste <strong>Lizette Botha</strong>,</p>
-    <p>Ons is bly om jou in kennis te stel dat jou shoutout in die nuutste uitgawe van Die Papier verskyn het!</p>
+    <p>Ons is bly om jou in kennis te stel dat jou shoutout in die nuutste uitgawe van rooi rose verskyn het!</p>
     <InfoBox bgColor="#F5F3FF" borderColor="#DDD6FE">
       <table style={{ width: '100%', fontSize: 14 }}>
         <tbody>
           <tr><td style={{ padding: '4px 0', color: BRAND.gray, width: '40%' }}>Verwysing #:</td><td style={{ fontWeight: 600 }}>DP-SHO-20260227-006</td></tr>
-          <tr><td style={{ padding: '4px 0', color: BRAND.gray }}>Uitgawe:</td><td style={{ fontWeight: 600 }}>Die Papier — 7 Maart 2026</td></tr>
+          <tr><td style={{ padding: '4px 0', color: BRAND.gray }}>Uitgawe:</td><td style={{ fontWeight: 600 }}>rooi rose — 7 Maart 2026</td></tr>
           <tr><td style={{ padding: '4px 0', color: BRAND.gray }}>Afdeling:</td><td style={{ fontWeight: 600 }}>Shoutouts (Bladsy 22)</td></tr>
         </tbody>
       </table>
     </InfoBox>
     <EmailButton text="Bekyk Jou Shoutout Aanlyn" />
     <p style={{ fontSize: 13, color: BRAND.gray }}>
-      Dankie dat jy Die Papier gebruik om jou boodskap te deel! Wil jy nog 'n shoutout stuur? <a href="#" style={{ color: BRAND.navy }}>Dien nog een in →</a>
+      Dankie dat jy rooi rose gebruik om jou boodskap te deel! Wil jy nog 'n shoutout stuur? <a href="#" style={{ color: BRAND.navy }}>Dien nog een in →</a>
     </p>
   </ReplyEmailWrapper>
 );
@@ -944,7 +944,7 @@ const NewsletterUnsubscribeEmail = () => (
   <ReplyEmailWrapper replyType="info">
     <h2 style={{ color: BRAND.navy, margin: '0 0 16px', fontSize: 20 }}>Nuusbrief-aftekening Bevestig 📭</h2>
     <p>Beste <strong>Kobus Venter</strong>,</p>
-    <p>Jy is suksesvol van die Die Papier-nuusbrief afgeteken. Jy sal nie meer weeklikse nuusbriewe van ons ontvang nie.</p>
+    <p>Jy is suksesvol van die rooi rose-nuusbrief afgeteken. Jy sal nie meer weeklikse nuusbriewe van ons ontvang nie.</p>
     <InfoBox bgColor="#F3F4F6" borderColor="#D1D5DB">
       <table style={{ width: '100%', fontSize: 14 }}>
         <tbody>

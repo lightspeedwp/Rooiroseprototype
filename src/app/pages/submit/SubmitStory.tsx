@@ -10,8 +10,8 @@ export const SubmitStoryPage = () => {
   return (
     <SubmitFormLayout
       seo={{
-        title: "Stuur 'n Storie In - Die Papier",
-        description: "Het jy 'n nuuswenk of storie? Deel dit met Die Papier se redaksie.",
+        title: "Stuur 'n Storie In - rooi rose",
+        description: "Het jy 'n nuuswenk of storie? Deel dit met rooi rose se redaksie.",
         keywords: 'storie, nuuswenk, stuur in, die papier',
       }}
       breadcrumbs={[
@@ -20,18 +20,18 @@ export const SubmitStoryPage = () => {
       ]}
       hero={{
         title: 'Nuuswenk of storie',
-        subtitle: "Het jy 'n nuuswenk, 'n sportuitslag of 'n storie om te deel? Vul die vorm hieronder in. Ons redaksie sal dit hersien en indien goedgekeur, sal dit op Die Papier gepubliseer word.",
+        subtitle: "Het jy 'n nuuswenk, 'n sportuitslag of 'n storie om te deel? Vul die vorm hieronder in. Ons redaksie sal dit hersien en indien goedgekeur, sal dit op rooi rose gepubliseer word.",
         image: HERO_IMAGES.submit,
       }}
       submitLabel="Stuur in"
       infoBox={
         <p>
           Deur in te dien, bevestig jy dat hierdie inhoud jou eie werk is en dat jy toestemming gee vir
-          <em> Die Papier</em> om dit te publiseer op alle platforms.
+          <em> rooi rose</em> om dit te publiseer op alle platforms.
         </p>
       }
       faqItems={SUBMIT_STORY_FAQS}
-      faqDescription="Vrae oor stories instuur by Die Papier."
+      faqDescription="Vrae oor stories instuur by rooi rose."
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-2">
@@ -91,7 +91,7 @@ export const SubmitStoryPage = () => {
           className="mt-1 w-4 h-4 text-custom-primary rounded border-gray-300 dark:border-border focus:ring-custom-primary"
         />
         <label htmlFor="consent" className="text-sm text-gray-700 dark:text-gray-300">
-          Ek bevestig dat ek die reg het om hierdie inhoud en foto's te deel en ek gee toestemming vir publikasie in <em>Die Papier</em>. *
+          Ek bevestig dat ek die reg het om hierdie inhoud en foto's te deel en ek gee toestemming vir publikasie in <em>rooi rose</em>. *
         </label>
       </div>
     </SubmitFormLayout>

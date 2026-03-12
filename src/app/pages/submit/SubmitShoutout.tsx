@@ -9,8 +9,8 @@ export const SubmitShoutoutPage = () => {
   return (
     <SubmitFormLayout
       seo={{
-        title: 'Shoutout stuur - Die Papier',
-        description: "Stuur 'n shoutout om iemand spesiaal geluk te wens of te bedank via Die Papier.",
+        title: 'Shoutout stuur - rooi rose',
+        description: "Stuur 'n shoutout om iemand spesiaal geluk te wens of te bedank via rooi rose.",
         keywords: 'shoutout, gelukwensing, bedanking, stuur in, die papier',
       }}
       breadcrumbs={[
@@ -19,19 +19,19 @@ export const SubmitShoutoutPage = () => {
       ]}
       inlineHeader={{
         title: "Stuur 'n Shoutout",
-        description: "Wil jy iemand spesiaal gelukwens, bedank of erken? Stuur 'n shoutout en ons plaas dit in Die Papier. Perfek vir verjaarsdae, prestasies, bedankings en meer.",
+        description: "Wil jy iemand spesiaal gelukwens, bedank of erken? Stuur 'n shoutout en ons plaas dit in rooi rose. Perfek vir verjaarsdae, prestasies, bedankings en meer.",
         icon: <Heart size={28} className="text-custom-primary" />,
       }}
       showNameEmail
       submitLabel="Stuur shoutout"
       infoBox={
         <p>
-          Shoutouts is gratis en word onderhewig aan beskikbare spasie in Die Papier gepubliseer.
+          Shoutouts is gratis en word onderhewig aan beskikbare spasie in rooi rose gepubliseer.
           Die redaksie behou die reg voor om inhoud te redigeer.
         </p>
       }
       faqItems={SUBMIT_SHOUTOUT_FAQS}
-      faqDescription="Vrae oor shoutouts in Die Papier."
+      faqDescription="Vrae oor shoutouts in rooi rose."
     >
       <div className="space-y-2">
         <Label htmlFor="recipientName">Aan wie is die Shoutout? *</Label>
@@ -85,7 +85,7 @@ export const SubmitShoutoutPage = () => {
           className="mt-1 w-4 h-4 text-custom-primary rounded border-gray-300 dark:border-border focus:ring-custom-primary"
         />
         <label htmlFor="consent" className="text-sm text-gray-700 dark:text-gray-300">
-          Ek gee toestemming vir Die Papier om hierdie boodskap en foto te publiseer. *
+          Ek gee toestemming vir rooi rose om hierdie boodskap en foto te publiseer. *
         </label>
       </div>
     </SubmitFormLayout>

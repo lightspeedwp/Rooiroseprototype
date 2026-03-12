@@ -253,32 +253,63 @@ export const router = createBrowserRouter([
         children: [
           { index: true, Component: Home },
           
-          // Categories
-          { path: "nuus", element: <CategoryPage categoryName="Nuus" /> },
-          { path: "sport", element: <CategoryPage categoryName="Sport" /> },
-          { path: "skole", element: <CategoryPage categoryName="Skole" /> },
-          { path: "sake", element: <CategoryPage categoryName="Sake" /> },
+          /* ── rooi rose Magazine Categories ─────────────────────────────
+           * Phase 0: Content Architecture Update (2026-03-11)
+           * 8 lifestyle magazine categories + Wen (competitions)
+           * ────────────────────────────────────────────────────────────── */
+          
+          // rooi rose Categories (NEW)
+          { path: "kos", element: <CategoryPage categoryName="Kos" /> },
+          { path: "mode", element: <CategoryPage categoryName="Mode" /> },
+          { path: "skoonheid", element: <CategoryPage categoryName="Skoonheid" /> },
+          { path: "gesondheid", element: <CategoryPage categoryName="Gesondheid" /> },
+          { path: "bekendes", element: <CategoryPage categoryName="Bekendes" /> },
           { path: "leefstyl", element: <CategoryPage categoryName="Leefstyl" /> },
-          { path: "dink", element: <CategoryPage categoryName="Dink" /> },
-          { path: "skolerugby", element: <CategoryPage categoryName="Skole rugby" /> },
+          { path: "jou-lewe", element: <CategoryPage categoryName="Jou lewe" /> },
+          { path: "ontspanning", element: <CategoryPage categoryName="Ontspanning" /> },
+          { path: "rooiwarm-wenners", element: <CategoryPage categoryName="Rooiwarm wenners" /> },
           { path: "onderwerp/:tagSlug", Component: TagArchivePage },
           
-          // Legacy Categories
-          { path: "news", element: <CategoryPage categoryName="Nuus" /> },
-          { path: "schools", element: <CategoryPage categoryName="Skole" /> },
-          { path: "business", element: <CategoryPage categoryName="Sake" /> },
-          { path: "lifestyle", element: <CategoryPage categoryName="Leefstyl" /> },
-          { path: "opinion", element: <CategoryPage categoryName="Dink" /> },
-          { path: "schools-rugby", element: <CategoryPage categoryName="Skole rugby" /> },
+          /* ── Legacy Newspaper Category Redirects ───────────────────────
+           * Old Die Papier categories redirect to homepage
+           * Keep for 6 months to preserve SEO and user bookmarks
+           * ────────────────────────────────────────────────────────────── */
+          
+          // Newspaper Categories → Homepage Redirects
+          { path: "nuus", element: <Navigate to="/" replace /> },
+          { path: "sport", element: <Navigate to="/" replace /> },
+          { path: "skole", element: <Navigate to="/" replace /> },
+          { path: "sake", element: <Navigate to="/" replace /> },
+          { path: "dink", element: <Navigate to="/" replace /> },
+          { path: "skolerugby", element: <Navigate to="/" replace /> },
+          { path: "doodsberrigte", element: <Navigate to="/" replace /> },
+          
+          // English Legacy Redirects
+          { path: "news", element: <Navigate to="/" replace /> },
+          { path: "sport", element: <Navigate to="/" replace /> },
+          { path: "schools", element: <Navigate to="/" replace /> },
+          { path: "business", element: <Navigate to="/" replace /> },
+          { path: "lifestyle", element: <Navigate to="/leefstyl" replace /> },
+          { path: "opinion", element: <Navigate to="/" replace /> },
+          { path: "schools-rugby", element: <Navigate to="/" replace /> },
           { path: "tag/:tagSlug", Component: TagArchivePage },
           
-          // Competitions
-          { path: "kompetisies", Component: CompetitionsPage },
-          { path: "kompetisies/:slug", Component: CompetitionSinglePage },
+          /* ── Competitions (Kompetisies → Wen) ──────────────────────────
+           * Renamed from Kompetisies to Wen for magazine branding
+           * Legacy kompetisies routes redirect to /wen
+           * ────────────────────────────────────────────────────────────── */
+          
+          // Competitions (NEW rooi rose branding: Wen)
+          { path: "wen", Component: CompetitionsPage },
+          { path: "wen/:slug", Component: CompetitionSinglePage },
+          
+          // Legacy Kompetisies → Wen Redirects
+          { path: "kompetisies", element: <Navigate to="/wen" replace /> },
+          { path: "kompetisies/:slug", element: <Navigate to="/wen" replace /> },
           { path: "kompetisie-terme-en-voorwaardes", Component: CompetitionTermsPage },
           { path: "competition-terms-and-conditions", Component: CompetitionTermsPage },
-          { path: "competitions", Component: CompetitionsPage },
-          { path: "competitions/:slug", Component: CompetitionSinglePage },
+          { path: "competitions", element: <Navigate to="/wen" replace /> },
+          { path: "competitions/:slug", element: <Navigate to="/wen" replace /> },
           
           // Sponsored Content
           { path: "geborg", Component: SponsorsPage },

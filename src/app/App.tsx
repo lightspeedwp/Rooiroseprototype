@@ -3,7 +3,7 @@ import { RouterProvider } from 'react-router';
 import { router } from './routes';
 
 /**
- * App — root component for Die Papier.
+ * App — root component for *rooi rose*.
  *
  * Uses React Router v7 Data Mode (RouterProvider).
  * All route definitions live in /src/app/routes.tsx.

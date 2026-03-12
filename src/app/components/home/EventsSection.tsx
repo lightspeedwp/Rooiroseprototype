@@ -35,7 +35,7 @@ export const EventsSection = () => {
             >
               {/* Date Box */}
               <div className="bg-brand-red text-white p-5 flex flex-col items-center justify-center min-w-[90px] w-[90px] shrink-0">
-                <span className="text-2xl font-normal font-heading leading-none mb-0.5" style={{ fontVariationSettings: "var(--fvs-h3)" }}>
+                <span className="text-2xl font-normal has-brand-serif-font-family leading-none mb-0.5" style={{ fontVariationSettings: "var(--fvs-h3)" }}>
                   {event.date.includes(' ')
                     ? event.date.split(' ')[0]
                     : event.date}

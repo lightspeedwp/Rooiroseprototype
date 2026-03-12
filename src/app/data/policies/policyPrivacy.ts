@@ -151,7 +151,7 @@ export const POLICY_PRIVACY = {
       heading: 'Kontak Ons',
       paragraph: 'As jy enige vrae, bekommernisse of versoeke rakende hierdie privaatheidsbeleid of die verwerking van jou persoonlike inligting het, kontak ons asseblief:',
       contact: {
-        entity: 'Die Papier (Edms) Bpk',
+        entity: 'rooi rose (Edms) Bpk',
         email: 'lesers@diepapier.co.za',
         office: 'Loft Office East (LOE4), Tweede verdieping, The Zone, Oxfordstraat 187, Rosebank',
         advertising: '+27 51 404 7600',
@@ -163,7 +163,7 @@ export const POLICY_PRIVACY = {
   ],
 
   cta: {
-    heading: 'Dankie dat jy deel is van Die Papier',
+    heading: 'Dankie dat jy deel is van rooi rose',
     text: "Ons waardeer jou deelname en jou pogings om ons platforms informatief, respektvol en genietbaar vir almal te help maak. Jou nakoming van hierdie reëls help ons om 'n gesonde, florerende leserskap te handhaaf.",
   },
 

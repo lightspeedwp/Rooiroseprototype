@@ -93,7 +93,7 @@ export const POLICIES = [
   },
   {
     title: "Kompetisie voorwaardes",
-    description: "Terme en voorwaardes wat van toepassing is op alle kompetisies wat deur Die Papier aangebied word.",
+    description: "Terme en voorwaardes wat van toepassing is op alle kompetisies wat deur rooi rose aangebied word.",
     icon: Trophy,
     link: "/kompetisie-terme-en-voorwaardes"
   },

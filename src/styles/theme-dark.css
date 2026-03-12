@@ -3,15 +3,29 @@
 /* Contains: .dark selector with all token overrides                           */
 
 .dark {
-  /* Die Papier Brand Tokens — Dark */
-  --custom-primary: #e82c27;
-  --custom-primary-2: #c41f20;
+  /* ── rooi rose Magazine Brand Tokens — Dark Mode ──────────────── */
+  
+  /* Brand Red — rooi rose dark mode */
+  --custom-primary: #ff4d42; /* Brighter red for dark backgrounds */
+  --custom-primary-accessible: #ff6961; /* AAA compliant lighter red for dark mode */
+  --custom-primary-hover: #ff6961; /* Hover state */
+  --custom-primary-2: var(--custom-primary-hover); /* Backwards compat */
+  
+  /* Neutrals — dark mode */
   --brand-navy-light: #8eadc8;
-  --brand-navy: #172134; /* Keep actual navy for backgrounds — text overrides use dark:text-foreground */
-  --base: #0f1923;
-  --base-2: #162233;
-  --base-3: #1e3044;
-  --contrast: #e8e8ed;
+  --brand-navy: #172134; /* Keep actual navy for backgrounds */
+  
+  /* Editorial Accent Colors — Dark Mode */
+  --accent-blush: #3a2a28; /* Dark blush — for alternating sections */
+  --accent-warm-beige: #2e2a26; /* Dark beige — for alternating sections */
+  --accent-soft-grey: #2d2d2d; /* Dark grey — for pull quotes */
+  
+  /* Base Colors — Dark Mode */
+  --base: #1a1a1a; /* Dark background */
+  --base-2: #2a2a2a; /* Slightly lighter — cards */
+  --base-3: #3a3a3a; /* Borders */
+  --contrast: #f5f5f5; /* Light headings */
+  --body-text: #e8e8e8; /* Light body text */
 
   /* ── Dark Mode Shadow Tokens ───────────────────────────────
    * Stronger shadows for dark backgrounds where standard

@@ -40,7 +40,7 @@ export const WeatherPage = () => {
   return (
     <div className="bg-secondary dark:bg-background min-h-screen">
       <SEO
-        title="Weer | Die Papier"
+        title="Weer | rooi rose"
         description="Die jongste weervoorspellings vir stede regoor Suid-Afrika."
         keywords="weer, weervoorspelling, temperatuur, suid-afrika, kaapstad, bloemfontein"
       />

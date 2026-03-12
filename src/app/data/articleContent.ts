@@ -1,5 +1,5 @@
 /**
- * Full article content for Die Papier
+ * Full article content for *rooi rose*
  * Maps article IDs to their full content
  */
 

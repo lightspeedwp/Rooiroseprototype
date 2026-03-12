@@ -14,7 +14,7 @@ export const NEWSLETTER_CTA = {
 
 export const NEWSLETTER_MODAL = {
   title: "Bly op hoogte",
-  description: "Kry die jongste nuus en eksklusiewe stories direk in jou e-posbus. Teken in vir <em>Die Papier</em> se nuusbrief.",
+  description: "Kry die jongste nuus en eksklusiewe stories direk in jou e-posbus. Teken in vir <em>rooi rose</em> se nuusbrief.",
   fields: {
     emailLabel: "E-posadres",
     emailPlaceholder: "naam@voorbeeld.co.za",

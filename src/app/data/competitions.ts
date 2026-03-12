@@ -1,12 +1,6 @@
 /**
- * Competition data for Die Papier
+ * Competition data for rooi rose
  * Contains current and past competitions with SEO metadata
- *
- * @wordpress-patterns archive-competitions
- * @wordpress-cards card-competition-grid, card-competition-meta
- * @wordpress-queries query-competitions-active
- * @wordpress-cpt dp_competition (SCF fields: closing_date, prize_value, entry_count)
- * @see /guidelines/components/patterns/card/README.md
  */
 
 export interface Competition {
@@ -50,7 +44,7 @@ export const COMPETITIONS: Competition[] = [
     id: 2,
     slug: "wen-springbok-kaartjies",
     title: "Wen kaartjies na die Springbok-toets",
-    description: "Vier Springbok-kaartjies vir die toets teen Nieu-Seeland by Loftus Versfeld! Slegs vir Die Papier-lesers.",
+    description: "Vier Springbok-kaartjies vir die toets teen Nieu-Seeland by Loftus Versfeld! Slegs vir rooi rose-lesers.",
     prizeValue: "R8,000",
     sponsor: "SuperSport",
     closingDate: "15 Maart 2026",
@@ -164,7 +158,7 @@ export const COMPETITIONS: Competition[] = [
     title: "Wen 2 konsertkaartjies: Steve Hofmeyr Live",
     description: "Ons het 'n wenner vir die Steve Hofmeyr konsertkaartjies!",
     prizeValue: "R1,200",
-    sponsor: "Die Papier",
+    sponsor: "rooi rose",
     closingDate: "1 Februarie 2026",
     imageUrl: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f",
     category: "Vermaak",

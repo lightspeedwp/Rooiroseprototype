@@ -13,9 +13,9 @@ export const NewsletterArchivePage = () => {
   return (
     <div className="bg-gray-50 dark:bg-background min-h-screen font-inter">
       <SEO
-        title="Nuusbrief-argief - Die Papier"
-        description="Blaai deur vorige uitgawes van Die Papier se nuusbriewe. Lees ons Vrydag- en Dinsdag-uitgawes aanlyn."
-        keywords="nuusbrief, argief, newsletter, archive, die papier"
+        title="Nuusbrief-argief - rooi rose"
+        description="Blaai deur vorige uitgawes van rooi rose se nuusbriewe. Lees ons Vrydag- en Dinsdag-uitgawes aanlyn."
+        keywords="nuusbrief, argief, archive, newsletter, die papier, afrikaans, wekelijks"
       />
 
       <PageContainer breadcrumbs={[{ label: 'Nuusbrief-argief' }]}>
@@ -41,7 +41,7 @@ export const NewsletterArchivePage = () => {
                 Nog nie ingeteken nie?
               </h2>
               <p className="text-gray-300 text-sm">
-                Ontvang <em>Die Papier</em> se nuusbrief gratis in jou inkassie — elke Dinsdag en Vrydag.
+                Ontvang <em>rooi rose</em> se nuusbrief gratis in jou inkassie — elke Dinsdag en Vrydag.
               </p>
             </div>
             <Link to="/nuusbrief-inteken">

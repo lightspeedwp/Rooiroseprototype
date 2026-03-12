@@ -1,5 +1,5 @@
 /**
- * Category-specific article data for Die Papier
+ * Category-specific article data for *rooi rose*
  * Each category has its own set of articles with relevant content
  * Updated: 2026-01-18
  */
@@ -1730,6 +1730,209 @@ export const CATEGORY_ARTICLES: Record<string, CategoryArticle[]> = {
       author: "Redaksie",
       imageUrl: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=800",
       readTime: "2 min"
+    }
+  ],
+
+  /* ── rooi rose Magazine Categories ──────────────────────────────────
+   * Phase 0: Content Architecture Update (2026-03-11)
+   * 8 lifestyle magazine categories added for rooi rose redesign
+   * Each category includes placeholder content (to be replaced with real data)
+   * ──────────────────────────────────────────────────────────────────── */
+
+  Kos: [
+    {
+      id: 10001,
+      title: "10 maklike resepte vir weekaande",
+      excerpt: "Van ontbyt tot aandete - hierdie vinnige resepte is perfek vir besige gesinne wat steeds gesonde kos wil geniet.",
+      category: "Kos",
+      tags: ["Resepte", "Gesin", "Weeksdae"],
+      date: "11 Mrt 2026",
+      author: "Sarah de Villiers",
+      featured: true,
+      imageUrl: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&q=80&w=1080",
+      readTime: "8 min"
+    },
+    {
+      id: 10002,
+      title: "Seisoenale groente: 'n Maartgids",
+      excerpt: "Ontdek watter vars groente in Maart beskikbaar is en hoe om dit te berei vir optimale smaak en voeding.",
+      category: "Kos",
+      tags: ["Groente", "Seisoenaal", "Gesond"],
+      date: "10 Mrt 2026",
+      author: "Annemarie Swart",
+      imageUrl: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&q=80&w=1080",
+      readTime: "6 min"
+    }
+  ],
+
+  Mode: [
+    {
+      id: 10101,
+      title: "Herfs 2026: Die nuutste neigings",
+      excerpt: "Van warm aanaardjakkies tot klassieke lere, hier is die mode-items wat hierdie seisoen 'n verskil sal maak.",
+      category: "Mode",
+      tags: ["Mode", "Herfs", "Neigings"],
+      date: "11 Mrt 2026",
+      author: "Leandri Fourie",
+      featured: true,
+      imageUrl: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=1080",
+      readTime: "7 min"
+    },
+    {
+      id: 10102,
+      title: "Volhoubare mode: Koop slim, koop less",
+      excerpt: "Leer hoe om 'n volhoubare kas te bou met tydlose stukke wat jare lank sal hou.",
+      category: "Mode",
+      tags: ["Volhoubaarheid", "Minimalisme"],
+      date: "9 Mrt 2026",
+      author: "Carla Pretorius",
+      imageUrl: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&q=80&w=1080",
+      readTime: "5 min"
+    }
+  ],
+
+  Skoonheid: [
+    {
+      id: 10201,
+      title: "Wintervelversorging: Beskerm jou vel",
+      excerpt: "Die beste produkte en roetines om droë wintervel te voorkom en 'n gesonde glans te behou.",
+      category: "Skoonheid",
+      tags: ["Velversorging", "Winter", "Skoonheid"],
+      date: "11 Mrt 2026",
+      author: "Mia Coetzee",
+      featured: true,
+      imageUrl: "https://images.unsplash.com/photo-1552693673-1bf958298935?auto=format&fit=crop&q=80&w=1080",
+      readTime: "6 min"
+    },
+    {
+      id: 10202,
+      title: "Die krag van natuurlike skoonheidsprodukte",
+      excerpt: "Waarom al hoe meer vroue oorslaan na natuurlike en organiese skoonheidsprodukte - en hoe om die regte keuses te maak.",
+      category: "Skoonheid",
+      tags: ["Natuurlik", "Organies"],
+      date: "8 Mrt 2026",
+      author: "Zani du Plessis",
+      imageUrl: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&q=80&w=1080",
+      readTime: "5 min"
+    }
+  ],
+
+  Gesondheid: [
+    {
+      id: 10301,
+      title: "5 maniere om stres te verminder",
+      excerpt: "Praktiese wenke vir 'n kalmer, meer gebalanseerde lewe in ons besige wêreld.",
+      category: "Gesondheid",
+      tags: ["Stres", "Welstand", "Gesondheid"],
+      date: "11 Mrt 2026",
+      author: "Dr. Elna Marais",
+      featured: true,
+      imageUrl: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=1080",
+      readTime: "7 min"
+    },
+    {
+      id: 10302,
+      title: "Die belangrikheid van gereelde oefening",
+      excerpt: "Hoe om 'n oefenroetine te begin wat by jou lewenstyl pas en volhoubaar is.",
+      category: "Gesondheid",
+      tags: ["Oefening", "Fiksheid"],
+      date: "9 Mrt 2026",
+      author: "Pieter van Wyk",
+      imageUrl: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&q=80&w=1080",
+      readTime: "6 min"
+    }
+  ],
+
+  Bekendes: [
+    {
+      id: 10401,
+      title: "In gesprek met Charlize Theron",
+      excerpt: "Die Oscarwenner gesels oor haar nuutste rolprent, moederskap en haar werk in Suid-Afrika.",
+      category: "Bekendes",
+      tags: ["Onderhoude", "Film", "Internasionaal"],
+      date: "11 Mrt 2026",
+      author: "Janine Viljoen",
+      featured: true,
+      imageUrl: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=1080",
+      readTime: "10 min"
+    },
+    {
+      id: 10402,
+      title: "SA-musikante skyn op die wêreldverhoog",
+      excerpt: "Hoe Suid-Afrikaanse kunstenaars internasionale sukses behaal en ons kultuur wêreldwyd vier.",
+      category: "Bekendes",
+      tags: ["Musiek", "Kultuur"],
+      date: "10 Mrt 2026",
+      author: "Ryno Wessels",
+      imageUrl: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&q=80&w=1080",
+      readTime: "8 min"
+    }
+  ],
+
+  "Jou lewe": [
+    {
+      id: 10501,
+      title: "Balanseer werk en gesinslewe",
+      excerpt: "Praktiese strategieë om jou loopbaan en gesinsverantwoordelikhede suksesvol te bestuur.",
+      category: "Jou lewe",
+      tags: ["Werk", "Gesin", "Balans"],
+      date: "11 Mrt 2026",
+      author: "Linda Botha",
+      featured: true,
+      imageUrl: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=1080",
+      readTime: "7 min"
+    },
+    {
+      id: 10502,
+      title: "Finansiële beplanning vir jong gesinne",
+      excerpt: "Hoe om jou finansies te bestuur, spaar vir die toekoms en steeds die hede te geniet.",
+      category: "Jou lewe",
+      tags: ["Finansies", "Gesin"],
+      date: "9 Mrt 2026",
+      author: "Thabo Mthembu",
+      imageUrl: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=1080",
+      readTime: "9 min"
+    }
+  ],
+
+  Ontspanning: [
+    {
+      id: 10601,
+      title: "Top 10 boeke om hierdie maand te lees",
+      excerpt: "Van spanningsverhale tot romanses - ons keuse van die beste nuwe boeke vir Maart.",
+      category: "Ontspanning",
+      tags: ["Boeke", "Lees", "Kultuur"],
+      date: "11 Mrt 2026",
+      author: "Annelize Steyn",
+      featured: true,
+      imageUrl: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=1080",
+      readTime: "6 min"
+    },
+    {
+      id: 10602,
+      title: "Wegbreek-gidse: Karoo-avonture",
+      excerpt: "Ontdek die skoonheid van die Karoo met hierdie onontdekte juwele wat perfek is vir 'n naweek weg.",
+      category: "Ontspanning",
+      tags: ["Reis", "Suid-Afrika", "Wegbreek"],
+      date: "10 Mrt 2026",
+      author: "Johan Roux",
+      imageUrl: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&q=80&w=1080",
+      readTime: "8 min"
+    }
+  ],
+
+  "Rooiwarm wenners": [
+    {
+      id: 10701,
+      title: "Wenners van Februarie se groot kompetisie",
+      excerpt: "Baie geluk aan al ons gelukkige wenners! Hier is wie die pryse gewen het.",
+      category: "Rooiwarm wenners",
+      tags: ["Kompetisies", "Wenners"],
+      date: "1 Mrt 2026",
+      author: "Redaksie",
+      featured: true,
+      imageUrl: "https://images.unsplash.com/photo-1513885535751-8b9238bd345a?auto=format&fit=crop&q=80&w=1080",
+      readTime: "3 min"
     }
   ]
 };

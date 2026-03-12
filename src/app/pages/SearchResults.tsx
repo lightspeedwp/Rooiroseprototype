@@ -145,7 +145,7 @@ export const SearchResultsPage = () => {
     <div className="bg-gray-50 dark:bg-background min-h-screen">
       <SEO
         title={query ? `Soekresultate vir "${query}"` : SEARCH_UI.title}
-        description={query ? `Soek resultate vir "${query}" op Die Papier. ${results.length} artikels gevind.` : 'Soek deur al Die Papier se nuus, sport, sake, en meer.'}
+        description={query ? `Soek resultate vir "${query}" op rooi rose. ${results.length} artikels gevind.` : 'Soek deur al rooi rose se nuus, sport, sake, en meer.'}
         keywords={`soek, ${query}, nuus, afrikaans, die papier`}
       />
 

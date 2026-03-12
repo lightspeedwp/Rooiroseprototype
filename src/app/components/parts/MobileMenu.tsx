@@ -1,15 +1,14 @@
 import React, { useState, useCallback, useEffect, useMemo } from 'react';
 import { useNavigate, useLocation } from 'react-router';
 import {
-  Search,
   X,
+  Search,
   ShoppingCart,
   User,
-  ChevronRight,
-  // Newspaper — removed; using local icon to avoid bundler ReferenceError
+  Heart,
+  TrendingUp,
   Trophy,
   Briefcase,
-  Heart,
   MessageSquare,
   BookOpen,
   Calendar,
@@ -22,6 +21,7 @@ import {
   Shield,
   Menu,
   ArrowRight,
+  ChevronRight,
   Facebook,
   Instagram,
   Linkedin,
@@ -30,6 +30,15 @@ import {
   Archive,
   Send,
   Truck,
+  UtensilsCrossed,
+  Shirt,
+  Sparkles,
+  Activity,
+  Star,
+  Coffee,
+  Users,
+  Clapperboard,
+  Gift,
 } from 'lucide-react';
 // Motion library removed — replaced with CSS animations in /src/styles/index.css (PERF-042)
 import { SOCIAL_LINKS, MOBILE_CATEGORY_LINKS, MOBILE_SECONDARY_LINKS } from '../../data/navigation';
@@ -42,19 +51,31 @@ import { ThemeToggle } from '../common/ThemeToggle';
 // to avoid ReferenceErrors if the bundler reorders module evaluation.
 function buildCategoryIcons(): Record<string, React.ReactNode> {
   return {
+    /* rooi rose Magazine Categories — Phase 0 (2026-03-11) */
     '/': <Home size={20} />,
+    '/kos': <UtensilsCrossed size={20} />,
+    '/mode': <Shirt size={20} />,
+    '/skoonheid': <Sparkles size={20} />,
+    '/gesondheid': <Activity size={20} />,
+    '/bekendes': <Star size={20} />,
+    '/leefstyl': <Coffee size={20} />,
+    '/jou-lewe': <Users size={20} />,
+    '/ontspanning': <Clapperboard size={20} />,
+    '/wen': <Gift size={20} />,
+    '/rooiwarm-wenners': <Trophy size={20} />,
+    '/e-uitgawes': <BookOpen size={20} />,
+    '/nuusbrief-argief': <Archive size={20} />,
+    
+    /* Legacy newspaper categories (will redirect to homepage) */
     '/nuus': <Newspaper size={20} />,
     '/sport': <Trophy size={20} />,
     '/skole': <GraduationCap size={20} />,
     '/sake': <Briefcase size={20} />,
-    '/leefstyl': <Heart size={20} />,
     '/dink': <MessageSquare size={20} />,
     '/gebeure': <Calendar size={20} />,
     '/multimedia': <Play size={20} />,
     '/doodsberrigte': <Heart size={20} />,
-    '/e-uitgawes': <BookOpen size={20} />,
     '/kompetisies': <Trophy size={20} />,
-    '/nuusbrief-argief': <Archive size={20} />,
   };
 }
 
@@ -314,7 +335,7 @@ export const MobileMenu = () => {
                       <BookOpen size={20} />
                       <div className="text-left">
                         <p className="text-[15px] font-bold leading-tight">Teken in op e-uitgawe</p>
-                        <p className="text-[12px] text-white/70 leading-tight mt-0.5">Kry <em>Die Papier</em> digitaal</p>
+                        <p className="text-[12px] text-white/70 leading-tight mt-0.5">Kry <em>rooi rose</em> digitaal</p>
                       </div>
                     </div>
                     <ArrowRight size={18} className="text-white/60 group-hover:text-white group-hover:translate-x-0.5 transition-[color,transform]" />
@@ -344,7 +365,7 @@ export const MobileMenu = () => {
                 {/* Secondary Navigation */}
                 <div className="dp-stagger-item px-5 pt-4 pb-1" style={staggerDelay(staggerIdx++)}>
                   <p className="text-[11px] uppercase tracking-[0.15em] text-white/40 font-bold mb-2">
-                    <em>Die Papier</em>
+                    <em>rooi rose</em>
                   </p>
                 </div>
 
@@ -429,7 +450,7 @@ export const MobileMenu = () => {
                 {/* Copyright */}
                 <div className="dp-stagger-item px-5 pt-4 pb-8 text-center" style={staggerDelay(staggerIdx++)}>
                   <p className="text-[11px] text-white/20">
-                    <em>Die Papier</em> © {new Date().getFullYear()}. Alle regte voorbehou.
+                    <em>rooi rose</em> © {new Date().getFullYear()}. Alle regte voorbehou.
                   </p>
                 </div>
 

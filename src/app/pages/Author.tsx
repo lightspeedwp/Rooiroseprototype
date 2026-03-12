@@ -35,7 +35,7 @@ export const AuthorPage = () => {
   const authorBios: Record<string, { bio: string; role: string; image?: string }> = {
     'redaksie': {
       role: 'Redaksie',
-      bio: 'Die Papier se toegewyde span van joernaliste wat werk aan die jongste nuus en stories vir ons lesers.',
+      bio: 'rooi rose se toegewyde span van joernaliste wat werk aan die jongste nuus en stories vir ons lesers.',
     },
     'johan bekker': {
       role: 'Senior Joernalis',
@@ -57,7 +57,7 @@ export const AuthorPage = () => {
   
   const authorInfo = authorBios[decodedAuthor.toLowerCase()] || {
     role: 'Joernalis',
-    bio: `${decodedAuthor} is 'n joernalis vir Die Papier wat verskeie onderwerpe dek.`,
+    bio: `${decodedAuthor} is 'n joernalis vir rooi rose wat verskeie onderwerpe dek.`,
   };
 
   // Group articles by category
@@ -78,7 +78,7 @@ export const AuthorPage = () => {
     >
       <SEO
         title={`${decodedAuthor} - Skrywer`}
-        description={`Artikels deur ${decodedAuthor} op Die Papier. ${authorArticles.length} artikels beskikbaar.`}
+        description={`Artikels deur ${decodedAuthor} op rooi rose. ${authorArticles.length} artikels beskikbaar.`}
         keywords={`${decodedAuthor}, skrywer, joernalis, artikels, die papier`}
       />
       {/* Author Header */}

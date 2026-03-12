@@ -35,9 +35,9 @@ export const SupplementsPage = () => {
         {/* Intro */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-            'n Bylaag in <em>Die Papier</em> is the uiteindelike manier om jou handelsmerk, produk of geleentheid 
-            met diepte en detail aan ons lesers voor te stel. Met professionele ontwerp, redaksionele inhoud 
-            en nasionale verspreiding, bied bylaes 'n premium advertensie-ervaring wat lank na die publikasiedatum waarde lewer.
+            'n Bylaag in <em>rooi rose</em> is the uiteindelike manier om jou handelsmerk, produk of geleentheid 
+            op 'n omvattende en indrukwekkende wyse te vertoon. Dit is meer as net 'n advertensie — 
+            dit is 'n volwaardige, maatgemaakte publikasie wat prominent in ons gedrukte koerant verskyn.
           </p>
         </div>
 
@@ -165,7 +165,7 @@ export const SupplementsPage = () => {
                   'Minimum bestelling: 10 000 kopieë per streek.',
                   'Finale materiaal moet 10 werksdae voor publikasie ingedien word.',
                   'Proefdrukke word vir goedkeuring voorsien.',
-                  'Die Papier se advertensie-riglyne is van toepassing.',
+                  'rooi rose se advertensie-riglyne is van toepassing.',
                   'BTW word bygereken by alle kwotasies.',
                   'Kansellasie: 5 werksdae voor drukdatum.',
                 ].map((note) => (
@@ -182,7 +182,7 @@ export const SupplementsPage = () => {
         {/* CTA */}
         <div className="bg-brand-navy text-white rounded-2xl p-8 md:p-12 mb-16 text-center">
           <h2 className="text-3xl font-normal mb-4 font-heading" style={{ fontVariationSettings: "var(--fvs-h2)", lineHeight: 'var(--lh-h2)', letterSpacing: 'var(--ls-h2)' }}>
-            Skep jou bylaag met <em>Die Papier</em>
+            Skep jou bylaag met <em>rooi rose</em>
           </h2>
           <p className="text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
             Ons ervare span is gereed om jou bylaag van konsep tot verspreiding te hanteer. 
@@ -212,7 +212,7 @@ export const SupplementsPage = () => {
           </Link>
         </div>
       </div>
-      <PageFAQSection items={SUPPLEMENTS_FAQS} description="Vrae oor koerantbylaes by Die Papier." />
+      <PageFAQSection items={SUPPLEMENTS_FAQS} description="Vrae oor koerantbylaes by rooi rose." />
     </div>
   );
 };

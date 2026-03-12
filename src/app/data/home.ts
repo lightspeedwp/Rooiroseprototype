@@ -1,5 +1,5 @@
 /**
- * Homepage data — Die Papier
+ * Homepage data — rooi rose
  *
  * @wordpress-pattern page-home (13 sections: hero, feature grid, 6 categories, events, competitions, poll, sponsors, newsletter)
  * @wordpress-queries query-posts-sticky, query-posts-latest, query-posts-category, query-events-upcoming, query-competitions-active
@@ -13,8 +13,8 @@ export interface ArchiveMonth {
 }
 
 export const HOME_SEO = {
-  description: "Die Papier - Jou betroubare bron vir die jongste Afrikaanse nuus oor plaaslike en nasionale gebeure, sport, sake, lewenstyl, opinie en meer.",
-  keywords: "nuus, afrikaans, suid-afrika, sport, sake, lewenstyl, opinie, netnuus, skole, e-uitgawes, die papier"
+  description: "rooi rose - Jou betroubare bron vir die jongste Afrikaanse nuus oor plaaslike en nasionale gebeure, sport, sake, lewenstyl, opinie en meer.",
+  keywords: "nuus, afrikaans, suid-afrika, sport, sake, lewenstyl, opinie, netnuus, skole, e-uitgawes, rooi rose"
 };
 
 export const HOME_CONTENT = {

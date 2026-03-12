@@ -36,7 +36,7 @@ export const SingleObituaryPage = () => {
   return (
     <div className="bg-gray-50 dark:bg-background min-h-screen font-inter">
       <SEO
-        title={`${obituary.name} - Doodsberig | Die Papier`}
+        title={`${obituary.name} - Doodsberig | rooi rose`}
         description={obituary.excerpt}
         keywords={`doodsberig, ${obituary.name}, ${obituary.location}, begrafnis`}
       />

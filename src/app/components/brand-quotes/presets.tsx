@@ -45,7 +45,7 @@ export const QuoteWieInJouHuis = () => (
   <BrandQuote 
     quote={
       <>
-        Wie in jou huis gaan <span className="italic">Die Papier</span> eerste deurblaai?
+        Wie in jou huis gaan <span className="italic">rooi rose</span> eerste deurblaai?
       </>
     }
     subtext="Jou nuwe gedrukte Afrikaanse koerant." 

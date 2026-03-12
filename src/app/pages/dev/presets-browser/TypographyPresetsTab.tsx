@@ -17,7 +17,7 @@ export const TypographyPresetsTab: React.FC<TypographyPresetsTabProps> = ({ sear
   );
 
   const headingLevels = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'] as const;
-  const sampleText = isAf ? 'Die Papier — Nuus wat saak maak' : 'Die Papier — News that matters';
+  const sampleText = isAf ? 'rooi rose — verhale wat aanraak' : 'rooi rose — stories that matter';
 
   return (
     <div className="space-y-6">

@@ -49,14 +49,14 @@ export const Advertise = () => {
     <div className="bg-white dark:bg-background min-h-screen">
       <SEO
         title="Adverteer"
-        description="Adverteer in Die Papier - bereik duisende lesers met geklassifiseerde, vertoon-, digitale en gedrukte advertensies."
+        description="Adverteer in rooi rose - bereik duisende lesers met geklassifiseerde, vertoon-, digitale en gedrukte advertensies."
         keywords="adverteer, advertensies, geklassifiseerd, vertoon, tariewe, media, die papier"
       />
       <PageContainer breadcrumbs={[{ label: 'Adverteer' }]} noPadding />
 
       <ContentHero 
-        title="Versterk jou handelsmerk met Die Papier" 
-        subtitle="Wil jy jou handelsmerk uitbrei? By Die Papier bied ons dinamiese advertensie-oplossings wat jou met gehoor regoor Suid-Afrika verbind."
+        title="Versterk jou handelsmerk met rooi rose" 
+        subtitle="Wil jy jou handelsmerk uitbrei? By rooi rose bied ons dinamiese advertensie-oplossings wat jou met gehoor regoor Suid-Afrika verbind."
         image={HERO_IMAGES.advertise}
       />
 
@@ -148,13 +148,13 @@ export const Advertise = () => {
           </div>
         </div>
 
-        {/* Why Die Papier */}
+        {/* Why rooi rose */}
         <div className="mb-16">
           <div className="text-center mb-12">
             <h2
               className="text-3xl font-normal text-brand-navy dark:text-foreground mb-4 font-heading"
               style={{ fontVariationSettings: "var(--fvs-h2)", lineHeight: 'var(--lh-h2)', letterSpacing: 'var(--ls-h2)' }}
-            >Waarom <em>Die Papier</em>?</h2>
+            >Waarom <em>rooi rose</em>?</h2>
             <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Om jou advertering uit te brei is 'n kragtige manier om te verseker dat jou handelsmerkboodskap 
               oor diverse markte aanklank vind.

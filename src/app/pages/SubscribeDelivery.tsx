@@ -31,9 +31,9 @@ export const SubscribeDelivery = () => {
   return (
     <div className="bg-gray-50 dark:bg-background min-h-screen pb-24 font-inter">
       <SEO 
-        title="Teken in op aflewering - Die Papier" 
-        description="Kry Die Papier elke week by jou voordeur afgelewer. Hanteer deur On the Dot."
-        keywords="koerant aflewering, die papier, inteken, newspaper delivery"
+        title="Teken in op aflewering - rooi rose" 
+        description="Kry rooi rose elke week by jou voordeur afgelewer. Hanteer deur On the Dot."
+        keywords="teken in, aflewering, subscribe, delivery, die papier, huisaflewering, home delivery"
       />
       
       <PageContainer 
@@ -157,7 +157,7 @@ export const SubscribeDelivery = () => {
                   Verkies jy net digitaal?
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 mt-2 text-sm leading-relaxed">
-                  'n Enkele e-uitgawe kos R35 — 'n eenmalige aankoop, geen intekening nodig nie. Of teken in en lees <em>Die Papier</em> digitaal op jou rekenaar, tablet of foon.
+                  'n Enkele e-uitgawe kos R35 — 'n eenmalige aankoop, geen intekening nodig nie. Of teken in en lees <em>rooi rose</em> digitaal op jou rekenaar, tablet of foon.
                 </p>
               </div>
               

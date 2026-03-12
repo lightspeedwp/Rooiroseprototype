@@ -4,7 +4,7 @@ import { SEO } from '../components/common/SEO';
 import { PageContainer } from '../components/common/PageContainer';
 import { ContentHero } from '../components/patterns/ContentHero';
 import { renderWithBrandItalics } from '../utils/brandItalics';
-import faqHeroImage from "figma:asset/2de793255478a3373d016022b83a5446094522fe.png";
+import { HERO_IMAGES } from '../data/images';
 import {
   ABOUT_FAQS,
   CONTACT_FAQS,
@@ -140,17 +140,17 @@ export const FAQPage = () => {
   return (
     <div className="bg-gray-50 dark:bg-background min-h-screen">
       <SEO
-        title="Algemene vrae - Die Papier"
-        description="Vind antwoorde op algemene vrae oor Die Papier, intekeninge, aflewering, advertering en meer."
-        keywords="algemene vrae, faq, die papier, hulp, kontak, aflewering, inteken, adverteer"
+        title="Algemene vrae - rooi rose"
+        description="Vind antwoorde op algemene vrae oor rooi rose, intekeninge, aflewering, advertering en meer."
+        keywords="faq, algemene vrae, help, ondersteuning, die papier"
       />
 
       <PageContainer breadcrumbs={[{ label: 'Algemene vrae' }]} noPadding />
 
       <ContentHero 
         title="Algemene vrae"
-        subtitle="Hier vind jy antwoorde op die mees algemene vrae oor Die Papier – 'n nuwe Afrikaanse koerant wat op 6 Maart 2026 op die rakke én aanlyn verskyn."
-        image={faqHeroImage}
+        subtitle="Hier vind jy antwoorde op die mees algemene vrae oor rooi rose – 'n nuwe Afrikaanse koerant wat op 6 Maart 2026 op die rakke én aanlyn verskyn."
+        image={HERO_IMAGES.faq}
       />
 
       {/* Mobile Category Navigation (Horizontal Scroll) */}
@@ -235,10 +235,10 @@ export const FAQPage = () => {
                       {section.items.map((item) => (
                         <AccordionItem key={item.id} value={item.id}>
                           <AccordionTrigger className="px-6 py-4 text-left hover:text-primary dark:hover:text-primary hover:no-underline data-[state=open]:text-primary dark:data-[state=open]:text-primary font-medium">
-                            <span dangerouslySetInnerHTML={{ __html: item.question.replace('Die Papier', '<em>Die Papier</em>') }} />
+                            <span dangerouslySetInnerHTML={{ __html: item.question.replace('rooi rose', '<em>rooi rose</em>') }} />
                           </AccordionTrigger>
                           <AccordionContent className="px-6 pb-6 text-gray-700 dark:text-gray-300 leading-relaxed">
-                            <div dangerouslySetInnerHTML={{ __html: item.answer.replace('Die Papier', '<em>Die Papier</em>') }} />
+                            <div dangerouslySetInnerHTML={{ __html: item.answer.replace('rooi rose', '<em>rooi rose</em>') }} />
                           </AccordionContent>
                         </AccordionItem>
                       ))}

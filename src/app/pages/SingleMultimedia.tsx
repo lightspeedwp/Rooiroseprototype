@@ -83,7 +83,7 @@ export const SingleMultimediaPage = () => {
   return (
     <div className="bg-gray-50 dark:bg-background min-h-screen font-inter">
       <SEO
-        title={`${item.title} | Multimedia | Die Papier`}
+        title={`${item.title} | Multimedia | rooi rose`}
         description={item.description.slice(0, 160)}
         keywords={item.tags.join(', ')}
       />

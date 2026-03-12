@@ -364,7 +364,7 @@ export const INC_FILES: IncFileEntry[] = [
     id: 'theme-custom-icons',
     filename: 'custom-icons.php',
     name: 'Custom Icon Registry',
-    description: 'Registers Die Papier\'s custom 67-icon SVG library for the Outermost Icon Block picker.',
+    description: 'Registers rooi rose\'s custom 67-icon SVG library for the Outermost Icon Block picker.',
     functions: ['dp_register_custom_icons()'],
     hooks: ['enqueue_block_editor_assets'],
     dependencies: [],

@@ -16,9 +16,9 @@ export const ReturnsPolicyPage = () => {
   return (
     <div className="bg-white dark:bg-background min-h-screen">
       <SEO
-        title="Terugsendingsbeleid - Die Papier"
-        description="Lees ons terugsendingsbeleid vir digitale en gedrukte produkte by Die Papier."
-        keywords="terugsendingsbeleid, terugbetaling, kansellasie, die papier"
+        title="Terugsendingsbeleid - rooi rose"
+        description="Lees ons terugsendingsbeleid vir digitale en gedrukte produkte by rooi rose."
+        keywords="terugsending, returns, refund, terugbetalings, die papier"
       />
 
       <PageContainer
@@ -44,7 +44,7 @@ export const ReturnsPolicyPage = () => {
           {/* Introduction */}
           <section>
             <p className="text-lg leading-relaxed">
-              By <em>Die Papier</em> streef ons daarna om uitstekende produkte en dienste te lewer. Ons
+              By <em>rooi rose</em> streef ons daarna om uitstekende produkte en dienste te lewer. Ons
               verstaan egter dat daar omstandighede kan wees waar jy 'n terugbetaling of
               kansellasie wil versoek. Hierdie beleid uiteensit jou regte en ons prosedures.
             </p>

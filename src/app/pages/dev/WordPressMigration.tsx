@@ -1219,7 +1219,7 @@ export const WordPressMigration = () => {
               <div className="bg-gray-100 dark:bg-black/30 border border-gray-200 dark:border-white/10 rounded-xl p-5">
                 <h4 className="text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-white/40 mb-3">{locale === 'af' ? 'Voorbeeld: Blok Redakteur Kleur Plukker Uitvoer' : 'Example: Block Editor Color Picker Output'}</h4>
                 <p className="text-xs text-gray-500 dark:text-white/50 mb-3">{locale === 'af' ? 'Wanneer \'n gebruiker "Brand Navy" agtergrond en "Base" (wit) teks kies vir \'n opskrif blok:' : 'When a user selects "Brand Navy" background and "Base" (white) text for a heading block:'}</p>
-                <CodeBlock code={`<h2 class="has-brand-navy-background-color has-base-color">\n  Die Papier — Afrikaanse Weeklikse Koerant\n</h2>`} language="html" label="Block Editor Output" maxHeight={120} />
+                <CodeBlock code={`<h2 class="has-brand-navy-background-color has-base-color">\n  rooi rose — Afrikaanse Weeklikse Tydskrif\n</h2>`} language="html" label="Block Editor Output" maxHeight={120} />
               </div>
             </div>
           </div>

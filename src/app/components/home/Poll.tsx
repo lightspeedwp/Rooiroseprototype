@@ -41,13 +41,13 @@ export const Poll: React.FC<PollProps> = ({ question, options, labels }) => {
     <div className="bg-white dark:bg-card rounded-lg border border-gray-200 dark:border-border shadow-sm dark:shadow-[var(--shadow-dark-200)] overflow-hidden">
       <div className="p-6">
         {/* Title */}
-        {/* V2: widget label → Inter SemiBold uppercase, H6 token scale */}
-        <h3 className="font-inter font-semibold text-brand-red uppercase mb-4 is-style-section-title">
+        {/* V2: widget label → Karla SemiBold uppercase, H6 token scale */}
+        <h3 className="has-brand-sans-font-family font-semibold text-brand-red uppercase mb-4 is-style-section-title">
           {labels.title}
         </h3>
         
         {/* Question */}
-        <p className="text-base font-normal text-custom-contrast dark:text-custom-contrast mb-4 font-inter leading-normal">
+        <p className="text-base font-normal text-custom-contrast dark:text-custom-contrast mb-4 has-brand-sans-font-family leading-normal">
           {question}
         </p>
         
@@ -71,7 +71,7 @@ export const Poll: React.FC<PollProps> = ({ question, options, labels }) => {
                   className="w-5 h-5 text-brand-red border-gray-400 dark:border-gray-600 focus:ring-brand-red focus:ring-2"
                 />
               </div>
-              <span className="flex-1 text-base text-custom-contrast dark:text-custom-contrast font-inter leading-normal group-hover:text-brand-red transition-colors">
+              <span className="flex-1 text-base text-custom-contrast dark:text-custom-contrast has-brand-sans-font-family leading-normal group-hover:text-brand-red transition-colors">
                 {option.text}
               </span>
             </label>
@@ -82,7 +82,7 @@ export const Poll: React.FC<PollProps> = ({ question, options, labels }) => {
         <button
           onClick={handleVote}
           disabled={hasVoted}
-          className={`w-full py-2 px-6 rounded font-medium text-base text-white font-inter transition-colors ${
+          className={`w-full py-2 px-6 rounded font-medium text-base text-white has-brand-sans-font-family transition-colors ${
             hasVoted
               ? 'bg-gray-400 dark:bg-gray-600 cursor-not-allowed'
               : 'bg-custom-contrast dark:bg-custom-base-3 hover:bg-black dark:hover:bg-input'

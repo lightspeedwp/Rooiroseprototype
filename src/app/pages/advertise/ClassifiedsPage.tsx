@@ -29,7 +29,7 @@ export const ClassifiedsPage = () => {
 
       <ContentHero
         title="Geklassifiseerde advertensies"
-        subtitle="Bereik duisende lesers nasionaal met 'n bekostigbare geklassifiseerde advertensie in Die Papier — gedruk en aanlyn."
+        subtitle="Bereik duisende lesers nasionaal met 'n bekostigbare geklassifiseerde advertensie in rooi rose — gedruk en aanlyn."
         image={HERO_IMAGES.advertise}
         height="small"
       />
@@ -38,7 +38,7 @@ export const ClassifiedsPage = () => {
         {/* Intro */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-            <em>Die Papier</em> se geklassifiseerde afdeling is die ideale plek om jou boodskap voor die regte mense te kry. 
+            <em>rooi rose</em> se geklassifiseerde afdeling is die ideale plek om jou boodskap voor die regte mense te kry. 
             Of jy nou 'n pos adverteer, eiendom bemark, of 'n diens aanbied — ons bekostigbare tariewe en 
             wye verspreiding verseker dat jou advertensie gesien word.
           </p>
@@ -184,7 +184,7 @@ export const ClassifiedsPage = () => {
             <div>
               <h2 className="text-3xl font-normal mb-4 font-heading" style={{ fontVariationSettings: "var(--fvs-h2)", lineHeight: 'var(--lh-h2)', letterSpacing: 'var(--ls-h2)' }}>Spertyd</h2>
               <p className="text-gray-300 mb-6 leading-relaxed">
-                <em>Die Papier</em> verskyn elke Vrydag. Om jou geklassifiseerde advertensie in die volgende uitgawe te plaas, 
+                <em>rooi rose</em> verskyn elke Vrydag. Om jou geklassifiseerde advertensie in die volgende uitgawe te plaas, 
                 moet ons dit voor Dinsdag 12:00 ontvang.
               </p>
               <div className="space-y-4">
@@ -228,7 +228,7 @@ export const ClassifiedsPage = () => {
           </Link>
         </div>
       </div>
-      <PageFAQSection items={CLASSIFIEDS_FAQS} description="Vrae oor geklassifiseerde advertensies in Die Papier." />
+      <PageFAQSection items={CLASSIFIEDS_FAQS} description="Vrae oor geklassifiseerde advertensies in rooi rose." />
     </div>
   );
 };

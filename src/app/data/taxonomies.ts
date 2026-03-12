@@ -1,5 +1,5 @@
 /**
- * Taxonomy data for Die Papier
+ * Taxonomy data for rooi rose
  * Defines all categories and tags used across content types
  */
 

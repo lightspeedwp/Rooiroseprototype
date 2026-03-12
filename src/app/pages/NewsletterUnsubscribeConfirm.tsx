@@ -44,7 +44,7 @@ export const NewsletterUnsubscribeConfirmPage = () => {
               {/* Warning */}
               <div className="bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-700/40 rounded-lg p-5 mb-8">
                 <p className="text-amber-800 dark:text-amber-300 text-sm leading-relaxed">
-                  <strong>Let wel:</strong> As jy uitskryf, sal jy nie meer <em>Die Papier</em> se nuusbrief ontvang nie. Jy kan enige tyd weer inteken.
+                  <strong>Let wel:</strong> As jy uitskryf, sal jy nie meer <em>rooi rose</em> se nuusbrief ontvang nie. Jy kan enige tyd weer inteken.
                 </p>
               </div>
 

@@ -59,7 +59,7 @@ export const EEditionsPage = () => {
     <div className="min-h-screen bg-gray-50 dark:bg-background">
       <SEO
         title="E-uitgawes"
-        description="Blaai deur Die Papier se e-uitgawes — die volledige koerant in digitale formaat. Koop individuele uitgawes vir R35 elk of teken in."
+        description="Blaai deur rooi rose se e-uitgawes — die volledige koerant in digitale formaat. Koop individuele uitgawes vir R35 elk of teken in."
         keywords="e-uitgawes, digitaal, koerant, lees, argief, die papier"
       />
       {/* Leaderboard Ad */}
@@ -113,7 +113,7 @@ export const EEditionsPage = () => {
                   className="group flex flex-col"
                 >
                   <Link to={`/e-uitgawe/${edition.id}`} className="block relative aspect-[3/4] bg-white dark:bg-card rounded-lg overflow-hidden shadow-lg mb-3 border-2 border-gray-200 dark:border-border group-hover:border-primary dark:group-hover:border-primary transition-[border-color]">
-                    {/* Newspaper cover placeholder with Die Papier branding */}
+                    {/* Newspaper cover placeholder with rooi rose branding */}
                     <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 flex flex-col">
                       {/* Header with logo area */}
                       <div className="bg-primary p-3 text-center">

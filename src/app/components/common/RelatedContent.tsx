@@ -61,7 +61,7 @@ export const RelatedContent = ({
       <Tabs defaultValue={tabs[0].value} className="gap-0">
         <div className="flex items-center justify-between mb-6">
           <h2
-            className="font-normal text-brand-navy dark:text-foreground font-heading"
+            className="font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family"
             style={{
               fontVariationSettings: "var(--fvs-h2)",
               lineHeight: 'var(--lh-h2)',
@@ -105,7 +105,7 @@ export const RelatedContent = ({
                     </span>
                   </div>
                   <div className="p-4">
-                    <h3 className="font-normal text-brand-navy dark:text-foreground text-sm leading-snug line-clamp-2 group-hover:text-brand-red transition-colors mb-2 font-heading" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)' }}>
+                    <h3 className="font-normal text-brand-navy dark:text-foreground text-sm leading-snug line-clamp-2 group-hover:text-brand-red transition-colors mb-2 has-brand-serif-font-family" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)' }}>
                       {article.title}
                     </h3>
                     <div className="flex items-center gap-2 text-xs text-gray-400">
@@ -144,7 +144,7 @@ export const RelatedContent = ({
                       <span className="bg-brand-red text-white text-[10px] font-bold px-2 py-0.5 rounded">{event.date}</span>
                       <span className="text-xs text-gray-500 dark:text-gray-400">{event.category}</span>
                     </div>
-                    <h3 className="font-normal text-brand-navy dark:text-foreground text-sm leading-snug line-clamp-2 group-hover:text-brand-red transition-colors mb-1 font-heading" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)' }}>
+                    <h3 className="font-normal text-brand-navy dark:text-foreground text-sm leading-snug line-clamp-2 group-hover:text-brand-red transition-colors mb-1 has-brand-serif-font-family" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)' }}>
                       {event.title}
                     </h3>
                     <p className="text-xs text-gray-400">{event.location}</p>
@@ -173,7 +173,7 @@ export const RelatedContent = ({
                     />
                   </div>
                   <div className="p-3">
-                    <h3 className="font-normal text-brand-navy dark:text-foreground text-xs leading-snug line-clamp-1 group-hover:text-brand-red transition-colors font-heading" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)' }}>
+                    <h3 className="font-normal text-brand-navy dark:text-foreground text-xs leading-snug line-clamp-1 group-hover:text-brand-red transition-colors has-brand-serif-font-family" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)' }}>
                       {edition.title}
                     </h3>
                     <p className="text-[10px] text-gray-400 mt-1">{edition.date}</p>

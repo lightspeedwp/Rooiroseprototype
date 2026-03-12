@@ -3,7 +3,7 @@ import { ADS } from '../../data/ads';
 
 /**
  * AdSlot Component
- * Reusable ad placeholder for Die Papier
+ * Reusable ad placeholder for *rooi rose*
  * Shows mock ads in development, will be replaced with GAM tags in production
  */
 

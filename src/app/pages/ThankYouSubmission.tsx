@@ -38,7 +38,7 @@ export const ThankYouSubmissionPage = () => {
                   <div>
                     <p className="text-green-800 dark:text-green-300 font-medium mb-1">Indiening ontvang</p>
                     <p className="text-green-700 dark:text-green-400 text-sm leading-relaxed">
-                      Dankie dat jy <em>Die Papier</em> se redaksie gekontak het. Jou indiening is suksesvol ontvang en sal deur ons span hersien word.
+                      Dankie dat jy <em>rooi rose</em> se redaksie gekontak het. Jou indiening is suksesvol ontvang en sal deur ons span hersien word.
                     </p>
                   </div>
                 </div>
@@ -49,7 +49,7 @@ export const ThankYouSubmissionPage = () => {
                     <p className="text-blue-900 dark:text-blue-300 font-medium text-sm mb-1">Wat gebeur volgende?</p>
                     <ul className="text-blue-700 dark:text-blue-400 text-sm space-y-1.5 list-disc list-inside">
                       <li>Ons redaksie sal jou indiening binne <strong>2-3 werksdae</strong> hersien.</li>
-                      <li>Indien goedgekeur, sal dit in <em>Die Papier</em> gepubliseer word.</li>
+                      <li>Indien goedgekeur, sal dit in <em>rooi rose</em> gepubliseer word.</li>
                       <li>Ons mag jou kontak vir meer inligting of bevestiging.</li>
                       <li>Nie alle inskrywings word noodwendig gepubliseer nie.</li>
                     </ul>
@@ -74,7 +74,7 @@ export const ThankYouSubmissionPage = () => {
           </div>
         </div>
       </PageContainer>
-      <PageFAQSection items={THANKYOU_SUBMISSION_FAQS} description="Vrae oor indiening by Die Papier." />
+      <PageFAQSection items={THANKYOU_SUBMISSION_FAQS} description="Vrae oor indiening by rooi rose." />
     </div>
   );
 };

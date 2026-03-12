@@ -109,7 +109,7 @@ export const SitemapPage = () => {
             Inhoudsopgawe
           </h1>
           <p className="text-gray-600 dark:text-gray-400 text-lg">
-            'n Volledige oorsig van alle bladsye en inhoud op <em>Die Papier</em>.
+            'n Volledige oorsig van alle bladsye en inhoud op <em>rooi rose</em>.
           </p>
         </header>
 

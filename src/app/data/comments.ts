@@ -8,7 +8,7 @@ export const COMMENTS_UI = {
   },
   loggedOut: {
     title: "Sluit aan by die gesprek",
-    description: "Om kommentaar te lewer op artikels moet jy geregistreer en aangemeld wees. Registrasie is gratis en neem slegs 'n minuut. Deur te registreer kan jy deelneem aan besprekings, artikels stoor en 'n persoonlike leeservaring geniet op <em>Die Papier</em>.",
+    description: "Om kommentaar te lewer op artikels moet jy geregistreer en aangemeld wees. Registrasie is gratis en neem slegs 'n minuut. Deur te registreer kan jy deelneem aan besprekings, artikels stoor en 'n persoonlike leeservaring geniet op <em>rooi rose</em>.",
     registerButton: "Registreer gratis",
     loginPrompt: "Reeds geregistreer?",
     loginLink: "Meld aan"

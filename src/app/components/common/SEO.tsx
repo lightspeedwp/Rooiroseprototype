@@ -28,8 +28,8 @@ interface SEOProps {
  */
 export const SEO = ({
   title,
-  description = "Die Papier - Jou betroubare bron vir die jongste Afrikaanse nuus, sport, sake, lewenstyl en meer.",
-  keywords = "nuus, afrikaans, suid-afrika, sport, sake, lewenstyl, opinie",
+  description = "*rooi rose* - Jou betroubare bron vir die jongste Afrikaanse nuus, lewenstyl, sake en meer.",
+  keywords = "nuus, afrikaans, suid-afrika, lewenstyl, sake, tydskrif, opinie",
   image = "/og-image.jpg", // Add default OG image to public folder
   author,
   publishedTime,
@@ -41,7 +41,7 @@ export const SEO = ({
   const location = useLocation();
   
   // Construct full title
-  const fullTitle = title ? `${title} | Die Papier` : 'Die Papier - Afrikaanse Nuusblad';
+  const fullTitle = title ? `${title} | *rooi rose*` : '*rooi rose* - Afrikaanse Tydskrif';
   
   // Construct canonical URL
   const baseUrl = 'https://diepapier.co.za'; // Update with your actual domain
@@ -92,7 +92,7 @@ export const SEO = ({
     updateMetaTag('og:image', fullImageUrl, true);
     updateMetaTag('og:url', canonicalUrl, true);
     updateMetaTag('og:type', type, true);
-    updateMetaTag('og:site_name', 'Die Papier', true);
+    updateMetaTag('og:site_name', '*rooi rose*', true);
     updateMetaTag('og:locale', 'af_ZA', true);
 
     // Twitter Card Tags
@@ -142,8 +142,8 @@ export const SEO = ({
  */
 export const DefaultSEO = () => (
   <SEO
-    description="Die Papier - Jou betroubare bron vir die jongste Afrikaanse nuus oor plaaslike en nasionale gebeure, sport, sake, lewenstyl, opinie en meer."
-    keywords="nuus, afrikaans, suid-afrika, sport, sake, lewenstyl, opinie, netnuus, skole, e-uitgawes"
+    description="*rooi rose* - Jou betroubare bron vir die jongste Afrikaanse nuus oor lewenstyl, sake, vermaak, opinie en meer."
+    keywords="nuus, afrikaans, suid-afrika, lewenstyl, sake, tydskrif, opinie, rooi rose"
   />
 );
 
@@ -176,7 +176,7 @@ export const generateArticleStructuredData = (article: {
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Die Papier",
+      "name": "*rooi rose*",
       "logo": {
         "@type": "ImageObject",
         "url": `${baseUrl}/logo.png`

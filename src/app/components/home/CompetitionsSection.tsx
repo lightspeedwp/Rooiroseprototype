@@ -20,7 +20,7 @@ export const CompetitionsSection = () => {
             <Gift className="text-orange-600" size={32} />
             {/* V2: editorial H2 — Roboto Serif font-normal, GRAD -50 */}
             <h2
-              className="font-normal text-brand-navy dark:text-foreground font-heading"
+              className="font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family"
               style={{
                 fontVariationSettings: "var(--fvs-h2)",
                 lineHeight: 'var(--lh-h2)',
@@ -67,9 +67,9 @@ export const CompetitionsSection = () => {
                   {featured.category}
                 </span>
 
-                {/* V2: featured card H3 — Roboto Serif font-normal, GRAD -50 */}
+                {/* V2: featured card H3 — Playfair Display SC font-normal, GRAD -50 */}
                 <h3
-                  className="font-normal mb-4 font-heading text-white"
+                  className="font-normal mb-4 has-brand-serif-font-family text-white"
                   style={{
                     fontVariationSettings: "var(--fvs-h3)",
                     lineHeight: 'var(--lh-h3)',
@@ -122,7 +122,7 @@ export const CompetitionsSection = () => {
               <div className="p-5">
                 {/* Card H3 — compact article card, font-normal per V2 */}
                 <h3
-                  className="font-normal text-brand-navy dark:text-foreground mb-3 line-clamp-2 group-hover:text-brand-red transition-colors font-heading"
+                  className="font-normal text-brand-navy dark:text-foreground mb-3 line-clamp-2 group-hover:text-brand-red transition-colors has-brand-serif-font-family"
                   style={{ fontVariationSettings: "var(--fvs-h4)", lineHeight: 'var(--lh-h4)', letterSpacing: 'var(--ls-h4)', fontSize: 'var(--text-h4)' }}
                 >
                   {comp.title}
@@ -150,9 +150,9 @@ export const CompetitionsSection = () => {
         <div className="mt-8 bg-gradient-to-r from-yellow-100 dark:from-competition-dark-from to-orange-100 dark:to-competition-dark-to rounded-lg p-6 border-2 border-yellow-300 dark:border-yellow-700/50">
           <div className="flex items-center justify-between flex-wrap gap-4">
             <div>
-              {/* V2: CTA H3 — Roboto Serif font-normal, GRAD -50 */}
+              {/* V2: CTA H3 — Playfair Display SC font-normal, GRAD -50 */}
               <h3
-                className="font-normal text-brand-navy dark:text-foreground mb-2 font-heading"
+                className="font-normal text-brand-navy dark:text-foreground mb-2 has-brand-serif-font-family"
                 style={{
                   fontVariationSettings: "var(--fvs-h3)",
                   lineHeight: 'var(--lh-h3)',

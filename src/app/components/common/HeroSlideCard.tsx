@@ -73,7 +73,7 @@ export const HeroSlideCard = ({
             {category}
           </span>
           <h2
-            className="text-white font-normal font-heading mb-3 max-w-4xl text-[36px]"
+            className="text-white font-normal has-brand-serif-font-family mb-3 max-w-4xl text-[36px]"
             style={{
               fontVariationSettings: "'GRAD' 0, 'wdth' 64, 'opsz' 48",
               lineHeight: '1.08',
@@ -83,7 +83,7 @@ export const HeroSlideCard = ({
           >
             {title}
           </h2>
-          <p className="text-gray-300 text-sm md:text-base font-normal font-inter leading-relaxed mb-4 line-clamp-2 max-w-3xl">
+          <p className="text-gray-300 text-sm md:text-base font-normal has-brand-sans-font-family leading-relaxed mb-4 line-clamp-2 max-w-3xl">
             {excerpt}
           </p>
           <div className="flex items-center gap-4 text-xs text-gray-400">
@@ -106,7 +106,7 @@ export const HeroSlideCard = ({
           {category}
         </span>
         <h2
-          className="text-brand-navy dark:text-foreground font-normal font-heading mb-1.5 text-2xl"
+          className="text-brand-navy dark:text-foreground font-normal has-brand-serif-font-family mb-1.5 text-2xl"
           style={{
             fontVariationSettings: "'GRAD' 0, 'wdth' 64, 'opsz' 48",
             lineHeight: '1.15',
@@ -115,7 +115,7 @@ export const HeroSlideCard = ({
         >
           {title}
         </h2>
-        <p className="text-gray-600 dark:text-gray-400 text-sm font-normal font-inter leading-relaxed mb-2 line-clamp-2 max-w-3xl">
+        <p className="text-gray-600 dark:text-gray-400 text-sm font-normal has-brand-sans-font-family leading-relaxed mb-2 line-clamp-2 max-w-3xl">
           {excerpt}
         </p>
         <div className="flex items-center gap-4 text-xs text-gray-500 dark:text-gray-400">

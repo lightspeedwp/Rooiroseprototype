@@ -81,7 +81,7 @@ export class ErrorBoundary extends Component<Props, State> {
             </div>
             
             <h1
-              className="font-normal text-brand-navy dark:text-foreground mb-4 font-heading"
+              className="font-normal text-brand-navy dark:text-foreground mb-4 has-brand-serif-font-family"
               style={{
                 fontVariationSettings: "var(--fvs-h1)",
                 lineHeight: 'var(--lh-h1)',

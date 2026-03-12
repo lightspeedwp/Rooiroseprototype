@@ -1,5 +1,5 @@
 /**
- * Print Stylesheet for Die Papier
+ * Print Stylesheet for rooi rose
  * Optimizes article pages for printing
  */
 
@@ -25,7 +25,7 @@
     display: none !important;
   }
 
-  /* Hide specific Die Papier elements */
+  /* Hide specific rooi rose elements */
   .topbar,
   .header,
   .footer,
@@ -228,9 +228,9 @@
     margin: 2cm;
   }
 
-  /* Add "Die Papier" watermark/header */
+  /* Add "rooi rose" watermark/header */
   body::before {
-    content: "Die Papier";
+    content: "rooi rose";
     display: block;
     text-align: center;
     font-size: 14pt;

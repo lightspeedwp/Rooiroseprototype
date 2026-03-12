@@ -53,7 +53,7 @@ export const AccountActivationPage = () => {
                 <div className="p-8 md:p-10 text-center">
                   <div className="bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-900/50 rounded-lg p-6 mb-8">
                     <p className="text-green-800 dark:text-green-300">
-                      Welkom by <em>Die Papier</em>! Jou rekening is nou aktief en gereed om te gebruik. Jy kan nou inteken, kommentaar lewer en toegang tot eksklusiewe inhoud kry.
+                      Welkom by <em>rooi rose</em>! Jou rekening is nou aktief en gereed om te gebruik. Jy kan nou inteken, kommentaar lewer en toegang tot eksklusiewe inhoud kry.
                     </p>
                   </div>
 

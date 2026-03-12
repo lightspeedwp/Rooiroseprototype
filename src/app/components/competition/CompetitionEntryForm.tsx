@@ -46,7 +46,7 @@ export const CompetitionEntryForm = () => {
           </div>
         </div>
         <div className="space-y-2">
-          <Label htmlFor="answer">Beantwoord die vraag: Waar kan jy <em>Die Papier</em> koop? *</Label>
+          <Label htmlFor="answer">Beantwoord die vraag: Waar kan jy <em>rooi rose</em> koop? *</Label>
           <Input
             id="answer"
             required
@@ -68,7 +68,7 @@ export const CompetitionEntryForm = () => {
             <Link to="/kompetisie-terme-en-voorwaardes" className="text-custom-primary hover:underline font-bold">
               kompetisie terme en voorwaardes
             </Link>{' '}
-            en gee toestemming dat <em>Die Papier</em> my mag kontak. *
+            en gee toestemming dat <em>rooi rose</em> my mag kontak. *
           </label>
         </div>
 

@@ -31,13 +31,10 @@ export const PostCostOfLiving = () => {
         
         <div className="flex flex-col items-center gap-2">
           <span className="text-primary font-heading font-normal text-3xl tracking-tight italic" style={{ fontVariationSettings: "var(--fvs-h3)" }}>
-            Die Papier
+            rooi rose
           </span>
           <p className="font-heading font-normal text-sm text-black max-w-[200px] leading-tight" style={{ fontVariationSettings: "var(--fvs-h4)" }}>
             {SOCIAL_POSTS.costOfLiving.subtitle}
-          </p>
-          <p className="font-heading font-normal text-xs text-black/70 mt-1">
-            {SOCIAL_POSTS.costOfLiving.date}
           </p>
         </div>
       </div>
