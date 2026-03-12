@@ -185,6 +185,6 @@ export function getArticleContent(id: number): string {
     <h2 class="text-2xl font-bold text-[var(--wp--preset--color--secondary)] mt-8 mb-4 font-heading">Meer Besonderhede</h2>
     <p class="mb-4">Ons berig sal voortdurend opgedateer word soos meer inligting beskikbaar word. Bly ingeskakel vir die jongste ontwikkelings.</p>
     
-    <p class="mb-4">Vir meer inligting, kontak die redaksie by <a href="mailto:redaksie@diepapier.co.za">redaksie@diepapier.co.za</a></p>
+    <p class="mb-4">Vir meer inligting, kontak die redaksie by <a href="mailto:redaksie@rooirose.co.za">redaksie@rooirose.co.za</a></p>
   `;
 }

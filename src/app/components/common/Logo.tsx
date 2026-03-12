@@ -1,5 +1,4 @@
 import React from 'react';
-import rooiRoseLogoSvg from '../../../imports/rooi-rose-logo.svg';
 
 interface LogoProps {
   className?: string;
@@ -7,15 +6,27 @@ interface LogoProps {
 }
 
 export const Logo = ({ className = "h-12 w-auto", variant = 'default' }: LogoProps) => {
-  // SVG logo with built-in dark mode support
-  // The SVG contains red text which works on both light and dark backgrounds
+  // Inline SVG for better reliability and dark mode support
   return (
-    <img 
-      src={rooiRoseLogoSvg}
-      alt="rooi rose"
+    <svg 
+      xmlns="http://www.w3.org/2000/svg" 
+      viewBox="0 0 400 80" 
+      fill="none"
       className={className}
-      loading="eager"
-      decoding="sync"
-    />
+      aria-label="rooi rose"
+      role="img"
+    >
+      <text 
+        x="10" 
+        y="55" 
+        fontFamily="system-ui, -apple-system, sans-serif" 
+        fontSize="48" 
+        fontWeight="700" 
+        fill="#e01e12" 
+        letterSpacing="-0.02em"
+      >
+        rooi rose
+      </text>
+    </svg>
   );
 };

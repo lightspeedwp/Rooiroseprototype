@@ -47,7 +47,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     name: "Barnard Beukman",
     role: "Redakteur",
     bio: "Ervare joernalis, ook voorheen as uitgewer en redakteur.",
-    email: "lesers@diepapier.co.za",
+    email: "lesers@rooirose.co.za",
     image: barnardImg,
     department: 'redaksioneel',
     displayOrder: 1
@@ -57,7 +57,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     name: "Lucia Poolman",
     role: "Nuusredakteur",
     bio: "Voorheen tydskrifredakteur en akademikus. Nou tweede in bevel.",
-    email: "nuus@diepapier.co.za",
+    email: "nuus@rooirose.co.za",
     image: luciaImg,
     department: 'redaksioneel',
     displayOrder: 2
@@ -67,7 +67,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     name: "Vernon Janse van Rensburg",
     role: "Inhoudsredakteur",
     bio: "Bekroon vir uitleg en opskrifte.",
-    email: "inhoud@diepapier.co.za",
+    email: "inhoud@rooirose.co.za",
     image: vernonImg,
     department: 'redaksioneel',
     displayOrder: 3
@@ -77,7 +77,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     name: "Gerrie Lotriet",
     role: "Uitlegkunstenaar",
     bio: "Jare ervaring van drukuitleg en elektroniese grafika.",
-    email: "uitleg@diepapier.co.za",
+    email: "uitleg@rooirose.co.za",
     image: gerrieImg,
     department: 'redaksioneel',
     displayOrder: 4
@@ -87,7 +87,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     name: "Ilse Salzwedel",
     role: "Hoofsub",
     bio: "Jare lange ervaring in tydskrifte, boeke, burgerlike aktivisme en radio.",
-    email: "sub@diepapier.co.za",
+    email: "sub@rooirose.co.za",
     image: ilseImg,
     department: 'redaksioneel',
     displayOrder: 5
@@ -98,7 +98,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     name: "Jana Marx",
     role: "Politieke redakteur",
     bio: "Bekroon op vele terreine van ondersoekende joernalistiek.",
-    email: "politiek@diepapier.co.za",
+    email: "politiek@rooirose.co.za",
     image: janaImg,
     department: 'verslaggewers',
     displayOrder: 6
@@ -108,7 +108,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     name: "Stehan Schoeman",
     role: "Sportredakteur",
     bio: "Veelsydige joernalis met groot kennis van en passie vir sport.",
-    email: "sport@diepapier.co.za",
+    email: "sport@rooirose.co.za",
     image: stehanImg,
     department: 'verslaggewers',
     displayOrder: 7
@@ -118,7 +118,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     name: "Bohemia Jumatt",
     role: "Senior verslaggewer",
     bio: "Reeds merk as ondersoekende joernalis begin maak en sopas vereer deur die Afrikaans Taalraad.",
-    email: "bohemia@diepapier.co.za",
+    email: "bohemia@rooirose.co.za",
     image: bohemiaImg,
     department: 'verslaggewers',
     displayOrder: 8
@@ -128,7 +128,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     name: "Rasaad Adams",
     role: "Senior verslaggewer",
     bio: "Veelsydige joernalis wat reeds blootstelling aan nasionale, elektroniese en plaaslike media het.",
-    email: "rasaad@diepapier.co.za",
+    email: "rasaad@rooirose.co.za",
     image: rasaadImg,
     department: 'verslaggewers',
     displayOrder: 9
@@ -137,8 +137,8 @@ export const TEAM_MEMBERS: TeamMember[] = [
     id: "kaylie-joubert",
     name: "Kaylie Joubert",
     role: "Verslaggewer",
-    bio: "Behaal haar graad in kommunikasie (cum laude) terwyl sy by ’n kunsgalery werk.",
-    email: "kaylie@diepapier.co.za",
+    bio: "Behaal haar graad in kommunikasie (cum laude) terwyl sy by 'n kunsgalery werk.",
+    email: "kaylie@rooirose.co.za",
     image: kaylieImg,
     department: 'verslaggewers',
     displayOrder: 10
@@ -148,7 +148,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     name: "Shanell Binedell",
     role: "Verslaggewer",
     bio: "Redakteur van die NWU-studentekoerant, Die Wapad, terwyl sy joernalistiek studeer het.",
-    email: "shanell@diepapier.co.za",
+    email: "shanell@rooirose.co.za",
     image: shanellImg,
     department: 'verslaggewers',
     displayOrder: 11

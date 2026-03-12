@@ -24,7 +24,7 @@ export default function TuesdayNewsletterTemplate() {
           <span className="text-sm text-gray-500">17 Desember 2025</span>
         </div>
         <div className="text-xs text-gray-400 mb-2">
-          Antwoord aan: <a href="mailto:lesers@diepapier.co.za" className="text-blue-500 hover:underline">lesers@diepapier.co.za</a>
+          Antwoord aan: <a href="mailto:lesers@rooirose.co.za" className="text-blue-500 hover:underline">lesers@rooirose.co.za</a>
         </div>
       </div>
 

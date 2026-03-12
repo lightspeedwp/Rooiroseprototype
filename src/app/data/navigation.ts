@@ -160,7 +160,7 @@ export const FOOTER_CONTENT = {
   contact: {
     title: "Kontak",
     address: "Loft Office East (LOE4), Tweede verdieping, The Zone, Oxfordstraat 187, Rosebank, 2196",
-    email: "lesers@diepapier.co.za"
+    email: "lesers@rooirose.co.za"
   },
   accreditations: {
     title: "Akkreditasies",
@@ -184,7 +184,7 @@ export const FOOTER_NAVIGATION = {
     youtube: "https://www.youtube.com/@diepapier",
     linkedin: "https://linkedin.com/company/diepapier/",
     tiktok: "https://www.tiktok.com/@diepapier",
-    email: "mailto:lesers@diepapier.co.za"
+    email: "mailto:lesers@rooirose.co.za"
   },
   copyright: `© ${new Date().getFullYear()} *rooi rose*. Alle regte voorbehou.`
 };

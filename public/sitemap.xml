@@ -1,172 +1,200 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Main Pages -->
+  <!-- Homepage -->
   <url>
-    <loc>https://diepapier.co.za/</loc>
+    <loc>https://rooirose.co.za/</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- Main Lifestyle Categories (rooi rose Magazine) -->
   <url>
-    <loc>https://diepapier.co.za/oor-ons</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://diepapier.co.za/kontak</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://diepapier.co.za/vrae</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://diepapier.co.za/adverteer</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://diepapier.co.za/inteken</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://diepapier.co.za/nuusbrief-inteken</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <!-- Categories -->
-  <url>
-    <loc>https://diepapier.co.za/nuus</loc>
-    <changefreq>hourly</changefreq>
+    <loc>https://rooirose.co.za/kos</loc>
+    <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://diepapier.co.za/sport</loc>
-    <changefreq>hourly</changefreq>
+    <loc>https://rooirose.co.za/mode</loc>
+    <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://diepapier.co.za/sake</loc>
+    <loc>https://rooirose.co.za/skoonheid</loc>
     <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://diepapier.co.za/skole</loc>
+    <loc>https://rooirose.co.za/gesondheid</loc>
     <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://diepapier.co.za/leefstyl</loc>
+    <loc>https://rooirose.co.za/bekendes</loc>
     <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://diepapier.co.za/dink</loc>
+    <loc>https://rooirose.co.za/leefstyl</loc>
     <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://diepapier.co.za/gebeure</loc>
+    <loc>https://rooirose.co.za/jou-lewe</loc>
     <changefreq>daily</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://diepapier.co.za/multimedia</loc>
+    <loc>https://rooirose.co.za/ontspanning</loc>
     <changefreq>daily</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://diepapier.co.za/doodsberrigte</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://diepapier.co.za/e-uitgawes</loc>
+    <loc>https://rooirose.co.za/wen</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://diepapier.co.za/kompetisies</loc>
+    <loc>https://rooirose.co.za/rooiwarm-wenners</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- E-Editions -->
+  <url>
+    <loc>https://rooirose.co.za/e-tydskrif</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
   </url>
 
-  <!-- Policies -->
+  <!-- About & Contact Pages -->
   <url>
-    <loc>https://diepapier.co.za/beleid</loc>
+    <loc>https://rooirose.co.za/oor-ons</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://diepapier.co.za/beleid/privaatheidsbeleid</loc>
+    <loc>https://rooirose.co.za/kontak</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://diepapier.co.za/beleid/terme-en-voorwaardes</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://diepapier.co.za/beleid/koekiebeleid</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://diepapier.co.za/beleid/paia</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://diepapier.co.za/beleid/perskode</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://diepapier.co.za/beleid/advertensie-riglyne</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://diepapier.co.za/beleid/gebruikersreels</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://diepapier.co.za/beleid/ki-beleid</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://diepapier.co.za/beleid/kommentaarbeleid</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://diepapier.co.za/beleid/terugsendingsbeleid</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://diepapier.co.za/beleid/klagteprosedure</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-
-  <!-- Submit -->
-  <url>
-    <loc>https://diepapier.co.za/stuur-in</loc>
+    <loc>https://rooirose.co.za/vrae</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
-  <!-- Skolerugby -->
+  <!-- Advertising & Subscriptions -->
   <url>
-    <loc>https://diepapier.co.za/skolerugby</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <loc>https://rooirose.co.za/adverteer</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://rooirose.co.za/inteken</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rooirose.co.za/nuusbrief-inteken</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Submit Content -->
+  <url>
+    <loc>https://rooirose.co.za/stuur-in</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Legal & Policy Pages -->
+  <url>
+    <loc>https://rooirose.co.za/beleid</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://rooirose.co.za/beleid/privaatheidsbeleid</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://rooirose.co.za/beleid/terme-en-voorwaardes</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://rooirose.co.za/beleid/koekiebeleid</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://rooirose.co.za/beleid/paia</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://rooirose.co.za/beleid/perskode</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://rooirose.co.za/beleid/advertensie-riglyne</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://rooirose.co.za/beleid/gebruikersreels</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://rooirose.co.za/beleid/ki-beleid</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://rooirose.co.za/beleid/kommentaarbeleid</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://rooirose.co.za/beleid/terugsendingsbeleid</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://rooirose.co.za/beleid/klagteprosedure</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- WooCommerce Pages -->
+  <url>
+    <loc>https://rooirose.co.za/my-account</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://rooirose.co.za/cart</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://rooirose.co.za/checkout</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://rooirose.co.za/shop</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Developer Tools (excluded from production sitemap, listed here for documentation) -->
+  <!-- 
+  Note: /ontwikkelaar/* routes are development tools only and should be 
+  blocked from search engines via robots.txt in production WordPress site.
+  Examples: /ontwikkelaar/patrone, /ontwikkelaar/sjablone, etc.
+  -->
 </urlset>

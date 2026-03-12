@@ -44,7 +44,7 @@ export const SEO = ({
   const fullTitle = title ? `${title} | *rooi rose*` : '*rooi rose* - Afrikaanse Tydskrif';
   
   // Construct canonical URL
-  const baseUrl = 'https://diepapier.co.za'; // Update with your actual domain
+  const baseUrl = 'https://rooirose.co.za'; // Update with your actual domain
   const canonicalUrl = canonical || `${baseUrl}${location.pathname}`;
   
   // Construct full image URL
@@ -161,7 +161,7 @@ export const generateArticleStructuredData = (article: {
   imageUrl: string;
   category: string;
 }) => {
-  const baseUrl = 'https://diepapier.co.za';
+  const baseUrl = 'https://rooirose.co.za';
   
   const structuredData = {
     "@context": "https://schema.org",

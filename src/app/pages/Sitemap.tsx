@@ -42,6 +42,7 @@ import {
   SITEMAP_COMPETITION_PAGES,
   SITEMAP_LEGAL_PAGES,
   SITEMAP_SUBMIT,
+  SITEMAP_DEV_TOOLS,
 } from '../data/navigation';
 
 // ─── Helper ─────────────────────────────────────────────
@@ -401,6 +402,29 @@ export const SitemapPage = () => {
                   </>
                 )}
               </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ─── Developer Tools ─── */}
+        <section className="bg-white dark:bg-card p-8 rounded-lg shadow-sm dark:shadow-[var(--shadow-dark-100)] border border-gray-100 dark:border-border mb-8">
+          <h2 className="text-2xl font-normal text-brand-navy dark:text-foreground mb-6 font-heading border-b border-gray-100 dark:border-border pb-4 flex items-center gap-2" style={{ fontVariationSettings: "var(--fvs-h2)", lineHeight: 'var(--lh-h2)', letterSpacing: 'var(--ls-h2)', fontSize: 'var(--text-h2)' }}>
+            <Wrench size={24} className="text-primary dark:text-primary" />
+            Ontwikkelaar-gereedskap ({SITEMAP_DEV_TOOLS.length})
+          </h2>
+          <p className="text-gray-600 dark:text-gray-400 text-sm mb-6">
+            Interne gereedskap vir ontwikkelaars, ontwerpers en inhoudsredakteurs om die stelsel te bestuur.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+            {SITEMAP_DEV_TOOLS.map((tool) => (
+              <Link
+                key={tool.path}
+                to={tool.path}
+                className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary flex items-center gap-2 transition-colors text-sm p-2 rounded hover:bg-gray-50 dark:hover:bg-muted"
+              >
+                <ChevronRight size={14} className="text-gray-400 dark:text-gray-500 shrink-0" />
+                {tool.name}
+              </Link>
             ))}
           </div>
         </section>

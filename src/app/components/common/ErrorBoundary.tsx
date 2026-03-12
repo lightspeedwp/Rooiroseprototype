@@ -137,8 +137,8 @@ export class ErrorBoundary extends Component<Props, State> {
 
             <p className="mt-8 text-sm text-gray-500">
               As die probleem voortduur, kontak ons gerus by{' '}
-              <a href="mailto:redaksie@diepapier.co.za" className="text-brand-red hover:underline">
-                redaksie@diepapier.co.za
+              <a href="mailto:redaksie@rooirose.co.za" className="text-brand-red hover:underline">
+                redaksie@rooirose.co.za
               </a>
             </p>
           </div>

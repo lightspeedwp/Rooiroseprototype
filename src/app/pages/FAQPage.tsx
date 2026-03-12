@@ -4,7 +4,7 @@ import { SEO } from '../components/common/SEO';
 import { PageContainer } from '../components/common/PageContainer';
 import { ContentHero } from '../components/patterns/ContentHero';
 import { renderWithBrandItalics } from '../utils/brandItalics';
-import { HERO_IMAGES } from '../data/images';
+import { HERO_IMAGES } from '../data/heroImages';
 import {
   ABOUT_FAQS,
   CONTACT_FAQS,
