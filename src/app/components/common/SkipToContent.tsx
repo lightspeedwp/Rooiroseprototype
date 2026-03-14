@@ -9,7 +9,7 @@ export const SkipToContent = () => {
   return (
     <a
       href="#main-content"
-      className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-6 focus:py-3 focus:bg-brand-red focus:text-white focus:font-bold focus:rounded-md focus:shadow-lg focus:outline-none focus:ring-4 focus:ring-brand-red/50 transition-[transform,opacity]"
+      className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-6 focus:py-3 focus:bg-brand-red focus:text-white focus:font-bold focus:rounded-md focus:shadow-lg focus-brand transition-[transform,opacity]"
     >
       Spring na hoofinhoud
     </a>

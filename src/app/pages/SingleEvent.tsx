@@ -12,6 +12,13 @@ import { renderWithBrandItalics } from '../utils/brandItalics';
 import { CATEGORY_ARTICLES } from '../data/categoryArticles';
 import { LATEST_EDITIONS } from '../data/eEditions';
 import { injectEventSchema, cleanupEventSchema } from '../utils/structuredData';
+import { ImageWithFallback } from '../components/figma/ImageWithFallback';
+
+/* ── rooi rose Magazine Single Event Page ──────────────────────────────
+ * Editorial design: Full-bleed hero, event details, map integration
+ * Typography: Playfair Display SC headings
+ * Layout: Hero image + details card + description + map + RSVP
+ * ────────────────────────────────────────────────────────────── */
 
 export const SingleEventPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -34,8 +41,8 @@ export const SingleEventPage = () => {
 
   if (!event) {
     return (
-      <div className="min-h-screen bg-gray-50 dark:bg-background flex flex-col items-center justify-center p-4">
-        <h2 className="text-2xl font-normal text-brand-navy dark:text-foreground mb-4 font-heading" style={{ fontVariationSettings: "var(--fvs-h2)", lineHeight: 'var(--lh-h2)', letterSpacing: 'var(--ls-h2)', fontSize: 'var(--text-h2)' }}>Gebeurtenis nie gevind nie</h2>
+      <div className="min-h-screen bg-white dark:bg-background flex flex-col items-center justify-center p-4">
+        <h2 className="text-3xl font-normal text-brand-navy dark:text-foreground mb-6 has-brand-serif-font-family" style={{ fontVariationSettings: "var(--fvs-h2)", lineHeight: 'var(--lh-h2)', letterSpacing: 'var(--ls-h2)', fontSize: 'var(--text-h2)' }}>Gebeurtenis nie gevind nie</h2>
         <Button onClick={() => navigate('/gebeure')} className="bg-primary hover:bg-primary/90">
           Terug na Gebeure
         </Button>
@@ -44,7 +51,7 @@ export const SingleEventPage = () => {
   }
 
   return (
-    <div className="bg-gray-50 dark:bg-background min-h-screen pb-20">
+    <div className="bg-white dark:bg-background min-h-screen">
       <SEO 
         title={`${event.title} | Gebeure | rooi rose`}
         description={event.description}
@@ -53,6 +60,59 @@ export const SingleEventPage = () => {
 
       {/* Leaderboard Ad */}
       <LeaderboardAd section="gebeure" />
+
+      {/* Full-bleed Hero Image */}
+      <div className="relative w-full h-[50vh] lg:h-[65vh] overflow-hidden">
+        <ImageWithFallback
+          src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1600&auto=format&fit=crop"
+          alt={event.title}
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+        
+        {/* Hero Content - Centered */}
+        <div className="absolute inset-0 flex items-end">
+          <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-12 pb-12 lg:pb-16">
+            {/* Category & Free Badge */}
+            <div className="flex items-center gap-3 mb-4">
+              <span className="bg-brand-red text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide">
+                {event.category}
+              </span>
+              {event.isFree && (
+                <span className="bg-green-500 text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide">
+                  Gratis
+                </span>
+              )}
+            </div>
+
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-4 has-brand-serif-font-family uppercase tracking-wider max-w-4xl" style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}>
+              {event.title}
+            </h1>
+
+            {/* Event Meta - White text on dark gradient */}
+            <div className="flex flex-wrap gap-6 text-white/90 text-base lg:text-lg">
+              <div className="flex items-center gap-2">
+                <CalendarIcon size={20} />
+                <span className="font-medium">{event.date}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Clock size={20} />
+                <span className="font-medium">{event.time}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <MapPin size={20} />
+                <span className="font-medium">{event.location}</span>
+              </div>
+              {event.price && (
+                <div className="flex items-center gap-2">
+                  <CreditCard size={20} />
+                  <span className="font-medium">{event.price}</span>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* Full width left-aligned breadcrumbs */}
       <div className="w-full bg-white dark:bg-background border-b border-gray-200 dark:border-border py-3">
@@ -75,11 +135,11 @@ export const SingleEventPage = () => {
         </div>
       </div>
       
-      <div className="alignwide py-8">
-        <div className="flex flex-col lg:flex-row gap-8">
+      <div className="alignwide py-12">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
           
           {/* Main Content Column */}
-          <div className="flex-1 min-w-0 space-y-8">
+          <div className="flex-1 min-w-0 space-y-10">
             
             {/* Header Section */}
             <div className="bg-white dark:bg-card p-8 rounded-lg shadow-sm dark:shadow-[var(--shadow-dark-200)] border border-gray-100 dark:border-border">

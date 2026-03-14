@@ -11,6 +11,12 @@ import { renderWithBrandItalics } from '../utils/brandItalics';
 import { SEO } from '../components/common/SEO';
 import { PageContainer } from '../components/common/PageContainer';
 
+/* ── rooi rose Magazine Single Multimedia Page ──────────────────────────────
+ * Editorial design: Video/Photo/Podcast detail view
+ * Typography: Playfair Display SC headings, Karla body
+ * Layout: Full-bleed hero + max-width content + sidebar
+ * ────────────────────────────────────────────────────────────── */
+
 const categoryLabels: Record<string, string> = {
   Video: "Video's",
   Fotogalery: 'Fotogalerye',
@@ -35,23 +41,23 @@ const RelatedCard = ({ item }: { item: MultimediaItem }) => (
     to={`/multimedia/${item.slug}`}
     className="flex items-start gap-3 group"
   >
-    <div className="w-20 h-14 rounded overflow-hidden flex-shrink-0 relative">
+    <div className="w-24 h-16 rounded-lg overflow-hidden flex-shrink-0 relative">
       <ImageWithFallback
         src={item.imageUrl}
         alt={item.title}
-        className="w-full h-full object-cover"
+        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
       />
       {item.category === 'Video' && item.duration && (
-        <div className="absolute bottom-0.5 right-0.5 bg-black/75 text-white text-[9px] px-1 rounded font-mono">
+        <div className="absolute bottom-1 right-1 bg-black/80 text-white text-[10px] px-1.5 py-0.5 rounded font-mono">
           {item.duration}
         </div>
       )}
     </div>
     <div className="min-w-0 flex-1">
-      <p className="text-sm font-bold text-brand-navy dark:text-foreground group-hover:text-primary transition-colors line-clamp-2">
+      <p className="text-sm font-bold text-brand-navy dark:text-foreground group-hover:text-brand-red transition-colors line-clamp-2 leading-snug">
         {item.title}
       </p>
-      <p className="text-xs text-gray-400 mt-1">{item.time}</p>
+      <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">{item.time}</p>
     </div>
   </Link>
 );
@@ -81,7 +87,7 @@ export const SingleMultimediaPage = () => {
   };
 
   return (
-    <div className="bg-gray-50 dark:bg-background min-h-screen font-inter">
+    <div className="bg-white dark:bg-background min-h-screen">
       <SEO
         title={`${item.title} | Multimedia | rooi rose`}
         description={item.description.slice(0, 160)}
@@ -97,165 +103,172 @@ export const SingleMultimediaPage = () => {
           { label: categoryLabels[item.category] || item.category, href: '/multimedia' },
           { label: item.title },
         ]}
+        noPadding
       >
-        <div className="flex flex-col lg:flex-row gap-8">
-          {/* Main Content */}
-          <article className="flex-1 min-w-0">
-            {/* Hero Image / Player Placeholder */}
-            <div className="relative rounded-lg overflow-hidden mb-6">
-              <div className="aspect-video relative">
-                <ImageWithFallback
-                  src={item.imageUrl}
-                  alt={item.title}
-                  className="w-full h-full object-cover"
-                />
-                {/* Play overlay for video/podcast */}
-                {(item.category === 'Video' || item.category === 'Podcast') && (
-                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                    <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:scale-110 transition-transform">
-                      {item.category === 'Video' ? (
-                        <Play size={36} className="text-white ml-1" fill="white" />
-                      ) : (
-                        <Headphones size={32} className="text-white" />
-                      )}
-                    </div>
-                  </div>
-                )}
-                {/* Photo count overlay */}
-                {item.category === 'Fotogalery' && item.photoCount && (
-                  <div className="absolute bottom-4 right-4 bg-black/75 text-white text-sm px-3 py-1.5 rounded-full flex items-center gap-1.5">
-                    <Camera size={14} />
-                    {item.photoCount} foto's
-                  </div>
-                )}
-                {/* Duration badge */}
-                {item.duration && (
-                  <div className="absolute bottom-4 left-4 bg-black/75 text-white text-sm px-3 py-1.5 rounded font-mono">
-                    {item.duration}
-                  </div>
-                )}
+        {/* Hero Media Player */}
+        <div className="relative bg-black">
+          <div className="aspect-video relative max-w-7xl mx-auto">
+            <ImageWithFallback
+              src={item.imageUrl}
+              alt={item.title}
+              className="w-full h-full object-cover"
+            />
+            {/* Play overlay for video/podcast */}
+            {(item.category === 'Video' || item.category === 'Podcast') && (
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex items-center justify-center">
+                <div className="w-24 h-24 bg-brand-red rounded-full flex items-center justify-center shadow-2xl cursor-pointer hover:scale-110 transition-transform duration-300">
+                  {item.category === 'Video' ? (
+                    <Play size={40} className="text-white ml-1" fill="white" />
+                  ) : (
+                    <Headphones size={36} className="text-white" />
+                  )}
+                </div>
               </div>
-            </div>
+            )}
+            {/* Photo count overlay */}
+            {item.category === 'Fotogalery' && item.photoCount && (
+              <div className="absolute bottom-6 right-6 bg-black/80 text-white text-sm px-4 py-2 rounded-full flex items-center gap-2 backdrop-blur-sm">
+                <Camera size={16} />
+                <span className="font-bold">{item.photoCount} foto's</span>
+              </div>
+            )}
+            {/* Duration badge */}
+            {item.duration && (
+              <div className="absolute bottom-6 left-6 bg-black/80 text-white text-base px-4 py-2 rounded-lg font-mono backdrop-blur-sm">
+                {item.duration}
+              </div>
+            )}
+          </div>
+        </div>
 
-            {/* Title & Meta */}
-            <div className="bg-white dark:bg-card rounded-lg border border-gray-100 dark:border-border shadow-sm p-8 mb-8">
-              {/* Category badge */}
-              <div className="flex items-center gap-2 mb-4">
-                <span className="inline-flex items-center gap-1.5 bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">
-                  <CategoryIcon category={item.category} size={12} />
+        {/* Content Container */}
+        <div className="alignwide py-12">
+          <div className="flex flex-col lg:flex-row gap-8">
+            {/* Main Content */}
+            <article className="flex-1 min-w-0 max-w-4xl">
+              {/* Category Badge */}
+              <div className="flex items-center gap-3 mb-6">
+                <span className="inline-flex items-center gap-2 bg-brand-red/10 text-brand-red text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full">
+                  <CategoryIcon category={item.category} size={14} />
                   {categoryLabels[item.category] || item.category}
                 </span>
                 {item.episode && (
-                  <span className="text-xs text-gray-400 font-bold">{item.episode}</span>
+                  <span className="text-sm text-gray-500 dark:text-gray-400 font-bold">{item.episode}</span>
                 )}
               </div>
 
-              <h1 className="text-2xl sm:text-3xl font-normal text-brand-navy dark:text-foreground font-heading mb-4" style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}>
+              {/* Title */}
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family mb-6 leading-tight" style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}>
                 {item.title}
               </h1>
 
-              {/* Meta row */}
-              <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-6 pb-6 border-b border-gray-100 dark:border-border">
-                <span className="flex items-center gap-1.5">
-                  <User size={14} className="text-gray-400" />
+              {/* Meta Row */}
+              <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 dark:text-gray-400 mb-8 pb-8 border-b-2 border-gray-200 dark:border-border">
+                <span className="flex items-center gap-2">
+                  <User size={16} className="text-brand-red" />
                   <Link
                     to={`/skrywer/${encodeURIComponent(item.author)}`}
-                    className="hover:text-primary transition-colors"
+                    className="hover:text-brand-red transition-colors font-medium"
                   >
                     {item.author}
                   </Link>
                 </span>
-                <span className="flex items-center gap-1.5">
-                  <Clock size={14} className="text-gray-400" />
+                <span className="flex items-center gap-2">
+                  <Clock size={16} className="text-brand-red" />
                   {item.published}
                 </span>
                 {item.views !== undefined && (
-                  <span className="flex items-center gap-1.5">
-                    <Eye size={14} className="text-gray-400" />
-                    {item.views.toLocaleString()} kyke
+                  <span className="flex items-center gap-2">
+                    <Eye size={16} className="text-brand-red" />
+                    <span className="font-medium">{item.views.toLocaleString()} kyke</span>
                   </span>
                 )}
               </div>
 
               {/* Description */}
-              <div className="prose max-w-none text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
+              <div className="prose prose-lg max-w-none text-gray-700 dark:text-gray-300 leading-relaxed space-y-6 mb-8">
                 {item.description.split('\n\n').map((paragraph, idx) => (
-                  <p key={idx}>{renderWithBrandItalics(paragraph)}</p>
+                  <p key={idx} className="text-base leading-relaxed">{renderWithBrandItalics(paragraph)}</p>
                 ))}
               </div>
 
               {/* Tags */}
               {item.tags.length > 0 && (
-                <div className="mt-8 pt-6 border-t border-gray-100 dark:border-border">
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <Tag size={14} className="text-gray-400" />
-                    {item.tags.map((tag) => (
-                      <Link
-                        key={tag}
-                        to={`/onderwerp/${tag.toLowerCase().replace(/\s+/g, '-')}`}
-                        className="text-xs bg-gray-100 dark:bg-muted text-gray-600 dark:text-gray-400 px-3 py-1.5 rounded-full hover:bg-brand-navy dark:hover:bg-foreground hover:text-white dark:hover:text-background transition-colors"
-                      >
-                        {tag}
-                      </Link>
-                    ))}
+                <div className="mb-8 pb-8 border-b border-gray-200 dark:border-border">
+                  <div className="flex items-start gap-3 flex-wrap">
+                    <Tag size={18} className="text-gray-400 mt-1" />
+                    <div className="flex flex-wrap gap-2">
+                      {item.tags.map((tag) => (
+                        <Link
+                          key={tag}
+                          to={`/onderwerp/${tag.toLowerCase().replace(/\s+/g, '-')}`}
+                          className="text-xs bg-gray-100 dark:bg-muted text-gray-700 dark:text-gray-300 px-3 py-1.5 rounded-full hover:bg-brand-red hover:text-white dark:hover:bg-brand-red dark:hover:text-white transition-colors font-medium"
+                        >
+                          {tag}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 </div>
               )}
 
               {/* Share / Back */}
-              <div className="mt-6 pt-6 border-t border-gray-100 dark:border-border flex items-start justify-between flex-wrap gap-4">
+              <div className="flex items-start justify-between flex-wrap gap-6 mb-8">
                 <Link
                   to="/multimedia"
-                  className="text-sm text-gray-500 hover:text-primary flex items-center gap-1 transition-colors"
+                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-brand-red dark:hover:text-brand-red flex items-center gap-2 transition-colors font-medium"
                 >
-                  <ArrowLeft size={14} />
+                  <ArrowLeft size={16} />
                   Terug na Multimedia
                 </Link>
                 <SocialShare title={item.title} description={item.description.slice(0, 160)} />
               </div>
-            </div>
-          </article>
 
-          {/* Sidebar */}
-          <aside className="w-full lg:w-[300px] shrink-0 space-y-6">
-            {/* Related in Same Category */}
-            {related.length > 0 && (
-              <div className="bg-white dark:bg-card rounded-lg border border-gray-100 dark:border-border shadow-sm p-6">
-                <h3 className="font-normal text-brand-navy dark:text-foreground font-heading mb-4 flex items-center gap-2" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)', fontSize: 'var(--text-h3)' }}>
-                  <CategoryIcon category={item.category} size={16} />
-                  Meer {categoryLabels[item.category] || item.category}
-                </h3>
-                <div className="space-y-4">
-                  {related.map((r) => (
-                    <RelatedCard key={r.id} item={r} />
-                  ))}
+              {/* In-feed Ad */}
+              <InFeedAd section="multimedia" />
+            </article>
+
+            {/* Sidebar */}
+            <aside className="w-full lg:w-[320px] shrink-0 space-y-6">
+              {/* Related in Same Category */}
+              {related.length > 0 && (
+                <div className="bg-gray-50 dark:bg-card rounded-xl border border-gray-200 dark:border-border p-6">
+                  <h3 className="text-xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family mb-6 flex items-center gap-2 pb-3 border-b-2 border-brand-red" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)' }}>
+                    <CategoryIcon category={item.category} size={18} />
+                    Meer {categoryLabels[item.category] || item.category}
+                  </h3>
+                  <div className="space-y-5">
+                    {related.map((r) => (
+                      <RelatedCard key={r.id} item={r} />
+                    ))}
+                  </div>
                 </div>
-              </div>
-            )}
+              )}
 
-            {/* Other Multimedia */}
-            {otherItems.length > 0 && (
-              <div className="bg-white dark:bg-card rounded-lg border border-gray-100 dark:border-border shadow-sm p-6">
-                <h3 className="font-normal text-brand-navy dark:text-foreground font-heading mb-4" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)', fontSize: 'var(--text-h3)' }}>
-                  Ander Multimedia
-                </h3>
-                <div className="space-y-4">
-                  {otherItems.map((r) => (
-                    <RelatedCard key={r.id} item={r} />
-                  ))}
+              {/* Sidebar Ads */}
+              <SidebarAds section="multimedia" />
+
+              {/* Other Multimedia */}
+              {otherItems.length > 0 && (
+                <div className="bg-gray-50 dark:bg-card rounded-xl border border-gray-200 dark:border-border p-6">
+                  <h3 className="text-xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family mb-6 pb-3 border-b-2 border-brand-red" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)' }}>
+                    Ander Multimedia
+                  </h3>
+                  <div className="space-y-5">
+                    {otherItems.map((r) => (
+                      <RelatedCard key={r.id} item={r} />
+                    ))}
+                  </div>
+                  <Link
+                    to="/multimedia"
+                    className="block text-center text-sm text-brand-red font-bold mt-6 pt-5 border-t border-gray-200 dark:border-border hover:underline"
+                  >
+                    Alle multimedia
+                  </Link>
                 </div>
-                <Link
-                  to="/multimedia"
-                  className="block text-center text-sm text-primary font-bold mt-4 hover:underline"
-                >
-                  Alle multimedia
-                </Link>
-              </div>
-            )}
-
-            {/* Sidebar Ads */}
-            <SidebarAds section="multimedia" variant="standard" />
-          </aside>
+              )}
+            </aside>
+          </div>
         </div>
 
         {/* In-feed ad for mobile */}

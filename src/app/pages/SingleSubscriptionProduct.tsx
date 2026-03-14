@@ -24,6 +24,12 @@ import { SUBSCRIBE_FAQS } from '../data/pageFaqs';
 import { HERO_IMAGES } from '../data/heroImages';
 import { DemoStateSwitcher } from '../components/common/DemoStateSwitcher';
 
+/* ── rooi rose Magazine Single Subscription Product Page ──────────────────────────────
+ * Editorial design: E-edition subscription with regional variants
+ * Typography: Playfair Display SC headings, Karla body
+ * Layout: Product showcase with pricing tiers
+ * ────────────────────────────────────────────────────────────── */
+
 /**
  * Single Subscription Product Page
  *
@@ -79,7 +85,7 @@ export const SingleSubscriptionProduct = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-background pb-24">
+    <div className="min-h-screen bg-white dark:bg-background pb-24">
       <SEO
         title={`${plan.title} E-uitgawe Intekening - rooi rose`}
         description={`Teken in op rooi rose se e-tydskrif vir ${plan.months} ${plan.months === 1 ? 'maand' : 'maande'}. ${plan.description}.`}
@@ -99,11 +105,13 @@ export const SingleSubscriptionProduct = () => {
 
       {/* ─── Active Subscriber Banner ─── */}
       {demoState === 'subscriber' && (
-        <div className="alignwide mt-4">
-          <div className="bg-green-50 dark:bg-green-950/30 border border-green-300 dark:border-green-700 rounded-xl p-6 flex flex-col sm:flex-row items-center gap-4">
-            <Check size={24} className="text-green-600 dark:text-green-400 shrink-0" />
+        <div className="alignwide mt-6">
+          <div className="bg-green-50 dark:bg-green-950/30 border-2 border-green-500 dark:border-green-700 rounded-xl p-6 flex flex-col sm:flex-row items-center gap-4">
+            <div className="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center shrink-0">
+              <Check size={24} className="text-white" strokeWidth={3} />
+            </div>
             <div className="flex-1 text-center sm:text-left">
-              <h3 className="font-normal text-green-900 dark:text-green-200 mb-1 font-heading" style={{ fontVariationSettings: "var(--fvs-h4)", fontSize: 'var(--text-h4)', lineHeight: 'var(--lh-h4)', letterSpacing: 'var(--ls-h4)' }}>Jy is reeds 'n intekenaar</h3>
+              <h3 className="text-lg font-bold text-green-900 dark:text-green-200 mb-1">Jy is reeds 'n intekenaar</h3>
               <p className="text-green-700 dark:text-green-300 text-sm">Jou intekening is aktief. Besoek jou biblioteek om e-uitgawes te lees.</p>
             </div>
             <Button asChild className="bg-green-600 hover:bg-green-700 text-white font-bold shrink-0">
@@ -115,11 +123,13 @@ export const SingleSubscriptionProduct = () => {
 
       {/* ─── Expired Subscriber Banner ─── */}
       {demoState === 'expired-subscriber' && (
-        <div className="alignwide mt-4">
-          <div className="bg-amber-50 dark:bg-amber-950/30 border border-amber-300 dark:border-amber-700 rounded-xl p-6 flex flex-col sm:flex-row items-center gap-4">
-            <Star size={24} className="text-amber-600 dark:text-amber-400 shrink-0" />
+        <div className="alignwide mt-6">
+          <div className="bg-amber-50 dark:bg-amber-950/30 border-2 border-amber-500 dark:border-amber-700 rounded-xl p-6 flex flex-col sm:flex-row items-center gap-4">
+            <div className="w-12 h-12 rounded-full bg-amber-500 flex items-center justify-center shrink-0">
+              <Star size={24} className="text-white" strokeWidth={2} fill="white" />
+            </div>
             <div className="flex-1 text-center sm:text-left">
-              <h3 className="font-normal text-amber-900 dark:text-amber-200 mb-1 font-heading" style={{ fontVariationSettings: "var(--fvs-h4)", fontSize: 'var(--text-h4)', lineHeight: 'var(--lh-h4)', letterSpacing: 'var(--ls-h4)' }}>Jou intekening het verstryk</h3>
+              <h3 className="text-lg font-bold text-amber-900 dark:text-amber-200 mb-1">Jou intekening het verstryk</h3>
               <p className="text-amber-700 dark:text-amber-300 text-sm">Hernieu jou intekening om weer toegang tot nuwe e-uitgawes te kry.</p>
             </div>
           </div>
@@ -127,47 +137,52 @@ export const SingleSubscriptionProduct = () => {
       )}
 
       {/* ─── Product Section ─── */}
-      <section className="alignwide px-[0px] py-[32px]">
+      <section className="alignwide py-12">
         <div className="flex flex-col md:flex-row gap-8 md:gap-12">
-          {/* Cover Image — newspaper mock */}
+          {/* Cover Image — magazine mock */}
           <div className="w-full md:w-[340px] lg:w-[400px] shrink-0">
-            <div className="relative aspect-[3/4] bg-white dark:bg-card rounded-xl overflow-hidden shadow-lg border-2 border-gray-200 dark:border-border">
+            <div className="relative aspect-[3/4] bg-white dark:bg-card rounded-xl overflow-hidden shadow-xl border-2 border-gray-200 dark:border-border">
               <div className="w-full h-full flex flex-col">
-                <div className="bg-primary p-3 text-center">
+                {/* Magazine Header */}
+                <div className="bg-brand-red p-4 text-center">
                   <h2
-                    className="text-white font-normal font-heading"
+                    className="text-white font-normal has-brand-serif-font-family uppercase tracking-widest"
                     style={{
-                      fontVariationSettings: "'GRAD' -50, 'wdth' 64, 'opsz' 24",
+                      fontVariationSettings: "var(--fvs-h3)",
                       letterSpacing: 'var(--ls-h3)',
                       fontSize: 'var(--text-h3)',
                       lineHeight: 'var(--lh-h3)',
                     }}
                   >
-                    DIE PAPIER
+                    rooi rose
                   </h2>
-                  <p className="text-white/80 text-xs">E-uitgawe Intekening</p>
+                  <p className="text-white/90 text-xs mt-1 uppercase tracking-wide">E-uitgawe Intekening</p>
                 </div>
+                
+                {/* Cover Image */}
                 <div className="flex-1 overflow-hidden relative">
                   <ImageWithFallback
                     src={HERO_IMAGES.eEditions}
                     alt="E-uitgawe intekening"
                     className="w-full h-full object-cover"
                   />
-                  {/* Overlay with subscription badge */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/80 via-transparent to-transparent flex items-end justify-center pb-8">
-                    <div className="bg-white/95 dark:bg-card/95 backdrop-blur-sm rounded-xl px-6 py-4 text-center shadow-lg">
-                      <p className="text-brand-navy dark:text-foreground font-bold" style={{ fontSize: 'var(--text-h3)', lineHeight: 'var(--lh-h3)' }}>
+                  {/* Price Badge Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end justify-center pb-8">
+                    <div className="bg-white/95 dark:bg-card/95 backdrop-blur-sm rounded-xl px-6 py-4 text-center shadow-2xl border-2 border-brand-red">
+                      <p className="text-brand-navy dark:text-foreground font-bold has-brand-serif-font-family" style={{ fontSize: 'var(--text-h2)', lineHeight: 'var(--lh-h2)' }}>
                         R{plan.price}
                       </p>
-                      <p className="text-gray-500 dark:text-gray-400 text-xs">
+                      <p className="text-gray-600 dark:text-gray-400 text-xs font-medium mt-1">
                         {plan.title} intekening
                       </p>
                     </div>
                   </div>
                 </div>
-                <div className="bg-brand-navy p-2 text-center">
-                  <p className="text-white text-xs font-bold flex items-center justify-center gap-1">
-                    <Sparkles size={12} />
+                
+                {/* Footer Badge */}
+                <div className="bg-brand-navy p-3 text-center">
+                  <p className="text-white text-xs font-bold flex items-center justify-center gap-2 uppercase tracking-wide">
+                    <Sparkles size={14} />
                     Digitale intekening
                   </p>
                 </div>
@@ -175,7 +190,7 @@ export const SingleSubscriptionProduct = () => {
 
               {/* Popular badge */}
               {plan.popular && (
-                <div className="absolute top-14 right-0 bg-brand-red text-white text-xs font-bold px-3 py-1.5 rounded-l-full shadow-md flex items-center gap-1.5">
+                <div className="absolute top-16 right-0 bg-brand-red text-white text-xs font-bold px-4 py-2 rounded-l-full shadow-lg flex items-center gap-2">
                   <Star size={14} fill="currentColor" />
                   Gewildste
                 </div>
@@ -187,7 +202,7 @@ export const SingleSubscriptionProduct = () => {
           <div className="flex-1 flex flex-col">
             {/* Title */}
             <h1
-              className="text-brand-navy dark:text-foreground font-normal font-heading mb-2"
+              className="text-brand-navy dark:text-foreground font-normal has-brand-serif-font-family mb-3"
               style={{
                 fontVariationSettings: 'var(--fvs-h1)',
                 fontSize: 'var(--text-h1)',

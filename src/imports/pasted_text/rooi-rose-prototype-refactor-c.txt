@@ -1,0 +1,182 @@
+# Rooi Rose Magazine Prototype Refactor Research and Content Pack
+
+## Executive summary
+
+This research reviewed the **current `lightspeedwp/Rooiroseprototype` React prototype** (via the enabled GitHub connector), its current design-system layer, routing, and navigation implementation, then produced a **complete, consistent content + navigation data pack** for refactoring the prototype from a “news/newspaper” information model into a **magazine/editorial** one.
+
+The deliverable ZIP contains:
+
+- A **TypeScript data model** for `Post`, `Category`, `Subcategory`, plus **SharedHero props + variants**
+- **100 mock posts** (10 per editorial top-level category) with 500–800 word Afrikaans HTML content, unique Unsplash Source hero images, and full frontmatter-like objects
+- `navigation.ts` + `megaMenuConfig.ts` implementing the agreed main navigation + mega-menu groupings (including **Shop**, **Kontak**, and **Podsendings under Ontspanning**)
+- A descriptive `routes.ts` architecture plan aligning category/subcategory paths with reusable templates
+- A manifest (`manifest.csv` and `manifest.md`) listing all 100 posts and their hero images
+- `.gitignore` recommendations to enforce exclusion rules and support repository clean-up
+- A README explaining how to import the data pack and retire the old news-focused datasets
+
+Rooi Rose’s editorial “pillars” (food, fashion, beauty, health/wellness, human-interest and more) are widely aligned with the target IA you provided. citeturn1search1
+
+## What the current prototype already has
+
+The current prototype already provides a strong foundation for an editorial refactor:
+
+It uses a token-first CSS approach, with a central theme file and additional global CSS layers. This makes it feasible to update Rooi Rose branding at the token level without rewriting every component.
+
+It uses React Router with a page-based route structure that already recognises key magazine page types (home, category pages, article pages, competitions, Rooiwarm winners, contact), which matches the site-map you supplied.
+
+It already separates “data” from “templates/components” in multiple places (e.g., category lists and article arrays). This makes it realistic to introduce a cleaner data layer without a full rewrite, especially if you implement a thin adapter layer to keep legacy components running while you refactor templates.
+
+![Rooi Rose logo](sandbox:/mnt/data/rooi-rose-logo.jpg)
+
+## Key gaps and refactor implications found in the repository
+
+Several areas are still “previous prototype / newspaper” oriented and should be refactored (or removed) as part of the Rooi Rose conversion:
+
+The navigation configuration is partially remnant from earlier branding, and the live Rooi Rose IA you specified requires a new top-level structure (Kos, Mode, Skoonheid, Gesondheid, Bekendes, Leefstyl, Jou lewe, Ontspanning, Rooiwarm wenners, Wen, plus Shop and Kontak). This is best implemented as an explicit mega menu config rather than ad-hoc nested lists.
+
+The content layer is still structured as “news-first” (e.g., generic news categories and breaking news patterns). For a magazine prototype, you need content objects that capture richer long-form metadata (category + subcategory IA, type=article/recipe/competition/award, hero image, etc.) while remaining iterable for grids and sliders.
+
+Repository hygiene issues were flagged in your brief (e.g., committed `node_modules/tw-animate-css`). In practice, the correct remedial action is to ensure **all** `node_modules/` is excluded via `.gitignore`, and remove any committed `node_modules` artifacts from version control. The deliverable includes a recommended `.gitignore` suitable for React/Vite projects.
+
+The public folder includes brand artefacts from earlier prototypes (e.g., app name in `manifest.json`). Cleaning these is a key part of making the prototype “feel” like Rooi Rose even before pixel-perfect UI updates.
+
+## Figma Make content generation brief and structured data approach
+
+### Content goals by page type
+
+The goal is to generate content that supports a magazine-like experience:
+
+Category landing pages need a “hero + section entry” pattern. The SharedHero configuration supports a quick-link bar to subcategories (matching your observation that the old prototype’s sub-links are a strong entry point).
+
+Subcategory landing pages should reuse the same SharedHero pattern but filter content to a single subcategory, avoiding one-off pages per subcategory.
+
+Post templates should share a single hero component (SharedHero), but vary metadata density by post type (article/recipe/competition/award). This restores consistency and reduces template drift.
+
+### Data modelling goals
+
+The data pack is designed to support:
+
+Reusable templates (category/subcategory/post) driven entirely by structured objects.
+
+A stable naming scheme (slug = `{id}-{slugified-title}`) compatible with legacy “get id from slug” patterns common in React Router article routes.
+
+Simple mapping from prototype to CMS later (the objects resemble frontmatter, but can map to WordPress REST/GraphQL with minimal translation).
+
+### Image rules
+
+All posts use Unsplash Source images via `https://source.unsplash.com/` with:
+
+Category-specific keyword pairs (e.g., `food,recipe`, `skincare,beauty`, `travel,books`) and
+
+A unique `sig` parameter per post to avoid repeated caching and enforce uniqueness across the 100 posts.
+
+## Deliverables included in the ZIP
+
+Download: [rooi-rose-figma-make-deliverable.zip](sandbox:/mnt/data/rooi-rose-figma-make-deliverable.zip)
+
+Checklist of the most important files:
+
+- `src/data/models.ts` — Post/Category/Subcategory models + SharedHero props/variants
+- `src/data/brandTokens.ts` — Rooi Rose fonts and colour tokens (as constants)
+- `src/data/categories.ts` — Categories + subcategories (includes Shop/Kontak convenience sub-items)
+- `src/data/templates/category.kos.template.ts` — Template example for ONE category (Kos)
+- `src/data/navigation.ts` — Main nav + footer legal links (live footer-inspired)
+- `src/data/megaMenuConfig.ts` — Mega menu groupings + featured/trending post references
+- `src/data/routes.ts` — Route architecture plan for reusable templates and IA correctness
+- `src/data/posts/**` — 100 post modules (10 per category)
+- `src/data/posts/index.ts` — Vite `import.meta.glob` post loader + helper functions
+- `manifest.csv` and `manifest.md` — Full post index across all 100 items
+- `.gitignore` — Recommended exclusions for a clean repo
+- `README.md` — Integration instructions + repo hygiene notes
+- `report.md` — This report (also included inside the ZIP)
+
+## Visual aids
+
+### Prototype sitemap and IA
+
+```mermaid
+flowchart TD
+  Home[/Home/] --> Kos[/Kos/]
+  Home --> Mode[/Mode/]
+  Home --> Skoonheid[/Skoonheid/]
+  Home --> Gesondheid[/Gesondheid/]
+  Home --> Bekendes[/Bekendes/]
+  Home --> Leefstyl[/Leefstyl/]
+  Home --> JouLewe[/Jou lewe/]
+  Home --> Ontspanning[/Ontspanning/]
+  Home --> Rooiwarm[/Rooiwarm wenners/]
+  Home --> Wen[/Wen/]
+  Home --> Shop[/Shop/]
+  Home --> Kontak[/Kontak/]
+
+  Kos --> KosSub[/Kos/:subcategory/]
+  Mode --> ModeSub[/Mode/:subcategory/]
+  Skoonheid --> SkoonSub[/Skoonheid/:subcategory/]
+  Gesondheid --> GesSub[/Gesondheid/:subcategory/]
+  Leefstyl --> LeefSub[/Leefstyl/:subcategory/]
+  JouLewe --> JouSub[/Jou-lewe/:subcategory/]
+  Ontspanning --> OntSub[/Ontspanning/:subcategory/]
+
+  KosSub --> Artikel[/Artikel/:slug/]
+  ModeSub --> Artikel
+  SkoonSub --> Artikel
+  GesSub --> Artikel
+  Bekendes --> Artikel
+  LeefSub --> Artikel
+  JouSub --> Artikel
+  OntSub --> Artikel
+
+  Wen --> WenDetail[/Wen/:slug/]
+  Rooiwarm --> AwardDetail[/Rooiwarm-wenners/:slug/]
+
+  Ontspanning --> Podcasts[/Ontspanning/podsendings/]
+  Podcasts --> PodcastDetail[/Ontspanning/podsendings/:slug/]
+```
+
+### Mega menu layout concept
+
+```mermaid
+flowchart LR
+  A[Header Nav] --> B[Kos]
+  A --> C[Mode]
+  A --> D[Skoonheid]
+  A --> E[Gesondheid]
+  A --> F[Bekendes]
+  A --> G[Leefstyl]
+  A --> H[Jou lewe]
+  A --> I[Ontspanning]
+  A --> J[Rooiwarm wenners]
+  A --> K[Wen]
+  A --> L[Shop]
+  A --> M[Kontak]
+
+  B --> B1[Begin hier]
+  B --> B2[Kook vir die seisoen]
+  B --> B3[Soet & spesiaal]
+
+  I --> I1[Kyk & luister]
+  I --> I2[Gaan & lees]
+  I1 --> I1a[Podsendings]
+  I1 --> I1b[Blogs]
+  I2 --> I2a[Reis]
+  I2 --> I2b[Leestyd]
+```
+
+## Missing assumptions and decisions made
+
+The current prototype’s “data folder” is primarily `src/app/data/*`. Your instruction requested placing generated TypeScript files under `/src/data/`. The ZIP follows your requirement (`/src/data`), but the README explains how to move or map these files into `src/app/data` for immediate use.
+
+The deliverable generates 100 posts for 10 editorial top-level categories only. Shop and Kontak are included in the navigation and mega menu configs, but they are treated as utility pages (no post content). This interpretation is necessary to satisfy the explicit “100 posts” constraint while still including Shop and Kontak in the top navigation.
+
+Podcasts are treated as “content under Ontspanning” in the information architecture. The existing prototype has standalone podcast routes; the route architecture file recommends nesting routes under `/ontspanning/podsendings` to match the IA requirement.
+
+## Summary of connectors and sources used
+
+Enabled connectors used:
+
+- GitHub connector (read-only): scanned `lightspeedwp/Rooiroseprototype` and pulled key files (routing, navigation, theme tokens, and content data patterns)
+- Google Drive connector (read-only): discovered Rooi Rose planning docs for context and requirements triage
+
+Public web sources used (high-quality and relevant):
+
+- PressPortal/Bizcommunity press release summarising Rooi Rose’s content pillars and editorial scope (used as external validation of the IA fit). citeturn1search1

@@ -68,38 +68,3 @@ export const OFFICE_DETAILS = {
     { label: 'E-pos', value: 'lesers@diepapier.co.za', href: 'mailto:lesers@diepapier.co.za' },
   ],
 };
-
-export const OFFICE_HOURS = [
-  { day: 'Maandag \u2013 Vrydag', hours: '08:00 \u2013 17:00', highlight: false },
-  { day: 'Saterdae', hours: '09:00 \u2013 13:00', highlight: false },
-  { day: 'Son- & Vakansiedae', hours: 'Gesluit', highlight: true },
-];
-
-export const CONTACT_FORM = {
-  labels: {
-    name: "Naam",
-    email: "E-posadres",
-    subject: "Onderwerp",
-    message: "Boodskap"
-  },
-  placeholders: {
-    name: "Jou naam",
-    email: "jou@e-pos.co.za",
-    subject: "Waaroor gaan dit?",
-    message: "Skryf jou boodskap hier..."
-  },
-  validation: {
-    nameMin: "Naam moet ten minste 2 karakters wees.",
-    emailInvalid: "Voer asseblief 'n geldige e-posadres in.",
-    subjectMin: "Onderwerp moet ten minste 5 karakters wees.",
-    messageMin: "Boodskap moet ten minste 10 karakters wees."
-  },
-  buttons: {
-    submit: "Stuur boodskap",
-    submitting: "Besig om te stuur..."
-  },
-  success: {
-    title: "Boodskap suksesvol gestuur!",
-    description: "Ons sal binnekort terugvoer gee."
-  }
-};

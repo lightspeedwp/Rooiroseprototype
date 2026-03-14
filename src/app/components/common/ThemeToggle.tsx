@@ -16,7 +16,7 @@ export const ThemeToggle = ({ variant = 'icon', className = '' }: ThemeTogglePro
       <div className={`inline-flex items-center rounded-lg border border-gray-200 dark:border-border bg-gray-100 dark:bg-card p-1 ${className}`}>
         <button
           onClick={() => setTheme('light')}
-          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-bold transition-colors ${
+          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring focus-visible:ring-offset-2 ${
             theme === 'light'
               ? 'bg-white dark:bg-background text-brand-navy dark:text-foreground shadow-sm'
               : 'text-gray-500 dark:text-gray-400 hover:text-brand-navy dark:hover:text-foreground'
@@ -29,7 +29,7 @@ export const ThemeToggle = ({ variant = 'icon', className = '' }: ThemeTogglePro
         </button>
         <button
           onClick={() => setTheme('dark')}
-          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-bold transition-colors ${
+          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring focus-visible:ring-offset-2 ${
             theme === 'dark'
               ? 'bg-white dark:bg-background text-brand-navy dark:text-foreground shadow-sm'
               : 'text-gray-500 dark:text-gray-400 hover:text-brand-navy dark:hover:text-foreground'
@@ -48,7 +48,7 @@ export const ThemeToggle = ({ variant = 'icon', className = '' }: ThemeTogglePro
   return (
     <button
       onClick={toggleTheme}
-      className={`flex p-2 items-center gap-1 transition-colors ${className}`}
+      className={`flex p-2 items-center gap-1 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring focus-visible:ring-offset-2 ${className}`}
       title={`Tema: ${theme === 'light' ? 'Lig' : 'Donker'}`}
       aria-label={`Wissel tema (tans: ${theme})`}
     >

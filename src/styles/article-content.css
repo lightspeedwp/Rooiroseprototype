@@ -2,6 +2,7 @@
  * Editorial typography: Karla body text, Playfair Display SC headings
  * Magazine spacing: Generous line-height (1.7), larger paragraphs
  * Pull quotes: rooi rose red with italic Playfair Display SC
+ * Drop caps: Magazine-style initial letters
  * ──────────────────────────────────────────────────────────────── */
 @layer components {
   .article-content {
@@ -52,6 +53,81 @@
     line-height: 1.6;
     color: var(--custom-primary); /* rooi rose red text */
     background: var(--accent-soft-grey); /* Soft grey background */
+  }
+
+  /* Editorial Article Style - Drop caps, better image handling */
+  .article-editorial p:first-of-type::first-letter {
+    font-family: var(--font-display);
+    font-size: 4.5rem;
+    line-height: 0.85;
+    float: left;
+    margin-right: 12px;
+    margin-top: 8px;
+    color: var(--custom-primary);
+    font-weight: 700;
+  }
+
+  /* Full-width images within editorial content */
+  .article-editorial img,
+  .article-content img {
+    width: 100%;
+    height: auto;
+    margin: 48px 0;
+    border-radius: 4px;
+  }
+
+  /* Image captions */
+  .article-editorial figcaption,
+  .article-content figcaption {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+    font-style: italic;
+    margin-top: -36px;
+    margin-bottom: 48px;
+    text-align: center;
+  }
+
+  /* Lead paragraph (intro text) - larger, standout */
+  .article-editorial > p:first-of-type {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: var(--foreground);
+    margin-bottom: 36px;
+  }
+
+  /* Pull quotes - centered, larger, more dramatic */
+  .article-editorial blockquote {
+    border: none;
+    padding: 48px 0;
+    margin: 64px auto;
+    max-width: 80%;
+    text-align: center;
+    background: transparent;
+    position: relative;
+  }
+
+  .article-editorial blockquote::before {
+    content: '"';
+    font-family: var(--font-display);
+    font-size: 120px;
+    line-height: 0.5;
+    color: var(--custom-primary);
+    opacity: 0.2;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .article-editorial blockquote p {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    line-height: 1.5;
+    font-style: italic;
+    color: var(--contrast);
+    margin: 0;
+    position: relative;
+    z-index: 1;
   }
 
   .article-content ul,

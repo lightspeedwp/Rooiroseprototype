@@ -29,7 +29,7 @@ export const ClassifiedsPage = () => {
 
       <ContentHero
         title="Geklassifiseerde advertensies"
-        subtitle="Bereik duisende lesers nasionaal met 'n bekostigbare geklassifiseerde advertensie in rooi rose — gedruk en aanlyn."
+        subtitle="Bereik duisende stilbewuste lesers nasionaal met 'n bekostigbare geklassifiseerde advertensie in rooi rose tydskrif — gedruk en aanlyn."
         image={HERO_IMAGES.advertise}
         height="small"
       />
@@ -38,9 +38,9 @@ export const ClassifiedsPage = () => {
         {/* Intro */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-            <em>rooi rose</em> se geklassifiseerde afdeling is die ideale plek om jou boodskap voor die regte mense te kry. 
-            Of jy nou 'n pos adverteer, eiendom bemark, of 'n diens aanbied — ons bekostigbare tariewe en 
-            wye verspreiding verseker dat jou advertensie gesien word.
+            <em>rooi rose</em> se geklassifiseerde afdeling is die ideale plek om jou boodskap voor welgestelde, betrokke lesers te kry.
+            Of jy nou 'n mode-boutique adverteer, 'n skoonheidsalon bemark, of 'n leefstyl-diens aanbied — ons bekostigbare tariewe en
+            hoëkwaliteit gehoor verseker dat jou advertensie by die regte mense uitkom.
           </p>
         </div>
 

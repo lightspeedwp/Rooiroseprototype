@@ -1,6 +1,6 @@
 import React, { useState, memo, useCallback, useEffect, useMemo } from 'react';
-import { Search, User, X, ShoppingCart, Menu, Facebook, Instagram, Linkedin } from 'lucide-react';
-import { Link, useNavigate } from 'react-router';
+import { Search, User, X, ShoppingCart, Menu, Facebook, Instagram, Linkedin, ChevronDown } from 'lucide-react';
+import { Link, useNavigate, useLocation } from 'react-router';
 import { Logo } from '../common/Logo';
 import { MobileMenu } from './MobileMenu';
 import { HEADER_TOP_BAR_LINKS, HEADER_CATEGORY_BAR_LINKS, SOCIAL_LINKS } from '../../data/navigation';
@@ -8,6 +8,8 @@ import { HEADER_UI } from '../../data/header';
 import { useCart } from '../../context/CartContext';
 import { Button } from '../ui/button';
 import { ThemeToggle } from '../common/ThemeToggle';
+import { categories } from '../../data/categories';
+import { getSubcategoriesByParent } from '../../data/subcategories';
 import headerTexture from 'figma:asset/59f5f21fc3ab664ddea62e2cde218d15718c0a5b.png';
 import {
   Sheet,
@@ -22,6 +24,7 @@ import type { CategoryArticle } from '../../data/categoryArticles';
 
 export const Header = memo(() => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const { count, items, removeItem, total } = useCart();
@@ -148,10 +151,10 @@ export const Header = memo(() => {
         <div className="w-full max-w-[1440px] mx-auto relative" style={{ paddingLeft: 'clamp(1rem, 4vw, 2rem)', paddingRight: 'clamp(1rem, 4vw, 2rem)' }}>
           <div className="flex justify-between items-center h-[80px] lg:h-[124px] relative z-10">
             
-            {/* Logo - left-aligned on mobile, absolutely centered on desktop */}
-            <div className={`flex items-center flex-shrink-0 lg:absolute lg:left-1/2 lg:top-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 transition-opacity duration-200 ${searchOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+            {/* Logo - left-aligned on all screen sizes */}
+            <div className={`flex items-center flex-shrink-0 transition-opacity duration-200 ${searchOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
               <Link to="/" className="flex items-center">
-                <Logo className="h-8 sm:h-10 lg:h-[64px] w-auto max-w-[180px] sm:max-w-[200px] lg:max-w-none" variant="white" />
+                <Logo className="h-10 sm:h-12 lg:h-[80px] w-auto" variant="white" />
               </Link>
             </div>
 
@@ -169,7 +172,7 @@ export const Header = memo(() => {
                       onChange={(e) => setSearchQuery(e.target.value)}
                       placeholder={HEADER_UI.search.placeholder}
                       autoFocus
-                      className="w-full px-4 py-3 bg-gray-100 dark:bg-white/10 dark:backdrop-blur-sm border border-gray-300 dark:border-white/20 text-brand-navy dark:text-white placeholder-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent text-lg"
+                      className="w-full px-4 py-3 bg-gray-100 dark:bg-white/10 dark:backdrop-blur-sm border border-gray-300 dark:border-white/20 text-brand-navy dark:text-white placeholder-gray-400 rounded-md focus-brand text-lg"
                     />
                     <button 
                       type="button"
@@ -320,28 +323,83 @@ export const Header = memo(() => {
                 {HEADER_UI.deliveryButton}
               </Link>
 
-              {/* Mobile menu trigger - far right on mobile */}
-              <div className="lg:hidden">
-                <MobileMenu />
-              </div>
+              {/* Mobile menu trigger - visible burger menu on mobile, positioned after My Account icon */}
+              <MobileMenu />
             </div>
           </div>
         </div>
       </div>
 
-      {/* Categories Bar - Desktop Only (Mobile uses MobileMenu) */}
+      {/* Categories Bar - Desktop Only with Mega Menus */}
       <div className="hidden lg:block border-b border-gray-200 dark:border-border bg-white dark:bg-background">
         <div className="w-full max-w-[1440px] mx-auto" style={{ paddingLeft: 'clamp(1rem, 4vw, 2rem)', paddingRight: 'clamp(1rem, 4vw, 2rem)' }}>
            <nav className="flex items-center justify-center gap-8 h-12">
-             {HEADER_CATEGORY_BAR_LINKS.map((item) => (
-                <Link 
-                  key={item.label} 
-                  to={item.href} 
-                  className="text-brand-navy dark:text-foreground hover:text-brand-red font-bold text-sm uppercase tracking-wide transition-colors whitespace-nowrap"
-                >
-                  {item.label}
-                </Link>
-              ))}
+             {HEADER_CATEGORY_BAR_LINKS.map((item, index) => {
+                // Find the category data
+                const category = categories.find(cat => `/${cat.slug}` === item.href);
+                const hasSubcategories = category && category.subcategories.length > 0;
+                const isActive = location.pathname === item.href || location.pathname.startsWith(item.href + '/');
+                const subcats = category ? getSubcategoriesByParent(category.id) : [];
+                const useTwoColumns = subcats.length > 8; // Use 2 columns if more than 8 items
+                
+                // Smart positioning: first item (Kos) aligns left, last items align right, middle items center
+                const isFirstItem = index === 0;
+                const isLastThreeItems = index >= HEADER_CATEGORY_BAR_LINKS.length - 3;
+                
+                let dropdownPositionClass = 'left-1/2 -translate-x-1/2'; // Default: center
+                if (useTwoColumns && isFirstItem) {
+                  dropdownPositionClass = 'left-0'; // Align left for first item with 2 columns
+                } else if (useTwoColumns && isLastThreeItems) {
+                  dropdownPositionClass = 'right-0'; // Align right for last items with 2 columns
+                }
+                
+                return (
+                  <div key={item.label} className="relative group h-full flex items-center">
+                    <Link 
+                      to={item.href} 
+                      className={`flex items-center gap-1 font-bold text-sm uppercase tracking-wide transition-colors whitespace-nowrap ${
+                        isActive 
+                          ? 'text-brand-red' 
+                          : 'text-brand-navy dark:text-foreground hover:text-brand-red'
+                      }`}
+                    >
+                      {item.label}
+                      {hasSubcategories && <ChevronDown size={14} className="transition-transform group-hover:rotate-180" />}
+                    </Link>
+
+                    {/* Mega Menu Dropdown */}
+                    {hasSubcategories && (
+                      <div className={`absolute top-full ${dropdownPositionClass} pt-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50`}>
+                        <div className={`bg-white dark:bg-card border border-gray-200 dark:border-border rounded-lg shadow-xl dark:shadow-[var(--shadow-dark-500)] p-6 mt-0 ${
+                          useTwoColumns ? 'min-w-[560px] max-w-[640px]' : 'min-w-[280px] max-w-[320px]'
+                        }`}>
+                          <h3 className="text-xs font-bold uppercase tracking-[0.15em] text-brand-red mb-4 has-brand-serif-font-family" style={{ fontVariationSettings: 'var(--fvs-h6)', letterSpacing: 'var(--ls-h6)' }}>
+                            {item.label}
+                          </h3>
+                          <ul className={`space-y-2 ${useTwoColumns ? 'columns-2 gap-8' : ''}`}>
+                            {subcats.map((subcat) => (
+                              <li key={subcat.id} className={useTwoColumns ? 'break-inside-avoid' : ''}>
+                                <Link
+                                  to={`/${category.slug}/${subcat.slug}`}
+                                  className="block py-2 px-3 rounded-md text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-900 hover:text-brand-red dark:hover:text-brand-red transition-colors"
+                                >
+                                  {subcat.title}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                          <Link
+                            to={item.href}
+                            className="block mt-4 pt-4 border-t border-gray-200 dark:border-border text-sm font-bold text-brand-red hover:underline"
+                          >
+                            Sien alle {item.label} →
+                          </Link>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
            </nav>
         </div>
       </div>

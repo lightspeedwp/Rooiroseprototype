@@ -1,6 +1,7 @@
 /**
  * Competition data for rooi rose
  * Contains current and past competitions with SEO metadata
+ * INCLUDES PAID COMPETITIONS with entry fees
  */
 
 export interface Competition {
@@ -19,6 +20,8 @@ export interface Competition {
     location: string;
   };
   rules?: string[];
+  entryFee?: number; // Optional entry fee for paid competitions
+  isPaid?: boolean; // Flag to indicate paid competition
 }
 
 export const COMPETITIONS: Competition[] = [
@@ -136,6 +139,75 @@ export const COMPETITIONS: Competition[] = [
     category: "Buitelug",
     status: "active"
   },
+  // Paid Competitions
+  {
+    id: 10,
+    slug: "wen-r50000-kontant-premium",
+    title: "Wen R50,000 kontant! (Premium Inskrywing)",
+    description: "Ons grootste kompetisie tot op hede! Skryf in vir net R25 en staan 'n kans om R50,000 kontant te wen. Beperkte inskrywings.",
+    prizeValue: "R50,000",
+    sponsor: "rooi rose",
+    closingDate: "30 April 2026",
+    imageUrl: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e",
+    category: "Kontant",
+    status: "active",
+    isPaid: true,
+    entryFee: 25,
+    rules: [
+      "Inskrywingsfooi van R25 per inskrywing.",
+      "Slegs Suid-Afrikaanse inwoners mag deelneem.",
+      "Die wenner sal telefonies en per e-pos gekontak word.",
+      "Die prys word elektronies oorgeplaas binne 14 werksdae.",
+      "Maksimum 5 inskrywings per persoon.",
+      "Werknemers van rooi rose en geaffilieerde maatskappye mag nie deelneem nie."
+    ]
+  },
+  {
+    id: 11,
+    slug: "wen-royal-hotel-wegbreek",
+    title: "Wen 'n Royal Hotel luukse wegbreek (Premium)",
+    description: "3 nagte se 5-ster akkommodasie by die prestigieuse Twelve Apostles Hotel vir 2 persone. Ontbyt, spa-behandeling en wynproe ingesluit. Inskrywingsfooi: R35.",
+    prizeValue: "R35,000",
+    sponsor: "Twelve Apostles Hotel",
+    closingDate: "20 April 2026",
+    imageUrl: "https://images.unsplash.com/photo-1566073771259-6a8506099945",
+    category: "Reis",
+    status: "active",
+    isPaid: true,
+    entryFee: 35,
+    rules: [
+      "Inskrywingsfooi van R35 per inskrywing.",
+      "Onderhewig aan beskikbaarheid (uitgesluit Desember en Januarie).",
+      "Prys sluit 3 nagte se akkommodasie, ontbyt, 1x spa-behandeling per persoon, en wynproe in.",
+      "Geldig vir 12 maande vanaf die datum van trekking.",
+      "Vervoer is nie ingesluit nie.",
+      "Nie oordraagbaar of uitruilbaar vir kontant nie."
+    ]
+  },
+  {
+    id: 12,
+    slug: "wen-bmw-vir-n-jaar",
+    title: "Bestuur 'n BMW vir 'n jaar! (Premium Inskrywing)",
+    description: "Wen die gebruik van 'n splinternuwe BMW 3-Reeks vir 'n volle jaar, insluitende versekering en instandhouding. Totale waarde: R120,000. Inskrywingsfooi: R50.",
+    prizeValue: "R120,000",
+    sponsor: "BMW SA",
+    closingDate: "15 Mei 2026",
+    imageUrl: "https://images.unsplash.com/photo-1555215695-3004980ad54e",
+    category: "Motors",
+    status: "active",
+    isPaid: true,
+    entryFee: 50,
+    rules: [
+      "Inskrywingsfooi van R50 per inskrywing.",
+      "Slegs Suid-Afrikaanse inwoners met 'n geldige bestuurslisensie mag deelneem.",
+      "Die wenner moet 25 jaar of ouer wees.",
+      "Prys sluit 12 maande se gebruik, volledige versekering, en alle instandhouding in.",
+      "Brandstof is nie ingesluit nie.",
+      "Die motor moet by 'n BMW-handelaar in Kaapstad, Johannesburg of Durban opgetel word.",
+      "Die wenner moet 'n skoon kredietrekord hê."
+    ]
+  },
+  // Past Competitions
   {
     id: 8,
     slug: "checkers-geskenkbewys-wenner",
@@ -175,6 +247,20 @@ export const COMPETITIONS: Competition[] = [
  */
 export function getActiveCompetitions(): Competition[] {
   return COMPETITIONS.filter(c => c.status === 'active');
+}
+
+/**
+ * Get all free competitions (no entry fee)
+ */
+export function getFreeCompetitions(): Competition[] {
+  return COMPETITIONS.filter(c => c.status === 'active' && !c.isPaid);
+}
+
+/**
+ * Get all paid competitions (with entry fee)
+ */
+export function getPaidCompetitions(): Competition[] {
+  return COMPETITIONS.filter(c => c.status === 'active' && c.isPaid);
 }
 
 /**

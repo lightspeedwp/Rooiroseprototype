@@ -5,6 +5,8 @@
  * Last updated: 2026-03-03
  */
 
+import { CONTACT_EMAILS } from '../contactInfo';
+
 export const POLICY_COOKIE = {
   title: 'Koekiebeleid',
   subtitle: 'Persoonlike inligting en koekies',
@@ -115,7 +117,7 @@ export const POLICY_COOKIE = {
   complaint: {
     text: "As jy nie tevrede is met die wyse waarop ons ('n klagte oor) die verwerking van jou persoonlike data hanteer nie, het jy die reg om 'n klagte by die Inligtingreguleerder Suid-Afrika in te dien:",
     address: 'P.O Box 31533, Braamfontein, Johannesburg, 2017',
-    email: 'complaints.IR@justice.gov.za',
+    email: CONTACT_EMAILS.complaints,
   },
 
   children: "Ons webwerf is nie ontwerp om kinders te trek nie en dit is nie ons bedoeling om persoonlike data van kinders onder die ouderdom van toestemming in hul land van verblyf te versamel nie. Ons versoek dus dat kinders onder die ouderdom van toestemming geen persoonlike data aan ons indien nie.",
@@ -124,9 +126,9 @@ export const POLICY_COOKIE = {
     entity: 'rooi rose',
     address: 'Loft Office East (LOE4), Tweede verdieping, The Zone, Oxfordstraat 187, Rosebank',
     advertising: '+27 51 404 7600',
-    editorial: 'lesers@diepapier.co.za',
-    subscribers: 'diepapierintekening@novusmedia.co.za',
-    ombudsman: 'mediaombud@novusmedia.co.za',
+    editorial: CONTACT_EMAILS.editorial,
+    subscribers: CONTACT_EMAILS.subscribers,
+    ombudsman: CONTACT_EMAILS.ombudsman,
   },
 
   /** Section headings used in the component (moved from hardcoded) */

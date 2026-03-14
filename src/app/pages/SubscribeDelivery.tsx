@@ -1,6 +1,7 @@
+import { CONTACT_PHONES, EXTERNAL_SERVICE_EMAILS, createTelLink, createMailtoLink } from '../data/contactInfo';
 import React from 'react';
 import { Button } from '../components/ui/button';
-import { Check, Truck, FileText, Calendar, ArrowRight, MapPin, Star } from 'lucide-react';
+import { Check, Truck, FileText, Calendar, ArrowRight, MapPin, Star, Coffee, BookOpen, Heart, Package, Globe, Zap } from 'lucide-react';
 import { Newspaper } from '../components/icons/NewspaperIcon';
 import { useNavigate, Link } from 'react-router';
 import { PageContainer } from '../components/common/PageContainer';
@@ -71,6 +72,201 @@ export const SubscribeDelivery = () => {
 
       <div className="alignwide text-center relative z-10">
         
+        {/* ─── Tactile Magazine Benefits Section ─── */}
+        <div className="mb-16 pt-12 lg:pt-20">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-normal font-heading text-brand-navy dark:text-foreground mb-4" style={{ fontVariationSettings: "var(--fvs-h2)", lineHeight: 'var(--lh-h2)', letterSpacing: 'var(--ls-h2)' }}>
+              Die mag van papier
+            </h2>
+            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              Ervaar <em>rooi rose</em> soos dit bedoel is — met al jou sintuie.
+            </p>
+          </div>
+
+          {/* Benefits Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-white dark:bg-card rounded-xl p-6 border border-gray-200 dark:border-border">
+              <div className="w-12 h-12 rounded-lg bg-amber-50 dark:bg-amber-950/30 flex items-center justify-center mb-4">
+                <Coffee size={24} className="text-amber-600 dark:text-amber-400" />
+              </div>
+              <h3 className="text-lg font-normal font-heading text-brand-navy dark:text-foreground mb-2" style={{ fontVariationSettings: "var(--fvs-h4)", fontSize: 'var(--text-h4)', lineHeight: 'var(--lh-h4)' }}>
+                Koffietafelwaarde
+              </h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                'n Pragtige, tasbare publikasie wat jou woonruimte verfraai en gesprekke aanmoedig.
+              </p>
+            </div>
+
+            <div className="bg-white dark:bg-card rounded-xl p-6 border border-gray-200 dark:border-border">
+              <div className="w-12 h-12 rounded-lg bg-purple-50 dark:bg-purple-950/30 flex items-center justify-center mb-4">
+                <BookOpen size={24} className="text-purple-600 dark:text-purple-400" />
+              </div>
+              <h3 className="text-lg font-normal font-heading text-brand-navy dark:text-foreground mb-2" style={{ fontVariationSettings: "var(--fvs-h4)", fontSize: 'var(--text-h4)', lineHeight: 'var(--lh-h4)' }}>
+                Geen skermtyd
+              </h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                Rus jou oë en geniet dieper fokus — perfek vir ontspanning sonder digitale afleiding.
+              </p>
+            </div>
+
+            <div className="bg-white dark:bg-card rounded-xl p-6 border border-gray-200 dark:border-border">
+              <div className="w-12 h-12 rounded-lg bg-red-50 dark:bg-red-950/30 flex items-center justify-center mb-4">
+                <Heart size={24} className="text-brand-red" />
+              </div>
+              <h3 className="text-lg font-normal font-heading text-brand-navy dark:text-foreground mb-2" style={{ fontVariationSettings: "var(--fvs-h4)", fontSize: 'var(--text-h4)', lineHeight: 'var(--lh-h4)' }}>
+                Versamelkwaliteit
+              </h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                Hou kosbare uitgawes, knip jou gunsteling resepte uit, en skep 'n erfenis om te bewaar.
+              </p>
+            </div>
+
+            <div className="bg-white dark:bg-card rounded-xl p-6 border border-gray-200 dark:border-border">
+              <div className="w-12 h-12 rounded-lg bg-green-50 dark:bg-green-950/30 flex items-center justify-center mb-4">
+                <Package size={24} className="text-green-600 dark:text-green-400" />
+              </div>
+              <h3 className="text-lg font-normal font-heading text-brand-navy dark:text-foreground mb-2" style={{ fontVariationSettings: "var(--fvs-h4)", fontSize: 'var(--text-h4)', lineHeight: 'var(--lh-h4)' }}>
+                By jou deur
+              </h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                Elke Vrydag oggend — vars en vroeg afgelewer sodat jy jou naweek kan begin met <em>rooi rose</em>.
+              </p>
+            </div>
+
+            <div className="bg-white dark:bg-card rounded-xl p-6 border border-gray-200 dark:border-border">
+              <div className="w-12 h-12 rounded-lg bg-indigo-50 dark:bg-indigo-950/30 flex items-center justify-center mb-4">
+                <BookOpen size={24} className="text-indigo-600 dark:text-indigo-400" />
+              </div>
+              <h3 className="text-lg font-normal font-heading text-brand-navy dark:text-foreground mb-2" style={{ fontVariationSettings: "var(--fvs-h4)", fontSize: 'var(--text-h4)', lineHeight: 'var(--lh-h4)' }}>
+                Tasbare ervaring
+              </h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                Die reuk van vars drukwerk, die tekstuur van kwaliteit papier — 'n sintuiglike ervaring.
+              </p>
+            </div>
+
+            <div className="bg-white dark:bg-card rounded-xl p-6 border border-gray-200 dark:border-border">
+              <div className="w-12 h-12 rounded-lg bg-blue-50 dark:bg-blue-950/30 flex items-center justify-center mb-4">
+                <Heart size={24} className="text-blue-600 dark:text-blue-400" />
+              </div>
+              <h3 className="text-lg font-normal font-heading text-brand-navy dark:text-foreground mb-2" style={{ fontVariationSettings: "var(--fvs-h4)", fontSize: 'var(--text-h4)', lineHeight: 'var(--lh-h4)' }}>
+                Deel met gesin
+              </h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                Een kopie wat die hele huishouding kan geniet — niks klop 'n fisiese koerant om rond te gee nie.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* ─── Comparison Table ─── */}
+        <div className="mb-16">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-normal font-heading text-brand-navy dark:text-foreground mb-4" style={{ fontVariationSettings: "var(--fvs-h2)", lineHeight: 'var(--lh-h2)', letterSpacing: 'var(--ls-h2)' }}>
+              Papier vs. E-uitgawe
+            </h2>
+            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              Kies die opsie wat by jou leefstyl pas — of kry albei vir die volledige <em>rooi rose</em> ervaring.
+            </p>
+          </div>
+
+          {/* Comparison Table */}
+          <div className="bg-white dark:bg-card rounded-2xl border border-gray-200 dark:border-border overflow-hidden shadow-md">
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b border-gray-200 dark:border-border">
+                    <th className="text-left p-6 font-normal text-gray-600 dark:text-gray-400 text-sm uppercase tracking-wider">Kenmerk</th>
+                    <th className="text-center p-6 bg-amber-50 dark:bg-amber-950/30">
+                      <span className="text-lg font-normal font-heading text-brand-navy dark:text-foreground" style={{ fontVariationSettings: "var(--fvs-h4)", fontSize: 'var(--text-h4)' }}>Papier</span>
+                    </th>
+                    <th className="text-center p-6">
+                      <span className="text-lg font-normal font-heading text-brand-navy dark:text-foreground" style={{ fontVariationSettings: "var(--fvs-h4)", fontSize: 'var(--text-h4)' }}>E-uitgawe</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-gray-100 dark:border-border/50">
+                    <td className="p-6 text-gray-700 dark:text-gray-300">Prys per maand</td>
+                    <td className="p-6 text-center bg-amber-50 dark:bg-amber-950/30 font-bold text-brand-navy dark:text-foreground">Vanaf R140</td>
+                    <td className="p-6 text-center font-bold text-brand-navy dark:text-foreground">Vanaf R140</td>
+                  </tr>
+                  <tr className="border-b border-gray-100 dark:border-border/50">
+                    <td className="p-6 text-gray-700 dark:text-gray-300">Fisiese kopie</td>
+                    <td className="p-6 text-center bg-amber-50 dark:bg-amber-950/30"><Check size={20} className="mx-auto text-green-600" /></td>
+                    <td className="p-6 text-center text-gray-400">—</td>
+                  </tr>
+                  <tr className="border-b border-gray-100 dark:border-border/50">
+                    <td className="p-6 text-gray-700 dark:text-gray-300">Aflewering by jou deur</td>
+                    <td className="p-6 text-center bg-amber-50 dark:bg-amber-950/30"><Check size={20} className="mx-auto text-green-600" /></td>
+                    <td className="p-6 text-center text-gray-400">Nie nodig nie</td>
+                  </tr>
+                  <tr className="border-b border-gray-100 dark:border-border/50">
+                    <td className="p-6 text-gray-700 dark:text-gray-300">Tasbare leeservaring</td>
+                    <td className="p-6 text-center bg-amber-50 dark:bg-amber-950/30 text-green-600 font-medium">Vars drukwerk</td>
+                    <td className="p-6 text-center text-gray-400">Digitaal</td>
+                  </tr>
+                  <tr className="border-b border-gray-100 dark:border-border/50">
+                    <td className="p-6 text-gray-700 dark:text-gray-300">Versamelwaarde</td>
+                    <td className="p-6 text-center bg-amber-50 dark:bg-amber-950/30"><Check size={20} className="mx-auto text-green-600" /></td>
+                    <td className="p-6 text-center text-gray-400">—</td>
+                  </tr>
+                  <tr className="border-b border-gray-100 dark:border-border/50">
+                    <td className="p-6 text-gray-700 dark:text-gray-300">Lees op enige toestel</td>
+                    <td className="p-6 text-center bg-amber-50 dark:bg-amber-950/30 text-gray-400">Slegs papier</td>
+                    <td className="p-6 text-center"><Check size={20} className="mx-auto text-green-600" /></td>
+                  </tr>
+                  <tr>
+                    <td className="p-6 text-gray-700 dark:text-gray-300">Deursigbaar argief</td>
+                    <td className="p-6 text-center bg-amber-50 dark:bg-amber-950/30 text-gray-400">—</td>
+                    <td className="p-6 text-center"><Check size={20} className="mx-auto text-green-600" /></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        {/* ─── Delivery Zones Information ─── */}
+        <div className="bg-blue-50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-900/30 rounded-xl p-6 md:p-8 mb-16">
+          <div className="flex items-start gap-4">
+            <div className="w-12 h-12 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center flex-shrink-0">
+              <MapPin size={24} className="text-blue-700 dark:text-blue-400" />
+            </div>
+            <div>
+              <h3 className="text-xl font-normal font-heading text-blue-900 dark:text-blue-200 mb-2" style={{ fontVariationSettings: "var(--fvs-h4)", fontSize: 'var(--text-h4)', lineHeight: 'var(--lh-h4)' }}>
+                4 Streekuitgawes — Aflewering beskikbaar
+              </h3>
+              <p className="text-blue-800 dark:text-blue-300 mb-4 leading-relaxed">
+                <em>rooi rose</em> word in 4 streekuitgawes gepubliseer. Aflewering is beskikbaar in die volgende gebiede:
+              </p>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-blue-800 dark:text-blue-300">
+                <li className="flex items-center gap-2">
+                  <Check size={16} className="text-blue-600 dark:text-blue-400 flex-shrink-0" />
+                  <span><strong>Boland</strong> — Paarl, Stellenbosch, Wellington</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <Check size={16} className="text-blue-600 dark:text-blue-400 flex-shrink-0" />
+                  <span><strong>Overberg</strong> — Hermanus, Gansbaai, Bredasdorp</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <Check size={16} className="text-blue-600 dark:text-blue-400 flex-shrink-0" />
+                  <span><strong>Breede Rivier</strong> — Worcester, Robertson, Montagu</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <Check size={16} className="text-blue-600 dark:text-blue-400 flex-shrink-0" />
+                  <span><strong>Langeberg</strong> — Swellendam, Heidelberg, Riversdale</span>
+                </li>
+              </ul>
+              <p className="text-blue-700 dark:text-blue-400 text-sm mt-4 italic">
+                Aflewering vind elke Vrydag tussen 05:00-08:00 plaas. Kontak{' '}
+                <a href={createTelLink(CONTACT_PHONES.delivery)} className="text-brand-red hover:underline font-medium">{CONTACT_PHONES.delivery}</a>{' '}
+                om te bevestig of ons in jou area aflewer.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Pricing Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-5 items-center mb-8">
           {PRINT_SUBSCRIPTIONS.map((option) => (
@@ -166,34 +362,6 @@ export const SubscribeDelivery = () => {
               </div>
             </div>
         </Link>
-
-        {/* Features Grid */}
-        <div className="max-w-4xl mx-auto text-center mb-8">
-          <h2 className="text-2xl font-normal text-brand-navy dark:text-foreground font-heading mb-4" style={{ fontVariationSettings: "var(--fvs-h2)", lineHeight: 'var(--lh-h2)', letterSpacing: 'var(--ls-h2)', fontSize: 'var(--text-h2)' }}>Aflewerings Areas</h2>
-          <p className="text-gray-500 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
-            Ons lewer af in die groter metro-gebiede en sommige omliggende dorpe. Vir huisaflewering, bel die On the Dot afleweringspan by{' '}
-            <a href="tel:0873531291" className="text-brand-red hover:underline font-medium">087 353 1291</a>{' '}
-            of stuur 'n e-pos na{' '}
-            <a href="mailto:diepapierintekening@onthedot.co.za" className="text-brand-red hover:underline">diepapierintekening@onthedot.co.za</a>.
-          </p>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-6 bg-white dark:bg-card rounded-2xl border border-gray-200 dark:border-border shadow-md hover:shadow-xl transition-shadow duration-300">
-              <MapPin className="w-10 h-10 text-brand-red mx-auto mb-4" />
-              <h4 className="font-normal text-brand-navy dark:text-foreground mb-2 font-heading" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)' }}>Metro-gebiede</h4>
-              <p className="text-sm text-gray-500 dark:text-gray-400">Ons lewer af in die groter metro-gebiede en sommige omliggende dorpe.</p>
-            </div>
-            <div className="p-6 bg-white dark:bg-card rounded-2xl border border-gray-200 dark:border-border shadow-md hover:shadow-xl transition-shadow duration-300">
-              <Truck className="w-10 h-10 text-brand-red mx-auto mb-4" />
-              <h4 className="font-normal text-brand-navy dark:text-foreground mb-2 font-heading" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)' }}>Vrydag Oggende</h4>
-              <p className="text-sm text-gray-500 dark:text-gray-400">Aflewering vind plaas tussen 05:00 en 08:00 elke Vrydag.</p>
-            </div>
-            <div className="p-6 bg-white dark:bg-card rounded-2xl border border-gray-200 dark:border-border shadow-md hover:shadow-xl transition-shadow duration-300">
-              <Calendar className="w-10 h-10 text-brand-red mx-auto mb-4" />
-              <h4 className="font-normal text-brand-navy dark:text-foreground mb-2 font-heading" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)' }}>Vakansie Reëlings</h4>
-              <p className="text-sm text-gray-500 dark:text-gray-400">Stel jou aflewering tydelik uit wanneer jy met vakansie gaan.</p>
-            </div>
-          </div>
-        </div>
 
       </div>
       <PageFAQSection items={SUBSCRIBE_DELIVERY_FAQS} />

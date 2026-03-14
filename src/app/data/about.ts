@@ -1,3 +1,5 @@
+import { CONTACT_EMAILS } from './contactInfo';
+
 import {
   Users,
   Megaphone,
@@ -106,10 +108,10 @@ export const VALUES = [
 ];
 
 export const ETHICS = {
-  title: "Etiese kode",
+  title: 'Perskode en etiek',
   paragraphs: [
     "Novus Media vertoon trots die \"Fair\"-stempel van die Persraad van Suid-Afrika, wat ons verbintenis aandui om te voldoen aan die Kode van Etiek vir Druk- en Aanlyn Media. Ons verseker dat ons verslaggewing waarheidsgetrou, akkuraat en regverdig is.",
-    "Indien jy 'n klagte oor ons nuusdekking wil indien, besoek asseblief die Persraad-webwerf, of stuur 'n e-pos aan ons ombudsman, George Claassen, by mediaombudsman@novusmedia.co.za. Jy kan ook die Persraad kontak by 011 484 3612."
+    `Indien jy 'n klagte oor ons nuusdekking wil indien, besoek asseblief die Persraad-webwerf, of stuur 'n e-pos aan ons ombudsman, George Claassen, by ${CONTACT_EMAILS.ombudsman}. Jy kan ook die Persraad kontak by 011 484 3612.`
   ]
 };
 

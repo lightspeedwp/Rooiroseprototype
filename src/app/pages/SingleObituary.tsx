@@ -53,8 +53,8 @@ export const SingleObituaryPage = () => {
             {/* Header Card */}
             <div className="bg-white dark:bg-card rounded-lg border border-gray-100 dark:border-border shadow-sm dark:shadow-[var(--shadow-dark-200)] overflow-hidden mb-8">
               {/* Photo + Name Banner */}
-              <div className="bg-brand-navy dark:bg-background p-8 flex flex-col sm:flex-row items-center gap-6">
-                <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-white/20 flex-shrink-0">
+              <div className="bg-gradient-to-br from-brand-navy to-brand-navy-light dark:bg-background p-10 flex flex-col sm:flex-row items-center gap-6">
+                <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-white/30 shadow-lg flex-shrink-0">
                   <ImageWithFallback
                     src={obituary.imageUrl}
                     alt={obituary.name}
@@ -62,13 +62,13 @@ export const SingleObituaryPage = () => {
                   />
                 </div>
                 <div className="text-center sm:text-left">
-                  <h1 className="text-2xl sm:text-3xl font-normal text-white font-heading mb-2" style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}>
+                  <h1 className="text-3xl sm:text-4xl font-normal text-white has-brand-serif-font-family mb-2" style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}>
                     {obituary.name}
                   </h1>
-                  <p className="text-white/70 text-lg">
+                  <p className="text-white/80 text-lg">
                     {obituary.dateOfBirth} &mdash; {obituary.dateOfDeath}
                   </p>
-                  <p className="text-white/50 text-sm mt-1">
+                  <p className="text-white/60 text-sm mt-1">
                     Ouderdom: {obituary.age} jaar
                   </p>
                 </div>

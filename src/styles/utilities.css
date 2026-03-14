@@ -1,0 +1,79 @@
+/**
+ * rooi rose Magazine — Utility Classes
+ * 
+ * Custom utility classes that extend Tailwind CSS
+ * 
+ * Note: Using standard CSS for Tailwind v4 compatibility
+ */
+
+/**
+ * Focus Ring Utility
+ * 
+ * Enhanced focus visibility for keyboard navigation.
+ * Uses focus-visible to only show on keyboard focus (not mouse clicks).
+ * 
+ * Usage:
+ *   <button class="focus-brand">Click me</button>
+ *   <a href="/" class="focus-brand">Link</a>
+ */
+.focus-brand {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.focus-brand:focus {
+  outline: none;
+}
+
+.focus-brand:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-focus-ring), 0 0 0 4px var(--color-background);
+}
+
+@media (prefers-color-scheme: dark) {
+  .focus-brand:focus-visible {
+    box-shadow: 0 0 0 2px var(--color-focus-ring-dark), 0 0 0 4px var(--color-background);
+  }
+}
+
+/**
+ * Focus Ring for White Backgrounds
+ * Same as focus-brand but optimized for white/light backgrounds
+ */
+.focus-brand-light {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.focus-brand-light:focus {
+  outline: none;
+}
+
+.focus-brand-light:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-focus-ring), 0 0 0 4px white;
+}
+
+@media (prefers-color-scheme: dark) {
+  .focus-brand-light:focus-visible {
+    box-shadow: 0 0 0 2px var(--color-focus-ring-dark), 0 0 0 4px var(--color-background);
+  }
+}
+
+/**
+ * Focus Ring for Dark Backgrounds
+ * Optimized for dark navy backgrounds
+ */
+.focus-brand-dark {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.focus-brand-dark:focus {
+  outline: none;
+}
+
+.focus-brand-dark:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px white, 0 0 0 4px var(--color-brand-navy);
+}

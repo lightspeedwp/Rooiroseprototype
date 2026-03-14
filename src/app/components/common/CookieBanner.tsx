@@ -69,13 +69,13 @@ export const CookieBanner = () => {
           <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto shrink-0">
             <button
               onClick={handleDecline}
-              className="px-6 py-2.5 rounded-lg border border-gray-300 dark:border-border text-gray-700 dark:text-gray-300 font-medium hover:bg-gray-50 dark:hover:bg-muted transition-colors text-sm"
+              className="px-6 py-2.5 rounded-lg border border-gray-300 dark:border-border text-gray-700 dark:text-gray-300 font-medium hover:bg-gray-50 dark:hover:bg-muted transition-colors text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring focus-visible:ring-offset-2"
             >
               {COOKIE_BANNER.buttons.decline}
             </button>
             <button
               onClick={handleAccept}
-              className="px-6 py-2.5 rounded-lg bg-brand-red text-white font-bold hover:bg-brand-red-hover transition-colors shadow-sm text-sm"
+              className="px-6 py-2.5 rounded-lg bg-brand-red text-white font-bold hover:bg-brand-red-hover transition-colors shadow-sm text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white dark:focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-brand-red"
             >
               {COOKIE_BANNER.buttons.accept}
             </button>
@@ -83,7 +83,7 @@ export const CookieBanner = () => {
           
           <button 
             onClick={() => setIsVisible(false)}
-            className="absolute top-2 right-2 md:hidden text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300"
+            className="absolute top-2 right-2 md:hidden text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring rounded"
             aria-label="Sluit"
           >
             <X size={20} />

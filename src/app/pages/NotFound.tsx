@@ -5,22 +5,24 @@ import { Button } from '../components/ui/button';
 import { SEO } from '../components/common/SEO';
 import { NOT_FOUND_CONTENT } from '../data/notFound';
 
-/**
- * 404 Not Found Page
- * Canonical layout: centred card → 3 buttons → shaded popular pages
- */
+/* ── rooi rose Magazine 404 Page ──────────────────────────────
+ * Editorial design: Error page with brand styling
+ * Typography: Playfair Display SC headings, Karla body
+ * Layout: Centered error + action buttons + popular pages
+ * ────────────────────────────────────────────────────────────── */
+
 export const NotFoundPage = () => {
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-background flex items-center justify-center px-4 py-12">
+    <div className="min-h-screen bg-white dark:bg-background flex items-center justify-center px-4 py-12">
       <SEO title={`${NOT_FOUND_CONTENT.code} - ${NOT_FOUND_CONTENT.title}`} description={NOT_FOUND_CONTENT.description} />
       <div className="max-w-3xl w-full text-center">
         {/* Error Card */}
-        <div className="mb-8">
-          <h1 className="text-8xl font-normal text-primary mb-4 font-heading" style={{ fontVariationSettings: "var(--fvs-h1)", letterSpacing: 'var(--ls-h1)' }}>
+        <div className="mb-12">
+          <h1 className="text-9xl font-normal text-brand-red mb-6 has-brand-serif-font-family" style={{ fontVariationSettings: "var(--fvs-h1)", letterSpacing: 'var(--ls-h1)' }}>
             {NOT_FOUND_CONTENT.code}
           </h1>
           
-          <h2 className="text-3xl font-normal text-brand-navy dark:text-foreground mb-4 font-heading" style={{ fontVariationSettings: "var(--fvs-h2)", lineHeight: 'var(--lh-h2)', letterSpacing: 'var(--ls-h2)' }}>
+          <h2 className="text-4xl font-normal text-brand-navy dark:text-foreground mb-6 has-brand-serif-font-family" style={{ fontVariationSettings: "var(--fvs-h2)", lineHeight: 'var(--lh-h2)', letterSpacing: 'var(--ls-h2)' }}>
             {NOT_FOUND_CONTENT.title}
           </h2>
           
@@ -30,9 +32,9 @@ export const NotFoundPage = () => {
         </div>
 
         {/* Action Buttons — 1 primary + 2 outline */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
           <Link to="/">
-            <Button className="bg-primary hover:bg-brand-red-hover text-white px-8 py-3 rounded-md font-bold transition-colors inline-flex items-center gap-2 w-full sm:w-auto">
+            <Button className="bg-brand-red hover:bg-brand-red/90 text-white h-12 px-8 font-bold transition-colors inline-flex items-center gap-2 w-full sm:w-auto">
               <Home size={18} />
               {NOT_FOUND_CONTENT.buttons.home}
             </Button>
@@ -41,7 +43,7 @@ export const NotFoundPage = () => {
           <Link to="/soek">
             <Button
               variant="outline"
-              className="border-brand-navy dark:border-brand-navy-light text-brand-navy dark:text-foreground hover:bg-gray-50 dark:hover:bg-muted px-8 py-3 rounded-md font-bold transition-colors inline-flex items-center gap-2 w-full sm:w-auto"
+              className="border-2 border-brand-navy dark:border-brand-navy-light text-brand-navy dark:text-foreground hover:bg-brand-navy hover:text-white dark:hover:bg-brand-navy-light h-12 px-8 font-bold transition-colors inline-flex items-center gap-2 w-full sm:w-auto"
             >
               <Search size={18} />
               {NOT_FOUND_CONTENT.buttons.search}
@@ -51,7 +53,7 @@ export const NotFoundPage = () => {
           <Link to="/kontak">
             <Button
               variant="outline"
-              className="border-brand-navy dark:border-brand-navy-light text-brand-navy dark:text-foreground hover:bg-gray-50 dark:hover:bg-muted px-8 py-3 rounded-md font-bold transition-colors inline-flex items-center gap-2 w-full sm:w-auto"
+              className="border-2 border-brand-navy dark:border-brand-navy-light text-brand-navy dark:text-foreground hover:bg-brand-navy hover:text-white dark:hover:bg-brand-navy-light h-12 px-8 font-bold transition-colors inline-flex items-center gap-2 w-full sm:w-auto"
             >
               <Phone size={18} />
               {NOT_FOUND_CONTENT.buttons.contact}
@@ -60,19 +62,19 @@ export const NotFoundPage = () => {
         </div>
 
         {/* Popular Pages — shaded section */}
-        <div className="bg-white dark:bg-card rounded-lg shadow-md dark:shadow-[var(--shadow-dark-300)] p-8">
-          <h3 className="text-xl font-normal text-brand-navy dark:text-foreground mb-6 font-heading" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)', fontSize: 'var(--text-h3)' }}>
+        <div className="bg-gray-50 dark:bg-card rounded-xl border border-gray-200 dark:border-border shadow-md dark:shadow-[var(--shadow-dark-300)] p-8">
+          <h3 className="text-2xl font-normal text-brand-navy dark:text-foreground mb-8 has-brand-serif-font-family border-b-2 border-brand-red pb-3 inline-block" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)', fontSize: 'var(--text-h3)' }}>
             {NOT_FOUND_CONTENT.popularPages.title}
           </h3>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8">
             {NOT_FOUND_CONTENT.popularPages.links.map((page) => (
               <Link
                 key={page.href}
                 to={page.href}
-                className="group p-4 border border-gray-200 dark:border-border rounded-lg hover:border-primary dark:hover:border-primary hover:bg-red-50 dark:hover:bg-primary/10 transition-[border-color,background-color] text-center"
+                className="group p-5 bg-white dark:bg-background border-2 border-gray-200 dark:border-border rounded-lg hover:border-brand-red dark:hover:border-brand-red hover:bg-red-50 dark:hover:bg-red-950/20 transition-all text-center shadow-sm hover:shadow-md"
               >
-                <span className="text-brand-navy dark:text-foreground group-hover:text-primary dark:group-hover:text-primary font-medium transition-colors">
+                <span className="text-brand-navy dark:text-foreground group-hover:text-brand-red dark:group-hover:text-brand-red font-medium transition-colors">
                   {page.label}
                 </span>
               </Link>

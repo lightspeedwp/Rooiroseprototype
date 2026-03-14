@@ -31,7 +31,7 @@ export const SponsoredContentPage = () => {
 
       <ContentHero
         title="Geborgde inhoud"
-        subtitle="Vertel jou verhaal deur betroubare, hoë-kwaliteit redaksionele inhoud wat lesers boei en jou handelsmerk versterk."
+        subtitle="Vertel jou verhaal deur betroubare, hoë-kwaliteit redaksionele inhoud wat rooi rose se welgestelde lesers boei en jou handelsmerk versterk."
         image={HERO_IMAGES.advertise}
         height="small"
       />
@@ -42,9 +42,10 @@ export const SponsoredContentPage = () => {
           <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
             Geborgde inhoud is een van die mees doeltreffende maniere om jou teikenmark te bereik.
             In plaas van 'n tradisionele advertensie, vertel jy jou verhaal deur boeiende, 
-            informatiewe inhoud wat deur <em>rooi rose</em> se ervare redaksionele span geskep word — 
-            spesiaal ontwerp om jou handelsmerk op 'n outentieke en betrokke manier te bemark.
-            Bereik ons lesers met inhoud wat waarde toevoeg terwyl dit jou boodskap kommunikeer.
+            leefstyl-georiënteerde inhoud wat deur <em>rooi rose</em> se ervare redaksionele span geskep word — 
+            spesiaal ontwerp om jou handelsmerk op 'n outentieke en betrokke manier te bemark in ons 
+            premium tydskrif-konteks. Bereik ons welgestelde lesers met inhoud wat waarde toevoeg terwyl 
+            dit jou boodskap kommunikeer in Mode, Skoonheid, Kos en Leefstyl kategorieë.
           </p>
         </div>
 

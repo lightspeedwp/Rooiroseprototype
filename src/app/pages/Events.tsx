@@ -8,6 +8,12 @@ import { PageFAQSection } from '../components/patterns/PageFAQSection';
 import { EVENTS_FAQS } from '../data/pageFaqs';
 import { LeaderboardAd, SidebarAds, InFeedAd, StickyMobileFooter } from '../components/ads';
 
+/* ── rooi rose Magazine Events Page ──────────────────────────────
+ * Editorial design: Large magazine-style event cards
+ * Typography: Playfair Display SC headings
+ * Layout: Editorial header + category filters + event grid
+ * ────────────────────────────────────────────────────────────── */
+
 const ITEMS_PER_PAGE = 8;
 
 export const EventsPage = () => {
@@ -39,7 +45,7 @@ export const EventsPage = () => {
   );
 
   return (
-    <div className="bg-gray-50 dark:bg-background min-h-screen">
+    <div className="bg-white dark:bg-background min-h-screen">
       <SEO
         title="Gebeure | rooi rose"
         description="Vind uit wat gebeur in jou omgewing. Feeste, sport, markte en samekomste."
@@ -50,36 +56,34 @@ export const EventsPage = () => {
       <LeaderboardAd section="gebeure" />
 
       <PageContainer breadcrumbs={[{ label: 'Gebeure' }]}>
-        {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 border-b border-gray-200 dark:border-border pb-6 gap-4">
-          <div>
-            <h1
-              className="text-4xl font-normal text-brand-navy dark:text-foreground font-heading mb-2"
-              style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}
-            >
+        {/* Editorial Header */}
+        <div className="text-center mb-16">
+          <div className="mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family uppercase tracking-wider mb-4" style={{ letterSpacing: '0.15em' }}>
               Gebeure
             </h1>
-            <p className="text-gray-600 dark:text-gray-400">
+            <div className="w-24 h-1 bg-brand-red mx-auto mb-6"></div>
+            <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
               Bly op hoogte van wat in jou omgewing gebeur.
             </p>
           </div>
           <Link
             to="/gebeure/dien-in"
-            className="bg-[--brand-navy-light] text-white px-6 py-3 rounded font-bold hover:bg-brand-navy transition-colors flex items-center gap-2 whitespace-nowrap shadow-sm"
+            className="inline-flex items-center gap-2 bg-brand-red text-white px-8 py-3 rounded-lg font-bold hover:bg-brand-red-hover transition-colors shadow-sm"
           >
-            <span>+</span> Voeg gebeurtenis by
+            <Calendar size={20} /> Voeg gebeurtenis by
           </Link>
         </div>
 
         {/* Category Filter Tabs */}
-        <div className="mb-8">
-          <div className="flex items-center gap-2 mb-3">
-            <Filter size={14} className="text-gray-400" />
-            <span className="text-xs text-gray-400 uppercase tracking-wider font-bold">
+        <div className="mb-12">
+          <div className="flex items-center justify-center gap-2 mb-6">
+            <Filter size={16} className="text-gray-400" />
+            <span className="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wider font-semibold">
               Filter op kategorie
             </span>
           </div>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap justify-center gap-3">
             {categories.map((category) => {
               const count =
                 category === 'Alles'
@@ -89,20 +93,14 @@ export const EventsPage = () => {
                 <button
                   key={category}
                   onClick={() => handleCategoryChange(category)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                  className={`px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-300 ${
                     activeCategory === category
-                      ? 'bg-primary text-white shadow-sm'
-                      : 'bg-white dark:bg-card text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-border hover:border-primary dark:hover:border-primary hover:text-primary dark:hover:text-primary'
+                      ? 'bg-brand-red text-white shadow-md scale-105'
+                      : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 hover:scale-105'
                   }`}
                 >
                   {category}
-                  <span
-                    className={`ml-1.5 text-xs ${
-                      activeCategory === category
-                        ? 'text-white/80'
-                        : 'text-gray-400'
-                    }`}
-                  >
+                  <span className={`ml-2 text-xs ${activeCategory === category ? 'text-white/80' : 'text-gray-400'}`}>
                     ({count})
                   </span>
                 </button>
@@ -113,7 +111,7 @@ export const EventsPage = () => {
 
         {/* Results count */}
         {activeCategory !== 'Alles' && (
-          <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+          <p className="text-center text-sm text-gray-500 dark:text-gray-400 mb-8">
             {filteredEvents.length} gebeurtenis{filteredEvents.length !== 1 ? 'se' : ''} in "{activeCategory}"
           </p>
         )}

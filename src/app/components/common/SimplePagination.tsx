@@ -19,7 +19,7 @@ export const SimplePagination = ({
       <button
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className="w-9 h-9 flex items-center justify-center rounded border border-gray-200 dark:border-border text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-muted disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+        className="w-9 h-9 flex items-center justify-center rounded border border-gray-200 dark:border-border text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-muted disabled:opacity-40 disabled:cursor-not-allowed transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring focus-visible:ring-offset-2"
         aria-label="Vorige bladsy"
       >
         <ChevronLeft size={16} />
@@ -28,7 +28,7 @@ export const SimplePagination = ({
         <button
           key={page}
           onClick={() => onPageChange(page)}
-          className={`w-9 h-9 flex items-center justify-center rounded text-sm font-bold transition-colors ${
+          className={`w-9 h-9 flex items-center justify-center rounded text-sm font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring focus-visible:ring-offset-2 ${
             page === currentPage
               ? 'bg-custom-primary text-white'
               : 'border border-gray-200 dark:border-border text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-muted'
@@ -42,7 +42,7 @@ export const SimplePagination = ({
       <button
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className="w-9 h-9 flex items-center justify-center rounded border border-gray-200 dark:border-border text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-muted disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+        className="w-9 h-9 flex items-center justify-center rounded border border-gray-200 dark:border-border text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-muted disabled:opacity-40 disabled:cursor-not-allowed transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring focus-visible:ring-offset-2"
         aria-label="Volgende bladsy"
       >
         <ChevronRight size={16} />

@@ -1,5 +1,6 @@
 @import "./fonts.css";
 @import "./tailwind.css";
+@import "./utilities.css";
 
 /* ── Theme Partials (split from theme.css — 2026-03-05) ──────────────────── */
 /* Order matters: tokens → dark → exports → base → utilities → content        */

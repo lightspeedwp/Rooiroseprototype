@@ -1,3 +1,4 @@
+import { CONTACT_EMAILS, createMailtoLink } from '../../data/contactInfo';
 import React from 'react';
 import { NewsletterContainer } from '../newsletter/NewsletterContainer';
 import { Button } from '../ui/button';
@@ -24,7 +25,7 @@ export default function TuesdayNewsletterTemplate() {
           <span className="text-sm text-gray-500">17 Desember 2025</span>
         </div>
         <div className="text-xs text-gray-400 mb-2">
-          Antwoord aan: <a href="mailto:lesers@rooirose.co.za" className="text-blue-500 hover:underline">lesers@rooirose.co.za</a>
+          Antwoord aan: <a href={createMailtoLink(CONTACT_EMAILS.letters)} className="text-blue-500 hover:underline">{CONTACT_EMAILS.letters}</a>
         </div>
       </div>
 

@@ -7,7 +7,156 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-No unreleased changes — project complete.
+### In Progress
+
+- Advertising pages rebrand (newspaper → magazine context)
+- Subscription page enhancements (print vs e-edition differentiation)
+
+---
+
+## [3.3.0] - 2026-03-13 — Shop Implementation & Project Maintenance
+
+### 🛍️ Major Feature: rooi rose Shop Launch
+
+**Focus**: Complete e-commerce shop with swag products, category filtering, and square product imagery  
+**Effort**: ~3 hours (product data, shop page, cart integration, Figma iframe fix)
+
+### Added
+
+**Shop System** (`/src/app/pages/Shop.tsx`, `/src/app/data/products.ts`):
+- **18 swag products** across 5 categories (Klere, Drinkgoed, Leesstasies, Kantoorware, Geskenke)
+- **Square 1:1 product images** — magazine-quality product photography with aspect-ratio-square utility class
+- **Category filtering** — filter by category or view all products
+- **Product grid layout** — responsive 2/3/4 column grid with hover effects
+- **Price display** — R45 - R320 price range
+- **Add to cart integration** — full CartContext integration
+- **SEO optimization** — structured data, meta tags, breadcrumbs
+
+**Product Categories**:
+1. **Klere** (Clothing) — 4 products (T-shirts, hoodie, caps)
+2. **Drinkgoed** (Drinkware) — 4 products (mugs, water bottles, travel mugs)
+3. **Leesstasies** (Reading Accessories) — 3 products (bookmarks, tote bags, reading lights)
+4. **Kantoorware** (Stationery) — 4 products (notebooks, pens, sticky notes, desk calendars)
+5. **Geskenke** (Gifts) — 3 products (keychains, magnets, stickers)
+
+**Commerce Integration**:
+- Cart page (`Cart.tsx`) — full shopping cart with quantity controls
+- Checkout page (`Checkout.tsx`) — checkout form with delivery details
+- Order confirmation (`OrderConfirmation.tsx`) — thank you page with order summary
+
+### Fixed
+
+- **Figma Make Iframe Error** (`index.html`, `App.tsx`) — Fixed `IframeMessageAbortError: message port was destroyed` using **enhanced three-stage delay strategy**: Stage 1 waits for window load, Stage 2 defers script injection by 5000ms (HTML), Stage 3 defers router creation by 2000ms (App.tsx) for total 7s+ delay in iframe. Includes iframe detection to use minimal delays (100ms) in standard environments. Previous 1.5s total delay was insufficient for Figma's message port initialization. See `/docs/FIGMA-IFRAME-FIX.md` for technical details.
+
+### Maintenance
+
+**Comprehensive Project Audit** (`/prompts/cleanup.md` orchestrator):
+- ✅ **Phase 1: File System** — Root directory clean (15 files), tasks folder organized
+- ✅ **Phase 2: Import Validation** — All CSS imports valid, TypeScript imports clean
+- ✅ **Phase 3: Route Validation** — 80+ routes, 100% coverage, 0 broken links
+- ✅ **Phase 4: Documentation Updates** — Changelog updated, Guidelines.md current
+- ✅ **Phase 5: DevTools Data** — Pattern (177), Template (49), Block Styles (92), Icon (75) counts verified
+- ✅ **Phase 6: Task Tracking** — Master task list current, archived tasks organized
+
+**Report**: `/reports/maintenance-report-2026-03-13.md` (6 phases, 40+ validation tasks)
+
+---
+
+## [3.2.0] - 2026-03-12 — Static Page Overhaul & Navigation Refinements
+
+### 🎨 Major UI/UX Update: Magazine-First Static Pages
+
+**Focus**: Overhauled static pages and navigation to fully embrace rooi rose magazine aesthetic  
+**Effort**: ~2 hours (navigation updates, static page SEO, editorial design)
+
+### Changed
+
+**Navigation Updates** (`/src/app/data/navigation.ts`, `Header.tsx`):
+- **Removed "Tuis" from category menu** — reduced from 10 to 9 items for cleaner navigation
+- **Kos mega menu now displays in two columns** — better organization for 12 subcategories
+- Intelligent column detection: categories with 8+ items automatically use 2-column layout
+- Improved mega menu spacing and readability
+
+**Homepage Editorial Section** (`Home.tsx`):
+- Redesigned highlights section (E-Edition, Poll, Competition) with clean editorial style
+- Removed gray background → clean white with subtle top border
+- Card styling: border-based instead of shadow-based (rounded-sm, minimal shadows)
+- Added section header "Uitgesoek vir jou" with brand red accent and divider line
+- Increased padding (p-8) and gaps (gap-8 lg:gap-10) for magazine spacing
+- Added hover effect: borders change to brand red on hover
+- Magazine philosophy: generous white space, clean lines, content-first
+
+**Static Page SEO Updates**:
+- **About page** (`About.tsx`): Changed description from "weeklikse koerant" to "toonaangewende Afrikaanse leefstyl-tydskrif"
+- **Contact page** (`Contact.tsx`): Updated keywords from "die papier" to "rooi rose, tydskrif"
+- **Team page** (`Team.tsx`): Changed description from "stories" to "verhale wat saak maak vir rooi rose"
+
+### Design Philosophy
+
+All changes aligned with rooi rose magazine aesthetic:
+- **Border-based cards** over floating shadows
+- **Clean white backgrounds** instead of gray tones
+- **Typography hierarchy** with section headers
+- **Generous spacing** for editorial breathing room
+- **Subtle hover interactions** (red border emphasis)
+- **Two-column navigation** for better content organization
+
+### Impact
+
+- Better alignment with lifestyle magazine brand identity
+- Improved navigation usability (cleaner menu, better organized Kos dropdown)
+- SEO consistency reflecting magazine positioning vs newspaper
+- More sophisticated, editorial-first visual design
+- Maintained full dark mode support throughout
+
+---
+
+## [3.1.0] - 2026-03-12 — Editorial Design Refinement
+
+### 🎨 Major UI/UX Update: Editorial Magazine Design
+
+**Focus**: Simplified, typography-first design across navigation and footer  
+**Effort**: ~2 hours (2 components redesigned)
+
+### Changed
+
+**Mobile Menu Redesign** (`MobileMenu.tsx`):
+- Replaced colorful icon grid with clean text-based navigation list
+- Changed background from Navy dark to white/dark mode adaptive
+- Removed subscription CTAs (e-uitgawe, huisaflewering buttons)
+- Simplified from 13-item icon grid to hierarchical text list
+- Centered max-width layout (max-w-2xl) for better readability
+- Removed complex stagger animations, replaced with subtle transitions
+- Added proper chevron indicators for better affordance
+- Improved search bar styling with cleaner borders and focus states
+
+**Footer Redesign** (`Footer.tsx`):
+- Changed from Navy dark footer to light/clean editorial style
+- Newsletter CTA: Moved to lighter gray background (gray-50/gray-900)
+- Main footer: White/dark background instead of Navy
+- Removed Press Council/WAN-IFRA/FCJ accreditation logos section
+- Simplified from 5 to 4 link columns
+- Removed decorative patterns and overlays
+- Improved typography hierarchy with better spacing
+- Social icons: Lighter backgrounds, simpler styling
+- Contact section: Cleaner layout without map pin decorations
+
+### Design Philosophy
+
+- **Typography-First**: Clean, hierarchical text navigation
+- **Minimalism**: Removed visual noise, decorations, and heavy backgrounds
+- **Breathing Room**: More generous spacing, cleaner borders
+- **Editorial Magazine**: Inspired by Vogue, Bon Appétit, Kinfolk aesthetics
+- **Light & Clean**: Magazine-style white/light gray backgrounds
+- **Brand Subtlety**: Accent color (brand red) used sparingly for emphasis
+- **Dark Mode**: Full support maintained throughout redesign
+
+### Impact
+
+- Improved visual consistency with rooi rose magazine brand
+- Better readability and scanability of navigation elements
+- Reduced cognitive load with simpler, cleaner interfaces
+- Enhanced focus on content over decorative elements
 
 ---
 
@@ -297,6 +446,9 @@ No unreleased changes — project complete.
 
 | Version | Date | Milestone | Status |
 |:--------|:-----|:----------|:-------|
+| **3.3.0** | 2026-03-13 | Shop Implementation & Project Maintenance | ✅ Complete |
+| **3.2.0** | 2026-03-12 | Static Page Overhaul & Navigation Refinements | ✅ Complete |
+| **3.1.0** | 2026-03-12 | Editorial Design Refinement | ✅ Complete |
 | **3.0.0** | 2026-03-12 | Project Completion | ✅ Final Release |
 | 2.1.0 | 2026-03-12 | Font Migration | ✅ Complete |
 | 2.0.0 | 2026-03-12 | Documentation Complete | ✅ Complete |

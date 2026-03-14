@@ -3,7 +3,10 @@
  * Staff profiles and roles
  */
 
-import barnardImg from "figma:asset/0c2924c05ac313745f82994014d1725229f424bd.png";
+import { CONTACT_EMAILS } from './contactInfo';
+
+// Import images
+import barnardImg from '../assets/team/barnard-beyers.jpg';
 import luciaImg from "figma:asset/7c85c047fbdde8adee5b17cfb9211c718b88c10c.png";
 import vernonImg from "figma:asset/a75f8c0a9499677a09afa389a3d6a45e544ec10c.png";
 import gerrieImg from "figma:asset/29ff260289f38b2a986a638476e9b3250556115e.png";
@@ -43,114 +46,103 @@ export const TEAM_PAGE_CONTENT = {
 export const TEAM_MEMBERS: TeamMember[] = [
   // Redaksioneel (First 5)
   {
-    id: "barnard-beukman",
-    name: "Barnard Beukman",
+    id: 2,
+    name: "Barnard Beyers",
     role: "Redakteur",
     bio: "Ervare joernalis, ook voorheen as uitgewer en redakteur.",
-    email: "lesers@rooirose.co.za",
+    email: CONTACT_EMAILS.letters,
     image: barnardImg,
     department: 'redaksioneel',
-    displayOrder: 1
   },
   {
-    id: "lucia-poolman",
-    name: "Lucia Poolman",
+    id: 3,
+    name: "Lucia Peens",
     role: "Nuusredakteur",
     bio: "Voorheen tydskrifredakteur en akademikus. Nou tweede in bevel.",
-    email: "nuus@rooirose.co.za",
+    email: CONTACT_EMAILS.news,
     image: luciaImg,
     department: 'redaksioneel',
-    displayOrder: 2
   },
   {
-    id: "vernon-janse-van-rensburg",
-    name: "Vernon Janse van Rensburg",
+    id: 4,
+    name: "Vernon Lourens",
     role: "Inhoudsredakteur",
     bio: "Bekroon vir uitleg en opskrifte.",
-    email: "inhoud@rooirose.co.za",
+    email: 'inhoud@rooirose.co.za',
     image: vernonImg,
     department: 'redaksioneel',
-    displayOrder: 3
   },
   {
-    id: "gerrie-lotriet",
-    name: "Gerrie Lotriet",
+    id: 5,
+    name: "Gerrie van den Berg",
     role: "Uitlegkunstenaar",
     bio: "Jare ervaring van drukuitleg en elektroniese grafika.",
-    email: "uitleg@rooirose.co.za",
+    email: 'uitleg@rooirose.co.za',
     image: gerrieImg,
     department: 'redaksioneel',
-    displayOrder: 4
   },
   {
-    id: "ilse-salzwedel",
-    name: "Ilse Salzwedel",
+    id: 6,
+    name: "Ilse Wilson",
     role: "Hoofsub",
     bio: "Jare lange ervaring in tydskrifte, boeke, burgerlike aktivisme en radio.",
-    email: "sub@rooirose.co.za",
+    email: 'sub@rooirose.co.za',
     image: ilseImg,
     department: 'redaksioneel',
-    displayOrder: 5
   },
   // Verslaggewers (Next 6)
   {
-    id: "jana-marx",
+    id: 7,
     name: "Jana Marx",
     role: "Politieke redakteur",
     bio: "Bekroon op vele terreine van ondersoekende joernalistiek.",
-    email: "politiek@rooirose.co.za",
+    email: 'politiek@rooirose.co.za',
     image: janaImg,
     department: 'verslaggewers',
-    displayOrder: 6
   },
   {
-    id: "stehan-schoeman",
-    name: "Stehan Schoeman",
+    id: 8,
+    name: "Stehan Rabie",
     role: "Sportredakteur",
     bio: "Veelsydige joernalis met groot kennis van en passie vir sport.",
-    email: "sport@rooirose.co.za",
+    email: 'sport@rooirose.co.za',
     image: stehanImg,
     department: 'verslaggewers',
-    displayOrder: 7
   },
   {
-    id: "bohemia-jumatt",
-    name: "Bohemia Jumatt",
+    id: 9,
+    name: "Bohemia Jones",
     role: "Senior verslaggewer",
     bio: "Reeds merk as ondersoekende joernalis begin maak en sopas vereer deur die Afrikaans Taalraad.",
-    email: "bohemia@rooirose.co.za",
+    email: 'bohemia@rooirose.co.za',
     image: bohemiaImg,
     department: 'verslaggewers',
-    displayOrder: 8
   },
   {
-    id: "rasaad-adams",
-    name: "Rasaad Adams",
+    id: 10,
+    name: "Rasaad Pandy",
     role: "Senior verslaggewer",
     bio: "Veelsydige joernalis wat reeds blootstelling aan nasionale, elektroniese en plaaslike media het.",
-    email: "rasaad@rooirose.co.za",
+    email: 'rasaad@rooirose.co.za',
     image: rasaadImg,
     department: 'verslaggewers',
-    displayOrder: 9
   },
   {
-    id: "kaylie-joubert",
-    name: "Kaylie Joubert",
+    id: 11,
+    name: "Kaylie Goosen",
     role: "Verslaggewer",
     bio: "Behaal haar graad in kommunikasie (cum laude) terwyl sy by 'n kunsgalery werk.",
-    email: "kaylie@rooirose.co.za",
+    email: 'kaylie@rooirose.co.za',
     image: kaylieImg,
     department: 'verslaggewers',
-    displayOrder: 10
   },
   {
-    id: "shanell-binedell",
-    name: "Shanell Binedell",
+    id: 12,
+    name: "Shanell Mouton",
     role: "Verslaggewer",
     bio: "Redakteur van die NWU-studentekoerant, Die Wapad, terwyl sy joernalistiek studeer het.",
-    email: "shanell@rooirose.co.za",
+    email: 'shanell@rooirose.co.za',
     image: shanellImg,
     department: 'verslaggewers',
-    displayOrder: 11
   }
 ];

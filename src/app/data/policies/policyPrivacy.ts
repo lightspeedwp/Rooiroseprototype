@@ -5,6 +5,8 @@
  * Last updated: 2026-03-03
  */
 
+import { CONTACT_PHONES, EXTERNAL_SERVICE_EMAILS } from '../contactInfo';
+
 export const POLICY_PRIVACY = {
   title: 'Privaatheidsbeleid',
   subtitle: 'Gehalte joernalistiek en diskoers oor die aspirasies en frustrasies van Afrikaanse lesers',
@@ -124,7 +126,7 @@ export const POLICY_PRIVACY = {
         'Onttrek toestemming: Waar ons op jou toestemming staatmaak, kan jy dit enige tyd onttrek',
       ],
       footnote: 'Om enige van hierdie regte uit te oefen, kontak ons by privaatheid@diepapier.co.za',
-      contactEmail: 'privaatheid@diepapier.co.za',
+      contactEmail: CONTACT_EMAILS.privacy,
     },
     {
       number: 7,
@@ -151,12 +153,9 @@ export const POLICY_PRIVACY = {
       heading: 'Kontak Ons',
       paragraph: 'As jy enige vrae, bekommernisse of versoeke rakende hierdie privaatheidsbeleid of die verwerking van jou persoonlike inligting het, kontak ons asseblief:',
       contact: {
-        entity: 'rooi rose (Edms) Bpk',
-        email: 'lesers@diepapier.co.za',
-        office: 'Loft Office East (LOE4), Tweede verdieping, The Zone, Oxfordstraat 187, Rosebank',
         advertising: '+27 51 404 7600',
-        delivery: '087 353 1291',
-        deliveryEmail: 'diepapierintekening@onthedot.co.za',
+        delivery: CONTACT_PHONES.delivery,
+        deliveryEmail: EXTERNAL_SERVICE_EMAILS.delivery,
       },
       footnote: 'Jy het ook die reg om \'n klag in te dien by die Inligting Reguleerder as jy glo dat jou persoonlike inligting onwettig verwerk is.',
     },

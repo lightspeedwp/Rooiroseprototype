@@ -10,6 +10,13 @@ import { LeaderboardAd, SidebarAds, StickyMobileFooter, InFeedAd } from '../comp
 import { useDebounce } from '../hooks/useDebounce';
 import { SEARCH_UI } from '../data/search';
 import { ARTICLE_CATEGORIES } from '../data/taxonomies';
+import { MagazineArticleCard } from '../components/category/MagazineArticleCard';
+
+/* ── rooi rose Magazine Search Results ──────────────────────────────
+ * Editorial design: Large search header, magazine grid results
+ * Typography: Playfair Display SC headings
+ * Layout: Search bar + filters + 3-column magazine grid
+ * ────────────────────────────────────────────────────────────────── */
 
 interface SearchResult {
   id: number;
@@ -157,9 +164,9 @@ export const SearchResultsPage = () => {
           {/* Main Content Area */}
           <div className="flex-1 min-w-0">
             {/* Search Header */}
-            <div className="mb-6">
+            <div className="mb-8">
               <h1
-                className="text-4xl md:text-5xl font-normal text-brand-navy dark:text-foreground font-heading mb-4"
+                className="text-5xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family mb-6"
                 style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}
               >
                 {SEARCH_UI.title}
@@ -173,7 +180,7 @@ export const SearchResultsPage = () => {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder={SEARCH_UI.placeholder}
-                    className="w-full px-6 py-4 pr-24 border-2 border-gray-300 dark:border-border rounded-lg focus:outline-none focus:border-primary dark:focus:border-primary transition-colors text-lg bg-white dark:bg-card dark:text-foreground dark:placeholder:text-gray-500"
+                    className="w-full px-6 py-5 pr-24 border-2 border-gray-300 dark:border-border rounded-xl focus:outline-none focus:border-brand-red dark:focus:border-brand-red transition-colors text-lg bg-white dark:bg-card dark:text-foreground dark:placeholder:text-gray-500 shadow-sm"
                     autoFocus
                   />
                   {searchQuery && (
@@ -188,7 +195,7 @@ export const SearchResultsPage = () => {
                   )}
                   <button
                     type="submit"
-                    className="absolute right-2 top-1/2 -translate-y-1/2 bg-primary text-white px-4 py-2 rounded-md hover:bg-brand-red-hover transition-colors"
+                    className="absolute right-2 top-1/2 -translate-y-1/2 bg-brand-red text-white px-5 py-3 rounded-lg hover:bg-red-700 transition-colors font-bold shadow-sm"
                     aria-label={SEARCH_UI.searchButton}
                   >
                     <Search size={20} />

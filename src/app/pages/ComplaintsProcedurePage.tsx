@@ -1,3 +1,4 @@
+import { CONTACT_EMAILS, createMailtoLink } from '../data/contactInfo';
 import React from 'react';
 import { PageContainer } from '../components/common/PageContainer';
 import { SEO } from '../components/common/SEO';
@@ -115,7 +116,7 @@ export const ComplaintsProcedurePage = () => {
                 </div>
                 <div>
                   <p className="font-bold text-brand-navy dark:text-foreground mb-1">Media-ombudsman</p>
-                  <p className="text-gray-600 dark:text-gray-400">George Claassen: <a href="mailto:mediaombudsman@novusmedia.co.za" className="text-text-link-red hover:underline">mediaombudsman@novusmedia.co.za</a></p>
+                  <p className="text-gray-600 dark:text-gray-400">George Claassen: <a href={createMailtoLink(CONTACT_EMAILS.ombudsman)} className="text-text-link-red hover:underline">{CONTACT_EMAILS.ombudsman}</a></p>
                   <p className="text-gray-600 dark:text-gray-400">Klagtes kan ook aanlyn ingedien word by die Persraad-webwerf. Die ombudsman ondersoek klagtes oor alle publikasies wat by die Persraad geregistreer is.</p>
                 </div>
               </div>

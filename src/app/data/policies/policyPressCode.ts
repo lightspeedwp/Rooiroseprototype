@@ -1,3 +1,5 @@
+import { CONTACT_EMAILS } from '../contactInfo';
+
 /**
  * Perskode — Canonical lawyer-approved content
  * Source: /content/policies/press-code.md
@@ -6,12 +8,11 @@
  */
 
 export const POLICY_PRESS_CODE = {
-  title: 'rooi rose se Perskode',
-  breadcrumbLabel: 'Perskode',
+  title: 'Perskode en Kuberveiligheidsbeleid',
   subtitle: 'Ons Verbintenis tot Joernalistieke Integriteit en AI-Etiek',
-  intro: 'As lid van die Persraad van Suid-Afrika is Novus Media verbind tot die handhawing van die hoogste standaarde van joernalistieke etiek en integriteit. Ons is verbind tot die Perskode van Suid-Afrika, wat dien as die leidende raamwerk vir ons gedrukte en aanlyn publikasies. Hierdie Perskode verseker dat ons joernalistiek nie net informatief is nie, maar ook regverdig, akkuraat, en verantwoordelik. Ons streef daarna om hierdie waardes te handhaaf in alles wat ons publiseer egoor ons nasionale platform.',
-  ombudContact: 'Kontak die Novus Media ombud, George Claassen by mediaombud@novusmedia.co.za',
-  ombudEmail: 'mediaombud@novusmedia.co.za',
+  intro: 'As lid van de Persraad van Suid-Afrika is Novus Media verbind tot die handhawing van die hoogste standaarde van joernalistieke etiek en integriteit. Ons is verbind tot die Perskode van Suid-Afrika, wat dien as die leidende raamwerk vir ons gedrukte en aanlyn publikasies. Hierdie Perskode verseker dat ons joernalistiek nie net informatief is nie, maar ook regverdig, akkuraat, en verantwoordelik. Ons streef daarna om hierdie waardes te handhaaf in alles wat ons publiseer egoor ons nasionale platform.',
+  ombudContact: `Kontak die Novus Media ombud, George Claassen by ${CONTACT_EMAILS.ombudsman}`,
+  ombudEmail: CONTACT_EMAILS.ombudsman,
 
   principles: {
     heading: 'Leidende Beginsels van Ons Joernalistiek',

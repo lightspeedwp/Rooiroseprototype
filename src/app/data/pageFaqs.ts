@@ -3,6 +3,8 @@
  * Each page has its own FAQ section with relevant questions in Afrikaans
  */
 
+import { CONTACT_PHONES, EXTERNAL_SERVICE_EMAILS, CONTACT_EMAILS, STAFF_EMAILS, emailLink } from './contactInfo';
+
 export interface PageFAQItem {
   id: string;
   question: string;
@@ -36,17 +38,17 @@ export const ABOUT_FAQS: PageFAQItem[] = [
   {
     id: 'about-4',
     question: 'In watter gebiede lewer julle af?',
-    answer: 'Ons lewer af in die groter metro-gebiede en sommige omliggende dorpe. Bel 087 353 1291 of stuur \'n e-pos na <a href="mailto:diepapierintekening@onthedot.co.za">diepapierintekening@onthedot.co.za</a> om dekking te bevestig.'
+    answer: `Ons lewer af in die groter metro-gebiede en sommige omliggende dorpe. Bel ${CONTACT_PHONES.delivery} of stuur 'n e-pos na ${emailLink(EXTERNAL_SERVICE_EMAILS.delivery)} om dekking te bevestig.`
   },
   {
     id: 'about-5',
     question: 'Hoe plaas ek \'n advertensie?',
-    answer: 'Besoek ons \'Adverteer\'-bladsy vir tariewe en kontakbesonderhede, of stuur \'n e-pos na <a href="mailto:advertensies@diepapier.co.za">advertensies@diepapier.co.za</a>.'
+    answer: `Besoek ons 'Adverteer'-bladsy vir tariewe en kontakbesonderhede, of stuur 'n e-pos na ${emailLink(CONTACT_EMAILS.advertising)}.`
   },
   {
     id: 'about-6',
     question: 'Hoe stuur ek \'n brief aan die redakteur?',
-    answer: 'Briewe kan gestuur word na <a href="mailto:lesers@diepapier.co.za">lesers@diepapier.co.za</a>. Hou asseblief briewe korter as 300 woorde.'
+    answer: `Briewe kan gestuur word na ${emailLink(CONTACT_EMAILS.letters)}. Hou asseblief briewe korter as 300 woorde.`
   }
 ];
 
@@ -65,17 +67,17 @@ export const CONTACT_FAQS: PageFAQItem[] = [
   {
     id: 'contact-3',
     question: 'Hoe stuur ek \'n nuuswenk?',
-    answer: 'Stuur jou nuuswenk na <a href="mailto:nuus@diepapier.co.za">nuus@diepapier.co.za</a> of gebruik die "Stuur Nuus" vorm op ons webwerf. Voeg asseblief soveel inligting as moontlik by, insluitend foto\'s indien beskikbaar.'
+    answer: `Stuur jou nuuswenk na ${emailLink(CONTACT_EMAILS.news)} of gebruik die "Stuur Nuus" vorm op ons webwerf. Voeg asseblief soveel inligting as moontlik by, insluitend foto's indien beskikbaar.`
   },
   {
     id: 'contact-4',
     question: 'Hoe stuur ek \'n brief aan die redakteur?',
-    answer: 'Lesersbriewe kan gestuur word na <a href="mailto:lesers@diepapier.co.za">lesers@diepapier.co.za</a>. Hou asseblief briewe korter as 300 woorde en sluit jou volle naam en kontaknommer in.'
+    answer: `Lesersbriewe kan gestuur word na ${emailLink(CONTACT_EMAILS.letters)}. Hou asseblief briewe korter as 300 woorde en sluit jou volle naam en kontaknommer in.`
   },
   {
     id: 'contact-5',
     question: 'Hoe plaas ek \'n regskennisgewing?',
-    answer: 'Vir regskennisgewings, stuur \'n e-pos na <a href="mailto:nico.flietoor@diepapier.co.za">nico.flietoor@diepapier.co.za</a>.'
+    answer: `Vir regskennisgewings, stuur 'n e-pos na ${emailLink(STAFF_EMAILS.nicoFlietoor)}.`
   }
 ];
 
@@ -94,7 +96,7 @@ export const ADVERTISE_FAQS: PageFAQItem[] = [
   {
     id: 'adv-3',
     question: 'Hoe kontak ek die advertensiespan?',
-    answer: 'Stuur \'n e-pos na <a href="mailto:advertensies@diepapier.co.za">advertensies@diepapier.co.za</a> of <a href="mailto:coleen.cilliers@diepapier.co.za">coleen.cilliers@diepapier.co.za</a>. U kan ook die advertensienavorsingsvorm op ons webwerf invul en ons sal u kontak.'
+    answer: `Stuur 'n e-pos na ${emailLink(CONTACT_EMAILS.advertising)} of ${emailLink(STAFF_EMAILS.coleenCilliers)}. U kan ook die advertensienavorsingsvorm op ons webwerf invul en ons sal u kontak.`
   },
   {
     id: 'adv-4',
@@ -204,17 +206,17 @@ export const SUBSCRIBE_FAQS: PageFAQItem[] = [
   {
     id: 'sub-1',
     question: 'Watter intekeningsopsies is beskikbaar?',
-    answer: 'Ons bied twee hoofopsies: (1) Huisaflewering van \'n gedrukte koerant is vanaf R140 per maand — kontak On the Dot direk by 087 353 1291 of diepapierintekening@onthedot.co.za. (2) \'n Elektroniese e-koerant kos R35 per uitgawe, of teken in vanaf R140 per maand vir toegang tot alle e-uitgawes vanaf u intekeningdatum. Aflewering en digitale intekening is afsonderlike produkte.'
+    answer: `Ons bied twee hoofopsies: (1) Huisaflewering van 'n gedrukte koerant is vanaf R140 per maand — kontak On the Dot direk by ${CONTACT_PHONES.delivery} of ${EXTERNAL_SERVICE_EMAILS.delivery}. (2) 'n Elektroniese e-koerant kos R35 per uitgawe, of teken in vanaf R140 per maand vir toegang tot alle e-uitgawes vanaf u intekeningdatum. Aflewering en digitale intekening is afsonderlike produkte.`
   },
   {
     id: 'sub-2',
-    question: 'Kan ek my intekening enige tyd kanselleer?',
-    answer: 'Ja, u kan u intekening enige tyd kanselleer. Indien u binne die eerste 14 dae kanselleer, ontvang u \'n volle terugbetaling. Daarna word u intekening aan die einde van die huidige betaalperiode gestaak.'
+    question: 'Hoeveel kos digitale toegang?',
+    answer: 'Ons digitale intekening kos R35 per uitgawe (eenmalige aankoop, geen intekening nodig nie) of R140 per maand vir toegang tot alle e-uitgawes vanaf u intekeningdatum.'
   },
   {
     id: 'sub-3',
     question: 'Hoe werk tuisaflewering?',
-    answer: 'Tuisaflewering word hanteer deur On the Dot, ons afleweringsmaatskappy. Die koerant word elke Vrydag voor 10:00 by u voordeur afgelewer. Huisaflewering begin vanaf R140 per maand. Aflewering sluit nie digitale e-uitgawe-toegang in nie — dit is \'n afsonderlike produk. Vir navrae, e-pos <a href="mailto:diepapierintekening@onthedot.co.za">diepapierintekening@onthedot.co.za</a>.'
+    answer: `Tuisaflewering word hanteer deur On the Dot, ons afleweringsmaatskappy. Die koerant word elke Vrydag voor 10:00 by u voordeur afgelewer. Huisaflewering begin vanaf R140 per maand. Aflewering sluit nie digitale e-uitgawe-toegang in nie — dit is 'n afsonderlike produk. Vir navrae, e-pos ${emailLink(EXTERNAL_SERVICE_EMAILS.delivery)}.`
   },
   {
     id: 'sub-4',
@@ -224,7 +226,7 @@ export const SUBSCRIBE_FAQS: PageFAQItem[] = [
   {
     id: 'sub-5',
     question: 'Kan ek \'n geskenk-intekening koop?',
-    answer: 'Ja, ons bied geskenk-intekenings aan. Kontak ons by <a href="mailto:diepapierintekening@onthedot.co.za">diepapierintekening@onthedot.co.za</a> vir meer besonderhede.'
+    answer: `Ja, ons bied geskenk-intekenings aan. Kontak ons by ${emailLink(EXTERNAL_SERVICE_EMAILS.delivery)} vir meer besonderhede.`
   },
   {
     id: 'sub-6',
@@ -248,7 +250,7 @@ export const SUBSCRIBE_DELIVERY_FAQS: PageFAQItem[] = [
   {
     id: 'del-2',
     question: 'In watter areas word aflewering aangebied?',
-    answer: 'Ons lewer af in die groter metro-gebiede en sommige omliggende dorpe. Bel 087 353 1291 of stuur \'n e-pos na <a href="mailto:diepapierintekening@onthedot.co.za">diepapierintekening@onthedot.co.za</a> om te bevestig of ons in jou area aflewer.'
+    answer: `Ons lewer af in die groter metro-gebiede en sommige omliggende dorpe. Bel ${CONTACT_PHONES.delivery} of stuur 'n e-pos na ${emailLink(EXTERNAL_SERVICE_EMAILS.delivery)} om te bevestig of ons in jou area aflewer.`
   },
   {
     id: 'del-3',
@@ -258,7 +260,7 @@ export const SUBSCRIBE_DELIVERY_FAQS: PageFAQItem[] = [
   {
     id: 'del-4',
     question: 'Wat gebeur as ek met vakansie gaan?',
-    answer: 'U kan u aflewering tydelik opskort deur ons by <a href="mailto:diepapierintekening@onthedot.co.za">diepapierintekening@onthedot.co.za</a> in kennis te stel minstens 5 werksdae voor die tyd. U intekening word verleng met die tydperk wat u dit opskort.'
+    answer: `U kan u aflewering tydelik opskort deur ons by ${emailLink(EXTERNAL_SERVICE_EMAILS.delivery)} in kennis te stel minstens 5 werksdae voor die tyd. U intekening word verleng met die tydperk wat u dit opskort.`
   },
   {
     id: 'del-5',
@@ -268,7 +270,7 @@ export const SUBSCRIBE_DELIVERY_FAQS: PageFAQItem[] = [
   {
     id: 'del-6',
     question: 'Hoe kanselleer ek my afleveringsintekening?',
-    answer: 'U kan u intekening enige tyd kanselleer deur \'n e-pos te stuur na <a href="mailto:diepapierintekening@onthedot.co.za">diepapierintekening@onthedot.co.za</a>. Indien u binne die eerste 14 dae kanselleer, ontvang u \'n volle terugbetaling. Daarna word u intekening aan die einde van die huidige betaalperiode gestaak.'
+    answer: `U kan u intekening enige tyd kanselleer deur 'n e-pos te stuur na ${emailLink(EXTERNAL_SERVICE_EMAILS.delivery)}. Indien u binne die eerste 14 dae kanselleer, ontvang u 'n volle terugbetaling. Daarna word u intekening aan die einde van die huidige betaalperiode gestaak.`
   }
 ];
 
@@ -568,12 +570,12 @@ export const CLASSIFIEDS_FAQS: PageFAQItem[] = [
   {
     id: 'class-2',
     question: 'Watter kategorieë is beskikbaar vir geklassifiseerde advertensies?',
-    answer: '<em>rooi rose</em> bied geklassifiseerde kategorieë aan soos Vakatures, Eiendom, Voertuie, Dienste, Kennisgewings en meer. Kontak ons vir die volledige lys.'
+    answer: '<em>rooi rose</em> bied leefstylgerigte kategorieë aan soos Mode & Styl, Skoonheid & Welstand, Kos & Wyn, Gesondheid & Fiksheid, Geleenthede & Ontspanning, en Leefstyl & Geskenke — perfek vir ons welgestelde, stilbewuste lesers.'
   },
   {
     id: 'class-3',
     question: 'Verskyn my geklassifiseerde advertensie ook aanlyn?',
-    answer: 'Ja, alle geklassifiseerde advertensies in <em>rooi rose</em> se gedrukte uitgawe word ook outomaties aanlyn gelys vir bykomende blootstelling.'
+    answer: 'Ja, alle geklassifiseerde advertensies in <em>rooi rose</em> se gedrukte tydskrif word ook outomaties aanlyn gelys vir bykomende blootstelling by ons digitale gehoor.'
   },
   {
     id: 'class-4',
@@ -701,12 +703,12 @@ export const DISPLAY_ADS_FAQS: PageFAQItem[] = [
   {
     id: 'disp-1',
     question: 'Watter vertoonadvertensie-formate bied <em>rooi rose</em> aan?',
-    answer: '<em>rooi rose</em> bied verskeie formate aan, insluitend volbladsy, halfbladsy, kwartbladsy en strookadvertensies in beide die gedrukte koerant en aanlyn. Digitale opsies sluit banier- en mediumreghoekadvertensies in.'
+    answer: '<em>rooi rose</em> bied verskeie formate aan, insluitend volbladsy, halfbladsy, kwartbladsy en strookadvertensies in beide die gedrukte tydskrif en aanlyn. Digitale opsies sluit banier- en mediumreghoekadvertensies in.'
   },
   {
     id: 'disp-2',
-    question: 'Kan ek \'n spesifieke posisie in die koerant kies?',
-    answer: 'Ja, voorkeursposisies soos die voorblad, agterblad en spesifieke afdelings is beskikbaar teen \'n premietarief. Kontak <em>rooi rose</em> se advertensiespan vir beskikbaarheid.'
+    question: 'Kan ek \'n spesifieke posisie in die tydskrif kies?',
+    answer: 'Ja, voorkeursposisies soos die voorblad, agterblad en spesifieke afdelings (Mode, Skoonheid, Kos, Leefstyl) is beskikbaar teen \'n premietarief. Kontak <em>rooi rose</em> se advertensiespan vir beskikbaarheid.'
   },
   {
     id: 'disp-3',
@@ -720,7 +722,7 @@ export const LEAFLETS_FAQS: PageFAQItem[] = [
   {
     id: 'leaf-1',
     question: 'Hoe werk pamfletverspreiding met <em>rooi rose</em>?',
-    answer: 'Jou pamflette word saam met <em>rooi rose</em> se weeklikse gedrukte uitgawe versprei aan intekenare en winkelpunte. Dit verseker direkte bereiking van ons aktiewe lesersmark.'
+    answer: 'Jou pamflette word saam met <em>rooi rose</em> se weeklikse premium tydskrif versprei aan intekenare en winkelpunte. Dit verseker direkte bereiking van ons welgestelde lesersmark met koopkrag.'
   },
   {
     id: 'leaf-2',
@@ -730,7 +732,7 @@ export const LEAFLETS_FAQS: PageFAQItem[] = [
   {
     id: 'leaf-3',
     question: 'Kan ek kies in watter areas my pamflette versprei word?',
-    answer: 'Ja, <em>rooi rose</em> bied geografiese teikening aan. Jy kan spesifieke streke of dorpe kies waar jou pamflette versprei moet word.'
+    answer: 'Ja, <em>rooi rose</em> bied geografiese teikening aan. Jy kan spesifieke streke of dorpe kies waar jou pamflette versprei moet word vir optimale bereiking van jou teikenmark.'
   }
 ];
 
@@ -739,17 +741,17 @@ export const SPONSORED_CONTENT_FAQS: PageFAQItem[] = [
   {
     id: 'spon-cont-1',
     question: 'Wat is geborgde inhoud by <em>rooi rose</em>?',
-    answer: 'Geborgde inhoud is redaksioneel-gestileerde artikels wat deur jou besigheid geborg word. <em>rooi rose</em> se joernaliste skryf die inhoud in samewerking met jou om jou boodskap outentiek oor te dra.'
+    answer: 'Geborgde inhoud is premium redaksioneel-gestileerde artikels (Mode, Skoonheid, Kos, Leefstyl) wat deur jou besigheid geborg word. <em>rooi rose</em> se ervare joernaliste skryf die inhoud in samewerking met jou om jou boodskap outentiek oor te dra aan ons welgestelde lesers.'
   },
   {
     id: 'spon-cont-2',
     question: 'Word geborgde inhoud duidelik gemerk?',
-    answer: 'Ja, alle geborgde inhoud word duidelik as "Geborgde inhoud" gemerk in ooreenstemming met <em>rooi rose</em> se redaksionele riglyne en die Perskode van Suid-Afrika.'
+    answer: 'Ja, alle geborgde inhoud word duidelik as "Geborgde inhoud" of "In samewerking met" gemerk in ooreenstemming met <em>rooi rose</em> se redaksionele riglyne en die Perskode van Suid-Afrika vir deursigtigheid teenoor ons tydskrif-lesers.'
   },
   {
     id: 'spon-cont-3',
     question: 'Hoe lank bly geborgde inhoud aanlyn?',
-    answer: 'Geborgde artikels op <em>rooi rose</em> se webwerf bly permanent beskikbaar, net soos enige ander artikel. Dit bied langtermyn-sigbaarheid vir jou handelsmerk.'
+    answer: 'Geborgde artikels op <em>rooi rose</em> se webwerf bly permanent beskikbaar, net soos enige ander tydskrif-artikel. Dit bied langtermyn-sigbaarheid vir jou handelsmerk en word geïndekseer vir soekenjin-optimering.'
   }
 ];
 
@@ -758,17 +760,17 @@ export const SPONSORSHIPS_FAQS: PageFAQItem[] = [
   {
     id: 'spons-1',
     question: 'Watter borgskapsopsies bied <em>rooi rose</em> aan?',
-    answer: '<em>rooi rose</em> bied borgskappe aan vir ons nuusbriewe, webwerfafdelings, spesiale beriggewing-projekte, podcasts en gebeure. Elke borgskap word pasgemaak vir jou handelsmerk se behoeftes.'
+    answer: '<em>rooi rose</em> bied borgskappe aan vir ons leefstyl-afdelings (Mode, Skoonheid, Kos, Gesondheid), weeklikse nuusbriewe, spesiale leefstyl-geleenthede (modeweek, skoonheidstoekennings, kos-feeste), en pasgemaakte vennootskappe. Elke borgskap word ontwerp vir jou handelsmerk se spesifieke doelwitte.'
   },
   {
     id: 'spons-2',
     question: 'Wat is die minimum borgskaptermyn?',
-    answer: 'Borgskappe by <em>rooi rose</em> begin tipies by \'n minimum van 3 maande om effektiewe handelsmerkbou te verseker. Korter termyne is beskikbaar vir spesifieke projekte of gebeure.'
+    answer: 'Borgskappe by <em>rooi rose</em> begin tipies by \\'n minimum van 3 maande om effektiewe handelsmerkbou en volgehoue sigbaarheid te verseker. Korter termyne is beskikbaar vir spesifieke leefstyl-geleenthede soos bruidskoue, modeweek-dekking of seisoenale veldtogte.'
   },
   {
     id: 'spons-3',
     question: 'Watter verslagdoening ontvang ek as borg?',
-    answer: '<em>rooi rose</em> verskaf maandelikse prestasieverslagte wat bereik, bladsyvertonings, klik-deur-koerse en gehoordemografie insluit. Ons glo in deursigtige vennootskappe.'
+    answer: '<em>rooi rose</em> verskaf maandelikse prestasieverslagte wat tydskrif-bereik, digitale bladsyvertonings, klik-deur-koerse, sosiale media-betrokkenheid en gehoordemografie (welgestelde vroue 25-55) insluit. Ons glo in deursigtige, meetbare vennootskappe.'
   }
 ];
 
@@ -776,17 +778,17 @@ export const SPONSORSHIPS_FAQS: PageFAQItem[] = [
 export const SUPPLEMENTS_FAQS: PageFAQItem[] = [
   {
     id: 'supp-1',
-    question: 'Wat is \'n koerantbylae?',
-    answer: '\'n Bylae is \'n aparte, temagedrewe afdeling wat saam met <em>rooi rose</em> se hoofkoerant gedruk en versprei word. Dit bied \'n eksklusiewe platform vir diepgaande inhoud oor \'n spesifieke onderwerp.'
+    question: 'Wat is \\'n <em>rooi rose</em> spesiale uitgawe?',
+    answer: '\\'n Spesiale uitgawe is \\'n aparte, temagedrewe publikasie wat saam met <em>rooi rose</em> se hooftydskrif gedruk en versprei word. Dit bied \\'n eksklusiewe premium platform vir diepgaande leefstyl-inhoud oor \\'n spesifieke onderwerp — soos ons jaarlikse Bruidsjoernaal, Skoonheidsjaarlikse of Kos & Wyn Spesiale.'
   },
   {
     id: 'supp-2',
-    question: 'Kan ek \'n hele bylae borg?',
-    answer: 'Ja, <em>rooi rose</em> bied eksklusiewe bylaeborgskap aan. Jou handelsmerk kry prominente plasing deur die hele bylae, insluitend die voorblad en interne advertensiespasie.'
+    question: 'Kan ek \\'n hele spesiale uitgawe borg?',
+    answer: 'Ja, <em>rooi rose</em> bied eksklusiewe bor gskap van spesiale uitgawes aan. Jou handelsmerk kry prominente plasing deur die hele uitgawe, insluitend die voorblad en interne advertensiespasie, wat dit ideaal maak vir premium handelsmerkbelyning met ons welgestelde leefstyl-gehoor.'
   },
   {
     id: 'supp-3',
-    question: 'Watter temas dek <em>rooi rose</em> se bylaes?',
-    answer: '<em>rooi rose</em> publiseer gereeld bylaes oor onderwerpe soos eiendom, motors, gesondheid, onderwys, landbou en feestyddekorasies. Pasgemaakte temas is ook moontlik.'
+    question: 'Watter temas dek <em>rooi rose</em> se spesiale uitgawes?',
+    answer: '<em>rooi rose</em> publiseer gereeld spesiale uitgawes oor leefstyl-onderwerpe soos mode en troues (Bruidsjoernaal), skoonheid en welstand (Skoonheidsjaarlikse), kos en wyn (seisoenale spesiale uitgawes), en gesondheid. Pasgemaakte temas is ook moontlik vir handelsmerkjaargidse en korporatiewe kommunikasie.'
   }
 ];

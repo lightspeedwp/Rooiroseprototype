@@ -16,12 +16,12 @@ export const SponsorsPage = () => {
       />
       
       <PageContainer breadcrumbs={[{ label: 'Borge' }]}>
-        <div className="mb-8">
-          <h1 className="text-4xl md:text-5xl font-normal text-brand-navy dark:text-foreground font-heading mb-4" style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}>
+        <div className="mb-12">
+          <h1 className="text-5xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family mb-4" style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}>
             Ons Borge
           </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl">
-            rooi rose se borge speel 'n deurslaggewende rol om onafhanklike gemeenskapsjoernalistiek volhoubaar te maak. Ondersteun hulle soos hulle ons ondersteun.
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl leading-relaxed">
+            <em className="font-bold not-italic">rooi rose</em> se borge speel 'n deurslaggewende rol om onafhanklike gemeenskapsjoernalistiek volhoubaar te maak. Ondersteun hulle soos hulle ons ondersteun.
           </p>
         </div>
 

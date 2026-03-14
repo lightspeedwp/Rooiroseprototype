@@ -14,4 +14,10 @@ export default defineConfig({
       '@': '/src',
     },
   },
+  
+  build: {
+    target: 'es2015',
+    minify: 'esbuild',
+    sourcemap: false,
+  },
 });

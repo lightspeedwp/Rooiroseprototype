@@ -26,7 +26,7 @@ export const DisplayAdvertisingPage = () => {
 
       <ContentHero
         title="Vertoonadvertensies"
-        subtitle="Maak 'n impak met visueel kragtige advertensies in rooi rose se gedrukte en digitale platforms."
+        subtitle="Maak 'n impak met visueel kragtige advertensies in rooi rose — Suid-Afrika se voorste Afrikaanse leefstyl-tydskrif vir welgestelde vroue."
         image={HERO_IMAGES.advertise}
         height="small"
       />
@@ -36,8 +36,9 @@ export const DisplayAdvertisingPage = () => {
         <div className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
             <em>rooi rose</em> se vertoonadvertensies bied jou die geleentheid om jou handelsmerk visueel te vertoon
-            aan ons betrokke lesersmark. Van volbladsy gedrukte advertensies tot dinamiese digitale baniere — 
-            ons bied plasing-opsies wat by elke begroting en veldtog pas.
+            aan ons hoogs betrokke, welgestelde lesersmark — verfynde vroue tussen 25–55 wat gepassioneererd is oor mode, 
+            skoonheid, kos, gesondheid en kwaliteit-leefstyl. Van volbladsy gedrukte advertensies tot dinamiese digitale 
+            baniere — ons bied plasing-opsies wat by elke begroting en veldtog pas.
           </p>
         </div>
 

@@ -31,7 +31,7 @@ export const LeafletsPage = () => {
 
       <ContentHero
         title="Pamflet-advertering"
-        subtitle="Kry jou boodskap direk in die hande van betrokke lesers met koerantinsetsels en pamflette."
+        subtitle="Kry jou boodskap direk in die hande van welgestelde, stilbewuste lesers met rooi rose tydskrif-insetsels."
         image={HERO_IMAGES.advertise}
         height="small"
       />
@@ -41,9 +41,10 @@ export const LeafletsPage = () => {
         <div className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
             Pamflet-insetsels bied 'n tasbare, hoë-impak manier om jou teikenmark te bereik.
-            Jou pamflet, flyer of katalogus word saam met <em>rooi rose</em> se weeklikse uitgawe versprei — 
-            direk in die hande van duisende lesers landwyd. Dit is 'n kragtige manier om jou produk, 
-            diens of spesiale aanbod reg voor jou teikenmark te kry.
+            Jou pamflet, flyer of katalogus word saam met <em>rooi rose</em> se weeklikse premium tydskrif versprei — 
+            direk in die hande van welgestelde huishoudings landwyd wat gepassioneererd is oor kwaliteit-leefstyl, mode, 
+            skoonheid en kulinêre verfyning. Dit is 'n kragtige manier om jou produk, diens of spesiale aanbod 
+            reg voor jou teikenmark te kry.
           </p>
         </div>
 
@@ -51,18 +52,18 @@ export const LeafletsPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {[
             {
-              title: 'Hoë sigbaarheid',
-              description: 'Jou pamflet val letterlik uit die koerant — dit kan nie oorgesien word nie.',
+              title: 'Premie-gehoor',
+              description: 'Bereik welgestelde huishoudings wat rooi rose se leefstyl-inhoud waardeer — affluente lesers met koopkrag.',
               icon: Users,
             },
             {
               title: 'Geteikende verspreiding',
-              description: 'Kies spesifieke streke of gaan nasionaal vir maksimum dekking.',
+              description: 'Kies spesifieke streke of gaan nasionaal vir maksimum dekking by jou ideale teikenmark.',
               icon: MapPin,
             },
             {
-              title: 'Bekostigbaar',
-              description: "Koste-effektiewe massaverspreiding teen 'n fraksie van alternatiewe metodes.",
+              title: 'Hoë impak',
+              description: 'Jou pamflet word fisies in die hande van lesers geplaas — \'n tasbare, onvermybare teenwoordigheid.',
               icon: Package,
             },
           ].map((item) => (

@@ -1,3 +1,4 @@
+import { CONTACT_EMAILS, CONTACT_PHONES, createMailtoLink, createTelLink } from '../data/contactInfo';
 import {
   Facebook,
   Instagram,
@@ -33,57 +34,65 @@ import { Link } from 'react-router';
 import { Newspaper } from '../components/icons/NewspaperIcon';
 import { QuoteSlider } from '../components/brand-quotes/QuoteSlider';
 
+/* ── rooi rose Magazine About Page ──────────────────────────────
+ * Editorial design: Full-width hero, magazine sections
+ * Typography: Playfair Display SC headings
+ * Layout: Hero + sections with centered content
+ * ────────────────────────────────────────────────────────────── */
+
 export const About = () => {
   return (
     <div className="bg-white dark:bg-background min-h-screen">
       <SEO
         title="Oor ons - rooi rose"
-        description="rooi rose is 'n nasionale Afrikaanse weeklikse koerant wat gehalte-joernalistiek en diskoers oor die aspirasies en frustrasies van Afrikaanse lesers bied."
-        keywords="oor ons, die papier, afrikaanse nuus, novus media, pers"
+        description="rooi rose is 'n toonaangewende Afrikaanse leefstyl-tydskrif wat jou inspireer met kos, mode, skoonheid, gesondheid en die beste van Suid-Afrikaanse kultuur."
+        keywords="oor ons, rooi rose, afrikaanse tydskrif, leefstyl, novus media"
       />
 
       {/* ─── Breadcrumbs ──────────────────────────────────── */}
       <PageContainer breadcrumbs={[{ label: 'Oor ons' }]} noPadding />
 
-      {/* ─── Hero Section ─────────────────────────────────── */}
-      <section className="relative bg-brand-navy text-white overflow-hidden">
+      {/* ─── Full-Width Editorial Hero ─────────────────────────────────── */}
+      <section className="relative h-[70vh] md:h-[80vh] overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={ABOUT_HERO.image}
-            alt="rooi rose drukpers"
+            alt="rooi rose"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/90 via-brand-navy/70 to-brand-navy/40" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
         </div>
 
-        <div className="relative z-10 alignwide px-[64px] py-[128px]">
-          <span className="inline-block bg-brand-red text-white text-xs font-bold px-3 py-1 uppercase tracking-widest rounded-sm mb-6">
-            {ABOUT_HERO.label}
-          </span>
-          <h1
-            className="text-4xl md:text-5xl lg:text-6xl font-normal font-heading mb-6 max-w-3xl drop-shadow-md"
-            style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}
-          >
-            {ABOUT_HERO.title}
-          </h1>
-          <p className="text-lg md:text-xl text-gray-200 max-w-2xl leading-relaxed drop-shadow mb-8">
-            {renderWithBrandItalics(ABOUT_HERO.subtitle)}
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <Link
-              to="/inteken"
-              className="inline-flex items-center gap-2 bg-brand-red hover:bg-brand-red-hover text-white font-bold px-6 py-3 rounded-lg transition-colors"
+        <div className="relative z-10 h-full flex items-center justify-center">
+          <div className="text-center max-w-4xl px-6">
+            <span className="inline-block bg-brand-red text-white text-xs font-bold px-4 py-2 uppercase tracking-widest rounded-md mb-6 shadow-lg">
+              {ABOUT_HERO.label}
+            </span>
+            <h1
+              className="text-4xl md:text-5xl lg:text-6xl font-normal font-heading mb-6 max-w-3xl drop-shadow-md"
+              style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}
             >
-              <Newspaper size={18} />
-              Teken in
-            </Link>
-            <Link
-              to="/kontak"
-              className="inline-flex items-center gap-2 bg-white/15 hover:bg-white/25 text-white font-bold px-6 py-3 rounded-lg transition-colors backdrop-blur-sm border border-white/20"
-            >
-              <Mail size={18} />
-              Kontak ons
-            </Link>
+              {ABOUT_HERO.title}
+            </h1>
+            <p className="text-lg md:text-xl text-gray-200 max-w-2xl leading-relaxed drop-shadow mb-8">
+              {renderWithBrandItalics(ABOUT_HERO.subtitle)}
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link
+                to="/inteken"
+                className="inline-flex items-center gap-2 bg-brand-red hover:bg-brand-red-hover text-white font-bold px-6 py-3 rounded-lg transition-colors"
+              >
+                <Newspaper size={18} />
+                Teken in
+              </Link>
+              <Link
+                to="/kontak"
+                className="inline-flex items-center gap-2 bg-white/15 hover:bg-white/25 text-white font-bold px-6 py-3 rounded-lg transition-colors backdrop-blur-sm border border-white/20"
+              >
+                <Mail size={18} />
+                Kontak ons
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -381,7 +390,20 @@ export const About = () => {
             </div>
             <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
               {ETHICS.paragraphs.map((para, index) => (
-                <p key={index} dangerouslySetInnerHTML={{ __html: para.replace('mediaombudsman@novusmedia.co.za', '<a href="mailto:mediaombudsman@novusmedia.co.za" class="text-text-link-red dark:text-text-link-red hover:underline">mediaombudsman@novusmedia.co.za</a>').replace('011 484 3612', '<a href="tel:0114843612" class="text-text-link-red dark:text-text-link-red hover:underline">011 484 3612</a>') }} />
+                <p 
+                  key={index} 
+                  dangerouslySetInnerHTML={{ 
+                    __html: para
+                      .replace(
+                        'mediaombudsman@novusmedia.co.za', 
+                        `<a href="${createMailtoLink(CONTACT_EMAILS.ombudsman)}" class="text-text-link-red dark:text-text-link-red hover:underline">${CONTACT_EMAILS.ombudsman}</a>`
+                      )
+                      .replace(
+                        '011 484 3612', 
+                        `<a href="${createTelLink('011 484 3612')}" class="text-text-link-red dark:text-text-link-red hover:underline">011 484 3612</a>`
+                      )
+                  }} 
+                />
               ))}
             </div>
             <div className="flex flex-wrap gap-4 mt-6">

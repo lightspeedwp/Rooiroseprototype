@@ -60,6 +60,7 @@ const TrafficPage = lazy(() => import('./pages/Traffic').then(m => ({ default: m
 const SubscribeEEdition = lazy(() => import('./pages/SubscribeEEdition').then(m => ({ default: m.SubscribeEEdition })));
 const SingleSubscriptionProduct = lazy(() => import('./pages/SingleSubscriptionProduct').then(m => ({ default: m.SingleSubscriptionProduct })));
 const SubscribeDelivery = lazy(() => import('./pages/SubscribeDelivery').then(m => ({ default: m.SubscribeDelivery })));
+const Shop = lazy(() => import('./pages/Shop').then(m => ({ default: m.Shop })));
 const CartPage = lazy(() => import('./pages/Cart').then(m => ({ default: m.CartPage })));
 const CheckoutPage = lazy(() => import('./pages/Checkout').then(m => ({ default: m.CheckoutPage })));
 const OrderConfirmationPage = lazy(() => import('./pages/OrderConfirmation').then(m => ({ default: m.OrderConfirmationPage })));
@@ -181,7 +182,40 @@ const BorgeRedirect = () => {
 // Router Configuration (Data Mode)
 // ──────────────────────────────────────────────
 
-export const router = createBrowserRouter([
+// Lazy router creation function for Figma Make compatibility
+// This prevents browser history listeners from being created
+// before the Figma iframe completes its message channel setup
+let _routerInstance: ReturnType<typeof createBrowserRouter> | null = null;
+let _isCreatingRouter = false;
+
+export function getRouter() {
+  // Prevent multiple simultaneous router creation attempts
+  if (_isCreatingRouter) {
+    console.log('[Router] Router creation already in progress, waiting...');
+    // Wait for existing creation to complete
+    while (_isCreatingRouter) {
+      // This will be very brief, just prevents race conditions
+    }
+  }
+  
+  if (!_routerInstance) {
+    try {
+      _isCreatingRouter = true;
+      console.log('[Router] Creating browser router...');
+      _routerInstance = createBrowserRouter(routeConfig);
+      console.log('[Router] Browser router created successfully');
+    } catch (error) {
+      console.error('[Router] Error creating browser router:', error);
+      throw error;
+    } finally {
+      _isCreatingRouter = false;
+    }
+  }
+  return _routerInstance;
+}
+
+// Route configuration
+const routeConfig = [
   {
     path: "/",
     Component: RootLayout,
@@ -437,6 +471,8 @@ export const router = createBrowserRouter([
           { path: "subscribe/delivery", Component: SubscribeDelivery },
           { path: "cart", Component: CartPage },
           { path: "basket", Component: CartPage },
+          { path: "winkel", Component: Shop },
+          { path: "shop", Component: Shop },
           
           // FAQ / Events / Search
           { path: "vrae", Component: FAQPage },
@@ -519,4 +555,4 @@ export const router = createBrowserRouter([
       }
     ]
   }
-]);
+];

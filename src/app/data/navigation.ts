@@ -8,6 +8,7 @@
  * @see /guidelines/components/patterns/footer/README.md
  */
 
+import { CONTACT_EMAILS, PHYSICAL_ADDRESS, createMailtoLink } from './contactInfo';
 import pressCouncilLogo from "figma:asset/b65e04d9bca837fe59d564b9a5c81e06d132d3a8.png";
 import wanIfraLogo from "figma:asset/f482683b284adea205ba8414607510526ef08307.png";
 import fcjLogo from "figma:asset/b829544a17c90494ed9a73fa9b4a127647d9301f.png";
@@ -52,7 +53,7 @@ export const SOCIAL_LINKS = [
   { label: "YouTube", href: "https://www.youtube.com/@rooirose", icon: "Youtube" },
   { label: "LinkedIn", href: "https://linkedin.com/company/rooirose", icon: "Linkedin" },
   { label: "TikTok", href: "https://www.tiktok.com/@rooirose", icon: "TikTok" },
-  { label: "Email", href: "mailto:redaksie@rooirose.co.za", icon: "Mail" },
+  { label: "Email", href: createMailtoLink(CONTACT_EMAILS.editorial), icon: "Mail" },
 ];
 
 // Maintain compatibility if other components import MAIN_NAVIGATION
@@ -76,10 +77,9 @@ export const HEADER_TOP_BAR_LINKS = [
 /**
  * Desktop category bar links (horizontal nav below logo).
  * Single source of truth — used by Header.tsx.
- * rooi rose Magazine: 11 items (Tuis + 8 categories + Wen + Kontak)
+ * rooi rose Magazine: 9 items (8 categories + Wen)
  */
 export const HEADER_CATEGORY_BAR_LINKS = [
-  { label: "Tuis", href: "/" },
   { label: "Kos", href: "/kos" },
   { label: "Mode", href: "/mode" },
   { label: "Skoonheid", href: "/skoonheid" },
@@ -89,7 +89,6 @@ export const HEADER_CATEGORY_BAR_LINKS = [
   { label: "Jou lewe", href: "/jou-lewe" },
   { label: "Ontspanning", href: "/ontspanning" },
   { label: "Wen", href: "/wen" },
-  { label: "Kontak", href: "/kontak" },
 ];
 
 export const FOOTER_LINK_COLUMNS = [
@@ -112,6 +111,8 @@ export const FOOTER_LINK_COLUMNS = [
       { label: "Wen", href: "/wen" },
       { label: "Rooiwarm wenners", href: "/rooiwarm-wenners" },
       { label: "E-uitgawes", href: "/e-uitgawes" },
+      { label: "Winkel", href: "/winkel" },
+      { label: "Inteken", href: "/inteken" },
       { label: "Nuusbrief", href: "/nuusbrief-inteken" },
       { label: "My rekening", href: "/my-rekening" },
       { label: "Registreer", href: "/registreer" },
@@ -124,18 +125,22 @@ export const FOOTER_LINK_COLUMNS = [
       { label: "Ons span", href: "/oor-ons/redaksie" },
       { label: "Kontak ons", href: "/kontak" },
       { label: "Adverteer", href: "/adverteer" },
+      { label: "Stuur in", href: "/stuur-in" },
       { label: "Algemene vrae", href: "/vrae" },
-      { label: "Inhoudsopgawe", href: "/inhoudsopgawe" },
+      { label: "Gebeure", href: "/gebeure" },
+      { label: "Doodsberrigte", href: "/doodsberrigte" },
     ],
   },
   {
-    title: "Beleid",
+    title: "Beleid & Inligting",
     links: [
+      { label: "Beleid (oorsig)", href: "/beleid" },
       { label: "Privaatheidsbeleid", href: "/beleid/privaatheidsbeleid" },
       { label: "Terme en voorwaardes", href: "/beleid/terme-en-voorwaardes" },
       { label: "Koekiebeleid", href: "/beleid/koekiebeleid" },
       { label: "Gebruikersreëls", href: "/beleid/gebruikersreels" },
       { label: "Perskode", href: "/beleid/perskode" },
+      { label: "Terugsendingsbeleid", href: "/beleid/terugsendingsbeleid" },
     ],
   },
 ];
@@ -159,8 +164,8 @@ export const FOOTER_CONTENT = {
   },
   contact: {
     title: "Kontak",
-    address: "Loft Office East (LOE4), Tweede verdieping, The Zone, Oxfordstraat 187, Rosebank, 2196",
-    email: "lesers@rooirose.co.za"
+    address: PHYSICAL_ADDRESS.full,
+    email: CONTACT_EMAILS.letters
   },
   accreditations: {
     title: "Akkreditasies",
@@ -184,7 +189,7 @@ export const FOOTER_NAVIGATION = {
     youtube: "https://www.youtube.com/@diepapier",
     linkedin: "https://linkedin.com/company/diepapier/",
     tiktok: "https://www.tiktok.com/@diepapier",
-    email: "mailto:lesers@rooirose.co.za"
+    email: createMailtoLink(CONTACT_EMAILS.letters)
   },
   copyright: `© ${new Date().getFullYear()} *rooi rose*. Alle regte voorbehou.`
 };
@@ -217,6 +222,11 @@ export const MOBILE_CATEGORY_LINKS = [
  * Icons are mapped separately inside the component.
  */
 export const MOBILE_SECONDARY_LINKS = [
+  { label: "Winkel", href: "/winkel" },
+  { label: "Inteken", href: "/inteken" },
+  { label: "Gebeure", href: "/gebeure" },
+  { label: "Doodsberrigte", href: "/doodsberrigte" },
+  { label: "Multimedia", href: "/multimedia" },
   { label: "Oor ons", href: "/oor-ons" },
   { label: "Ons span", href: "/oor-ons/redaksie" },
   { label: "Adverteer", href: "/adverteer" },

@@ -1,444 +1,581 @@
-# Quick Reference Card — rooi rose
+# rooi rose Design System — Quick Reference Card
 
-**Category**: Operations  
+**Version**: 1.0.0  
 **Last Updated**: 2026-03-12  
-**Purpose**: Fast reference for common tasks  
-**Format**: Print-friendly, 2-page cheat sheet
+**Purpose**: Fast reference for developers building new pages
 
 ---
 
-## WordPress Admin Quick Links
+## 🎨 **BRAND COLORS**
 
-| Task | URL | Shortcut |
-|:-----|:----|:---------|
-| **Dashboard** | `/wp-admin/` | — |
-| **Add New Post** | `/wp-admin/post-new.php` | — |
-| **All Posts** | `/wp-admin/edit.php` | — |
-| **Categories** | `/wp-admin/edit-tags.php?taxonomy=category` | — |
-| **Media Library** | `/wp-admin/upload.php` | — |
-| **Appearance → Editor** | `/wp-admin/site-editor.php` | — |
-| **Settings** | `/wp-admin/options-general.php` | — |
+```css
+/* Primary Colors */
+--brand-red: #e01e12;           /* Primary CTA, accents, active states */
+--brand-navy: #172134;          /* Headings, primary text */
+--brand-navy-light: #1a3a5f;    /* Gradient end for navy backgrounds */
 
----
+/* Grays */
+--gray-50: #f5f5f5;             /* Page backgrounds */
+--gray-100: #e5e5e5;            /* Card borders */
+--gray-400: #9ca3af;            /* Metadata text */
+--gray-600: #4b5563;            /* Body text (light mode) */
+--gray-800: #1f2937;            /* Dark text */
 
-## Publishing Checklist (Standard Article)
-
-**Before Publishing**:
-- [ ] Headline 50-60 characters
-- [ ] Featured image (3:2, min 1200x800px)
-- [ ] Category assigned (1-2 max)
-- [ ] Tags added (3-5)
-- [ ] Excerpt written (150-160 chars)
-- [ ] Alt text on all images
-- [ ] Internal links (3-5)
-- [ ] Yoast SEO green/orange
-- [ ] Preview on mobile + desktop
-
-**Keyboard Shortcuts**:
-- `Ctrl/Cmd + B` — Bold
-- `Ctrl/Cmd + I` — Italic
-- `Ctrl/Cmd + K` — Insert link
-- `Ctrl/Cmd + S` — Save draft
-- `/` — Quick insert block
-
----
-
-## Content Types
-
-### 1. Standard Article
-
-**Structure**:
-1. H1 Headline (auto)
-2. Featured image (3:2)
-3. Lead paragraph (20px, medium)
-4. Body paragraphs (16px)
-5. H2 sections
-6. Pull quotes (1-2)
-7. Images with captions
-8. Social share buttons
-
-**Category**: Choose from 10 main categories  
-**Reading Time**: 5-10 minutes ideal  
-**Word Count**: 800-1,500 words
-
----
-
-### 2. Recipe
-
-**Structure**:
-1. Recipe title
-2. Headnote (2-3 sentences)
-3. Recipe meta (prep, cook, servings)
-4. Ingredients (bulleted)
-5. Instructions (numbered)
-6. Chef's notes
-7. Nutritional info (optional)
-
-**ACF Fields**:
-- Prep Time: `20 minute`
-- Cook Time: `45 minute`
-- Servings: `8-10`
-- Difficulty: Maklik/Medium/Moeilik
-
----
-
-### 3. Competition
-
-**Structure**:
-1. Competition title
-2. Prize description
-3. Entry instructions
-4. Gravity Form
-5. Rules & T&Cs (FAQ block)
-6. Closing date + countdown
-
-**ACF Fields**:
-- Prize: Text description
-- Closing Date: Date picker
-- Status: Active/Closed/Winner Announced
-- Form ID: Gravity Forms ID
-
----
-
-## Typography Scale
-
-| Element | Font | Size | Weight | Use Case |
-|:--------|:-----|:-----|:-------|:---------|
-| **H1** | Playfair Display SC | 48px | 700 | Article title |
-| **H2** | Playfair Display SC | 36px | 700 | Major section |
-| **H3** | Playfair Display SC | 30px | 700 | Subsection |
-| **H4** | Karla | 24px | 600 | Minor heading |
-| **H5** | Karla | 20px | 600 | Card heading |
-| **Lead** | Karla | 20px | 400 | First paragraph |
-| **Body** | Karla | 16px | 400 | Body text |
-| **Small** | Karla | 14px | 400 | Captions, meta |
-| **Pull Quote** | Playfair Display SC | 30px | 400 italic | Highlighted quote |
-
----
-
-## Color Palette
-
-| Color | Hex | RGB | Use |
-|:------|:----|:----|:----|
-| **rooi rose Red** | `#e01e12` | 224, 30, 18 | Primary, links, CTAs |
-| **Tagline Grey** | `#424242` | 66, 66, 66 | Metadata, captions |
-| **Navy** | `#142135` | 20, 33, 53 | Dark mode background |
-| **White** | `#ffffff` | 255, 255, 255 | Page background |
-| **Black** | `#1a1a1a` | 26, 26, 26 | Body text |
-| **Muted Grey** | `#f5f5f5` | 245, 245, 245 | Card backgrounds |
-| **Border** | `#e0e0e0` | 224, 224, 224 | Borders, dividers |
-
----
-
-## Image Specifications
-
-### Featured Images
-
-- **Aspect Ratio**: 3:2 (1200x800px minimum)
-- **Format**: JPEG or WebP
-- **File Size**: <500KB (optimized)
-- **Alt Text**: Required (10-15 words)
-
-### In-Content Images
-
-- **Max Width**: 680px (content well width)
-- **Border Radius**: 8px (rounded corners)
-- **Loading**: Lazy (below fold)
-- **Caption**: Optional (Karla, 14px, grey)
-
-### Image Optimization Tools
-
-- **TinyPNG**: https://tinypng.com (compress)
-- **Squoosh**: https://squoosh.app (compress + format)
-- **Canva**: Design + resize
-- **Photoshop**: Advanced editing
-
----
-
-## SEO Best Practices
-
-### Headline (Title Tag)
-
-- **Length**: 50-60 characters
-- **Keyword**: In first 5 words
-- **Format**: Actionable + specific
-
-**Good Examples**:
-```
-✅ 10 Maklike Weekaandete onder R100
-✅ Hoe om die Perfekte Melktert te Bak
-✅ 5 Lente-neigings om Nou te Dra
+/* Functional */
+--white: #ffffff;               /* Card backgrounds */
+--black: #000000;               /* Pure black (rarely used) */
 ```
 
-**Avoid**:
+### **Usage**
+
+| Element | Color | Tailwind Class |
+|:--------|:------|:---------------|
+| Headings | Navy | `text-brand-navy dark:text-foreground` |
+| Body Text | Gray 600 | `text-gray-600 dark:text-gray-400` |
+| Links | Red | `text-brand-red hover:underline` |
+| Buttons (Primary) | Red | `bg-brand-red text-white hover:bg-red-700` |
+| Buttons (Secondary) | White | `bg-white border-2 border-brand-red text-brand-red` |
+| Active Pills | Red | `bg-brand-red text-white` |
+| Inactive Pills | White | `bg-white border border-gray-200 text-gray-600` |
+
+---
+
+## ✍️ **TYPOGRAPHY**
+
+### **Fonts**
+
+- **Headings**: Playfair Display SC (serif, small caps)
+- **Body**: Karla (sans-serif, clean, modern)
+
+### **Font Classes**
+
+```jsx
+// Headings (use either class)
+className="has-brand-serif-font-family"  // WordPress-aligned
+className="font-heading"                 // React alias (works too)
+
+// Body (default, no class needed)
+// Karla is applied to <body> globally
 ```
-❌ Weekaandete (too vague)
-❌ Sommige wenke vir kos (too long)
-❌ Klik hier vir resepte (clickbait)
+
+### **Heading Sizes**
+
+```jsx
+// H1 (Page titles)
+className="text-5xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family mb-6"
+style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}
+
+// H2 (Section titles)
+className="text-3xl md:text-4xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family mb-4"
+style={{ fontVariationSettings: "var(--fvs-h2)", lineHeight: 'var(--lh-h2)', letterSpacing: 'var(--ls-h2)' }}
+
+// H3 (Card titles, subsections)
+className="text-xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family mb-2"
+style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)' }}
+
+// H4 (Small headings, labels)
+className="text-lg font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family mb-2"
+style={{ fontVariationSettings: "var(--fvs-h4)", lineHeight: 'var(--lh-h4)', letterSpacing: 'var(--ls-h4)' }}
+```
+
+### **Body Text Sizes**
+
+```jsx
+// Large intro text
+className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed"
+
+// Normal body text (default)
+className="text-base text-gray-600 dark:text-gray-400"
+
+// Small metadata, labels
+className="text-sm text-gray-500 dark:text-gray-400"
+
+// Extra small (badges, timestamps)
+className="text-xs text-gray-400 dark:text-gray-500"
 ```
 
 ---
 
-### Meta Description
+## 📐 **SPACING SYSTEM**
 
-- **Length**: 150-160 characters
-- **Keyword**: Include primary keyword
-- **CTA**: Encourage click
+### **Base Unit**: 8px (Tailwind's default)
 
-**Example**:
+| Tailwind | Pixels | Use Case |
+|:---------|:-------|:---------|
+| `gap-2` | 8px | Icon + text spacing |
+| `gap-4` | 16px | Card content gaps |
+| `gap-6` | 24px | Section content gaps |
+| `gap-8` | 32px | Major section gaps |
+| `p-4` | 16px | Card padding (small) |
+| `p-6` | 24px | Card padding (medium) |
+| `p-8` | 32px | Card padding (large) |
+| `p-10` | 40px | Hero section padding |
+| `mb-6` | 24px | Heading bottom margin |
+| `mb-8` | 32px | Section bottom margin |
+| `mb-10` | 40px | Major section bottom margin |
+| `mb-12` | 48px | Large section bottom margin |
+
+### **Common Patterns**
+
+```jsx
+// Page header
+<div className="mb-10">
+  <h1 className="...mb-6">Title</h1>
+  <p className="text-lg ...">Intro text</p>
+</div>
+
+// Card spacing
+<div className="bg-white p-6 rounded-xl shadow-sm">
+  <h3 className="...mb-4">Card Title</h3>
+  <p className="mb-6">Content</p>
+  <button>CTA</button>
+</div>
+
+// Grid gaps
+<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+  {/* Cards */}
+</div>
 ```
-Ontdek 10 maklike weekaandete wat minder as R100 kos. 
-Van pasta tot roerbak-geregte — vinnige resepte vir 
-besige gesinne.
+
+---
+
+## 🎴 **COMPONENT PATTERNS**
+
+### **1. Card (Standard)**
+
+```jsx
+<div className="bg-white dark:bg-card border border-gray-100 dark:border-border rounded-xl shadow-sm p-6 hover:shadow-md transition-shadow">
+  <h3 className="text-xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family mb-3">
+    Card Title
+  </h3>
+  <p className="text-gray-600 dark:text-gray-400 mb-4">
+    Card content goes here.
+  </p>
+  <button className="bg-brand-red text-white px-6 py-3 rounded-lg font-bold hover:bg-red-700 transition-colors">
+    Call to Action
+  </button>
+</div>
 ```
 
 ---
 
-### Alt Text
+### **2. Button (Primary)**
 
-- **Format**: Descriptive sentence (10-15 words)
-- **Keyword**: Include naturally (don't force)
-
-**Examples**:
-```
-✅ Sappige hoenderborsies met vars kruie op 'n swart bord
-✅ Vrou wat groente sny in 'n moderne kombuis
-✅ Melktert sny met kaneel op 'n vintage bord
-
-❌ food (too vague)
-❌ IMG_1234 (not descriptive)
-❌ chicken (missing context)
+```jsx
+<button className="bg-brand-red text-white px-6 py-3 rounded-lg font-bold hover:bg-red-700 transition-colors shadow-sm disabled:opacity-50 disabled:cursor-not-allowed">
+  Primary Button
+</button>
 ```
 
 ---
 
-## Categories & Tags
+### **3. Button (Secondary)**
 
-### 10 Main Categories
-
-1. **Kos** — Food, recipes, baking
-2. **Mode** — Fashion, trends, shopping
-3. **Skoonheid** — Beauty, skincare, makeup
-4. **Gesondheid** — Health, fitness, wellness
-5. **Bekendes** — Celebrities, entertainment
-6. **Leefstyl** — Lifestyle, home, garden
-7. **Jou lewe** — Relationships, parenting, finance
-8. **Ontspanning** — Entertainment, books, movies
-9. **Wen** — Competitions
-10. **Rooiwarm wenners** — Award winners
-
-### Tagging Guidelines
-
-- **Count**: 3-5 tags per article
-- **Format**: Lowercase, no spaces (use hyphens)
-- **Examples**: `melktert`, `resepte`, `bak`, `suidafrikaans`
-- **Avoid**: Over-tagging (>10 tags), duplicate tags
+```jsx
+<button className="bg-white dark:bg-card border-2 border-brand-red text-brand-red px-6 py-3 rounded-lg font-bold hover:bg-brand-red hover:text-white transition-colors">
+  Secondary Button
+</button>
+```
 
 ---
 
-## Common Blocks
+### **4. Button (Ghost)**
 
-### Text Blocks
-
-- **Paragraph**: Default body text
-- **Heading**: H2, H3, H4 (choose level)
-- **List**: Bulleted or numbered
-- **Quote**: Pull quote style variation
-
-### Media Blocks
-
-- **Image**: Single image + caption
-- **Gallery**: Multiple images (grid)
-- **Cover**: Hero image with overlay text
-
-### Design Blocks
-
-- **Spacer**: Add vertical space
-- **Separator**: Horizontal line divider
-- **Columns**: Multi-column layout
-
-### Embed Blocks
-
-- **YouTube**: Embed video
-- **Instagram**: Embed post
-- **Twitter**: Embed tweet
+```jsx
+<button className="bg-transparent border border-gray-300 dark:border-border text-gray-700 dark:text-gray-300 px-6 py-3 rounded-lg font-bold hover:border-brand-red hover:text-brand-red transition-colors">
+  Ghost Button
+</button>
+```
 
 ---
 
-## Afrikaans Style Guide
+### **5. Pill (Category Filter)**
 
-### Capitalization
+```jsx
+{/* Active State */}
+<button className="px-4 py-2 rounded-full text-sm font-medium bg-brand-red text-white shadow-sm">
+  Active Pill
+</button>
 
-- **Sentence case**: Headings (e.g., "Die beste resepte vir winter")
-- **Proper nouns**: Kaapstad, Karoo, Suid-Afrika
-- **Seasons**: Lowercase (winter, lente, somer, herfs)
-- **Months/Days**: Uppercase (Januarie, Maandag)
-
-### Punctuation
-
-- **Oxford comma**: Yes (kos, mode, en skoonheid)
-- **Quotation marks**: Double quotes (" ")
-- **Em dash**: — (for emphasis)
-- **Ellipsis**: ... (three dots)
-
-### Numbers
-
-- **Words (1-10)**: twee eiers, vyf minute, sewe dae
-- **Numerals (11+)**: 15 minute, 250g, 180°C
-- **Measurements**: Always numerals (2 koppies, 1 teelepel)
-
-### Dates & Times
-
-- **Date format**: DD Maand YYYY (12 Maart 2026)
-- **Time format**: 24-hour (14:30, not 2:30 PM)
+{/* Inactive State */}
+<button className="px-4 py-2 rounded-full text-sm font-medium bg-white dark:bg-card border border-gray-200 dark:border-border text-gray-600 dark:text-gray-400 hover:border-brand-red hover:text-brand-red transition-colors">
+  Inactive Pill
+</button>
+```
 
 ---
 
-## Social Media
+### **6. Numbered Circle (Steps)**
 
-### Profile URLs
-
-- **Facebook**: https://www.facebook.com/rooirosetydskrif
-- **Instagram**: https://www.instagram.com/rooirosetydskrif
-- **X (Twitter)**: https://x.com/rooirosetydskrif
-- **YouTube**: https://www.youtube.com/@rooirosetydskrif
-- **LinkedIn**: https://www.linkedin.com/company/rooi-rose
-- **TikTok**: https://www.tiktok.com/@rooirosetydskrif
-- **Email**: redaksie@rooirose.co.za
-
-### Hashtags
-
-**Primary**: `#rooirose` `#rooirosetydskrif`  
-**Category**: `#kos` `#mode` `#skoonheid` `#gesondheid` `#leefstyl`  
-**Content**: `#resepte` `#afrikaans` `#suidafrikaans` `#tydskrif`
-
-### Posting Guidelines
-
-- **Frequency**: 3-5 posts per day (across all platforms)
-- **Best Times**: 6-9 AM, 12-1 PM, 7-9 PM (SA time)
-- **Image Size**: 1200x630px (Facebook/X), 1080x1080px (Instagram)
-- **Tone**: Warm, approachable, conversational
+```jsx
+<span className="w-10 h-10 rounded-full bg-brand-red text-white flex items-center justify-center shrink-0 font-bold shadow-sm">
+  1
+</span>
+```
 
 ---
 
-## Forms
+### **7. Input Field**
 
-### Gravity Forms IDs
-
-1. **Newsletter Signup** — ID: 1
-2. **Contact Form** — ID: 2
-3. **Story Submission** — ID: 3
-4. **Competition Entry** — ID: 4
-5. **Tip Submission** — ID: 5
-
-### Inserting Forms
-
-1. Click **+** → Search "Gravity Forms"
-2. Select form from dropdown
-3. Verify form displays correctly
-4. Test submission
+```jsx
+<input
+  type="text"
+  placeholder="Enter text..."
+  className="w-full px-4 py-3 border-2 border-gray-300 dark:border-border rounded-lg focus:outline-none focus:border-brand-red dark:focus:border-brand-red transition-colors bg-white dark:bg-card dark:text-foreground"
+/>
+```
 
 ---
 
-## Troubleshooting
+### **8. Gradient Header (Impact)**
 
-### Common Issues
-
-| Issue | Solution |
-|:------|:---------|
-| **Can't upload image** | Check file size (<10MB), format (JPEG/PNG/WebP) |
-| **SEO score red** | Add keyword to first paragraph, reduce sentence length |
-| **Preview not working** | Clear browser cache, try incognito mode |
-| **Block won't insert** | Refresh page, check for plugin conflicts |
-| **Dark mode broken** | Check CSS variables in theme.json |
-
-### Who to Contact
-
-| Issue Type | Contact | Email |
-|:-----------|:--------|:------|
-| **Content questions** | Editor-in-Chief | redaksie@rooirose.co.za |
-| **Technical issues** | Tech Support | hulp@rooirose.co.za |
-| **Account/login** | Admin | admin@rooirose.co.za |
+```jsx
+<div className="bg-gradient-to-br from-brand-red to-red-600 dark:bg-brand-red p-10 text-center rounded-t-xl">
+  <IconComponent size={64} className="mx-auto mb-4 text-white" />
+  <h1 className="text-4xl font-normal text-white has-brand-serif-font-family mb-3">
+    Heading Text
+  </h1>
+  <p className="text-white/90 text-lg">
+    Subheading or description
+  </p>
+</div>
+```
 
 ---
 
-## Performance Checklist
+### **9. Gradient Header (Navy Background)**
 
-### Before Publishing
-
-- [ ] Compress all images (<500KB each)
-- [ ] Add alt text to all images
-- [ ] Use lazy loading (below fold)
-- [ ] Add internal links (3-5)
-- [ ] Check Yoast SEO score (green/orange)
-- [ ] Preview on mobile
-
-### After Publishing
-
-- [ ] Share on social media (within 30 min)
-- [ ] Add to newsletter (if applicable)
-- [ ] Monitor comments (respond within 24 hours)
-- [ ] Check analytics (traffic, engagement)
+```jsx
+<div className="bg-gradient-to-br from-brand-navy to-brand-navy-light dark:bg-brand-navy p-10 text-center rounded-t-xl">
+  <h1 className="text-4xl font-normal text-white has-brand-serif-font-family mb-3">
+    Heading Text
+  </h1>
+  <p className="text-gray-200 text-lg">
+    Subheading or description
+  </p>
+</div>
+```
 
 ---
 
-## Emergency Contacts
+### **10. Article Card (Magazine Style)**
 
-### During Business Hours (9 AM - 5 PM)
-
-- **Email**: redaksie@rooirose.co.za
-- **Phone**: [TBD]
-
-### After Hours (Urgent Only)
-
-- **On-Call Tech**: [TBD]
-- **On-Call Editor**: [TBD]
-
----
-
-## Useful WordPress Shortcuts
-
-| Action | Shortcut |
-|:-------|:---------|
-| **Save draft** | `Ctrl/Cmd + S` |
-| **Bold text** | `Ctrl/Cmd + B` |
-| **Italic text** | `Ctrl/Cmd + I` |
-| **Insert link** | `Ctrl/Cmd + K` |
-| **Insert block** | `/` (slash) |
-| **Duplicate block** | `Ctrl/Cmd + Shift + D` |
-| **Delete block** | `Shift + Alt + Z` |
-| **Undo** | `Ctrl/Cmd + Z` |
-| **Redo** | `Ctrl/Cmd + Shift + Z` |
-
----
-
-## Block Editor Slash Commands
-
-Type `/` in the editor to quick-insert blocks:
-
-- `/heading` — Insert heading
-- `/image` — Insert image
-- `/list` — Insert list
-- `/quote` — Insert quote
-- `/separator` — Insert separator
-- `/spacer` — Insert spacer
-- `/columns` — Insert columns
-- `/gallery` — Insert gallery
+```jsx
+<article className="group">
+  <div className="aspect-[3/2] overflow-hidden rounded-lg mb-4 bg-gray-200 dark:bg-muted">
+    <img
+      src={imageUrl}
+      alt={title}
+      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+      loading="lazy"
+    />
+  </div>
+  <span className="inline-block bg-brand-red text-white text-xs font-bold px-2 py-1 uppercase mb-2 rounded">
+    {category}
+  </span>
+  <h3 className="text-xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family mb-2 line-clamp-2 group-hover:text-brand-red transition-colors">
+    {title}
+  </h3>
+  <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-3 mb-3">
+    {excerpt}
+  </p>
+  <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
+    <span>{author}</span>
+    <span>•</span>
+    <span>{date}</span>
+  </div>
+</article>
+```
 
 ---
 
-## Print This Card
+## 🌓 **DARK MODE**
 
-**Format**: 2-page reference  
-**Paper**: A4 or Letter  
-**Orientation**: Portrait  
-**Color**: Optional (works in B&W)
+### **Key Principles**
 
-**Tip**: Laminate for durability, keep near desk
+1. **Always provide dark mode variant**: Every color class should have `dark:` variant
+2. **Use semantic tokens**: `dark:bg-card`, `dark:text-foreground`, `dark:border-border`
+3. **Custom shadows**: Use `dark:shadow-[var(--shadow-dark-*)]` for proper depth
+
+### **Common Dark Mode Patterns**
+
+```jsx
+// Background
+bg-white dark:bg-card              // Card backgrounds
+bg-gray-50 dark:bg-background      // Page backgrounds
+bg-gray-100 dark:bg-muted          // Subtle backgrounds
+
+// Text
+text-brand-navy dark:text-foreground     // Headings
+text-gray-600 dark:text-gray-400         // Body text
+text-gray-500 dark:text-gray-400         // Metadata
+
+// Borders
+border-gray-100 dark:border-border       // Card borders
+border-gray-200 dark:border-border       // Input borders
+border-gray-300 dark:border-border       // Dividers
+
+// Shadows
+shadow-sm dark:shadow-[var(--shadow-dark-100)]     // Subtle
+shadow-md dark:shadow-[var(--shadow-dark-200)]     // Medium
+shadow-lg dark:shadow-[var(--shadow-dark-300)]     // Large
+```
 
 ---
 
+## 📱 **RESPONSIVE BREAKPOINTS**
+
+### **Tailwind Breakpoints**
+
+| Prefix | Min Width | Target Devices |
+|:-------|:----------|:---------------|
+| (default) | 0px | Mobile (portrait) |
+| `sm:` | 640px | Mobile (landscape), small tablets |
+| `md:` | 768px | Tablets (portrait), small laptops |
+| `lg:` | 1024px | Tablets (landscape), laptops |
+| `xl:` | 1280px | Desktops |
+| `2xl:` | 1536px | Large desktops |
+
+### **Common Responsive Patterns**
+
+```jsx
+// Typography (mobile → desktop)
+text-3xl md:text-4xl lg:text-5xl      // H1
+text-2xl md:text-3xl                  // H2
+text-xl md:text-2xl                   // H3
+
+// Grid columns (mobile → desktop)
+grid-cols-1 md:grid-cols-2 lg:grid-cols-3    // 1 → 2 → 3 columns
+grid-cols-1 md:grid-cols-3                   // 1 → 3 columns
+
+// Flexbox (stack → row)
+flex-col md:flex-row                  // Stack on mobile, row on tablet+
+
+// Padding (mobile → desktop)
+p-4 md:p-6 lg:p-8                    // 16px → 24px → 32px
+
+// Text size (mobile → desktop)
+text-base md:text-lg                  // 16px → 18px
+```
+
+---
+
+## 🎯 **ICONS**
+
+### **Library**: Lucide React
+
+### **Common Sizes**
+
+| Use Case | Size | Tailwind |
+|:---------|:-----|:---------|
+| UI icons (inline) | 16px | `size={16}` |
+| Button icons | 20px | `size={20}` |
+| Card icons | 24px | `size={24}` |
+| Hero icons | 56-64px | `size={56}` or `size={64}` |
+
+### **Usage Example**
+
+```jsx
+import { Heart, ArrowRight, Mail } from 'lucide-react';
+
+// Inline with text
+<span className="flex items-center gap-2">
+  <Mail size={16} className="text-brand-red" />
+  <span>Email us</span>
+</span>
+
+// Button icon
+<button className="flex items-center gap-2">
+  <span>Continue</span>
+  <ArrowRight size={20} />
+</button>
+
+// Hero icon (confirmation pages)
+<Heart size={64} className="mx-auto mb-4 text-white" />
+```
+
+---
+
+## ♿ **ACCESSIBILITY**
+
+### **Quick Checklist**
+
+- ✅ **Alt text**: All images have descriptive alt text
+- ✅ **Focus states**: Red outline visible (`focus:outline-none focus:ring-2 focus:ring-brand-red`)
+- ✅ **ARIA labels**: Icon-only buttons have `aria-label`
+- ✅ **Color contrast**: 4.5:1 for body text, 3:1 for UI elements
+- ✅ **Heading order**: H1 → H2 → H3 (no skipping levels)
+- ✅ **Keyboard navigation**: Tab through all interactive elements
+
+### **Focus Ring Pattern**
+
+```jsx
+// Standard focus ring (red)
+focus:outline-none focus:ring-2 focus:ring-brand-red focus:ring-offset-2
+
+// Input fields
+focus:outline-none focus:border-brand-red dark:focus:border-brand-red
+```
+
+---
+
+## 🚀 **QUICK START TEMPLATE**
+
+### **New Page Skeleton**
+
+```jsx
+import React from 'react';
+import { PageContainer } from '../components/common/PageContainer';
+import { SEO } from '../components/common/SEO';
+
+export const NewPage = () => {
+  return (
+    <div className="bg-gray-50 dark:bg-background min-h-screen">
+      <SEO
+        title="Page Title | rooi rose"
+        description="Page description in Afrikaans."
+        keywords="keywords, in, afrikaans"
+      />
+
+      <PageContainer breadcrumbs={[{ label: 'Page Name' }]}>
+        {/* Page Header */}
+        <div className="mb-10">
+          <h1
+            className="text-5xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family mb-6"
+            style={{
+              fontVariationSettings: "var(--fvs-h1)",
+              lineHeight: 'var(--lh-h1)',
+              letterSpacing: 'var(--ls-h1)'
+            }}
+          >
+            Page Title
+          </h1>
+          <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-3xl">
+            Introductory paragraph in Afrikaans.
+          </p>
+        </div>
+
+        {/* Main Content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Cards or content */}
+        </div>
+      </PageContainer>
+    </div>
+  );
+};
+```
+
+---
+
+## 📚 **BRAND GUIDELINES**
+
+### **rooi rose Voice**
+
+- **Always lowercase**: "rooi rose" (never "Rooi Rose" or "ROOI ROSE")
+- **Italics for emphasis**: Use `<em className="font-bold not-italic">rooi rose</em>`
+- **Language**: Afrikaans first, always
+- **Tone**: Warm, approachable, sophisticated but not stuffy
+
+### **Category Names** (10 Lifestyle Categories)
+
+1. **Kos** — Food & recipes
+2. **Mode** — Fashion & style
+3. **Skoonheid** — Beauty & skincare
+4. **Gesondheid** — Health & wellness
+5. **Bekendes** — Celebrities & entertainment
+6. **Leefstyl** — Lifestyle general
+7. **Jou lewe** — Personal stories & advice
+8. **Ontspanning** — Entertainment & culture
+9. **Wen** — Competitions & giveaways
+10. **Rooiwarm wenners** — Competition winners
+
+---
+
+## 🎨 **VISUAL EXAMPLES**
+
+### **Good Typography Example**
+
+✅ **DO**:
+```jsx
+<h1 className="text-5xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family mb-6">
+  Kos & Resepte
+</h1>
+```
+
+❌ **DON'T**:
+```jsx
+{/* Missing font class, wrong size, no dark mode */}
+<h1 className="text-4xl font-bold text-black mb-4">
+  Kos & Resepte
+</h1>
+```
+
+---
+
+### **Good Button Example**
+
+✅ **DO**:
+```jsx
+<button className="bg-brand-red text-white px-6 py-3 rounded-lg font-bold hover:bg-red-700 transition-colors">
+  Lees meer
+</button>
+```
+
+❌ **DON'T**:
+```jsx
+{/* Missing hover state, no dark mode consideration */}
+<button className="bg-red-500 text-white px-4 py-2 rounded">
+  Lees meer
+</button>
+```
+
+---
+
+### **Good Dark Mode Example**
+
+✅ **DO**:
+```jsx
+<div className="bg-white dark:bg-card border border-gray-100 dark:border-border p-6">
+  <p className="text-gray-600 dark:text-gray-400">Content</p>
+</div>
+```
+
+❌ **DON'T**:
+```jsx
+{/* Missing dark mode variants */}
+<div className="bg-white border border-gray-100 p-6">
+  <p className="text-gray-600">Content</p>
+</div>
+```
+
+---
+
+## 🔗 **RELATED DOCUMENTATION**
+
+- **Full Design System Guide**: `/guidelines/design-tokens/DESIGN-SYSTEM-GUIDE.md`
+- **Brand Guidelines**: `/guidelines/rooi-rose/brand-guidelines.md`
+- **Typography Guide**: `/guidelines/design-tokens/typography.md`
+- **Color Palette**: `/guidelines/design-tokens/colors.md`
+- **Component Examples**: Check existing pages in `/src/app/pages/`
+
+---
+
+**Quick Reference Card Version**: 1.0.0  
 **Last Updated**: 2026-03-12  
-**Version**: 1.0  
-**Maintained By**: rooi rose Editorial Team
+**For**: rooi rose Magazine Development Team
 
+---
+
+## 💡 **TIPS & TRICKS**
+
+1. **Copy from existing pages**: Find a similar page, copy the pattern, adapt the content
+2. **Use the right heading size**: H1 for page titles, H2 for sections, H3 for cards
+3. **Always test dark mode**: Toggle dark mode after every change
+4. **Mobile-first**: Build for mobile first, then add `md:` and `lg:` variants
+5. **Consistent spacing**: Stick to 8px multiples (gap-4, gap-6, gap-8)
+6. **Red for action**: Use brand-red for CTAs, active states, important elements
+7. **Navy for structure**: Use brand-navy for headings, creating visual hierarchy
+
+---
+
+**Happy building! Baie sterkte!** 🚀

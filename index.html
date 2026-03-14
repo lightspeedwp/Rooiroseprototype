@@ -4,12 +4,44 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/newspaper.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Die Papier - Jou betroubare bron vir Afrikaanse nuus, sport, skole, sake, lewenstyl en opinie" />
-    <meta name="theme-color" content="#172134" />
-    <title>Die Papier - Afrikaanse Nuus en Meer</title>
+    <meta name="description" content="rooi rose - Jou tydskrif vir Afrikaanse leefstyl, mode, skoonheid en meer" />
+    <meta name="theme-color" content="#e01e12" />
+    <title>rooi rose - Afrikaanse Tydskrif</title>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- v11.0: Hybrid approach - delay script load + disable routing in iframe -->
+    <script>
+      // Detect if we're in Figma iframe
+      const isInFigmaIframe = (() => {
+        try {
+          return window.self !== window.top;
+        } catch {
+          return true;
+        }
+      })();
+      
+      // Function to inject main script
+      const injectScript = () => {
+        console.log('[HTML] Injecting main script...');
+        const script = document.createElement('script');
+        script.type = 'module';
+        script.src = '/src/main.tsx';
+        document.body.appendChild(script);
+      };
+      
+      if (isInFigmaIframe) {
+        // v11.0: Wait for window.load + 30s delay (prevents ANY JS during iframe onload)
+        console.log('[HTML] Figma iframe detected, waiting for safe initialization...');
+        window.addEventListener('load', () => {
+          console.log('[HTML] Window loaded, waiting 30s for message channel setup...');
+          setTimeout(injectScript, 30000);
+        });
+      } else {
+        // Standard environment: load immediately
+        injectScript();
+      }
+    </script>
   </body>
 </html>

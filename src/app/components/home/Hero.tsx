@@ -103,7 +103,7 @@ export const Hero = () => {
 
               <button 
                 onClick={() => navigate('/nuus')}
-                className="w-full mt-4 py-2 text-center text-brand-navy-light dark:text-brand-navy-light border border-brand-navy-light dark:border-brand-navy-light rounded font-bold hover:bg-brand-navy-light dark:hover:bg-input hover:text-white transition-colors text-xs"
+                className="w-full mt-4 py-2 text-center text-brand-navy-light dark:text-brand-navy-light border border-brand-navy-light dark:border-brand-navy-light rounded font-bold hover:bg-brand-navy-light dark:hover:bg-input hover:text-white transition-colors text-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring focus-visible:ring-offset-2"
               >
                 Laai meer nuus
               </button>

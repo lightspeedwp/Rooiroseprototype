@@ -1,8 +1,8 @@
 # Master Task List
 
 **Generated**: 2026-03-03  
-**Last updated**: 2026-03-04  
-**Status**: **3 ACTIVE TASKS** — Legal Pages (10 tasks, blocked on WordPress admin), Manual Cleanup (1 task, blocked on Git), Production Build (deferred). Theme Alignment Audit COMPLETE (42/42).
+**Last updated**: 2026-03-13  
+**Status**: **4 ACTIVE TASK LISTS** — Shop & Advertising Implementation (4/11 tasks, 36%), Legal Pages (blocked on WordPress admin), Manual Cleanup (blocked on Git), Production Build (deferred). Theme Alignment Audit COMPLETE (42/42).
 
 ---
 
@@ -13,6 +13,27 @@ This master task list tracks all active and archived task lists. It does not con
 ---
 
 ## Active Task Lists
+
+### Shop & Advertising Implementation
+
+**Status**: 7/11 tasks (64%)  
+**Created**: 2026-03-13  
+**Priority**: P1  
+**Task List**: `/tasks/CURRENT-TASKS.md`  
+**Report**: None (feature implementation)
+
+3-phase implementation: Shop System (3/3 complete ✅), Advertising Pages Rebrand (4/6 complete), Subscription Enhancement (0/2 complete). Updating all advertising pages from newspaper to lifestyle magazine context.
+
+**Progress**:
+- ✅ Phase 1: Shop System (100% complete)
+  - Product data, shop page, routes
+- 🟡 Phase 2: Advertising Pages (67% complete)
+  - ✅ Classifieds, Display, Leaflets, Sponsored Content
+  - ⏳ Sponsorships, Supplements (pending)
+- ⏳ Phase 3: Subscription Enhancement (0% complete)
+  - E-Edition and Print Delivery differentiation
+
+---
 
 ### Legal Pages WordPress Content Update
 
@@ -42,7 +63,7 @@ This master task list tracks all active and archived task lists. It does not con
 ### Quick Tasks
 
 **File**: `/tasks/task-list.md`  
-**Status**: 1 open item (Legal Pages) + 1 deferred item (production build test)
+**Status**: 1 open item (Legal Pages) + 1 deferred item (production build test) + 1 active (Shop & Advertising)
 
 ---
 

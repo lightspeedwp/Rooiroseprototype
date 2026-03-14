@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router';
-import { User, TrendingUp, ChevronLeft, ChevronRight } from 'lucide-react';
+import { User, TrendingUp, ChevronLeft, ChevronRight, Clock } from 'lucide-react';
 import { getArticlesByCategory, getFeaturedArticles } from '../data/categoryArticles';
 import { LATEST_NEWS } from '../data/articles';
 import { ArticleLink } from '../components/common/ArticleLink';
@@ -16,11 +16,13 @@ import { injectCollectionPageSchema, cleanupCollectionPageSchema } from '../util
 import { getResponsiveProps } from '../utils/responsiveImage';
 import { HeroSlideCard } from '../components/common/HeroSlideCard';
 import { NewsCard } from '../components/home/NewsCard';
+import { MagazineArticleCard } from '../components/category/MagazineArticleCard';
 
-/* ── rooi rose Magazine Category Page ──────────────────────────────
- * Editorial design: Magazine grid layout with generous spacing
+/* ── rooi rose Magazine Category Archive ──────────────────────────────
+ * Editorial design: Visual masonry grid, large images, generous spacing
  * Typography: Playfair Display SC headings, Karla body
- * Layout: Hero slider + 3-column masonry grid + sidebar
+ * Layout: Full-width hero + Magazine grid (2-3 columns) + Featured section
+ * Features: Large cards, aspect ratios, visual hierarchy
  * ────────────────────────────────────────────────────────────────── */
 
 /** Hero slider for featured articles — falls back to single hero if ≤1 featured */
@@ -365,34 +367,36 @@ export const CategoryPage = ({ categoryName = "Nuus" }: { categoryName?: string 
           <div className="flex-1 min-w-0">
             {/* Magazine Grid - 3 columns with generous spacing */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 mb-12">
-              {paginatedArticles.filter(a => a != null && a.id != null).map((article, index) => (
-                <React.Fragment key={article.id}>
-                  <NewsCard 
-                    article={{
-                      id: article.id,
-                      title: article.title,
-                      excerpt: article.excerpt,
-                      category: article.category,
-                      imageUrl: article.imageUrl,
-                      date: article.date,
-                      time: article.date,
-                      author: article.author,
-                      readTime: article.readTime,
-                      tags: article.tags || [article.category],
-                      sponsored: article.sponsored,
-                      sponsorName: article.sponsorName,
-                      sponsorLogo: article.sponsorLogo,
-                    }}
-                    variant="compact"
+              {paginatedArticles.filter(a => a != null && a.id != null).flatMap((article, index) => {
+                const items = [
+                  <MagazineArticleCard 
+                    key={article.id}
+                    id={article.id}
+                    title={article.title}
+                    excerpt={article.excerpt}
+                    category={article.category}
+                    imageUrl={article.imageUrl}
+                    date={article.date}
+                    author={article.author}
+                    readTime={article.readTime}
+                    sponsored={article.sponsored}
+                    sponsorName={article.sponsorName}
+                    sponsorLogo={article.sponsorLogo}
+                    variant="standard"
                   />
-                  {/* Mobile In-Feed Ad after every 6 articles */}
-                  {(index + 1) % 6 === 0 && index < paginatedArticles.length - 1 && (
-                    <div className="col-span-full my-4">
+                ];
+                
+                // Add in-feed ad after every 6 articles
+                if ((index + 1) % 6 === 0 && index < paginatedArticles.length - 1) {
+                  items.push(
+                    <div key={`ad-${index}`} className="col-span-full my-4">
                       <InFeedAd section={categoryName.toLowerCase()} premium={isPremium} />
                     </div>
-                  )}
-                </React.Fragment>
-              ))}
+                  );
+                }
+                
+                return items;
+              })}
             </div>
             
             {/* Pagination */}

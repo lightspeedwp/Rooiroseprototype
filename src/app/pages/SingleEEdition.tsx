@@ -24,6 +24,12 @@ import { renderWithBrandItalics } from '../utils/brandItalics';
 import { getOwnershipStatus, MOCK_SUBSCRIPTION } from '../data/mockUserAccess';
 import { DemoStateSwitcher } from '../components/common/DemoStateSwitcher';
 
+/* ── rooi rose Magazine Single E-Edition Page ──────────────────────────────
+ * Editorial design: Full-width preview, large cover, CTA sidebar
+ * Typography: Playfair Display SC headings
+ * Layout: Large preview + product sidebar + benefits
+ * ────────────────────────────────────────────────────────────── */
+
 /** Fallback Issuu embed — used when no region-specific pdfUrl is available */
 const FALLBACK_ISSUU_URL =
   'https://e.issuu.com/embed.html?d=diepapier-gauteng_06_03_2026&u=novusmedianewspapers';

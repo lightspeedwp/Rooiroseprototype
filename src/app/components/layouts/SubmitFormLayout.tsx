@@ -7,6 +7,8 @@
  *
  * Extracted for DRY (2026-03-05 memory optimization, Task #48).
  * Used by: SubmitFeedback, SubmitLetter, SubmitShoutout, SubmitStory.
+ * 
+ * Updated 2026-03-12: Editorial magazine redesign with cleaner spacing and typography
  */
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router';

@@ -15,6 +15,12 @@ import {
 } from "../components/ui/select";
 import { toast } from 'sonner';
 
+/* ── rooi rose Magazine Checkout Page ──────────────────────────────
+ * Editorial design: WooCommerce checkout flow
+ * Typography: Playfair Display SC headings, Karla body
+ * Layout: Step-by-step checkout + order summary
+ * ────────────────────────────────────────────────────────────── */
+
 export const CheckoutPage = () => {
   const { items, total } = useCart();
   const navigate = useNavigate();
@@ -41,29 +47,29 @@ export const CheckoutPage = () => {
 
   if (items.length === 0) {
     return (
-        <div className="flex flex-col items-center justify-center min-h-[50vh] font-inter">
-            <h1 className="text-2xl font-normal mb-4 font-heading" style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}>Jou mandjie is leeg</h1>
-            <Button onClick={() => navigate('/e-uitgawes')} className="bg-primary hover:bg-primary/90">Gaan terug na winkel</Button>
+        <div className="flex flex-col items-center justify-center min-h-[50vh] bg-white dark:bg-background py-20">
+            <h1 className="text-4xl font-normal mb-6 has-brand-serif-font-family text-brand-navy dark:text-foreground" style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}>Jou mandjie is leeg</h1>
+            <Button onClick={() => navigate('/e-uitgawes')} className="bg-brand-red hover:bg-brand-red/90 text-white font-bold h-12 px-8">Gaan terug na winkel</Button>
         </div>
     )
   }
 
   return (
-    <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 font-inter text-foreground dark:text-foreground">
+    <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 text-foreground dark:text-foreground bg-white dark:bg-background">
       
       {/* Left Column - Checkout Form */}
       <div className="flex-1 space-y-12">
         <h1
-          className="font-heading font-normal text-5xl md:text-6xl text-brand-navy dark:text-foreground mb-8"
+          className="has-brand-serif-font-family font-normal text-4xl md:text-5xl text-brand-navy dark:text-foreground mb-8"
           style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}
         >Checkout</h1>
 
         {/* Step 1: Contact Information */}
-        <section className="relative pl-10 md:pl-14">
-          <div className="absolute left-0 top-1 text-2xl md:text-3xl font-heading font-normal text-brand-navy dark:text-foreground">1.</div>
+        <section className="relative pl-12 md:pl-16 border-l-2 border-gray-200 dark:border-border">
+          <div className="absolute -left-[17px] md:-left-[19px] top-0 w-8 h-8 md:w-10 md:h-10 rounded-full bg-brand-red text-white flex items-center justify-center text-lg md:text-xl font-bold has-brand-serif-font-family shadow-md">1</div>
           
-          <div className="flex justify-between items-baseline mb-4">
-            <h2 className="text-2xl md:text-3xl font-heading font-normal text-brand-navy dark:text-foreground">Kontakbesonderhede</h2>
+          <div className="flex justify-between items-baseline mb-6">
+            <h2 className="text-2xl md:text-3xl has-brand-serif-font-family font-normal text-brand-navy dark:text-foreground">Kontakbesonderhede</h2>
             <div className="flex gap-2 items-center bg-gray-100 dark:bg-muted px-3 py-1 rounded-full">
                 <span className="text-xs uppercase font-bold text-gray-500 dark:text-gray-400">Demo:</span>
                 <select
@@ -79,23 +85,23 @@ export const CheckoutPage = () => {
           </div>
           
           {isLoggedIn ? (
-            <div className="bg-gray-50 dark:bg-card border border-gray-100 dark:border-border p-4 rounded text-gray-600 dark:text-gray-400">
-               Ingelog as <span className="font-semibold text-foreground dark:text-foreground">John Doe</span> (john.doe@example.com)
+            <div className="bg-green-50 dark:bg-green-950/20 border-l-4 border-green-500 dark:border-green-600 p-5 rounded-r text-gray-700 dark:text-gray-300">
+               Ingelog as <span className="font-bold text-brand-navy dark:text-foreground">John Doe</span> (john.doe@example.com)
             </div>
           ) : (
             <>
-              <p className="text-gray-600 dark:text-gray-400 mb-6 font-light">Ons sal hierdie e-posadres gebruik om vir jou besonderhede en opdaterings oor jou bestelling te stuur.</p>
+              <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">Ons sal hierdie e-posadres gebruik om vir jou besonderhede en opdaterings oor jou bestelling te stuur.</p>
               
               <div className="space-y-4 max-w-2xl">
                 <div className="relative">
                   <Input 
                     id="email" 
                     placeholder=" " 
-                    className="peer h-14 pt-6 pb-2 px-3 border-gray-300 dark:border-border dark:bg-card rounded-md focus-visible:ring-0 focus-visible:border-foreground dark:focus-visible:border-foreground text-base"
+                    className="peer h-14 pt-6 pb-2 px-3 border-2 border-gray-300 dark:border-border dark:bg-card rounded-lg focus-visible:ring-0 focus-visible:border-brand-red dark:focus-visible:border-brand-red text-base"
                   />
                   <Label 
                     htmlFor="email" 
-                    className="absolute left-3 top-2 text-xs text-gray-500 dark:text-gray-400 font-medium transition-[top,font-size,color] peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-xs peer-focus:text-gray-500 dark:peer-focus:text-gray-400"
+                    className="absolute left-3 top-2 text-xs text-gray-500 dark:text-gray-400 font-bold transition-[top,font-size,color] peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-xs peer-focus:text-brand-red dark:peer-focus:text-brand-red"
                   >
                     E-posadres
                   </Label>
@@ -103,26 +109,26 @@ export const CheckoutPage = () => {
                 <p className="text-xs text-gray-500 dark:text-gray-400">Jy betaal tans as 'n gas.</p>
                 
                 <div className="flex items-center space-x-2 mt-4">
-                  <Checkbox id="create-account" className="border-gray-300 dark:border-border data-[state=checked]:bg-foreground data-[state=checked]:text-white" />
-                  <Label htmlFor="create-account" className="text-lg font-light cursor-pointer text-foreground">Skep 'n rekening by <em>rooi rose</em></Label>
+                  <Checkbox id="create-account" className="border-gray-300 dark:border-border data-[state=checked]:bg-brand-red data-[state=checked]:text-white data-[state=checked]:border-brand-red" />
+                  <Label htmlFor="create-account" className="text-base font-normal cursor-pointer text-foreground">Skep 'n rekening by <em className="font-bold not-italic text-brand-red">rooi rose</em></Label>
                 </div>
               </div>
             </>
           )}
         </section>
 
-        {/* Step 2: Billing Address (Renamed from Shipping Address, and Delivery removed) */}
-        <section className="relative pl-10 md:pl-14">
-          <div className="absolute left-0 top-1 text-2xl md:text-3xl font-heading font-normal text-brand-navy dark:text-foreground">2.</div>
+        {/* Step 2: Billing Address */}
+        <section className="relative pl-12 md:pl-16 border-l-2 border-gray-200 dark:border-border">
+          <div className="absolute -left-[17px] md:-left-[19px] top-0 w-8 h-8 md:w-10 md:h-10 rounded-full bg-brand-red text-white flex items-center justify-center text-lg md:text-xl font-bold has-brand-serif-font-family shadow-md">2</div>
           
-          <h2 className="text-2xl md:text-3xl font-heading font-normal text-brand-navy dark:text-foreground mb-4">Faktureringadres</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-6 font-light text-lg">Voer die adres in vir jou faktuur.</p>
+          <h2 className="text-2xl md:text-3xl has-brand-serif-font-family font-normal text-brand-navy dark:text-foreground mb-4">Faktureringadres</h2>
+          <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">Voer die adres in vir jou faktuur.</p>
 
           <div className="space-y-4 max-w-2xl" key={isLoggedIn ? 'logged-in' : 'guest'}>
             {/* Country Select */}
             <div className="relative">
                 <Select defaultValue="za">
-                  <SelectTrigger className="h-14 border-gray-300 dark:border-border bg-white dark:bg-card focus:ring-0 focus:border-foreground dark:focus:border-foreground">
+                  <SelectTrigger className="h-14 border-2 border-gray-300 dark:border-border bg-white dark:bg-card rounded-lg focus:ring-0 focus:border-brand-red dark:focus:border-brand-red">
                     <SelectValue placeholder="Kies land" />
                   </SelectTrigger>
                   <SelectContent>
@@ -130,7 +136,7 @@ export const CheckoutPage = () => {
                     <SelectItem value="na">Namibië</SelectItem>
                   </SelectContent>
                 </Select>
-                <Label className="absolute left-3 top-2 text-xs text-gray-500 dark:text-gray-400 font-medium z-10 pointer-events-none">Land / Streek</Label>
+                <Label className="absolute left-3 top-2 text-xs text-gray-500 dark:text-gray-400 font-bold z-10 pointer-events-none">Land / Streek</Label>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -139,18 +145,18 @@ export const CheckoutPage = () => {
                     id="fname" 
                     defaultValue={isLoggedIn ? mockUser.firstName : ''}
                     placeholder=" " 
-                    className="peer h-14 pt-6 pb-2 px-3 border-gray-300 dark:border-border dark:bg-card focus-visible:ring-0 focus-visible:border-foreground" 
+                    className="peer h-14 pt-6 pb-2 px-3 border-2 border-gray-300 dark:border-border dark:bg-card rounded-lg focus-visible:ring-0 focus-visible:border-brand-red" 
                 />
-                <Label htmlFor="fname" className="absolute left-3 top-2 text-xs text-gray-500 dark:text-gray-400 font-medium transition-[top,font-size,color] peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-xs peer-focus:text-gray-500 dark:peer-focus:text-gray-400">Naam</Label>
+                <Label htmlFor="fname" className="absolute left-3 top-2 text-xs text-gray-500 dark:text-gray-400 font-bold transition-[top,font-size,color] peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-xs peer-focus:text-brand-red">Naam</Label>
               </div>
               <div className="relative">
                 <Input 
                     id="lname" 
                     defaultValue={isLoggedIn ? mockUser.lastName : ''}
                     placeholder=" " 
-                    className="peer h-14 pt-6 pb-2 px-3 border-gray-300 dark:border-border dark:bg-card focus-visible:ring-0 focus-visible:border-foreground" 
+                    className="peer h-14 pt-6 pb-2 px-3 border-2 border-gray-300 dark:border-border dark:bg-card rounded-lg focus-visible:ring-0 focus-visible:border-brand-red" 
                 />
-                <Label htmlFor="lname" className="absolute left-3 top-2 text-xs text-gray-500 dark:text-gray-400 font-medium transition-[top,font-size,color] peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-xs peer-focus:text-gray-500 dark:peer-focus:text-gray-400">Van</Label>
+                <Label htmlFor="lname" className="absolute left-3 top-2 text-xs text-gray-500 dark:text-gray-400 font-bold transition-[top,font-size,color] peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-xs peer-focus:text-brand-red">Van</Label>
               </div>
             </div>
 
@@ -159,9 +165,9 @@ export const CheckoutPage = () => {
                 id="company" 
                 defaultValue={isLoggedIn ? mockUser.company : ''}
                 placeholder=" " 
-                className="peer h-14 pt-6 pb-2 px-3 border-gray-300 dark:border-border dark:bg-card focus-visible:ring-0 focus-visible:border-foreground" 
+                className="peer h-14 pt-6 pb-2 px-3 border-2 border-gray-300 dark:border-border dark:bg-card rounded-lg focus-visible:ring-0 focus-visible:border-brand-red" 
               />
-              <Label htmlFor="company" className="absolute left-3 top-2 text-xs text-gray-500 dark:text-gray-400 font-medium transition-[top,font-size,color] peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-xs peer-focus:text-gray-500 dark:peer-focus:text-gray-400">Maatskappy (opsioneel)</Label>
+              <Label htmlFor="company" className="absolute left-3 top-2 text-xs text-gray-500 dark:text-gray-400 font-bold transition-[top,font-size,color] peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-xs peer-focus:text-brand-red">Maatskappy (opsioneel)</Label>
             </div>
 
             <div className="relative">
@@ -169,9 +175,9 @@ export const CheckoutPage = () => {
                 id="address" 
                 defaultValue={isLoggedIn ? mockUser.address : ''}
                 placeholder=" " 
-                className="peer h-14 pt-6 pb-2 px-3 border-gray-300 dark:border-border dark:bg-card focus-visible:ring-0 focus-visible:border-foreground" 
+                className="peer h-14 pt-6 pb-2 px-3 border-2 border-gray-300 dark:border-border dark:bg-card rounded-lg focus-visible:ring-0 focus-visible:border-brand-red" 
               />
-              <Label htmlFor="address" className="absolute left-3 top-2 text-xs text-gray-500 dark:text-gray-400 font-medium transition-[top,font-size,color] peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-xs peer-focus:text-gray-500 dark:peer-focus:text-gray-400">Adres</Label>
+              <Label htmlFor="address" className="absolute left-3 top-2 text-xs text-gray-500 dark:text-gray-400 font-bold transition-[top,font-size,color] peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-xs peer-focus:text-brand-red">Adres</Label>
             </div>
 
             <button className="text-lg font-light text-foreground dark:text-foreground flex items-center gap-2 py-2">
@@ -184,13 +190,13 @@ export const CheckoutPage = () => {
                     id="city" 
                     defaultValue={isLoggedIn ? mockUser.city : ''}
                     placeholder=" " 
-                    className="peer h-14 pt-6 pb-2 px-3 border-gray-300 dark:border-border dark:bg-card focus-visible:ring-0 focus-visible:border-foreground" 
+                    className="peer h-14 pt-6 pb-2 px-3 border-2 border-gray-300 dark:border-border dark:bg-card rounded-lg focus-visible:ring-0 focus-visible:border-brand-red" 
                 />
-                <Label htmlFor="city" className="absolute left-3 top-2 text-xs text-gray-500 dark:text-gray-400 font-medium transition-[top,font-size,color] peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-xs peer-focus:text-gray-500 dark:peer-focus:text-gray-400">Stad</Label>
+                <Label htmlFor="city" className="absolute left-3 top-2 text-xs text-gray-500 dark:text-gray-400 font-bold transition-[top,font-size,color] peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-xs peer-focus:text-brand-red">Stad</Label>
               </div>
                <div className="relative">
                 <Select defaultValue={isLoggedIn ? mockUser.province : undefined}>
-                  <SelectTrigger className="h-14 border-gray-300 dark:border-border bg-white dark:bg-card pt-6 focus:ring-0 focus:border-foreground dark:focus:border-foreground">
+                  <SelectTrigger className="h-14 border-2 border-gray-300 dark:border-border bg-white dark:bg-card pt-6 focus:ring-0 focus:border-brand-red dark:focus:border-brand-red">
                     <SelectValue placeholder=" " />
                   </SelectTrigger>
                   <SelectContent>
@@ -199,7 +205,7 @@ export const CheckoutPage = () => {
                     <SelectItem value="kzn">KwaZulu-Natal</SelectItem>
                   </SelectContent>
                 </Select>
-                <Label className="absolute left-3 top-2 text-xs text-gray-500 dark:text-gray-400 font-medium z-10 pointer-events-none">Provinsie</Label>
+                <Label className="absolute left-3 top-2 text-xs text-gray-500 dark:text-gray-400 font-bold z-10 pointer-events-none">Provinsie</Label>
               </div>
             </div>
 
@@ -209,28 +215,28 @@ export const CheckoutPage = () => {
                     id="zip" 
                     defaultValue={isLoggedIn ? mockUser.zip : ''}
                     placeholder=" " 
-                    className="peer h-14 pt-6 pb-2 px-3 border-gray-300 dark:border-border dark:bg-card focus-visible:ring-0 focus-visible:border-foreground dark:focus-visible:border-foreground" 
+                    className="peer h-14 pt-6 pb-2 px-3 border-2 border-gray-300 dark:border-border dark:bg-card rounded-lg focus-visible:ring-0 focus-visible:border-brand-red dark:focus-visible:border-brand-red" 
                 />
-                <Label htmlFor="zip" className="absolute left-3 top-2 text-xs text-gray-500 dark:text-gray-400 font-medium transition-[top,font-size,color] peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-xs peer-focus:text-gray-500 dark:peer-focus:text-gray-400">Poskode</Label>
+                <Label htmlFor="zip" className="absolute left-3 top-2 text-xs text-gray-500 dark:text-gray-400 font-bold transition-[top,font-size,color] peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-xs peer-focus:text-brand-red">Poskode</Label>
               </div>
                <div className="relative">
                 <Input 
                     id="phone" 
                     defaultValue={isLoggedIn ? mockUser.phone : ''}
                     placeholder=" " 
-                    className="peer h-14 pt-6 pb-2 px-3 border-gray-300 dark:border-border dark:bg-card focus-visible:ring-0 focus-visible:border-foreground dark:focus-visible:border-foreground" 
+                    className="peer h-14 pt-6 pb-2 px-3 border-2 border-gray-300 dark:border-border dark:bg-card rounded-lg focus-visible:ring-0 focus-visible:border-brand-red dark:focus-visible:border-brand-red" 
                 />
-                <Label htmlFor="phone" className="absolute left-3 top-2 text-xs text-gray-500 dark:text-gray-400 font-medium transition-[top,font-size,color] peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-xs peer-focus:text-gray-500 dark:peer-focus:text-gray-400">Telefoon (opsioneel)</Label>
+                <Label htmlFor="phone" className="absolute left-3 top-2 text-xs text-gray-500 dark:text-gray-400 font-bold transition-[top,font-size,color] peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-xs peer-focus:text-brand-red">Telefoon (opsioneel)</Label>
               </div>
             </div>
           </div>
         </section>
 
         {/* Step 3: Payment Options */}
-        <section className="relative pl-10 md:pl-14">
-          <div className="absolute left-0 top-1 text-2xl md:text-3xl font-heading font-normal text-brand-navy dark:text-foreground">3.</div>
+        <section className="relative pl-12 md:pl-16 border-l-2 border-gray-200 dark:border-border">
+          <div className="absolute -left-[17px] md:-left-[19px] top-0 w-8 h-8 md:w-10 md:h-10 rounded-full bg-brand-red text-white flex items-center justify-center text-lg md:text-xl font-bold has-brand-serif-font-family shadow-md">3</div>
           
-          <h2 className="text-2xl md:text-3xl font-heading font-normal text-brand-navy dark:text-foreground mb-4">Betaalopsies</h2>
+          <h2 className="text-2xl md:text-3xl has-brand-serif-font-family font-normal text-brand-navy dark:text-foreground mb-4">Betaalopsies</h2>
           
           <div className="max-w-2xl border border-gray-200 dark:border-border rounded-sm overflow-hidden">
              {/* Option 1: EFT */}

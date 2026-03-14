@@ -11,6 +11,13 @@ import { HeroArticleSkeleton } from '../components/common/Skeletons';
 import { LeaderboardAd, SidebarAds, InFeedAd, StickyMobileFooter } from '../components/ads';
 import { ArticleCardProps } from '../types';
 import { HeroSlideCard } from '../components/common/HeroSlideCard';
+import { MagazineArticleCard } from '../components/category/MagazineArticleCard';
+
+/* ── rooi rose Magazine Tag Archive ──────────────────────────────
+ * Editorial design: Visual magazine grid with large cards
+ * Typography: Playfair Display SC headings
+ * Layout: Hero article + 3-column magazine grid
+ * ────────────────────────────────────────────────────────────────── */
 
 const ArticleCard = ({ id, title, excerpt, category, image, date, author, readTime }: ArticleCardProps) => (
   <ArticleLink id={id} title={title} className="block group">

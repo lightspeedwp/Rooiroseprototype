@@ -258,7 +258,7 @@ export const DevFullScreenMenu: React.FC<DevFullScreenMenuProps> = ({
           </Link>
           <button
             onClick={onClose}
-            className="p-2 rounded-lg text-gray-500 dark:text-white/50 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10 transition-colors"
+            className="p-2 rounded-lg text-gray-500 dark:text-white/50 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring focus-visible:ring-offset-2"
             aria-label={t('menu.close')}
           >
             <X size={20} />

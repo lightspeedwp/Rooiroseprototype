@@ -67,8 +67,8 @@ interface SitemapSectionProps {
 }
 
 const SitemapSection = ({ title, icon, pages }: SitemapSectionProps) => (
-  <section className="bg-white dark:bg-card p-6 rounded-lg shadow-sm dark:shadow-[var(--shadow-dark-100)] border border-gray-100 dark:border-border">
-    <h2 className="text-xl font-normal text-primary dark:text-primary mb-4 flex items-center gap-2 font-heading" style={{ fontVariationSettings: "var(--fvs-h2)", lineHeight: 'var(--lh-h2)', letterSpacing: 'var(--ls-h2)', fontSize: 'var(--text-h2)' }}>
+  <section className="bg-white dark:bg-card p-6 rounded-xl shadow-sm dark:shadow-[var(--shadow-dark-100)] border border-gray-200 dark:border-border hover:shadow-md transition-shadow">
+    <h2 className="text-xl font-normal text-brand-red dark:text-brand-red mb-4 flex items-center gap-2 has-brand-serif-font-family" style={{ fontVariationSettings: "var(--fvs-h2)", lineHeight: 'var(--lh-h2)', letterSpacing: 'var(--ls-h2)', fontSize: 'var(--text-h2)' }}>
       {icon}
       {title}
     </h2>
@@ -79,7 +79,7 @@ const SitemapSection = ({ title, icon, pages }: SitemapSectionProps) => (
           <li key={url}>
             <Link
               to={url}
-              className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary flex items-center gap-2 transition-colors text-sm"
+              className="text-gray-700 dark:text-gray-300 hover:text-brand-red dark:hover:text-brand-red flex items-center gap-2 transition-colors text-sm"
             >
               <ChevronRight size={14} className="text-gray-400 dark:text-gray-500 shrink-0" />
               {page.name}

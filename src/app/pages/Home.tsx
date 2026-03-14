@@ -63,7 +63,7 @@ export const Home = () => {
       <HeroSlider />
       
       {/* === FEATURED STORIES GRID === */}
-      <section className="bg-[var(--base)] py-12">
+      <section className="bg-white dark:bg-background py-0">
         <div className="max-w-[1280px] mx-auto px-6 md:px-10">
           <FeatureGrid />
         </div>

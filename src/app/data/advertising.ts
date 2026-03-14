@@ -32,6 +32,12 @@ import {
   TrendingUp,
   Palette,
   CalendarDays,
+  Shirt,
+  Sparkle,
+  UtensilsCrossed,
+  Heart,
+  PartyPopper,
+  Gift,
 } from 'lucide-react';
 import { Newspaper } from '../components/icons/NewspaperIcon';
 
@@ -122,34 +128,34 @@ export const AD_BENEFITS = [
 // Classifieds
 export const CLASSIFIED_CATEGORIES = [
   {
-    title: 'Vakatures',
-    description: 'Bereik gekwalifiseerde kandidate regoor die land met jou werksaanbiedings.',
-    icon: Briefcase,
+    title: 'Mode & Styl',
+    description: 'Boutiques, styliste, mode-advies en bekostigbare mode-items vir die stilbewuste leser.',
+    icon: Shirt,
   },
   {
-    title: 'Eiendom',
-    description: 'Bemark eiendom (residensieel en kommersieel) aan aktiewe kopers en huurders.',
-    icon: Home,
+    title: 'Skoonheid & Welstand',
+    description: 'Skoonheidsalonge, spa-behandelings, grimeerders en skoonheidsprodukte vir selfversorgingliefhebbers.',
+    icon: Sparkle,
   },
   {
-    title: 'Motors',
-    description: 'Verkoop voertuie, motorfietse en kommersiële vervoer aan ons leserskap.',
-    icon: Car,
+    title: 'Kos & Wyn',
+    description: 'Restaurante, koskursusse, wynproewe en gourmet-produkte vir kulinêre genieters.',
+    icon: UtensilsCrossed,
   },
   {
-    title: 'Dienste',
-    description: 'Adverteer professionele en persoonlike dienste in jou gebied.',
-    icon: Wrench,
+    title: 'Gesondheid & Fiksheid',
+    description: 'Gimnasiums, persoonlike afrigters, welstandkosse en gesondheidsprodukte vir aktiewe vroue.',
+    icon: Heart,
   },
   {
-    title: 'Kennisgewings',
-    description: 'Regskennisgewings, openbare aankondigings en amptelike mededelings.',
-    icon: Bell,
+    title: 'Geleenthede & Ontspanning',
+    description: 'Troues, partytjies, kunsvertonings, konserte en sosiale geleenthede vir die betrokke gemeenskap.',
+    icon: PartyPopper,
   },
   {
-    title: 'Allerlei',
-    description: 'Alles van te koop en te ruil tot verlore en gevind items.',
-    icon: Package,
+    title: 'Leefstyl & Geskenke',
+    description: 'Inrigting, kunswerk, geskenke en luukse items vir die verfynde smaak.',
+    icon: Gift,
   },
 ];
 
@@ -264,18 +270,18 @@ export const DISPLAY_DIGITAL_OPTIONS = [
 
 export const DISPLAY_BENEFITS = [
   {
-    title: 'Geteikende bereik',
-    description: 'Bereik spesifieke demografieë en streke met presiese teikengroepseleksie.',
+    title: 'Premie-gehoor',
+    description: 'Bereik welgestelde, stilbewuste vroue (25-55) wat gepassioneererd is oor mode, skoonheid, kos en leefstyl.',
     icon: Target,
   },
   {
     title: 'Multi-platform',
-    description: 'Jou advertensie verskyn op gedruk, digitaal en mobiel vir omvattende dekking.',
+    description: 'Jou advertensie verskyn in ons premium tydskrif én digitale platforms vir omvattende dekking.',
     icon: Layers,
   },
   {
-    title: 'Meetbare resultate',
-    description: 'Ontvang volledige verslae oor indrukke, klikke en omskakelings.',
+    title: 'Handelsmerkbelyning',
+    description: 'Belyn jou handelsmerk met rooi rose se verfynde, aspirerende leefstyl-inhoud en bou geloofwaardigheid.',
     icon: BarChart3,
   },
 ];
@@ -301,26 +307,26 @@ export const LEAFLET_SPECS = [
 export const SPONSORED_CONTENT_TYPES = [
   {
     title: 'Geborgde artikel',
-    description: "'n Volledig geskryfde artikel wat jou handelsmerk, produk of diens op 'n informatiewe en boeiende manier aan ons lesers bekendstel.",
-    features: ['800–1 500 woorde', 'Professionele joernalistieke skryfstyl', 'Tot 5 hoë-kwaliteit beelde', 'SEO-geoptimaliseer'],
+    description: 'n Volledig geskryfde leefstyl-artikel wat jou handelsmerk, produk of diens op \'n outentieke en boeiende manier aan ons welgestelde lesers bekendstel.',
+    features: ['800–1 500 woorde', 'Professionele redaksionele styl', 'Tot 5 premium beelde', 'SEO-geoptimaliseer vir aanlyn bereik'],
     icon: FileText,
   },
   {
     title: 'Advertoriaal',
-    description: "'n Betaalde redaksionele plasing wat soos 'n gewone artikel lees, maar jou kommersiële boodskap doeltreffend oordra.",
-    features: ['500–1 000 woorde', 'Gedruk én aanlyn', 'Duidelik gemerk as \"Borginhoud\"', 'Kliënt-goedkeuring voor publikasie'],
+    description: '\'n Betaalde redaksionele plasing wat soos \'n gewone tydskrif-artikel lees, maar jou handelsmerk-boodskap doeltreffend oordra in rooi rose se premie-konteks.',
+    features: ['500–1 000 woorde', 'Gedrukte tydskrif én aanlyn', 'Duidelik gemerk as "Borginhoud"', 'Kliënt-goedkeuring voor publikasie'],
     icon: PenTool,
   },
   {
     title: 'Digitale inhoudsveldtog',
-    description: "'n Reeks aanlyn artikels, sosiale media-plasings en nuusbriefinhoud wat jou boodskap oor meervoudige kanale versprei.",
-    features: ['Multi-platform verspreiding', '3–6 inhoudstukke', 'Sosiale media-bevordering', 'Prestasieverslag ingesluit'],
+    description: '\'n Reeks leefstyl-artikels, sosiale media-plasings en nuusbriefinhoud wat jou boodskap oor meervoudige kanale versprei aan ons betrokke gehoor.',
+    features: ['Multi-platform verspreiding', '3–6 inhoudstukke', 'Instagram & Facebook-bevordering', 'Prestasieverslag ingesluit'],
     icon: Globe,
   },
   {
     title: 'Video & multimedia',
-    description: 'Boeiende video-inhoud wat op ons webwerf en sosiale kanale geplaas word vir maksimum betrokkenheid.',
-    features: ['30–120 sekondes', 'Professionele produksie', 'YouTube & sosiale media', 'Ingebedde webbladsplasing'],
+    description: 'Boeiende video-inhoud (skoonheidsresensies, kookvlogs, modegidse) wat op ons webwerf en sosiale kanale geplaas word vir maksimum betrokkenheid.',
+    features: ['30–120 sekondes', 'Professionele produksie', 'YouTube & Instagram Reels', 'Ingebedde webbladsplasing'],
     icon: Sparkles,
   },
 ];
@@ -362,32 +368,32 @@ export const SPONSORED_PROCESS_STEPS = [
 export const SPONSORSHIP_TYPES = [
   {
     title: 'Afdelingsborgskap',
-    description: "Borg 'n spesifieke redaksionele afdeling van rooi rose en belyn jou handelsmerk met inhoud wat by jou teikenmark aanklank vind.",
-    examples: ['Nuus-afdeling', 'Sport-afdeling', 'Sake-afdeling', 'Leefstyl-afdeling', 'Dink-afdeling'],
+    description: "Borg 'n spesifieke redaksionele afdeling van rooi rose en belyn jou handelsmerk met premium leefstyl-inhoud wat by jou teikenmark aanklank vind.",
+    examples: ['Mode & Styl', 'Skoonheid & Welstand', 'Kos & Wyn', 'Gesondheid & Fiksheid', 'Kunsliefde & Kultuur'],
     includes: [
-      'Jou logo op die afdelingsopskrif (druk & digitaal)',
+      'Jou logo op die afdelingsopskrif (tydskrif & digitaal)',
       '"Aangebied deur"-vermelding',
       'Eksklusiewe advertensieplasing binne die afdeling',
       'Maandelikse prestasieverslag',
     ],
-    icon: Newspaper,
+    icon: Palette,
   },
   {
     title: 'Gebeurtenisborgskap',
-    description: "Borg 'n spesifieke gebeurtenis of reeks wat deur rooi rose gedek word, en kry prominente sigbaarheid voor, tydens en na die geleentheid.",
-    examples: ['Skole-rugbyreeks', 'Verkiesings-dekking', 'Boekefees-verslae', 'Landbouskou-dekking'],
+    description: "Borg 'n spesifieke leefstyl-gebeurtenis of reeks wat deur rooi rose gedek word, en kry prominente sigbaarheid voor, tydens en na die geleentheid.",
+    examples: ['Modeweek-dekking', 'Skoonheidstoekennings', 'Kos & Wyn-feeste', 'Welstandseminare', 'Bruidsskou-verslae'],
     includes: [
       'Logo op alle verwante inhoud',
       'Sosiale media-vermelding voor en na',
-      'Geborgde artikel oor die geleentheid',
+      'Geborgde tydskrif-artikel oor die geleentheid',
       'Foto- en video-inhoud ingesluit',
     ],
     icon: Calendar,
   },
   {
     title: 'Nuusbriefborgskap',
-    description: 'Borg rooi rose se weeklikse nuusbrief en bereik duisende ingetekende lesers direk in hul inkassie.',
-    examples: ['Dinsdagnuusbrief', 'Vrydagnuusbrief', 'Spesiale uitgawes'],
+    description: 'Borg rooi rose se weeklikse leefstyl-nuusbrief en bereik duisende welgestelde, betrokke lesers direk in hul inkassie.',
+    examples: ['Dinsdagnuusbrief', 'Vrydagnuusbrief', 'Spesiale leefstyl-uitgawes'],
     includes: [
       'Prominente logo-plasing bo-aan nuusbrief',
       'Eksklusiewe advertensieblok',
@@ -399,7 +405,7 @@ export const SPONSORSHIP_TYPES = [
   {
     title: 'Pasgemaakte borgskap',
     description: "Ons ontwerp 'n unieke borgskappakket wat presies by jou handelsmerk se doelwitte en begroting pas.",
-    examples: ['Wedstryde & kompetisies', 'Spesiale projekte', 'Jaarlikse vennootskappe', 'Multi-platform veldtogte'],
+    examples: ['Wedstryde & kompetisies', 'Spesiale leefstyl-projekte', 'Jaarlikse vennootskappe', 'Multi-platform veldtogte'],
     includes: [
       'Persoonlike konsultasie',
       'Buigsame kontrakduur',
@@ -413,17 +419,17 @@ export const SPONSORSHIP_TYPES = [
 export const SPONSORSHIP_BENEFITS = [
   {
     title: 'Handelsmerkbelyning',
-    description: 'Belyn jou handelsmerk met betroubare, hoë-kwaliteit joernalistieke inhoud en bou geloofwaardigheid.',
+    description: 'Belyn jou handelsmerk met premium leefstyl-inhoud en rooi rose se welgestelde, stilbewuste gehoor — bou geloofwaardigheid en aspirasionele waarde.',
     icon: Award,
   },
   {
     title: 'Eksklusiwiteit',
-    description: 'As borg is jy die enigste handelsmerk in jou kategorie — geen kompetisie binne jou borgde afdeling.',
+    description: 'As borg is jy die enigste handelsmerk in jou kategorie — geen kompetisie binne jou borgde afdeling of geleentheid.',
     icon: Star,
   },
   {
     title: 'Langtermyn impak',
-    description: 'Borgskappe bou volgehoue bewustheid oor tyd, eerder as eenmalige advertensie-indrukke.',
+    description: 'Borgskappe bou volgehoue bewustheid en handelsmerklojaliteit oor tyd, eerder as eenmalige advertensie-indrukke.',
     icon: TrendingUp,
   },
 ];
@@ -431,35 +437,35 @@ export const SPONSORSHIP_BENEFITS = [
 // Supplements
 export const SUPPLEMENT_TYPES = [
   {
-    title: 'Handelsmerkbylaag',
-    description: "'n Volledige bylaag wat uitsluitlik aan jou handelsmerk gewy is — van ontwerp tot verspreiding.",
-    pages: '4–16 bladsye',
-    format: 'Tabloid of A4',
-    ideal: 'Produkbekendstellings, maatskappyprofiele, spesiale promosies',
+    title: 'Bruidsjoernaal',
+    description: "Die omvattende jaarlikse gids vir verloofdes — van troues tot wittebrood. 'n Volledige publikasie vir jou handelsmerk.",
+    pages: '48–64 bladsye',
+    format: 'Tydskrif-formaat',
+    ideal: 'Bruidswinkel, venue, fotograwe, kos, skoonheid',
     icon: BookOpen,
   },
   {
-    title: 'Tematiese bylaag',
-    description: "Sluit aan by 'n tematiese bylaag saam met ander adverteerders rondom 'n spesifieke onderwerp.",
-    pages: '8–24 bladsye',
-    format: 'Tabloid',
-    ideal: 'Gesondheid, landbou, eiendom, onderwys, feestydse gidse',
+    title: 'Skoonheidsjaarlikse',
+    description: "'n Jaarlikse spesiale uitgawe wat die nuutste skoonheidstrends, produkte en behandelings uitbeeld met premium advertensieplasing.",
+    pages: '32–48 bladsye',
+    format: 'Tydskrif-formaat',
+    ideal: 'Skoonheidsmerke, spas, dermatoloë, klinieke',
     icon: Layers,
   },
   {
-    title: 'Gebeure-bylaag',
-    description: "'n Spesiale bylaag wat 'n spesifieke gebeurtenis of geleentheid dekking gee met advertensieplasing.",
-    pages: '8–16 bladsye',
-    format: 'Tabloid of A4',
-    ideal: 'Skoue, feeste, konferensies, herdenking',
+    title: 'Kos & Wyn Spesiale',
+    description: "'n Seisoenale uitgawe wat kulinêre verfyning vier — resepte, restaurantgidse, wynpare en gourmet-leefstyl.",
+    pages: '24–40 bladsye',
+    format: 'Tydskrif-formaat',
+    ideal: 'Wynplase, restaurante, koskursusse, gourmet-produkgeskenke',
     icon: CalendarDays,
   },
   {
-    title: 'Pasgemaakte bylaag',
-    description: "Ons ontwerp- en redaksionele span werk saam met jou om 'n unieke, pasgemaakte publikasie te skep.",
+    title: 'Pasgemaakte uitgawe',
+    description: "Ons redaksionele en ontwerpspan werk saam met jou om 'n unieke premium uitgawe te skep wat jou handelsmerk se waardes weerspieël.",
     pages: 'Buigsaam',
     format: 'Enige formaat',
-    ideal: 'Jaarverslae, korporatiewe kommunikasie, spesiale projekte',
+    ideal: 'Handelsmerkjaargidse, korporatiewe kommunikasie, spesiale projekte',
     icon: Sparkles,
   },
 ];

@@ -31,6 +31,12 @@ import {
 } from 'lucide-react';
 import { Newspaper } from '../components/icons/NewspaperIcon';
 
+/* ── rooi rose Magazine Newsletter Subscribe ──────────────────────────────
+ * Editorial design: Full-width hero, editorial form
+ * Typography: Playfair Display SC headings
+ * Layout: Hero + benefits + form + privacy + FAQ
+ * ────────────────────────────────────────────────────────────── */
+
 export const NewsletterSubscribe = () => {
   const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -49,20 +55,38 @@ export const NewsletterSubscribe = () => {
   };
 
   return (
-    <div className="bg-background min-h-screen pb-20">
+    <div className="bg-white dark:bg-background min-h-screen pb-20">
       <SEO
         title="Teken in op ons gratis nuusbrief | rooi rose"
         description="Teken in op rooi rose se gratis nuusbrief en ontvang die jongste nuus, eksklusiewe stories en opdaterings direk in jou inkassie."
-        keywords="nuusbrief, inteken, subscribe, newsletter, die papier, afrikaans"
+        keywords="nuusbrief, inteken, subscribe, newsletter, rooi rose, afrikaans"
       />
 
       <PageContainer breadcrumbs={[{ label: 'Nuusbrief Inskrywing' }]} noPadding />
 
-      <ContentHero 
-        title="Teken in op ons gratis nuusbrief"
-        subtitle="Alles wat jy moet en wil weet — gratis"
-        image={HERO_IMAGES.newsletter}
-      />
+      {/* Full-Width Editorial Hero */}
+      <div className="relative h-[50vh] md:h-[60vh] overflow-hidden mb-16">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
+        <img
+          src={HERO_IMAGES.newsletter}
+          alt="Teken in op ons nuusbrief"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center max-w-4xl px-6">
+            <div className="inline-flex items-center gap-2 bg-brand-red px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wider mb-6 shadow-lg">
+              <Mail size={16} />
+              Gratis Nuusbrief
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-4 has-brand-serif-font-family uppercase tracking-wider" style={{ letterSpacing: '0.15em' }}>
+              Bly ingelig
+            </h1>
+            <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto">
+              Teken in op rooi rose se gratis nuusbrief en ontvang die jongste nuus, eksklusiewe stories en opdaterings direk in jou inkassie.
+            </p>
+          </div>
+        </div>
+      </div>
 
       <div className="alignwide py-10">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">

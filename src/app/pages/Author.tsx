@@ -6,6 +6,13 @@ import { PageContainer } from '../components/common/PageContainer';
 import { ArticleLink } from '../components/common/ArticleLink';
 import { renderWithBrandItalics } from '../utils/brandItalics';
 import { SEO } from '../components/common/SEO';
+import { MagazineArticleCard } from '../components/category/MagazineArticleCard';
+
+/* ── rooi rose Magazine Author Archive ──────────────────────────────
+ * Editorial design: Large author hero, magazine article grid
+ * Typography: Playfair Display SC headings
+ * Layout: Author bio + 3-column magazine grid by category
+ * ────────────────────────────────────────────────────────────────── */
 
 /**
  * Author Profile Page
@@ -70,131 +77,128 @@ export const AuthorPage = () => {
   });
 
   return (
-    <PageContainer
-      breadcrumbs={[
-        { label: 'Skrywers', href: '/oor-ons/redaksie' },
-        { label: decodedAuthor }
-      ]}
-    >
+    <div className="bg-white dark:bg-background min-h-screen">
       <SEO
         title={`${decodedAuthor} - Skrywer`}
         description={`Artikels deur ${decodedAuthor} op rooi rose. ${authorArticles.length} artikels beskikbaar.`}
-        keywords={`${decodedAuthor}, skrywer, joernalis, artikels, die papier`}
+        keywords={`${decodedAuthor}, skrywer, joernalis, artikels, rooi rose`}
       />
-      {/* Author Header */}
-      <div className="bg-white dark:bg-card rounded-lg shadow-sm dark:shadow-[var(--shadow-dark-100)] border border-gray-100 dark:border-border p-8 mb-8">
-        <div className="flex flex-col md:flex-row gap-6 items-start md:items-center">
-          {/* Author Avatar */}
-          <div className="flex-shrink-0">
-            <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-primary to-brand-navy flex items-center justify-center text-white text-4xl md:text-5xl font-bold">
-              {decodedAuthor.charAt(0).toUpperCase()}
+      
+      <PageContainer
+        breadcrumbs={[
+          { label: 'Skrywers', href: '/oor-ons/redaksie' },
+          { label: decodedAuthor }
+        ]}
+      >
+        {/* Author Hero Section - Magazine Style */}
+        <div className="bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-background rounded-lg p-8 md:p-12 mb-16 border border-gray-100 dark:border-border">
+          <div className="max-w-4xl mx-auto text-center">
+            {/* Large Author Avatar */}
+            <div className="inline-block mb-6">
+              <div className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-brand-red to-brand-navy flex items-center justify-center text-white text-5xl md:text-6xl font-bold shadow-lg">
+                {decodedAuthor.charAt(0).toUpperCase()}
+              </div>
             </div>
-          </div>
-          
-          {/* Author Info */}
-          <div className="flex-1">
-            <h1 className="text-3xl md:text-4xl font-normal text-brand-navy dark:text-foreground font-heading mb-2 capitalize" style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}>
+            
+            {/* Author Name - Large Editorial Headline */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-brand-navy dark:text-foreground mb-3 capitalize has-brand-serif-font-family" style={{ letterSpacing: '0.02em' }}>
               {decodedAuthor}
             </h1>
-            <p className="text-primary font-medium mb-3">
+            
+            {/* Role */}
+            <p className="text-brand-red text-lg md:text-xl font-bold mb-6 uppercase tracking-wider">
               {authorInfo.role}
             </p>
-            <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+            
+            {/* Bio */}
+            <p className="text-gray-600 dark:text-gray-400 text-base md:text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
               {renderWithBrandItalics(authorInfo.bio)}
             </p>
             
             {/* Stats */}
-            <div className="flex flex-wrap gap-4 text-sm text-gray-500 dark:text-gray-400">
+            <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-500 dark:text-gray-400 mb-6">
               <div className="flex items-center gap-2">
-                <FileText size={16} className="text-primary" />
-                <span><strong>{authorArticles.length}</strong> artikels</span>
+                <FileText size={18} className="text-brand-red" />
+                <span><strong className="text-brand-navy dark:text-foreground">{authorArticles.length}</strong> artikels</span>
               </div>
               <div className="flex items-center gap-2">
-                <Calendar size={16} className="text-primary" />
+                <Calendar size={18} className="text-brand-red" />
                 <span>Lid sedert 2020</span>
               </div>
             </div>
-          </div>
-          
-          {/* Contact/Social (Placeholder) */}
-          <div className="flex gap-2">
-            <button className="p-2 text-gray-400 dark:text-gray-500 hover:text-primary transition-colors" aria-label="Email">
-              <Mail size={20} />
-            </button>
-            <button className="p-2 text-gray-400 dark:text-gray-500 hover:text-[#3b5998] transition-colors" aria-label="Facebook">
-              <Facebook size={20} />
-            </button>
-            <button className="p-2 text-gray-400 dark:text-gray-500 hover:text-[#1DA1F2] transition-colors" aria-label="Twitter">
-              <Twitter size={20} />
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Articles Section */}
-      <div>
-        <h2 className="text-2xl font-normal text-brand-navy dark:text-foreground font-heading mb-6" style={{ fontVariationSettings: "var(--fvs-h2)", lineHeight: 'var(--lh-h2)', letterSpacing: 'var(--ls-h2)', fontSize: 'var(--text-h2)' }}>
-          Artikels deur {decodedAuthor} ({authorArticles.length})
-        </h2>
-        
-        {/* Group by Category */}
-        {Object.keys(articlesByCategory).map(category => (
-          <div key={category} className="mb-8">
-            <h3 className="text-xl font-normal text-brand-navy dark:text-foreground mb-4 pb-2 border-b-2 border-primary inline-block font-heading" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)', fontSize: 'var(--text-h3)' }}>
-              {category}
-            </h3>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
-              {articlesByCategory[category].map(article => (
-                <ArticleLink
-                  key={article.id}
-                  id={article.id}
-                  title={article.title}
-                  className="block group bg-white dark:bg-card border border-gray-100 dark:border-border rounded-lg overflow-hidden hover:shadow-lg dark:hover:shadow-[var(--shadow-dark-400)] transition-shadow"
-                >
-                  <div className="relative aspect-[16/10] overflow-hidden bg-gray-200 dark:bg-muted">
-                    <img 
-                      src={article.imageUrl} 
-                      alt={article.title} 
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
-                    />
-                    <span className="absolute top-3 left-3 bg-primary text-white text-xs font-bold px-2 py-1 uppercase rounded-sm">
-                      {article.category}
-                    </span>
-                  </div>
-                  <div className="p-5">
-                    <h4 className="text-lg font-normal text-brand-navy dark:text-foreground mb-2 leading-tight group-hover:text-primary transition-colors line-clamp-2 font-heading" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)' }}>
-                      {article.title}
-                    </h4>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-3">
-                      {article.excerpt}
-                    </p>
-                    <div className="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 pt-4 border-t border-gray-100 dark:border-border">
-                      <span>{article.date}</span>
-                      <span className="font-medium">{article.readTime} lees</span>
-                    </div>
-                  </div>
-                </ArticleLink>
-              ))}
+            {/* Social Links */}
+            <div className="flex justify-center gap-3">
+              <button className="p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-brand-red hover:text-white transition-colors" aria-label="Email">
+                <Mail size={20} />
+              </button>
+              <button className="p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-[#3b5998] hover:text-white transition-colors" aria-label="Facebook">
+                <Facebook size={20} />
+              </button>
+              <button className="p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-[#1DA1F2] hover:text-white transition-colors" aria-label="Twitter">
+                <Twitter size={20} />
+              </button>
             </div>
           </div>
-        ))}
-      </div>
-
-      {/* Empty State */}
-      {authorArticles.length === 0 && (
-        <div className="text-center py-16 bg-white dark:bg-card rounded-lg border border-gray-200 dark:border-border">
-          <User size={48} className="mx-auto text-gray-300 dark:text-gray-600 mb-4" />
-          <h3 className="text-xl font-normal text-brand-navy dark:text-foreground mb-2 font-heading" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)', fontSize: 'var(--text-h3)' }}>Geen artikels gevind</h3>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
-            Hierdie skrywer het nog geen artikels gepubliseer nie.
-          </p>
-          <Link to="/" className="inline-block text-primary font-bold hover:underline">
-            Terug na tuisblad
-          </Link>
         </div>
-      )}
-    </PageContainer>
+
+        {/* Articles Section */}
+        <div>
+          {/* Section Title */}
+          <div className="mb-10 text-center">
+            <h2 className="text-3xl md:text-4xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family uppercase tracking-wider mb-3" style={{ letterSpacing: '0.15em' }}>
+              Artikels
+            </h2>
+            <div className="w-24 h-1 bg-brand-red mx-auto mb-4"></div>
+            <p className="text-gray-600 dark:text-gray-400">{authorArticles.length} artikels deur {decodedAuthor}</p>
+          </div>
+          
+          {/* Group by Category */}
+          {Object.keys(articlesByCategory).map(category => (
+            <div key={category} className="mb-16">
+              {/* Category Header */}
+              <div className="mb-8">
+                <h3 className="text-2xl md:text-3xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family uppercase tracking-wider inline-block border-b-4 border-brand-red pb-2" style={{ letterSpacing: '0.15em' }}>
+                  {category}
+                </h3>
+              </div>
+              
+              {/* Magazine Grid - 3 columns */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+                {articlesByCategory[category].map(article => (
+                  <MagazineArticleCard
+                    key={article.id}
+                    id={article.id}
+                    title={article.title}
+                    excerpt={article.excerpt}
+                    category={article.category}
+                    imageUrl={article.imageUrl}
+                    date={article.date}
+                    author={article.author}
+                    readTime={article.readTime}
+                    variant="standard"
+                  />
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Empty State */}
+        {authorArticles.length === 0 && (
+          <div className="text-center py-24 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-background rounded-lg border border-gray-200 dark:border-border">
+            <User size={64} className="mx-auto text-gray-300 dark:text-gray-600 mb-6" />
+            <h3 className="text-2xl md:text-3xl font-normal text-brand-navy dark:text-foreground mb-4 has-brand-serif-font-family">Geen artikels gevind</h3>
+            <p className="text-gray-600 dark:text-gray-400 mb-8 text-lg">
+              Hierdie skrywer het nog geen artikels gepubliseer nie.
+            </p>
+            <Link to="/" className="inline-block bg-brand-red text-white px-8 py-3 rounded-lg font-bold hover:bg-brand-red-hover transition-colors">
+              Terug na tuisblad
+            </Link>
+          </div>
+        )}
+      </PageContainer>
+    </div>
   );
 };
 

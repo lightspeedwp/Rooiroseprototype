@@ -50,7 +50,7 @@ export const BackToTopButton = () => {
         "z-40",
         "transition-[opacity,transform,background-color] duration-300",
         "hover:bg-brand-navy/90 dark:hover:bg-muted-foreground/70",
-        "focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-red",
+        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring focus-visible:ring-offset-2",
         shouldShow
           ? "opacity-60 hover:opacity-100 translate-y-0"
           : "opacity-0 translate-y-10 pointer-events-none"

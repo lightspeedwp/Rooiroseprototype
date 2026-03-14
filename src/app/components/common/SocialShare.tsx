@@ -91,7 +91,7 @@ export const SocialShare = ({
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className={`inline-flex items-center justify-center w-9 h-9 rounded-full border border-gray-200 dark:border-border text-gray-500 dark:text-gray-400 transition-colors ${link.color}`}
+            className={`inline-flex items-center justify-center w-9 h-9 rounded-full border border-gray-200 dark:border-border text-gray-500 dark:text-gray-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring focus-visible:ring-offset-2 ${link.color}`}
             title={`Deel op ${link.label}`}
             aria-label={`Deel op ${link.label}`}
           >
@@ -100,7 +100,7 @@ export const SocialShare = ({
         ))}
         <button
           onClick={handleCopyLink}
-          className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-gray-200 dark:border-border text-gray-500 dark:text-gray-400 hover:bg-brand-navy dark:hover:bg-muted hover:text-white transition-colors"
+          className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-gray-200 dark:border-border text-gray-500 dark:text-gray-400 hover:bg-brand-navy dark:hover:bg-muted hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring focus-visible:ring-offset-2"
           title="Kopieer skakel"
           aria-label="Kopieer skakel"
         >

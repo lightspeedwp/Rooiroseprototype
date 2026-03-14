@@ -10,6 +10,12 @@ import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { LeaderboardAd, SidebarAds, InFeedAd, StickyMobileFooter } from '../components/ads';
 import { renderWithBrandItalics } from '../utils/brandItalics';
 
+/* ── rooi rose Magazine Multimedia Page ──────────────────────────────
+ * Editorial design: Editorial header, tab navigation, media grid
+ * Typography: Playfair Display SC headings
+ * Layout: Centered header + tab filters + 2-3 column grid
+ * ────────────────────────────────────────────────────────────── */
+
 type TabId = 'video' | 'foto' | 'podcast';
 
 const ITEMS_PER_PAGE = 6;

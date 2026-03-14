@@ -12,6 +12,12 @@ import { CompetitionCard } from '../components/competition/CompetitionCard';
 import { SimplePagination } from '../components/common/SimplePagination';
 import { CompetitionsSidebarInfo } from '../components/competition/CompetitionsSidebarInfo';
 
+/* ── rooi rose Magazine Competitions Page ──────────────────────────────
+ * Editorial design: Full-width hero, tab filters, competition grid
+ * Typography: Playfair Display SC headings
+ * Layout: Editorial header + tab navigation + 2-column grid
+ * ────────────────────────────────────────────────────────────── */
+
 const ITEMS_PER_PAGE = 6;
 
 export const CompetitionsPage = () => {
@@ -34,7 +40,7 @@ export const CompetitionsPage = () => {
   );
 
   return (
-    <div className="bg-gray-50 dark:bg-background min-h-screen pb-16">
+    <div className="bg-white dark:bg-background min-h-screen">
       <SEO
         title="Kompetisies - rooi rose"
         description="Wen groot met rooi rose se kompetisies! Sien alle huidige en vorige kompetisies en wenners."
@@ -44,37 +50,50 @@ export const CompetitionsPage = () => {
       {/* Leaderboard Ad */}
       <LeaderboardAd section="kompetisies" />
 
-      <PageContainer breadcrumbs={[{ label: 'Kompetisies' }]}>
-        {/* Header */}
-        <header className="mb-8">
-          <div className="flex items-center gap-3 mb-4">
-            <Trophy size={32} className="text-custom-primary dark:text-primary" />
-            <h1 className="text-4xl font-normal text-brand-navy dark:text-foreground font-heading" style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}>Kompetisies</h1>
-          </div>
-          <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl">
-            Wen groot met <em>rooi rose</em>! Sien alle aktiewe kompetisies hieronder en skryf in
-            vir jou kans om fantastiese pryse te wen.
-          </p>
-        </header>
+      {/* Editorial Header - Centered */}
+      <div className="bg-white dark:bg-background border-b border-gray-200 dark:border-border">
+        <PageContainer>
+          <div className="text-center py-12 lg:py-16 max-w-3xl mx-auto">
+            {/* Icon Badge */}
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-red/10 dark:bg-brand-red/20 mb-6">
+              <Trophy size={32} className="text-brand-red" />
+            </div>
 
+            {/* Title */}
+            <h1 className="text-5xl lg:text-6xl font-normal text-brand-navy dark:text-foreground mb-4 has-brand-serif-font-family uppercase tracking-wider" style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}>
+              Kompetisies
+            </h1>
+
+            {/* Red Divider */}
+            <div className="w-24 h-1 bg-brand-red mx-auto mb-6"></div>
+
+            {/* Description */}
+            <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
+              Wen groot met <em className="text-brand-red font-normal not-italic">rooi rose</em>! Sien alle aktiewe kompetisies hieronder en skryf in vir jou kans om fantastiese pryse te wen.
+            </p>
+          </div>
+        </PageContainer>
+      </div>
+
+      <PageContainer breadcrumbs={[{ label: 'Kompetisies' }]}>
         {/* Main + Sidebar layout */}
-        <div className="flex flex-col lg:flex-row gap-8">
+        <div className="flex flex-col lg:flex-row gap-8 py-12">
           {/* Main Content */}
           <div className="flex-1 min-w-0">
             <Tabs defaultValue="active" className="gap-0">
-              <TabsList className="bg-gray-200/70 dark:bg-muted h-11 mb-8 rounded-lg gap-0">
+              <TabsList className="bg-gray-100 dark:bg-muted h-12 mb-10 rounded-lg gap-1 p-1 w-full sm:w-auto">
                 <TabsTrigger
                   value="active"
-                  className="text-sm font-bold px-5 rounded-lg data-[state=active]:bg-custom-primary data-[state=active]:text-white"
+                  className="text-sm font-bold px-6 rounded-md data-[state=active]:bg-brand-red data-[state=active]:text-white transition-all"
                 >
-                  <Star size={14} className="mr-1.5" />
+                  <Star size={16} className="mr-2" />
                   Aktief ({activeCompetitions.length})
                 </TabsTrigger>
                 <TabsTrigger
                   value="closed"
-                  className="text-sm font-bold px-5 rounded-lg data-[state=active]:bg-brand-navy data-[state=active]:text-white"
+                  className="text-sm font-bold px-6 rounded-md data-[state=active]:bg-brand-navy data-[state=active]:text-white transition-all"
                 >
-                  <CheckCircle2 size={14} className="mr-1.5" />
+                  <CheckCircle2 size={16} className="mr-2" />
                   Vorige ({closedCompetitions.length})
                 </TabsTrigger>
               </TabsList>
@@ -82,7 +101,7 @@ export const CompetitionsPage = () => {
               <TabsContent value="active">
                 {paginatedActive.length > 0 ? (
                   <>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                       {paginatedActive.map((comp) => (
                         <CompetitionCard key={comp.id} competition={comp} />
                       ))}
@@ -94,10 +113,10 @@ export const CompetitionsPage = () => {
                     />
                   </>
                 ) : (
-                  <div className="text-center py-16 bg-white dark:bg-card rounded-lg border border-gray-200 dark:border-border">
-                    <Trophy size={48} className="mx-auto text-gray-300 dark:text-gray-600 mb-4" />
-                    <h3 className="text-xl font-normal text-brand-navy dark:text-foreground mb-2 font-heading" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)', fontSize: 'var(--text-h3)' }}>Geen aktiewe kompetisies</h3>
-                    <p className="text-gray-600 dark:text-gray-400">Hou <em>rooi rose</em> dop vir opwindende nuwe kompetisies!</p>
+                  <div className="text-center py-20 bg-gray-50 dark:bg-card rounded-xl border border-gray-200 dark:border-border">
+                    <Trophy size={64} className="mx-auto text-gray-300 dark:text-gray-600 mb-6" />
+                    <h3 className="text-2xl font-normal text-brand-navy dark:text-foreground mb-3 has-brand-serif-font-family" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)', fontSize: 'var(--text-h3)' }}>Geen aktiewe kompetisies</h3>
+                    <p className="text-gray-600 dark:text-gray-400 text-lg">Hou <em className="text-brand-red font-normal not-italic">rooi rose</em> dop vir opwindende nuwe kompetisies!</p>
                   </div>
                 )}
               </TabsContent>
@@ -105,7 +124,7 @@ export const CompetitionsPage = () => {
               <TabsContent value="closed">
                 {paginatedClosed.length > 0 ? (
                   <>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                       {paginatedClosed.map((comp) => (
                         <CompetitionCard key={comp.id} competition={comp} />
                       ))}
@@ -117,10 +136,10 @@ export const CompetitionsPage = () => {
                     />
                   </>
                 ) : (
-                  <div className="text-center py-16 bg-white dark:bg-card rounded-lg border border-gray-200 dark:border-border">
-                    <Trophy size={48} className="mx-auto text-gray-300 dark:text-gray-600 mb-4" />
-                    <h3 className="text-xl font-normal text-brand-navy dark:text-foreground mb-2 font-heading" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)', fontSize: 'var(--text-h3)' }}>Geen vorige kompetisies</h3>
-                    <p className="text-gray-600 dark:text-gray-400">Kyk na ons aktiewe kompetisies hierbo.</p>
+                  <div className="text-center py-20 bg-gray-50 dark:bg-card rounded-xl border border-gray-200 dark:border-border">
+                    <Trophy size={64} className="mx-auto text-gray-300 dark:text-gray-600 mb-6" />
+                    <h3 className="text-2xl font-normal text-brand-navy dark:text-foreground mb-3 has-brand-serif-font-family" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)', fontSize: 'var(--text-h3)' }}>Geen vorige kompetisies</h3>
+                    <p className="text-gray-600 dark:text-gray-400 text-lg">Kyk na ons aktiewe kompetisies hierbo.</p>
                   </div>
                 )}
               </TabsContent>

@@ -29,7 +29,7 @@ interface Comment {
  */
 export const CommentsSection = ({ articleId, commentCount = 0 }: CommentsSectionProps) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [commentText, setCommentText] = useState('');
+  const [newComment, setNewComment] = useState('');
   const [showReplyFormId, setShowReplyFormId] = useState<number | null>(null);
 
   const mockComments: Comment[] = MOCK_COMMENTS;
@@ -37,13 +37,13 @@ export const CommentsSection = ({ articleId, commentCount = 0 }: CommentsSection
   const handleSubmitComment = (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!commentText.trim()) {
+    if (!newComment.trim()) {
       toast.error(COMMENTS_UI.messages.enterComment);
       return;
     }
 
     toast.success(COMMENTS_UI.messages.submitSuccess);
-    setCommentText('');
+    setNewComment('');
   };
 
   return (
@@ -161,10 +161,10 @@ export const CommentsSection = ({ articleId, commentCount = 0 }: CommentsSection
             </div>
             <form onSubmit={handleSubmitComment}>
               <textarea
-                value={commentText}
-                onChange={(e) => setCommentText(e.target.value)}
+                value={newComment}
+                onChange={(e) => setNewComment(e.target.value)}
                 placeholder={COMMENTS_UI.loggedIn.placeholder}
-                className="w-full border border-gray-300 dark:border-input rounded-lg p-4 min-h-[120px] focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent resize-none bg-white dark:bg-background dark:text-foreground text-sm"
+                className="w-full border border-gray-300 dark:border-input rounded-lg p-4 min-h-[120px] focus-brand resize-none bg-white dark:bg-background dark:text-foreground text-sm"
                 maxLength={1000}
               />
               
@@ -325,7 +325,7 @@ const CommentItem = ({
             </div>
             <textarea
               placeholder="Skryf jou antwoord..."
-              className="w-full border border-gray-300 dark:border-input rounded-lg p-3 text-sm min-h-[80px] focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent resize-none bg-white dark:bg-background dark:text-foreground"
+              className="w-full border border-gray-300 dark:border-input rounded-lg p-3 text-sm min-h-[80px] focus-brand resize-none bg-white dark:bg-background dark:text-foreground"
             />
             <div className="flex gap-2 mt-2">
               <Button

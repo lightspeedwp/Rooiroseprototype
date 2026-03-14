@@ -27,7 +27,7 @@ export const SponsorshipsPage = () => {
 
       <ContentHero
         title="Borgskappe"
-        subtitle="Belyn jou handelsmerk met betekenisvolle inhoud en bereik 'n lojale, betrokke leserskap deur strategiese borgskap."
+        subtitle="Belyn jou handelsmerk met rooi rose se premium leefstyl-inhoud en bereik welgestelde, stilbewuste vroue deur strategiese borgskap."
         image={HERO_IMAGES.advertise}
         height="small"
       />
@@ -36,9 +36,9 @@ export const SponsorshipsPage = () => {
         {/* Intro */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-            Borgskappe bied 'n unieke geleentheid om jou handelsmerk te assosieer met <em>rooi rose</em> se betroubare 
-            platform en betrokke gehoor. Deur ons te borg, word jou handelsmerk 'n deel van ons verhaal — \n
-            en ons word 'n deel van joune.
+            Borgskappe bied 'n unieke geleentheid om jou handelsmerk te assosieer met <em>rooi rose</em> se premium 
+            leefstyl-platform en welgestelde, betrokke gehoor (25-55). Deur ons Mode, Skoonheid, Kos of Gesondheid-afdelings 
+            te borg, word jou handelsmerk 'n deel van ons aspirerende verhaal — en ons word 'n deel van joune.
           </p>
         </div>
 
@@ -132,21 +132,21 @@ export const SponsorshipsPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                sponsor: 'FNB',
-                type: 'Sake-afdelingsborgskap',
-                result: '35% toename in handelsmerkbewustheid onder sakeleiers.',
+                sponsor: 'Edgars',
+                type: 'Mode & Styl-afdelingsborgskap',
+                result: '42% toename in handelsmerkbewustheid onder welgestelde vroue 25-55.',
                 duration: '6 maande',
               },
               {
-                sponsor: 'Shoprite',
-                type: 'Leefstyl-afdelingsborgskap',
-                result: '28% hoër betrokkenheid vergeleke met standaard advertensies.',
+                sponsor: 'Woolworths Beauty',
+                type: 'Skoonheidsafdeling-borgskap',
+                result: '35% hoër betrokkenheid vergeleke met standaard advertensies.',
                 duration: '12 maande',
               },
               {
-                sponsor: 'Naspers',
-                type: 'Nuusbriefborgskap',
-                result: '15 000+ direkte kliks en 45% oopkoers op geborgde uitsendings.',
+                sponsor: 'Spier Wine Estate',
+                type: 'Kos & Wyn-gebeurtenisborgskap',
+                result: '18 000+ direkte lesersbelang en 52% oopkoers op geborgde nuusbriewe.',
                 duration: '3 maande',
               },
             ].map((story) => (

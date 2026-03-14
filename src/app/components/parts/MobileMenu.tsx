@@ -1,97 +1,11 @@
-import React, { useState, useCallback, useEffect, useMemo } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router';
-import {
-  X,
-  Search,
-  ShoppingCart,
-  User,
-  Heart,
-  TrendingUp,
-  Trophy,
-  Briefcase,
-  MessageSquare,
-  BookOpen,
-  Calendar,
-  GraduationCap,
-  Info,
-  Phone,
-  CircleHelp,
-  Mail,
-  FileText,
-  Shield,
-  Menu,
-  ArrowRight,
-  ChevronRight,
-  Facebook,
-  Instagram,
-  Linkedin,
-  Home,
-  Play,
-  Archive,
-  Send,
-  Truck,
-  UtensilsCrossed,
-  Shirt,
-  Sparkles,
-  Activity,
-  Star,
-  Coffee,
-  Users,
-  Clapperboard,
-  Gift,
-} from 'lucide-react';
+import { X, Search, ShoppingCart, User, Menu, ChevronRight } from 'lucide-react';
 // Motion library removed — replaced with CSS animations in /src/styles/index.css (PERF-042)
-import { SOCIAL_LINKS, MOBILE_CATEGORY_LINKS, MOBILE_SECONDARY_LINKS } from '../../data/navigation';
+import { CATEGORY_NAVIGATION, MOBILE_SECONDARY_LINKS, SOCIAL_LINKS } from '../../data/navigation';
 import { useCart } from '../../context/CartContext';
 import { Logo } from '../common/Logo';
-import { Newspaper } from '../icons/NewspaperIcon';
 import { ThemeToggle } from '../common/ThemeToggle';
-
-// Icon map factories — evaluated lazily inside the component (not at module scope)
-// to avoid ReferenceErrors if the bundler reorders module evaluation.
-function buildCategoryIcons(): Record<string, React.ReactNode> {
-  return {
-    /* rooi rose Magazine Categories — Phase 0 (2026-03-11) */
-    '/': <Home size={20} />,
-    '/kos': <UtensilsCrossed size={20} />,
-    '/mode': <Shirt size={20} />,
-    '/skoonheid': <Sparkles size={20} />,
-    '/gesondheid': <Activity size={20} />,
-    '/bekendes': <Star size={20} />,
-    '/leefstyl': <Coffee size={20} />,
-    '/jou-lewe': <Users size={20} />,
-    '/ontspanning': <Clapperboard size={20} />,
-    '/wen': <Gift size={20} />,
-    '/rooiwarm-wenners': <Trophy size={20} />,
-    '/e-uitgawes': <BookOpen size={20} />,
-    '/nuusbrief-argief': <Archive size={20} />,
-    
-    /* Legacy newspaper categories (will redirect to homepage) */
-    '/nuus': <Newspaper size={20} />,
-    '/sport': <Trophy size={20} />,
-    '/skole': <GraduationCap size={20} />,
-    '/sake': <Briefcase size={20} />,
-    '/dink': <MessageSquare size={20} />,
-    '/gebeure': <Calendar size={20} />,
-    '/multimedia': <Play size={20} />,
-    '/doodsberrigte': <Heart size={20} />,
-    '/kompetisies': <Trophy size={20} />,
-  };
-}
-
-function buildSecondaryIcons(): Record<string, React.ReactNode> {
-  return {
-    '/oor-ons': <Info size={18} />,
-    '/oor-ons/redaksie': <User size={18} />,
-    '/adverteer': <Briefcase size={18} />,
-    '/kontak': <Phone size={18} />,
-    '/vrae': <CircleHelp size={18} />,
-    '/stuur-in': <Send size={18} />,
-    '/nuusbrief-inteken': <Mail size={18} />,
-    '/beleid': <Shield size={18} />,
-    '/inhoudsopgawe': <FileText size={18} />,
-  };
-}
 
 const SocialIcon = ({ icon, size = 20 }: { icon: string; size?: number }) => {
   switch (icon) {
@@ -108,11 +22,23 @@ const SocialIcon = ({ icon, size = 20 }: { icon: string; size?: number }) => {
         </svg>
       );
     case 'Facebook':
-      return <Facebook size={size} />;
+      return (
+        <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+          <path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 3.667h-3.533v7.98H9.101z" />
+        </svg>
+      );
     case 'Instagram':
-      return <Instagram size={size} />;
+      return (
+        <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+          <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z" />
+        </svg>
+      );
     case 'Linkedin':
-      return <Linkedin size={size} />;
+      return (
+        <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+        </svg>
+      );
     default:
       return null;
   }
@@ -122,14 +48,9 @@ export const MobileMenu = () => {
   const [open, setOpen] = useState(false);
   const [closing, setClosing] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const [searchFocused, setSearchFocused] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const { count } = useCart();
-
-  // Build icon maps lazily (not at module scope) to avoid bundler evaluation-order issues
-  const categoryIcons = useMemo(() => buildCategoryIcons(), []);
-  const secondaryIcons = useMemo(() => buildSecondaryIcons(), []);
 
   // Close with exit animation
   const handleClose = useCallback(() => {
@@ -191,270 +112,180 @@ export const MobileMenu = () => {
     return location.pathname.startsWith(href);
   };
 
-  // Stagger delay helper for CSS animations
-  const staggerDelay = (index: number) => ({
-    animationDelay: `${100 + index * 30}ms`,
-  });
-
-  // Count stagger items for consistent indexing
-  let staggerIdx = 0;
-
   return (
     <>
-      {/* Hamburger Trigger */}
+      {/* Hamburger Trigger - Positioned after My Account icon in Header */}
       <button
         onClick={() => setOpen(true)}
-        className="lg:hidden p-2 text-white hover:text-brand-red transition-colors relative"
+        className="lg:hidden p-2 text-brand-navy dark:text-white hover:text-brand-red dark:hover:text-red-400 transition-colors relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring focus-visible:ring-offset-2 rounded"
         aria-label="Open kieslys"
+        title="Kieslys"
       >
-        <Menu size={26} />
+        <Menu size={24} />
       </button>
 
       {/* Full-screen overlay */}
       {open && (
         <div
-          className={`fixed inset-0 z-[9999] flex flex-col ${closing ? 'mobile-menu-exit' : 'mobile-menu-enter'}`}
+          className={`fixed inset-0 z-[9999] flex flex-col bg-white dark:bg-background ${closing ? 'mobile-menu-exit' : 'mobile-menu-enter'}`}
         >
-          {/* Backdrop */}
-          <div className="absolute inset-0 bg-brand-navy dark:bg-background" />
+          {/* Header: Logo + Utilities */}
+          <div className="flex items-center justify-between px-5 py-4 border-b border-gray-200 dark:border-border">
+            <button onClick={() => handleNavigation('/')} className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring focus-visible:ring-offset-2 rounded">
+              <Logo variant="default" className="h-8 w-auto" />
+            </button>
 
-          {/* Content */}
-          <div className="relative z-10 flex flex-col h-full">
-
-            {/* Header: Logo + Close */}
-            <div className="flex items-center justify-between px-5 py-4 border-b border-white/10">
-              <button onClick={() => handleNavigation('/')}>
-                <Logo variant="white" className="h-8 w-auto" />
+            <div className="flex items-center gap-1">
+              {/* Cart */}
+              <button
+                onClick={() => handleNavigation('/mandjie')}
+                className="relative p-2 text-gray-600 dark:text-gray-400 hover:text-brand-red dark:hover:text-brand-red transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring focus-visible:ring-offset-2 rounded"
+                aria-label="Mandjie"
+              >
+                <ShoppingCart size={22} />
+                {count > 0 && (
+                  <span className="absolute -top-0.5 -right-0.5 bg-brand-red text-white text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center">
+                    {count}
+                  </span>
+                )}
               </button>
 
-              <div className="flex items-center gap-2">
-                {/* Cart */}
-                <button
-                  onClick={() => handleNavigation('/mandjie')}
-                  className="relative p-2 text-white/70 hover:text-white transition-colors"
-                  aria-label="Mandjie"
-                >
-                  <ShoppingCart size={22} />
-                  {count > 0 && (
-                    <span className="absolute -top-0.5 -right-0.5 bg-brand-red text-white text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center">
-                      {count}
-                    </span>
-                  )}
-                </button>
+              {/* My Account */}
+              <button
+                onClick={() => handleNavigation('/my-rekening')}
+                className="p-2 text-gray-600 dark:text-gray-400 hover:text-brand-red dark:hover:text-brand-red transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring focus-visible:ring-offset-2 rounded"
+                aria-label="My rekening"
+              >
+                <User size={22} />
+              </button>
 
-                {/* My Account */}
-                <button
-                  onClick={() => handleNavigation('/my-rekening')}
-                  className="p-2 text-white/70 hover:text-white transition-colors"
-                  aria-label="My rekening"
-                >
-                  <User size={22} />
-                </button>
+              {/* Theme Toggle */}
+              <ThemeToggle variant="icon" className="text-gray-600 dark:text-gray-400 hover:text-brand-red dark:hover:text-brand-red" />
 
-                {/* Theme Toggle */}
-                <ThemeToggle variant="icon" className="text-white/70 hover:text-yellow-300" />
-
-                {/* Close */}
-                <button
-                  onClick={handleClose}
-                  className="p-2 text-white/70 hover:text-white transition-colors ml-1"
-                  aria-label="Sluit kieslys"
-                >
-                  <X size={24} />
-                </button>
-              </div>
+              {/* Close */}
+              <button
+                onClick={handleClose}
+                className="p-2 text-gray-600 dark:text-gray-400 hover:text-brand-red dark:hover:text-brand-red transition-colors ml-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring focus-visible:ring-offset-2 rounded"
+                aria-label="Sluit kieslys"
+              >
+                <X size={24} />
+              </button>
             </div>
+          </div>
 
-            {/* Scrollable body */}
-            <div className="flex-1 overflow-y-auto overscroll-contain">
-              <div className="flex flex-col">
+          {/* Scrollable body */}
+          <div className="flex-1 overflow-y-auto overscroll-contain">
+            <div className="max-w-2xl mx-auto px-5 py-8">
 
-                {/* Search */}
-                <div className="dp-stagger-item px-5 pt-5 pb-3" style={staggerDelay(staggerIdx++)}>
-                  <form onSubmit={handleSearch} className="relative">
-                    <Search size={18} className={`absolute left-3.5 top-1/2 -translate-y-1/2 transition-colors ${searchFocused ? 'text-brand-red' : 'text-white/30'}`} />
-                    <input
-                      type="text"
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                      onFocus={() => setSearchFocused(true)}
-                      onBlur={() => setSearchFocused(false)}
-                      placeholder="Soek artikels, nuus..."
-                      className="w-full pl-11 pr-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder:text-white/30 focus:outline-none focus:border-brand-red/60 focus:bg-white/8 transition-[border-color,background-color] text-[15px]"
-                    />
-                    {searchQuery && (
-                      <button
-                        type="button"
-                        onClick={() => setSearchQuery('')}
-                        className="absolute right-3 top-1/2 -translate-y-1/2 text-white/30 hover:text-white"
-                      >
-                        <X size={16} />
-                      </button>
-                    )}
-                  </form>
-                </div>
+              {/* Search */}
+              <div className="mb-10">
+                <form onSubmit={handleSearch} className="relative">
+                  <Search size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+                  <input
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    placeholder="Soek artikels..."
+                    className="w-full pl-12 pr-4 py-4 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-border rounded-lg text-gray-900 dark:text-white placeholder:text-gray-400 focus-brand transition-[border-color,background-color] text-base"
+                  />
+                  {searchQuery && (
+                    <button
+                      type="button"
+                      onClick={() => setSearchQuery('')}
+                      className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring rounded p-1"
+                    >
+                      <X size={18} />
+                    </button>
+                  )}
+                </form>
+              </div>
 
-                {/* Category Navigation — Primary */}
-                <div className="dp-stagger-item px-5 pt-3 pb-1" style={staggerDelay(staggerIdx++)}>
-                  <p className="text-[11px] uppercase tracking-[0.15em] text-brand-red font-bold mb-3">
-                    Kategorieë
-                  </p>
-                </div>
-
-                <div className="px-5 grid grid-cols-3 gap-2 pb-4">
-                  {MOBILE_CATEGORY_LINKS.map((item) => {
+              {/* Categories — Clean text list */}
+              <div className="mb-10">
+                <h2 className="text-xs uppercase tracking-[0.15em] text-brand-red font-bold mb-5 has-brand-serif-font-family" style={{ fontVariationSettings: 'var(--fvs-h6)', letterSpacing: 'var(--ls-h6)' }}>
+                  Kategorieë
+                </h2>
+                <nav className="space-y-1">
+                  {CATEGORY_NAVIGATION.map((item) => {
                     const active = isActive(item.href);
-                    const delay = staggerDelay(staggerIdx++);
                     return (
                       <button
                         key={item.href}
                         onClick={() => handleNavigation(item.href)}
-                        className={`dp-stagger-item flex flex-col items-center gap-1.5 py-3.5 px-2 rounded-xl transition-[background-color,color] text-center
+                        className={`w-full flex items-center justify-between px-4 py-3 rounded-lg transition-colors group
                           ${active
                             ? 'bg-brand-red text-white'
-                            : 'bg-white/5 text-white/70 hover:bg-white/10 hover:text-white active:bg-white/15'
+                            : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-900 hover:text-brand-red dark:hover:text-brand-red active:bg-gray-100 dark:active:bg-gray-800'
                           }`}
-                        style={delay}
                       >
-                        <span className={active ? 'text-white' : 'text-white/50'}>
-                          {categoryIcons[item.href]}
-                        </span>
-                        <span className="text-[13px] font-medium leading-tight">{item.label}</span>
+                        <span className="text-base font-medium has-brand-sans-font-family">{item.label}</span>
+                        <ChevronRight size={18} className={`transition-transform ${active ? 'text-white' : 'text-gray-300 dark:text-gray-600 group-hover:text-brand-red dark:group-hover:text-brand-red group-hover:translate-x-0.5'}`} />
                       </button>
                     );
                   })}
-                </div>
+                </nav>
+              </div>
 
-                {/* Subscribe CTA */}
-                <div className="dp-stagger-item px-5 pb-2" style={staggerDelay(staggerIdx++)}>
-                  <button
-                    onClick={() => handleNavigation('/inteken/e-uitgawe')}
-                    className="w-full flex items-center justify-between bg-brand-red hover:bg-brand-red-hover active:bg-brand-red-hover text-white rounded-xl px-5 py-4 transition-colors group"
-                  >
-                    <div className="flex items-center gap-3">
-                      <BookOpen size={20} />
-                      <div className="text-left">
-                        <p className="text-[15px] font-bold leading-tight">Teken in op e-uitgawe</p>
-                        <p className="text-[12px] text-white/70 leading-tight mt-0.5">Kry <em>rooi rose</em> digitaal</p>
-                      </div>
-                    </div>
-                    <ArrowRight size={18} className="text-white/60 group-hover:text-white group-hover:translate-x-0.5 transition-[color,transform]" />
-                  </button>
-                </div>
+              {/* Divider */}
+              <div className="border-t border-gray-200 dark:border-border my-8" />
 
-                {/* Huisaflewering CTA */}
-                <div className="dp-stagger-item px-5 pb-4" style={staggerDelay(staggerIdx++)}>
-                  <button
-                    onClick={() => handleNavigation('/inteken/aflewering')}
-                    className="w-full flex items-center justify-between bg-brand-navy hover:bg-brand-navy-light dark:hover:bg-brand-navy-light active:bg-brand-navy-dark text-white rounded-xl px-5 py-4 transition-colors group border border-white/10"
-                  >
-                    <div className="flex items-center gap-3">
-                      <Truck size={20} />
-                      <div className="text-left">
-                        <p className="text-[15px] font-bold leading-tight">Huisaflewering</p>
-                        <p className="text-[12px] text-white/70 leading-tight mt-0.5">Gedrukte koerant vanaf R140/m</p>
-                      </div>
-                    </div>
-                    <ArrowRight size={18} className="text-white/60 group-hover:text-white group-hover:translate-x-0.5 transition-[color,transform]" />
-                  </button>
-                </div>
-
-                {/* Divider */}
-                <div className="mx-5 border-t border-white/8" />
-
-                {/* Secondary Navigation */}
-                <div className="dp-stagger-item px-5 pt-4 pb-1" style={staggerDelay(staggerIdx++)}>
-                  <p className="text-[11px] uppercase tracking-[0.15em] text-white/40 font-bold mb-2">
-                    <em>rooi rose</em>
-                  </p>
-                </div>
-
-                <div className="pb-4">
+              {/* Secondary Links */}
+              <div className="mb-10">
+                <h2 className="text-xs uppercase tracking-[0.15em] text-gray-500 dark:text-gray-500 font-bold mb-5 has-brand-serif-font-family" style={{ fontVariationSettings: 'var(--fvs-h6)', letterSpacing: 'var(--ls-h6)' }}>
+                  <em>rooi rose</em>
+                </h2>
+                <nav className="space-y-1">
                   {MOBILE_SECONDARY_LINKS.map((item) => {
                     const active = isActive(item.href);
-                    const delay = staggerDelay(staggerIdx++);
                     return (
                       <button
                         key={item.href}
                         onClick={() => handleNavigation(item.href)}
-                        className={`dp-stagger-item w-full flex items-center justify-between px-5 py-3 transition-colors group
+                        className={`w-full flex items-center justify-between px-4 py-2.5 rounded-lg transition-colors group text-left
                           ${active
                             ? 'text-brand-red bg-brand-red/5'
-                            : 'text-white/60 hover:text-white hover:bg-white/5 active:bg-white/8'
+                            : 'text-gray-600 dark:text-gray-400 hover:text-brand-red dark:hover:text-brand-red hover:bg-gray-50 dark:hover:bg-gray-900'
                           }`}
-                        style={delay}
                       >
-                        <span className="flex items-center gap-3">
-                          <span className={active ? 'text-brand-red' : 'text-white/30 group-hover:text-white/50'}>
-                            {secondaryIcons[item.href]}
-                          </span>
-                          <span className="text-[15px] font-medium">{item.label}</span>
-                        </span>
-                        <ChevronRight size={16} className={`transition-[color,transform] ${active ? 'text-brand-red' : 'text-white/15 group-hover:text-white/30 group-hover:translate-x-0.5'}`} />
+                        <span className="text-sm has-brand-sans-font-family">{item.label}</span>
+                        <ChevronRight size={16} className={`transition-[color,transform] ${active ? 'text-brand-red' : 'text-gray-300 dark:text-gray-600 group-hover:text-brand-red dark:group-hover:text-brand-red group-hover:translate-x-0.5'}`} />
                       </button>
                     );
                   })}
-                </div>
-
-                {/* Divider */}
-                <div className="mx-5 border-t border-white/8" />
-
-                {/* Account quick links */}
-                <div className="dp-stagger-item px-5 pt-4 pb-1" style={staggerDelay(staggerIdx++)}>
-                  <p className="text-[11px] uppercase tracking-[0.15em] text-white/40 font-bold mb-2">
-                    My rekening
-                  </p>
-                </div>
-
-                <div className="px-5 pb-4 flex gap-2">
-                  <button
-                    onClick={() => handleNavigation('/my-rekening')}
-                    className="flex-1 flex items-center justify-center gap-2 py-3 bg-white/5 hover:bg-white/10 active:bg-white/15 text-white/70 hover:text-white rounded-xl transition-[background-color,color] text-[14px] font-medium"
-                  >
-                    <User size={18} />
-                    My rekening
-                  </button>
-                  <button
-                    onClick={() => handleNavigation('/registreer')}
-                    className="flex-1 flex items-center justify-center gap-2 py-3 bg-white/5 hover:bg-white/10 active:bg-white/15 text-white/70 hover:text-white rounded-xl transition-[background-color,color] text-[14px] font-medium"
-                  >
-                    <ArrowRight size={18} />
-                    Registreer
-                  </button>
-                </div>
-
-                {/* Divider */}
-                <div className="mx-5 border-t border-white/8" />
-
-                {/* Social Links */}
-                <div className="dp-stagger-item px-5 pt-4 pb-2" style={staggerDelay(staggerIdx++)}>
-                  <p className="text-[11px] uppercase tracking-[0.15em] text-white/40 font-bold mb-3">
-                    Volg Ons
-                  </p>
-                  <div className="flex items-center gap-3">
-                    {SOCIAL_LINKS.map((social) => (
-                      <a
-                        key={social.label}
-                        href={social.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center w-10 h-10 rounded-full bg-white/5 text-white/50 hover:bg-white/15 hover:text-white active:bg-white/20 transition-[background-color,color]"
-                        title={social.label}
-                      >
-                        <SocialIcon icon={social.icon} size={18} />
-                      </a>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Copyright */}
-                <div className="dp-stagger-item px-5 pt-4 pb-8 text-center" style={staggerDelay(staggerIdx++)}>
-                  <p className="text-[11px] text-white/20">
-                    <em>rooi rose</em> © {new Date().getFullYear()}. Alle regte voorbehou.
-                  </p>
-                </div>
-
+                </nav>
               </div>
+
+              {/* Divider */}
+              <div className="border-t border-gray-200 dark:border-border my-8" />
+
+              {/* Social Links */}
+              <div>
+                <h2 className="text-xs uppercase tracking-[0.15em] text-gray-500 dark:text-gray-500 font-bold mb-4 has-brand-serif-font-family" style={{ fontVariationSettings: 'var(--fvs-h6)', letterSpacing: 'var(--ls-h6)' }}>
+                  Volg Ons
+                </h2>
+                <div className="flex items-center gap-2">
+                  {SOCIAL_LINKS.map((social) => (
+                    <a
+                      key={social.label}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center w-11 h-11 rounded-full bg-gray-100 dark:bg-gray-900 text-gray-600 dark:text-gray-400 hover:bg-brand-red hover:text-white dark:hover:bg-brand-red dark:hover:text-white transition-[background-color,color]"
+                      title={social.label}
+                    >
+                      <SocialIcon icon={social.icon} size={18} />
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              {/* Copyright */}
+              <div className="mt-12 pt-8 border-t border-gray-200 dark:border-border text-center">
+                <p className="text-xs text-gray-400 dark:text-gray-600">
+                  <em>rooi rose</em> © {new Date().getFullYear()}. Alle regte voorbehou.
+                </p>
+              </div>
+
             </div>
           </div>
         </div>

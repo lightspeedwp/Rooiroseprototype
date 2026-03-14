@@ -31,12 +31,12 @@ export const NewsletterReEngagementPage = () => {
           {status === 'pending' && (
             <div className="bg-white dark:bg-card rounded-lg shadow-sm border border-gray-100 dark:border-border overflow-hidden">
               {/* Header */}
-              <div className="bg-gradient-to-br from-brand-navy to-brand-navy-light p-8 text-center">
-                <Heart size={56} className="mx-auto mb-4 text-primary" />
-                <h1 className="text-3xl font-normal text-white font-heading mb-2" style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}>
+              <div className="bg-gradient-to-br from-brand-red to-red-600 dark:bg-brand-red p-10 text-center">
+                <Heart size={64} className="mx-auto mb-4 text-white" />
+                <h1 className="text-4xl font-normal text-white has-brand-serif-font-family mb-3" style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}>
                   Ons mis jou!
                 </h1>
-                <p className="text-gray-300">
+                <p className="text-white/90 text-lg">
                   Dit lyk of jy al 'n ruk lank nie ons nuusbriewe gelees het nie.
                 </p>
               </div>

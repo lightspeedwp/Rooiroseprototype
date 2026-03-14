@@ -39,6 +39,12 @@ import {
   PageFAQItem
 } from '../data/pageFaqs';
 
+/* ── rooi rose Magazine FAQ Page ──────────────────────────────
+ * Editorial design: Centered header, category filters, FAQ sections
+ * Typography: Playfair Display SC headings
+ * Layout: Editorial header + category tabs + FAQ accordion
+ * ────────────────────────────────────────────────────────────── */
+
 // Map the imported data to a structure suitable for the FAQ page
 interface FAQSection {
   id: string;

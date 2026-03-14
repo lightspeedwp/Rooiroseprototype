@@ -114,11 +114,11 @@ export const TrafficPage = () => {
       />
 
       <PageContainer breadcrumbs={[{ label: 'Verkeer' }]}>
-        <div className="mb-8">
-          <h1 className="text-4xl font-normal text-brand-navy dark:text-foreground font-heading mb-2" style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}>
+        <div className="mb-10">
+          <h1 className="text-5xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family mb-3" style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}>
             Verkeer
           </h1>
-          <p className="text-gray-600 dark:text-gray-400">
+          <p className="text-gray-600 dark:text-gray-400 text-lg">
             Die jongste verkeersinligting en padtoestande — opgedateer Vrydag 13 Februarie 2026.
           </p>
         </div>

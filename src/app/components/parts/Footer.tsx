@@ -1,5 +1,5 @@
 import React from 'react';
-import { Facebook, Instagram, Linkedin, Mail, MapPin, ArrowRight, ChevronRight } from 'lucide-react';
+import { Mail, ArrowRight } from 'lucide-react';
 import { Link, useNavigate } from 'react-router';
 import { Logo } from '../common/Logo';
 import { 
@@ -26,11 +26,29 @@ const SocialIcon = ({ icon, size = 18 }: { icon: string; size?: number }) => {
         </svg>
       );
     case 'Facebook':
-      return <Facebook size={size} />;
+      return (
+        <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+          <path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 3.667h-3.533v7.98H9.101z" />
+        </svg>
+      );
     case 'Instagram':
-      return <Instagram size={size} />;
+      return (
+        <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+          <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z" />
+        </svg>
+      );
     case 'Linkedin':
-      return <Linkedin size={size} />;
+      return (
+        <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+        </svg>
+      );
+    case 'Youtube':
+      return (
+        <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+        </svg>
+      );
     default:
       return null;
   }
@@ -48,51 +66,46 @@ export const Footer = () => {
     <footer className="has-brand-sans-font-family">
       {/* ─── Newsletter CTA Band ─── */}
       <div
-        className="bg-brand-red dark:bg-primary relative overflow-hidden"
+        className="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-border"
         style={{ paddingLeft: 'clamp(1rem, 4vw, 2rem)', paddingRight: 'clamp(1rem, 4vw, 2rem)' }}
       >
-        <div className="absolute inset-0 opacity-[0.07]">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(255,255,255,0.5) 40px, rgba(255,255,255,0.5) 41px)`,
-          }} />
-        </div>
-        <div className="alignwide relative z-10">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6 py-8 md:py-6">
-            <div className="flex items-center gap-4 text-white">
-              <div className="w-12 h-12 rounded-full bg-white/15 flex items-center justify-center flex-shrink-0">
-                <Mail size={22} />
+        <div className="alignwide">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 py-10 md:py-8">
+            <div className="flex items-center gap-4 text-gray-900 dark:text-white">
+              <div className="w-12 h-12 rounded-full bg-brand-red flex items-center justify-center flex-shrink-0">
+                <Mail size={22} className="text-white" />
               </div>
               <div>
                 <p
-                  className="font-normal has-brand-serif-font-family leading-tight"
+                  className="font-normal has-brand-serif-font-family leading-tight text-gray-900 dark:text-white"
                   style={{
-                    fontVariationSettings: "var(--fvs-h3)",
-                    lineHeight: 'var(--lh-h3)',
-                    letterSpacing: 'var(--ls-h3)',
-                    fontSize: 'var(--text-h3)',
+                    fontVariationSettings: "var(--fvs-h4)",
+                    lineHeight: 'var(--lh-h4)',
+                    letterSpacing: 'var(--ls-h4)',
+                    fontSize: 'var(--text-h4)',
                   }}
                 >
-                  {FOOTER_CONTENT.newsletter.title}
+                  Kry ons gratis nuusbrief
                 </p>
-                <p className="text-white/75 text-sm">
-                  {FOOTER_CONTENT.newsletter.description}
+                <p className="text-gray-600 dark:text-gray-400 text-sm mt-1">
+                  Ontvang die jongste stories elke week
                 </p>
               </div>
             </div>
             <form
               onSubmit={handleNewsletterSubmit}
-              className="flex w-full md:w-auto gap-0"
+              className="flex w-full md:w-auto gap-2"
             >
               <input
                 type="email"
-                placeholder={FOOTER_CONTENT.newsletter.placeholder}
-                className="flex-1 md:w-72 px-4 py-3 bg-white/15 border border-white/25 border-r-0 rounded-l-lg text-white text-sm placeholder:text-white/50 focus:outline-none focus:bg-white/20 transition-colors"
+                placeholder="Jou e-posadres"
+                className="flex-1 md:w-72 px-4 py-3 bg-white dark:bg-background border border-gray-300 dark:border-border rounded-lg text-gray-900 dark:text-white text-sm placeholder:text-gray-400 focus-brand transition-colors"
               />
               <button
                 type="submit"
-                className="px-6 py-3 bg-brand-navy dark:bg-brand-navy hover:bg-brand-navy-light dark:hover:bg-brand-navy-light text-white font-bold text-sm rounded-r-lg transition-colors whitespace-nowrap flex items-center gap-2"
+                className="px-6 py-3 bg-brand-red hover:bg-brand-red-hover text-white font-bold text-sm rounded-lg transition-colors whitespace-nowrap flex items-center gap-2"
               >
-                {FOOTER_CONTENT.newsletter.buttonText}
+                Inteken
                 <ArrowRight size={16} />
               </button>
             </form>
@@ -102,32 +115,32 @@ export const Footer = () => {
 
       {/* ─── Main Footer Body ─── */}
       <div
-        className="bg-brand-navy dark:bg-brand-navy text-white"
+        className="bg-white dark:bg-background border-t border-gray-200 dark:border-border"
         style={{ paddingLeft: 'clamp(1rem, 4vw, 2rem)', paddingRight: 'clamp(1rem, 4vw, 2rem)' }}
       >
-        <div className="alignwide relative z-10">
+        <div className="alignwide">
           {/* Top section: Brand + Link Columns */}
-          <div className="pt-14 pb-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8">
+          <div className="py-12 border-b border-gray-200 dark:border-border">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10">
 
               {/* Brand column */}
               <div className="lg:col-span-4">
-                <Link to="/" className="inline-block mb-5">
-                  <Logo variant="white" className="h-9 md:h-11 w-auto" />
+                <Link to="/" className="inline-block mb-6">
+                  <Logo variant="default" className="h-9 md:h-10 w-auto" />
                 </Link>
-                <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-sm">
+                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6 max-w-sm">
                   {renderWithBrandItalics(FOOTER_CONTENT.brand.description)}
                 </p>
 
                 {/* Social links */}
-                <div className="flex gap-3">
+                <div className="flex gap-2">
                   {SOCIAL_LINKS.map((social) => (
                     <a
                       key={social.label}
                       href={social.href}
                       target="_blank"
                       rel="noreferrer"
-                      className="w-9 h-9 rounded-full bg-white/8 flex items-center justify-center text-gray-400 hover:bg-brand-red hover:text-white transition-colors duration-200"
+                      className="w-9 h-9 rounded-full bg-gray-100 dark:bg-gray-900 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-brand-red hover:text-white dark:hover:bg-brand-red dark:hover:text-white transition-[background-color,color] duration-200"
                       title={social.label}
                     >
                       <SocialIcon icon={social.icon} size={16} />
@@ -138,20 +151,19 @@ export const Footer = () => {
 
               {/* Link columns */}
               <div className="lg:col-span-8">
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-6">
+                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-8">
                   {FOOTER_LINK_COLUMNS.map((column) => (
                     <div key={column.title}>
-                      <h3 className="text-xs font-normal uppercase tracking-[0.15em] text-brand-red mb-4 has-brand-serif-font-family" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)' }}>
+                      <h3 className="text-xs font-bold uppercase tracking-[0.15em] text-brand-red mb-4 has-brand-serif-font-family" style={{ fontVariationSettings: "var(--fvs-h6)", letterSpacing: 'var(--ls-h6)' }}>
                         {renderWithBrandItalics(column.title)}
                       </h3>
-                      <ul className="space-y-2.5">
+                      <ul className="space-y-2">
                         {column.links.map((link) => (
                           <li key={link.href + link.label}>
                             <Link
                               to={link.href}
-                              className="text-gray-400 text-sm hover:text-white transition-colors inline-flex items-center gap-1.5 group"
+                              className="text-gray-600 dark:text-gray-400 text-sm hover:text-brand-red dark:hover:text-brand-red transition-colors"
                             >
-                              <ChevronRight size={12} className="text-gray-600 group-hover:text-brand-red transition-colors opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0" />
                               {link.label}
                             </Link>
                           </li>
@@ -164,64 +176,35 @@ export const Footer = () => {
             </div>
           </div>
 
-          {/* ─── Contact Strip ─── */}
-          <div className="border-t border-white/8 py-6">
+          {/* ─── Contact Info ─── */}
+          <div className="py-6 border-b border-gray-200 dark:border-border">
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-              <span className="text-xs font-bold uppercase tracking-[0.15em] text-gray-500">
-                {FOOTER_CONTENT.contact.title}
-              </span>
-              <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm text-gray-400">
-                <span className="flex items-start gap-2">
-                  <MapPin size={14} className="text-brand-red shrink-0 mt-0.5" />
-                  <span className="text-xs">{FOOTER_CONTENT.contact.address}</span>
-                </span>
-                <a href={`mailto:${FOOTER_CONTENT.contact.email}`} className="flex items-center gap-2 hover:text-white transition-colors">
-                  <Mail size={14} className="text-brand-red shrink-0" />
-                  <span className="text-xs">{FOOTER_CONTENT.contact.email}</span>
+              <div className="flex flex-col gap-2 text-sm text-gray-600 dark:text-gray-400">
+                <p className="font-medium text-gray-900 dark:text-white">Kontak</p>
+                <p className="text-xs leading-relaxed max-w-lg">{FOOTER_CONTENT.contact.address}</p>
+                <a href={`mailto:${FOOTER_CONTENT.contact.email}`} className="text-brand-red hover:underline">
+                  {FOOTER_CONTENT.contact.email}
                 </a>
               </div>
             </div>
           </div>
 
-          {/* ─── Accreditations ─── */}
-          <div className="border-t border-white/8 py-6">
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
-              <span className="text-xs font-bold uppercase tracking-[0.15em] text-gray-500">
-                {FOOTER_CONTENT.accreditations.title}
-              </span>
-              <div className="flex flex-wrap items-center gap-8">
-                {FOOTER_CONTENT.accreditations.items.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="opacity-50 hover:opacity-100 transition-opacity"
-                    title={item.name}
-                  >
-                    <img src={item.image} alt={item.name} className="h-9 w-auto object-contain brightness-0 invert" style={{ maxHeight: '36px', maxWidth: '120px' }} loading="lazy" decoding="async" />
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
-
           {/* ─── Bottom Bar ─── */}
-          <div className="border-t border-white/8 py-6">
+          <div className="py-6">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className="text-xs text-gray-500 text-center md:text-left">
+              <p className="text-xs text-gray-500 dark:text-gray-500 text-center md:text-left">
                 {renderWithBrandItalics(FOOTER_NAVIGATION.copyright)}
-                <span className="mx-2 text-gray-700">|</span>
-                <span className="text-gray-500">
+                <span className="mx-2 text-gray-300 dark:text-gray-700">|</span>
+                <span className="text-gray-500 dark:text-gray-500">
                   {FOOTER_CONTENT.bottom.publicationInfo}
                 </span>
               </p>
-              <nav className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-xs text-gray-500">
+              <nav className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-xs text-gray-500 dark:text-gray-500">
                 {FOOTER_LEGAL_LINKS.map((link) => (
                   <Link
                     key={link.href}
                     to={link.href}
-                    className="hover:text-white transition-colors"
+                    className="hover:text-brand-red dark:hover:text-brand-red transition-colors"
                   >
                     {link.label}
                   </Link>

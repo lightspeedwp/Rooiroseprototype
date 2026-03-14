@@ -16,6 +16,12 @@ import { parseEditionDate, SUBSCRIPTION_CUTOFF } from '../data/mockUserAccess';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { DemoStateSwitcher } from '../components/common/DemoStateSwitcher';
 
+/* ── rooi rose Magazine E-Editions Archive ──────────────────────────────
+ * Editorial design: Magazine grid for e-edition covers
+ * Typography: Playfair Display SC headings
+ * Layout: Hero + magazine grid (4 columns) + pagination
+ * ────────────────────────────────────────────────────────────── */
+
 export const EEditionsPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const ITEMS_PER_PAGE = 24;
@@ -56,28 +62,46 @@ export const EEditionsPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-background">
+    <div className="min-h-screen bg-white dark:bg-background">
       <SEO
         title="E-uitgawes"
-        description="Blaai deur rooi rose se e-uitgawes — die volledige koerant in digitale formaat. Koop individuele uitgawes vir R35 elk of teken in."
-        keywords="e-uitgawes, digitaal, koerant, lees, argief, die papier"
+        description="Blaai deur rooi rose se e-uitgawes — die volledige tydskrif in digitale formaat. Koop individuele uitgawes vir R35 elk of teken in."
+        keywords="e-uitgawes, digitaal, tydskrif, lees, argief, rooi rose"
       />
+      
       {/* Leaderboard Ad */}
       <LeaderboardAd section="e-uitgawes" />
 
       <PageContainer breadcrumbs={[{ label: 'E-uitgawes' }]} noPadding />
 
-      <ContentHero 
-        title="E-uitgawes"
-        subtitle="Koop individuele e-uitgawes vir R35 elk — kies jou streek en voeg by jou mandjie. Beskikbaar vir Gauteng en Vrystaat, Wes-Kaap, Oos-Kaap en KwaZulu-Natal."
-        image={HERO_IMAGES.eEditions}
-      />
+      {/* Full-Width Hero - Magazine Style */}
+      <div className="relative h-[50vh] md:h-[60vh] overflow-hidden mb-16">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60"></div>
+        <img 
+          src={HERO_IMAGES.eEditions}
+          alt="E-uitgawes"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center max-w-4xl px-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-4 has-brand-serif-font-family uppercase tracking-wider" style={{ letterSpacing: '0.15em' }}>
+              E-uitgawes
+            </h1>
+            <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto mb-8">
+              Koop individuele e-uitgawes vir R35 elk — kies jou streek en voeg by jou mandjie. Beskikbaar vir Gauteng en Vrystaat, Wes-Kaap, Oos-Kaap en KwaZulu-Natal.
+            </p>
+            <Link to="/my-e-uitgawes" className="inline-flex items-center gap-2 bg-brand-red text-white px-8 py-3 rounded-lg font-bold hover:bg-brand-red-hover transition-colors shadow-lg">
+              <BookOpen size={20} />
+              Gaan na my biblioteek
+            </Link>
+          </div>
+        </div>
+      </div>
 
-      <div className="alignwide py-10">
-        
+      <PageContainer>
         {/* ─── Expired Subscriber Banner ─── */}
         {demoState === 'expired-subscriber' && (
-          <div className="bg-amber-50 dark:bg-amber-950/30 border border-amber-300 dark:border-amber-700 rounded-xl p-6 mb-8 flex flex-col sm:flex-row items-center gap-4">
+          <div className="bg-amber-50 dark:bg-amber-950/30 border border-amber-300 dark:border-amber-700 rounded-xl p-6 mb-12 flex flex-col sm:flex-row items-center gap-4">
             <AlertTriangle size={24} className="text-amber-600 dark:text-amber-400 shrink-0" />
             <div className="flex-1 text-center sm:text-left">
               <h3 className="font-normal text-amber-900 dark:text-amber-200 mb-1 font-heading" style={{ fontVariationSettings: "var(--fvs-h4)", fontSize: 'var(--text-h4)', lineHeight: 'var(--lh-h4)', letterSpacing: 'var(--ls-h4)' }}>Jou intekening het verstryk</h3>
@@ -89,16 +113,7 @@ export const EEditionsPage = () => {
           </div>
         )}
 
-        <div className="text-center mb-12">
-          <Button asChild variant="outline" className="border-primary dark:border-primary text-primary dark:text-primary hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white font-bold text-lg h-auto py-3 px-6 rounded-full shadow-sm">
-            <Link to="/my-e-uitgawes" className="flex items-center">
-               <BookOpen size={20} className="mr-2"/>
-               Gaan na my biblioteek
-            </Link>
-          </Button>
-        </div>
-
-        {/* CTA Banner Removed */}{/* Main Layout with Sidebar */}
+        {/* Main Layout with Sidebar */}
         <div className="flex flex-col lg:flex-row gap-8 mb-12">
           
           {/* Main Content Column */}
@@ -332,7 +347,7 @@ export const EEditionsPage = () => {
           </div>
         </div>
 
-      </div>
+      </PageContainer>
 
       {/* Leaderboard Ad above FAQ */}
       <LeaderboardAd section="e-uitgawes" />

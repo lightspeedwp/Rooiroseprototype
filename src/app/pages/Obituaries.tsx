@@ -9,6 +9,12 @@ import { OBITUARIES } from '../data/obituaries';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { LeaderboardAd, SidebarAds, InFeedAd, StickyMobileFooter } from '../components/ads';
 
+/* ── rooi rose Magazine Obituaries Page ──────────────────────────────
+ * Editorial design: Respectful, elegant layout with soft colors
+ * Typography: Playfair Display SC headings
+ * Layout: Editorial header + list layout with photos
+ * ────────────────────────────────────────────────────────────── */
+
 const ITEMS_PER_PAGE = 10;
 
 export const ObituariesPage = () => {
@@ -20,7 +26,7 @@ export const ObituariesPage = () => {
   );
 
   return (
-    <div className="bg-gray-50 dark:bg-background min-h-screen font-inter">
+    <div className="bg-gray-50 dark:bg-background min-h-screen">
       <SEO
         title="Doodsberrigte - rooi rose"
         description="Doodsberrigte en begrafniskennisgewings in rooi rose. Eerbetuigings aan geliefdes wat ons ontval het."
@@ -30,23 +36,37 @@ export const ObituariesPage = () => {
       {/* Leaderboard Ad */}
       <LeaderboardAd section="doodsberrigte" />
 
-      <PageContainer breadcrumbs={[{ label: 'Doodsberrigte' }]}>
-        {/* Page Header */}
-        <header className="mb-10">
-          <h1 className="text-4xl font-normal text-brand-navy dark:text-foreground font-heading mb-4" style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}>
-            Doodsberrigte
-          </h1>
-          <p className="text-gray-600 dark:text-gray-400 text-lg max-w-3xl">
-            Eerbetuigings aan geliefdes wat ons ontval het. Ons dra ons innige medelye oor aan alle families en
-            naasbestaandes.
-          </p>
-        </header>
+      {/* Editorial Header - Centered, Respectful */}
+      <div className="bg-white dark:bg-background border-b border-gray-200 dark:border-border">
+        <PageContainer>
+          <div className="text-center py-12 lg:py-16 max-w-3xl mx-auto">
+            {/* Icon Badge */}
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 dark:bg-gray-800 mb-6">
+              <Heart size={32} className="text-gray-600 dark:text-gray-400" />
+            </div>
 
-        <div className="flex flex-col lg:flex-row gap-8">
+            {/* Title */}
+            <h1 className="text-5xl lg:text-6xl font-normal text-brand-navy dark:text-foreground mb-4 has-brand-serif-font-family uppercase tracking-wider" style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}>
+              Doodsberrigte
+            </h1>
+
+            {/* Divider */}
+            <div className="w-24 h-1 bg-gray-300 dark:bg-gray-700 mx-auto mb-6"></div>
+
+            {/* Description */}
+            <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
+              Eerbetuigings aan geliefdes wat ons ontval het. Ons dra ons innige medelye oor aan alle families en naasbestaandes.
+            </p>
+          </div>
+        </PageContainer>
+      </div>
+
+      <PageContainer breadcrumbs={[{ label: 'Doodsberrigte' }]}>
+        <div className="flex flex-col lg:flex-row gap-8 py-12">
           {/* Main Content */}
           <div className="flex-1 min-w-0">
             {/* Obituaries List */}
-            <div className="grid gap-5">
+            <div className="grid gap-6">
               {paginatedItems.map((obit, idx) => (
                 <div key={obit.id}>
                   <Link

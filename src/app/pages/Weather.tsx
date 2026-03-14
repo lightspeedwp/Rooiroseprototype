@@ -46,9 +46,9 @@ export const WeatherPage = () => {
       />
 
       <PageContainer breadcrumbs={[{ label: 'Weer' }]}>
-        <div className="mb-8">
-          <h1 className="text-4xl font-normal text-brand-navy dark:text-foreground font-heading mb-2" style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}>Weer</h1>
-          <p className="text-muted-foreground">
+        <div className="mb-10">
+          <h1 className="text-5xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family mb-3" style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}>Weer</h1>
+          <p className="text-muted-foreground text-lg">
             Weervoorspellings vir stede regoor Suid-Afrika &mdash; opgedateer Vrydag 13 Februarie 2026.
           </p>
         </div>

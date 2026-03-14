@@ -32,6 +32,12 @@ import { Checkbox } from "../components/ui/checkbox";
 import { SEO } from '../components/common/SEO';
 import { QuoteSlider } from '../components/brand-quotes/QuoteSlider';
 
+/* ── rooi rose Magazine Advertise Page ──────────────────────────────
+ * Editorial design: Full-width hero, pricing cards, editorial form
+ * Typography: Playfair Display SC headings
+ * Layout: Hero + benefits + pricing + form + FAQ
+ * ────────────────────────────────────────────────────────────── */
+
 export const Advertise = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
@@ -50,15 +56,33 @@ export const Advertise = () => {
       <SEO
         title="Adverteer"
         description="Adverteer in rooi rose - bereik duisende lesers met geklassifiseerde, vertoon-, digitale en gedrukte advertensies."
-        keywords="adverteer, advertensies, geklassifiseerd, vertoon, tariewe, media, die papier"
+        keywords="adverteer, advertensies, geklassifiseerd, vertoon, tariewe, media, rooi rose"
       />
       <PageContainer breadcrumbs={[{ label: 'Adverteer' }]} noPadding />
 
-      <ContentHero 
-        title="Versterk jou handelsmerk met rooi rose" 
-        subtitle="Wil jy jou handelsmerk uitbrei? By rooi rose bied ons dinamiese advertensie-oplossings wat jou met gehoor regoor Suid-Afrika verbind."
-        image={HERO_IMAGES.advertise}
-      />
+      {/* Full-Width Editorial Hero */}
+      <div className="relative h-[60vh] md:h-[70vh] overflow-hidden mb-16">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
+        <img 
+          src={HERO_IMAGES.advertise}
+          alt="Adverteer met rooi rose"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center max-w-4xl px-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-4 has-brand-serif-font-family uppercase tracking-wider" style={{ letterSpacing: '0.15em' }}>
+              Versterk jou handelsmerk
+            </h1>
+            <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-3xl mx-auto mb-8">
+              Wil jou handelsmerk uitbrei? By rooi rose bied ons dinamiese advertensie-oplossings wat jou met gehoor regoor Suid-Afrika verbind.
+            </p>
+            <a href="#advertensie-navraag" className="inline-flex items-center gap-2 bg-brand-red text-white px-8 py-3 rounded-lg font-bold hover:bg-brand-red-hover transition-colors shadow-lg">
+              Kry 'n kwotasie
+              <ArrowRight size={20} />
+            </a>
+          </div>
+        </div>
+      </div>
 
       <div className="alignwide py-12">
         

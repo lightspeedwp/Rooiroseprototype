@@ -1866,6 +1866,96 @@ export const CATEGORY_ARTICLES: Record<string, CategoryArticle[]> = {
       author: "Ryno Wessels",
       imageUrl: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&q=80&w=1080",
       readTime: "8 min"
+    },
+    {
+      id: 10403,
+      title: "Agter die skerms met 'Binnelanders'",
+      excerpt: "Eksklusiewe insigte oor die gewilde sepie se nuutste seisoen en wat kykers kan verwag.",
+      category: "Bekendes",
+      tags: ["TV dekking", "Agter die skerms", "Drama"],
+      date: "9 Mrt 2026",
+      author: "Mia Coetzee",
+      imageUrl: "https://images.unsplash.com/photo-1574267432644-f74f8ec54b33?auto=format&fit=crop&q=80&w=1080",
+      readTime: "7 min"
+    },
+    {
+      id: 10404,
+      title: "Dié Hefer: Van radio-aanbieder tot TV-ster",
+      excerpt: "Die geliefde persoonlikheid deel haar reis en wat haar dryf om nuwe uitdagings aan te pak.",
+      category: "Bekendes",
+      tags: ["Onderhoude", "TV", "Radio"],
+      date: "8 Mrt 2026",
+      author: "Janine Viljoen",
+      featured: true,
+      imageUrl: "https://images.unsplash.com/photo-1557862921-37829c790f19?auto=format&fit=crop&q=80&w=1080",
+      readTime: "9 min"
+    },
+    {
+      id: 10405,
+      title: "Die Afrikaanse filmbedryf se nuwe generasie",
+      excerpt: "Jong regisseurs en akteurs wat vars perspektiewe na ons stories bring.",
+      category: "Bekendes",
+      tags: ["Film", "Kultuur", "Jeug"],
+      date: "7 Mrt 2026",
+      author: "Pieter Marais",
+      imageUrl: "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&q=80&w=1080",
+      readTime: "8 min"
+    },
+    {
+      id: 10406,
+      title: "Karen Zoid: 'Ek skep omdat ek moet'",
+      excerpt: "Die musikante en TV-aanbieder oor kreatiwiteit, inspirasie en die kuns om relevant te bly.",
+      category: "Bekendes",
+      tags: ["Onderhoude", "Musiek", "Inspirasie"],
+      date: "6 Mrt 2026",
+      author: "Ryno Wessels",
+      featured: true,
+      imageUrl: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=1080",
+      readTime: "11 min"
+    },
+    {
+      id: 10407,
+      title: "Die waarheid agter reality TV",
+      excerpt: "Hoe word gewilde reality-programme soos 'Boer Soek 'n Vrou' werklik gemaak? Ons onthul die geheime.",
+      category: "Bekendes",
+      tags: ["TV dekking", "Agter die skerms", "Reality"],
+      date: "5 Mrt 2026",
+      author: "Mia Coetzee",
+      imageUrl: "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?auto=format&fit=crop&q=80&w=1080",
+      readTime: "6 min"
+    },
+    {
+      id: 10408,
+      title: "Afrikaanse teater maak 'n comeback",
+      excerpt: "Vanaf 'Die Testament' tot nuwe produksies - hoe teater weer gehore trek na die pandemie.",
+      category: "Bekendes",
+      tags: ["Teater", "Kultuur", "Kuns"],
+      date: "4 Mrt 2026",
+      author: "Annelize Steyn",
+      imageUrl: "https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&q=80&w=1080",
+      readTime: "7 min"
+    },
+    {
+      id: 10409,
+      title: "Bobby van Jaarsveld se nuwe album 'Seisoen'",
+      excerpt: "Die sanger-liedjieskrywer gesels oor sy mees persoonlike album tot dusver en sy evolusie as kunstenaar.",
+      category: "Bekendes",
+      tags: ["Onderhoude", "Musiek", "Album"],
+      date: "3 Mrt 2026",
+      author: "Ryno Wessels",
+      imageUrl: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&q=80&w=1080",
+      readTime: "8 min"
+    },
+    {
+      id: 10410,
+      title: "Die opkoms van Afrikaanse podsendings",
+      excerpt: "Hoe 'n nuwe generasie vertelstories digitale platforms gebruik om stories te deel en gemeenskappe te bou.",
+      category: "Bekendes",
+      tags: ["Podsendings", "Kultuur", "Media"],
+      date: "2 Mrt 2026",
+      author: "Janine Viljoen",
+      imageUrl: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?auto=format&fit=crop&q=80&w=1080",
+      readTime: "6 min"
     }
   ],
 

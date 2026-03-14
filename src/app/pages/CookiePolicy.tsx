@@ -5,8 +5,25 @@ import { ContentHero } from '../components/patterns/ContentHero';
 import { HERO_IMAGES } from '../data/heroImages';
 import { POLICY_COOKIE } from '../data/policies/policyCookie';
 
-const H3: React.CSSProperties = { fontVariationSettings: "var(--fvs-h2)", lineHeight: 'var(--lh-h2)', letterSpacing: 'var(--ls-h2)', fontSize: 'var(--text-h2)' };
-const H4: React.CSSProperties = { fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)', fontSize: 'var(--text-h3)' };
+/* ── rooi rose Magazine Cookie Policy Page ──────────────────────────────
+ * Editorial design: GDPR-compliant legal document with cookie categories
+ * Typography: Playfair Display SC headings with red underlines
+ * Layout: Hero + max-width prose content
+ * ────────────────────────────────────────────────────────────── */
+
+const H2: React.CSSProperties = { 
+  fontVariationSettings: "var(--fvs-h2)", 
+  lineHeight: 'var(--lh-h2)', 
+  letterSpacing: 'var(--ls-h2)', 
+  fontSize: 'var(--text-h2)' 
+};
+
+const H3: React.CSSProperties = { 
+  fontVariationSettings: "var(--fvs-h3)", 
+  lineHeight: 'var(--lh-h3)', 
+  letterSpacing: 'var(--ls-h3)', 
+  fontSize: 'var(--text-h3)' 
+};
 
 const D = POLICY_COOKIE;
 const SH = D.sectionHeadings;
@@ -34,110 +51,123 @@ export const CookiePolicyPage = () => {
           image={HERO_IMAGES.legal}
         />
 
-        <div className="max-w-[1000px] mb-12 pt-8 px-4 md:px-0 mx-auto">
-          <p className="text-sm text-gray-500 dark:text-gray-500 mt-4">
-            {SH.lastUpdatedLabel} {D.lastUpdated}
-          </p>
-        </div>
+        <div className="alignwide py-12">
+          <div className="max-w-4xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-400 text-lg mb-8">
+              <strong>{SH.lastUpdatedLabel}</strong> {D.lastUpdated}
+            </p>
 
-        <div className="prose prose-lg max-w-none text-gray-700 dark:text-gray-300 px-4 md:px-0 mx-auto w-full md:max-w-[1000px]">
-          <p>{D.intro}</p>
-          <p>{D.preamble}</p>
-          <ul className="list-disc pl-5 space-y-2">
-            {D.preambleItems.map((item, i) => <li key={i}>{item}</li>)}
-          </ul>
-          <p>{D.preambleFootnote}</p>
+            <div className="prose prose-lg max-w-none text-gray-700 dark:text-gray-300">
+              <p className="leading-relaxed text-lg mb-4">{D.intro}</p>
+              <p className="leading-relaxed text-base mb-4">{D.preamble}</p>
+              <ul className="list-disc pl-6 space-y-3 text-base mb-4">
+                {D.preambleItems.map((item, i) => <li key={i} className="leading-relaxed">{item}</li>)}
+              </ul>
+              <p className="leading-relaxed text-base mb-8">{D.preambleFootnote}</p>
 
-          <h3 className="text-2xl font-normal text-brand-navy dark:text-foreground mt-8 mb-4 font-heading" style={H3}>{SH.whatAreCookies}</h3>
-          <p>{D.cookieDefinition}</p>
+              <h2 className="text-3xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family mt-12 mb-6 border-b-2 border-brand-red pb-3 inline-block" style={H2}>{SH.whatAreCookies}</h2>
+              <p className="leading-relaxed text-base">{D.cookieDefinition}</p>
 
-          <h3 className="text-2xl font-normal text-brand-navy dark:text-foreground mt-8 mb-4 font-heading" style={H3}>{SH.cookieTypes}</h3>
-          <ul className="list-disc pl-5 space-y-2">
-            {D.cookieTypes.map((ct, i) => (
-              <li key={i}><strong>{ct.type}:</strong> {ct.description}</li>
-            ))}
-          </ul>
+              <h2 className="text-3xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family mt-12 mb-6 border-b-2 border-brand-red pb-3 inline-block" style={H2}>{SH.cookieTypes}</h2>
+              <ul className="list-disc pl-6 space-y-3 text-base">
+                {D.cookieTypes.map((ct, i) => (
+                  <li key={i} className="leading-relaxed"><strong>{ct.type}:</strong> {ct.description}</li>
+                ))}
+              </ul>
 
-          <h3 className="text-2xl font-normal text-brand-navy dark:text-foreground mt-8 mb-4 font-heading" style={H3}>{SH.cookieManagement}</h3>
-          <p>{D.cookieManagement}</p>
+              <h2 className="text-3xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family mt-12 mb-6 border-b-2 border-brand-red pb-3 inline-block" style={H2}>{SH.cookieManagement}</h2>
+              <p className="leading-relaxed text-base">{D.cookieManagement}</p>
 
-          <h3 className="text-2xl font-normal text-brand-navy dark:text-foreground mt-8 mb-4 font-heading" style={H3}>{SH.dataSecurity}</h3>
-          <h4 className="text-xl font-normal text-brand-navy dark:text-foreground mt-6 mb-3 font-heading" style={H4}>{SH.securityMeasures}</h4>
-          <p>{D.dataSecurity}</p>
+              <h2 className="text-3xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family mt-12 mb-6 border-b-2 border-brand-red pb-3 inline-block" style={H2}>{SH.dataSecurity}</h2>
+              <h3 className="text-xl font-normal text-brand-navy dark:text-foreground mt-8 mb-4 has-brand-serif-font-family" style={H3}>{SH.securityMeasures}</h3>
+              <p className="leading-relaxed text-base">{D.dataSecurity}</p>
 
-          <h3 className="text-2xl font-normal text-brand-navy dark:text-foreground mt-8 mb-4 font-heading" style={H3}>{SH.userRights}</h3>
-          <h4 className="text-xl font-normal text-brand-navy dark:text-foreground mt-6 mb-3 font-heading" style={H4}>{SH.accessAndCorrection}</h4>
-          <ul className="list-disc pl-5 space-y-2"><li>{D.userRights.accessAndCorrection}</li></ul>
-          <h4 className="text-xl font-normal text-brand-navy dark:text-foreground mt-6 mb-3 font-heading" style={H4}>{SH.deletionAndObjection}</h4>
-          <ul className="list-disc pl-5 space-y-2"><li>{D.userRights.deletionAndObjection}</li></ul>
-          <h4 className="text-xl font-normal text-brand-navy dark:text-foreground mt-6 mb-3 font-heading" style={H4}>{SH.optOut}</h4>
-          <ul className="list-disc pl-5 space-y-2"><li>{D.userRights.optOut}</li></ul>
+              <h2 className="text-3xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family mt-12 mb-6 border-b-2 border-brand-red pb-3 inline-block" style={H2}>{SH.userRights}</h2>
+              
+              <h3 className="text-xl font-normal text-brand-navy dark:text-foreground mt-8 mb-4 has-brand-serif-font-family" style={H3}>{SH.accessAndCorrection}</h3>
+              <ul className="list-disc pl-6 space-y-3 text-base">
+                <li className="leading-relaxed">{D.userRights.accessAndCorrection}</li>
+              </ul>
+              
+              <h3 className="text-xl font-normal text-brand-navy dark:text-foreground mt-8 mb-4 has-brand-serif-font-family" style={H3}>{SH.deletionAndObjection}</h3>
+              <ul className="list-disc pl-6 space-y-3 text-base">
+                <li className="leading-relaxed">{D.userRights.deletionAndObjection}</li>
+              </ul>
+              
+              <h3 className="text-xl font-normal text-brand-navy dark:text-foreground mt-8 mb-4 has-brand-serif-font-family" style={H3}>{SH.optOut}</h3>
+              <ul className="list-disc pl-6 space-y-3 text-base">
+                <li className="leading-relaxed">{D.userRights.optOut}</li>
+              </ul>
 
-          <h3 className="text-2xl font-normal text-brand-navy dark:text-foreground mt-8 mb-4 font-heading" style={H3}>{SH.thirdPartyLinks}</h3>
-          <p>{D.thirdPartyLinks}</p>
+              <h2 className="text-3xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family mt-12 mb-6 border-b-2 border-brand-red pb-3 inline-block" style={H2}>{SH.thirdPartyLinks}</h2>
+              <p className="leading-relaxed text-base">{D.thirdPartyLinks}</p>
 
-          <h3 className="text-2xl font-normal text-brand-navy dark:text-foreground mt-8 mb-4 font-heading" style={H3}>{SH.policyChanges}</h3>
-          <p>{D.policyChanges}</p>
+              <h2 className="text-3xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family mt-12 mb-6 border-b-2 border-brand-red pb-3 inline-block" style={H2}>{SH.policyChanges}</h2>
+              <p className="leading-relaxed text-base">{D.policyChanges}</p>
 
-          <h3 className="text-2xl font-normal text-brand-navy dark:text-foreground mt-8 mb-4 font-heading" style={H3}>{SH.dataPurposes}</h3>
-          <p>{SH.dataPurposesIntro}</p>
+              <h2 className="text-3xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family mt-12 mb-6 border-b-2 border-brand-red pb-3 inline-block" style={H2}>{SH.dataPurposes}</h2>
+              <p className="leading-relaxed text-base mb-6">{SH.dataPurposesIntro}</p>
 
-          <div className="space-y-6 mt-6">
-            {D.dataPurposes.map((dp) => (
-              <div key={dp.number} className="bg-gray-50 dark:bg-card p-6 rounded-lg border border-gray-100 dark:border-border">
-                <h4 className="text-lg font-normal text-brand-navy dark:text-foreground mb-2 font-heading" style={H4}>{dp.number} {dp.heading}</h4>
-                <p>{SH.dataPurposeLabel}</p>
-                <ul className="list-disc pl-5 mb-2">
-                  {dp.data.map((d, i) => <li key={i}>{d}</li>)}
-                </ul>
-                <p><strong>{SH.retentionLabel}</strong> {dp.retention}</p>
+              <div className="space-y-6 mt-6 mb-12">
+                {D.dataPurposes.map((dp) => (
+                  <div key={dp.number} className="bg-gray-50 dark:bg-card p-6 rounded-lg border border-gray-200 dark:border-border">
+                    <h3 className="text-lg font-normal text-brand-navy dark:text-foreground mb-3 has-brand-serif-font-family" style={H3}>
+                      {dp.number} {dp.heading}
+                    </h3>
+                    <p className="text-sm font-bold text-gray-600 dark:text-gray-400 mb-2">{SH.dataPurposeLabel}</p>
+                    <ul className="list-disc pl-6 mb-4 space-y-2 text-base">
+                      {dp.data.map((d, i) => <li key={i} className="leading-relaxed">{d}</li>)}
+                    </ul>
+                    <p className="text-base"><strong>{SH.retentionLabel}</strong> {dp.retention}</p>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
 
-          <h3 className="text-2xl font-normal text-brand-navy dark:text-foreground mt-8 mb-4 font-heading" style={H3}>{SH.noDataProvided}</h3>
-          <p>{D.noDataProvided}</p>
+              <h2 className="text-3xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family mt-12 mb-6 border-b-2 border-brand-red pb-3 inline-block" style={H2}>{SH.noDataProvided}</h2>
+              <p className="leading-relaxed text-base">{D.noDataProvided}</p>
 
-          <h3 className="text-2xl font-normal text-brand-navy dark:text-foreground mt-8 mb-4 font-heading" style={H3}>{SH.cookies}</h3>
-          <p>{SH.cookiesText}</p>
+              <h2 className="text-3xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family mt-12 mb-6 border-b-2 border-brand-red pb-3 inline-block" style={H2}>{SH.cookies}</h2>
+              <p className="leading-relaxed text-base">{SH.cookiesText}</p>
 
-          <h3 className="text-2xl font-normal text-brand-navy dark:text-foreground mt-8 mb-4 font-heading" style={H3}>{SH.disclosure}</h3>
-          {D.disclosure.split('\n\n').map((p, i) => <p key={i}>{p}</p>)}
+              <h2 className="text-3xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family mt-12 mb-6 border-b-2 border-brand-red pb-3 inline-block" style={H2}>{SH.disclosure}</h2>
+              {D.disclosure.split('\n\n').map((p, i) => <p key={i} className="leading-relaxed text-base">{p}</p>)}
 
-          <h3 className="text-2xl font-normal text-brand-navy dark:text-foreground mt-8 mb-4 font-heading" style={H3}>{SH.security}</h3>
-          <p>{D.securityCommitment}</p>
+              <h2 className="text-3xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family mt-12 mb-6 border-b-2 border-brand-red pb-3 inline-block" style={H2}>{SH.security}</h2>
+              <p className="leading-relaxed text-base">{D.securityCommitment}</p>
 
-          <h3 className="text-2xl font-normal text-brand-navy dark:text-foreground mt-8 mb-4 font-heading" style={H3}>{SH.thirdPartyWebsites}</h3>
-          <p>{D.thirdPartyWebsites}</p>
+              <h2 className="text-3xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family mt-12 mb-6 border-b-2 border-brand-red pb-3 inline-block" style={H2}>{SH.thirdPartyWebsites}</h2>
+              <p className="leading-relaxed text-base">{D.thirdPartyWebsites}</p>
 
-          <h3 className="text-2xl font-normal text-brand-navy dark:text-foreground mt-8 mb-4 font-heading" style={H3}>{SH.amendments}</h3>
-          <p>{D.amendments}</p>
+              <h2 className="text-3xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family mt-12 mb-6 border-b-2 border-brand-red pb-3 inline-block" style={H2}>{SH.amendments}</h2>
+              <p className="leading-relaxed text-base">{D.amendments}</p>
 
-          <h3 className="text-2xl font-normal text-brand-navy dark:text-foreground mt-8 mb-4 font-heading" style={H3}>{SH.dataAccess}</h3>
-          <p>{D.dataAccess}</p>
-          <ul className="list-disc pl-5 space-y-2">
-            {D.dataAccessRights.map((r, i) => <li key={i}>{r}</li>)}
-          </ul>
-          <p className="mt-4">{D.dataAccessNote}</p>
+              <h2 className="text-3xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family mt-12 mb-6 border-b-2 border-brand-red pb-3 inline-block" style={H2}>{SH.dataAccess}</h2>
+              <p className="leading-relaxed text-base">{D.dataAccess}</p>
+              <ul className="list-disc pl-6 space-y-3 text-base">
+                {D.dataAccessRights.map((r, i) => <li key={i} className="leading-relaxed">{r}</li>)}
+              </ul>
+              <p className="mt-4 leading-relaxed text-base">{D.dataAccessNote}</p>
 
-          <h3 className="text-2xl font-normal text-brand-navy dark:text-foreground mt-8 mb-4 font-heading" style={H3}>{SH.complaint}</h3>
-          <p>{D.complaint.text}</p>
-          <div className="bg-gray-50 dark:bg-card p-6 rounded-lg border border-gray-200 dark:border-border">
-            <p>{D.complaint.address}</p>
-            <p><strong>{SH.complaintEmailLabel}</strong> <a href={`mailto:${D.complaint.email}`} className="text-text-link-red hover:underline">{D.complaint.email}</a></p>
-          </div>
+              <h2 className="text-3xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family mt-12 mb-6 border-b-2 border-brand-red pb-3 inline-block" style={H2}>{SH.complaint}</h2>
+              <p className="leading-relaxed text-base">{D.complaint.text}</p>
+              <div className="bg-gray-50 dark:bg-card p-6 rounded-lg border border-gray-200 dark:border-border">
+                <p className="leading-relaxed text-base">{D.complaint.address}</p>
+                <p className="leading-relaxed text-base"><strong>{SH.complaintEmailLabel}</strong> <a href={`mailto:${D.complaint.email}`} className="text-text-link-red hover:underline">{D.complaint.email}</a></p>
+              </div>
 
-          <h3 className="text-2xl font-normal text-brand-navy dark:text-foreground mt-8 mb-4 font-heading" style={H3}>{SH.children}</h3>
-          <p>{D.children}</p>
+              <h2 className="text-3xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family mt-12 mb-6 border-b-2 border-brand-red pb-3 inline-block" style={H2}>{SH.children}</h2>
+              <p className="leading-relaxed text-base">{D.children}</p>
 
-          <h3 className="text-2xl font-normal text-brand-navy dark:text-foreground mt-8 mb-4 font-heading" style={H3}>{SH.contactDetails}</h3>
-          <div className="bg-gray-50 dark:bg-card p-6 rounded-lg border border-gray-200 dark:border-border">
-            <p className="font-bold text-lg mb-2"><em>{D.contact.entity}</em></p>
-            <p className="mb-1"><strong>{CL.address}</strong> {D.contact.address}</p>
-            <p className="mb-1"><strong>{CL.advertising}</strong> {D.contact.advertising}</p>
-            <p className="mb-1"><strong>{CL.editorial}</strong> <a href={`mailto:${D.contact.editorial}`} className="text-text-link-red hover:underline">{D.contact.editorial}</a></p>
-            <p className="mb-1"><strong>{CL.subscribers}</strong> <a href={`mailto:${D.contact.subscribers}`} className="text-text-link-red hover:underline">{D.contact.subscribers}</a></p>
-            <p className="mb-0"><strong>{CL.ombudsman}</strong> <a href={`mailto:${D.contact.ombudsman}`} className="text-text-link-red hover:underline">{D.contact.ombudsman}</a></p>
+              <h2 className="text-3xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family mt-12 mb-6 border-b-2 border-brand-red pb-3 inline-block" style={H2}>{SH.contactDetails}</h2>
+              <div className="bg-gray-50 dark:bg-card p-6 rounded-lg border border-gray-200 dark:border-border">
+                <p className="font-bold text-lg mb-2"><em>{D.contact.entity}</em></p>
+                <p className="mb-1 leading-relaxed text-base"><strong>{CL.address}</strong> {D.contact.address}</p>
+                <p className="mb-1 leading-relaxed text-base"><strong>{CL.advertising}</strong> {D.contact.advertising}</p>
+                <p className="mb-1 leading-relaxed text-base"><strong>{CL.editorial}</strong> <a href={`mailto:${D.contact.editorial}`} className="text-text-link-red hover:underline">{D.contact.editorial}</a></p>
+                <p className="mb-1 leading-relaxed text-base"><strong>{CL.subscribers}</strong> <a href={`mailto:${D.contact.subscribers}`} className="text-text-link-red hover:underline">{D.contact.subscribers}</a></p>
+                <p className="mb-0 leading-relaxed text-base"><strong>{CL.ombudsman}</strong> <a href={`mailto:${D.contact.ombudsman}`} className="text-text-link-red hover:underline">{D.contact.ombudsman}</a></p>
+              </div>
+            </div>
           </div>
         </div>
         

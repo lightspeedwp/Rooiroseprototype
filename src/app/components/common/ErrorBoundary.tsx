@@ -1,6 +1,7 @@
-import React, { Component, ErrorInfo, ReactNode } from 'react';
-import { AlertTriangle, Home, RefreshCw } from 'lucide-react';
-import { Button } from '@/app/components/ui/button';
+import React, { Component, ReactNode, ErrorInfo } from 'react';
+import { Home, AlertTriangle } from 'lucide-react';
+import { Button } from '../ui/button';
+import { CONTACT_EMAILS, createMailtoLink } from '../../data/contactInfo';
 
 interface Props {
   children: ReactNode;
@@ -121,7 +122,7 @@ export class ErrorBoundary extends Component<Props, State> {
                 onClick={this.handleReset}
                 className="bg-brand-red hover:bg-brand-red-hover text-white px-6 py-3 rounded-md font-bold transition-colors inline-flex items-center justify-center gap-2"
               >
-                <RefreshCw size={18} />
+                <Home size={18} />
                 Probeer weer
               </Button>
               
@@ -137,8 +138,8 @@ export class ErrorBoundary extends Component<Props, State> {
 
             <p className="mt-8 text-sm text-gray-500">
               As die probleem voortduur, kontak ons gerus by{' '}
-              <a href="mailto:redaksie@rooirose.co.za" className="text-brand-red hover:underline">
-                redaksie@rooirose.co.za
+              <a href={createMailtoLink(CONTACT_EMAILS.editorial)} className="text-brand-red hover:underline">
+                {CONTACT_EMAILS.editorial}
               </a>
             </p>
           </div>

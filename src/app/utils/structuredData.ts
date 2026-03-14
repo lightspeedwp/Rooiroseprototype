@@ -1,3 +1,5 @@
+import { CONTACT_PHONES, EXTERNAL_SERVICE_EMAILS } from '../data/contactInfo';
+
 /**
  * Structured Data (JSON-LD) Utilities for rooi rose
  *
@@ -193,8 +195,8 @@ export function generateOrganizationSchema(): object {
       {
         '@type': 'ContactPoint',
         'contactType': 'subscription service',
-        'telephone': '+27-87-353-1291',
-        'email': 'diepapierintekening@onthedot.co.za',
+        'telephone': CONTACT_PHONES.delivery,
+        'email': EXTERNAL_SERVICE_EMAILS.delivery,
         'availableLanguage': ['af', 'en'],
       },
       {

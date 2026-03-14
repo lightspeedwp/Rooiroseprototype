@@ -164,11 +164,11 @@ export const SponsorArchivePage = () => {
               <span className="text-brand-red font-bold text-xs uppercase tracking-wide mb-1 block">
                 Geborgde inhoud
               </span>
-              <h1 className="text-3xl md:text-4xl font-normal text-brand-navy dark:text-foreground font-heading" style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}>
+              <h1 className="text-4xl md:text-5xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family mb-2" style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}>
                 {sponsorName}
               </h1>
               {sponsorDescription && (
-                <p className="text-sm text-gray-600 dark:text-gray-400 mt-1 max-w-lg">{sponsorDescription}</p>
+                <p className="text-base text-gray-600 dark:text-gray-400 mt-2 max-w-xl leading-relaxed">{sponsorDescription}</p>
               )}
             </div>
           </div>

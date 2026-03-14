@@ -25,7 +25,7 @@ export const Poll: React.FC<PollProps> = ({ question, options, labels }) => {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [hasVoted, setHasVoted] = useState(false);
 
-  const handleVote = () => {
+  const handleVote = (index: number) => {
     if (!selectedOption) {
       toast.error(labels.errorSelection);
       return;
@@ -53,7 +53,7 @@ export const Poll: React.FC<PollProps> = ({ question, options, labels }) => {
         
         {/* Options */}
         <div className="space-y-2.5 mb-5">
-          {options.map((option) => (
+          {options.map((option, index) => (
             <label
               key={option.id}
               className={`flex items-start gap-2 cursor-pointer group ${
@@ -63,12 +63,12 @@ export const Poll: React.FC<PollProps> = ({ question, options, labels }) => {
               <div className="flex items-center pt-0.5">
                 <input
                   type="radio"
-                  name="poll-option"
-                  value={option.id}
-                  checked={selectedOption === option.id}
-                  onChange={(e) => !hasVoted && setSelectedOption(e.target.value)}
+                  id={`poll-option-${index}`}
+                  name="poll"
+                  value={option}
+                  onChange={() => handleVote(index)}
                   disabled={hasVoted}
-                  className="w-5 h-5 text-brand-red border-gray-400 dark:border-gray-600 focus:ring-brand-red focus:ring-2"
+                  className="w-5 h-5 text-brand-red border-gray-400 dark:border-gray-600 focus-brand"
                 />
               </div>
               <span className="flex-1 text-base text-custom-contrast dark:text-custom-contrast has-brand-sans-font-family leading-normal group-hover:text-brand-red transition-colors">
@@ -82,7 +82,7 @@ export const Poll: React.FC<PollProps> = ({ question, options, labels }) => {
         <button
           onClick={handleVote}
           disabled={hasVoted}
-          className={`w-full py-2 px-6 rounded font-medium text-base text-white has-brand-sans-font-family transition-colors ${
+          className={`w-full py-2 px-6 rounded font-medium text-base text-white has-brand-sans-font-family transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring focus-visible:ring-offset-2 ${
             hasVoted
               ? 'bg-gray-400 dark:bg-gray-600 cursor-not-allowed'
               : 'bg-custom-contrast dark:bg-custom-base-3 hover:bg-black dark:hover:bg-input'

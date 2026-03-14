@@ -1,7 +1,26 @@
 # Task List
 
-**Last updated**: 2026-03-04  
-**Status**: 1 active task list (Legal Pages) — Theme Completeness archived
+**Last updated**: 2026-03-14  
+**Status**: 1 active task list — Shop & Advertising Implementation ✅ COMPLETE (11/11 tasks, 100%), Legal Pages (0/10, blocked)
+
+---
+
+## 2026-03-14 — Shop & Advertising Implementation
+
+**Task list**: `/tasks/CURRENT-TASKS.md`  
+**Status**: `[x]` **COMPLETE** — 11/11 tasks complete (100%)  
+**Priority**: P1
+
+**Progress**:
+- ✅ Phase 1: Shop System (3/3 complete, 100%)
+  - Product data, shop page, routes
+- ✅ Phase 2: Advertising Pages (6/6 complete, 100%)
+  - ✅ Classifieds, Display, Leaflets, Sponsored Content, Sponsorships, Supplements pages rebranded
+- ✅ Phase 3: Subscription Enhancement (2/2 complete, 100%)
+  - ✅ E-Edition subscription enhancement (comparison table, digital benefits, device showcase, regional variants)
+  - ✅ Print Delivery subscription enhancement (tactile benefits, comparison table, delivery zones)
+
+**Completed**: 2026-03-14
 
 ---
 

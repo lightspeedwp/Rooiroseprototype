@@ -19,13 +19,19 @@ import { CompetitionFAQ } from '../components/competition/CompetitionFAQ';
 import { CompetitionSidebar } from '../components/competition/CompetitionSidebar';
 import { CompetitionRelated } from '../components/competition/CompetitionRelated';
 
+/* ── rooi rose Magazine Single Competition Page ──────────────────────────────
+ * Editorial design: Full-bleed hero, magazine article layout
+ * Typography: Playfair Display SC headings
+ * Layout: Hero image + countdown + entry form + sidebar
+ * ────────────────────────────────────────────────────────────── */
+
 export const CompetitionSinglePage = () => {
   const { slug } = useParams<{ slug: string }>();
 
   const competition = slug ? getCompetitionBySlug(slug) : undefined;
 
   if (!competition) {
-    return <Navigate to="/kompetisies" replace />;
+    return <Navigate to="/wen" replace />;
   }
 
   const isActive = competition.status === 'active';
@@ -39,7 +45,7 @@ export const CompetitionSinglePage = () => {
   );
 
   return (
-    <div className="bg-gray-50 dark:bg-background min-h-screen pb-0">
+    <div className="bg-white dark:bg-background min-h-screen">
       <SEO
         title={competition.metaTitle}
         description={competition.metaDescription}
@@ -49,32 +55,39 @@ export const CompetitionSinglePage = () => {
       {/* Leaderboard Ad */}
       <LeaderboardAd section="kompetisies" />
 
+      {/* Full-bleed Hero Image */}
+      <div className="relative w-full h-[50vh] lg:h-[70vh] overflow-hidden">
+        <ImageWithFallback
+          src={competition.imageUrl}
+          alt={competition.title}
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+        
+        {/* Hero Content - Centered */}
+        <div className="absolute inset-0 flex items-end">
+          <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-12 pb-12 lg:pb-16">
+            <CompetitionStatusBadge status={competition.status} size="lg" className="mb-4" />
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-4 has-brand-serif-font-family uppercase tracking-wider max-w-4xl" style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}>
+              {competition.title}
+            </h1>
+            <p className="text-lg lg:text-xl text-white/90 max-w-3xl">
+              {competition.description}
+            </p>
+          </div>
+        </div>
+      </div>
+
       <PageContainer
         breadcrumbs={[
-          { label: 'Kompetisies', href: '/kompetisies' },
+          { label: 'Wen', href: '/wen' },
           { label: competition.title },
         ]}
       >
-        {/* Hero Image */}
-        <div className="relative rounded-xl overflow-hidden mb-8 aspect-[16/7]">
-          <ImageWithFallback
-            src={competition.imageUrl}
-            alt={competition.title}
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-          <div className="absolute bottom-0 left-0 p-6">
-            <CompetitionStatusBadge status={competition.status} size="lg" className="mb-3" />
-            <h1 className="text-3xl md:text-4xl font-normal text-white font-heading leading-tight" style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}>
-              {competition.title}
-            </h1>
-          </div>
-        </div>
-
         {/* Content + Sidebar */}
-        <div className="flex flex-col lg:flex-row gap-8">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 py-12">
           {/* Main Content */}
-          <div className="flex-1 min-w-0">
+          <div className="flex-1 min-w-0 space-y-10">
             <CompetitionKeyDetails competition={competition} />
             
             {isActive && <CompetitionCountdown closingDate={competition.closingDate} />}
@@ -92,7 +105,9 @@ export const CompetitionSinglePage = () => {
             <CompetitionFAQ competition={competition} />
             
             {/* Social Share */}
-            <SocialShare title={competition.title} description={competition.description} />
+            <div className="pt-8 border-t border-gray-200 dark:border-border">
+              <SocialShare title={competition.title} description={competition.description} />
+            </div>
           </div>
 
           {/* Sidebar */}
@@ -105,8 +120,10 @@ export const CompetitionSinglePage = () => {
         </div>
       </PageContainer>
 
-      {/* Meer Kompetisies strip */}
-      <CompetitionRelated relatedCompetitions={relatedCompetitions} />
+      {/* Related Competitions Strip */}
+      <div className="bg-gray-50 dark:bg-card border-t border-gray-200 dark:border-border py-16">
+        <CompetitionRelated relatedCompetitions={relatedCompetitions} />
+      </div>
 
       <StickyMobileFooter section="kompetisies" />
     </div>

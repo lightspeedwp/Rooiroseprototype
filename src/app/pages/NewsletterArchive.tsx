@@ -21,31 +21,31 @@ export const NewsletterArchivePage = () => {
       <PageContainer breadcrumbs={[{ label: 'Nuusbrief-argief' }]}>
         <div className="pt-8 pb-12">
           {/* Page Header */}
-          <header className="mb-10">
-            <h1 className="text-4xl font-normal text-brand-navy dark:text-foreground font-heading mb-4" style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}>
+          <header className="mb-12">
+            <h1 className="text-5xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family mb-4" style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}>
               Nuusbrief-argief
             </h1>
-            <p className="text-gray-600 dark:text-gray-400 text-lg max-w-3xl">
+            <p className="text-gray-600 dark:text-gray-400 text-lg max-w-3xl leading-relaxed">
               Blaai deur vorige uitgawes van ons nuusbriewe. Ons stuur twee keer per week — Dinsdae
               ('n Leefstyl & Nuus-fokus) en Vrydae (die volledige e-uitgawe).
             </p>
           </header>
 
           {/* CTA Banner */}
-          <div className="bg-brand-navy rounded-xl p-6 md:p-8 mb-10 flex flex-col md:flex-row items-center gap-6">
-            <div className="w-14 h-14 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
-              <Mail size={28} className="text-white" />
+          <div className="bg-brand-red rounded-xl p-8 md:p-10 mb-12 flex flex-col md:flex-row items-center gap-6 shadow-lg">
+            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+              <Mail size={32} className="text-brand-red" />
             </div>
             <div className="flex-1 text-center md:text-left">
-              <h2 className="text-white font-normal text-xl font-heading mb-1" style={{ fontVariationSettings: "var(--fvs-h2)", lineHeight: 'var(--lh-h2)', letterSpacing: 'var(--ls-h2)', fontSize: 'var(--text-h2)' }}>
+              <h2 className="text-white font-normal text-2xl has-brand-serif-font-family mb-2" style={{ fontVariationSettings: "var(--fvs-h2)", lineHeight: 'var(--lh-h2)', letterSpacing: 'var(--ls-h2)', fontSize: 'var(--text-h2)' }}>
                 Nog nie ingeteken nie?
               </h2>
-              <p className="text-gray-300 text-sm">
-                Ontvang <em>rooi rose</em> se nuusbrief gratis in jou inkassie — elke Dinsdag en Vrydag.
+              <p className="text-white/90 text-base">
+                Ontvang <em className="font-bold not-italic">rooi rose</em> se nuusbrief gratis in jou inkassie — elke Dinsdag en Vrydag.
               </p>
             </div>
             <Link to="/nuusbrief-inteken">
-              <Button className="bg-primary hover:bg-primary/90 text-white font-bold px-6 py-3 rounded-lg whitespace-nowrap">
+              <Button className="bg-white hover:bg-gray-100 text-brand-red font-bold h-12 px-8 whitespace-nowrap shadow-md">
                 Teken nou in
               </Button>
             </Link>

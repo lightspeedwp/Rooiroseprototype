@@ -5,6 +5,8 @@
  * Last updated: 2026-03-03
  */
 
+import { CONTACT_EMAILS } from '../contactInfo';
+
 export const POLICY_PAIA = {
   title: 'PAIA Handleiding',
   subtitle: 'Wet op Bevordering van Toegang tot Inligting (Wet 2 van 2000)',
@@ -95,7 +97,7 @@ export const POLICY_PAIA = {
   informationOfficer: {
     heading: 'Kontakbesonderhede van Inligtingsbeampte',
     name: 'Die Inligtingsbeampte',
-    email: 'paia@diepapier.co.za',
+    email: CONTACT_EMAILS.paia,
     nameLabel: 'Naam:',
     emailLabel: 'E-pos:',
   },

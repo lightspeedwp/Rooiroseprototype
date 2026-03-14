@@ -17,12 +17,12 @@ export const NewsletterConfirmationPage = () => {
           <div className="max-w-xl mx-auto">
             <div className="bg-white dark:bg-card rounded-lg shadow-sm dark:shadow-[var(--shadow-dark-100)] border border-gray-100 dark:border-border overflow-hidden">
               {/* Header */}
-              <div className="bg-brand-navy dark:bg-brand-navy p-8 text-center">
-                <MailCheck size={56} className="mx-auto mb-4 text-green-400" />
-                <h1 className="text-3xl font-normal text-white font-heading mb-2" style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}>
+              <div className="bg-gradient-to-br from-brand-red to-red-600 dark:bg-brand-red p-10 text-center">
+                <MailCheck size={64} className="mx-auto mb-4 text-white" />
+                <h1 className="text-4xl font-normal text-white has-brand-serif-font-family mb-3" style={{ fontVariationSettings: "var(--fvs-h1)", lineHeight: 'var(--lh-h1)', letterSpacing: 'var(--ls-h1)' }}>
                   Byna daar!
                 </h1>
-                <p className="text-gray-300">
+                <p className="text-white/90 text-lg">
                   Bevestig jou inskrywing om ons nuusbrief te ontvang.
                 </p>
               </div>
@@ -30,11 +30,11 @@ export const NewsletterConfirmationPage = () => {
               {/* Content */}
               <div className="p-8 md:p-10">
                 {/* Confirmation message */}
-                <div className="bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-900/50 rounded-lg p-6 mb-8">
+                <div className="bg-blue-50 dark:bg-blue-950/30 border-l-4 border-blue-500 rounded-lg p-6 mb-8">
                   <div className="flex gap-4 items-start">
-                    <Inbox size={24} className="text-blue-600 shrink-0 mt-0.5" />
+                    <Inbox size={24} className="text-blue-600 dark:text-blue-400 shrink-0 mt-0.5" />
                     <div>
-                      <h2 className="font-normal text-blue-900 dark:text-blue-300 mb-2 font-heading" style={{ fontVariationSettings: "var(--fvs-h2)", lineHeight: 'var(--lh-h2)', letterSpacing: 'var(--ls-h2)' }}>Gaan jou e-pos na</h2>
+                      <h2 className="font-normal text-blue-900 dark:text-blue-300 mb-2 text-lg has-brand-serif-font-family" style={{ fontVariationSettings: "var(--fvs-h2)", lineHeight: 'var(--lh-h2)', letterSpacing: 'var(--ls-h2)' }}>Gaan jou e-pos na</h2>
                       <p className="text-blue-800 dark:text-blue-300 text-sm leading-relaxed">
                         Ons het 'n bevestigings-e-pos na jou gestuur. Klik op die skakel in die e-pos om jou inskrywing te bevestig en ons nuusbrief te begin ontvang.
                       </p>
@@ -43,28 +43,28 @@ export const NewsletterConfirmationPage = () => {
                 </div>
 
                 {/* Steps */}
-                <h3 className="font-normal text-brand-navy dark:text-foreground mb-4 text-sm uppercase tracking-wider font-heading" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)' }}>
+                <h3 className="font-normal text-brand-navy dark:text-foreground mb-5 text-sm uppercase tracking-wider has-brand-serif-font-family" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)' }}>
                   Stappe om te voltooi:
                 </h3>
-                <ol className="space-y-4 mb-8">
+                <ol className="space-y-5 mb-8">
                   <li className="flex gap-4 items-start">
-                    <span className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center shrink-0 text-sm font-bold">1</span>
+                    <span className="w-10 h-10 rounded-full bg-brand-red text-white flex items-center justify-center shrink-0 font-bold shadow-sm">1</span>
                     <div>
-                      <p className="font-medium text-brand-navy dark:text-foreground">Maak jou e-posbus oop</p>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">Soek vir 'n e-pos van <em>rooi rose</em>.</p>
+                      <p className="font-medium text-brand-navy dark:text-foreground mb-1">Maak jou e-posbus oop</p>
+                      <p className="text-sm text-gray-500 dark:text-gray-400">Soek vir 'n e-pos van <em className="font-bold not-italic">rooi rose</em>.</p>
                     </div>
                   </li>
                   <li className="flex gap-4 items-start">
-                    <span className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center shrink-0 text-sm font-bold">2</span>
+                    <span className="w-10 h-10 rounded-full bg-brand-red text-white flex items-center justify-center shrink-0 font-bold shadow-sm">2</span>
                     <div>
-                      <p className="font-medium text-brand-navy dark:text-foreground">Klik op die bevestigingskakel</p>
+                      <p className="font-medium text-brand-navy dark:text-foreground mb-1">Klik op die bevestigingskakel</p>
                       <p className="text-sm text-gray-500 dark:text-gray-400">Die skakel in die e-pos sal jou inskrywing bevestig.</p>
                     </div>
                   </li>
                   <li className="flex gap-4 items-start">
-                    <span className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center shrink-0 text-sm font-bold">3</span>
+                    <span className="w-10 h-10 rounded-full bg-brand-red text-white flex items-center justify-center shrink-0 font-bold shadow-sm">3</span>
                     <div>
-                      <p className="font-medium text-brand-navy dark:text-foreground">Geniet ons nuusbrief!</p>
+                      <p className="font-medium text-brand-navy dark:text-foreground mb-1">Geniet ons nuusbrief!</p>
                       <p className="text-sm text-gray-500 dark:text-gray-400">Jy sal ons volgende nuusbrief direk in jou inkassie ontvang.</p>
                     </div>
                   </li>

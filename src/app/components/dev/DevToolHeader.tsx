@@ -51,7 +51,7 @@ export const DevToolHeader: React.FC<DevToolHeaderProps> = ({
           {/* Burger */}
           <button
             onClick={onMenuOpen}
-            className="p-1.5 -ml-1.5 rounded-lg text-gray-500 dark:text-white/50 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10 transition-colors"
+            className="p-1.5 -ml-1.5 rounded-lg text-gray-500 dark:text-white/50 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring focus-visible:ring-offset-2"
             aria-label={locale === 'af' ? 'Maak spyskaart oop' : 'Open menu'}
           >
             <Menu size={18} />
@@ -60,7 +60,7 @@ export const DevToolHeader: React.FC<DevToolHeaderProps> = ({
           {/* Logo */}
           <Link
             to="/ontwikkelaar"
-            className="flex items-center gap-2.5 group"
+            className="flex items-center gap-2.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring focus-visible:ring-offset-2 rounded-lg"
           >
             <div className="w-7 h-7 rounded-lg bg-brand-red flex items-center justify-center transition-transform group-hover:scale-105">
               <Wrench size={14} className="text-white" />

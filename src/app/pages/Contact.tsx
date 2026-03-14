@@ -12,6 +12,12 @@ import { CONTACT_HERO, CONTACT_PAGE_CONTENT, DEPARTMENTS, OFFICE_DETAILS, OFFICE
 import { HERO_IMAGES } from '../data/heroImages';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 
+/* ── rooi rose Magazine Contact Page ──────────────────────────────
+ * Editorial design: Full-width hero, department cards, editorial form
+ * Typography: Playfair Display SC headings
+ * Layout: Hero + department cards + form + office details
+ * ────────────────────────────────────────────────────────────── */
+
 export const ContactPage = () => {
   const navigate = useNavigate();
 
@@ -20,63 +26,82 @@ export const ContactPage = () => {
       <SEO
         title="Kontak ons"
         description="Kontak rooi rose - ons adres, e-posadresse en kontakvorm."
-        keywords="kontak, adres, e-pos, navrae, die papier"
+        keywords="kontak, adres, e-pos, navrae, rooi rose, tydskrif"
       />
       <PageContainer breadcrumbs={[{ label: 'Kontak ons' }]} noPadding />
 
-      <ContentHero 
-        title={CONTACT_HERO.title}
-        subtitle={CONTACT_HERO.subtitle}
-        image={CONTACT_HERO.image}
-      />
-
-      {/* Department Contact Cards */}
-      <div className="alignwide py-12">
-        <h2
-          className="text-2xl font-normal text-brand-navy dark:text-foreground mb-8 font-heading text-center"
-          style={{ fontVariationSettings: "var(--fvs-h2)", lineHeight: 'var(--lh-h2)', letterSpacing: 'var(--ls-h2)' }}
-        >
-          {CONTACT_PAGE_CONTENT.help_title}
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-          {DEPARTMENTS.map((dept) => (
-            <div key={dept.title} className="bg-white dark:bg-card border border-gray-200 dark:border-border rounded-lg p-6 shadow-sm dark:shadow-[var(--shadow-dark-200)] hover:shadow-md transition-shadow group hover:border-primary dark:hover:border-primary">
-              <div className="bg-primary w-12 h-12 rounded-lg flex items-center justify-center mb-4 text-white">
-                <dept.icon size={24} />
-              </div>
-              <h3 className="font-normal text-lg mb-2 text-brand-navy dark:text-foreground font-heading" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)' }}>{dept.title}</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 min-h-[40px]">{dept.description}</p>
-              <div className="space-y-2">
-                {dept.links.map((link, idx) => (
-                  <a 
-                    key={idx}
-                    href={link.href} 
-                    className="text-text-link-red dark:text-text-link-red hover:underline text-sm font-medium break-all flex items-center gap-2"
-                  >
-                    {link.type === 'email' ? <Mail size={14} /> : <Phone size={14} />}
-                    {link.label}
-                  </a>
-                ))}
-              </div>
-            </div>
-          ))}
+      {/* Full-Width Editorial Hero */}
+      <div className="relative h-[50vh] md:h-[60vh] overflow-hidden mb-16">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60"></div>
+        <img 
+          src={CONTACT_HERO.image}
+          alt={CONTACT_HERO.title}
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center max-w-4xl px-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-4 has-brand-serif-font-family uppercase tracking-wider" style={{ letterSpacing: '0.15em' }}>
+              {CONTACT_HERO.title}
+            </h1>
+            <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto">
+              {CONTACT_HERO.subtitle}
+            </p>
+          </div>
         </div>
       </div>
 
+      {/* Department Contact Cards */}
+      <PageContainer>
+        <div className="mb-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family uppercase tracking-wider mb-4" style={{ letterSpacing: '0.15em' }}>
+              {CONTACT_PAGE_CONTENT.help_title}
+            </h2>
+            <div className="w-24 h-1 bg-brand-red mx-auto"></div>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {DEPARTMENTS.map((dept) => (
+              <div key={dept.title} className="bg-white dark:bg-card border border-gray-200 dark:border-border rounded-lg p-8 shadow-sm dark:shadow-[var(--shadow-dark-200)] hover:shadow-lg hover:border-brand-red dark:hover:border-brand-red transition-all group">
+                <div className="bg-brand-red w-14 h-14 rounded-lg flex items-center justify-center mb-5 text-white group-hover:scale-110 transition-transform">
+                  <dept.icon size={28} />
+                </div>
+                <h3 className="font-normal text-xl mb-3 text-brand-navy dark:text-foreground has-brand-serif-font-family">{dept.title}</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-5 min-h-[40px] leading-relaxed">{dept.description}</p>
+                <div className="space-y-2">
+                  {dept.links.map((link, idx) => (
+                    <a 
+                      key={idx}
+                      href={link.href} 
+                      className="text-text-link-red dark:text-text-link-red hover:underline text-sm font-medium break-all flex items-center gap-2"
+                    >
+                      {link.type === 'email' ? <Mail size={14} /> : <Phone size={14} />}
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </PageContainer>
+
       {/* Main Contact Section */}
-      <div className="alignwide pb-16">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <PageContainer>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
           
           {/* Contact Form Section */}
           <div className="lg:col-span-2">
-            <h2 className="text-3xl font-normal text-brand-navy dark:text-foreground mb-6 font-heading"
-              style={{ fontVariationSettings: "var(--fvs-h2)", letterSpacing: 'var(--ls-h2)' }}>
-              {CONTACT_PAGE_CONTENT.form_title}
-            </h2>
-            <p className="text-gray-600 dark:text-gray-400 mb-8">
-              {CONTACT_PAGE_CONTENT.form_description}
-            </p>
-            <div className="bg-white dark:bg-card p-6 rounded-lg border border-gray-100 dark:border-border shadow-sm dark:shadow-[var(--shadow-dark-200)]">
+            <div className="mb-8">
+              <h2 className="text-3xl md:text-4xl font-normal text-brand-navy dark:text-foreground has-brand-serif-font-family uppercase tracking-wider mb-4" style={{ letterSpacing: '0.15em' }}>
+                {CONTACT_PAGE_CONTENT.form_title}
+              </h2>
+              <div className="w-24 h-1 bg-brand-red mb-6"></div>
+              <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
+                {CONTACT_PAGE_CONTENT.form_description}
+              </p>
+            </div>
+            <div className="bg-white dark:bg-card p-8 rounded-lg border border-gray-200 dark:border-border shadow-sm dark:shadow-[var(--shadow-dark-200)]">
               <ContactForm onSuccess={() => navigate('/dankie-vir-kontak')} />
             </div>
           </div>
@@ -160,7 +185,7 @@ export const ContactPage = () => {
           </div>
 
         </div>
-      </div>
+      </PageContainer>
 
       {/* Social Proof */}
       <section className="bg-gray-50 dark:bg-background border-t border-gray-100 dark:border-border">

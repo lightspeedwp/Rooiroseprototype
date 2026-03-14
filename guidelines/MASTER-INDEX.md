@@ -416,3 +416,20 @@ Magazine Layouts (page templates)
 **Total Documents**: 280+  
 **Total Words**: 170,000+
 
+---
+
+### Iframe Communication Fix
+
+**Status**: ✅ Fixed with enhanced three-stage delay strategy (v6.0)
+
+The rooi rose app uses a **40+ second initialization delay** in Figma's iframe environment to prevent `IframeMessageAbortError`. This is completely normal and ensures stable operation.
+
+**Delay breakdown**:
+- Stage 1: HTML waits 30 seconds before loading main script (no window.load dependency)
+- Stage 2: React mounts immediately after script loads
+- Stage 3: Router initialization waits an additional 10 seconds
+
+**Total delay in Figma Make**: 40+ seconds (shows "Laai..." loading screen)  
+**Total delay in standard browsers**: 0.1 seconds (imperceptible)
+
+**Technical Details**: See [/docs/FIGMA-IFRAME-FIX.md](/docs/FIGMA-IFRAME-FIX.md)

@@ -25,8 +25,8 @@ export const SupplementsPage = () => {
       />
 
       <ContentHero
-        title="Bylaes"
-        subtitle="Vertoon jou handelsmerk met 'n toegewyde advertensiebylaag — professioneel ontwerp, gedruk en by winkels regoor die land versprei."
+        title="Spesiale Uitgawes"
+        subtitle="Vertoon jou handelsmerk met 'n toegewyde premium tydskrif-uitgawe — professioneel ontwerp, gedruk en by winkels regoor die land versprei."
         image={HERO_IMAGES.advertise}
         height="small"
       />
@@ -35,9 +35,9 @@ export const SupplementsPage = () => {
         {/* Intro */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-            'n Bylaag in <em>rooi rose</em> is the uiteindelike manier om jou handelsmerk, produk of geleentheid 
+            'n Spesiale uitgawe in <em>rooi rose</em> is die uiteindelike manier om jou handelsmerk, produk of geleentheid 
             op 'n omvattende en indrukwekkende wyse te vertoon. Dit is meer as net 'n advertensie — 
-            dit is 'n volwaardige, maatgemaakte publikasie wat prominent in ons gedrukte koerant verskyn.
+            dit is 'n volwaardige, maatgemaakte premium publikasie wat prominent saam met ons hooftydskrif verskyn.
           </p>
         </div>
 
@@ -212,7 +212,7 @@ export const SupplementsPage = () => {
           </Link>
         </div>
       </div>
-      <PageFAQSection items={SUPPLEMENTS_FAQS} description="Vrae oor koerantbylaes by rooi rose." />
+      <PageFAQSection items={SUPPLEMENTS_FAQS} description="Vrae oor spesiale tydskrif-uitgawes by rooi rose." />
     </div>
   );
 };

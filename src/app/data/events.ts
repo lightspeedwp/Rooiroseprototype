@@ -1,3 +1,5 @@
+import { CONTACT_EMAILS } from './contactInfo';
+
 /**
  * Event data — *rooi rose*
  *
@@ -218,7 +220,7 @@ export const EVENTS: Event[] = [
     location: 'rooi rose Kantore, Kaapstad',
     category: 'Plaaslik',
     description: "Weeklikse geselligheid vir senior burgers. Tee, koek, speletjies en goeie geselskap. Vervoer kan gereël word.",
-    contactEmail: "info@rooirose.co.za",
+    contactEmail: CONTACT_EMAILS.general,
     imageUrl: "https://images.unsplash.com/photo-1628155930542-4d7499648939?auto=format&fit=crop&q=80&w=800",
     eventDate: "2026-03-04",
     organiser: "rooi rose",
