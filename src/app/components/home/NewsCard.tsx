@@ -94,7 +94,7 @@ export const NewsCard = React.memo(({ article, variant = 'default' }: NewsCardPr
   // ── Compact variant — magazine card style ─────────────────────────
   if (variant === 'compact') {
     return (
-      <article className="group h-full flex flex-col bg-[var(--base)] transition-all duration-300">
+      <article className="group h-full flex flex-col bg-[var(--base)] transition-all duration-300 relative">
         {article.imageUrl && (
           <Link to={`/artikel/${articleSlug}`} className="block mb-3 relative overflow-hidden aspect-[3/2]">
             <ImageWithFallback 
@@ -152,7 +152,7 @@ export const NewsCard = React.memo(({ article, variant = 'default' }: NewsCardPr
   // ── Featured variant — larger, editorial prominence ─────────────────────────
   if (variant === 'featured') {
     return (
-      <article className="group h-full flex flex-col bg-[var(--base)]">
+      <article className="group h-full flex flex-col bg-[var(--base)] relative">
         {article.imageUrl && (
           <Link to={`/artikel/${articleSlug}`} className="block mb-4 relative overflow-hidden aspect-[3/2]">
             <ImageWithFallback 
@@ -260,7 +260,7 @@ export const NewsCard = React.memo(({ article, variant = 'default' }: NewsCardPr
 
   // ── Default variant — clean editorial card ────────────────────────
   return (
-    <article className="group border-b border-[var(--muted)] pb-6 last:border-b-0 last:pb-0 h-full flex flex-col">
+    <article className="group border-b border-[var(--muted)] pb-6 last:border-b-0 last:pb-0 h-full flex flex-col relative">
       {article.imageUrl && (
         <Link to={`/artikel/${articleSlug}`} className="block mb-3 relative overflow-hidden aspect-[3/2]">
           <ImageWithFallback 

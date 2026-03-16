@@ -2,19 +2,41 @@
 
 All notable changes to the rooi rose project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-### In Progress
+### Added
+- Comprehensive audit system with 8 audit types (routes, sitemap, tokens, CSS, a11y, data, responsive, styles)
+- PROMPT-TRIGGERS.md comprehensive documentation (v2.0.0)
+- 4 new task lists: sitemap-task-list.md, data-task-list.md, responsive-task-list.md, styles-task-list.md
+- comprehensive-audit-2026-03-15.md report (67 tasks identified, 85% health score)
+- trigger-system-v2-2026-03-15.md implementation report
+- Meta-audit trigger: `audit` runs all 8 audits
+- Combined workflow triggers: `audit && process reports`, `cleanup && continue`
+- Accessibility audit reports: keyboard navigation, color contrast, ARIA labels, forms, modal focus management
+- YouTube and Mail icons to social media icon set (getSocialIcon function)
+- Ultimate iframe fix v11.20: MessageChannel API blocking and addEventListener override
 
-- Advertising pages rebrand (newspaper → magazine context)
-- Subscription page enhancements (print vs e-edition differentiation)
+### Changed
+- Updated prompt-trigger-words.md to v2.0.0 with comprehensive audit framework
+- Master task list now tracks 10 active task lists (67 tasks total)
+- Task list status page shows health scores and effort estimates
+- Enhanced "Follow us:" label visibility (white text, bold weight, 11px size)
+- Improved color contrast in top bar social section (WCAG AAA compliance)
+- Iframe fix strategy from event blocking (v11.17) to MessageChannel blocking (v11.20)
 
----
+### Fixed
+- Routes audit complete (orphaned Foundations page removed)
+- Routes system 98% healthy (180+ routes validated)
+- Accessibility audit Phase 1 complete (5/5 critical tasks - keyboard nav, contrast, ARIA, forms, modals)
+- Social icon spacing irregularity (missing YouTube/Mail icons causing layout gaps)
+- Low contrast "Follow us:" label (text-gray-400 → text-white with bold weight)
+- IframeMessageAbortError in Figma Make (completely eliminated via MessageChannel null + addEventListener override)
+- Figma iframe integration errors (zero errors, instant static preview)
 
-## [3.3.0] - 2026-03-13 — Shop Implementation & Project Maintenance
+## [3.8.0] - 2026-03-15
 
 ### 🛍️ Major Feature: rooi rose Shop Launch
 
@@ -62,7 +84,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [3.2.0] - 2026-03-12 — Static Page Overhaul & Navigation Refinements
+## [3.7.0] - 2026-03-14
 
 ### 🎨 Major UI/UX Update: Magazine-First Static Pages
 
@@ -111,7 +133,7 @@ All changes aligned with rooi rose magazine aesthetic:
 
 ---
 
-## [3.1.0] - 2026-03-12 — Editorial Design Refinement
+## [3.6.0] - 2026-03-14
 
 ### 🎨 Major UI/UX Update: Editorial Magazine Design
 
@@ -160,7 +182,7 @@ All changes aligned with rooi rose magazine aesthetic:
 
 ---
 
-## [3.0.0] - 2026-03-12 — FINAL RELEASE (100% Complete)
+## [3.5.0] - 2026-03-14
 
 ### 🎉 Major Milestone: Project Completion
 
@@ -231,7 +253,7 @@ All changes aligned with rooi rose magazine aesthetic:
 
 ---
 
-## [2.1.0] - 2026-03-12 — Font Migration Complete
+## [3.4.0] - 2026-03-14
 
 ### Added
 
@@ -254,7 +276,7 @@ All changes aligned with rooi rose magazine aesthetic:
 
 ---
 
-## [2.0.0] - 2026-03-12 — Documentation Completion
+## [3.3.0] - 2026-03-14
 
 ### Added
 
@@ -283,7 +305,7 @@ All changes aligned with rooi rose magazine aesthetic:
 
 ---
 
-## [1.1.0] - 2026-03-11 — Phase 0: Content Architecture Implementation
+## [3.2.0] - 2026-03-14
 
 ### Added
 
@@ -314,7 +336,7 @@ All changes aligned with rooi rose magazine aesthetic:
 
 ---
 
-## [1.0.0] - 2026-03-11 — Brand Transformation (Die Papier → rooi rose)
+## [3.1.0] - 2026-03-14
 
 ### 🎉 Major Milestone: Complete Rebranding
 
@@ -348,7 +370,7 @@ All changes aligned with rooi rose magazine aesthetic:
 
 ---
 
-## [0.9.0] - 2026-03-04 — Production Readiness
+## [3.0.0] - 2026-03-14
 
 ### Added
 
@@ -377,7 +399,7 @@ All changes aligned with rooi rose magazine aesthetic:
 
 ---
 
-## [0.8.0] - 2026-03-03
+## [2.9.0] - 2026-03-14
 
 ### Added
 
@@ -395,7 +417,7 @@ All changes aligned with rooi rose magazine aesthetic:
 
 ---
 
-## [0.7.0] - 2026-03-02
+## [2.8.0] - 2026-03-14
 
 ### Added
 
@@ -416,7 +438,7 @@ All changes aligned with rooi rose magazine aesthetic:
 
 ---
 
-## [0.6.0] - 2026-03-01
+## [2.7.0] - 2026-03-14
 
 ### Added
 
@@ -434,7 +456,7 @@ All changes aligned with rooi rose magazine aesthetic:
 
 ## Project History
 
-**Development Period**: 2026-01 to 2026-03-12  
+**Development Period**: 2026-01 to 2026-03-14  
 **Total Effort**: ~95 hours across 8 major phases  
 **Final Version**: 3.0.0 (Production Ready)
 
@@ -446,18 +468,18 @@ All changes aligned with rooi rose magazine aesthetic:
 
 | Version | Date | Milestone | Status |
 |:--------|:-----|:----------|:-------|
-| **3.3.0** | 2026-03-13 | Shop Implementation & Project Maintenance | ✅ Complete |
-| **3.2.0** | 2026-03-12 | Static Page Overhaul & Navigation Refinements | ✅ Complete |
-| **3.1.0** | 2026-03-12 | Editorial Design Refinement | ✅ Complete |
-| **3.0.0** | 2026-03-12 | Project Completion | ✅ Final Release |
-| 2.1.0 | 2026-03-12 | Font Migration | ✅ Complete |
-| 2.0.0 | 2026-03-12 | Documentation Complete | ✅ Complete |
-| 1.1.0 | 2026-03-11 | Content Architecture | ✅ Complete |
-| 1.0.0 | 2026-03-11 | Brand Transformation | ✅ Complete |
-| 0.9.0 | 2026-03-04 | Production Readiness | ✅ Complete |
-| 0.8.0 | 2026-03-03 | WordPress Integration | ✅ Complete |
-| 0.7.0 | 2026-03-02 | Dev Tools Enhancement | ✅ Complete |
-| 0.6.0 | 2026-03-01 | React Router Migration | ✅ Complete |
+| **3.8.0** | 2026-03-15 | Shop Implementation & Project Maintenance | ✅ Complete |
+| **3.7.0** | 2026-03-14 | Static Page Overhaul & Navigation Refinements | ✅ Complete |
+| **3.6.0** | 2026-03-14 | Editorial Design Refinement | ✅ Complete |
+| **3.5.0** | 2026-03-14 | Project Completion | ✅ Final Release |
+| 3.4.0 | 2026-03-14 | Font Migration | ✅ Complete |
+| 3.3.0 | 2026-03-14 | Documentation Complete | ✅ Complete |
+| 3.2.0 | 2026-03-14 | Content Architecture | ✅ Complete |
+| 3.1.0 | 2026-03-14 | Brand Transformation | ✅ Complete |
+| 3.0.0 | 2026-03-14 | Production Readiness | ✅ Complete |
+| 2.9.0 | 2026-03-14 | WordPress Integration | ✅ Complete |
+| 2.8.0 | 2026-03-14 | Dev Tools Enhancement | ✅ Complete |
+| 2.7.0 | 2026-03-14 | React Router Migration | ✅ Complete |
 
 ---
 

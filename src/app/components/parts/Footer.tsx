@@ -94,11 +94,13 @@ export const Footer = () => {
             </div>
             <form
               onSubmit={handleNewsletterSubmit}
+              role="search"
               className="flex w-full md:w-auto gap-2"
             >
               <input
                 type="email"
                 placeholder="Jou e-posadres"
+                aria-label="E-posadres vir nuusbrief"
                 className="flex-1 md:w-72 px-4 py-3 bg-white dark:bg-background border border-gray-300 dark:border-border rounded-lg text-gray-900 dark:text-white text-sm placeholder:text-gray-400 focus-brand transition-colors"
               />
               <button

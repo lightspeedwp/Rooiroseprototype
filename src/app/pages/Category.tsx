@@ -365,31 +365,137 @@ export const CategoryPage = ({ categoryName = "Nuus" }: { categoryName?: string 
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Main Article Grid - Magazine 3-column layout */}
           <div className="flex-1 min-w-0">
-            {/* Magazine Grid - 3 columns with generous spacing */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 mb-12">
+            {/* Magazine Grid - Editorial masonry layout with large images */}
+            <div className="space-y-8 mb-12">
               {paginatedArticles.filter(a => a != null && a.id != null).flatMap((article, index) => {
-                const items = [
-                  <MagazineArticleCard 
-                    key={article.id}
-                    id={article.id}
-                    title={article.title}
-                    excerpt={article.excerpt}
-                    category={article.category}
-                    imageUrl={article.imageUrl}
-                    date={article.date}
-                    author={article.author}
-                    readTime={article.readTime}
-                    sponsored={article.sponsored}
-                    sponsorName={article.sponsorName}
-                    sponsorLogo={article.sponsorLogo}
-                    variant="standard"
-                  />
-                ];
+                const items = [];
+                
+                // Pattern: Large feature (full-width), 2-column, 3-column, repeat
+                const position = index % 6;
+                
+                if (position === 0) {
+                  // First article: Full-width hero feature with large image
+                  items.push(
+                    <MagazineArticleCard 
+                      key={article.id}
+                      id={article.id}
+                      title={article.title}
+                      excerpt={article.excerpt}
+                      category={article.category}
+                      imageUrl={article.imageUrl}
+                      date={article.date}
+                      author={article.author}
+                      readTime={article.readTime}
+                      sponsored={article.sponsored}
+                      sponsorName={article.sponsorName}
+                      sponsorLogo={article.sponsorLogo}
+                      variant="hero"
+                    />
+                  );
+                } else if (position === 1 || position === 2) {
+                  // Next 2 articles: Side-by-side large cards (2-column grid)
+                  if (position === 1) {
+                    // Start 2-column container
+                    const nextArticle = paginatedArticles[index + 1];
+                    if (nextArticle) {
+                      items.push(
+                        <div key={`grid-2col-${index}`} className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                          <MagazineArticleCard 
+                            id={article.id}
+                            title={article.title}
+                            excerpt={article.excerpt}
+                            category={article.category}
+                            imageUrl={article.imageUrl}
+                            date={article.date}
+                            author={article.author}
+                            readTime={article.readTime}
+                            sponsored={article.sponsored}
+                            sponsorName={article.sponsorName}
+                            sponsorLogo={article.sponsorLogo}
+                            variant="large"
+                          />
+                          <MagazineArticleCard 
+                            id={nextArticle.id}
+                            title={nextArticle.title}
+                            excerpt={nextArticle.excerpt}
+                            category={nextArticle.category}
+                            imageUrl={nextArticle.imageUrl}
+                            date={nextArticle.date}
+                            author={nextArticle.author}
+                            readTime={nextArticle.readTime}
+                            sponsored={nextArticle.sponsored}
+                            sponsorName={nextArticle.sponsorName}
+                            sponsorLogo={nextArticle.sponsorLogo}
+                            variant="large"
+                          />
+                        </div>
+                      );
+                    }
+                  }
+                  // Skip position 2 since it's already rendered in position 1's 2-column grid
+                } else if (position === 3 || position === 4 || position === 5) {
+                  // Next 3 articles: 3-column grid
+                  if (position === 3) {
+                    const next1 = paginatedArticles[index + 1];
+                    const next2 = paginatedArticles[index + 2];
+                    items.push(
+                      <div key={`grid-3col-${index}`} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <MagazineArticleCard 
+                          id={article.id}
+                          title={article.title}
+                          excerpt={article.excerpt}
+                          category={article.category}
+                          imageUrl={article.imageUrl}
+                          date={article.date}
+                          author={article.author}
+                          readTime={article.readTime}
+                          sponsored={article.sponsored}
+                          sponsorName={article.sponsorName}
+                          sponsorLogo={article.sponsorLogo}
+                          variant="standard"
+                        />
+                        {next1 && (
+                          <MagazineArticleCard 
+                            id={next1.id}
+                            title={next1.title}
+                            excerpt={next1.excerpt}
+                            category={next1.category}
+                            imageUrl={next1.imageUrl}
+                            date={next1.date}
+                            author={next1.author}
+                            readTime={next1.readTime}
+                            sponsored={next1.sponsored}
+                            sponsorName={next1.sponsorName}
+                            sponsorLogo={next1.sponsorLogo}
+                            variant="standard"
+                          />
+                        )}
+                        {next2 && (
+                          <MagazineArticleCard 
+                            id={next2.id}
+                            title={next2.title}
+                            excerpt={next2.excerpt}
+                            category={next2.category}
+                            imageUrl={next2.imageUrl}
+                            date={next2.date}
+                            author={next2.author}
+                            readTime={next2.readTime}
+                            sponsored={next2.sponsored}
+                            sponsorName={next2.sponsorName}
+                            sponsorLogo={next2.sponsorLogo}
+                            variant="standard"
+                          />
+                        )}
+                      </div>
+                    );
+                  }
+                  // Skip positions 4 and 5 since they're already rendered in position 3's 3-column grid
+                }
                 
                 // Add in-feed ad after every 6 articles
                 if ((index + 1) % 6 === 0 && index < paginatedArticles.length - 1) {
                   items.push(
-                    <div key={`ad-${index}`} className="col-span-full my-4">
+                    <div key={`ad-${index}`} className="my-8">
                       <InFeedAd section={categoryName.toLowerCase()} premium={isPremium} />
                     </div>
                   );

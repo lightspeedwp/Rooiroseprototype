@@ -2,46 +2,170 @@
 <html lang="af">
   <head>
     <meta charset="UTF-8" />
+    
+    <!-- v11.21 NUCLEAR FIX: Block MessageChannel at the ABSOLUTE FIRST MOMENT -->
+    <script>
+      // Execute SYNCHRONOUSLY - before anything else can run
+      (function() {
+        'use strict';
+        
+        // Delete MessageChannel IMMEDIATELY
+        delete window.MessageChannel;
+        delete window.MessagePort;
+        
+        // Define as non-configurable null to prevent recreation
+        Object.defineProperty(window, 'MessageChannel', {
+          configurable: false,
+          enumerable: true,
+          writable: false,
+          value: null
+        });
+        
+        Object.defineProperty(window, 'MessagePort', {
+          configurable: false,
+          enumerable: true,
+          writable: false,
+          value: null
+        });
+        
+        console.log('[v11.21] MessageChannel NUKED - non-configurable null');
+      })();
+    </script>
+    
+    <!-- v11.21: Iframe detection + React disabling -->
+    <script>
+      (function() {
+        'use strict';
+        var isIframe = false;
+        try {
+          isIframe = window.self !== window.top;
+        } catch (e) {
+          isIframe = true;
+        }
+        
+        if (isIframe) {
+          document.documentElement.className = 'figma-iframe';
+          window.__FIGMA_IFRAME_MODE__ = true;
+          window.__BLOCK_VITE_SCRIPT__ = true;
+          window.__REACT_DISABLED__ = true;
+          window.__NO_REACT__ = true;
+          window.React = null;
+          window.ReactDOM = null;
+          window.__vitePreload = function() { return Promise.resolve(); };
+          console.log('[v11.21] IFRAME MODE - React disabled');
+        } else {
+          document.documentElement.className = '';
+          window.__FIGMA_IFRAME_MODE__ = false;
+          window.__BLOCK_VITE_SCRIPT__ = false;
+          window.__REACT_DISABLED__ = false;
+          window.__NO_REACT__ = false;
+          console.log('[v11.21] Browser mode - React enabled');
+        }
+      })();
+    </script>
+    
     <link rel="icon" type="image/svg+xml" href="/newspaper.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="rooi rose - Jou tydskrif vir Afrikaanse leefstyl, mode, skoonheid en meer" />
     <meta name="theme-color" content="#e01e12" />
     <title>rooi rose - Afrikaanse Tydskrif</title>
+    
+    <!-- Inline CSS for instant show/hide -->
+    <style>
+      /* Default state */
+      #figma-preview {
+        display: none;
+      }
+      
+      #root {
+        display: block;
+      }
+      
+      /* Iframe state - applied via class */
+      html.figma-iframe #figma-preview {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #142135 0%, #1a2943 100%);
+        font-family: system-ui, -apple-system, sans-serif;
+        color: white;
+        text-align: center;
+        padding: 2rem;
+      }
+      
+      html.figma-iframe #root {
+        display: none !important;
+      }
+    </style>
   </head>
   <body>
+    <!-- React root -->
     <div id="root"></div>
     
-    <!-- v11.0: Hybrid approach - delay script load + disable routing in iframe -->
+    <!-- Static preview for Figma iframe -->
+    <div id="figma-preview">
+      <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#e01e12" stroke-width="2" style="margin-bottom: 2rem;">
+        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+      </svg>
+      <h1 style="font-size: 2.5rem; margin: 0 0 1rem 0; color: #e01e12; font-weight: 300; letter-spacing: 0.1em;">
+        rooi rose
+      </h1>
+      <p style="font-size: 1.125rem; color: #94a3b8; margin: 0 0 2rem 0; max-width: 500px;">
+        Afrikaanse Tydskrif vir Leefstyl
+      </p>
+      <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 8px; max-width: 600px;">
+        <p style="margin: 0 0 1rem 0; font-size: 1rem; color: #cbd5e1; font-weight: 600;">
+          Figma Make Preview Mode
+        </p>
+        <p style="margin: 0 0 1rem 0; font-size: 0.875rem; color: #cbd5e1;">
+          This React application uses browser routing which cannot run in Figma's iframe environment.
+        </p>
+        <p style="margin: 0; font-size: 0.875rem; color: #64748b;">
+          Deploy to production or use a development server to view the full application.
+        </p>
+      </div>
+    </div>
+    
+    <!-- Conditional script loading with maximum protection -->
     <script>
-      // Detect if we're in Figma iframe
-      const isInFigmaIframe = (() => {
-        try {
-          return window.self !== window.top;
-        } catch {
-          return true;
+      (function() {
+        'use strict';
+        
+        // Check ALL possible flags
+        if (window.__BLOCK_VITE_SCRIPT__ === true ||
+            window.__FIGMA_IFRAME_MODE__ === true ||
+            window.__REACT_DISABLED__ === true ||
+            window.__NO_REACT__ === true) {
+          console.log('[v11.21] Script injection BLOCKED - iframe mode');
+          return; // Stop completely
         }
-      })();
-      
-      // Function to inject main script
-      const injectScript = () => {
-        console.log('[HTML] Injecting main script...');
-        const script = document.createElement('script');
+        
+        // Triple-check with direct detection
+        var isIframe = false;
+        try {
+          isIframe = window.self !== window.top;
+        } catch (e) {
+          isIframe = true;
+        }
+        
+        if (isIframe) {
+          console.log('[v11.21] Script injection BLOCKED - direct iframe detection');
+          return; // Stop completely
+        }
+        
+        // Safe to load React
+        console.log('[v11.21] Loading Vite module...');
+        var script = document.createElement('script');
         script.type = 'module';
         script.src = '/src/main.tsx';
+        script.onerror = function(e) {
+          console.error('[v11.21] Failed to load Vite module:', e);
+        };
         document.body.appendChild(script);
-      };
-      
-      if (isInFigmaIframe) {
-        // v11.0: Wait for window.load + 30s delay (prevents ANY JS during iframe onload)
-        console.log('[HTML] Figma iframe detected, waiting for safe initialization...');
-        window.addEventListener('load', () => {
-          console.log('[HTML] Window loaded, waiting 30s for message channel setup...');
-          setTimeout(injectScript, 30000);
-        });
-      } else {
-        // Standard environment: load immediately
-        injectScript();
-      }
+      })();
     </script>
   </body>
 </html>

@@ -1,91 +1,44 @@
 import React, { useEffect, useState } from 'react';
 import { RouterProvider } from 'react-router';
 import { getRouter } from './routes';
-import { Home } from './pages/Home';
-import { ErrorBoundary } from './components/common/ErrorBoundary';
-import { CartProvider } from './context/CartContext';
-import { ThemeProvider } from './context/ThemeContext';
-import { DevLanguageProvider } from './context/DevLanguageContext';
-import { Toaster } from './components/ui/sonner';
 
 /**
  * App — root component for *rooi rose*.
  *
- * Uses React Router v7 Data Mode (RouterProvider) in standard environments.
- * In Figma Make iframe: Disables routing and shows Home directly to prevent IframeMessageAbortError.
+ * v11.9 Static Preview Approach:
+ * - Figma iframe: React never loads (prevented by index.html + main.tsx)
+ * - Figma iframe: Shows static preview message (no React, no routing)
+ * - Production: Full RouterProvider with data routes
+ * 
+ * This component should ONLY run in standard (non-iframe) environments.
  * All route definitions live in /src/app/routes.tsx.
- * Providers (Cart, Theme, DevLanguage) and the ErrorBoundary
- * are rendered inside RootLayout (the router's top-level Route element).
- * @version 2026-03-14 — v11.0: Hybrid approach (delayed load + no routing in iframe)
+ * 
+ * @version 2026-03-15 — v11.9: Static preview (React disabled in Figma iframe)
  */
 function App() {
-  // Check if we're in Figma Make iframe
-  const isInFigmaIframe = (() => {
-    try {
-      return window.self !== window.top;
-    } catch {
-      return true; // If we can't check, assume we're in iframe
-    }
-  })();
-
-  // v11.0: In iframe, skip routing entirely and show Home directly
-  if (isInFigmaIframe) {
-    console.log('[App] Figma iframe detected - using single page mode (no routing)');
-    console.log('[App] This prevents IframeMessageAbortError while maintaining preview functionality');
-    
-    return (
-      <ErrorBoundary>
-        <CartProvider>
-          <ThemeProvider>
-            <DevLanguageProvider>
-              <div style={{ minHeight: '100vh' }}>
-                <Home />
-              </div>
-              <Toaster />
-            </DevLanguageProvider>
-          </ThemeProvider>
-        </CartProvider>
-      </ErrorBoundary>
-    );
-  }
-
-  // Standard environment: Use full React Router
   const [router, setRouter] = useState<ReturnType<typeof getRouter> | null>(null);
   const [error, setError] = useState<Error | null>(null);
   
-  // Defer router creation until after Figma iframe message channel is ready
+  // Initialize router (safe because we're never in iframe at this point)
   useEffect(() => {
     let mounted = true;
     
-    // Function to wait for iframe to be ready
-    const waitForIframeReady = () => {
-      return new Promise<void>((resolve) => {
-        if (isInFigmaIframe) {
-          // In iframe: additional safety delay (HTML already waited for window.load + 30s)
-          console.log('[App] Detected iframe environment, adding final 10s safety delay...');
-          setTimeout(resolve, 10000); // v9.0: 10 second additional delay (after window.load event)
-        } else {
-          // Not in iframe: can initialize immediately
-          console.log('[App] Standard environment detected');
-          setTimeout(resolve, 100); // Minimal delay for DOM ready
-        }
-      });
-    };
-    
-    // Initialize router after environment is ready
-    waitForIframeReady().then(() => {
+    const initRouter = () => {
       if (!mounted) return;
       
       try {
-        console.log('[App] Initializing router...');
+        console.log('[App v11.9] Initializing router...');
         const routerInstance = getRouter();
         setRouter(routerInstance);
-        console.log('[App] Router initialized successfully');
+        console.log('[App v11.9] Router initialized successfully');
       } catch (err) {
-        console.error('[App] Router initialization failed:', err);
+        console.error('[App v11.9] Router initialization failed:', err);
         setError(err instanceof Error ? err : new Error('Unknown router error'));
       }
-    });
+    };
+    
+    // Small delay for DOM ready
+    setTimeout(initRouter, 100);
     
     return () => {
       mounted = false;

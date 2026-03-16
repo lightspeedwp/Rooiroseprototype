@@ -1,12 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router';
-import { PageContainer } from '../components/common/PageContainer';
+import { PRODUCT_CATEGORIES, PRODUCTS } from '../data/products';
 import { SEO } from '../components/common/SEO';
-import { PRODUCTS, PRODUCT_CATEGORIES, ProductCategory } from '../data/products';
-import { ShoppingCart, Star, Filter, X } from 'lucide-react';
-import { Button } from '../components/ui/button';
-import { useCart } from '../context/CartContext';
-import { toast } from 'sonner';
 import { HERO_IMAGES } from '../data/heroImages';
 
 /* ── rooi rose Shop Page ────────────────────────────────────────
@@ -47,7 +40,7 @@ export const Shop = () => {
       <div className="relative h-[50vh] md:h-[60vh] overflow-hidden mb-16">
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
         <img 
-          src="https://images.unsplash.com/photo-1441986300917-64674bd600d8"
+          src={HERO_IMAGES.shop}
           alt="rooi rose winkel"
           className="w-full h-full object-cover"
         />

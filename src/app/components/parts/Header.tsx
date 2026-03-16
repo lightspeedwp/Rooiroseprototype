@@ -4,12 +4,14 @@ import { Link, useNavigate, useLocation } from 'react-router';
 import { Logo } from '../common/Logo';
 import { MobileMenu } from './MobileMenu';
 import { HEADER_TOP_BAR_LINKS, HEADER_CATEGORY_BAR_LINKS, SOCIAL_LINKS } from '../../data/navigation';
+import { PRIMARY_NAVIGATION } from '../../data/megaMenuConfig';
 import { HEADER_UI } from '../../data/header';
 import { useCart } from '../../context/CartContext';
 import { Button } from '../ui/button';
 import { ThemeToggle } from '../common/ThemeToggle';
 import { categories } from '../../data/categories';
 import { getSubcategoriesByParent } from '../../data/subcategories';
+import { MegaMenuPanel } from '../navigation/MegaMenu';
 import headerTexture from 'figma:asset/59f5f21fc3ab664ddea62e2cde218d15718c0a5b.png';
 import {
   Sheet,
@@ -86,6 +88,17 @@ export const Header = memo(() => {
       case 'Facebook': return <Facebook size={16} />;
       case 'Instagram': return <Instagram size={16} />;
       case 'Linkedin': return <Linkedin size={16} />;
+      case 'Youtube': return (
+        <svg width={16} height={16} viewBox="0 0 24 24" fill="currentColor">
+          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+      );
+      case 'Mail': return (
+        <svg width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+        </svg>
+      );
       case 'XSocial': return (
         <svg width={16} height={16} viewBox="0 0 24 24" fill="currentColor">
           <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -104,44 +117,45 @@ export const Header = memo(() => {
     <header className="flex flex-col sticky top-0 z-50 shadow-sm">
       {/* Top Bar - Black */}
       <div className="bg-black dark:bg-background text-white hidden lg:block">
-        <div className="w-full max-w-[1440px] mx-auto h-10 flex justify-center items-center gap-6 text-xs md:text-sm" style={{ paddingLeft: 'clamp(1rem, 4vw, 2rem)', paddingRight: 'clamp(1rem, 4vw, 2rem)' }}>
-          {/* Top Left Navigation */}
-          <div className="flex items-center gap-6 overflow-x-auto no-scrollbar">
-             {HEADER_TOP_BAR_LINKS.map((item) => (
-                <Link 
-                  key={item.label}
-                  to={item.href}
-                  className="font-medium hover:text-gray-300 transition-colors whitespace-nowrap"
-                >
-                  {item.label}
-                </Link>
-             ))}
+        <div className="w-full max-w-[1440px] mx-auto h-10 flex items-center gap-6 text-xs md:text-sm" style={{ paddingLeft: 'clamp(1rem, 4vw, 2rem)', paddingRight: 'clamp(1rem, 4vw, 2rem)' }}>
+          {/* Top Left: Social Icons (Follow us:) */}
+          <div className="flex items-center gap-4 flex-shrink-0">
+            <span className="text-white font-bold uppercase text-[11px] tracking-wider">Follow us:</span>
+            {SOCIAL_LINKS.map((social) => (
+              <a 
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-brand-red transition-colors"
+                title={social.label}
+              >
+                {social.icon === 'XSocial' ? (
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                  </svg>
+                ) : social.icon === 'TikTok' ? (
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.51a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.79a8.24 8.24 0 0 0 4.76 1.5v-3.4a4.85 4.85 0 0 1-1-.2z" />
+                  </svg>
+                ) : (
+                  getSocialIcon(social.icon)
+                )}
+              </a>
+            ))}
           </div>
 
-          {/* Top Right Socials */}
-          <div className="flex items-center gap-4 pl-4 border-l border-gray-700 ml-4 md:ml-0 flex-shrink-0">
-             {SOCIAL_LINKS.map((social) => (
-                <a 
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-brand-red transition-colors"
-                  title={social.label}
-                >
-                  {social.icon === 'XSocial' ? (
-                     <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                     </svg>
-                  ) : social.icon === 'TikTok' ? (
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.51a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.79a8.24 8.24 0 0 0 4.76 1.5v-3.4a4.85 4.85 0 0 1-1-.2z" />
-                      </svg>
-                  ) : (
-                    getSocialIcon(social.icon)
-                  )}
-                </a>
-             ))}
+          {/* Top Right: Page Navigation */}
+          <div className="flex items-center gap-6 overflow-x-auto no-scrollbar ml-auto">
+            {HEADER_TOP_BAR_LINKS.map((item) => (
+              <Link 
+                key={item.label}
+                to={item.href}
+                className="font-medium hover:text-gray-300 transition-colors whitespace-nowrap"
+              >
+                {item.label}
+              </Link>
+            ))}
           </div>
         </div>
       </div>
@@ -164,6 +178,7 @@ export const Header = memo(() => {
                  <div className="w-full max-w-2xl relative">
                    <form 
                     onSubmit={handleSearch}
+                    role="search"
                     className="relative"
                   >
                     <input
@@ -171,6 +186,7 @@ export const Header = memo(() => {
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
                       placeholder={HEADER_UI.search.placeholder}
+                      aria-label="Soek"
                       autoFocus
                       className="w-full px-4 py-3 bg-gray-100 dark:bg-white/10 dark:backdrop-blur-sm border border-gray-300 dark:border-white/20 text-brand-navy dark:text-white placeholder-gray-400 rounded-md focus-brand text-lg"
                     />
@@ -221,7 +237,7 @@ export const Header = memo(() => {
               {/* Search toggle */}
               {!searchOpen && (
                 <button 
-                  className="flex p-2 text-brand-navy dark:text-white hover:text-brand-red dark:hover:text-red-400 items-center gap-1 transition-colors" 
+                  className="flex p-3 text-brand-navy dark:text-white hover:text-brand-red dark:hover:text-red-400 items-center gap-1 transition-colors" 
                   onClick={handleSearchToggle}
                   title="Soek"
                   aria-label="Soek"
@@ -312,7 +328,7 @@ export const Header = memo(() => {
 
               <Link 
                 to="/my-rekening" 
-                className="flex p-2 text-brand-navy dark:text-white hover:text-brand-red dark:hover:text-red-400 items-center gap-1 transition-colors"
+                className="flex p-3 text-brand-navy dark:text-white hover:text-brand-red dark:hover:text-red-400 items-center gap-1 transition-colors"
                 title="My rekening"
                 aria-label="My rekening"
               >
@@ -333,69 +349,32 @@ export const Header = memo(() => {
       {/* Categories Bar - Desktop Only with Mega Menus */}
       <div className="hidden lg:block border-b border-gray-200 dark:border-border bg-white dark:bg-background">
         <div className="w-full max-w-[1440px] mx-auto" style={{ paddingLeft: 'clamp(1rem, 4vw, 2rem)', paddingRight: 'clamp(1rem, 4vw, 2rem)' }}>
-           <nav className="flex items-center justify-center gap-8 h-12">
-             {HEADER_CATEGORY_BAR_LINKS.map((item, index) => {
-                // Find the category data
-                const category = categories.find(cat => `/${cat.slug}` === item.href);
-                const hasSubcategories = category && category.subcategories.length > 0;
-                const isActive = location.pathname === item.href || location.pathname.startsWith(item.href + '/');
-                const subcats = category ? getSubcategoriesByParent(category.id) : [];
-                const useTwoColumns = subcats.length > 8; // Use 2 columns if more than 8 items
-                
-                // Smart positioning: first item (Kos) aligns left, last items align right, middle items center
-                const isFirstItem = index === 0;
-                const isLastThreeItems = index >= HEADER_CATEGORY_BAR_LINKS.length - 3;
-                
-                let dropdownPositionClass = 'left-1/2 -translate-x-1/2'; // Default: center
-                if (useTwoColumns && isFirstItem) {
-                  dropdownPositionClass = 'left-0'; // Align left for first item with 2 columns
-                } else if (useTwoColumns && isLastThreeItems) {
-                  dropdownPositionClass = 'right-0'; // Align right for last items with 2 columns
-                }
+           <nav className="flex items-center justify-start gap-8 h-12">
+             {PRIMARY_NAVIGATION.filter(item => item.id !== 'shop' && item.id !== 'kontak').map((navItem, index) => {
+                const isActive = location.pathname === navItem.href || location.pathname.startsWith(navItem.href + '/');
+                const hasMegaMenu = !!navItem.megaMenu;
                 
                 return (
-                  <div key={item.label} className="relative group h-full flex items-center">
+                  <div key={navItem.id} className="relative group h-full flex items-center">
                     <Link 
-                      to={item.href} 
+                      to={navItem.href} 
                       className={`flex items-center gap-1 font-bold text-sm uppercase tracking-wide transition-colors whitespace-nowrap ${
                         isActive 
                           ? 'text-brand-red' 
                           : 'text-brand-navy dark:text-foreground hover:text-brand-red'
                       }`}
                     >
-                      {item.label}
-                      {hasSubcategories && <ChevronDown size={14} className="transition-transform group-hover:rotate-180" />}
+                      {navItem.label}
+                      {hasMegaMenu && <ChevronDown size={14} className="transition-transform group-hover:rotate-180" />}
                     </Link>
 
-                    {/* Mega Menu Dropdown */}
-                    {hasSubcategories && (
-                      <div className={`absolute top-full ${dropdownPositionClass} pt-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50`}>
-                        <div className={`bg-white dark:bg-card border border-gray-200 dark:border-border rounded-lg shadow-xl dark:shadow-[var(--shadow-dark-500)] p-6 mt-0 ${
-                          useTwoColumns ? 'min-w-[560px] max-w-[640px]' : 'min-w-[280px] max-w-[320px]'
-                        }`}>
-                          <h3 className="text-xs font-bold uppercase tracking-[0.15em] text-brand-red mb-4 has-brand-serif-font-family" style={{ fontVariationSettings: 'var(--fvs-h6)', letterSpacing: 'var(--ls-h6)' }}>
-                            {item.label}
-                          </h3>
-                          <ul className={`space-y-2 ${useTwoColumns ? 'columns-2 gap-8' : ''}`}>
-                            {subcats.map((subcat) => (
-                              <li key={subcat.id} className={useTwoColumns ? 'break-inside-avoid' : ''}>
-                                <Link
-                                  to={`/${category.slug}/${subcat.slug}`}
-                                  className="block py-2 px-3 rounded-md text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-900 hover:text-brand-red dark:hover:text-brand-red transition-colors"
-                                >
-                                  {subcat.title}
-                                </Link>
-                              </li>
-                            ))}
-                          </ul>
-                          <Link
-                            to={item.href}
-                            className="block mt-4 pt-4 border-t border-gray-200 dark:border-border text-sm font-bold text-brand-red hover:underline"
-                          >
-                            Sien alle {item.label} →
-                          </Link>
-                        </div>
-                      </div>
+                    {/* New Mega Menu Panel Component */}
+                    {hasMegaMenu && (
+                      <MegaMenuPanel
+                        navItem={navItem}
+                        isOpen={false}
+                        onClose={() => {}}
+                      />
                     )}
                   </div>
                 );

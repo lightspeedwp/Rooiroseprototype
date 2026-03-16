@@ -6,7 +6,7 @@ import { ImageWithFallback } from '../figma/ImageWithFallback';
 /* ── rooi rose Magazine Article Card ──────────────────────────────
  * Editorial design: Large images (3:2), bold headlines, visual hierarchy
  * Typography: Playfair Display SC headings, Karla excerpt
- * Variants: standard (3:2 image), featured (larger), compact (smaller)
+ * Variants: hero (16:9 full-width), large (3:2 prominent), standard (3:2), compact (4:3 smaller)
  * Features: Hover effects, category badges, sponsored indicators
  * ────────────────────────────────────────────────────────────────── */
 
@@ -22,7 +22,7 @@ interface MagazineArticleCardProps {
   sponsored?: boolean;
   sponsorName?: string;
   sponsorLogo?: string;
-  variant?: 'standard' | 'featured' | 'compact';
+  variant?: 'hero' | 'large' | 'standard' | 'featured' | 'compact';
 }
 
 export const MagazineArticleCard: React.FC<MagazineArticleCardProps> = ({
@@ -39,15 +39,17 @@ export const MagazineArticleCard: React.FC<MagazineArticleCardProps> = ({
   sponsorLogo,
   variant = 'standard',
 }) => {
+  const isHero = variant === 'hero';
+  const isLarge = variant === 'large';
   const isFeatured = variant === 'featured';
   const isCompact = variant === 'compact';
 
   return (
-    <ArticleLink id={id} title={title} className="block group h-full">
-      <article className="flex flex-col h-full">
+    <ArticleLink id={id} title={title} className="block group h-full relative">
+      <article className="flex flex-col h-full relative">
         {/* Image */}
-        <div className={`relative overflow-hidden bg-gray-200 dark:bg-muted mb-5 ${
-          isFeatured ? 'aspect-[16/9]' : isCompact ? 'aspect-[4/3]' : 'aspect-[3/2]'
+        <div className={`relative overflow-hidden bg-gray-200 dark:bg-muted mb-5 z-0 ${
+          isHero ? 'aspect-[16/9]' : isLarge ? 'aspect-[3/2]' : isFeatured ? 'aspect-[16/9]' : isCompact ? 'aspect-[4/3]' : 'aspect-[3/2]'
         }`}>
           <ImageWithFallback 
             src={imageUrl} 
@@ -55,11 +57,11 @@ export const MagazineArticleCard: React.FC<MagazineArticleCardProps> = ({
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
           />
           {/* Dark overlay on hover */}
-          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
+          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 z-10" />
           
           {/* Category badge */}
           {!sponsored && (
-            <div className="absolute top-4 left-4">
+            <div className="absolute top-4 left-4 z-20">
               <span className="bg-brand-red text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 shadow-lg">
                 {category}
               </span>
@@ -68,7 +70,7 @@ export const MagazineArticleCard: React.FC<MagazineArticleCardProps> = ({
 
           {/* Sponsored badge */}
           {sponsored && (
-            <div className="absolute top-4 left-4 flex items-center gap-2">
+            <div className="absolute top-4 left-4 flex items-center gap-2 z-20">
               <span className="bg-gray-700 text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 shadow-lg">
                 Geborg
               </span>
@@ -82,11 +84,15 @@ export const MagazineArticleCard: React.FC<MagazineArticleCardProps> = ({
         </div>
         
         {/* Content */}
-        <div className="flex-1 flex flex-col">
+        <div className="flex-1 flex flex-col relative z-0">
           {/* Title */}
           <h3 
-            className={`font-normal text-brand-navy dark:text-foreground mb-3 leading-tight group-hover:text-brand-red dark:group-hover:text-primary transition-colors has-brand-serif-font-family ${
-              isFeatured 
+            className={`font-normal text-brand-navy dark:text-foreground mb-2 leading-tight group-hover:text-brand-red dark:group-hover:text-primary transition-colors has-brand-serif-font-family ${
+              isHero 
+                ? 'text-3xl md:text-4xl' 
+                : isLarge 
+                ? 'text-2xl md:text-3xl' 
+                : isFeatured 
                 ? 'text-2xl md:text-3xl' 
                 : isCompact 
                 ? 'text-lg' 
@@ -97,10 +103,10 @@ export const MagazineArticleCard: React.FC<MagazineArticleCardProps> = ({
             {title}
           </h3>
           
-          {/* Excerpt - only show for standard and featured */}
-          {(variant === 'standard' || variant === 'featured') && excerpt && (
-            <p className={`text-gray-600 dark:text-gray-400 mb-4 leading-relaxed flex-1 ${
-              isFeatured ? 'text-base md:text-lg line-clamp-3' : 'text-base line-clamp-2'
+          {/* Excerpt - show for hero, large, standard, and featured */}
+          {(isHero || isLarge || variant === 'standard' || variant === 'featured') && excerpt && (
+            <p className={`text-gray-600 dark:text-gray-400 mb-3 leading-relaxed flex-1 ${
+              isHero ? 'text-lg md:text-xl line-clamp-3' : isLarge ? 'text-base md:text-lg line-clamp-3' : isFeatured ? 'text-base md:text-lg line-clamp-3' : 'text-base line-clamp-2'
             }`}>
               {excerpt}
             </p>

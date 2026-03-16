@@ -22,10 +22,6 @@ export const HOME_CONTENT = {
     sidebarTitle: "Brekende nuus",
     loadMoreButton: "Laai meer nuus"
   },
-  featureGrid: {
-    title: "Top stories",
-    viewAll: "Sien alles"
-  },
   sidebar: {
     eEdition: {
       title: "Nuutste e-uitgawe",

@@ -1,8 +1,35 @@
 # Developer Tools Protection Rule (CRITICAL)
 
-**Last updated**: 2026-03-05 (Memory optimization — Phase 4: BlockBrowser split complete)
-**Version**: 1.2
+**Last updated**: 2026-03-15 (Root-level protected files added)
+**Version**: 1.3
 **Q&A Decisions recorded**: 2026-02-26
+
+---
+
+## Protected Root-Level Markdown Files (3 files)
+
+**CRITICAL**: Only these 3 markdown files are permitted in the project root directory. All other `.md` files must be organized in appropriate subdirectories.
+
+| File | Purpose | Notes |
+|:-----|:--------|:------|
+| `/ATTRIBUTIONS.md` | Third-party dependencies and licenses | Always uppercase filename |
+| `/README.md` | Project overview and quick start | Always uppercase filename |
+| `/CHANGELOG.md` | Version history and release notes | Always uppercase filename |
+
+**Rules**:
+- ✅ These 3 files MUST remain in the root directory
+- ✅ Filenames MUST be uppercase (e.g., `/ATTRIBUTIONS.md` not `/attributions.md`)
+- ❌ DO NOT create additional `.md` files in the root directory
+- ❌ DO NOT rename these files to lowercase
+- ❌ DO NOT delete or move these files
+
+**Cleanup Process**:
+When running the `cleanup` or `audit-root` command:
+1. Check for unauthorized `.md` files in root
+2. Identify if they contain important guidelines
+3. Move important content to `/guidelines/` subdirectories
+4. Delete non-essential markdown files
+5. Ensure only the 3 protected files remain
 
 ---
 

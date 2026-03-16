@@ -40,7 +40,7 @@ import { QuoteSlider } from '../components/brand-quotes/QuoteSlider';
  * Layout: Hero + sections with centered content
  * ────────────────────────────────────────────────────────────── */
 
-export const About = () => {
+const About = () => {
   return (
     <div className="bg-white dark:bg-background min-h-screen">
       <SEO
@@ -495,3 +495,5 @@ export const About = () => {
     </div>
   );
 };
+
+export default About;

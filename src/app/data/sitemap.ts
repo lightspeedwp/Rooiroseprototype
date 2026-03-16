@@ -37,6 +37,7 @@ export const SITEMAP_PAGES = [
   { name: 'Multimedia', path: '/multimedia' },
   { name: 'Kompetisies', path: '/kompetisies' },
   // Commerce
+  { name: 'Winkel', path: '/winkel' },
   { name: 'Inteken', path: '/inteken' },
   { name: 'My rekening', path: '/my-rekening' },
   { name: 'Registreer', path: '/registreer' },
@@ -67,6 +68,9 @@ export const SITEMAP_PAGES = [
   { name: 'PAIA-handleiding', path: '/beleid/paia' },
   { name: 'Perskode', path: '/beleid/perskode' },
   { name: 'Advertensie-riglyne', path: '/beleid/advertensie-riglyne' },
+  // Utility
+  { name: 'Vanlyn', path: '/vanlyn' },
+  { name: 'Kompetisie Terme', path: '/kompetisie-terme' },
 ];
 
 export const SITEMAP_CPTS = [

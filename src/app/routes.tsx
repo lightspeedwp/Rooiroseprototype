@@ -46,7 +46,7 @@ const ReturnsPolicyPage = lazy(() => import('./pages/ReturnsPolicy').then(m => (
 const ComplaintsProcedurePage = lazy(() => import('./pages/ComplaintsProcedurePage').then(m => ({ default: m.ComplaintsProcedurePage })));
 
 // Informational
-const About = lazy(() => import('./pages/About').then(m => ({ default: m.About })));
+const About = lazy(() => import('./pages/About'));
 const Advertise = lazy(() => import('./pages/Advertise').then(m => ({ default: m.Advertise })));
 const FAQPage = lazy(() => import('./pages/FAQPage').then(m => ({ default: m.FAQPage })));
 const MyAccount = lazy(() => import('./pages/MyAccount').then(m => ({ default: m.MyAccount })));
@@ -123,13 +123,15 @@ const SponsorArchivePage = lazy(() => import('./pages/SponsorArchive').then(m =>
 const SponsorsPage = lazy(() => import('./pages/Sponsors').then(m => ({ default: m.SponsorsPage })));
 
 // New content pages
-const ObituariesPage = lazy(() => import('./pages/Obituaries').then(m => ({ default: m.ObituariesPage })));
 const MultimediaPage = lazy(() => import('./pages/Multimedia').then(m => ({ default: m.MultimediaPage })));
-const SingleObituaryPage = lazy(() => import('./pages/SingleObituary').then(m => ({ default: m.SingleObituaryPage })));
 const SingleMultimediaPage = lazy(() => import('./pages/SingleMultimedia').then(m => ({ default: m.SingleMultimediaPage })));
 
 // Offline
 const OfflinePage = lazy(() => import('./pages/Offline').then(m => ({ default: m.OfflinePage })));
+
+// Editorial Demo Pages
+const EditorialDemo = lazy(() => import('./pages/EditorialDemo').then(m => ({ default: m.EditorialDemo })));
+const EditorialLandingPage = lazy(() => import('./pages/EditorialLandingPage').then(m => ({ default: m.EditorialLandingPage })));
 
 // ═══════════════════════════════════════════════
 // DEV TOOLS: ALL Lazy Loaded (PERF-006 - 400-500KB saved!)
@@ -307,7 +309,7 @@ const routeConfig = [
           /* ── Legacy Newspaper Category Redirects ───────────────────────
            * Old Die Papier categories redirect to homepage
            * Keep for 6 months to preserve SEO and user bookmarks
-           * ────────────────────────────────────────────────────────────── */
+           * ────────────────────────────────────────────────────────── */
           
           // Newspaper Categories → Homepage Redirects
           { path: "nuus", element: <Navigate to="/" replace /> },
@@ -316,11 +318,9 @@ const routeConfig = [
           { path: "sake", element: <Navigate to="/" replace /> },
           { path: "dink", element: <Navigate to="/" replace /> },
           { path: "skolerugby", element: <Navigate to="/" replace /> },
-          { path: "doodsberrigte", element: <Navigate to="/" replace /> },
           
           // English Legacy Redirects
           { path: "news", element: <Navigate to="/" replace /> },
-          { path: "sport", element: <Navigate to="/" replace /> },
           { path: "schools", element: <Navigate to="/" replace /> },
           { path: "business", element: <Navigate to="/" replace /> },
           { path: "lifestyle", element: <Navigate to="/leefstyl" replace /> },
@@ -421,15 +421,11 @@ const routeConfig = [
           { path: "traffic", Component: TrafficPage },
           
           // New Content Pages
-          { path: "doodsberrigte", Component: ObituariesPage },
           { path: "multimedia", Component: MultimediaPage },
-          { path: "nuusbrief-argief", Component: NewsletterArchivePage },
-          { path: "doodsberrigte/:slug", Component: SingleObituaryPage },
           { path: "multimedia/:slug", Component: SingleMultimediaPage },
-          { path: "obituaries", Component: ObituariesPage },
+          { path: "nuusbrief-argief", Component: NewsletterArchivePage },
           { path: "multimedia-archive", Component: MultimediaPage },
           { path: "newsletter-archive", Component: NewsletterArchivePage },
-          { path: "obituaries/:slug", Component: SingleObituaryPage },
           { path: "multimedia-archive/:slug", Component: SingleMultimediaPage },
           
           // Policies
@@ -531,6 +527,10 @@ const routeConfig = [
           // Offline
           { path: "vanlyn", Component: OfflinePage },
           { path: "offline", Component: OfflinePage },
+          
+          // Editorial Demo Pages
+          { path: "editorial-demo", Component: EditorialDemo },
+          { path: "editorial-demo/landing-page", Component: EditorialLandingPage },
           
           // Redirects
           { path: "beleide", element: <Navigate to="/beleid" replace /> },

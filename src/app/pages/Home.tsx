@@ -1,6 +1,5 @@
 import React, { useMemo, lazy, Suspense } from 'react';
 import { HeroSlider } from '../components/home/HeroSlider';
-import { FeatureGrid } from '../components/home/FeatureGrid';
 import { CategorySection } from '../components/home/CategorySection';
 import { PullQuoteSection } from '../components/home/PullQuoteSection';
 import { NewsletterCTA } from '../components/patterns/NewsletterCTA';
@@ -25,14 +24,14 @@ export const Home = () => {
   // Memoize filtered data for rooi rose categories
   const categorizedArticles = useMemo(() => {
     return {
-      kos: CATEGORY_ARTICLES.Leefstyl || TOP_STORIES.filter(s => s.category === 'Kos' || s.category === 'Leefstyl').slice(0, 3),
-      mode: CATEGORY_ARTICLES.Nuus || TOP_STORIES.filter(s => s.category === 'Mode' || s.category === 'Nuus').slice(0, 3),
-      skoonheid: CATEGORY_ARTICLES.Leefstyl || TOP_STORIES.filter(s => s.category === 'Skoonheid' || s.category === 'Leefstyl').slice(0, 3),
-      gesondheid: CATEGORY_ARTICLES.Dink || TOP_STORIES.filter(s => s.category === 'Gesondheid' || s.category === 'Dink').slice(0, 3),
-      bekendes: CATEGORY_ARTICLES.Sake || TOP_STORIES.filter(s => s.category === 'Bekendes' || s.category === 'Sake').slice(0, 3),
+      kos: CATEGORY_ARTICLES.Kos || TOP_STORIES.filter(s => s.category === 'Kos').slice(0, 3),
+      mode: CATEGORY_ARTICLES.Mode || TOP_STORIES.filter(s => s.category === 'Mode').slice(0, 3),
+      skoonheid: CATEGORY_ARTICLES.Skoonheid || TOP_STORIES.filter(s => s.category === 'Skoonheid').slice(0, 3),
+      gesondheid: CATEGORY_ARTICLES.Gesondheid || TOP_STORIES.filter(s => s.category === 'Gesondheid').slice(0, 3),
+      bekendes: CATEGORY_ARTICLES.Bekendes || TOP_STORIES.filter(s => s.category === 'Bekendes').slice(0, 3),
       leefstyl: CATEGORY_ARTICLES.Leefstyl || TOP_STORIES.filter(s => s.category === 'Leefstyl').slice(0, 3),
       jouLewe: CATEGORY_ARTICLES.Dink || TOP_STORIES.filter(s => s.category === 'Jou lewe' || s.category === 'Dink').slice(0, 3),
-      ontspanning: CATEGORY_ARTICLES.Sport || TOP_STORIES.filter(s => s.category === 'Ontspanning' || s.category === 'Sport').slice(0, 3),
+      ontspanning: CATEGORY_ARTICLES.Ontspanning || TOP_STORIES.filter(s => s.category === 'Ontspanning').slice(0, 3),
     };
   }, []);
 
@@ -62,13 +61,6 @@ export const Home = () => {
       {/* === HERO SLIDER === */}
       <HeroSlider />
       
-      {/* === FEATURED STORIES GRID === */}
-      <section className="bg-white dark:bg-background py-0">
-        <div className="max-w-[1280px] mx-auto px-6 md:px-10">
-          <FeatureGrid />
-        </div>
-      </section>
-
       <LeaderboardAd section="home" position="feature-grid" />
 
       {/* === MAIN EDITORIAL CONTENT === */}
@@ -166,14 +158,18 @@ export const Home = () => {
         <div className="max-w-[1280px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            {/* E-Edition Promo */}
-            <div className="bg-[var(--base)] p-6 rounded-lg shadow-sm">
+            {/* E-Edition Promo - Editorial Magazine Design */}
+            <div className="bg-[var(--base)] shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-gray-200 dark:border-border relative">
+              {/* Decorative top accent */}
+              <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-brand-red to-transparent opacity-30"></div>
               <SidebarEEditionPromo />
             </div>
 
-            {/* National Poll */}
+            {/* National Poll - Editorial Magazine Design */}
             {activePoll && (
-              <div className="bg-[var(--base)] p-6 rounded-lg shadow-sm">
+              <div className="bg-[var(--base)] shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-gray-200 dark:border-border relative">
+                {/* Decorative top accent */}
+                <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-brand-red to-transparent opacity-30"></div>
                 <Poll 
                   question={activePoll.question}
                   options={activePoll.options}
@@ -182,8 +178,10 @@ export const Home = () => {
               </div>
             )}
 
-            {/* Featured Competition */}
-            <div className="bg-[var(--base)] p-6 rounded-lg shadow-sm">
+            {/* Featured Competition - Editorial Magazine Design */}
+            <div className="bg-[var(--base)] shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-gray-200 dark:border-border relative">
+              {/* Decorative top accent */}
+              <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-brand-red to-transparent opacity-30"></div>
               <SidebarFeaturedCompetition />
             </div>
 

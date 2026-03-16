@@ -1,6 +1,5 @@
-import { Mail, Phone, CreditCard } from 'lucide-react';
-import { Newspaper } from '../components/icons/NewspaperIcon';
-import type { LucideIcon } from 'lucide-react';
+import { Phone, Mail, MessageSquare, TrendingUp, FileText, Edit } from 'lucide-react';
+import { HERO_IMAGES } from './heroImages';
 
 interface DepartmentLink {
   label: string;
@@ -18,7 +17,7 @@ interface Department {
 export const CONTACT_HERO = {
   title: 'Kontak ons',
   subtitle: "Het jy 'n vraag, nuuswenk of terugvoer? Ons span is hier om te help. Kontak ons gerus per e-pos, telefoon of deur die vorm hieronder in te vul.",
-  image: '',
+  image: HERO_IMAGES.contact,
 };
 
 export const CONTACT_PAGE_CONTENT = {
@@ -31,7 +30,7 @@ export const CONTACT_PAGE_CONTENT = {
 
 export const DEPARTMENTS: Department[] = [
   {
-    icon: Newspaper,
+    icon: MessageSquare,
     title: 'Redaksie',
     description: 'Nuuswenke, regstellings of redaksionele navrae.',
     links: [
@@ -39,7 +38,7 @@ export const DEPARTMENTS: Department[] = [
     ],
   },
   {
-    icon: CreditCard,
+    icon: TrendingUp,
     title: 'Advertensies',
     description: 'Adverteer in druk, aanlyn of digitale platforms.',
     links: [

@@ -1,24 +1,18 @@
-import { CONTACT_EMAILS } from './contactInfo';
-
 import {
   Users,
-  Megaphone,
-  BookOpen,
-  Phone,
-  Heart,
+  Target,
   Shield,
-  Eye,
-  Handshake,
   Award,
   Lightbulb
 } from 'lucide-react';
 import { Newspaper } from '../components/icons/NewspaperIcon';
+import { HERO_IMAGES } from './heroImages';
 
 export const ABOUT_HERO = {
   label: "Sedert 2026",
   title: "Gehalte-joernalistiek in Afrikaans",
-  subtitle: "rooi rose is jou nuwe Afrikaanse koerant wat gehalte-joernalistiek en diskoers oor die aspirasies en frustrasies van Afrikaanse lesers bied.",
-  image: "https://images.unsplash.com/photo-1581508512961-0e3b9524db40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuZXdzcGFwZXIlMjBwcmludGluZyUyMHByZXNzJTIwYWZyaWthYW5zfGVufDF8fHx8MTc3MDk3MzE4OHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+  subtitle: "rooi rose is jou nuwe Afrikaanse leefstyl-tydskrif wat inspirerende verhale, stylvolle wenke en deurdagte diskoers oor die aspirasies en leefwêreld van moderne Afrikaanse vroue bied.",
+  image: HERO_IMAGES.about
 };
 
 export const QUICK_LINKS = [
@@ -33,7 +27,7 @@ export const QUICK_LINKS = [
     title: 'Adverteer',
     description: 'Bereik ons invloedryke Afrikaanse leserskap met jou boodskap.',
     href: '/adverteer',
-    icon: Megaphone,
+    icon: Target,
     color: 'bg-red-50 text-[#D70025]',
   },
   {
@@ -47,14 +41,14 @@ export const QUICK_LINKS = [
     title: 'E-uitgawes',
     description: 'Blaai deur ons argief van digitale uitgawes.',
     href: '/e-uitgawes',
-    icon: BookOpen,
+    icon: Shield,
     color: 'bg-amber-50 text-amber-700',
   },
   {
     title: 'Kontak ons',
     description: 'Stuur navrae, nuuswenke of terugvoering. Ons hoor graag van jou!',
     href: '/kontak',
-    icon: Phone,
+    icon: Award,
     color: 'bg-teal-50 text-teal-700',
   },
 ];
@@ -99,12 +93,9 @@ export const MISSION = {
 };
 
 export const VALUES = [
-  { icon: Heart, title: 'Respek', text: 'Ons behandel alle mense met waardigheid en respek.' },
   { icon: Shield, title: 'Dapperheid', text: 'Ons is dapper in ons joernalistiek en staan bankvas vir die waarheid.' },
-  { icon: Eye, title: 'Integriteit', text: 'Ons bou vertroue deur eerlik en deursigtig te wees.' },
-  { icon: Handshake, title: 'Inklusiwiteit', text: 'Ons weerspie\u00ebl die diversiteit van Suid-Afrika.' },
-  { icon: Award, title: 'Uitnemendheid', text: 'Ons streef na die hoogste standaarde in alles wat ons doen.' },
   { icon: Lightbulb, title: 'Innovasie', text: 'Ons beskou nuwe tegnologie en kreatiewe oplossings as die sleutel tot volhoubaarheid.' },
+  { icon: Award, title: 'Uitnemendheid', text: 'Ons streef na die hoogste standaarde in alles wat ons doen.' },
 ];
 
 export const ETHICS = {

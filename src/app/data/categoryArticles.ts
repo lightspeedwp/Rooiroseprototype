@@ -109,10 +109,10 @@ export const CATEGORY_ARTICLES: Record<string, CategoryArticle[]> = {
     },
     {
       id: 101,
-      title: "Munisipaliteit stel nuwe begroting bekend vir komende boekjaar",
-      excerpt: "Die plaaslike munisipaliteit het vandag hul planne vir die nuwe finansiële jaar aangekondig, met fokus op infrastruktuur en dienstelewering.",
-      category: "Nuus",
-      tags: ["Plaaslik", "Politiek"],
+      title: "Die voorjaar se mooiste mode-neigings wat jy moet ken",
+      excerpt: "Van pastelkleure tot bloeiselpatrone en volhoubare materiale — ontdek die hotste style vir die nuwe seisoen.",
+      category: "Mode",
+      tags: ["Mode", "Neigings", "Voorjaar"],
       date: "19 Des 2025",
       author: "Johan Smit",
       imageUrl: "https://images.unsplash.com/photo-1640580171716-4474b9114ef4?auto=format&fit=crop&q=80&w=800",
@@ -121,10 +121,10 @@ export const CATEGORY_ARTICLES: Record<string, CategoryArticle[]> = {
     },
     {
       id: 102,
-      title: "Waterbeperkings ingestel weens lae damvlakke",
-      excerpt: "Inwoners word gewaarsku dat vlak 3 waterbeperkings vanaf 1 Januarie van krag sal wees. Die munisipaliteit vra almal om water verantwoordelik te gebruik.",
-      category: "Nuus",
-      tags: ["Omgewing", "Plaaslik"],
+      title: "Volhoubare skoonheid: Die beste eco-vriendelike produkte",
+      excerpt: "Ontdek die skoonheidsprodukte wat nie net goed is vir jou vel nie, maar ook vir die omgewing. Van natuurlike grimering tot biologiese velsorg.",
+      category: "Skoonheid",
+      tags: ["Skoonheid", "Volhoubaarheid", "Natuurlik"],
       date: "18 Des 2025",
       author: "Annelie Botha",
       imageUrl: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&q=80&w=800",
@@ -133,10 +133,10 @@ export const CATEGORY_ARTICLES: Record<string, CategoryArticle[]> = {
     },
     {
       id: 103,
-      title: "Feesseisoen padveiligheid veldtog geloods",
-      excerpt: "Die departement van vervoer het vandag hul jaarlikse 'Arrive Alive' veldtog afgeskop met strenger maatreëls en meer padblokkades.",
-      category: "Nuus",
-      tags: ["Aktueel", "Veiligheid"],
+      title: "Vakansie-gereed: Jou ultieme inpak-gids",
+      excerpt: "Van die perfekte vakansie-kabinet tot slim inpak-wenke — alles wat jy nodig het vir 'n gemaklike en stylvolle reis.",
+      category: "Reis",
+      tags: ["Reis", "Vakansie", "Wenke"],
       date: "18 Des 2025",
       featured: true,
       author: "Pieter Nel",
@@ -145,10 +145,10 @@ export const CATEGORY_ARTICLES: Record<string, CategoryArticle[]> = {
     },
     {
       id: 104,
-      title: "Nuwe winkelsentrum open sy deure in sentrale sakedistrik",
-      excerpt: "Die langverwagte ontwikkeling is voltooi en beloof om honderde nuwe werksgeleenthede te skep vir die plaaslike inwoners.",
-      category: "Nuus",
-      tags: ["Sake", "Ekonomie"],
+      title: "Die nuutste mode en skoonheid handelsmerke kom Suid-Afrika toe",
+      excerpt: "Van internasionale luukse merke tot plaaslike gunsteling nes — alles wat jy moet weet oor die spannende nuwe winkel-optredes.",
+      category: "Mode",
+      tags: ["Mode", "Skoonheid", "Inkopies"],
       date: "17 Des 2025",
       author: "Sandra Visser",
       imageUrl: "https://images.unsplash.com/photo-1519567241046-7f570eee3ce9?auto=format&fit=crop&q=80&w=800",
@@ -156,9 +156,9 @@ export const CATEGORY_ARTICLES: Record<string, CategoryArticle[]> = {
     },
     {
       id: 105,
-      title: "Plaaslike mark lok rekordgetal besoekers",
-      excerpt: "Duisende mense het die naweek opgedaag vir die jaarlikse mark met plaaslike produkte, kuns en vermaak vir die hele gesin.",
-      category: "Nuus",
+      title: "Ontdek die mooiste plaaslike markte en boeremarkte",
+      excerpt: "Van ambagtelike produkte tot vars plaasware — ons gids tot die beste weekendmarkte vir die hele gesin.",
+      category: "Leefstyl",
       date: "16 Des 2025",
       author: "Marius Fourie",
       imageUrl: "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&q=80&w=800",
@@ -166,9 +166,9 @@ export const CATEGORY_ARTICLES: Record<string, CategoryArticle[]> = {
     },
     {
       id: 106,
-      title: "Polisie waarsku teen feesseisoen bedriegery",
-      excerpt: "SAPS het 'n waarskuwing uitgereik oor nuwe bedrogskemas wat tydens die vakansie toeslaan. Wees op jou hoede vir verdagte oproep.",
-      category: "Nuus",
+      title: "Veilige aanlyn inkopies: Beskerm jouself teen bedrog",
+      excerpt: "Ons praktiese gids om veilig aanlyn te koop, jou persoonlike inligting te beskerm en seker te maak jy kry waar waarde.",
+      category: "Geld & Sukses",
       date: "15 Des 2025",
       author: "Elise Kruger",
       imageUrl: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=800",
@@ -744,195 +744,178 @@ export const CATEGORY_ARTICLES: Record<string, CategoryArticle[]> = {
     }
   ],
 
-  Sake: [
+  // DEPRECATED: "Sake" category removed - not appropriate for lifestyle magazine
+  // Content redistributed to lifestyle-appropriate categories below
+
+  'Geld & Sukses': [
     {
       id: 900,
-      title: "Vyf slim maniere om jou beleggings te laat groei in 2026",
-      excerpt: "In 'n vinnig veranderende ekonomiese landskap is dit belangriker as ooit om slim besluite met jou geld te neem.",
-      category: "Sake",
+      title: "Vyf slim maniere om jou persoonlike finansies te bestuur",
+      excerpt: "Praktiese wenke om jou maandelikse begroting te beplan, skuld te vermy, en jou finansiële doelwitte te bereik.",
+      category: "Geld & Sukses",
+      tags: ["Finansies", "Beplanning", "Geld"],
       date: "18 Des 2025",
-      author: "Geborg",
-      imageUrl: "https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaW5hbmNlJTIwZ3Jvd3RofGVufDF8fHx8MTc2NjA1NzkwOHww&ixlib=rb-4.1.0&q=80&w=1080",
-      readTime: "3 min",
-      sponsored: true,
-      sponsorName: "Nedbank",
-      sponsorSlug: "nedbank",
-      sponsorLogo: "https://ui-avatars.com/api/?name=NB&background=004F32&color=fff&size=128&bold=true",
-      sponsorLink: "https://www.nedbank.co.za"
-    },
-    {
-      id: 6,
-      title: "Wynbedryf verwag uitstekende oesjaar ondanks uitdagings",
-      excerpt: "Gunster weersomstandighede in die laat somer het bygedra tot druiwe van hoë gehalte vir die 2026-oes.",
-      category: "Sake",
-      date: "16 Des 2025",
-      author: "Kobus van Zyl",
-      featured: true,
-      imageUrl: "https://images.unsplash.com/photo-1706700700231-91a762a35531?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2aW5leWFyZCUyMHNvdXRoJTIwYWZyaWNhJTIwc3RlbGxlbmJvc2NofGVufDF8fHx8MTc2OTUyMzM1Nnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      author: "Marlize Botha",
+      imageUrl: "https://images.unsplash.com/photo-1554224311-88c736d7de4c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
       readTime: "5 min"
     },
     {
-      id: 7,
-      title: "Plaaslike boere skakel oor na sonkrag",
-      excerpt: "Meer as 50% van plase in die distrik wek nou hul eie krag op om beurtkrag teen te werk.",
-      category: "Sake",
+      id: 901,
+      title: "Hoe om finansieel onafhanklik te word in jou 30s",
+      excerpt: "Ontdek die geheime van vroue wat finansiële vryheid bereik het deur slim beplanning, dissipline en slim beleggingskeuses.",
+      category: "Geld & Sukses",
+      tags: ["Finansies", "Vryheid", "Vroue"],
       date: "15 Des 2025",
-      author: "Thandi Nkosi",
-      imageUrl: "https://images.unsplash.com/photo-1671917057421-677f9cd99721?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzb2xhciUyMHBhbmVscyUyMGZhcm0lMjBzb3V0aCUyMGFmcmljYXxlbnwxfHx8fDE3Njk1MjMzNTZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      readTime: "4 min"
-    },
-    {
-      id: 401,
-      title: "Nuwe besigheidsentrum open in sentrale sakedistrik",
-      excerpt: "Die ontwikkeling sal werkverskaffing bevorder en die plaaslike ekonomie hupstoot gee. Verskeie internasionale maatskappye het reeds in geteken.",
-      category: "Sake",
-      date: "19 Des 2025",
-      author: "Sandra Botha",
+      author: "Leandri Venter",
       featured: true,
-      imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800",
-      readTime: "5 min"
+      imageUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+      readTime: "6 min"
     },
     {
-      id: 402,
-      title: "Plaaslike restaurant ontvang prestigieuse toekenning",
-      excerpt: "Die restaurant is aangewys as een van die top 10 eetplekke in die provinsie. Die eienaar is verheug oor die erkenning.",
-      category: "Sake",
+      id: 902,
+      title: "Beginners se gids tot slim spaar en belê",
+      excerpt: "Van noodfondse tot langtermyn beleggings — alles wat jy moet weet om jou finansiële toekoms te verseker.",
+      category: "Geld & Sukses",
+      tags: ["Finansies", "Spaar", "Belegging"],
+      date: "12 Des 2025",
+      author: "Annelie Smit",
+      imageUrl: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+      readTime: "7 min"
+    },
+  ],
+
+  'Kos & Reis': [
+    {
+      id: 903,
+      title: "Die Kaapse Wynlande: Jou ultieme weekendgids",
+      excerpt: "Van romantiese wynplase tot bekroonde restaurante — ontdek hoekom die Wynlande perfek is vir 'n luukse wegbreek.",
+      category: "Kos & Reis",
+      tags: ["Reis", "Wyn", "Wegbreek"],
+      date: "16 Des 2025",
+      author: "Annemarie de Wet",
+      featured: true,
+      imageUrl: "https://images.unsplash.com/photo-1706700700231-91a762a35531?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+      readTime: "7 min"
+    },
+    {
+      id: 904,
+      title: "10 beste eetplekke in Kaapstad volgens ons lesers",
+      excerpt: "Van see-eetplek tot burgers — ons lesers deel hul gunsteling restaurante wat jy eenvoudig moet probeer.",
+      category: "Kos & Reis",
+      tags: ["Kos", "Restaurante", "Kaapstad"],
       date: "18 Des 2025",
-      author: "Willem Brink",
+      author: "Liezl van Niekerk",
       featured: true,
       imageUrl: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=800",
-      readTime: "4 min"
-    },
-    {
-      id: 403,
-      title: "Toerismebedryf sien toename in vakansiebesprekings",
-      excerpt: "Plaaslike gastehuise en B&Bs rapporteer vol besprekings vir die feesseisoen. Dit is goeie nuus vir die plaaslike ekonomie.",
-      category: "Sake",
-      date: "17 Des 2025",
-      author: "Annette Hoffman",
-      imageUrl: "https://images.unsplash.com/photo-1455587734955-081b22074882?auto=format&fit=crop&q=80&w=800",
-      readTime: "4 min"
-    },
-    {
-      id: 404,
-      title: "Nuwe fabriek skep 150 werksgeleenthede",
-      excerpt: "Die fabriek, wat volgende maand open, sal vervaardiging bring na die streek. Werkskepping is verwelkom deur inwoners.",
-      category: "Sake",
-      date: "16 Des 2025",
-      author: "Gerhard Smit",
-      imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800",
       readTime: "5 min"
     },
     {
-      id: 405,
-      title: "Plaaslike entrepreneur ontvang besigheidstoekenning",
-      excerpt: "Die jong entrepreneur is erken vir haar innoverende benadering tot landbou. Sy is 'n inspirasie vir ander jong besigheidsmense.",
-      category: "Sake",
-      date: "15 Des 2025",
-      author: "Frans Visagie",
-      imageUrl: "https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=800",
-      readTime: "4 min"
-    },
-    {
-      id: 406,
-      title: "Winkelsentrum brei uit met nuwe winkels",
-      excerpt: "Tien nuwe winkels sal volgende jaar oopmaak in die sentrum. Dit sluit in mode, elektroniese goedere en restaurants.",
-      category: "Sake",
-      date: "14 Des 2025",
-      author: "Johan Barnard",
-      imageUrl: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800",
-      readTime: "3 min"
-    },
-    {
-      id: 407,
-      title: "Plaaslike handelaar brei uit na aanlyn mark",
-      excerpt: "Die besigheid het 'n nuwe webwerf geloods om produkte nasionaal te verkoop. Dit sal nuwe inkomste genereer.",
-      category: "Sake",
-      date: "13 Des 2025",
-      author: "Linda Swart",
-      imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
-      readTime: "4 min"
-    },
-    {
-      id: 408,
-      title: "Bank open nuwe tak in voorstad",
-      excerpt: "Die bank se nuwe tak sal moderne bankdienste na inwoners bring en werksgeleenthede skep.",
-      category: "Sake",
-      date: "12 Des 2025",
-      author: "Frederik Marais",
-      imageUrl: "https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?auto=format&fit=crop&q=80&w=800",
-      readTime: "3 min"
-    },
-    {
-      id: 409,
-      title: "Franchise geleenthede lok entrepreneurs",
-      excerpt: "Verskeie franchise maatskappye soek plaaslike eienaars om hul besighede in die area te vestig.",
-      category: "Sake",
-      date: "11 Des 2025",
-      author: "Sandra Botha",
-      imageUrl: "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&q=80&w=800",
-      readTime: "5 min"
-    },
-    {
-      id: 410,
-      title: "Plaaslike ambagsmense stig koöperasie",
-      excerpt: "Houtwerkers, potmakers en juweliers het saamgekom om 'n koöperasie te stig wat hul produkte gesamentlik bemark.",
-      category: "Sake",
-      date: "10 Des 2025",
-      author: "Willem Brink",
-      imageUrl: "https://images.unsplash.com/photo-1452860606245-08befc0ff44b?auto=format&fit=crop&q=80&w=800",
-      readTime: "4 min"
-    },
-    {
-      id: 411,
-      title: "OU toerusting handelaar open in industriële gebied",
-      excerpt: "Die besigheid spesialiseer in die koop en verkoop van gebruikte industriële masjinerie vir plaaslike vervaardigers.",
-      category: "Sake",
-      date: "9 Des 2025",
-      author: "Gerhard Smit",
-      imageUrl: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=800",
-      readTime: "4 min"
-    },
-    {
-      id: 412,
-      title: "Boekwinkel vier 30 jaar in besigheid",
-      excerpt: "Die geliefde plaaslike boekwinkel het vanjaar sy 30ste verjaardag gevier met spesiale afslag en outeur tekeninge.",
-      category: "Sake",
-      date: "8 Des 2025",
-      author: "Annette Hoffman",
-      imageUrl: "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&q=80&w=800",
-      readTime: "3 min"
-    },
-    {
-      id: 413,
-      title: "Plaasprodukte mark groei elke jaar",
-      excerpt: "Die weeklikse mark vir plaasprodukte lok al meer verkopers en kopers wat vars, plaaslike produkte waardeer.",
-      category: "Sake",
+      id: 905,
+      title: "Plaaslike mark-juwele: Waar om vars, ambagtelike produkte te kry",
+      excerpt: "Ontdek die mooiste boeremarkte en plaaslike mark om vars produkte, ambagtelike kaas, brood en handwerk te koop.",
+      category: "Kos & Reis",
+      tags: ["Markte", "Plaaslik", "Ambag"],
       date: "7 Des 2025",
-      author: "Johan Barnard",
+      author: "Marelize Hoffman",
       imageUrl: "https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&q=80&w=800",
       readTime: "4 min"
     },
     {
-      id: 414,
-      title: "Nuwe motor handelaar vestig in dorp",
-      excerpt: "Die handelaar sal verskeie motormerke aanbied en 'n volledige diens sentrum bedryf.",
-      category: "Sake",
-      date: "6 Des 2025",
-      author: "Frans Visagie",
-      imageUrl: "https://images.unsplash.com/photo-1562911791-c7a97b729ec5?auto=format&fit=crop&q=80&w=800",
+      id: 906,
+      title: "Groen vakansies: Eco-vriendelike wegbreek plekke in SA",
+      excerpt: "Ontdek volhoubare akkommodasie en natuur-gebaseerde ervarings wat jou met die omgewing verbind.",
+      category: "Kos & Reis",
+      tags: ["Reis", "Volhoubaarheid", "Natuur"],
+      date: "14 Des 2025",
+      author: "Zandi Mthembu",
+      imageUrl: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+      readTime: "6 min"
+    },
+    {
+      id: 907,
+      title: "Top vakansiebestemming vir families: Gids en wenke",
+      excerpt: "Beplan die perfekte familie-vakansie met ons gids tot kindervriendelike akkommodasie en aktiwiteite.",
+      category: "Kos & Reis",
+      tags: ["Reis", "Familie", "Vakansie"],
+      date: "17 Des 2025",
+      author: "Elmarie Coetzee",
+      imageUrl: "https://images.unsplash.com/photo-1455587734955-081b22074882?auto=format&fit=crop&q=80&w=800",
+      readTime: "5 min"
+    },
+  ],
+
+  'Inspirasie & Vertellings': [
+    {
+      id: 908,
+      title: "Die jong entrepreneur wat Suid-Afrikaanse handwerk wêreldwyd bemark",
+      excerpt: "Ontmoet die inspirerende vrou wat tradisionele ambagsmense se werk op internasionale platforms plaas en jong vroue motiveer.",
+      category: "Inspirasie & Vertellings",
+      tags: ["Inspirasie", "Entrepreneur", "Vroue"],
+      date: "15 Des 2025",
+      author: "Karien Jansen",
+      featured: true,
+      imageUrl: "https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=800",
+      readTime: "6 min"
+    },
+    {
+      id: 909,
+      title: "Van plaasmeisie tot bekroonde sjef: 'n Inspirerende reis",
+      excerpt: "Sy het haar passie vir tradisionele Afrikaner-kos in 'n suksesvolle restaurant omskep. Hier is haar storie.",
+      category: "Inspirasie & Vertellings",
+      tags: ["Inspirasie", "Kos", "Sukses"],
+      date: "18 Des 2025",
+      author: "Lize Harmse",
+      featured: true,
+      imageUrl: "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+      readTime: "8 min"
+    },
+    {
+      id: 910,
+      title: "Drie vroue wat hul drome werklikheid gemaak het",
+      excerpt: "Van boekwinkel-eienaars tot ambagtelike juweliers — inspirerende stories van vroue wat hul passies nagevolg het.",
+      category: "Inspirasie & Vertellings",
+      tags: ["Inspirasie", "Vroue", "Sukses"],
+      date: "10 Des 2025",
+      author: "Sandra Visser",
+      imageUrl: "https://images.unsplash.com/photo-1452860606245-08befc0ff44b?auto=format&fit=crop&q=80&w=800",
+      readTime: "7 min"
+    },
+    {
+      id: 911,
+      title: "Sy het haar liefde vir boeke in 'n gemeenskap omskep",
+      excerpt: "Die geliefde plaaslike boekwinkel vier 30 jaar — en die eienaar deel haar reis van passie tot sukses.",
+      category: "Inspirasie & Vertellings",
+      tags: ["Inspirasie", "Gemeenskap", "Boeke"],
+      date: "8 Des 2025",
+      author: "Annelise Kruger",
+      imageUrl: "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&q=80&w=800",
+      readTime: "5 min"
+    },
+  ],
+
+  'Leefstyl & Tuiste': [
+    {
+      id: 912,
+      title: "Die nuutste dekor-neigings vir jou dro dreamline",
+      excerpt: "Van volhoubare materiale tot minimalistiese style — ontdek wat warm is in tuisdekor vir 2026.",
+      category: "Leefstyl & Tuiste",
+      tags: ["Dekor", "Tuiste", "Neigings"],
+      date: "14 Des 2025",
+      author: "Mia Theron",
+      imageUrl: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800",
       readTime: "5 min"
     },
     {
-      id: 415,
-      title: "Beleggingsmaatskappy bied finansiële opleiding",
-      excerpt: "Gratis werkswinkels sal inwoners help om beter finansiële besluite te neem en vir die toekoms te spaar.",
-      category: "Sake",
-      date: "5 Des 2025",
-      author: "Sandra Botha",
-      imageUrl: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800",
+      id: 913,
+      title: "Slim aanlyn-inkopies: Gids tot die beste webwerwe",
+      excerpt: "Van mode tot tuisware — ontdek die beste Suid-Afrikaanse aanlyn winkels vir kwaliteit en gemak.",
+      category: "Leefstyl & Tuiste",
+      tags: ["Inkopies", "Aanlyn", "Mode"],
+      date: "13 Des 2025",
+      author: "Yolandi Swart",
+      imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
       readTime: "4 min"
-    }
+    },
   ],
 
   Leefstyl: [
@@ -1762,6 +1745,17 @@ export const CATEGORY_ARTICLES: Record<string, CategoryArticle[]> = {
       author: "Annemarie Swart",
       imageUrl: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&q=80&w=1080",
       readTime: "6 min"
+    },
+    {
+      id: 10003,
+      title: "Bak perfekte suurdesembrood tuis",
+      excerpt: "Meesterbakker Anna du Plessis deel haar geheime vir die perfekte knap kors en sagte binnekant.",
+      category: "Kos",
+      tags: ["Bak", "Brood", "Tutorials"],
+      date: "8 Mrt 2026",
+      author: "Anna du Plessis",
+      imageUrl: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=1080",
+      readTime: "10 min"
     }
   ],
 
@@ -1788,6 +1782,17 @@ export const CATEGORY_ARTICLES: Record<string, CategoryArticle[]> = {
       author: "Carla Pretorius",
       imageUrl: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&q=80&w=1080",
       readTime: "5 min"
+    },
+    {
+      id: 10103,
+      title: "Die kuns van laag-op-laag aantrek",
+      excerpt: "Styltips vir hoe om warm én stylvol te bly met die kuns van laag-op-laag aantrek hierdie winter.",
+      category: "Mode",
+      tags: ["Styl", "Winter", "Wenke"],
+      date: "7 Mrt 2026",
+      author: "Leandri Fourie",
+      imageUrl: "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&q=80&w=1080",
+      readTime: "6 min"
     }
   ],
 
@@ -1813,6 +1818,17 @@ export const CATEGORY_ARTICLES: Record<string, CategoryArticle[]> = {
       date: "8 Mrt 2026",
       author: "Zani du Plessis",
       imageUrl: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&q=80&w=1080",
+      readTime: "5 min"
+    },
+    {
+      id: 10203,
+      title: "Minimalistiese grimering vir elke dag",
+      excerpt: "Skep 'n vars, natuurlike grimeer-look in minder as 10 minute met hierdie maklike stappe en produkte.",
+      category: "Skoonheid",
+      tags: ["Grimering", "Minimalisties", "Tutorials"],
+      date: "6 Mrt 2026",
+      author: "Mia Coetzee",
+      imageUrl: "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&q=80&w=1080",
       readTime: "5 min"
     }
   ],
@@ -1840,6 +1856,17 @@ export const CATEGORY_ARTICLES: Record<string, CategoryArticle[]> = {
       author: "Pieter van Wyk",
       imageUrl: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&q=80&w=1080",
       readTime: "6 min"
+    },
+    {
+      id: 10303,
+      title: "Slaap beter: 7 natuurlike oplossings",
+      excerpt: "Ontdek wetenskaplik-bewese metodes om jou slaapkwaliteit te verbeter sonder medikasie.",
+      category: "Gesondheid",
+      tags: ["Slaap", "Welstand", "Natuurlik"],
+      date: "7 Mrt 2026",
+      author: "Dr. Elna Marais",
+      imageUrl: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&q=80&w=1080",
+      readTime: "8 min"
     }
   ],
 
@@ -1982,6 +2009,17 @@ export const CATEGORY_ARTICLES: Record<string, CategoryArticle[]> = {
       author: "Thabo Mthembu",
       imageUrl: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=1080",
       readTime: "9 min"
+    },
+    {
+      id: 10503,
+      title: "Opbou van betekenisvolle verhoudings",
+      excerpt: "Leer hoe om dieper verbindings met jou geliefdes te skep en te onderhou in 'n besige wêreld.",
+      category: "Jou lewe",
+      tags: ["Verhoudings", "Gesin", "Vriendskap"],
+      date: "8 Mrt 2026",
+      author: "Linda Botha",
+      imageUrl: "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=1080",
+      readTime: "6 min"
     }
   ],
 
@@ -2008,6 +2046,17 @@ export const CATEGORY_ARTICLES: Record<string, CategoryArticle[]> = {
       author: "Johan Roux",
       imageUrl: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&q=80&w=1080",
       readTime: "8 min"
+    },
+    {
+      id: 10603,
+      title: "Binge-waardige reekse vir hierdie maand",
+      excerpt: "Van drama tot komedie - hier is die moet-kyk reekse wat jou naweek sal vervul.",
+      category: "Ontspanning",
+      tags: ["TV", "Reekse", "Vermaak"],
+      date: "9 Mrt 2026",
+      author: "Annelize Steyn",
+      imageUrl: "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?auto=format&fit=crop&q=80&w=1080",
+      readTime: "5 min"
     }
   ],
 

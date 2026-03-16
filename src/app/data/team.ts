@@ -4,9 +4,10 @@
  */
 
 import { CONTACT_EMAILS } from './contactInfo';
+import { HERO_IMAGES } from './heroImages';
 
 // Import images
-import barnardImg from '../assets/team/barnard-beyers.jpg';
+import barnardImg from 'figma:asset/0c2924c05ac313745f82994014d1725229f424bd.png';
 import luciaImg from "figma:asset/7c85c047fbdde8adee5b17cfb9211c718b88c10c.png";
 import vernonImg from "figma:asset/a75f8c0a9499677a09afa389a3d6a45e544ec10c.png";
 import gerrieImg from "figma:asset/29ff260289f38b2a986a638476e9b3250556115e.png";
@@ -23,7 +24,7 @@ export const TEAM_PAGE_CONTENT = {
   hero: {
     title: "Ontmoet ons span",
     subtitle: "Die mense agter die stories wat vir ons lesers saak maak.",
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=2000"
+    image: HERO_IMAGES.team
   },
   sections: {
     editorial: {

@@ -765,7 +765,7 @@ export const SPONSORSHIPS_FAQS: PageFAQItem[] = [
   {
     id: 'spons-2',
     question: 'Wat is die minimum borgskaptermyn?',
-    answer: 'Borgskappe by <em>rooi rose</em> begin tipies by \\'n minimum van 3 maande om effektiewe handelsmerkbou en volgehoue sigbaarheid te verseker. Korter termyne is beskikbaar vir spesifieke leefstyl-geleenthede soos bruidskoue, modeweek-dekking of seisoenale veldtogte.'
+    answer: 'Borgskappe by <em>rooi rose</em> begin tipies by \'n minimum van 3 maande om effektiewe handelsmerkbou en volgehoue sigbaarheid te verseker. Korter termyne is beskikbaar vir spesifieke leefstyl-geleenthede soos bruidskoue, modeweek-dekking of seisoenale veldtogte.'
   },
   {
     id: 'spons-3',
@@ -778,13 +778,13 @@ export const SPONSORSHIPS_FAQS: PageFAQItem[] = [
 export const SUPPLEMENTS_FAQS: PageFAQItem[] = [
   {
     id: 'supp-1',
-    question: 'Wat is \\'n <em>rooi rose</em> spesiale uitgawe?',
-    answer: '\\'n Spesiale uitgawe is \\'n aparte, temagedrewe publikasie wat saam met <em>rooi rose</em> se hooftydskrif gedruk en versprei word. Dit bied \\'n eksklusiewe premium platform vir diepgaande leefstyl-inhoud oor \\'n spesifieke onderwerp — soos ons jaarlikse Bruidsjoernaal, Skoonheidsjaarlikse of Kos & Wyn Spesiale.'
+    question: 'Wat is \'n <em>rooi rose</em> spesiale uitgawe?',
+    answer: '\'n Spesiale uitgawe is \'n aparte, temagedrewe publikasie wat saam met <em>rooi rose</em> se hooftydskrif gedruk en versprei word. Dit bied \'n eksklusiewe premium platform vir diepgaande leefstyl-inhoud oor \'n spesifieke onderwerp — soos ons jaarlikse Bruidsjoernaal, Skoonheidsjaarlikse of Kos & Wyn Spesiale.'
   },
   {
     id: 'supp-2',
-    question: 'Kan ek \\'n hele spesiale uitgawe borg?',
-    answer: 'Ja, <em>rooi rose</em> bied eksklusiewe bor gskap van spesiale uitgawes aan. Jou handelsmerk kry prominente plasing deur die hele uitgawe, insluitend die voorblad en interne advertensiespasie, wat dit ideaal maak vir premium handelsmerkbelyning met ons welgestelde leefstyl-gehoor.'
+    question: 'Kan ek \'n hele spesiale uitgawe borg?',
+    answer: 'Ja, <em>rooi rose</em> bied eksklusiewe borgskap van spesiale uitgawes aan. Jou handelsmerk kry prominente plasing deur die hele uitgawe, insluitend die voorblad en interne advertensiespasie, wat dit ideaal maak vir premium handelsmerkbelyning met ons welgestelde leefstyl-gehoor.'
   },
   {
     id: 'supp-3',

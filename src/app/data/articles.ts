@@ -11,11 +11,11 @@ import { Article, LatestNewsItem } from '../types';
 export const TOP_STORIES: Article[] = [
   {
     id: 1,
-    title: "Munisipaliteit stel nuwe begroting bekend vir komende boekjaar",
-    category: "Nuus",
-    tags: ["Plaaslik", "Politiek"],
-    imageUrl: "https://images.unsplash.com/photo-1640580171716-4474b9114ef4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaXR5JTIwY291bmNpbCUyMG1lZXRpbmclMjBzb3V0aCUyMGFmcmljYXxlbnwxfHx8fDE3NjYxMzA3NDN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    excerpt: "Die plaaslike munisipaliteit het vandag hul planne vir die nuwe finansiële jaar aangekondig, met fokus op infrastruktuur.",
+    title: "Die voorjaar se mooiste mode-neigings vir 2026",
+    category: "Mode",
+    tags: ["Mode", "Neigings", "Voorjaar"],
+    imageUrl: "https://images.unsplash.com/photo-1483985988355-763728e1935b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+    excerpt: "Van pastelkleure tot bloeiselpatrone — ontdek die hotste style vir die nuwe seisoen.",
     author: "Johan Smit",
     date: "19 Des 2025",
     readTime: "4 min",
@@ -37,12 +37,12 @@ export const TOP_STORIES: Article[] = [
   },
   {
     id: 900,
-    title: "Vyf slim maniere om jou beleggings te laat groei in 2026",
-    category: "Sake",
-    tags: ["Finansies", "Beleggings"],
-    imageUrl: "https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaW5hbmNlJTIwZ3Jvd3RofGVufDF8fHx8MTc2NjA1NzkwOHww&ixlib=rb-4.1.0&q=80&w=1080",
-    excerpt: "In 'n vinnig veranderende ekonomiese landskap is dit belangriker as ooit om slim besluite met jou geld te neem.",
-    author: "Geborg",
+    title: "Vyf slim maniere om jou persoonlike finansies te bestuur",
+    category: "Geld & Sukses",
+    tags: ["Finansies", "Beplanning"],
+    imageUrl: "https://images.unsplash.com/photo-1554224311-88c736d7de4c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+    excerpt: "Praktiese wenke om jou maandelikse begroting te beplan, skuld te vermy, en jou finansiële doelwitte te bereik.",
+    author: "Marlize Botha",
     date: "18 Des 2025",
     sponsored: true,
     sponsorName: "Nedbank",
@@ -53,11 +53,11 @@ export const TOP_STORIES: Article[] = [
   },
   {
     id: 3,
-    title: "Nuwe winkelsentrum open deure in sentrale sakedistrik",
-    category: "Sake",
-    tags: ["Ekonomie", "Besigheid"],
-    imageUrl: "https://images.unsplash.com/photo-1580793241553-e9f1cce181af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzaG9wcGluZyUyMG1hbGx8ZW58MXx8fHwxNzY2MTE3MzE2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    excerpt: "Die langverwagte ontwikkeling bring nuwe werksgeleenthede en internasionale handelsmerke na die dorp.",
+    title: "Die nuutste mode en skoonheid handelsmerke kom Suid-Afrika toe",
+    category: "Mode",
+    tags: ["Mode", "Skoonheid", "Inkopies"],
+    imageUrl: "https://images.unsplash.com/photo-1580793241553-e9f1cce181af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+    excerpt: "Van internasionale skoonheidsmerke tot luukse mode-winkels — alles wat jy moet weet oor die nuutste winkel-optredes.",
     author: "Sandra Botha",
     date: "18 Des 2025",
     readTime: "6 min",
@@ -130,10 +130,10 @@ export const TOP_STORIES: Article[] = [
 export const LATEST_NEWS: LatestNewsItem[] = [
   {
     id: 5,
-    title: "Waterbeperkings ingestel na droë seisoen",
-    category: "Nuus",
+    title: "Volhoubare skoonheid: Eco-vriendelike produkte wat werk",
+    category: "Skoonheid",
     time: "2 uur gelede",
-    tags: ["Omgewing"]
+    tags: ["Skoonheid", "Volhoubaarheid"]
   },
   {
     id: 6,
@@ -179,9 +179,9 @@ export const LATEST_NEWS: LatestNewsItem[] = [
   },
   {
     id: 12,
-    title: "Munisipaliteit waarsku oor veldbrande",
-    category: "Nuus",
+    title: "Somerseisoen tuinwenke: Hou jou tuin pragtig",
+    category: "Leefstyl",
     time: "6 uur gelede",
-    tags: ["Omgewing", "Plaaslik"]
+    tags: ["Tuinmaak", "Somer"]
   }
 ];

@@ -1,25 +1,48 @@
 # Prompt Trigger Words — AI Command System
 
-**Version**: 1.0.0  
+**Version**: 2.0.0  
 **Created**: 2026-03-13  
+**Updated**: 2026-03-15  
 **Purpose**: Define trigger words that execute orchestrator prompts automatically  
 **Target**: Figma Make AI assistant
 
----
+⚠️ **IMPORTANT**: This document is superseded by the comprehensive [PROMPT-TRIGGERS.md](/guidelines/PROMPT-TRIGGERS.md) guide.
 
-## 🎯 **WHAT ARE TRIGGER WORDS?**
-
-Trigger words are **single-word commands** that tell the AI to execute a specific orchestrator prompt with predefined parameters. They act like shortcuts to run complex multi-step workflows.
-
-**Benefits**:
-- ⚡ **Fast** — Type one word instead of explaining the full task
-- 🎯 **Consistent** — Same workflow every time
-- 📋 **Documented** — Each trigger has a full prompt spec
-- 🔄 **Reusable** — Run maintenance tasks on a regular schedule
+➡️ **See [/guidelines/PROMPT-TRIGGERS.md](/guidelines/PROMPT-TRIGGERS.md) for complete documentation**
 
 ---
 
-## 📚 **AVAILABLE TRIGGER WORDS**
+## 🎯 **QUICK REFERENCE**
+
+For full documentation, see [PROMPT-TRIGGERS.md](/guidelines/PROMPT-TRIGGERS.md).
+
+### Maintenance Commands
+- **`cleanup`** — 7-phase project maintenance (60-80 min)
+- **`continue`** — Resume work on next task (varies)
+- **`sync-guidelines`** — Sync guidelines with project state (20-30 min)
+- **`update-docs`** — Update CHANGELOG, README, ATTRIBUTIONS (15-20 min)
+
+### Audit Commands (NEW v2.0)
+- **`audit`** — Run ALL audits (creates 8 reports, ~90 min)
+- **`audit routes`** — Routes system audit
+- **`audit sitemap`** — Sitemap data audit
+- **`audit tokens`** — Design token usage audit
+- **`audit css`** — CSS architecture audit
+- **`audit a11y`** — WCAG accessibility audit
+- **`audit data`** — Data file sizes audit
+- **`audit responsive`** — Responsive patterns audit
+- **`audit styles`** — Hardcoded styles audit
+
+### Report Processing
+- **`process reports`** — Convert all reports to task lists (15-20 min)
+
+### Combined Workflows
+- **`audit && process reports`** — Full audit + task creation (2-3 hours)
+- **`cleanup && continue`** — Maintenance + resume next task (varies)
+
+---
+
+## 📚 **LEGACY DOCUMENTATION** (AVAILABLE TRIGGER WORDS)
 
 ### `cleanup`
 **Purpose**: Execute comprehensive project maintenance  
@@ -84,6 +107,140 @@ AI: Found next task: Task 2.1 — Update Classifieds Page
 
 ---
 
+### `audit-files`
+**Purpose**: Audit all files for size violations and organization issues  
+**Prompt**: `/prompts/audit-files.md`  
+**Duration**: 30-45 minutes  
+**Frequency**: Monthly or when adding many new files
+
+**What it does**:
+1. Scans all project files and counts lines
+2. Identifies files exceeding size thresholds
+3. Categorizes violations by severity
+4. Recommends splitting strategies for large files
+5. Checks root directory compliance
+6. Creates detailed audit report
+7. Generates task list for file splitting
+
+**When to use**:
+- After adding many new components or data files
+- When AI processing seems slow
+- Monthly as regular maintenance
+- Before major refactoring
+- When components feel too complex
+
+**File Size Thresholds**:
+- Components (.tsx): 200 lines
+- Data files (.ts): 300 lines
+- CSS files (.css): 200 lines
+- Guidelines (.md): 500 lines
+
+**Example usage**:
+```
+User: audit-files
+AI: [Scans all files, identifies 12 files over threshold, recommends splits]
+```
+
+---
+
+### `audit-root`
+**Purpose**: Quick check for unauthorized .md files in project root  
+**Prompt**: `/prompts/audit-root.md`  
+**Duration**: 5-10 minutes  
+**Frequency**: Weekly or after creating documentation
+
+**What it does**:
+1. Lists all .md files in project root
+2. Verifies only authorized files exist (ATTRIBUTIONS.md, README.md, CHANGELOG.md)
+3. Identifies unauthorized files
+4. Determines proper relocation paths
+5. Automatically relocates files
+6. Updates any references
+7. Creates brief compliance report
+
+**When to use**:
+- After creating new documentation
+- Weekly as quick check
+- When root directory looks cluttered
+- Before committing changes
+- As pre-deployment verification
+
+**Example usage**:
+```
+User: audit-root
+AI: Found unauthorized file: /WHATS-NEXT.md
+    Relocating to: /tasks/upcoming-tasks.md
+    ✅ Root directory now compliant
+```
+
+---
+
+### `sync-guidelines`
+**Purpose**: Synchronize all guidelines with current project state  
+**Prompt**: `/prompts/sync-guidelines.md`  
+**Duration**: 20-30 minutes  
+**Frequency**: Before audits, after major changes
+
+**What it does**:
+1. Scans current implementation (components, tokens, routes)
+2. Compares with documented guidelines
+3. Identifies discrepancies
+4. Updates guidelines with current counts and lists
+5. Adds new components/tokens to documentation
+6. Verifies cross-references and examples
+7. Creates sync report
+
+**When to use**:
+- **BEFORE running any audit prompts** (critical!)
+- After adding new components
+- After updating design tokens
+- After restructuring files
+- Monthly as regular maintenance
+
+**Example usage**:
+```
+User: sync-guidelines
+AI: Scanning current state...
+    Found 75 components (guidelines show 50)
+    Found 145 tokens (guidelines show 120)
+    Updating guidelines... ✅
+    All guidelines synchronized
+```
+
+---
+
+### `update-docs`
+**Purpose**: Update the three core root documentation files  
+**Prompt**: `/prompts/update-docs.md`  
+**Duration**: 15-20 minutes  
+**Frequency**: After features, before releases
+
+**What it does**:
+1. Updates CHANGELOG.md with recent changes
+2. Updates README.md statistics and features
+3. Updates ATTRIBUTIONS.md with new dependencies
+4. Verifies all links working
+5. Ensures proper formatting
+6. Creates update summary report
+
+**When to use**:
+- After completing major features
+- Before creating releases
+- After adding new dependencies
+- Monthly as regular maintenance
+- Before GitHub milestones
+
+**Example usage**:
+```
+User: update-docs
+AI: Updating CHANGELOG.md... ✅
+    Updating README.md... ✅
+    Updating ATTRIBUTIONS.md... ✅
+    All documentation current
+```
+
+---
+
 ## 🔧 **HOW TRIGGER WORDS WORK**
 
 ### Recognition Pattern
@@ -114,6 +271,10 @@ When the AI sees a **single lowercase word** that matches a trigger word, it sho
 |:--------|:-------|:---------|:----------|:--------|
 | `cleanup` | `/prompts/cleanup.md` | 60-80 min | Every 2-3 weeks | Project maintenance & documentation sync |
 | `continue` | `/prompts/continue.md` | Varies | Daily | Resume work on next task |
+| `audit-files` | `/prompts/audit-files.md` | 30-45 min | Monthly | File size and organization audit |
+| `audit-root` | `/prompts/audit-root.md` | 5-10 min | Weekly | Root directory compliance check |
+| `sync-guidelines` | `/prompts/sync-guidelines.md` | 20-30 min | Before audits | Sync guidelines with project state |
+| `update-docs` | `/prompts/update-docs.md` | 15-20 min | After features | Update core documentation files |
 
 **Future triggers** (not yet implemented):
 - `audit` — Run comprehensive system audit

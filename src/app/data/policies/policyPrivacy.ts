@@ -5,7 +5,7 @@
  * Last updated: 2026-03-03
  */
 
-import { CONTACT_PHONES, EXTERNAL_SERVICE_EMAILS } from '../contactInfo';
+import { CONTACT_EMAILS, CONTACT_PHONES, EXTERNAL_SERVICE_EMAILS } from '../contactInfo';
 
 export const POLICY_PRIVACY = {
   title: 'Privaatheidsbeleid',

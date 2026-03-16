@@ -77,7 +77,8 @@ export const HEADER_TOP_BAR_LINKS = [
 /**
  * Desktop category bar links (horizontal nav below logo).
  * Single source of truth — used by Header.tsx.
- * rooi rose Magazine: 9 items (8 categories + Wen)
+ * rooi rose Magazine: 12 items (8 editorial categories + Rooiwarm wenners + Wen + Shop + Kontak)
+ * Updated: 2026-03-15 — Added Shop, Rooiwarm wenners, and Kontak to align with mega menu orchestrator
  */
 export const HEADER_CATEGORY_BAR_LINKS = [
   { label: "Kos", href: "/kos" },
@@ -88,7 +89,10 @@ export const HEADER_CATEGORY_BAR_LINKS = [
   { label: "Leefstyl", href: "/leefstyl" },
   { label: "Jou lewe", href: "/jou-lewe" },
   { label: "Ontspanning", href: "/ontspanning" },
+  { label: "Rooiwarm wenners", href: "/rooiwarm-wenners" },
   { label: "Wen", href: "/wen" },
+  { label: "Shop", href: "/winkel" },
+  { label: "Kontak", href: "/kontak" },
 ];
 
 export const FOOTER_LINK_COLUMNS = [
@@ -128,7 +132,6 @@ export const FOOTER_LINK_COLUMNS = [
       { label: "Stuur in", href: "/stuur-in" },
       { label: "Algemene vrae", href: "/vrae" },
       { label: "Gebeure", href: "/gebeure" },
-      { label: "Doodsberrigte", href: "/doodsberrigte" },
     ],
   },
   {
@@ -225,7 +228,6 @@ export const MOBILE_SECONDARY_LINKS = [
   { label: "Winkel", href: "/winkel" },
   { label: "Inteken", href: "/inteken" },
   { label: "Gebeure", href: "/gebeure" },
-  { label: "Doodsberrigte", href: "/doodsberrigte" },
   { label: "Multimedia", href: "/multimedia" },
   { label: "Oor ons", href: "/oor-ons" },
   { label: "Ons span", href: "/oor-ons/redaksie" },
@@ -260,7 +262,6 @@ export const SITEMAP_MAIN_PAGES = [
   { name: "Soek", path: "/soek" },
   { name: "Weer", path: "/weer" },
   { name: "Verkeer", path: "/verkeer" },
-  { name: "Doodsberrigte", path: "/doodsberrigte" },
   { name: "Multimedia", path: "/multimedia" },
   { name: "Gebeure", path: "/gebeure" },
   { name: "Nuusbrief-argief", path: "/nuusbrief-argief" },
@@ -377,4 +378,9 @@ export const SITEMAP_DEV_TOOLS = [
   { name: "Template-deelblaaier", path: "/ontwikkelaar/sjablone-onderdeel" },
   { name: "Inc-lêerblaaier", path: "/ontwikkelaar/inc-map" },
   { name: "Ikoonblaaier", path: "/ontwikkelaar/ikone" },
+];
+
+export const SITEMAP_DEMO_PAGES = [
+  { name: "Redaksionele Demo", path: "/editorial-demo" },
+  { name: "Redaksionele Landing Page", path: "/editorial-demo/landing-page" },
 ];

@@ -38,8 +38,8 @@ export const BREAKING_NEWS_ITEMS: BreakingNewsItem[] = [
   },
   {
     id: '6',
-    title: 'Nuwe winkelsentrum open deure in Wellington',
-    category: 'Sake',
+    title: 'Die nuutste mode handelsmerke kom Suid-Afrika toe',
+    category: 'Mode',
     publishedAt: new Date(Date.now() - 1000 * 60 * 60 * 48).toISOString(), // 2 days ago
   },
   {

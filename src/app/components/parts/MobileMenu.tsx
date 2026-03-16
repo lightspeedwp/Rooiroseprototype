@@ -117,7 +117,7 @@ export const MobileMenu = () => {
       {/* Hamburger Trigger - Positioned after My Account icon in Header */}
       <button
         onClick={() => setOpen(true)}
-        className="lg:hidden p-2 text-brand-navy dark:text-white hover:text-brand-red dark:hover:text-red-400 transition-colors relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring focus-visible:ring-offset-2 rounded"
+        className="lg:hidden p-2.5 text-brand-navy dark:text-white hover:text-brand-red dark:hover:text-red-400 transition-colors relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring focus-visible:ring-offset-2 rounded"
         aria-label="Open kieslys"
         title="Kieslys"
       >
@@ -139,7 +139,7 @@ export const MobileMenu = () => {
               {/* Cart */}
               <button
                 onClick={() => handleNavigation('/mandjie')}
-                className="relative p-2 text-gray-600 dark:text-gray-400 hover:text-brand-red dark:hover:text-brand-red transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring focus-visible:ring-offset-2 rounded"
+                className="relative p-2.5 text-gray-600 dark:text-gray-400 hover:text-brand-red dark:hover:text-brand-red transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring focus-visible:ring-offset-2 rounded"
                 aria-label="Mandjie"
               >
                 <ShoppingCart size={22} />
@@ -153,7 +153,7 @@ export const MobileMenu = () => {
               {/* My Account */}
               <button
                 onClick={() => handleNavigation('/my-rekening')}
-                className="p-2 text-gray-600 dark:text-gray-400 hover:text-brand-red dark:hover:text-brand-red transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring focus-visible:ring-offset-2 rounded"
+                className="p-2.5 text-gray-600 dark:text-gray-400 hover:text-brand-red dark:hover:text-brand-red transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring focus-visible:ring-offset-2 rounded"
                 aria-label="My rekening"
               >
                 <User size={22} />
@@ -165,7 +165,7 @@ export const MobileMenu = () => {
               {/* Close */}
               <button
                 onClick={handleClose}
-                className="p-2 text-gray-600 dark:text-gray-400 hover:text-brand-red dark:hover:text-brand-red transition-colors ml-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring focus-visible:ring-offset-2 rounded"
+                className="p-2.5 text-gray-600 dark:text-gray-400 hover:text-brand-red dark:hover:text-brand-red transition-colors ml-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring focus-visible:ring-offset-2 rounded"
                 aria-label="Sluit kieslys"
               >
                 <X size={24} />
@@ -179,13 +179,14 @@ export const MobileMenu = () => {
 
               {/* Search */}
               <div className="mb-10">
-                <form onSubmit={handleSearch} className="relative">
+                <form onSubmit={handleSearch} role="search" className="relative">
                   <Search size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
                   <input
                     type="text"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Soek artikels..."
+                    aria-label="Soek artikels"
                     className="w-full pl-12 pr-4 py-4 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-border rounded-lg text-gray-900 dark:text-white placeholder:text-gray-400 focus-brand transition-[border-color,background-color] text-base"
                   />
                   {searchQuery && (
