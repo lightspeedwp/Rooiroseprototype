@@ -160,10 +160,10 @@ export const SingleObituaryPage = () => {
                 Stuur die oorledene se besonderhede, lewensbeskrywing en foto aan ons.
               </p>
               <a
-                href="mailto:doodsberrigte@diepapier.co.za"
+                href="mailto:doodsberrigte@rooirose.co.za"
                 className="text-text-link-red dark:text-text-link-red text-sm font-bold hover:underline"
               >
-                doodsberrigte@diepapier.co.za
+                doodsberrigte@rooirose.co.za
               </a>
             </div>
 

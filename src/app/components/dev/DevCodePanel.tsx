@@ -34,7 +34,7 @@ export function DevCodePanel({
       <div className="flex items-center justify-between px-3 py-2 bg-muted/50 border-b border-border">
         <div className="flex items-center gap-2">
           {title && (
-            <span className="text-foreground" style={{ fontFamily: 'var(--font-inter)', fontSize: 'var(--text-p3)', lineHeight: 'var(--lh-p3)' }}>
+            <span className="text-foreground" style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-p3)', lineHeight: 'var(--lh-p3)' }}>
               {title}
             </span>
           )}

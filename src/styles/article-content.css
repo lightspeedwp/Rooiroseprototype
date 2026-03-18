@@ -56,13 +56,15 @@
   }
 
   /* Editorial Article Style - Drop caps, better image handling */
-  .article-editorial p:first-of-type::first-letter {
+  /* Only apply dropcap to the FIRST paragraph of the entire article */
+  .article-editorial > p:first-of-type::first-letter,
+  .article-editorial > div:first-child p:first-of-type::first-letter {
     font-family: var(--font-display);
     font-size: 4.5rem;
     line-height: 0.85;
     float: left;
     margin-right: 12px;
-    margin-top: 8px;
+    margin-top: 0; /* Align with top of paragraph text */
     color: var(--custom-primary);
     font-weight: 700;
   }
@@ -81,10 +83,10 @@
   .article-content figcaption {
     font-size: 0.875rem;
     color: var(--muted-foreground);
-    font-style: italic;
-    margin-top: -36px;
-    margin-bottom: 48px;
     text-align: center;
+    margin-top: -32px;
+    margin-bottom: 48px;
+    font-style: italic;
   }
 
   /* Lead paragraph (intro text) - larger, standout */
@@ -196,5 +198,199 @@
     color: var(
       --custom-primary
     ); /* #E82C27 — hover is interactive, full red acceptable */
+  }
+
+  /* ── Editorial Typography BEM Classes ────────────────────────── */
+  /* Article title typography with font variation settings */
+  .article-title {
+    font-family: var(--font-display);
+    font-variation-settings: var(--fvs-h1);
+    line-height: var(--lh-h1);
+    letter-spacing: var(--ls-h1);
+    font-weight: 400;
+  }
+
+  .article-title--h2 {
+    font-family: var(--font-display);
+    font-variation-settings: var(--fvs-h2);
+    line-height: var(--lh-h2);
+    letter-spacing: var(--ls-h2);
+    font-weight: 400;
+  }
+
+  .article-title--h3 {
+    font-family: var(--font-display);
+    font-variation-settings: var(--fvs-h3);
+    line-height: var(--lh-h3);
+    letter-spacing: var(--ls-h3);
+    font-weight: 400;
+  }
+
+  /* Editorial text classes */
+  .editorial-display {
+    font-family: var(--font-display);
+    letter-spacing: 0.02em;
+  }
+
+  .editorial-subtitle {
+    font-family: var(--font-display);
+    font-size: var(--text-h3);
+    line-height: var(--lh-h3);
+    letter-spacing: var(--ls-h3);
+    font-variation-settings: var(--fvs-h3);
+    color: var(--brand-navy);
+    font-weight: 400;
+  }
+
+  .editorial-display--large {
+    font-family: var(--font-display);
+    letter-spacing: 0.05em;
+  }
+
+  .editorial-body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+  }
+
+  .editorial-meta {
+    font-family: var(--font-body);
+  }
+
+  /* Category labels with editorial styling */
+  .category-label {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 400;
+  }
+
+  /* Pull quote specific BEM */
+  .pull-quote {
+    border-left: 4px solid var(--custom-primary);
+    padding-left: var(--wp--preset--spacing--medium);
+    padding-top: var(--wp--preset--spacing--small);
+    padding-bottom: var(--wp--preset--spacing--small);
+    margin: var(--wp--preset--spacing--large) 0;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: var(--wp--preset--font-size--x-large);
+    line-height: 1.6;
+    color: var(--custom-primary);
+    background: var(--accent-soft-grey);
+  }
+
+  .pull-quote__text {
+    font-family: var(--font-display);
+    font-style: italic;
+  }
+
+  .pull-quote__citation {
+    font-family: var(--font-body);
+    font-size: var(--wp--preset--font-size--small);
+    font-style: normal;
+    color: var(--muted-foreground);
+    margin-top: var(--wp--preset--spacing--x-small);
+  }
+
+  /* Author bio BEM */
+  .author-bio {
+    display: flex;
+    align-items: center;
+    gap: var(--wp--preset--spacing--small);
+    padding: var(--wp--preset--spacing--medium) var(--wp--preset--spacing--large);
+    border-left: 4px solid var(--custom-primary);
+    background: var(--base);
+  }
+
+  .author-bio__photo {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .author-bio__details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--wp--preset--spacing--x-small);
+  }
+
+  .author-bio__name {
+    font-family: var(--font-body);
+    font-size: var(--wp--preset--font-size--medium);
+    font-weight: 600;
+    color: var(--contrast);
+  }
+
+  .author-bio__role {
+    font-family: var(--font-body);
+    font-size: var(--wp--preset--font-size--small);
+    color: var(--muted-foreground);
+  }
+
+  /* Dark mode support for new BEM classes */
+  @media (prefers-color-scheme: dark) {
+    .article-title,
+    .article-title--h2,
+    .article-title--h3,
+    .editorial-display,
+    .editorial-subtitle,
+    .editorial-display--large {
+      color: var(--contrast); /* Light text on dark background */
+    }
+
+    .editorial-body,
+    .editorial-meta {
+      color: var(--body-text); /* Light body text on dark background */
+    }
+
+    .pull-quote {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--custom-primary);
+    }
+
+    .author-bio {
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .author-bio__name {
+      color: var(--base);
+    }
+
+    .author-bio__role {
+      color: var(--base-3);
+    }
+  }
+
+  /* Dark mode support via .dark class (Tailwind dark mode) */
+  .dark .article-title,
+  .dark .article-title--h2,
+  .dark .article-title--h3,
+  .dark .editorial-display,
+  .dark .editorial-subtitle,
+  .dark .editorial-display--large {
+    color: var(--contrast); /* Light text on dark background */
+  }
+
+  .dark .editorial-body,
+  .dark .editorial-meta {
+    color: var(--body-text); /* Light body text on dark background */
+  }
+
+  .dark .pull-quote {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--custom-primary);
+  }
+
+  .dark .author-bio {
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .dark .author-bio__name {
+    color: var(--contrast); /* Light text for dark mode */
+  }
+
+  .dark .author-bio__role {
+    color: var(--body-text); /* Light text for dark mode */
   }
 }

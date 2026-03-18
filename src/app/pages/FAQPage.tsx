@@ -188,14 +188,14 @@ export const FAQPage = () => {
           <div className="lg:w-64 flex-shrink-0 hidden lg:block">
             {/* Sticky container constrained to viewport height minus header offset */}
             <div className="sticky top-32 max-h-[calc(100vh-10rem)] flex flex-col">
-              <h3 className="font-normal text-brand-navy dark:text-foreground mb-4 text-sm uppercase tracking-wider shrink-0 bg-gray-50 dark:bg-background py-2 z-10 font-heading" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)' }}>
+              <h3 className="editorial-subtitle text-sm uppercase tracking-wider shrink-0 bg-gray-50 dark:bg-background py-2 z-10">
                 Inhoudsopgawe
               </h3>
               
               <nav className="flex flex-col space-y-6 overflow-y-auto pr-2 custom-scrollbar pb-10">
                 {FAQ_GROUPS.map((group) => (
                   <div key={group.title}>
-                    <h4 className="font-normal text-xs text-gray-400 uppercase mb-2 px-3 font-heading" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)' }}>
+                    <h4 className="editorial-subtitle text-xs text-gray-400 uppercase mb-2 px-3">
                       {group.title}
                     </h4>
                     <div className="flex flex-col space-y-1">
@@ -227,13 +227,13 @@ export const FAQPage = () => {
           <div className="flex-1 max-w-4xl">
             {FAQ_GROUPS.map((group) => (
               <div key={group.title} className="mb-12">
-                <h3 className="text-sm font-normal text-gray-400 uppercase tracking-widest mb-6 border-b border-gray-200 dark:border-border pb-2 font-heading" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)' }}>
+                <h3 className="editorial-subtitle text-sm text-gray-400 uppercase tracking-widest mb-6 border-b border-gray-200 dark:border-border pb-2">
                   {group.title}
                 </h3>
                 
                 {group.sections.map((section) => (
                   <div key={section.id} id={section.id} className="mb-10 scroll-mt-32">
-                    <h2 className="text-2xl font-normal text-brand-navy dark:text-foreground mb-4 font-heading" style={{ fontVariationSettings: "var(--fvs-h2)", lineHeight: 'var(--lh-h2)', letterSpacing: 'var(--ls-h2)', fontSize: 'var(--text-h2)' }}>
+                    <h2 className="editorial-display mb-4">
                       {renderWithBrandItalics(section.label)}
                     </h2>
                     

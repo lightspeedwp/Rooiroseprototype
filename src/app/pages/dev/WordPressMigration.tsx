@@ -94,7 +94,6 @@ const BLOCK_MAPPINGS = [
   { react: 'TrafficWidget', strategy: 'custom', wp: 'dp/traffic-widget', attributes: ['routes'] },
   { react: 'EEditionAccess', strategy: 'custom', wp: 'dp/eedition-access', attributes: ['product_id', 'type'] },
   { react: 'AdMrec', strategy: 'asset', wp: 'HTML block / ad plugin', attributes: ['section'] },
-  { react: 'QuoteSlider', strategy: 'pattern', wp: 'die-papier/quote-slider', attributes: ['quotes'] },
   { react: 'SocialShare', strategy: 'pattern', wp: 'die-papier/social-share', attributes: ['platforms'] },
   { react: 'PricingTable', strategy: 'pattern', wp: 'die-papier/pricing-table', attributes: ['plans'] },
   { react: 'CategoryBadge', strategy: 'core', wp: 'core/post-terms', attributes: ['taxonomy'] },

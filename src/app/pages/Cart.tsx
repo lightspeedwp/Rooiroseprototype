@@ -44,7 +44,7 @@ export const CartPage = () => {
     },
     {
       question: "Wat as ek my bestelling wil verander?",
-      answer: "Jy kan items verwyder of hoeveelhede aanpas direk in jou mandjie. As jy reeds betaal het, kontak asseblief ons kliëntediens by <a href='mailto:advertensies@diepapier.co.za' class='text-primary hover:underline'>advertensies@diepapier.co.za</a>."
+      answer: "Jy kan items verwyder of hoeveelhede aanpas direk in jou mandjie. As jy reeds betaal het, kontak asseblief ons kliëntediens by <a href='mailto:advertensies@rooirose.co.za' class='text-primary hover:underline'>advertensies@rooirose.co.za</a>."
     },
     {
       question: "Is aflewering ingesluit?",

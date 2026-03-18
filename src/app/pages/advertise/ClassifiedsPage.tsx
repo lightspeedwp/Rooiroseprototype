@@ -202,11 +202,11 @@ export const ClassifiedsPage = () => {
               <h3 className="font-normal text-lg mb-4 font-heading" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)', fontSize: 'var(--text-h3)' }}>Kontak ons</h3>
               <div className="space-y-3">
                 <a
-                  href="mailto:advertensies@diepapier.co.za"
+                  href="mailto:advertensies@rooirose.co.za"
                   className="text-gray-300 hover:text-white flex items-center gap-2 text-sm transition-colors"
                 >
                   <Mail size={16} className="text-primary" />
-                  advertensies@diepapier.co.za
+                  advertensies@rooirose.co.za
                 </a>
               </div>
               <div className="mt-6">

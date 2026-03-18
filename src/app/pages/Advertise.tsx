@@ -30,12 +30,12 @@ import {
 } from "../components/ui/select";
 import { Checkbox } from "../components/ui/checkbox";
 import { SEO } from '../components/common/SEO';
-import { QuoteSlider } from '../components/brand-quotes/QuoteSlider';
 
 /* ── rooi rose Magazine Advertise Page ──────────────────────────────
  * Editorial design: Full-width hero, pricing cards, editorial form
  * Typography: Playfair Display SC headings
  * Layout: Hero + benefits + pricing + form + FAQ
+ * Updated: 2026-03-16 (BEM audit - removed QuoteSlider references)
  * ────────────────────────────────────────────────────────────── */
 
 export const Advertise = () => {
@@ -70,7 +70,7 @@ export const Advertise = () => {
         />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center max-w-4xl px-6">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-4 has-brand-serif-font-family uppercase tracking-wider" style={{ letterSpacing: '0.15em' }}>
+            <h1 className="editorial-display text-white mb-4 uppercase tracking-[0.15em]">
               Versterk jou handelsmerk
             </h1>
             <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-3xl mx-auto mb-8">
@@ -95,8 +95,7 @@ export const Advertise = () => {
                   <option.icon className="w-6 h-6" />
                 </div>
                 <h3
-                  className="font-normal text-lg mb-2 text-brand-navy dark:text-foreground font-heading"
-                  style={{ fontVariationSettings: "var(--fvs-h3)", letterSpacing: 'var(--ls-h3)' }}
+                  className="editorial-subtitle mb-2"
                 >{option.title}</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-3">{renderWithBrandItalics(option.description)}</p>
                 {option.link ? (
@@ -145,10 +144,9 @@ export const Advertise = () => {
                 <Map size={14} />
                 Ho&#235; Impak
               </div>
-              <h2
-                className="text-3xl font-normal mb-4 font-heading"
-                style={{ fontVariationSettings: "var(--fvs-h2)", lineHeight: 'var(--lh-h2)', letterSpacing: 'var(--ls-h2)' }}
-              >Maksimeer jou impak met pamflet-advertering</h2>
+              <h2 className="editorial-display mb-4">
+                Maksimeer jou impak met pamflet-advertering
+              </h2>
               <p className="text-gray-300 mb-8 leading-relaxed">
                 Kry jou boodskap direk in die hande van betrokke lesers met pasgemaakte koerant-insetsels en pamflette. 
                 Of dit nou 'n promosie-flyer, katalogus of spesiale aanbod is, ons pamflet-advertering verseker ho&#235; sigbaarheid en geteikende bereik.
@@ -175,10 +173,9 @@ export const Advertise = () => {
         {/* Why rooi rose */}
         <div className="mb-16">
           <div className="text-center mb-12">
-            <h2
-              className="text-3xl font-normal text-brand-navy dark:text-foreground mb-4 font-heading"
-              style={{ fontVariationSettings: "var(--fvs-h2)", lineHeight: 'var(--lh-h2)', letterSpacing: 'var(--ls-h2)' }}
-            >Waarom <em>rooi rose</em>?</h2>
+            <h2 className="editorial-display mb-4">
+              Waarom <em>rooi rose</em>?
+            </h2>
             <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Om jou advertering uit te brei is 'n kragtige manier om te verseker dat jou handelsmerkboodskap 
               oor diverse markte aanklank vind.
@@ -191,10 +188,9 @@ export const Advertise = () => {
                 <div className="w-16 h-16 bg-primary/10 dark:bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 text-primary dark:text-primary">
                   {index === 0 ? <Globe size={32} /> : index === 1 ? <CheckCircle size={32} /> : <TrendingUp size={32} />}
                 </div>
-                <h3
-                  className="text-xl font-normal mb-3 text-brand-navy dark:text-foreground font-heading"
-                  style={{ fontVariationSettings: "var(--fvs-h3)", letterSpacing: 'var(--ls-h3)' }}
-                >{benefit.title}</h3>
+                <h3 className="editorial-subtitle mb-3">
+                  {benefit.title}
+                </h3>
                 <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">{benefit.description}</p>
               </div>
             ))}
@@ -202,21 +198,15 @@ export const Advertise = () => {
         </div>
       </div>
 
-      {/* Brand Quote Slider — full-width brand reinforcement */}
-      <section className="w-full overflow-hidden">
-        <QuoteSlider className="min-h-[350px] md:min-h-[450px]" />
-      </section>
-
       <div className="alignwide py-12">
         {/* Contact Section */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12" id="contact-form">
           {/* Form */}
           <div className="lg:col-span-2">
             <div className="bg-white dark:bg-card p-8 rounded-2xl border border-gray-200 dark:border-border shadow-sm dark:shadow-[var(--shadow-dark-200)]">
-              <h2
-                className="text-2xl font-normal text-brand-navy dark:text-foreground mb-6 font-heading"
-                style={{ fontVariationSettings: "var(--fvs-h2)", lineHeight: 'var(--lh-h2)', letterSpacing: 'var(--ls-h2)' }}
-              >Begin 'n gesprek</h2>
+              <h2 className="editorial-display mb-6">
+                Begin 'n gesprek
+              </h2>
               <p className="text-gray-600 dark:text-gray-400 mb-8">
                 Vul die vorm hieronder in en een van ons advertensie-spesialiste sal binnekort met jou in verbinding tree.
               </p>
@@ -319,10 +309,7 @@ export const Advertise = () => {
           {/* Contact Details Sidebar */}
           <div className="lg:col-span-1">
             <div className="bg-[--brand-navy-light] text-white p-8 rounded-2xl shadow-lg sticky top-6">
-              <h3
-                className="text-xl font-normal mb-6 font-heading border-b border-white/20 pb-4"
-                style={{ fontVariationSettings: "var(--fvs-h3)", letterSpacing: 'var(--ls-h3)' }}
-              >
+              <h3 className="editorial-subtitle text-white mb-6 border-b border-white/20 pb-4">
                 Kontak ons direk
               </h3>
               <p className="text-gray-300 text-sm mb-8">
@@ -331,17 +318,17 @@ export const Advertise = () => {
 
               <div className="space-y-6">
                 <div className="group">
-                  <h4 className="font-normal text-white mb-2 flex items-center gap-2 font-heading" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)' }}>
+                  <h4 className="editorial-subtitle text-white mb-2 flex items-center gap-2">
                     <Map size={16} className="text-primary" />
                     Nasionaal
                   </h4>
                   <div className="flex flex-col gap-3 pl-6">
                     <a 
-                      href="mailto:advertensies@diepapier.co.za" 
+                      href="mailto:advertensies@rooirose.co.za" 
                       className="text-gray-300 hover:text-white hover:underline text-sm flex items-center gap-2 transition-colors"
                     >
                       <Mail size={14} />
-                      advertensies@diepapier.co.za
+                      advertensies@rooirose.co.za
                     </a>
                   </div>
                 </div>
@@ -350,12 +337,12 @@ export const Advertise = () => {
               <div className="mt-8 pt-8 border-t border-white/20">
                  <div className="bg-primary rounded-xl p-6 text-center">
                    <Users className="w-8 h-8 text-white mx-auto mb-3" />
-                   <h4 className="font-normal text-lg mb-2 font-heading" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)' }}>Het jy hulp nodig?</h4>
+                   <h4 className="editorial-subtitle text-white mb-2">Het jy hulp nodig?</h4>
                    <p className="text-sm text-white/90 mb-4">
                      Onseker watter pakket reg is vir jou? Stuur vir ons 'n algemene navraag.
                    </p>
                    <a 
-                    href="mailto:advertensies@diepapier.co.za"
+                    href="mailto:advertensies@rooirose.co.za"
                     className="inline-block bg-white text-primary px-4 py-2 rounded-lg text-sm font-bold hover:bg-gray-100 transition-colors w-full"
                    >
                      E-pos ons

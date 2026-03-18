@@ -305,7 +305,7 @@ export const CategoryPage = ({ categoryName = "Nuus" }: { categoryName?: string 
     injectCollectionPageSchema({
       name: categoryName,
       description: categoryDescriptions[categoryName] || `Lees die jongste ${categoryName.toLowerCase()} nuus en artikels op rooi rose.`,
-      url: `https://diepapier.co.za/${categorySlug}`,
+      url: `https://rooirose.co.za/${categorySlug}`,
       articles: categoryArticles.filter(a => a != null && a.id != null).map(article => ({
         id: article.id,
         title: article.title,
@@ -318,7 +318,7 @@ export const CategoryPage = ({ categoryName = "Nuus" }: { categoryName?: string 
     // eslint-disable-next-line react-hooks/exhaustive-deps — categoryArticles is derived from categoryName; including it would cause object-identity churn
   }, [categoryName, currentPage]);
 
-  const canonicalUrl = `https://diepapier.co.za/${getCategorySlug(categoryName)}`;
+  const canonicalUrl = `https://rooirose.co.za/${getCategorySlug(categoryName)}`;
 
   return (
     <div className="bg-gray-50 dark:bg-background min-h-screen w-full px-[0px] pt-[0px] pb-[60px]">

@@ -182,11 +182,11 @@ export const SponsorshipsPage = () => {
               <Link to="/adverteer#contact-form">Kontak ons</Link>
             </Button>
             <a
-              href="mailto:borgskappe@diepapier.co.za"
+              href="mailto:borgskappe@rooirose.co.za"
               className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 px-8 py-2 rounded-md font-bold text-sm transition-colors"
             >
               <Mail size={16} />
-              borgskappe@diepapier.co.za
+              borgskappe@rooirose.co.za
             </a>
           </div>
         </div>

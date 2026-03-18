@@ -180,11 +180,11 @@ export const ObituariesPage = () => {
               </div>
               <div className="space-y-3">
                 <a
-                  href="mailto:doodsberrigte@diepapier.co.za"
+                  href="mailto:doodsberrigte@rooirose.co.za"
                   className="flex items-center gap-2 text-sm text-text-link-red dark:text-text-link-red hover:underline font-medium"
                 >
                   <Mail size={16} />
-                  doodsberrigte@diepapier.co.za
+                  doodsberrigte@rooirose.co.za
                 </a>
               </div>
             </div>

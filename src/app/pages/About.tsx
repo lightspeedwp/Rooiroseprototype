@@ -32,7 +32,6 @@ import {
 import { renderWithBrandItalics } from '../utils/brandItalics';
 import { Link } from 'react-router';
 import { Newspaper } from '../components/icons/NewspaperIcon';
-import { QuoteSlider } from '../components/brand-quotes/QuoteSlider';
 
 /* ── rooi rose Magazine About Page ──────────────────────────────
  * Editorial design: Full-width hero, magazine sections
@@ -239,11 +238,6 @@ const About = () => {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* ─── Brand Quotes ─────────────────────────────────── */}
-      <section className="w-full overflow-hidden">
-        <QuoteSlider className="min-h-[400px] md:min-h-[500px]" />
       </section>
 
       {/* ─── Values ───────────────────────────────────────── */}

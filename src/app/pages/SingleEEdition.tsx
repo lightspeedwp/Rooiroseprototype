@@ -17,7 +17,7 @@ import { Breadcrumbs } from '../components/parts/Breadcrumbs';
 import { SEO } from '../components/common/SEO';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { SocialShare } from '../components/common/SocialShare';
-import { LATEST_EDITIONS, EDITION_REGIONS, getIssuuEmbedUrl } from '../data/eEditions';
+import { LATEST_EDITIONS, EDITION_REGIONS, type EditionRegion, getIssuuEmbedUrl } from '../data/eEditions';
 import { useCart } from '../context/CartContext';
 import { Button } from '../components/ui/button';
 import { renderWithBrandItalics } from '../utils/brandItalics';
@@ -84,7 +84,7 @@ export const SingleEEditionPage = () => {
       return;
     }
     setRegionError(false);
-    const regionLabel = edition.regions.find(r => r.slug === selectedRegion)?.label || selectedRegion;
+    const regionLabel = EDITION_REGIONS.find(r => r.slug === selectedRegion)?.label || selectedRegion;
     addItem({
       productId: cartProductId,
       title: `${edition.title} (${regionLabel})`,
@@ -296,10 +296,10 @@ export const SingleEEditionPage = () => {
                           ? 'border-red-500 dark:border-red-500 ring-2 ring-red-200 dark:ring-red-900/30'
                           : 'border-gray-300 dark:border-border hover:border-brand-navy dark:hover:border-brand-navy-light'
                       }`}
-                      style={{ fontSize: 'var(--text-p2)', lineHeight: 'var(--lh-p2)', backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 12px center' }}
+                      style={{ fontSize: 'var(--text-p2)', lineHeight: 'var(--lh-p2)', backgroundImage: `url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E\")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 12px center' }}
                     >
                       <option value="">— Kies 'n streek —</option>
-                      {edition.regions.map((region) => (
+                      {EDITION_REGIONS.map((region) => (
                         <option key={region.slug} value={region.slug}>
                           {region.label}
                         </option>

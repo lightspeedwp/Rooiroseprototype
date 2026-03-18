@@ -25,12 +25,16 @@ export const SubsectionFilter: React.FC<SubsectionFilterProps> = ({ category }) 
   if (!categorySubsections) return null;
 
   return (
-    <div className="mb-6">
-      <div className="flex flex-wrap gap-2">
+    <div className="subsection-filter mb-6">
+      <div className="subsection-filter__wrapper flex flex-wrap gap-2">
         {/* All Link (back to category main) */}
         <Link
           to={`/${category.toLowerCase()}`}
-          className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+          className={`subsection-filter__item ${
+            !pathname.includes('/onderwerp/')
+              ? 'subsection-filter__item--active'
+              : ''
+          } px-4 py-2 rounded-full text-sm font-medium transition-colors ${
             !pathname.includes('/onderwerp/')
               ? 'bg-brand-red text-white'
               : 'bg-white dark:bg-card text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-muted border border-gray-300 dark:border-input'
@@ -48,7 +52,7 @@ export const SubsectionFilter: React.FC<SubsectionFilterProps> = ({ category }) 
             <Link
               key={subsection}
               to={`/onderwerp/${tagSlug}`}
-              className="px-4 py-2 rounded-full text-sm font-medium transition-colors bg-white dark:bg-card text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-muted border border-gray-300 dark:border-input"
+              className="subsection-filter__item px-4 py-2 rounded-full text-sm font-medium transition-colors bg-white dark:bg-card text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-muted border border-gray-300 dark:border-input"
             >
               {subsection}
             </Link>

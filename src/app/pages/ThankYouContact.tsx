@@ -41,8 +41,8 @@ export const ThankYouContactPage = () => {
 
       <p className="text-gray-600 dark:text-gray-400 text-sm text-center mb-8">
         Vir dringende navrae, kontak ons by{' '}
-        <a href="mailto:redaksie@diepapier.co.za" className="text-text-link-red hover:underline font-medium">
-          redaksie@diepapier.co.za
+        <a href="mailto:redaksie@rooirose.co.za" className="text-text-link-red hover:underline font-medium">
+          redaksie@rooirose.co.za
         </a>
       </p>
     </ThankYouLayout>

@@ -74,10 +74,10 @@ const SitemapSection = ({ title, icon, pages }: SitemapSectionProps) => (
       {title}
     </h2>
     <ul className="space-y-2">
-      {pages.map((page) => {
+      {pages.map((page, index) => {
         const url = page.path ?? page.href ?? '#';
         return (
-          <li key={url}>
+          <li key={`${url}-${index}`}>
             <Link
               to={url}
               className="text-gray-700 dark:text-gray-300 hover:text-brand-red dark:hover:text-brand-red flex items-center gap-2 transition-colors text-sm"

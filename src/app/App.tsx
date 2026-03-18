@@ -48,34 +48,19 @@ function App() {
   // Show error state if router creation failed
   if (error) {
     return (
-      <div style={{ 
-        display: 'flex', 
-        alignItems: 'center', 
-        justifyContent: 'center', 
-        minHeight: '100vh',
-        fontFamily: 'system-ui, -apple-system, sans-serif',
-        color: '#e01e12',
-        padding: '2rem'
-      }}>
-        <div style={{ textAlign: 'center', maxWidth: '600px' }}>
-          <div style={{ marginBottom: '1rem', fontSize: '1.5rem', fontWeight: 'bold' }}>
+      <div className="error-state">
+        <div className="error-state__container">
+          <div className="error-state__title">
             Router Error
           </div>
-          <div style={{ fontSize: '0.875rem', color: '#6B7280', marginBottom: '1rem' }}>
+          <div className="error-state__message">
             {error.message}
           </div>
           <button 
             onClick={() => window.location.reload()}
-            style={{ 
-              padding: '0.5rem 1rem',
-              background: '#e01e12',
-              color: 'white',
-              border: 'none',
-              borderRadius: '4px',
-              cursor: 'pointer'
-            }}
+            className="error-state__button"
           >
-            Herlaai bladsy
+            Reload
           </button>
         </div>
       </div>
@@ -85,17 +70,10 @@ function App() {
   // Show loading state while router is being created
   if (!router) {
     return (
-      <div style={{ 
-        display: 'flex', 
-        alignItems: 'center', 
-        justifyContent: 'center', 
-        minHeight: '100vh',
-        fontFamily: 'system-ui, -apple-system, sans-serif',
-        color: '#142135'
-      }}>
-        <div style={{ textAlign: 'center' }}>
-          <div style={{ marginBottom: '1rem' }}>Laai...</div>
-          <div style={{ fontSize: '0.875rem', color: '#6B7280' }}>
+      <div className="loading-state">
+        <div className="loading-state__container">
+          <div className="loading-state__text">Laai...</div>
+          <div className="loading-state__brand">
             rooi rose
           </div>
         </div>

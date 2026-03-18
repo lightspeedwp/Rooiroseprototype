@@ -114,20 +114,20 @@ export const Header = memo(() => {
   };
 
   return (
-    <header className="flex flex-col sticky top-0 z-50 shadow-sm">
+    <header className="header flex flex-col sticky top-0 z-50 shadow-sm">
       {/* Top Bar - Black */}
-      <div className="bg-black dark:bg-background text-white hidden lg:block">
-        <div className="w-full max-w-[1440px] mx-auto h-10 flex items-center gap-6 text-xs md:text-sm" style={{ paddingLeft: 'clamp(1rem, 4vw, 2rem)', paddingRight: 'clamp(1rem, 4vw, 2rem)' }}>
+      <div className="header__top-bar bg-black dark:bg-background text-white hidden lg:block">
+        <div className="header__top-bar-container w-full max-w-[1440px] mx-auto py-3 flex items-center gap-6 text-xs md:text-sm" style={{ paddingLeft: 'clamp(1rem, 4vw, 2rem)', paddingRight: 'clamp(1rem, 4vw, 2rem)' }}>
           {/* Top Left: Social Icons (Follow us:) */}
-          <div className="flex items-center gap-4 flex-shrink-0">
-            <span className="text-white font-bold uppercase text-[11px] tracking-wider">Follow us:</span>
+          <div className="header__social flex items-center gap-4 flex-shrink-0">
+            <span className="header__social-label text-white font-bold uppercase text-[11px] tracking-wider">Follow us:</span>
             {SOCIAL_LINKS.map((social) => (
               <a 
                 key={social.label}
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-brand-red transition-colors"
+                className="header__social-link hover:text-brand-red transition-colors"
                 title={social.label}
               >
                 {social.icon === 'XSocial' ? (
@@ -146,12 +146,12 @@ export const Header = memo(() => {
           </div>
 
           {/* Top Right: Page Navigation */}
-          <div className="flex items-center gap-6 overflow-x-auto no-scrollbar ml-auto">
+          <div className="header__page-nav flex items-center gap-6 overflow-x-auto no-scrollbar ml-auto">
             {HEADER_TOP_BAR_LINKS.map((item) => (
               <Link 
                 key={item.label}
                 to={item.href}
-                className="font-medium hover:text-gray-300 transition-colors whitespace-nowrap"
+                className="header__page-nav-link font-medium hover:text-gray-300 transition-colors whitespace-nowrap"
               >
                 {item.label}
               </Link>
@@ -162,24 +162,24 @@ export const Header = memo(() => {
 
       {/* Main Header Area - Logo & Functional Icons */}
       <div className="relative overflow-hidden bg-white dark:bg-brand-navy text-brand-navy dark:text-white border-b border-gray-200 dark:border-gray-800">
-        <div className="w-full max-w-[1440px] mx-auto relative" style={{ paddingLeft: 'clamp(1rem, 4vw, 2rem)', paddingRight: 'clamp(1rem, 4vw, 2rem)' }}>
-          <div className="flex justify-between items-center h-[80px] lg:h-[124px] relative z-10">
+        <div className="header__content flex w-full max-w-[1440px] mx-auto relative" style={{ paddingLeft: 'clamp(1rem, 4vw, 2rem)', paddingRight: 'clamp(1rem, 4vw, 2rem)' }}>
+          <div className="header__inner flex flex-row justify-between items-center w-full h-[80px] lg:h-[124px] relative z-10">
             
             {/* Logo - left-aligned on all screen sizes */}
-            <div className={`flex items-center flex-shrink-0 transition-opacity duration-200 ${searchOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
-              <Link to="/" className="flex items-center">
-                <Logo className="h-10 sm:h-12 lg:h-[80px] w-auto" variant="white" />
+            <div className={`header__logo flex flex-row items-center flex-shrink-0 transition-opacity duration-200 ${searchOpen ? 'header__logo--hidden opacity-0 pointer-events-none' : 'opacity-100'}`}>
+              <Link to="/" className="header__logo-link flex items-center">
+                <Logo className="h-20 sm:h-24 lg:h-[160px] w-auto" variant="white" />
               </Link>
             </div>
 
             {/* Search Overlay (Takes center stage when open) */}
             {searchOpen && (
-               <div className="flex absolute left-0 right-0 top-0 bottom-0 items-center justify-center z-10 px-3 sm:px-6 lg:px-20">
-                 <div className="w-full max-w-2xl relative">
+               <div className="header__search-overlay flex flex-row absolute left-0 right-0 top-0 bottom-0 items-center justify-center z-10 px-3 sm:px-6 lg:px-20">
+                 <div className="header__search-container flex flex-col w-full max-w-2xl relative">
                    <form 
                     onSubmit={handleSearch}
                     role="search"
-                    className="relative"
+                    className="header__search-form flex flex-col relative"
                   >
                     <input
                       type="text"
@@ -188,12 +188,12 @@ export const Header = memo(() => {
                       placeholder={HEADER_UI.search.placeholder}
                       aria-label="Soek"
                       autoFocus
-                      className="w-full px-4 py-3 bg-gray-100 dark:bg-white/10 dark:backdrop-blur-sm border border-gray-300 dark:border-white/20 text-brand-navy dark:text-white placeholder-gray-400 rounded-md focus-brand text-lg"
+                      className="header__search-input w-full px-4 py-3 bg-gray-100 dark:bg-white/10 dark:backdrop-blur-sm border border-gray-300 dark:border-white/20 text-brand-navy dark:text-white placeholder-gray-400 rounded-md focus-brand text-lg"
                     />
                     <button 
                       type="button"
                       onClick={() => { setSearchOpen(false); setSearchQuery(''); }}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-brand-navy dark:hover:text-white"
+                      className="header__search-close flex items-center justify-center absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-brand-navy dark:hover:text-white"
                     >
                       <X size={20} />
                     </button>
@@ -201,25 +201,25 @@ export const Header = memo(() => {
 
                   {/* Live Search Suggestions */}
                   {searchSuggestions.length > 0 && (
-                    <div className="absolute top-full left-0 right-0 mt-1 bg-white dark:bg-card rounded-lg shadow-xl dark:shadow-[var(--shadow-dark-500)] overflow-hidden z-50 border border-gray-200 dark:border-border">
+                    <div className="header__search-suggestions flex flex-col absolute top-full left-0 right-0 mt-1 bg-white dark:bg-card rounded-lg shadow-xl dark:shadow-[var(--shadow-dark-500)] overflow-hidden z-50 border border-gray-200 dark:border-border">
                       {searchSuggestions.map((article) => (
                         <button
                           key={article.id}
                           type="button"
                           onClick={() => handleSuggestionClick(article.title)}
-                          className="w-full text-left px-4 py-3 flex items-center gap-3 hover:bg-gray-50 dark:hover:bg-muted transition-colors border-b border-gray-100 dark:border-border last:border-b-0"
+                          className="header__search-suggestion w-full text-left px-4 py-3 flex flex-row items-center gap-3 hover:bg-gray-50 dark:hover:bg-muted transition-colors border-b border-gray-100 dark:border-border last:border-b-0"
                         >
                           <Search size={14} className="text-gray-400 shrink-0" />
-                          <div className="min-w-0">
-                            <p className="text-sm text-brand-navy dark:text-foreground truncate">{article.title}</p>
-                            <span className="text-xs text-brand-red font-bold uppercase">{article.category}</span>
+                          <div className="header__search-suggestion-content flex flex-col min-w-0">
+                            <p className="header__search-suggestion-title text-sm text-brand-navy dark:text-foreground truncate">{article.title}</p>
+                            <span className="header__search-suggestion-category text-xs text-brand-red font-bold uppercase">{article.category}</span>
                           </div>
                         </button>
                       ))}
                       <button
                         type="button"
                         onClick={() => { navigate(`/soek?q=${encodeURIComponent(searchQuery.trim())}`); setSearchQuery(''); setSearchOpen(false); }}
-                        className="w-full text-center px-4 py-2.5 text-sm text-brand-red font-bold hover:bg-gray-50 dark:hover:bg-muted transition-colors"
+                        className="header__search-all-results flex items-center justify-center w-full text-center px-4 py-2.5 text-sm text-brand-red font-bold hover:bg-gray-50 dark:hover:bg-muted transition-colors"
                       >
                         {HEADER_UI.search.seeAllResults}
                       </button>
@@ -230,14 +230,14 @@ export const Header = memo(() => {
             )}
 
             {/* Right Side: Utility Icons + Mobile Menu */}
-            <div className="flex items-center gap-1 lg:gap-3 ml-auto">
+            <div className="header__utilities flex flex-row items-center gap-1 lg:gap-3 ml-auto flex-shrink-0">
               {/* Theme toggle - desktop only, mobile uses MobileMenu */}
-              <ThemeToggle variant="icon" className="hidden lg:flex text-brand-navy dark:text-white hover:text-yellow-600 dark:hover:text-yellow-300" />
+              <ThemeToggle variant="icon" className="header__theme-toggle hidden lg:flex text-brand-navy dark:text-white hover:text-yellow-600 dark:hover:text-yellow-300" />
 
               {/* Search toggle */}
               {!searchOpen && (
                 <button 
-                  className="flex p-3 text-brand-navy dark:text-white hover:text-brand-red dark:hover:text-red-400 items-center gap-1 transition-colors" 
+                  className="header__search-toggle flex flex-row p-3 text-brand-navy dark:text-white hover:text-brand-red dark:hover:text-red-400 items-center gap-1 transition-colors" 
                   onClick={handleSearchToggle}
                   title="Soek"
                   aria-label="Soek"
@@ -248,10 +248,10 @@ export const Header = memo(() => {
 
               {/* Cart - visible on all sizes */}
               <Sheet>
-                <SheetTrigger className="p-2 text-brand-navy dark:text-white hover:text-brand-red dark:hover:text-red-400 flex items-center gap-1 transition-colors relative" title="Mandjie" aria-label="Mandjie">
+                <SheetTrigger className="header__cart-trigger flex flex-row p-2 text-brand-navy dark:text-white hover:text-brand-red dark:hover:text-red-400 items-center gap-1 transition-colors relative" title="Mandjie" aria-label="Mandjie">
                   <ShoppingCart size={22} />
                   {count > 0 && (
-                    <span className="absolute -top-1 -right-1 bg-brand-red text-white text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center">
+                    <span className="header__cart-badge flex items-center justify-center absolute -top-1 -right-1 bg-brand-red text-white text-[10px] font-bold h-4 w-4 rounded-full">
                       {count}
                     </span>
                   )}
@@ -265,7 +265,7 @@ export const Header = memo(() => {
                   </SheetHeader>
                   
                   {items.length === 0 ? (
-                    <div className="flex flex-col items-center justify-center h-64 text-gray-500">
+                    <div className="header__cart-empty flex flex-col items-center justify-center h-64 text-gray-500">
                       <ShoppingCart size={48} className="mb-4 opacity-20" />
                       <p>{HEADER_UI.cart.emptyTitle}</p>
                       <Button 
@@ -277,23 +277,23 @@ export const Header = memo(() => {
                       </Button>
                     </div>
                   ) : (
-                    <div className="flex flex-col h-full">
-                      <div className="flex-1 overflow-y-auto p-6 space-y-4">
+                    <div className="header__cart-content flex flex-col h-full">
+                      <div className="header__cart-items flex flex-col flex-1 overflow-y-auto p-6 space-y-4">
                         {items.map((item) => (
-                          <div key={item.productId} className="flex gap-4 border-b border-gray-100 dark:border-border pb-4">
+                          <div key={item.productId} className="header__cart-item flex flex-row gap-4 border-b border-gray-100 dark:border-border pb-4">
                             {item.image && (
-                              <img src={item.image} alt={item.title} className="w-16 h-20 object-cover rounded bg-gray-100 dark:bg-muted" loading="lazy" decoding="async" />
+                              <img src={item.image} alt={item.title} className="header__cart-item-image flex-shrink-0 w-16 h-20 object-cover rounded bg-gray-100 dark:bg-muted" loading="lazy" decoding="async" />
                             )}
-                            <div className="flex-1">
-                              <h4 className="font-normal text-sm text-brand-navy dark:text-foreground has-brand-serif-font-family" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)' }}>{item.title}</h4>
-                              <p className="text-xs text-gray-500 dark:text-gray-400 mb-2">
+                            <div className="header__cart-item-details flex flex-col flex-1 justify-between">
+                              <h4 className="header__cart-item-title font-normal text-sm text-brand-navy dark:text-foreground has-brand-serif-font-family" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)' }}>{item.title}</h4>
+                              <p className="header__cart-item-label text-xs text-gray-500 dark:text-gray-400 mb-2">
                                 {item.type === 'subscription' ? HEADER_UI.cart.itemLabelSubscription : HEADER_UI.cart.itemLabelSingle}
                               </p>
-                              <div className="flex justify-between items-center">
-                                <span className="font-bold text-brand-red">R {item.price.toFixed(2)}</span>
+                              <div className="header__cart-item-footer flex flex-row justify-between items-center">
+                                <span className="header__cart-item-price font-bold text-brand-red">R {item.price.toFixed(2)}</span>
                                 <button 
                                   onClick={() => removeItem(item.productId)}
-                                  className="text-xs text-gray-400 hover:text-red-500"
+                                  className="header__cart-item-remove flex items-center text-xs text-gray-400 hover:text-red-500"
                                 >
                                   {HEADER_UI.cart.removeButton}
                                 </button>
@@ -303,20 +303,20 @@ export const Header = memo(() => {
                         ))}
                       </div>
                       
-                      <div className="p-6 border-t border-gray-200 dark:border-border mt-auto">
-                        <div className="flex justify-between items-center mb-4 text-lg font-bold">
+                      <div className="header__cart-footer flex flex-col p-6 border-t border-gray-200 dark:border-border mt-auto">
+                        <div className="header__cart-total flex flex-row justify-between items-center mb-4 text-lg font-bold">
                           <span>{HEADER_UI.cart.totalLabel}</span>
                           <span>R {total.toFixed(2)}</span>
                         </div>
-                        <div className="flex flex-col gap-3">
+                        <div className="header__cart-actions flex flex-col gap-3">
                           <Button 
                             variant="outline" 
-                            className="w-full border-brand-red text-brand-red hover:bg-red-50 dark:hover:bg-red-950/30 font-bold py-6"
+                            className="header__cart-view-btn flex items-center justify-center w-full border-brand-red text-brand-red hover:bg-red-50 dark:hover:bg-red-950/30 font-bold py-6"
                             onClick={() => navigate('/mandjie')}
                           >
                             {HEADER_UI.cart.viewCartButton}
                           </Button>
-                          <Button className="w-full bg-brand-red hover:bg-brand-red-hover font-bold py-6" onClick={() => navigate('/betaal')}>
+                          <Button className="header__cart-checkout-btn flex items-center justify-center w-full bg-brand-red hover:bg-brand-red-hover font-bold py-6" onClick={() => navigate('/betaal')}>
                             {HEADER_UI.cart.checkoutButton}
                           </Button>
                         </div>
@@ -328,14 +328,14 @@ export const Header = memo(() => {
 
               <Link 
                 to="/my-rekening" 
-                className="flex p-3 text-brand-navy dark:text-white hover:text-brand-red dark:hover:text-red-400 items-center gap-1 transition-colors"
+                className="header__account-link flex flex-row p-3 text-brand-navy dark:text-white hover:text-brand-red dark:hover:text-red-400 items-center gap-1 transition-colors"
                 title="My rekening"
                 aria-label="My rekening"
               >
                 <User size={22} />
               </Link>
 
-              <Link to="/inteken/aflewering" className="hidden lg:block bg-brand-red text-white px-7 py-2.5 rounded text-sm font-bold hover:bg-brand-red-hover transition-colors ml-2 whitespace-nowrap tracking-wide">
+              <Link to="/inteken/aflewering" className="header__subscribe-btn flex items-center justify-center hidden lg:flex bg-brand-red text-white px-7 py-2.5 rounded text-sm font-bold hover:bg-brand-red-hover transition-colors ml-2 whitespace-nowrap tracking-wide">
                 {HEADER_UI.deliveryButton}
               </Link>
 

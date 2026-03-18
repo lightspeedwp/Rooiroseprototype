@@ -107,7 +107,7 @@ export const DisplayAdvertisingPage = () => {
             </h2>
           </div>
           <p className="text-gray-600 dark:text-gray-400 mb-8 max-w-3xl">
-            Bereik ons aanlyn lesers met geteikende digitale vertoonadvertensies op diepapier.co.za.
+            Bereik ons aanlyn lesers met geteikende digitale vertoonadvertensies op rooirose.co.za.
             Ons bied verskeie formate en plasingsopsies met gedetailleerde prestasieverslae.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -194,11 +194,11 @@ export const DisplayAdvertisingPage = () => {
               <Link to="/adverteer#contact-form">Kry 'n kwotasie</Link>
             </Button>
             <a
-              href="mailto:advertensies@diepapier.co.za"
+              href="mailto:advertensies@rooirose.co.za"
               className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 px-8 py-2 rounded-md font-bold text-sm transition-colors"
             >
               <Mail size={16} />
-              advertensies@diepapier.co.za
+              advertensies@rooirose.co.za
             </a>
           </div>
         </div>

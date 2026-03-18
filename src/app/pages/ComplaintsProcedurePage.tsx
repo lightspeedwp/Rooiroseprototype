@@ -69,28 +69,28 @@ export const ComplaintsProcedurePage = () => {
                   <Mail size={18} className="text-primary" />
                   <div>
                     <p className="text-sm font-bold text-brand-navy dark:text-foreground">Redaksionele klagtes</p>
-                    <a href="mailto:redaksie@diepapier.co.za" className="text-sm text-text-link-red hover:underline">redaksie@diepapier.co.za</a>
+                    <a href="mailto:redaksie@rooirose.co.za" className="text-sm text-text-link-red hover:underline">redaksie@rooirose.co.za</a>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail size={18} className="text-primary" />
                   <div>
                     <p className="text-sm font-bold text-brand-navy dark:text-foreground">Advertensie-klagtes</p>
-                    <a href="mailto:adverteer@diepapier.co.za" className="text-sm text-text-link-red hover:underline">adverteer@diepapier.co.za</a>
+                    <a href="mailto:adverteer@rooirose.co.za" className="text-sm text-text-link-red hover:underline">adverteer@rooirose.co.za</a>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail size={18} className="text-primary" />
                   <div>
                     <p className="text-sm font-bold text-brand-navy dark:text-foreground">Algemene klagtes</p>
-                    <a href="mailto:klagtes@diepapier.co.za" className="text-sm text-text-link-red hover:underline">klagtes@diepapier.co.za</a>
+                    <a href="mailto:klagtes@rooirose.co.za" className="text-sm text-text-link-red hover:underline">klagtes@rooirose.co.za</a>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail size={18} className="text-primary" />
                   <div>
                     <p className="text-sm font-bold text-brand-navy dark:text-foreground">E-pos</p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">info@diepapier.co.za (kantoorure: Ma-Vr 08:00-16:30)</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">info@rooirose.co.za (kantoorure: Ma-Vr 08:00-16:30)</p>
                   </div>
                 </div>
               </div>
@@ -99,7 +99,7 @@ export const ComplaintsProcedurePage = () => {
             <section>
               <h2 className="text-2xl font-normal text-brand-navy dark:text-foreground font-heading mb-3" style={H2_STYLE}>3. Stap 2: Eskalasie na die Redakteur</h2>
               <p className="text-sm">
-                Indien jy nie tevrede is met die aanvanklike reaksie nie, kan jy jou klagte eskaleer na die Redakteur. Stuur 'n volledige skriftelike klagte per e-pos aan <a href="mailto:lesers@diepapier.co.za" className="text-text-link-red hover:underline font-medium">lesers@diepapier.co.za</a>. Die Redakteur sal die klagte binne <strong>240 werkure</strong> ondersoek en skriftelik reageer.
+                Indien jy nie tevrede is met die aanvanklike reaksie nie, kan jy jou klagte eskaleer na die Redakteur. Stuur 'n volledige skriftelike klagte per e-pos aan <a href="mailto:lesers@rooirose.co.za" className="text-text-link-red hover:underline font-medium">lesers@rooirose.co.za</a>. Die Redakteur sal die klagte binne <strong>240 werkure</strong> ondersoek en skriftelik reageer.
               </p>
             </section>
 

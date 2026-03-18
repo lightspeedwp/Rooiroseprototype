@@ -1,0 +1,177 @@
+/* ── rooi rose Magazine Editorial Typography System ──────────────
+ * BEM-compliant typography blocks for editorial content
+ * Centralizes font variation settings, line heights, letter spacing
+ * Replaces inline style={{}} with semantic BEM classes
+ * Created: 2026-03-16 (BEM Audit v1.0)
+ * ─────────────────────────────────────────────────────────────── */
+
+@layer components {
+  /* ═══════════════════════════════════════════════════════════
+   * Editorial Heading Block
+   * ═══════════════════════════════════════════════════════════ */
+
+  .editorial-heading {
+    font-family: var(--font-display); /* Playfair Display SC */
+    font-weight: normal;
+    color: var(--contrast);
+    text-transform: none;
+  }
+
+  /* Dark mode support */
+  @media (prefers-color-scheme: dark) {
+    .editorial-heading {
+      color: var(--foreground);
+    }
+  }
+
+  .dark .editorial-heading {
+    color: var(--foreground);
+  }
+
+  /* ───────────────────────────────────────────────────────────
+   * Heading Level Modifiers (h1-h6)
+   * ─────────────────────────────────────────────────────────── */
+
+  .editorial-heading--h1 {
+    font-size: var(--text-h1);
+    line-height: var(--lh-h1);
+    letter-spacing: var(--ls-h1);
+    font-variation-settings: var(--fvs-h1);
+  }
+
+  .editorial-heading--h2 {
+    font-size: var(--text-h2);
+    line-height: var(--lh-h2);
+    letter-spacing: var(--ls-h2);
+    font-variation-settings: var(--fvs-h2);
+  }
+
+  .editorial-heading--h3 {
+    font-size: var(--text-h3);
+    line-height: var(--lh-h3);
+    letter-spacing: var(--ls-h3);
+    font-variation-settings: var(--fvs-h3);
+  }
+
+  .editorial-heading--h4 {
+    font-size: var(--text-h4);
+    line-height: var(--lh-h4);
+    letter-spacing: var(--ls-h4);
+    font-variation-settings: var(--fvs-h4);
+  }
+
+  .editorial-heading--h5 {
+    font-size: var(--text-h5);
+    line-height: var(--lh-h5);
+    letter-spacing: var(--ls-h5);
+    font-variation-settings: var(--fvs-h5);
+  }
+
+  .editorial-heading--h6 {
+    font-size: var(--text-h6);
+    line-height: var(--lh-h6);
+    letter-spacing: var(--ls-h6);
+    font-variation-settings: var(--fvs-h6);
+  }
+
+  /* ───────────────────────────────────────────────────────────
+   * Color Modifiers
+   * ─────────────────────────────────────────────────────────── */
+
+  .editorial-heading--primary {
+    color: var(--custom-primary);
+  }
+
+  .editorial-heading--white {
+    color: white;
+  }
+
+  .editorial-heading--navy {
+    color: var(--brand-navy);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .editorial-heading--navy {
+      color: var(--foreground);
+    }
+  }
+
+  .dark .editorial-heading--navy {
+    color: var(--foreground);
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+   * Editorial Body Text Block
+   * ═══════════════════════════════════════════════════════════ */
+
+  .editorial-body {
+    font-family: var(--font-body); /* Karla */
+    line-height: 1.6;
+    color: var(--body-text);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .editorial-body {
+      color: var(--muted-foreground);
+    }
+  }
+
+  .dark .editorial-body {
+    color: var(--muted-foreground);
+  }
+
+  /* ───────────────────────────────────────────────────────────
+   * Size Modifiers
+   * ─────────────────────────────────────────────────────────── */
+
+  .editorial-body--small {
+    font-size: var(--text-sm);
+  }
+
+  .editorial-body--medium {
+    font-size: var(--text-base);
+  }
+
+  .editorial-body--large {
+    font-size: var(--text-lg);
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+   * Editorial Display Text (Large Text)
+   * ═══════════════════════════════════════════════════════════ */
+
+  .editorial-display {
+    font-family: var(--font-display); /* Playfair Display SC */
+    font-style: italic;
+    font-weight: normal;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+  }
+
+  .editorial-display--primary {
+    color: var(--custom-primary);
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+   * Editorial Subtitle/Kicker Text
+   * ═══════════════════════════════════════════════════════════ */
+
+  .editorial-subtitle {
+    font-family: var(--font-body); /* Karla */
+    font-size: var(--text-sm);
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--muted-foreground);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .editorial-subtitle {
+      color: var(--muted-foreground);
+    }
+  }
+
+  .dark .editorial-subtitle {
+    color: var(--muted-foreground);
+  }
+}

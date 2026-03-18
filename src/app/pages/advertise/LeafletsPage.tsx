@@ -175,11 +175,11 @@ export const LeafletsPage = () => {
                   </span>
                 </div>
                 <a
-                  href="mailto:advertensies@diepapier.co.za"
+                  href="mailto:advertensies@rooirose.co.za"
                   className="text-gray-300 hover:text-white flex items-center gap-2 text-sm transition-colors"
                 >
                   <Mail size={16} className="text-primary" />
-                  advertensies@diepapier.co.za
+                  advertensies@rooirose.co.za
                 </a>
               </div>
             </div>

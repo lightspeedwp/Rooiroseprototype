@@ -40,7 +40,7 @@ export function DevFilterBar({
   return (
     <div
       className={`flex flex-wrap gap-2 ${className}`}
-      style={{ fontFamily: 'var(--font-inter)', fontSize: 'var(--text-p4)', lineHeight: 'var(--lh-p4)' }}
+      style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-p4)', lineHeight: 'var(--lh-p4)' }}
     >
       <button
         onClick={() => onSelect('all')}

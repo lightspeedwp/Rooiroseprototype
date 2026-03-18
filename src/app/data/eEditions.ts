@@ -1,6 +1,6 @@
 /**
  * E-Editions data for *rooi rose*
- * Contains recent digital magazine editions
+ * Contains recent digital magazine editions - National edition only
  *
  * @wordpress-patterns page-e-editions, page-my-eeditions, page-subscribe-eedition, archive-eeditions
  * @wordpress-cards card-eedition-grid-4col
@@ -11,60 +11,51 @@
  */
 
 import { EEdition } from '../types';
-import type { EEditionRegion } from '../types';
+
+// ── Regional editions ────────────────────────────────────────
+// rooi rose is a national magazine (no regional variants)
+
+export interface EditionRegion {
+  slug: string;
+  label: string;
+  description: string;
+}
+
+export const EDITION_REGIONS: EditionRegion[] = [
+  {
+    slug: 'nasionaal',
+    label: 'Nasionaal',
+    description: 'rooi rose Nasionale Uitgawe'
+  }
+];
 
 // ── Issuu embed URL generation ──────────────────────────────
-// Each region follows a predictable Issuu document naming pattern:
-//   diepapier-{regionPrefix}_{DD}_{MM}_{YYYY}
+// rooi rose is a national magazine with a single edition
 // Publisher account: novusmedianewspapers
 
 const ISSUU_PUBLISHER = 'novusmedianewspapers';
 
-/** Maps region slug → Issuu document prefix */
-const ISSUU_REGION_PREFIX: Record<string, string> = {
-  'gauteng-vrystaat': 'diepapier-gauteng',
-  'wes-kaap': 'diepapier-wc-cape',
-  'oos-kaap': 'diepapier-ep-eastern',
-  'kwazulu-natal': 'diepapier-kz-natal',
-};
+/** Issuu document prefix for rooi rose national edition */
+const ISSUU_DOC_PREFIX = 'rooirose';
 
 /**
- * Generate the Issuu embed URL for a specific edition + region.
+ * Generate the Issuu embed URL for a specific edition.
  *
- * @param regionSlug - e.g. 'gauteng-vrystaat'
  * @param editionId  - e.g. 'uitgawe-2026-03-06' (contains YYYY-MM-DD)
- * @returns Full Issuu embed URL, or null if the inputs can't be parsed
+ * @returns Full Issuu embed URL, or null if the input can't be parsed
  *
  * @example
- * getIssuuEmbedUrl('wes-kaap', 'uitgawe-2026-03-06')
- * // → 'https://e.issuu.com/embed.html?d=diepapier-wc-cape_06_03_2026&u=novusmedianewspapers'
+ * getIssuuEmbedUrl('uitgawe-2026-03-06')
+ * // → 'https://e.issuu.com/embed.html?d=rooirose_06_03_2026&u=novusmedianewspapers'
  */
-export function getIssuuEmbedUrl(regionSlug: string, editionId: string): string | null {
-  const prefix = ISSUU_REGION_PREFIX[regionSlug];
-  if (!prefix) return null;
-
+export function getIssuuEmbedUrl(editionId: string): string | null {
   // Parse date from edition ID: "uitgawe-2026-03-06" → day=06, month=03, year=2026
   const dateMatch = editionId.match(/uitgawe-(\d{4})-(\d{2})-(\d{2})/);
   if (!dateMatch) return null;
 
   const [, year, month, day] = dateMatch;
-  return `https://e.issuu.com/embed.html?d=${prefix}_${day}_${month}_${year}&u=${ISSUU_PUBLISHER}`;
+  return `https://e.issuu.com/embed.html?d=${ISSUU_DOC_PREFIX}_${day}_${month}_${year}&u=${ISSUU_PUBLISHER}`;
 }
-
-/**
- * Regional variants (streke) shared across all editions.
- * In WooCommerce these map to a global "pa_streek" product attribute
- * on each variable e-edition product.
- *
- * NOTE: `pdfUrl` on each region is a static fallback (latest edition).
- * For per-edition URLs, use `getIssuuEmbedUrl(regionSlug, editionId)`.
- */
-export const EDITION_REGIONS: EEditionRegion[] = [
-  { slug: 'gauteng-vrystaat', label: 'Gauteng en Vrystaat', pdfUrl: 'https://e.issuu.com/embed.html?d=diepapier-gauteng_06_03_2026&u=novusmedianewspapers' },
-  { slug: 'wes-kaap', label: 'Wes-Kaap', pdfUrl: 'https://e.issuu.com/embed.html?d=diepapier-wc-cape_06_03_2026&u=novusmedianewspapers' },
-  { slug: 'oos-kaap', label: 'Oos-Kaap', pdfUrl: 'https://e.issuu.com/embed.html?d=diepapier-ep-eastern_06_03_2026&u=novusmedianewspapers' },
-  { slug: 'kwazulu-natal', label: 'KwaZulu-Natal', pdfUrl: 'https://e.issuu.com/embed.html?d=diepapier-kz-natal_06_03_2026&u=novusmedianewspapers' },
-];
 
 export const LATEST_EDITIONS: EEdition[] = [
   // ─── 2026 ───
@@ -77,7 +68,6 @@ export const LATEST_EDITIONS: EEdition[] = [
     pdfUrl: "#",
     price: "R 35.00",
     priceValue: 35.00,
-    regions: EDITION_REGIONS,
     description: "Amptelike bekendstelling van *rooi rose*! Eksklusiewe onderhoude, ons visie vir die toekoms, en 'n spesiale bylae oor die geskiedenis van Afrikaanse tydskrifte.",
     metaTitle: "Bekendstelling Uitgawe - *rooi rose*",
     metaDescription: "Amptelike bekendstelling van *rooi rose*! Eksklusiewe onderhoude en 'n spesiale bylae oor die geskiedenis van Afrikaanse tydskrifte.",
@@ -95,7 +85,6 @@ export const LATEST_EDITIONS: EEdition[] = [
     pdfUrl: "#",
     price: "R 35.00",
     priceValue: 35.00,
-    regions: EDITION_REGIONS,
     description: "Die laaste aftelling begin. Plaaslike munisipale begrotingsrede ontleed, en die jaarlikse Vrystaat-wynfees in fokus.",
     metaTitle: "Munisipale Begrotingsrede - *rooi rose*",
     metaDescription: "Plaaslike munisipale begrotingsrede ontleed en die jaarlikse Vrystaat-wynfees in fokus in hierdie uitgawe.",
@@ -110,7 +99,6 @@ export const LATEST_EDITIONS: EEdition[] = [
     pdfUrl: "#",
     price: "R 35.00",
     priceValue: 35.00,
-    regions: EDITION_REGIONS,
     description: "Groot sportnaweek vooruit: Skolerugby seisoen skop af. Plus, 'n ondersoek na watertekorte in die streek.",
     metaTitle: "Skolerugby Seisoen Skop Af - *rooi rose*",
     metaDescription: "Groot sportnaweek vooruit: Skolerugby seisoen skop af. Plus, 'n ondersoek na watertekorte in die streek.",
@@ -125,7 +113,6 @@ export const LATEST_EDITIONS: EEdition[] = [
     pdfUrl: "#",
     price: "R 35.00",
     priceValue: 35.00,
-    regions: EDITION_REGIONS,
     description: "Valentynsdag spesiale uitgawe: Liefdesverhale, romantiese restaurante gids, en plaaslike sport.",
     metaTitle: "Valentynsdag Spesiale Uitgawe - *rooi rose*",
     metaDescription: "Liefdesverhale, romantiese restaurante gids, en plaaslike sport in die Valentynsdag spesiale uitgawe van *rooi rose*.",
@@ -140,7 +127,6 @@ export const LATEST_EDITIONS: EEdition[] = [
     pdfUrl: "#",
     price: "R 35.00",
     priceValue: 35.00,
-    regions: EDITION_REGIONS,
     description: "Terug-na-skool spesiale uitgawe: Nuwe skoolhoofde, bou-projekte, en matriekulante se voornemens vir 2026.",
     metaTitle: "Terug-na-skool Spesiale Uitgawe - *rooi rose*",
     metaDescription: "Nuwe skoolhoofde, bou-projekte, en matriekulante se voornemens vir 2026 in die terug-na-skool spesiale uitgawe van *rooi rose*.",
@@ -155,7 +141,6 @@ export const LATEST_EDITIONS: EEdition[] = [
     pdfUrl: "#",
     price: "R 35.00",
     priceValue: 35.00,
-    regions: EDITION_REGIONS,
     description: "Stadsraadsvergadering hoogtepunte, nuwe besigheidsopenings in die middestad, en die Vrystaat Cheetahs se seisoensvooruitsig.",
     metaTitle: "Stadsraadsvergadering Hoogtepunte - *rooi rose*",
     metaDescription: "Stadsraadsvergadering hoogtepunte, nuwe besigheidsopenings in die middestad, en die Vrystaat Cheetahs se seisoensvooruitsig in die uitgawe van *rooi rose*.",
@@ -170,7 +155,6 @@ export const LATEST_EDITIONS: EEdition[] = [
     pdfUrl: "#",
     price: "R 35.00",
     priceValue: 35.00,
-    regions: EDITION_REGIONS,
     description: "In hierdie uitgawe: Munisipale begroting goedgekeur, Hoërskool atletiek rekords spat, en meer.",
     metaTitle: "Munisipale Begroting Goedgekeur - *rooi rose*",
     metaDescription: "Munisipale begroting goedgekeur, Hoërskool atletiek rekords spat, en meer in die uitgawe van *rooi rose*.",
@@ -185,7 +169,6 @@ export const LATEST_EDITIONS: EEdition[] = [
     pdfUrl: "#",
     price: "R 35.00",
     priceValue: 35.00,
-    regions: EDITION_REGIONS,
     description: "Terug skool toe uitgawe: Foto's van Graad 1's, Matriekuitslae analise, en plaaslike sport.",
     metaTitle: "Terug Skool Toe Uitgawe - *rooi rose*",
     metaDescription: "Foto's van Graad 1's, Matriekuitslae analise, en plaaslike sport in die terug skool toe uitgawe van *rooi rose*.",
@@ -200,7 +183,6 @@ export const LATEST_EDITIONS: EEdition[] = [
     pdfUrl: "#",
     price: "R 35.00",
     priceValue: 35.00,
-    regions: EDITION_REGIONS,
     description: "Plaaslike nuus, vakansie-verkeerverslag en vooruitsigte vir 2026.",
     metaTitle: "Plaaslike Nuus & Vooruitsigte - *rooi rose*",
     metaDescription: "Plaaslike nuus, vakansie-verkeerverslag en vooruitsigte vir 2026 in die uitgawe van *rooi rose*.",
@@ -216,7 +198,6 @@ export const LATEST_EDITIONS: EEdition[] = [
     pdfUrl: "#",
     price: "R 35.00",
     priceValue: 35.00,
-    regions: EDITION_REGIONS,
     description: "Kersfees uitgawe: Feestelike resepte, Kersmark foto's, en boodskappe van die burgemeester.",
     metaTitle: "Kersfees Uitgawe - *rooi rose*",
     metaDescription: "Feestelike resepte, Kersmark foto's, en boodskappe van die burgemeester in die kersfees uitgawe van *rooi rose*.",
@@ -231,7 +212,6 @@ export const LATEST_EDITIONS: EEdition[] = [
     pdfUrl: "#",
     price: "R 35.00",
     priceValue: 35.00,
-    regions: EDITION_REGIONS,
     description: "Versoenningsdag voorskou, Desember vakansieplanne, en die beste Kersgeskenke uit plaaslike winkels.",
     metaTitle: "Versoenningsdag Voorskou - *rooi rose*",
     metaDescription: "Versoenningsdag voorskou, Desember vakansieplanne, en die beste Kersgeskenke uit plaaslike winkels in die uitgawe van *rooi rose*.",
@@ -246,7 +226,6 @@ export const LATEST_EDITIONS: EEdition[] = [
     pdfUrl: "#",
     price: "R 35.00",
     priceValue: 35.00,
-    regions: EDITION_REGIONS,
     description: "Matrieklaaste klok lui, padveiligsheidsberaad, en skool se afskeid aan geliefde onderwyser.",
     metaTitle: "Matrieklaaste Klok Lui - *rooi rose*",
     metaDescription: "Matrieklaaste klok lui, padveiligsheidsberaad, en skool se afskeid aan geliefde onderwyser in die uitgawe van *rooi rose*.",
@@ -261,7 +240,6 @@ export const LATEST_EDITIONS: EEdition[] = [
     pdfUrl: "#",
     price: "R 35.00",
     priceValue: 35.00,
-    regions: EDITION_REGIONS,
     description: "Springbok-toets terugblik, plaaslike krieketseisoen begin, en munisipale dienslewering verslag.",
     metaTitle: "Springbok-toets Terugblik - *rooi rose*",
     metaDescription: "Springbok-toets terugblik, plaaslike krieketseisoen begin, en munisipale dienslewering verslag in die uitgawe van *rooi rose*.",
@@ -276,7 +254,6 @@ export const LATEST_EDITIONS: EEdition[] = [
     pdfUrl: "#",
     price: "R 35.00",
     priceValue: 35.00,
-    regions: EDITION_REGIONS,
     description: "Landbou spesiale uitgawe: Oes-vooruitsigte, boerderyinnovasies, en die impak van droogte op die Vrystaat.",
     metaTitle: "Landbou Spesiale Uitgawe - *rooi rose*",
     metaDescription: "Oes-vooruitsigte, boerderyinnovasies, en die impak van droogte op die Vrystaat in die landbou spesiale uitgawe van *rooi rose*.",
@@ -291,7 +268,6 @@ export const LATEST_EDITIONS: EEdition[] = [
     pdfUrl: "#",
     price: "R 35.00",
     priceValue: 35.00,
-    regions: EDITION_REGIONS,
     description: "Middestad herontwikkelingsplan, Plaaslike Veiligheidsforum verslag, en jong entrepreneurs in die kollig.",
     metaTitle: "Middestad Herontwikkelingsplan - *rooi rose*",
     metaDescription: "Middestad herontwikkelingsplan, Plaaslike Veiligheidsforum verslag, en jong entrepreneurs in die kollig in die uitgawe van *rooi rose*.",
@@ -306,7 +282,6 @@ export const LATEST_EDITIONS: EEdition[] = [
     pdfUrl: "#",
     price: "R 35.00",
     priceValue: 35.00,
-    regions: EDITION_REGIONS,
     description: "Eksamens kom: Studietips vir matrieks, universiteitsaansoeke, en beursgeleenthede.",
     metaTitle: "Eksamens Kom - *rooi rose*",
     metaDescription: "Studietips vir matrieks, universiteitsaansoeke, en beursgeleenthede in die uitgawe van *rooi rose*.",
@@ -321,7 +296,6 @@ export const LATEST_EDITIONS: EEdition[] = [
     pdfUrl: "#",
     price: "R 35.00",
     priceValue: 35.00,
-    regions: EDITION_REGIONS,
     description: "Hervormingsdag spesiale, Gesondheidsdag vir almal hoogtepunte, en nagmarkgids vir die somer.",
     metaTitle: "Hervormingsdag Spesiale - *rooi rose*",
     metaDescription: "Hervormingsdag spesiale, Gesondheidsdag vir almal hoogtepunte, en nagmarkgids vir die somer in die uitgawe van *rooi rose*.",
@@ -336,7 +310,6 @@ export const LATEST_EDITIONS: EEdition[] = [
     pdfUrl: "#",
     price: "R 35.00",
     priceValue: 35.00,
-    regions: EDITION_REGIONS,
     description: "Vrystaat Kunstefees in volle gang, resensies van die topvertonings, en interviews met kunstenaars.",
     metaTitle: "Vrystaat Kunstefees - *rooi rose*",
     metaDescription: "Vrystaat Kunstefees in volle gang, resensies van die topvertonings, en interviews met kunstenaars in die uitgawe van *rooi rose*.",
@@ -351,7 +324,6 @@ export const LATEST_EDITIONS: EEdition[] = [
     pdfUrl: "#",
     price: "R 35.00",
     priceValue: 35.00,
-    regions: EDITION_REGIONS,
     description: "Munisipale verkiesings voorskou, kandidaatprofiele, en die pad vorentoe vir plaaslike regering.",
     metaTitle: "Munisipale Verkiesings Voorskou - *rooi rose*",
     metaDescription: "Munisipale verkiesings voorskou, kandidaatprofiele, en die pad vorentoe vir plaaslike regering in die uitgawe van *rooi rose*.",
@@ -366,7 +338,6 @@ export const LATEST_EDITIONS: EEdition[] = [
     pdfUrl: "#",
     price: "R 35.00",
     priceValue: 35.00,
-    regions: EDITION_REGIONS,
     description: "Krugerdag herdenking, skoletoernooi-uitslae, en die nuwe winkelsentrum se openingsdatum bevestig.",
     metaTitle: "Krugerdag Herdenking - *rooi rose*",
     metaDescription: "Krugerdag herdenking, skoletoernooi-uitslae, en die nuwe winkelsentrum se openingsdatum bevestig in die uitgawe van *rooi rose*.",

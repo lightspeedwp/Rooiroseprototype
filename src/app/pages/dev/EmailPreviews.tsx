@@ -178,7 +178,7 @@ const NewSubscriptionEmail = () => (
     <p>Jy kan nou al jou e-uitgawes lees in jou persoonlike biblioteek:</p>
     <EmailButton text="Gaan na My Biblioteek" />
     <p style={{ fontSize: 13, color: BRAND.gray }}>
-      Vrae? Kontak ons by <a href="mailto:admin@diepapier.co.za" style={{ color: BRAND.navy }}>admin@diepapier.co.za</a>
+      Vrae? Kontak ons by <a href="mailto:admin@rooirose.co.za" style={{ color: BRAND.navy }}>admin@rooirose.co.za</a>
     </p>
   </EmailWrapper>
 );
@@ -234,7 +234,7 @@ const PaymentFailedEmail = () => (
     <p>Dateer asseblief jou betaalmetode op om jou toegang te behou:</p>
     <EmailButton text="Dateer Betaalmetode Op" color="#B91C1C" />
     <p style={{ fontSize: 13, color: BRAND.gray }}>
-      As jy glo dit is 'n fout, kontak asseblief jou bank of <a href="mailto:admin@diepapier.co.za" style={{ color: BRAND.navy }}>kontak ons</a>.
+      As jy glo dit is 'n fout, kontak asseblief jou bank of <a href="mailto:admin@rooirose.co.za" style={{ color: BRAND.navy }}>kontak ons</a>.
     </p>
   </EmailWrapper>
 );
@@ -412,7 +412,7 @@ const AdvertiseConfirmationEmail = () => (
     </InfoBox>
     <EmailButton text="Bekyk Ons Tariewe" color={BRAND.navy} />
     <p style={{ fontSize: 13, color: BRAND.gray }}>
-      Vir dringende navrae, kontak ons bemarkingspan direk by <a href="mailto:adverteer@diepapier.co.za" style={{ color: BRAND.navy }}>adverteer@diepapier.co.za</a>.
+      Vir dringende navrae, kontak ons bemarkingspan direk by <a href="mailto:adverteer@rooirose.co.za" style={{ color: BRAND.navy }}>adverteer@rooirose.co.za</a>.
     </p>
   </FormEmailWrapper>
 );
@@ -674,12 +674,12 @@ const ContactReplyEmail = () => (
         Ons advertensietariewe wissel afhangende van die tipe en grootte van die plasing. Ek het ons volledige mediapak as aanhangsel aangeheg wat alle opsies en pryse uiteensit. Vir 'n kwart-bladsy drukadvertensie begin tariewe by R2 500 per uitgawe, met afslag vir meervoudige besprekings.
       </p>
     </InfoBox>
-    <p>As jy enige verdere vrage het, staan dit jou vry om direk op hierdie e-pos te antwoord.</p>
+    <p>As jy enige verdere vrae het, staan dit jou vry om direk op hierdie e-pos te antwoord.</p>
     <p style={{ margin: '24px 0 4px', fontSize: 14 }}>
       Vriendelike groete,<br />
       <strong>Anri Coetzee</strong><br />
       <span style={{ fontSize: 13, color: BRAND.gray }}>Kliëntediens · rooi rose</span><br />
-      <span style={{ fontSize: 12, color: BRAND.gray }}>admin@diepapier.co.za · 021 000 0000</span>
+      <span style={{ fontSize: 12, color: BRAND.gray }}>admin@rooirose.co.za · 021 000 0000</span>
     </p>
   </ReplyEmailWrapper>
 );
@@ -706,7 +706,7 @@ const AdvertiseReplyEmail = () => (
       Vriendelike groete,<br />
       <strong>Suzette Maritz</strong><br />
       <span style={{ fontSize: 13, color: BRAND.gray }}>Bemarkingsbestuurder · rooi rose</span><br />
-      <span style={{ fontSize: 12, color: BRAND.gray }}>adverteer@diepapier.co.za · 021 000 0001</span>
+      <span style={{ fontSize: 12, color: BRAND.gray }}>adverteer@rooirose.co.za · 021 000 0001</span>
     </p>
   </ReplyEmailWrapper>
 );
@@ -732,7 +732,7 @@ const StoryAcceptedEmail = () => (
       </p>
     </InfoBox>
     <p style={{ fontSize: 13, color: BRAND.gray }}>
-      As jy enige vrae het, kontak ons redaksie by <a href="mailto:redaksie@diepapier.co.za" style={{ color: BRAND.navy }}>redaksie@diepapier.co.za</a>.
+      As jy enige vrae het, kontak ons redaksie by <a href="mailto:redaksie@rooirose.co.za" style={{ color: BRAND.navy }}>redaksie@rooirose.co.za</a>.
     </p>
   </ReplyEmailWrapper>
 );
@@ -754,7 +754,7 @@ const StoryDeclinedEmail = () => (
     <p>Ons moedig jou aan om weer in die toekoms stories in te dien. Elke indiening word individueel beoordeel en ons waardeer jou bydrae tot gemeenskapjoernalistiek.</p>
     <EmailButton text="Dien Nog 'n Storie In" color={BRAND.navy} />
     <p style={{ fontSize: 13, color: BRAND.gray }}>
-      Vir terugvoer oor jou indiening, kontak <a href="mailto:redaksie@diepapier.co.za" style={{ color: BRAND.navy }}>redaksie@diepapier.co.za</a>.
+      Vir terugvoer oor jou indiening, kontak <a href="mailto:redaksie@rooirose.co.za" style={{ color: BRAND.navy }}>redaksie@rooirose.co.za</a>.
     </p>
   </ReplyEmailWrapper>
 );
@@ -792,7 +792,7 @@ const EventApprovedEmail = () => (
           <tr><td style={{ padding: '4px 0', color: BRAND.gray }}>Datum:</td><td style={{ fontWeight: 600 }}>15 Maart 2026</td></tr>
           <tr><td style={{ padding: '4px 0', color: BRAND.gray }}>Plek:</td><td style={{ fontWeight: 600 }}>Paarl Gimnasium-saal</td></tr>
           <tr><td style={{ padding: '4px 0', color: BRAND.gray }}>Verwysing #:</td><td style={{ fontWeight: 600 }}>DP-GEB-20260227-007</td></tr>
-          <tr><td style={{ padding: '4px 0', color: BRAND.gray }}>Kalender-skakel:</td><td><a href="#" style={{ color: BRAND.red, fontWeight: 600, fontSize: 14 }}>Bekyk op diepapier.co.za →</a></td></tr>
+          <tr><td style={{ padding: '4px 0', color: BRAND.gray }}>Kalender-skakel:</td><td><a href="#" style={{ color: BRAND.red, fontWeight: 600, fontSize: 14 }}>Bekyk op rooirose.co.za →</a></td></tr>
         </tbody>
       </table>
     </InfoBox>
@@ -801,7 +801,7 @@ const EventApprovedEmail = () => (
     </p>
     <InfoBox bgColor="#EFF6FF" borderColor="#BFDBFE">
       <p style={{ margin: 0, fontSize: 13 }}>
-        <strong>Wil jy jou gebeurtenis uitlig?</strong> Kontak ons bemarkingspan by <a href="mailto:adverteer@diepapier.co.za" style={{ color: BRAND.navy }}>adverteer@diepapier.co.za</a> vir geborgde plasing-opsies met groter sigbaarheid.
+        <strong>Wil jy jou gebeurtenis uitlig?</strong> Kontak ons bemarkingspan by <a href="mailto:adverteer@rooirose.co.za" style={{ color: BRAND.navy }}>adverteer@rooirose.co.za</a> vir geborgde plasing-opsies met groter sigbaarheid.
       </p>
     </InfoBox>
   </ReplyEmailWrapper>
@@ -885,7 +885,7 @@ const PasswordResetEmail = () => (
       </p>
     </InfoBox>
     <p style={{ fontSize: 12, color: BRAND.gray, textAlign: 'center' }}>
-      Vir hulp, kontak <a href="mailto:admin@diepapier.co.za" style={{ color: BRAND.navy }}>admin@diepapier.co.za</a>
+      Vir hulp, kontak <a href="mailto:admin@rooirose.co.za" style={{ color: BRAND.navy }}>admin@rooirose.co.za</a>
     </p>
   </ReplyEmailWrapper>
 );
@@ -914,7 +914,7 @@ const FeedbackAcknowledgedEmail = () => (
       Vriendelike groete,<br />
       <strong>Anri Coetzee</strong><br />
       <span style={{ fontSize: 13, color: BRAND.gray }}>Kliëntediens · rooi rose</span><br />
-      <span style={{ fontSize: 12, color: BRAND.gray }}>admin@diepapier.co.za · 021 000 0000</span>
+      <span style={{ fontSize: 12, color: BRAND.gray }}>admin@rooirose.co.za · 021 000 0000</span>
     </p>
   </ReplyEmailWrapper>
 );
@@ -970,7 +970,7 @@ const NewsletterUnsubscribeEmail = () => (
       </a>
     </div>
     <p style={{ fontSize: 12, color: BRAND.gray, textAlign: 'center' }}>
-      Ons sal jou mis! As jy in die toekoms weer wil inteken, besoek <a href="#" style={{ color: BRAND.navy }}>diepapier.co.za/nuusbrief-inteken</a>.
+      Ons sal jou mis! As jy in die toekoms weer wil inteken, besoek <a href="#" style={{ color: BRAND.navy }}>rooirose.co.za/nuusbrief-inteken</a>.
     </p>
   </ReplyEmailWrapper>
 );
@@ -992,7 +992,7 @@ const ProfileUpdatedEmail = () => (
     </InfoBox>
     <InfoBox bgColor="#FEF3C7" borderColor="#FDE68A">
       <p style={{ margin: 0, fontSize: 13 }}>
-        <strong>Nie jy nie?</strong> As jy nie hierdie veranderinge aangebring het nie, kontak ons onmiddellik by <a href="mailto:admin@diepapier.co.za" style={{ color: BRAND.navy }}>admin@diepapier.co.za</a> of herstel jou wagwoord vir veiligheid.
+        <strong>Nie jy nie?</strong> As jy nie hierdie veranderinge aangebring het nie, kontak ons onmiddellik by <a href="mailto:admin@rooirose.co.za" style={{ color: BRAND.navy }}>admin@rooirose.co.za</a> of herstel jou wagwoord vir veiligheid.
       </p>
     </InfoBox>
     <EmailButton text="Gaan na My Rekening" color={BRAND.navy} />

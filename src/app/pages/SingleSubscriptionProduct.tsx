@@ -15,7 +15,7 @@ import {
 import { Breadcrumbs } from '../components/parts/Breadcrumbs';
 import { SEO } from '../components/common/SEO';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
-import { EDITION_REGIONS } from '../data/eEditions';
+import { EDITION_REGIONS, type EditionRegion } from '../data/eEditions';
 import { E_EDITION_SUBSCRIPTIONS } from '../data/subscriptions';
 import { useCart } from '../context/CartContext';
 import { Button } from '../components/ui/button';
@@ -28,7 +28,7 @@ import { DemoStateSwitcher } from '../components/common/DemoStateSwitcher';
  * Editorial design: E-edition subscription with regional variants
  * Typography: Playfair Display SC headings, Karla body
  * Layout: Product showcase with pricing tiers
- * ────────────────────────────────────────────────────────────── */
+ * ───────────────────────────────��────────────────────────────── */
 
 /**
  * Single Subscription Product Page

@@ -1,8 +1,8 @@
-# rooi rose — Afrikaanse Leefstyl Tydskrif
+# rooi rose - Afrikaanse Tydskrif
 
-**Status**: ✅ **100% Production Ready**  
-**Last Updated**: 2026-03-12  
-**Version**: 3.1 (Editorial Design Refinement)
+**Status**: ✅ Production Ready  
+**Version**: 3.12.0 (Simplified Iframe Handling)  
+**Last Updated**: 2026-03-17
 
 ---
 
@@ -16,7 +16,7 @@ This repository contains:
 - ✅ **Comprehensive Documentation** (100% coverage)
 - ✅ **Operational Guides** (launch-ready)
 
-### Latest Updates (v3.1 — 2026-03-12)
+### Latest Updates (v3.12.0 — 2026-03-17)
 
 - 🎨 **Mobile Menu Redesign**: Clean, text-focused navigation (removed icon grid, Navy backgrounds)
 - 🎨 **Footer Redesign**: Simplified editorial magazine style (light backgrounds, minimal decorations)
@@ -500,6 +500,6 @@ This project is proprietary and confidential. Unauthorized copying, distribution
 
 ---
 
-**Last Updated**: 2026-03-12  
+**Last Updated**: 2026-03-17  
 **Maintained By**: rooi rose Development Team  
 **Status**: ✅ **100% PRODUCTION READY**

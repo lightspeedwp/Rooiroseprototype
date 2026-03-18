@@ -47,7 +47,7 @@ const PHASE_1: ChecklistPhase = {
     { id: 'p1-br-4', text: 'Banking setup finalized (merchant account, business accounts)', checked: false },
     { id: 'p1-br-5', text: 'Insurance policies active (professional indemnity, cyber liability)', checked: false },
     { id: 'p1-br-6', text: 'Trademark registration filed for "rooi rose" brand', checked: false },
-    { id: 'p1-br-7', text: 'Domain ownership verified (diepapier.co.za and all variants)', checked: false },
+    { id: 'p1-br-7', text: 'Domain ownership verified (rooirose.co.za and all variants)', checked: false },
     { id: 'p1-br-8', text: 'SSL certificates purchased (wildcard cert for all subdomains)', checked: false },
     { id: 'p1-br-9', text: 'Email hosting configured (admin@, support@, redaksie@, advertensies@)', checked: false },
     // Content Strategy
@@ -644,10 +644,10 @@ const PHASE_14: ChecklistPhase = {
     { id: 'p14-pd-4', text: 'Rollback plan documented', checked: false },
     { id: 'p14-pd-5', text: 'Team briefed (roles, responsibilities, comms)', checked: false },
     // Server Config
-    { id: 'p14-sv-1', text: 'Install SSL certificate: sudo certbot --nginx -d diepapier.co.za -d www.diepapier.co.za', checked: false },
+    { id: 'p14-sv-1', text: 'Install SSL certificate: sudo certbot --nginx -d rooirose.co.za -d www.rooirose.co.za', checked: false },
     { id: 'p14-sv-2', text: 'Force HTTPS in wp-config.php: WP_HOME, WP_SITEURL, $_SERVER["HTTPS"]', checked: false },
     { id: 'p14-sv-3', text: 'Configure environment variables in .env (DB, WP_ENV, OPENWEATHER_API_KEY, MAILPOET_KEY)', checked: false },
-    { id: 'p14-sv-4', text: 'Run search-replace: wp search-replace localhost/dev URLs \u2192 https://diepapier.co.za --all-tables', checked: false },
+    { id: 'p14-sv-4', text: 'Run search-replace: wp search-replace localhost/dev URLs \u2192 https://rooirose.co.za --all-tables', checked: false },
     { id: 'p14-sv-5', text: 'Set DISALLOW_FILE_EDIT = true in wp-config.php', checked: false },
     { id: 'p14-sv-6', text: 'Configure Nginx security headers: X-Frame-Options, X-XSS-Protection, X-Content-Type-Options', checked: false },
     { id: 'p14-sv-7', text: 'Implement 301 redirects: English \u2192 Afrikaans URLs (Nginx rewrite rules or Redirection plugin)', checked: false },

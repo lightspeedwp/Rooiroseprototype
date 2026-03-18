@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Facebook, Twitter, Linkedin, MessageCircle, Tag, ExternalLink, Info, Clock, Eye } from 'lucide-react';
+import { ArrowRight, Facebook, Twitter, Linkedin, MessageCircle, Tag, ExternalLink, Info, Clock, Eye, Home, ChevronRight } from 'lucide-react';
 import { useParams, Link, Navigate } from 'react-router';
 import { toast } from 'sonner';
 import { copyToClipboard } from '../utils/clipboard';
@@ -141,7 +141,7 @@ export const ArticlePage = () => {
         author={articleData.author}
         type="article"
         publishedTime={articleData.date}
-        canonical={`https://diepapier.co.za/artikel/${slug}`}
+        canonical={`https://rooirose.co.za/artikel/${slug}`}
       />
       
       {/* Header Leaderboard Ad */}
@@ -149,9 +149,12 @@ export const ArticlePage = () => {
       
       {/* Breadcrumbs - Above hero */}
       <div className="alignwide pt-4 pb-0">
-        <nav className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-          <Link to="/" className="hover:text-brand-red transition-colors">rooi rose</Link>
-          <span>/</span>
+        <nav className="flex items-center gap-1.5 text-sm text-gray-600 dark:text-gray-400" aria-label="Breadcrumbs">
+          <Link to="/" className="flex items-center gap-1.5 hover:text-brand-red transition-colors" aria-label="Terug na tuisblad">
+            <Home size={16} className="shrink-0" />
+            <span>Tuis</span>
+          </Link>
+          <ChevronRight size={14} className="text-gray-400 dark:text-gray-500 shrink-0" />
           <Link to={`/${getCategorySlug(articleData.category)}`} className="hover:text-brand-red transition-colors capitalize">
             {articleData.category}
           </Link>
@@ -169,7 +172,7 @@ export const ArticlePage = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
         
         {/* Hero Content - Positioned at bottom */}
-        <div className="absolute bottom-0 left-0 right-0 pb-12 md:pb-16">
+        <div className="absolute bottom-0 left-0 right-0 p-[24px]">
           <div className="alignwide">
             <div className="max-w-4xl">
               {/* Category Badge */}
@@ -182,7 +185,7 @@ export const ArticlePage = () => {
               
               {/* Title */}
               <h1
-                className="text-3xl md:text-5xl lg:text-6xl font-normal text-white mb-6 has-brand-serif-font-family leading-tight"
+                className="text-3xl md:text-5xl lg:text-6xl font-normal text-white has-brand-serif-font-family leading-tight mx-[0px] mt-[0px] mb-[4px]"
                 style={{
                   fontVariationSettings: "var(--fvs-h1)",
                   letterSpacing: '-0.02em',

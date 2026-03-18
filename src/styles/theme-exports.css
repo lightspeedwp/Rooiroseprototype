@@ -64,6 +64,30 @@
   /* Accessible text link red — TYP-001/TYP-017 */
   --color-text-link-red: var(--text-link-red);
 
+  /* Editorial Accent Colors (rooi rose magazine) */
+  --color-accent-blush: var(--accent-blush);
+  --color-accent-warm-beige: var(--accent-warm-beige);
+  --color-accent-soft-grey: var(--accent-soft-grey);
+
+  /* Spacing Utilities (numeric scale) */
+  --spacing-10: var(--space-10);
+  --spacing-20: var(--space-20);
+  --spacing-30: var(--space-30);
+  --spacing-40: var(--space-40);
+  --spacing-50: var(--space-50);
+  --spacing-60: var(--space-60);
+  --spacing-80: var(--space-80);
+  --spacing-100: var(--space-100);
+
+  /* Shadow Utilities (WordPress preset bridge) */
+  --shadow-100: var(--wp--preset--shadow--100);
+  --shadow-200: var(--wp--preset--shadow--200);
+  --shadow-300: var(--wp--preset--shadow--300);
+  --shadow-400: var(--wp--preset--shadow--400);
+  --shadow-500: var(--wp--preset--shadow--500);
+  --shadow-600: var(--wp--preset--shadow--600);
+
+  /* Font Families */
   --font-karla: var(--font-karla);
   --font-display: var(--font-display);
   --font-body: var(--font-body);

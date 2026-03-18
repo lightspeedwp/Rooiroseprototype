@@ -25,7 +25,7 @@ export function DevSearchBar({ value, onChange, placeholder = 'Search...', class
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
         className="w-full pl-9 pr-8 py-2 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring/50"
-        style={{ fontFamily: 'var(--font-inter)', fontSize: 'var(--text-p3)', lineHeight: 'var(--lh-p3)' }}
+        style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-p3)', lineHeight: 'var(--lh-p3)' }}
       />
       {value && (
         <button

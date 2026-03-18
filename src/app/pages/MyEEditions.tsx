@@ -59,6 +59,7 @@ const EditionCard = ({
             src={edition.coverImage}
             alt={edition.title}
             className="w-full h-full object-cover"
+            loading="lazy"
           />
         </div>
 
@@ -128,8 +129,15 @@ const EditionCard = ({
             <img
               src={edition.coverImage}
               alt={edition.title}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity"
+              loading="lazy"
             />
+            {/* Locked overlay */}
+            <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+              <span className="bg-white/90 text-brand-navy font-bold text-[10px] px-3 py-1 rounded shadow-sm">
+                {edition.price}
+              </span>
+            </div>
             {/* Badge */}
             <div
               className={`absolute top-2 right-2 text-[9px] font-bold px-2 py-1 rounded shadow-sm ${

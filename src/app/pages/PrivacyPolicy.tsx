@@ -44,14 +44,34 @@ export const PrivacyPolicyPage = () => {
             {D.overview.map((section, si) => (
               <div key={`ov-${si}`} className="mb-10">
                 <h3 className="text-2xl font-normal text-brand-navy dark:text-foreground mt-10 mb-5 has-brand-serif-font-family border-b-2 border-brand-red pb-2 inline-block" style={H2}>{section.heading}</h3>
-                {section.subsections.map((sub, ssi) => (
+                
+                {'paragraph' in section && section.paragraph && (
+                  <p className="mb-5 leading-relaxed text-base">{section.paragraph}</p>
+                )}
+                
+                {'subsections' in section && section.subsections && Array.isArray(section.subsections) && section.subsections.map((sub, ssi) => (
                   <div key={`ov-${si}-${ssi}`} className="mt-6">
                     <h4 className="text-xl font-normal text-brand-navy dark:text-foreground mb-4 has-brand-serif-font-family" style={H3}>{sub.heading}</h4>
-                    <ul className="list-disc pl-6 space-y-3 text-base">
-                      {sub.items.map((item, ii) => <li key={ii} className="leading-relaxed">{item}</li>)}
-                    </ul>
+                    {sub.items && Array.isArray(sub.items) && (
+                      <ul className="list-disc pl-6 space-y-3 text-base">
+                        {sub.items.map((item, ii) => <li key={ii} className="leading-relaxed">{item}</li>)}
+                      </ul>
+                    )}
                   </div>
                 ))}
+                
+                {'items' in section && section.items && Array.isArray(section.items) && (
+                  <ul className="list-disc pl-6 space-y-3 text-base">
+                    {section.items.map((item, ii) => <li key={ii} className="leading-relaxed">{item}</li>)}
+                  </ul>
+                )}
+                
+                {'footnote' in section && section.footnote && (
+                  <div className={`${'number' in section && section.number === 3 ? 'bg-yellow-50 dark:bg-yellow-950/30 border-l-4 border-yellow-400 dark:border-yellow-500/40' : ''} p-5 mt-6 rounded-r-lg`}>
+                    {'number' in section && section.number === 3 && <p className="font-bold mb-2 text-yellow-800 dark:text-yellow-300">{FL.important}</p>}
+                    <p className="leading-relaxed">{section.footnote}</p>
+                  </div>
+                )}
               </div>
             ))}
 
@@ -72,7 +92,7 @@ export const PrivacyPolicyPage = () => {
                   <div key={ssi} className="mt-6">
                     <h3 className="text-xl font-normal text-brand-navy dark:text-foreground mb-4 has-brand-serif-font-family" style={H3}>{sub.heading}</h3>
                     {'paragraph' in sub && sub.paragraph && <p className="mb-4 leading-relaxed text-base">{sub.paragraph}</p>}
-                    {'items' in sub && sub.items && (
+                    {'items' in sub && sub.items && Array.isArray(sub.items) && (
                       <ul className="list-disc pl-6 space-y-3 text-base">
                         {sub.items.map((item, ii) => <li key={ii} className="leading-relaxed">{item}</li>)}
                       </ul>
@@ -80,7 +100,7 @@ export const PrivacyPolicyPage = () => {
                   </div>
                 ))}
 
-                {'items' in section && section.items && (
+                {'items' in section && section.items && Array.isArray(section.items) && (
                   <ul className="list-disc pl-6 space-y-3 text-base">
                     {section.items.map((item, ii) => <li key={ii} className="leading-relaxed">{item}</li>)}
                   </ul>

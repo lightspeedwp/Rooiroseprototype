@@ -61,6 +61,7 @@ const SubscribeEEdition = lazy(() => import('./pages/SubscribeEEdition').then(m 
 const SingleSubscriptionProduct = lazy(() => import('./pages/SingleSubscriptionProduct').then(m => ({ default: m.SingleSubscriptionProduct })));
 const SubscribeDelivery = lazy(() => import('./pages/SubscribeDelivery').then(m => ({ default: m.SubscribeDelivery })));
 const Shop = lazy(() => import('./pages/Shop').then(m => ({ default: m.Shop })));
+const ProductDetail = lazy(() => import('./pages/ProductDetail').then(m => ({ default: m.ProductDetail })));
 const CartPage = lazy(() => import('./pages/Cart').then(m => ({ default: m.CartPage })));
 const CheckoutPage = lazy(() => import('./pages/Checkout').then(m => ({ default: m.CheckoutPage })));
 const OrderConfirmationPage = lazy(() => import('./pages/OrderConfirmation').then(m => ({ default: m.OrderConfirmationPage })));
@@ -105,6 +106,7 @@ const LeafletsPage = lazy(() => import('./pages/advertise/LeafletsPage').then(m 
 const SponsoredContentPage = lazy(() => import('./pages/advertise/SponsoredContentPage').then(m => ({ default: m.SponsoredContentPage })));
 const SponsorshipsPage = lazy(() => import('./pages/advertise/SponsorshipsPage').then(m => ({ default: m.SponsorshipsPage })));
 const SupplementsPage = lazy(() => import('./pages/advertise/SupplementsPage').then(m => ({ default: m.SupplementsPage })));
+const SyndicationPage = lazy(() => import('./pages/advertise/SyndicationPage').then(m => ({ default: m.SyndicationPage })));
 
 // Submit sub-pages
 const SubmitHubPage = lazy(() => import('./pages/SubmitHub').then(m => ({ default: m.SubmitHubPage })));
@@ -114,7 +116,7 @@ const SubmitFeedbackPage = lazy(() => import('./pages/submit/SubmitFeedback').th
 const SubmitShoutoutPage = lazy(() => import('./pages/submit/SubmitShoutout').then(m => ({ default: m.SubmitShoutoutPage })));
 
 // Competitions
-const CompetitionsPage = lazy(() => import('./pages/Competitions').then(m => ({ default: m.CompetitionsPage })));
+const CompetitionsPage = lazy(() => import('./pages/Competitions'));
 const CompetitionSinglePage = lazy(() => import('./pages/CompetitionSingle').then(m => ({ default: m.CompetitionSinglePage })));
 const CompetitionTermsPage = lazy(() => import('./pages/CompetitionTerms').then(m => ({ default: m.CompetitionTermsPage })));
 
@@ -178,6 +180,15 @@ const BorgeRedirect = () => {
   const parts = window.location.pathname.split('/');
   const slug = parts[parts.length - 1] || '';
   return <Navigate to={`/geborg/${slug}`} replace />;
+};
+
+/**
+ * Redirect component for legacy competition routes
+ */
+const CompetitionRedirect = () => {
+  const parts = window.location.pathname.split('/');
+  const slug = parts[parts.length - 1] || '';
+  return <Navigate to={`/wen/${slug}`} replace />;
 };
 
 // ──────────────────────────────────────────────
@@ -307,7 +318,7 @@ const routeConfig = [
           { path: "onderwerp/:tagSlug", Component: TagArchivePage },
           
           /* ── Legacy Newspaper Category Redirects ───────────────────────
-           * Old Die Papier categories redirect to homepage
+           * Old newspaper categories redirect to homepage
            * Keep for 6 months to preserve SEO and user bookmarks
            * ────────────────────────────────────────────────────────── */
           
@@ -339,11 +350,11 @@ const routeConfig = [
           
           // Legacy Kompetisies → Wen Redirects
           { path: "kompetisies", element: <Navigate to="/wen" replace /> },
-          { path: "kompetisies/:slug", element: <Navigate to="/wen" replace /> },
+          { path: "kompetisies/:slug", Component: CompetitionRedirect },
           { path: "kompetisie-terme-en-voorwaardes", Component: CompetitionTermsPage },
           { path: "competition-terms-and-conditions", Component: CompetitionTermsPage },
           { path: "competitions", element: <Navigate to="/wen" replace /> },
-          { path: "competitions/:slug", element: <Navigate to="/wen" replace /> },
+          { path: "competitions/:slug", Component: CompetitionRedirect },
           
           // Sponsored Content
           { path: "geborg", Component: SponsorsPage },
@@ -351,9 +362,9 @@ const routeConfig = [
           { path: "borg/:slug", Component: SponsorArchivePage },
           { path: "sponsor/:slug", Component: SponsorArchivePage },
           
-          // Articles
-          { path: "artikel/:slug", Component: ArticlePage },
+          // Articles (specific routes BEFORE dynamic routes)
           { path: "artikel/demo", Component: ArticlePage },
+          { path: "artikel/:slug", Component: ArticlePage },
           { path: "article/:slug", Component: ArticlePage },
           
           // Submit
@@ -393,6 +404,7 @@ const routeConfig = [
           { path: "adverteer/geborgde-inhoud", Component: SponsoredContentPage },
           { path: "adverteer/borgskappe", Component: SponsorshipsPage },
           { path: "adverteer/bylaes", Component: SupplementsPage },
+          { path: "adverteer/sindikasie", Component: SyndicationPage },
           { path: "about", Component: About },
           { path: "about/team", Component: TeamPage },
           { path: "contact", Component: ContactPage },
@@ -411,6 +423,7 @@ const routeConfig = [
           { path: "advertise/sponsored-content", Component: SponsoredContentPage },
           { path: "advertise/sponsorships", Component: SponsorshipsPage },
           { path: "advertise/supplements", Component: SupplementsPage },
+          { path: "advertise/syndication", Component: SyndicationPage },
           
           // Sitemap, Weather, Traffic
           { path: "sitemap", Component: SitemapPage },
@@ -469,6 +482,8 @@ const routeConfig = [
           { path: "basket", Component: CartPage },
           { path: "winkel", Component: Shop },
           { path: "shop", Component: Shop },
+          { path: "winkel/:slug", Component: ProductDetail },
+          { path: "product/:slug", Component: ProductDetail },
           
           // FAQ / Events / Search
           { path: "vrae", Component: FAQPage },

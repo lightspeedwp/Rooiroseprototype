@@ -36,7 +36,7 @@ export function DevStatsBar({
   return (
     <div
       className={`flex flex-wrap items-center gap-3 px-4 py-2 rounded-lg bg-muted/50 border border-border ${className}`}
-      style={{ fontFamily: 'var(--font-inter)', fontSize: 'var(--text-p4)', lineHeight: 'var(--lh-p4)' }}
+      style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-p4)', lineHeight: 'var(--lh-p4)' }}
     >
       <span className="text-muted-foreground">
         {filtered === total ? (

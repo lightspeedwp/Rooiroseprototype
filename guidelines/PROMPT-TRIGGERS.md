@@ -1,7 +1,7 @@
 # Prompt Trigger Words — Complete Reference
 
-**Version**: 2.0.0  
-**Last Updated**: 2026-03-15  
+**Version**: 2.1.0  
+**Last Updated**: 2026-03-16  
 **Purpose**: Single-word commands that execute complex orchestrator workflows  
 
 ---
@@ -13,6 +13,9 @@
 - **`continue`** — Resume work on next task (varies)
 - **`sync-guidelines`** — Sync guidelines with project state (20-30 min)
 - **`update-docs`** — Update CHANGELOG, README, ATTRIBUTIONS (15-20 min)
+
+### Code Quality Commands
+- **`apply bem`** — BEM compliance audit + automated fixes (45-90 min)
 
 ### Audit Commands
 - **`audit`** — Run ALL audits (creates 8 reports, ~90 min)
@@ -144,7 +147,72 @@ AI: [Updates CHANGELOG with v3.8.0 entry, README metrics, ATTRIBUTIONS deps]
 
 ---
 
-### 2. Audit Commands
+### 2. Code Quality Commands
+
+#### `apply bem`
+**Prompt**: `/prompts/apply-bem.md`  
+**Duration**: 45-90 minutes  
+**Output**: `/reports/bem-audit-YYYY-MM-DD.md`, `/tasks/bem-task-list.md` (optional)  
+
+**What It Does**:
+- **Phase 1**: Scans all `.tsx` files for BEM compliance violations (15-20 min)
+  - Missing BEM blocks
+  - Inline styles replacing CSS variables
+  - Tailwind over-use instead of semantic BEM
+  - Inconsistent naming conventions
+  - Orphan BEM classes (no CSS definition)
+  - Non-editorial BEM patterns
+- **Phase 2**: Verifies editorial design alignment (10-15 min)
+  - Checks against `/guidelines/design-tokens/editorial-components.md`
+  - Validates typography system (Playfair Display SC + Karla)
+  - Verifies rooi rose brand color usage
+  - Checks WCAG 2.2 AA/AAA compliance (color contrast, touch targets)
+- **Phase 3**: Applies automated BEM fixes (20-40 min)
+  - Converts inline styles to CSS variables
+  - Replaces Tailwind clusters with semantic BEM classes
+  - Standardizes naming to kebab-case
+  - Creates missing BEM CSS definitions
+  - Adds light/dark mode support
+- **Phase 4**: Token gap analysis (10-15 min)
+  - Identifies missing design tokens
+  - Compares against existing CSS variable inventory
+  - Recommends `audit tokens` if 5+ tokens missing
+  - Recommends `audit css` if 10+ CSS issues found
+- **Phase 5**: Creates comprehensive report (5-10 min)
+
+**Editorial Design Requirements**:
+- All BEM classes must follow magazine aesthetic
+- Typography: Playfair Display SC (headings), Karla (body)
+- Colors: Primary red (#e01e12), Navy (#172134), category accents
+- 100% CSS variables (never hardcoded values)
+- Light/dark mode support mandatory
+- WCAG 2.2 AA minimum (AAA preferred)
+
+**Violation Types Detected**:
+1. **Critical**: Inline styles replacing CSS variables
+2. **High**: Missing BEM blocks, WCAG violations
+3. **Medium**: Tailwind over-use, inconsistent naming
+4. **Low**: Orphan BEM classes, missing dark mode
+
+**When to Use**:
+- After major component additions
+- Monthly code quality checks
+- Before major releases
+- After design system updates
+- When BEM violations are suspected
+
+**Example**:
+```
+User: apply bem
+AI: [Scans 150 .tsx files, finds 42 violations, applies 38 auto-fixes]
+    Created: /reports/bem-audit-2026-03-16.md
+    Summary: 42 violations found, 38 fixed, 4 manual fixes needed
+    Recommendations: Run audit tokens (5 missing tokens identified)
+```
+
+---
+
+### 3. Audit Commands
 
 #### `audit` (Meta-Command)
 **Prompt**: `/prompts/audit.md` (NEW)  
@@ -398,7 +466,7 @@ AI: [Runs 8 audits sequentially, creates 8 reports in ~90 minutes]
 
 ---
 
-### 3. Report Processing
+### 4. Report Processing
 
 #### `process reports`
 **Prompt**: `/prompts/process-reports.md`  
@@ -436,7 +504,7 @@ AI: [Scans 8 reports, creates 8 task lists with 120 total tasks]
 
 ---
 
-### 4. Combined Workflows
+### 5. Combined Workflows
 
 #### `audit && process reports`
 **Duration**: 2-3 hours  
@@ -534,6 +602,7 @@ audit-responsive.md (NEW)
 audit-styles.md (NEW)
 audit-guidelines.md (NEW)
 process-reports.md (existing)
+apply-bem.md (NEW)
 ```
 
 ### Reports Directory (`/reports/`)
@@ -548,6 +617,7 @@ data-audit-YYYY-MM-DD.md
 responsive-audit-YYYY-MM-DD.md
 styles-audit-YYYY-MM-DD.md
 guidelines-audit-YYYY-MM-DD.md
+bem-audit-YYYY-MM-DD.md (NEW)
 ```
 
 ### Tasks Directory (`/tasks/`)
@@ -563,6 +633,7 @@ data-task-list.md
 responsive-task-list.md
 styles-task-list.md
 guidelines-task-list.md
+bem-task-list.md (NEW)
 ```
 
 ---
@@ -637,8 +708,9 @@ AI reports: "CSS audit complete. Created report with 15 findings."
 ---
 
 **Version History**:
+- **v2.1.0** (2026-03-16) — Added `apply bem` code quality trigger + BEM methodology integration
 - **v2.0.0** (2026-03-15) — Added comprehensive audit framework, 9 new audit triggers
 - **v1.0.0** (2026-03-13) — Initial creation with cleanup, continue, sync-guidelines, update-docs
 
 **Maintained by**: rooi rose Development Team  
-**Last Reviewed**: 2026-03-15
+**Last Reviewed**: 2026-03-16

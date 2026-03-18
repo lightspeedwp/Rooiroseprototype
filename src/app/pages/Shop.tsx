@@ -1,6 +1,14 @@
-import { PRODUCT_CATEGORIES, PRODUCTS } from '../data/products';
+import { useState } from 'react';
+import { Link } from 'react-router';
+import { ShoppingCart, Star } from 'lucide-react';
+import { toast } from 'sonner';
+import { PRODUCT_CATEGORIES, PRODUCTS, type ProductCategory } from '../data/products';
 import { SEO } from '../components/common/SEO';
 import { HERO_IMAGES } from '../data/heroImages';
+import { PageContainer } from '../components/common/PageContainer';
+import { useCart } from '../context/CartContext';
+import { Button } from '../components/ui/button';
+import { renderWithBrandItalics } from '../utils/brandItalics';
 
 /* ── rooi rose Shop Page ────────────────────────────────────────
  * Magazine swag merchandise with square product images

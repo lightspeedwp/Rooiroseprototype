@@ -211,7 +211,7 @@ export const DesignSystemExtractor = () => {
                     <td className="px-4 py-3">
                       <span
                         style={{
-                          fontFamily: (token as any).family?.includes('Roboto') || (token as any).font?.includes('Roboto') ? 'var(--font-heading)' : 'var(--font-body)',
+                          fontFamily: (token as any).family?.includes('Roboto') || (token as any).font?.includes('Roboto') ? 'var(--font-display)' : 'var(--font-body)',
                           fontSize: token.cssVars?.fontSize ? `var(${token.cssVars.fontSize})` : token.size,
                           fontWeight: parseInt(token.weight) || 400,
                           fontVariationSettings: token.fontVariationSettings || undefined,

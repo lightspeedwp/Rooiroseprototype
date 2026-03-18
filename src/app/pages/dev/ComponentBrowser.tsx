@@ -84,7 +84,6 @@ const COMPONENTS: ComponentEntry[] = [
   { name: 'LeaderboardAd', file: 'components/ads/LeaderboardAd.tsx', category: 'ads', props: ['section'], tags: ['advertising', 'banner'] },
   { name: 'InFeedAd', file: 'components/ads/InFeedAd.tsx', category: 'ads', props: ['section'], tags: ['advertising', 'native'] },
   // Brand
-  { name: 'QuoteSlider', file: 'components/brand-quotes/QuoteSlider.tsx', category: 'brand', props: ['quotes', 'variant'], tags: ['brand', 'testimonial'] },
   { name: 'MarketingGrid', file: 'components/marketing/MarketingGrid.tsx', category: 'brand', props: [], tags: ['marketing', 'social'] },
   // Newsletter
   { name: 'TuesdayNewsletterTemplate', file: 'components/templates/TuesdayNewsletterTemplate.tsx', category: 'templates', props: [], tags: ['email', 'newsletter'] },

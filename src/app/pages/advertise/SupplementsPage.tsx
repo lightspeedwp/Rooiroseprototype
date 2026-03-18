@@ -193,11 +193,11 @@ export const SupplementsPage = () => {
               <Link to="/adverteer#contact-form">Kry 'n kwotasie</Link>
             </Button>
             <a
-              href="mailto:bylaes@diepapier.co.za"
+              href="mailto:bylaes@rooirose.co.za"
               className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 px-8 py-2 rounded-md font-bold text-sm transition-colors"
             >
               <Mail size={16} />
-              bylaes@diepapier.co.za
+              bylaes@rooirose.co.za
             </a>
           </div>
         </div>

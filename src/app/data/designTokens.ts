@@ -123,6 +123,39 @@ export const COLOR_TOKENS: ColorToken[] = [
     tailwind: 'text-muted-foreground',
     category: 'neutral',
   },
+
+  // ── Editorial Accent Colors (rooi rose magazine) ──
+  {
+    cssVar: 'accent-blush',
+    figmaName: 'color.editorial.accent-blush',
+    label: 'Blush',
+    light: '#f4e5e0',
+    dark: '#3a2a28',
+    usage: 'Alternerende seksie agtergronde, verfynde agtergronde',
+    tailwind: 'bg-accent-blush',
+    category: 'neutral',
+  },
+  {
+    cssVar: 'accent-warm-beige',
+    figmaName: 'color.editorial.accent-warm-beige',
+    label: 'Warm Beige',
+    light: '#f8f4f0',
+    dark: '#2e2a26',
+    usage: 'Alternerende seksie agtergronde, warm agtergronde',
+    tailwind: 'bg-accent-warm-beige',
+    category: 'neutral',
+  },
+  {
+    cssVar: 'accent-soft-grey',
+    figmaName: 'color.editorial.accent-soft-grey',
+    label: 'Sagte Grys',
+    light: '#e8e5e2',
+    dark: '#2d2d2d',
+    usage: 'Aanhaling agtergronde, gedemde inhoud areas',
+    tailwind: 'bg-accent-soft-grey',
+    category: 'neutral',
+  },
+
   {
     cssVar: 'accent',
     figmaName: 'color.accent',
@@ -178,8 +211,14 @@ export interface TypographyToken {
   lineHeight: string;
   /** Desktop line-height in px */
   lineHeightPx: number;
+  /** Line-height CSS variable name (e.g., '--lh-h1') */
+  lineHeightCss: string;
   /** Letter spacing (CSS value) */
   letterSpacing: string;
+  /** Letter-spacing CSS variable name (e.g., '--ls-h1') — optional for body text */
+  letterSpacingCss?: string;
+  /** Font variation settings CSS variable name (e.g., '--fvs-h1') — optional for Playfair Display SC headings */
+  fvsCss?: string;
   /** Font family */
   font: 'Karla' | 'Playfair Display SC';
   /** Font variation settings string (Playfair Display SC only) */
@@ -217,7 +256,10 @@ export const TYPOGRAPHY_TOKENS: TypographyToken[] = [
     weightNum: 400,
     lineHeight: '1.1',
     lineHeightPx: 52,
+    lineHeightCss: '--lh-h1',
     letterSpacing: '-0.24px',
+    letterSpacingCss: '--ls-h1',
+    fvsCss: '--fvs-xxx-large',
     font: 'Playfair Display SC',
     fontVariationSettings: "'GRAD' -50, 'wdth' 64, 'opsz' 48",
     fluid: true,
@@ -242,7 +284,10 @@ export const TYPOGRAPHY_TOKENS: TypographyToken[] = [
     weightNum: 400,
     lineHeight: '1.2',
     lineHeightPx: 35,
+    lineHeightCss: '--lh-h2',
     letterSpacing: '-0.24px',
+    letterSpacingCss: '--ls-h2',
+    fvsCss: '--fvs-xx-large',
     font: 'Playfair Display SC',
     fontVariationSettings: "'GRAD' -50, 'wdth' 64, 'opsz' 30",
     fluid: true,
@@ -266,7 +311,10 @@ export const TYPOGRAPHY_TOKENS: TypographyToken[] = [
     weightNum: 400,
     lineHeight: '1.3',
     lineHeightPx: 28,
+    lineHeightCss: '--lh-h3',
     letterSpacing: '0',
+    letterSpacingCss: '--ls-h3',
+    fvsCss: '--fvs-large',
     font: 'Playfair Display SC',
     fontVariationSettings: "'GRAD' 0, 'wdth' 64, 'opsz' 24",
     fluid: false,
@@ -290,7 +338,10 @@ export const TYPOGRAPHY_TOKENS: TypographyToken[] = [
     weightNum: 400,
     lineHeight: '1.4',
     lineHeightPx: 28,
+    lineHeightCss: '--lh-h4',
     letterSpacing: '0',
+    letterSpacingCss: '--ls-h4',
+    fvsCss: '--fvs-medium',
     font: 'Playfair Display SC',
     fontVariationSettings: "'GRAD' 0, 'wdth' 64, 'opsz' 20",
     fluid: false,
@@ -316,7 +367,9 @@ export const TYPOGRAPHY_TOKENS: TypographyToken[] = [
     weightNum: 700,
     lineHeight: '1.5',
     lineHeightPx: 24,
+    lineHeightCss: '--lh-h5',
     letterSpacing: '-0.09px',
+    letterSpacingCss: '--ls-h5',
     font: 'Karla',
     fluid: false,
     cssVars: {
@@ -338,7 +391,9 @@ export const TYPOGRAPHY_TOKENS: TypographyToken[] = [
     weightNum: 600,
     lineHeight: '1.5',
     lineHeightPx: 24,
+    lineHeightCss: '--lh-h6',
     letterSpacing: '0.8px',
+    letterSpacingCss: '--ls-h6',
     font: 'Karla',
     textTransform: 'uppercase',
     fluid: false,
@@ -363,6 +418,7 @@ export const TYPOGRAPHY_TOKENS: TypographyToken[] = [
     weightNum: 400,
     lineHeight: '1.6',
     lineHeightPx: 27,
+    lineHeightCss: '--lh-p1',
     letterSpacing: 'normal',
     font: 'Karla',
     fluid: false,
@@ -384,6 +440,7 @@ export const TYPOGRAPHY_TOKENS: TypographyToken[] = [
     weightNum: 400,
     lineHeight: '1.5',
     lineHeightPx: 24,
+    lineHeightCss: '--lh-p2',
     letterSpacing: 'normal',
     font: 'Karla',
     fluid: false,
@@ -405,6 +462,7 @@ export const TYPOGRAPHY_TOKENS: TypographyToken[] = [
     weightNum: 400,
     lineHeight: '1.4',
     lineHeightPx: 22,
+    lineHeightCss: '--lh-p3',
     letterSpacing: 'normal',
     font: 'Karla',
     fluid: false,
@@ -415,6 +473,50 @@ export const TYPOGRAPHY_TOKENS: TypographyToken[] = [
     sample: 'Standaard UI-teks vir knoppies, etikette en navigasie.',
     usage: 'Knoppies, etikette, navigasie',
     element: '<button>, .text-sm',
+    group: 'body',
+  },
+  {
+    name: 'P4',
+    label: 'Klein Teks',
+    size: '0.75rem',
+    sizePx: 12,
+    weight: '400',
+    weightNum: 400,
+    lineHeight: '1.5',
+    lineHeightPx: 18,
+    lineHeightCss: '--lh-p4',
+    letterSpacing: 'normal',
+    font: 'Karla',
+    fluid: false,
+    cssVars: {
+      fontSize: '--text-xx-small',
+      lineHeight: '--lh-xx-small',
+    },
+    sample: 'Klein byskrifte, voetnote, klein UI-teks.',
+    usage: 'Byskrifte, voetnote, klein metadata',
+    element: '.text-xs, small',
+    group: 'body',
+  },
+  {
+    name: 'Small',
+    label: 'Ekstra Klein',
+    size: '0.6875rem',
+    sizePx: 11,
+    weight: '400',
+    weightNum: 400,
+    lineHeight: '1.45',
+    lineHeightPx: 16,
+    lineHeightCss: '--lh-small',
+    letterSpacing: 'normal',
+    font: 'Karla',
+    fluid: false,
+    cssVars: {
+      fontSize: '--text-xxx-small',
+      lineHeight: '--lh-xxx-small',
+    },
+    sample: 'Ekstra klein teks vir fynskrif, kennisgewings.',
+    usage: 'Fynskrif, klein kennisgewings, meta-data',
+    element: '.text-2xs',
     group: 'body',
   },
 ];
@@ -440,6 +542,106 @@ export const SPACING_TOKENS: SpacingToken[] = [
   { name: '3XL', slug: 'xxx-large', cssVar: '--wp--preset--spacing--xxx-large', value: 'clamp(3rem, 10vw, 7rem)', px: 96, usage: 'Groot seksieskeiding' },
 ];
 
+// ─── Numeric Spacing Tokens (--space-*) ─────────────────────────────────────
+
+/**
+ * Numeric spacing tokens used in React components and inline styles.
+ * These are simpler, fixed-value tokens that map to the WordPress presets.
+ * Use these for component-level spacing where fluid scaling is not needed.
+ */
+export const NUMERIC_SPACING_TOKENS: SpacingToken[] = [
+  { name: '10', slug: '10', cssVar: '--space-10', value: '0.25rem', px: 4, usage: 'Ekstra klein spasie, ikoonvulling' },
+  { name: '20', slug: '20', cssVar: '--space-20', value: '0.5rem', px: 8, usage: 'Klein spasie, gapings tussen elemente' },
+  { name: '30', slug: '30', cssVar: '--space-30', value: '0.75rem', px: 12, usage: 'Medium-klein spasie, kompakte vulling' },
+  { name: '40', slug: '40', cssVar: '--space-40', value: '1rem', px: 16, usage: 'Standaard spasie, basis vulling' },
+  { name: '50', slug: '50', cssVar: '--space-50', value: '1.25rem', px: 20, usage: 'Groter vulling, kaardseksies' },
+  { name: '60', slug: '60', cssVar: '--space-60', value: '1.5rem', px: 24, usage: 'Groot vulling, seksie-opvulling' },
+  { name: '80', slug: '80', cssVar: '--space-80', value: '2rem', px: 32, usage: 'Extra groot vulling, hoofafstande' },
+  { name: '100', slug: '100', cssVar: '--space-100', value: '2.5rem', px: 40, usage: 'Maksimum vulling, heldseksies' },
+];
+
+// ─── Shadow Tokens ───────────────────────────────────────────────────────────
+
+export interface ShadowToken {
+  /** Display name */
+  name: string;
+  /** WordPress preset slug (numeric) */
+  slug: string;
+  /** CSS variable name */
+  cssVar: string;
+  /** Shadow value (light mode) */
+  value: string;
+  /** Shadow value (dark mode) */
+  darkValue: string;
+  /** Usage description (Afrikaans) */
+  usage: string;
+  /** Tailwind class mapping */
+  tailwind: string;
+}
+
+/**
+ * Shadow tokens for elevation and depth.
+ * Light mode uses --wp--preset--shadow--* (subtle, standard shadows).
+ * Dark mode uses --shadow-dark-* (stronger shadows visible on dark backgrounds).
+ * Scale: 100 (subtle) → 600 (hero).
+ */
+export const SHADOW_TOKENS: ShadowToken[] = [
+  { 
+    name: '100', 
+    slug: '100', 
+    cssVar: '--wp--preset--shadow--100', 
+    value: '0 1px 2px 0 rgb(0 0 0 / 0.05)', 
+    darkValue: '0 1px 2px rgba(0, 0, 0, 0.5)',
+    usage: 'Subtiele skaduwee — kaarte, panele', 
+    tailwind: 'shadow-sm' 
+  },
+  { 
+    name: '200', 
+    slug: '200', 
+    cssVar: '--wp--preset--shadow--200', 
+    value: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px 0 rgb(0 0 0 / 0.06)', 
+    darkValue: '0 1px 4px rgba(0, 0, 0, 0.3)',
+    usage: 'Ligte skaduwee — interaktiewe kaarte', 
+    tailwind: 'shadow' 
+  },
+  { 
+    name: '300', 
+    slug: '300', 
+    cssVar: '--wp--preset--shadow--300', 
+    value: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)', 
+    darkValue: '0 4px 12px rgba(0, 0, 0, 0.4)',
+    usage: 'Medium skaduwee — kaart hover, aftrekkieslyste', 
+    tailwind: 'shadow-md' 
+  },
+  { 
+    name: '400', 
+    slug: '400', 
+    cssVar: '--wp--preset--shadow--400', 
+    value: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)', 
+    darkValue: '0 10px 15px rgba(0, 0, 0, 0.5)',
+    usage: 'Groot skaduwee — modale, oorleggings', 
+    tailwind: 'shadow-lg' 
+  },
+  { 
+    name: '500', 
+    slug: '500', 
+    cssVar: '--wp--preset--shadow--500', 
+    value: '0 20px 25px -5px rgb(0 0 0 / 0.12), 0 10px 10px -5px rgb(0 0 0 / 0.08)', 
+    darkValue: '0 8px 24px rgba(0, 0, 0, 0.5)',
+    usage: 'XL skaduwee — soek-oorlegsel, uitstaande komponente', 
+    tailwind: 'shadow-xl' 
+  },
+  { 
+    name: '600', 
+    slug: '600', 
+    cssVar: '--wp--preset--shadow--600', 
+    value: '0 25px 50px -12px rgb(0 0 0 / 0.25)', 
+    darkValue: '0 10px 30px rgba(0, 0, 0, 0.4)',
+    usage: 'Hero skaduwee — nuusbrief houer, dramatiese effekte', 
+    tailwind: 'shadow-2xl' 
+  },
+];
+
 // ─── Radius Tokens ───────────────────────────────────────────────────────────
 
 export interface RadiusToken {
@@ -457,49 +659,39 @@ export const RADIUS_TOKENS: RadiusToken[] = [
   { name: 'radius.xl', value: '12px', px: 12, usage: 'Helde, baners, groot elemente', tailwind: 'rounded-xl' },
 ];
 
-// ─── Shadow / Elevation Tokens ───────────────────────────────────────────────
+// ─── Gradient Tokens ─────────────────────────────────────────────────────────
 
-export interface ShadowToken {
-  name: string;
+export interface GradientToken {
+  /** CSS variable name (without --) */
+  cssVar: string;
+  /** Figma variable path */
+  figmaName: string;
+  /** Human-readable label (Afrikaans) */
   label: string;
-  lightValue: string;
-  darkValue: string;
-  tailwind: string;
+  /** CSS gradient value */
+  value: string;
+  /** Usage description (Afrikaans) */
   usage: string;
+  /** Tailwind or inline CSS usage example */
+  tailwind: string;
 }
 
-export const SHADOW_TOKENS: ShadowToken[] = [
+export const GRADIENT_TOKENS: GradientToken[] = [
   {
-    name: 'elevation.1',
-    label: 'Elevasie 1',
-    lightValue: '0 1px 2px rgba(0,0,0,0.05)',
-    darkValue: '0 1px 2px rgba(0,0,0,0.5)',
-    tailwind: 'shadow-sm dark:shadow-[0_1px_2px_rgba(0,0,0,0.5)]',
-    usage: 'Kaarte, ligte hoogte',
+    cssVar: 'gradient-brand-red',
+    figmaName: 'gradient.brand.red',
+    label: 'rooi rose Rooi Gradiënt',
+    value: 'linear-gradient(81.87deg, #ce0400 0.24%, #ff0600 18.33%, #e82c27 45.03%, #801917 71.74%, #420200 99.32%)',
+    usage: 'Hoof handelsmerk gradiënt vir hero-areas, CTA-knoppe, premium-inhoud',
+    tailwind: 'bg-[var(--gradient-brand-red)] or style={{ backgroundImage: "var(--gradient-brand-red)" }}',
   },
   {
-    name: 'elevation.2',
-    label: 'Elevasie 2',
-    lightValue: '0 4px 6px rgba(0,0,0,0.1)',
-    darkValue: '0 4px 6px rgba(0,0,0,0.5)',
-    tailwind: 'shadow-md dark:shadow-[0_4px_6px_rgba(0,0,0,0.5)]',
-    usage: 'Aktiewe kaarte, sweef-effek',
-  },
-  {
-    name: 'elevation.3',
-    label: 'Elevasie 3',
-    lightValue: '0 10px 15px rgba(0,0,0,0.1)',
-    darkValue: '0 10px 15px rgba(0,0,0,0.5)',
-    tailwind: 'shadow-lg dark:shadow-[0_10px_15px_rgba(0,0,0,0.5)]',
-    usage: 'Modals, dropdowns',
-  },
-  {
-    name: 'elevation.4',
-    label: 'Elevasie 4',
-    lightValue: '0 20px 25px rgba(0,0,0,0.15)',
-    darkValue: '0 20px 25px rgba(0,0,0,0.5)',
-    tailwind: 'shadow-xl dark:shadow-[0_20px_25px_rgba(0,0,0,0.5)]',
-    usage: 'Prominente modals, overlay-panele',
+    cssVar: 'wp--preset--gradient--brand-red',
+    figmaName: 'gradient.wordpress.brand-red',
+    label: 'WordPress rooi rose Gradiënt',
+    value: 'var(--gradient-brand-red)',
+    usage: 'WordPress blok gradiënt voorinstelling (mirrors --gradient-brand-red)',
+    tailwind: '.has-brand-red-gradient-background',
   },
 ];
 

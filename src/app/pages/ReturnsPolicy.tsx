@@ -166,10 +166,10 @@ export const ReturnsPolicyPage = () => {
                   <div>
                     <strong>Stuur 'n e-pos</strong> na{' '}
                     <a
-                      href="mailto:intekenings@diepapier.co.za"
+                      href="mailto:intekenings@rooirose.co.za"
                       className="text-text-link-red hover:underline"
                     >
-                      intekenings@diepapier.co.za
+                      intekenings@rooirose.co.za
                     </a>{' '}
                     met die onderwerp "Terugbetalingversoek".
                   </div>
@@ -266,7 +266,7 @@ export const ReturnsPolicyPage = () => {
                   Kontak ons
                 </Link>
                 <a
-                  href="mailto:intekenings@diepapier.co.za"
+                  href="mailto:intekenings@rooirose.co.za"
                   className="inline-block bg-white/10 hover:bg-white/20 text-text-link-red hover:underline"
                 >
                   E-pos ons

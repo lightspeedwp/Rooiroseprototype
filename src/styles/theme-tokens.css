@@ -8,7 +8,7 @@
   /* ── rooi rose Magazine Brand Tokens ─────────────────────────────── */
   
   /* Brand Red — rooi rose primary color */
-  --custom-primary: #e01e12; /* rooi rose Red — logo, CTAs, accents */
+  --custom-primary: #E82C27; /* rooi rose Red — logo, CTAs, accents (standardized 2026-03-16) */
   --custom-primary-accessible: #b51410; /* Darker red — AAA compliant for body text links (4.72:1) */
   --custom-primary-hover: #c01711; /* Hover state red — AA compliant (4.51:1) */
   --custom-primary-2: var(--custom-primary-hover); /* Backwards compat */
@@ -28,7 +28,7 @@
   --competition-dark-from: #2a2518;
   --competition-dark-to: #2a1e18;
   
-  /* Brand Red Gradient (legacy — Die Papier) */
+  /* Brand Red Gradient (legacy) */
   --gradient-brand-red: linear-gradient(
     81.87deg,
     #ce0400 0.24%,
@@ -47,13 +47,10 @@
   
   /* ── Typography — rooi rose Magazine Fonts ─────────────────────── */
   
-  /* Legacy fonts (backwards compatibility for Die Papier components not yet migrated) */
+  /* Legacy fonts (backwards compatibility for components not yet migrated) */
   --font-karla: "Karla", sans-serif;
   --font-display: "Playfair Display SC", serif;
   --font-body: var(--font-karla); /* Primary body font */
-  --font-inter: var(--font-karla); /* Backwards compat alias */
-  --font-heading: var(--font-display); /* Backwards compat alias */
-  --font-raleway: var(--font-display); /* Backwards compat alias */
 
   /* ── V2 Typography Scale ─────────────────────────────────── */
   /* Source: Figma "Desktop/Mobile Font Styles" frames (2026-02-20) */

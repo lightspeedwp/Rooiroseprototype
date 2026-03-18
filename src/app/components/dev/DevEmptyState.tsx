@@ -33,11 +33,11 @@ export function DevEmptyState({
       <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center mb-4">
         <Icon className="w-6 h-6 text-muted-foreground" />
       </div>
-      <p className="text-foreground mb-1" style={{ fontFamily: 'var(--font-inter)', fontSize: 'var(--text-p2)', lineHeight: 'var(--lh-p2)' }}>
+      <p className="text-foreground mb-1" style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-p2)', lineHeight: 'var(--lh-p2)' }}>
         {title}
       </p>
       {description && (
-        <p className="text-muted-foreground max-w-md" style={{ fontFamily: 'var(--font-inter)', fontSize: 'var(--text-p3)', lineHeight: 'var(--lh-p3)' }}>
+        <p className="text-muted-foreground max-w-md" style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-p3)', lineHeight: 'var(--lh-p3)' }}>
           {description}
         </p>
       )}
@@ -45,7 +45,7 @@ export function DevEmptyState({
         <button
           onClick={onReset}
           className="mt-4 px-4 py-2 rounded-lg border border-border text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
-          style={{ fontFamily: 'var(--font-inter)', fontSize: 'var(--text-p3)', lineHeight: 'var(--lh-p3)' }}
+          style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-p3)', lineHeight: 'var(--lh-p3)' }}
         >
           {resetLabel}
         </button>

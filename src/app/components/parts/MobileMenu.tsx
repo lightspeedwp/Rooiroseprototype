@@ -117,7 +117,7 @@ export const MobileMenu = () => {
       {/* Hamburger Trigger - Positioned after My Account icon in Header */}
       <button
         onClick={() => setOpen(true)}
-        className="lg:hidden p-2.5 text-brand-navy dark:text-white hover:text-brand-red dark:hover:text-red-400 transition-colors relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring focus-visible:ring-offset-2 rounded"
+        className="mobile-menu__toggle lg:hidden p-2.5 text-brand-navy dark:text-white hover:text-brand-red dark:hover:text-red-400 transition-colors relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring focus-visible:ring-offset-2 rounded"
         aria-label="Open kieslys"
         title="Kieslys"
       >
@@ -127,24 +127,24 @@ export const MobileMenu = () => {
       {/* Full-screen overlay */}
       {open && (
         <div
-          className={`fixed inset-0 z-[9999] flex flex-col bg-white dark:bg-background ${closing ? 'mobile-menu-exit' : 'mobile-menu-enter'}`}
+          className={`mobile-menu mobile-menu--open fixed inset-0 z-[9999] flex flex-col bg-white dark:bg-background ${closing ? 'mobile-menu-exit' : 'mobile-menu-enter'}`}
         >
           {/* Header: Logo + Utilities */}
-          <div className="flex items-center justify-between px-5 py-4 border-b border-gray-200 dark:border-border">
-            <button onClick={() => handleNavigation('/')} className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring focus-visible:ring-offset-2 rounded">
+          <div className="mobile-menu__header flex items-center justify-between px-5 py-4 border-b border-gray-200 dark:border-border">
+            <button onClick={() => handleNavigation('/')} className="mobile-menu__logo-button focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring focus-visible:ring-offset-2 rounded">
               <Logo variant="default" className="h-8 w-auto" />
             </button>
 
-            <div className="flex items-center gap-1">
+            <div className="mobile-menu__actions flex items-center gap-1">
               {/* Cart */}
               <button
                 onClick={() => handleNavigation('/mandjie')}
-                className="relative p-2.5 text-gray-600 dark:text-gray-400 hover:text-brand-red dark:hover:text-brand-red transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring focus-visible:ring-offset-2 rounded"
+                className="mobile-menu__cart relative p-2.5 text-gray-600 dark:text-gray-400 hover:text-brand-red dark:hover:text-brand-red transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring focus-visible:ring-offset-2 rounded"
                 aria-label="Mandjie"
               >
                 <ShoppingCart size={22} />
                 {count > 0 && (
-                  <span className="absolute -top-0.5 -right-0.5 bg-brand-red text-white text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center">
+                  <span className="mobile-menu__cart-badge absolute -top-0.5 -right-0.5 bg-brand-red text-white text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center">
                     {count}
                   </span>
                 )}
@@ -153,19 +153,19 @@ export const MobileMenu = () => {
               {/* My Account */}
               <button
                 onClick={() => handleNavigation('/my-rekening')}
-                className="p-2.5 text-gray-600 dark:text-gray-400 hover:text-brand-red dark:hover:text-brand-red transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring focus-visible:ring-offset-2 rounded"
+                className="mobile-menu__account p-2.5 text-gray-600 dark:text-gray-400 hover:text-brand-red dark:hover:text-brand-red transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring focus-visible:ring-offset-2 rounded"
                 aria-label="My rekening"
               >
                 <User size={22} />
               </button>
 
               {/* Theme Toggle */}
-              <ThemeToggle variant="icon" className="text-gray-600 dark:text-gray-400 hover:text-brand-red dark:hover:text-brand-red" />
+              <ThemeToggle variant="icon" className="mobile-menu__theme text-gray-600 dark:text-gray-400 hover:text-brand-red dark:hover:text-brand-red" />
 
               {/* Close */}
               <button
                 onClick={handleClose}
-                className="p-2.5 text-gray-600 dark:text-gray-400 hover:text-brand-red dark:hover:text-brand-red transition-colors ml-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring focus-visible:ring-offset-2 rounded"
+                className="mobile-menu__close p-2.5 text-gray-600 dark:text-gray-400 hover:text-brand-red dark:hover:text-brand-red transition-colors ml-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring focus-visible:ring-offset-2 rounded"
                 aria-label="Sluit kieslys"
               >
                 <X size={24} />
@@ -174,26 +174,26 @@ export const MobileMenu = () => {
           </div>
 
           {/* Scrollable body */}
-          <div className="flex-1 overflow-y-auto overscroll-contain">
-            <div className="max-w-2xl mx-auto px-5 py-8">
+          <div className="mobile-menu__body flex-1 overflow-y-auto overscroll-contain">
+            <div className="mobile-menu__content max-w-2xl mx-auto px-5 py-8">
 
               {/* Search */}
-              <div className="mb-10">
-                <form onSubmit={handleSearch} role="search" className="relative">
-                  <Search size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+              <div className="mobile-menu__search mb-10">
+                <form onSubmit={handleSearch} role="search" className="mobile-menu__search-form relative">
+                  <Search size={20} className="mobile-menu__search-icon absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
                   <input
                     type="text"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Soek artikels..."
                     aria-label="Soek artikels"
-                    className="w-full pl-12 pr-4 py-4 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-border rounded-lg text-gray-900 dark:text-white placeholder:text-gray-400 focus-brand transition-[border-color,background-color] text-base"
+                    className="mobile-menu__search-input w-full pl-12 pr-4 py-4 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-border rounded-lg text-gray-900 dark:text-white placeholder:text-gray-400 focus-brand transition-[border-color,background-color] text-base"
                   />
                   {searchQuery && (
                     <button
                       type="button"
                       onClick={() => setSearchQuery('')}
-                      className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring rounded p-1"
+                      className="mobile-menu__search-clear absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red dark:focus-visible:ring-ring rounded p-1"
                     >
                       <X size={18} />
                     </button>
@@ -202,25 +202,25 @@ export const MobileMenu = () => {
               </div>
 
               {/* Categories — Clean text list */}
-              <div className="mb-10">
-                <h2 className="text-xs uppercase tracking-[0.15em] text-brand-red font-bold mb-5 has-brand-serif-font-family" style={{ fontVariationSettings: 'var(--fvs-h6)', letterSpacing: 'var(--ls-h6)' }}>
+              <div className="mobile-menu__section mobile-menu__section--categories mb-10">
+                <h2 className="mobile-menu__section-title text-xs uppercase tracking-[0.15em] text-brand-red font-bold mb-5 has-brand-serif-font-family" style={{ fontVariationSettings: 'var(--fvs-h6)', letterSpacing: 'var(--ls-h6)' }}>
                   Kategorieë
                 </h2>
-                <nav className="space-y-1">
+                <nav className="mobile-menu__nav space-y-1">
                   {CATEGORY_NAVIGATION.map((item) => {
                     const active = isActive(item.href);
                     return (
                       <button
                         key={item.href}
                         onClick={() => handleNavigation(item.href)}
-                        className={`w-full flex items-center justify-between px-4 py-3 rounded-lg transition-colors group
+                        className={`mobile-menu__nav-item ${active ? 'mobile-menu__nav-item--active' : ''} w-full flex items-center justify-between px-4 py-3 rounded-lg transition-colors group
                           ${active
                             ? 'bg-brand-red text-white'
                             : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-900 hover:text-brand-red dark:hover:text-brand-red active:bg-gray-100 dark:active:bg-gray-800'
                           }`}
                       >
-                        <span className="text-base font-medium has-brand-sans-font-family">{item.label}</span>
-                        <ChevronRight size={18} className={`transition-transform ${active ? 'text-white' : 'text-gray-300 dark:text-gray-600 group-hover:text-brand-red dark:group-hover:text-brand-red group-hover:translate-x-0.5'}`} />
+                        <span className="mobile-menu__nav-label text-base font-medium has-brand-sans-font-family">{item.label}</span>
+                        <ChevronRight size={18} className={`mobile-menu__nav-arrow transition-transform ${active ? 'text-white' : 'text-gray-300 dark:text-gray-600 group-hover:text-brand-red dark:group-hover:text-brand-red group-hover:translate-x-0.5'}`} />
                       </button>
                     );
                   })}
@@ -228,28 +228,28 @@ export const MobileMenu = () => {
               </div>
 
               {/* Divider */}
-              <div className="border-t border-gray-200 dark:border-border my-8" />
+              <div className="mobile-menu__divider border-t border-gray-200 dark:border-border my-8" />
 
               {/* Secondary Links */}
-              <div className="mb-10">
-                <h2 className="text-xs uppercase tracking-[0.15em] text-gray-500 dark:text-gray-500 font-bold mb-5 has-brand-serif-font-family" style={{ fontVariationSettings: 'var(--fvs-h6)', letterSpacing: 'var(--ls-h6)' }}>
+              <div className="mobile-menu__section mobile-menu__section--secondary mb-10">
+                <h2 className="mobile-menu__section-title text-xs uppercase tracking-[0.15em] text-gray-500 dark:text-gray-500 font-bold mb-5 has-brand-serif-font-family" style={{ fontVariationSettings: 'var(--fvs-h6)', letterSpacing: 'var(--ls-h6)' }}>
                   <em>rooi rose</em>
                 </h2>
-                <nav className="space-y-1">
+                <nav className="mobile-menu__nav mobile-menu__nav--secondary space-y-1">
                   {MOBILE_SECONDARY_LINKS.map((item) => {
                     const active = isActive(item.href);
                     return (
                       <button
                         key={item.href}
                         onClick={() => handleNavigation(item.href)}
-                        className={`w-full flex items-center justify-between px-4 py-2.5 rounded-lg transition-colors group text-left
+                        className={`mobile-menu__nav-item ${active ? 'mobile-menu__nav-item--active' : ''} w-full flex items-center justify-between px-4 py-2.5 rounded-lg transition-colors group text-left
                           ${active
                             ? 'text-brand-red bg-brand-red/5'
                             : 'text-gray-600 dark:text-gray-400 hover:text-brand-red dark:hover:text-brand-red hover:bg-gray-50 dark:hover:bg-gray-900'
                           }`}
                       >
-                        <span className="text-sm has-brand-sans-font-family">{item.label}</span>
-                        <ChevronRight size={16} className={`transition-[color,transform] ${active ? 'text-brand-red' : 'text-gray-300 dark:text-gray-600 group-hover:text-brand-red dark:group-hover:text-brand-red group-hover:translate-x-0.5'}`} />
+                        <span className="mobile-menu__nav-label text-sm has-brand-sans-font-family">{item.label}</span>
+                        <ChevronRight size={16} className={`mobile-menu__nav-arrow transition-[color,transform] ${active ? 'text-brand-red' : 'text-gray-300 dark:text-gray-600 group-hover:text-brand-red dark:group-hover:text-brand-red group-hover:translate-x-0.5'}`} />
                       </button>
                     );
                   })}
@@ -257,21 +257,21 @@ export const MobileMenu = () => {
               </div>
 
               {/* Divider */}
-              <div className="border-t border-gray-200 dark:border-border my-8" />
+              <div className="mobile-menu__divider border-t border-gray-200 dark:border-border my-8" />
 
               {/* Social Links */}
-              <div>
-                <h2 className="text-xs uppercase tracking-[0.15em] text-gray-500 dark:text-gray-500 font-bold mb-4 has-brand-serif-font-family" style={{ fontVariationSettings: 'var(--fvs-h6)', letterSpacing: 'var(--ls-h6)' }}>
+              <div className="mobile-menu__section mobile-menu__section--social">
+                <h2 className="mobile-menu__section-title text-xs uppercase tracking-[0.15em] text-gray-500 dark:text-gray-500 font-bold mb-4 has-brand-serif-font-family" style={{ fontVariationSettings: 'var(--fvs-h6)', letterSpacing: 'var(--ls-h6)' }}>
                   Volg Ons
                 </h2>
-                <div className="flex items-center gap-2">
+                <div className="mobile-menu__social flex items-center gap-2">
                   {SOCIAL_LINKS.map((social) => (
                     <a
                       key={social.label}
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center w-11 h-11 rounded-full bg-gray-100 dark:bg-gray-900 text-gray-600 dark:text-gray-400 hover:bg-brand-red hover:text-white dark:hover:bg-brand-red dark:hover:text-white transition-[background-color,color]"
+                      className="mobile-menu__social-link flex items-center justify-center w-11 h-11 rounded-full bg-gray-100 dark:bg-gray-900 text-gray-600 dark:text-gray-400 hover:bg-brand-red hover:text-white dark:hover:bg-brand-red dark:hover:text-white transition-[background-color,color]"
                       title={social.label}
                     >
                       <SocialIcon icon={social.icon} size={18} />
@@ -281,8 +281,8 @@ export const MobileMenu = () => {
               </div>
 
               {/* Copyright */}
-              <div className="mt-12 pt-8 border-t border-gray-200 dark:border-border text-center">
-                <p className="text-xs text-gray-400 dark:text-gray-600">
+              <div className="mobile-menu__footer mt-12 pt-8 border-t border-gray-200 dark:border-border text-center">
+                <p className="mobile-menu__copyright text-xs text-gray-400 dark:text-gray-600">
                   <em>rooi rose</em> © {new Date().getFullYear()}. Alle regte voorbehou.
                 </p>
               </div>

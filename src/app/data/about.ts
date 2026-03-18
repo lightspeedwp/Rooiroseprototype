@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import { Newspaper } from '../components/icons/NewspaperIcon';
 import { HERO_IMAGES } from './heroImages';
+import { CONTACT_EMAILS } from './contactInfo';
 
 export const ABOUT_HERO = {
   label: "Sedert 2026",

@@ -11,7 +11,11 @@ import { CONTACT_PHONES, EXTERNAL_SERVICE_EMAILS } from '../data/contactInfo';
  * NOTE: "rooi rose" is NOT italicised in structured data (Rule 13 exception).
  */
 
-const BASE_URL = 'https://diepapier.co.za';
+/**
+ * Canonical Base URL for the application
+ */
+
+const BASE_URL = 'https://rooirose.co.za';
 
 // ── Route → Breadcrumb label mapping ─────────────────────────────
 // Maps path segments to their Afrikaans display names.
@@ -188,7 +192,7 @@ export function generateOrganizationSchema(): object {
       {
         '@type': 'ContactPoint',
         'contactType': 'customer service',
-        'email': 'lesers@diepapier.co.za',
+        'email': 'lesers@rooirose.co.za',
         'url': `${BASE_URL}/kontak`,
         'availableLanguage': ['af', 'en'],
       },
@@ -203,7 +207,7 @@ export function generateOrganizationSchema(): object {
         '@type': 'ContactPoint',
         'contactType': 'sales',
         'telephone': '+27-51-404-7600',
-        'email': 'advertensies@diepapier.co.za',
+        'email': 'advertensies@rooirose.co.za',
         'availableLanguage': ['af', 'en'],
       },
     ],

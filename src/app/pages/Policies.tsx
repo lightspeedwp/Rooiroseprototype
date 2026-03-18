@@ -38,7 +38,7 @@ export const PoliciesPage = () => {
             >
               <div className="flex-grow">
                 <policy.icon className="w-12 h-12 text-primary mb-4 group-hover:scale-110 transition-transform" />
-                <h2 className="text-2xl font-normal text-brand-navy dark:text-foreground mb-3 font-heading" style={{ fontVariationSettings: "var(--fvs-h2)", lineHeight: 'var(--lh-h2)', letterSpacing: 'var(--ls-h2)', fontSize: 'var(--text-h2)' }}>
+                <h2 className="editorial-display mb-3">
                   {policy.title}
                 </h2>
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -54,7 +54,7 @@ export const PoliciesPage = () => {
 
         {/* Quick Summary */}
         <div className="bg-gray-50 dark:bg-card rounded-2xl p-8 mb-16 max-w-4xl mx-auto">
-          <h2 className="text-2xl font-normal text-brand-navy dark:text-foreground mb-6 font-heading" style={{ fontVariationSettings: "var(--fvs-h2)", lineHeight: 'var(--lh-h2)', letterSpacing: 'var(--ls-h2)', fontSize: 'var(--text-h2)' }}>
+          <h2 className="editorial-display mb-6">
             {POLICIES_SUMMARY.title}
           </h2>
           <div className="space-y-4 text-gray-700 dark:text-gray-300">

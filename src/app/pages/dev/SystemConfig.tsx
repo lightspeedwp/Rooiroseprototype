@@ -117,8 +117,8 @@ const WordPressCoreSection: React.FC<{ locale: 'af' | 'en' }> = ({ locale }) => 
     >
       <ConfigItem label={locale === 'af' ? 'Werf Titel' : 'Site Title'} value="rooi rose" />
       <ConfigItem label={locale === 'af' ? 'Slagspreuk' : 'Tagline'} value="Jou gemeenskapskoerant" />
-      <ConfigItem label={locale === 'af' ? 'WordPress Adres' : 'WordPress Address'} value="https://diepapier.co.za" />
-      <ConfigItem label={locale === 'af' ? 'Administrasie E-pos' : 'Admin Email'} value="admin@diepapier.co.za" />
+      <ConfigItem label={locale === 'af' ? 'WordPress Adres' : 'WordPress Address'} value="https://rooirose.co.za" />
+      <ConfigItem label={locale === 'af' ? 'Administrasie E-pos' : 'Admin Email'} value="admin@rooirose.co.za" />
       <ConfigItem label={locale === 'af' ? 'Taal' : 'Language'} value="Afrikaans (af)" />
       <ConfigItem label={locale === 'af' ? 'Tydsone' : 'Timezone'} value="Africa/Johannesburg (GMT+2)" />
       <ConfigItem label={locale === 'af' ? 'Datum Formaat' : 'Date Format'} value="d F Y" />
@@ -381,9 +381,9 @@ const PayfastSection: React.FC<{ locale: 'af' | 'en' }> = ({ locale }) => (
       title={locale === 'af' ? 'Terugkeer URL\'s' : 'Return URLs'}
       icon={Settings}
     >
-      <ConfigItem label={locale === 'af' ? 'Sukses URL' : 'Success URL'} value="https://diepapier.co.za/bestelling-bevestiging?status=success" />
-      <ConfigItem label={locale === 'af' ? 'Kanselleer URL' : 'Cancel URL'} value="https://diepapier.co.za/betaal?status=cancelled" />
-      <ConfigItem label={locale === 'af' ? 'Kennisgewing URL (ITN)' : 'Notify URL (ITN)'} value="https://diepapier.co.za/wc-api/WC_Gateway_Payfast" />
+      <ConfigItem label={locale === 'af' ? 'Sukses URL' : 'Success URL'} value="https://rooirose.co.za/bestelling-bevestiging?status=success" />
+      <ConfigItem label={locale === 'af' ? 'Kanselleer URL' : 'Cancel URL'} value="https://rooirose.co.za/betaal?status=cancelled" />
+      <ConfigItem label={locale === 'af' ? 'Kennisgewing URL (ITN)' : 'Notify URL (ITN)'} value="https://rooirose.co.za/wc-api/WC_Gateway_Payfast" />
     </ConfigCard>
 
     <div className="rounded-lg border border-brand-red/20 bg-brand-red/5 p-6">
@@ -510,7 +510,7 @@ const GravityFormsSection: React.FC<{ locale: 'af' | 'en' }> = ({ locale }) => (
       <ConfigItem label={locale === 'af' ? 'Vorm ID' : 'Form ID'} value="2" />
       <ConfigItem label={locale === 'af' ? 'Velde' : 'Fields'} value={locale === 'af' ? 'Naam, E-pos, Telefoon, Onderwerp, Boodskap, Toestemming' : 'Name, Email, Phone, Subject, Message, Consent'} />
       <ConfigItem label={locale === 'af' ? 'Bevestiging' : 'Confirmation'} value={locale === 'af' ? 'Omskakel na /dankie-kontak' : 'Redirect to /dankie-kontak'} />
-      <ConfigItem label={locale === 'af' ? 'Kennisgewings aan' : 'Notifications to'} value="kontak@diepapier.co.za" />
+      <ConfigItem label={locale === 'af' ? 'Kennisgewings aan' : 'Notifications to'} value="kontak@rooirose.co.za" />
     </ConfigCard>
 
     <ConfigCard
@@ -520,7 +520,7 @@ const GravityFormsSection: React.FC<{ locale: 'af' | 'en' }> = ({ locale }) => (
       <ConfigItem label={locale === 'af' ? 'Vorm ID' : 'Form ID'} value="3" />
       <ConfigItem label={locale === 'af' ? 'Velde' : 'Fields'} value={locale === 'af' ? 'Naam, E-pos, Telefoon, Antwoord, Terme Ooreenkoms' : 'Name, Email, Phone, Answer, Terms Agreement'} />
       <ConfigItem label={locale === 'af' ? 'Bevestiging' : 'Confirmation'} value={locale === 'af' ? 'Omskakel na /dankie-kompetisie' : 'Redirect to /dankie-kompetisie'} />
-      <ConfigItem label={locale === 'af' ? 'Kennisgewings aan' : 'Notifications to'} value="kompetisies@diepapier.co.za" />
+      <ConfigItem label={locale === 'af' ? 'Kennisgewings aan' : 'Notifications to'} value="kompetisies@rooirose.co.za" />
     </ConfigCard>
   </div>
 );

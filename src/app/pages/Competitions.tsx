@@ -160,3 +160,6 @@ export const CompetitionsPage = () => {
     </div>
   );
 };
+
+// Default export for lazy loading
+export default CompetitionsPage;

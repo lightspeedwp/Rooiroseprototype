@@ -344,7 +344,7 @@ export const LaunchChecklist = () => {
                         className={`text-sm flex-1 transition-all ${
                           item.checked ? 'text-gray-400 dark:text-white/50 line-through' : 'text-gray-900 dark:text-white'
                         }`}
-                        style={{ fontFamily: 'var(--font-inter)' }}
+                        style={{ fontFamily: 'var(--font-body)' }}
                       >
                         {item.text}
                       </span>
@@ -364,7 +364,7 @@ export const LaunchChecklist = () => {
 
       {/* Footer Note */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
-        <p className="text-xs text-gray-400 dark:text-white/30" style={{ fontFamily: 'var(--font-inter)' }}>
+        <p className="text-xs text-gray-400 dark:text-white/30" style={{ fontFamily: 'var(--font-body)' }}>
           {isAf
             ? 'Kontrolelys-vordering word outomaties gestoor in jou blaaier. Voer uit vir rugsteun.'
             : 'Checklist progress is automatically saved in your browser. Export for backup.'}

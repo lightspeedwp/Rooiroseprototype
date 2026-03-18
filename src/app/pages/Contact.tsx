@@ -140,7 +140,7 @@ export const ContactPage = () => {
                   </div>
                   <div>
                     <h4 className="font-normal text-lg mb-1 font-heading" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)' }}>E-pos</h4>
-                    <a href="mailto:lesers@diepapier.co.za" className="block text-white hover:text-primary transition-colors break-all">lesers@diepapier.co.za</a>
+                    <a href="mailto:lesers@rooirose.co.za" className="block text-white hover:text-primary transition-colors break-all">lesers@rooirose.co.za</a>
                   </div>
                 </div>
               </div>
@@ -149,14 +149,14 @@ export const ContactPage = () => {
             <div className="bg-white dark:bg-card p-6 rounded-lg border border-gray-200 dark:border-border shadow-sm dark:shadow-[var(--shadow-dark-200)]">
               <div className="flex items-center gap-3 mb-4">
                 <Clock className="text-primary dark:text-primary" size={24} />
-                <h3 className="text-xl font-normal text-brand-navy dark:text-foreground font-heading" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)', fontSize: 'var(--text-h3)' }}>Kantoorure</h3>
+                <h3 className="text-xl font-normal text-brand-navy dark:text-foreground font-heading" style={{ fontVariationSettings: "var(--fvs-h3)", lineHeight: 'var(--lh-h3)', letterSpacing: 'var(--ls-h3)', fontSize: 'var(--text-h3)' }}>{OFFICE_HOURS.title}</h3>
               </div>
               <ul className="space-y-2 text-gray-600 dark:text-gray-400">
-                {OFFICE_HOURS.map((item, idx) => (
+                {OFFICE_HOURS.hours.map((item, idx) => (
                   <li key={idx} className="flex justify-between">
                     <span>{item.day}</span>
-                    <span className={`font-bold ${item.highlight ? 'text-text-link-red dark:text-text-link-red' : ''}`}>
-                      {item.hours}
+                    <span className={`font-bold ${item.time === 'Gesluit' ? 'text-text-link-red dark:text-text-link-red' : ''}`}>
+                      {item.time}
                     </span>
                   </li>
                 ))}
@@ -186,24 +186,6 @@ export const ContactPage = () => {
 
         </div>
       </PageContainer>
-
-      {/* Social Proof */}
-      <section className="bg-gray-50 dark:bg-background border-t border-gray-100 dark:border-border">
-        <div className="alignwide py-12 md:py-16">
-          <div className="text-center mb-10">
-            <h2
-              className="text-2xl md:text-3xl font-normal text-brand-navy dark:text-foreground font-heading mb-2"
-              style={{ fontVariationSettings: "var(--fvs-h2)", lineHeight: 'var(--lh-h2)', letterSpacing: 'var(--ls-h2)' }}
-            >
-              {CONTACT_PAGE_CONTENT.social_proof_title}
-            </h2>
-            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              {CONTACT_PAGE_CONTENT.social_proof_text}
-            </p>
-          </div>
-          <MarketingGrid />
-        </div>
-      </section>
 
       {/* FAQ Section */}
       <PageFAQSection

@@ -20,7 +20,7 @@ export const E_EDITION_SUBSCRIPTIONS: SubscriptionOption[] = [
       "4 e-uitgawes",
       "Toegang tot alle uitgawes vanaf intekeningdatum",
       "Kanselleer enige tyd",
-      "Kies jou streek by intekening"
+      "Nasionale e-uitgawe"
     ],
     popular: false,
     color: "bg-gray-50"
@@ -35,7 +35,7 @@ export const E_EDITION_SUBSCRIPTIONS: SubscriptionOption[] = [
       "12 e-uitgawes",
       "Toegang tot alle uitgawes vanaf intekeningdatum",
       "Spaar R30",
-      "Kies jou streek by intekening"
+      "Nasionale e-uitgawe"
     ],
     popular: true,
     color: "bg-[var(--wp--preset--color--secondary)] text-white"
@@ -50,7 +50,7 @@ export const E_EDITION_SUBSCRIPTIONS: SubscriptionOption[] = [
       "52 e-uitgawes",
       "Toegang tot alle uitgawes vanaf intekeningdatum",
       "Spaar R420",
-      "Kies jou streek by intekening"
+      "Nasionale e-uitgawe"
     ],
     popular: true,
     color: "bg-[var(--wp--preset--color--secondary)] text-white"

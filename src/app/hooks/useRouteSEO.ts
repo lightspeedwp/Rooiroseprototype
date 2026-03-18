@@ -34,7 +34,7 @@ export function useRouteSEO() {
 
     if (!seoData) return; // Let per-page <SEO> handle it
 
-    const baseUrl = 'https://diepapier.co.za';
+    const baseUrl = 'https://rooirose.co.za';
     const fullTitle = seoData.title.includes('rooi rose')
       ? seoData.title
       : `${seoData.title} | rooi rose`;

@@ -130,7 +130,7 @@ export const EVENTS_FAQS: PageFAQItem[] = [
   {
     id: 'events-4',
     question: 'Kan ek my ingediende gebeurtenis wysig?',
-    answer: 'Kontak ons by <a href="mailto:gebeure@diepapier.co.za">gebeure@diepapier.co.za</a> met die besonderhede van die wysiging wat jy wil maak. Ons sal die veranderinge vir jou aanbring.'
+    answer: 'Kontak ons by <a href="mailto:gebeure@rooirose.co.za">gebeure@rooirose.co.za</a> met die besonderhede van die wysiging wat jy wil maak. Ons sal die veranderinge vir jou aanbring.'
   }
 ];
 
@@ -187,12 +187,12 @@ export const TEAM_FAQS: PageFAQItem[] = [
   {
     id: 'team-1',
     question: 'Hoe kontak ek \'n spesifieke joernalis?',
-    answer: 'U kan \'n joernalis direk bereik deur \'n e-pos na die redaksie te stuur by <a href="mailto:nuus@diepapier.co.za">nuus@diepapier.co.za</a> met die joernalis se naam in die onderwerplyn.'
+    answer: 'U kan \'n joernalis direk bereik deur \'n e-pos na die redaksie te stuur by <a href="mailto:nuus@rooirose.co.za">nuus@rooirose.co.za</a> met die joernalis se naam in die onderwerplyn.'
   },
   {
     id: 'team-2',
     question: 'Aanvaar <em>rooi rose</em> vryskutwerk?',
-    answer: 'Ja, ons is altyd op die uitkyk vir talentvolle vryskutjoernaliste en bydraers. Stuur jou CV en voorbeelde van vorige werk na <a href="mailto:redaksie@diepapier.co.za">redaksie@diepapier.co.za</a>.'
+    answer: 'Ja, ons is altyd op die uitkyk vir talentvolle vryskutjoernaliste en bydraers. Stuur jou CV en voorbeelde van vorige werk na <a href="mailto:redaksie@rooirose.co.za">redaksie@rooirose.co.za</a>.'
   },
   {
     id: 'team-3',
@@ -279,7 +279,7 @@ export const FOUNDATIONS_FAQS: PageFAQItem[] = [
   {
     id: 'foundations-1',
     question: 'Hoe kan ek \'n advertensie plaas vir \'n welsynsorganisasie?',
-    answer: '<em>rooi rose</em> ondersteun verskeie welsynsorganisasies deur gratis of afslag-advertensies. Kontak ons advertensie-afdeling by <a href="mailto:advertensies@diepapier.co.za">advertensies@diepapier.co.za</a> vir meer inligting.'
+    answer: '<em>rooi rose</em> ondersteun verskeie welsynsorganisasies deur gratis of afslag-advertensies. Kontak ons advertensie-afdeling by <a href="mailto:advertensies@rooirose.co.za">advertensies@rooirose.co.za</a> vir meer inligting.'
   },
   {
     id: 'foundations-2',
@@ -289,7 +289,7 @@ export const FOUNDATIONS_FAQS: PageFAQItem[] = [
   {
     id: 'foundations-3',
     question: 'Hoe kan my organisasie met <em>rooi rose</em> saamwerk?',
-    answer: 'Organisasies wat met <em>rooi rose</em> wil saamwerk kan ons kontak by <a href="mailto:redaksie@diepapier.co.za">redaksie@diepapier.co.za</a> of <a href="mailto:advertensies@diepapier.co.za">advertensies@diepapier.co.za</a> afhangende van die aard van die samewerking.'
+    answer: 'Organisasies wat met <em>rooi rose</em> wil saamwerk kan ons kontak by <a href="mailto:redaksie@rooirose.co.za">redaksie@rooirose.co.za</a> of <a href="mailto:advertensies@rooirose.co.za">advertensies@rooirose.co.za</a> afhangende van die aard van die samewerking.'
   }
 ];
 
@@ -298,12 +298,12 @@ export const OBITUARIES_FAQS: PageFAQItem[] = [
   {
     id: 'obit-1',
     question: 'Hoe plaas ek \'n doodsberig in <em>rooi rose</em>?',
-    answer: 'Stuur die oorledene se besonderhede, \'n kort lewensbeskrywing, en \'n foto (opsioneel) na <a href="mailto:doodsberrigte@diepapier.co.za">doodsberrigte@diepapier.co.za</a>. Ons sal u kontak om die plasing en koste te bespreek.'
+    answer: 'Stuur die oorledene se besonderhede, \'n kort lewensbeskrywing, en \'n foto (opsioneel) na <a href="mailto:doodsberrigte@rooirose.co.za">doodsberrigte@rooirose.co.za</a>. Ons sal u kontak om die plasing en koste te bespreek.'
   },
   {
     id: 'obit-2',
     question: 'Hoeveel kos \'n doodsberig?',
-    answer: 'Tariewe wissel na gelang van die grootte en formaat van die plasing. Kontak ons by <a href="mailto:doodsberrigte@diepapier.co.za">doodsberrigte@diepapier.co.za</a> vir \'n kwotasie.'
+    answer: 'Tariewe wissel na gelang van die grootte en formaat van die plasing. Kontak ons by <a href="mailto:doodsberrigte@rooirose.co.za">doodsberrigte@rooirose.co.za</a> vir \'n kwotasie.'
   },
   {
     id: 'obit-3',
@@ -327,7 +327,7 @@ export const MULTIMEDIA_FAQS: PageFAQItem[] = [
   {
     id: 'media-3',
     question: 'Kan ek my eie video of foto\'s instuur?',
-    answer: 'Ja! Stuur u beeldmateriaal na <a href="mailto:nuus@diepapier.co.za">nuus@diepapier.co.za</a>. Sluit asseblief \'n beskrywing, die datum, en u kontakbesonderhede in. Ons sal u krediet gee indien dit gepubliseer word.'
+    answer: 'Ja! Stuur u beeldmateriaal na <a href="mailto:nuus@rooirose.co.za">nuus@rooirose.co.za</a>. Sluit asseblief \'n beskrywing, die datum, en u kontakbesonderhede in. Ons sal u krediet gee indien dit gepubliseer word.'
   }
 ];
 
@@ -384,7 +384,7 @@ export const POLICIES_FAQS: PageFAQItem[] = [
   {
     id: 'pol-3',
     question: 'Hoe dien ek \'n klagte oor \'n artikel in?',
-    answer: 'U kan \'n klagte rig aan die Persraad van Suid-Afrika by <a href="mailto:enquiries@ombudsman.org.za">enquiries@ombudsman.org.za</a>. U kan ook direk aan ons redaksie skryf by <a href="mailto:lesers@diepapier.co.za">lesers@diepapier.co.za</a>.'
+    answer: 'U kan \'n klagte rig aan die Persraad van Suid-Afrika by <a href="mailto:enquiries@ombudsman.org.za">enquiries@ombudsman.org.za</a>. U kan ook direk aan ons redaksie skryf by <a href="mailto:lesers@rooirose.co.za">lesers@rooirose.co.za</a>.'
   }
 ];
 
@@ -398,7 +398,7 @@ export const TRAFFIC_FAQS: PageFAQItem[] = [
   {
     id: 'traffic-2',
     question: 'Hoe kan ek \'n padongeluk of padsluiting rapporteer?',
-    answer: 'Stuur \'n WhatsApp-boodskap na ons nuuslynommer of e-pos <a href="mailto:nuus@diepapier.co.za">nuus@diepapier.co.za</a> met die ligging, tyd en \'n kort beskrywing. Foto\'s is baie welkom.'
+    answer: 'Stuur \'n WhatsApp-boodskap na ons nuuslynommer of e-pos <a href="mailto:nuus@rooirose.co.za">nuus@rooirose.co.za</a> met die ligging, tyd en \'n kort beskrywing. Foto\'s is baie welkom.'
   },
   {
     id: 'traffic-3',
@@ -470,7 +470,7 @@ export const SUBMIT_STORY_FAQS: PageFAQItem[] = [
   {
     id: 'story-4',
     question: 'Word ek betaal vir my storie?',
-    answer: 'Nuuswenke en lesersbydraes word gewoonlik nie vergoed nie. Vir vryskutjoernaliste wat gereeld wil bydra, kontak die redaksie by <a href="mailto:nuus@diepapier.co.za">nuus@diepapier.co.za</a> vir moontlike reëlings.'
+    answer: 'Nuuswenke en lesersbydraes word gewoonlik nie vergoed nie. Vir vryskutjoernaliste wat gereeld wil bydra, kontak die redaksie by <a href="mailto:nuus@rooirose.co.za">nuus@rooirose.co.za</a> vir moontlike reëlings.'
   }
 ];
 
@@ -556,7 +556,7 @@ export const SUBMIT_EVENT_FAQS: PageFAQItem[] = [
   {
     id: 'event-sub-5',
     question: 'Kan ek my ingediende gebeurtenis wysig of kanselleer?',
-    answer: 'Kontak <em>rooi rose</em> by <a href="mailto:gebeure@diepapier.co.za">gebeure@diepapier.co.za</a> met die besonderhede van die wysiging of kansellasie. Ons sal die veranderinge vir jou aanbring.'
+    answer: 'Kontak <em>rooi rose</em> by <a href="mailto:gebeure@rooirose.co.za">gebeure@rooirose.co.za</a> met die besonderhede van die wysiging of kansellasie. Ons sal die veranderinge vir jou aanbring.'
   }
 ];
 
@@ -565,7 +565,7 @@ export const CLASSIFIEDS_FAQS: PageFAQItem[] = [
   {
     id: 'class-1',
     question: 'Hoe plaas ek \'n geklassifiseerde advertensie in <em>rooi rose</em>?',
-    answer: 'Stuur jou advertensieteks na <a href="mailto:geklassifiseerd@diepapier.co.za">geklassifiseerd@diepapier.co.za</a> of vul die navraagvorm op <em>rooi rose</em> se adverteerbladsy in. Ons span sal jou binnekort kontak met \'n kwotasie.'
+    answer: 'Stuur jou advertensieteks na <a href="mailto:geklassifiseerd@rooirose.co.za">geklassifiseerd@rooirose.co.za</a> of vul die navraagvorm op <em>rooi rose</em> se adverteerbladsy in. Ons span sal jou binnekort kontak met \'n kwotasie.'
   },
   {
     id: 'class-2',
@@ -599,7 +599,7 @@ export const THANKYOU_ADVERTISING_FAQS: PageFAQItem[] = [
   {
     id: 'ty-adv-3',
     question: 'Wat as ek my navraag wil wysig?',
-    answer: 'Indien u enige besonderhede wil verander, stuur asseblief so gou moontlik \'n e-pos na <a href="mailto:advertensies@diepapier.co.za">advertensies@diepapier.co.za</a>.'
+    answer: 'Indien u enige besonderhede wil verander, stuur asseblief so gou moontlik \'n e-pos na <a href="mailto:advertensies@rooirose.co.za">advertensies@rooirose.co.za</a>.'
   }
 ];
 
@@ -694,7 +694,7 @@ export const THANKYOU_SUBMISSION_FAQS: PageFAQItem[] = [
   {
     id: 'ty-sub-3',
     question: 'Kan ek foto\'s agterna stuur?',
-    answer: 'Indien u vergeet het om foto\'s aan te heg, e-pos dit asseblief so gou moontlik na <a href="mailto:nuus@diepapier.co.za">nuus@diepapier.co.za</a> met u naam en onderwerp.'
+    answer: 'Indien u vergeet het om foto\'s aan te heg, e-pos dit asseblief so gou moontlik na <a href="mailto:nuus@rooirose.co.za">nuus@rooirose.co.za</a> met u naam en onderwerp.'
   }
 ];
 
@@ -713,7 +713,7 @@ export const DISPLAY_ADS_FAQS: PageFAQItem[] = [
   {
     id: 'disp-3',
     question: 'Bied <em>rooi rose</em> ontwerpsdienste vir advertensies aan?',
-    answer: 'Ja, <em>rooi rose</em> se kreatiewe span kan jou advertensie ontwerp teen \'n addisionele fooi. Stuur jou logo, beelde en teks na <a href="mailto:advertensies@diepapier.co.za">advertensies@diepapier.co.za</a>.'
+    answer: 'Ja, <em>rooi rose</em> se kreatiewe span kan jou advertensie ontwerp teen \'n addisionele fooi. Stuur jou logo, beelde en teks na <a href="mailto:advertensies@rooirose.co.za">advertensies@rooirose.co.za</a>.'
   }
 ];
 
@@ -727,7 +727,7 @@ export const LEAFLETS_FAQS: PageFAQItem[] = [
   {
     id: 'leaf-2',
     question: 'Wat is die minimum bestelling vir pamflette?',
-    answer: 'Die minimum bestelling hang af van die verspreidingsgebied. Kontak <em>rooi rose</em> se advertensiespan by <a href="mailto:advertensies@diepapier.co.za">advertensies@diepapier.co.za</a> vir spesifieke hoeveelhede en tariewe.'
+    answer: 'Die minimum bestelling hang af van die verspreidingsgebied. Kontak <em>rooi rose</em> se advertensiespan by <a href="mailto:advertensies@rooirose.co.za">advertensies@rooirose.co.za</a> vir spesifieke hoeveelhede en tariewe.'
   },
   {
     id: 'leaf-3',

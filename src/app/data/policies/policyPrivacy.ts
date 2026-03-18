@@ -125,7 +125,7 @@ export const POLICY_PRIVACY = {
         "Data draagbaarheid: Jy kan versoek dat ons jou data in 'n gestruktureerde formaat verskaf",
         'Onttrek toestemming: Waar ons op jou toestemming staatmaak, kan jy dit enige tyd onttrek',
       ],
-      footnote: 'Om enige van hierdie regte uit te oefen, kontak ons by privaatheid@diepapier.co.za',
+      footnote: 'Om enige van hierdie regte uit te oefen, kontak ons by privaatheid@rooirose.co.za',
       contactEmail: CONTACT_EMAILS.privacy,
     },
     {

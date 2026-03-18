@@ -12,7 +12,7 @@ export const POLICY_COOKIE = {
   subtitle: 'Persoonlike inligting en koekies',
   lastUpdated: '8 Februarie 2026',
   intro: "Hierdie privaatheidverklaring is laas opdateer op 8 Februarie 2026 en is van toepassing op burgers en wettige permanente inwoners van Suid-Afrika.",
-  preamble: "In hierdie privaatheidverklaring verduidelik ons wat ons doen met die data wat ons van jou verkry via https://diepapier.co.za. Ons beveel aan dat jy hierdie verklaring sorgvuldig lees. In ons verwerking voldoen ons aan die vereistes van privaatheidwetgewing. Dit beteken, onder meer, dat:",
+  preamble: "In hierdie privaatheidverklaring verduidelik ons wat ons doen met die data wat ons van jou verkry via https://rooirose.co.za. Ons beveel aan dat jy hierdie verklaring sorgvuldig lees. In ons verwerking voldoen ons aan die vereistes van privaatheidwetgewing. Dit beteken, onder meer, dat:",
   preambleItems: [
     'ons duidelik die doeleindes waarvoor ons persoonlike data verwerk, stel. Ons doen dit deur middel van hierdie privaatheidverklaring;',
     'ons beoog om ons versameling van persoonlike data te beperk tot slegs die persoonlike data wat vir wettige doeleindes benodig word;',

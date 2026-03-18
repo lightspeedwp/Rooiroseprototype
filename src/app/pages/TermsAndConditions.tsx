@@ -51,7 +51,7 @@ export const TermsAndConditionsPage = () => {
               <section className="mb-12">
                 <p className="leading-relaxed text-lg mb-4">
                   Welkom by <em className="text-brand-red font-normal not-italic">rooi rose</em>. Hierdie Terme en voorwaardes ("Terme", "Ooreenkoms") reguleer jou 
-                  gebruik van ons webwerf by <strong>www.diepapier.co.za</strong> (die "Diens") wat deur 
+                  gebruik van ons webwerf by <strong>www.rooirose.co.za</strong> (die "Diens") wat deur 
                   <em className="text-brand-red font-normal not-italic"> rooi rose</em> (Edms) Bpk ("ons", "ons" of "onse") bedryf word.
                 </p>
                 <p className="leading-relaxed text-lg">
@@ -136,7 +136,7 @@ export const TermsAndConditionsPage = () => {
                 <ul className="list-disc pl-6 space-y-3 text-base">
                   <li className="leading-relaxed"><strong>Maandelikse intekenings:</strong> Kan enige tyd gekanselleer word. Geen terugbetalings vir die huidige betaalde maand nie.</li>
                   <li className="leading-relaxed"><strong>Jaarlikse intekenings:</strong> Kan gekanselleer word, maar geen terugbetalings na 30 dae nie.</li>
-                  <li className="leading-relaxed"><strong>Terugbetaling aansoeke:</strong> Moet binne 30 dae van aanvanklike aankoop gedoen word via <a href="mailto:intekenings@diepapier.co.za" className="text-text-link-red font-bold hover:underline">intekenings@diepapier.co.za</a></li>
+                  <li className="leading-relaxed"><strong>Terugbetaling aansoeke:</strong> Moet binne 30 dae van aanvanklike aankoop gedoen word via <a href="mailto:intekenings@rooirose.co.za" className="text-text-link-red font-bold hover:underline">intekenings@rooirose.co.za</a></li>
                 </ul>
               </section>
 
@@ -337,7 +337,7 @@ export const TermsAndConditionsPage = () => {
                 </p>
                 <div className="bg-gray-50 dark:bg-card p-6 rounded-lg">
                   <p className="text-gray-700 dark:text-gray-300 mb-2"><strong><em>rooi rose</em> (Edms) Bpk</strong></p>
-                  <p className="text-gray-700 dark:text-gray-300 mb-2">E-pos: <a href="mailto:info@diepapier.co.za" className="text-text-link-red font-bold hover:underline">info@diepapier.co.za</a></p>
+                  <p className="text-gray-700 dark:text-gray-300 mb-2">E-pos: <a href="mailto:info@rooirose.co.za" className="text-text-link-red font-bold hover:underline">info@rooirose.co.za</a></p>
                   <p className="text-gray-700 dark:text-gray-300">Adres: Loft Office East (LOE4), 2nd Floor, The Zone Rosebank, 187 Oxford Road, Rosebank, 2196</p>
                 </div>
               </section>

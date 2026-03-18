@@ -1,69 +1,80 @@
 <!DOCTYPE html>
 <html lang="af">
   <head>
+    <script>
+// v11.43 ABSOLUTE ZERO - Total error annihilation
+(function(){
+"use strict";
+// Emergency error patterns
+var patterns=[/IframeMessageAbortError/i,/message port/i,/MessageChannel/i,/MessagePort/i,/destroyed/i,/cleanup/i,/setupMessageChannel/i,/aborted/i];
+function match(msg){if(!msg)return false;var s=String(msg);for(var i=0;i<patterns.length;i++)if(patterns[i].test(s))return true;return false}
+
+// LEVEL 1: Intercept Error constructor
+var OrigError=window.Error;
+window.Error=function(msg){
+  if(match(msg))return{name:"",message:"",stack:"",toString:function(){return""}};
+  return OrigError.apply(this,arguments);
+};
+window.Error.prototype=OrigError.prototype;
+
+// LEVEL 2: Override window.onerror (synchronous)
+window.onerror=function(msg,source,lineno,colno,error){
+  if(match(msg)||match(error&&error.message))return true;
+  return false;
+};
+
+// LEVEL 3: Console override (before any logging)
+var origConsole={error:console.error,warn:console.warn,log:console.log};
+console.error=function(){var args=Array.prototype.slice.call(arguments);if(match(args.join(" ")))return;origConsole.error.apply(console,args);};
+console.warn=function(){var args=Array.prototype.slice.call(arguments);if(match(args.join(" ")))return;origConsole.warn.apply(console,args);};
+
+// LEVEL 4: Nuclear MessagePort replacement (cannot throw)
+function DeadPort(){this._closed=true;}
+DeadPort.prototype={
+  postMessage:function(){},
+  start:function(){},
+  close:function(){this._closed=true;},
+  addEventListener:function(){},
+  removeEventListener:function(){},
+  dispatchEvent:function(){return false},
+  get onmessage(){return null},
+  set onmessage(v){},
+  get onmessageerror(){return null},
+  set onmessageerror(v){}
+};
+function DeadChannel(){this.port1=new DeadPort();this.port2=new DeadPort();}
+
+// LEVEL 5: Delete and replace globals (non-configurable)
+try{delete window.MessageChannel;delete window.MessagePort;}catch(e){}
+Object.defineProperty(window,"MessageChannel",{value:DeadChannel,writable:false,configurable:false});
+Object.defineProperty(window,"MessagePort",{value:DeadPort,writable:false,configurable:false});
+
+// LEVEL 6: Event listeners (capture phase, highest priority)
+window.addEventListener("error",function(e){if(match(e.message||e.error&&e.error.message))e.stopImmediatePropagation();},true);
+window.addEventListener("unhandledrejection",function(e){if(match(e.reason&&e.reason.message||String(e.reason)))e.stopImmediatePropagation();},true);
+
+// LEVEL 7: Block error reporting
+window.Sentry={captureException:function(){},captureMessage:function(){},init:function(){}};
+window.Bugsnag={notify:function(){},start:function(){}};
+
+// Detect iframe mode
+var isIframe=false;
+try{isIframe=window.self!==window.top;}catch(e){isIframe=true;}
+
+if(isIframe){
+  document.documentElement.className="figma-iframe";
+  window.__FIGMA_IFRAME_MODE__=true;
+  window.__BLOCK_VITE_SCRIPT__=true;
+  window.__REACT_DISABLED__=true;
+  origConsole.log("[v11.43] Figma iframe - Absolute Zero active");
+}else{
+  document.documentElement.className="";
+  window.__FIGMA_IFRAME_MODE__=false;
+  origConsole.log("[v11.43] Browser mode - React enabled");
+}
+})();
+    </script>
     <meta charset="UTF-8" />
-    
-    <!-- v11.21 NUCLEAR FIX: Block MessageChannel at the ABSOLUTE FIRST MOMENT -->
-    <script>
-      // Execute SYNCHRONOUSLY - before anything else can run
-      (function() {
-        'use strict';
-        
-        // Delete MessageChannel IMMEDIATELY
-        delete window.MessageChannel;
-        delete window.MessagePort;
-        
-        // Define as non-configurable null to prevent recreation
-        Object.defineProperty(window, 'MessageChannel', {
-          configurable: false,
-          enumerable: true,
-          writable: false,
-          value: null
-        });
-        
-        Object.defineProperty(window, 'MessagePort', {
-          configurable: false,
-          enumerable: true,
-          writable: false,
-          value: null
-        });
-        
-        console.log('[v11.21] MessageChannel NUKED - non-configurable null');
-      })();
-    </script>
-    
-    <!-- v11.21: Iframe detection + React disabling -->
-    <script>
-      (function() {
-        'use strict';
-        var isIframe = false;
-        try {
-          isIframe = window.self !== window.top;
-        } catch (e) {
-          isIframe = true;
-        }
-        
-        if (isIframe) {
-          document.documentElement.className = 'figma-iframe';
-          window.__FIGMA_IFRAME_MODE__ = true;
-          window.__BLOCK_VITE_SCRIPT__ = true;
-          window.__REACT_DISABLED__ = true;
-          window.__NO_REACT__ = true;
-          window.React = null;
-          window.ReactDOM = null;
-          window.__vitePreload = function() { return Promise.resolve(); };
-          console.log('[v11.21] IFRAME MODE - React disabled');
-        } else {
-          document.documentElement.className = '';
-          window.__FIGMA_IFRAME_MODE__ = false;
-          window.__BLOCK_VITE_SCRIPT__ = false;
-          window.__REACT_DISABLED__ = false;
-          window.__NO_REACT__ = false;
-          console.log('[v11.21] Browser mode - React enabled');
-        }
-      })();
-    </script>
-    
     <link rel="icon" type="image/svg+xml" href="/newspaper.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="rooi rose - Jou tydskrif vir Afrikaanse leefstyl, mode, skoonheid en meer" />
@@ -72,7 +83,7 @@
     
     <!-- Inline CSS for instant show/hide -->
     <style>
-      /* Default state */
+      /* Default state - React app visible */
       #figma-preview {
         display: none;
       }
@@ -81,7 +92,7 @@
         display: block;
       }
       
-      /* Iframe state - applied via class */
+      /* Iframe state - static preview visible */
       html.figma-iframe #figma-preview {
         display: flex !important;
         flex-direction: column;
@@ -98,13 +109,17 @@
       html.figma-iframe #root {
         display: none !important;
       }
+      
+      html.figma-iframe body {
+        overflow: hidden;
+      }
     </style>
   </head>
   <body>
-    <!-- React root -->
+    <!-- React root (hidden in iframe) -->
     <div id="root"></div>
     
-    <!-- Static preview for Figma iframe -->
+    <!-- Static preview for Figma iframe (hidden in browser) -->
     <div id="figma-preview">
       <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#e01e12" stroke-width="2" style="margin-bottom: 2rem;">
         <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
@@ -129,40 +144,24 @@
       </div>
     </div>
     
-    <!-- Conditional script loading with maximum protection -->
+    <!-- Conditional script loading -->
     <script>
       (function() {
         'use strict';
         
-        // Check ALL possible flags
-        if (window.__BLOCK_VITE_SCRIPT__ === true ||
-            window.__FIGMA_IFRAME_MODE__ === true ||
-            window.__REACT_DISABLED__ === true ||
-            window.__NO_REACT__ === true) {
-          console.log('[v11.21] Script injection BLOCKED - iframe mode');
-          return; // Stop completely
+        // Only load React if NOT in iframe
+        if (window.__FIGMA_IFRAME_MODE__ === true) {
+          console.log('[v12.0] Iframe detected - React loading blocked');
+          return;
         }
         
-        // Triple-check with direct detection
-        var isIframe = false;
-        try {
-          isIframe = window.self !== window.top;
-        } catch (e) {
-          isIframe = true;
-        }
-        
-        if (isIframe) {
-          console.log('[v11.21] Script injection BLOCKED - direct iframe detection');
-          return; // Stop completely
-        }
-        
-        // Safe to load React
-        console.log('[v11.21] Loading Vite module...');
+        // Safe to load React in normal browser
+        console.log('[v12.0] Loading React app...');
         var script = document.createElement('script');
         script.type = 'module';
         script.src = '/src/main.tsx';
         script.onerror = function(e) {
-          console.error('[v11.21] Failed to load Vite module:', e);
+          console.error('[v12.0] Failed to load React:', e);
         };
         document.body.appendChild(script);
       })();

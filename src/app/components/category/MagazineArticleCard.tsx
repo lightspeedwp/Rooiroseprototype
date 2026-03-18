@@ -45,24 +45,30 @@ export const MagazineArticleCard: React.FC<MagazineArticleCardProps> = ({
   const isCompact = variant === 'compact';
 
   return (
-    <ArticleLink id={id} title={title} className="block group h-full relative">
-      <article className="flex flex-col h-full relative">
+    <ArticleLink id={id} title={title} className="magazine-card block group h-full relative">
+      <article className={`magazine-card__article flex flex-col h-full relative ${
+        isHero ? 'magazine-card__article--hero' : 
+        isLarge ? 'magazine-card__article--large' : 
+        isFeatured ? 'magazine-card__article--featured' : 
+        isCompact ? 'magazine-card__article--compact' : 
+        'magazine-card__article--standard'
+      }`}>
         {/* Image */}
-        <div className={`relative overflow-hidden bg-gray-200 dark:bg-muted mb-5 z-0 ${
+        <div className={`magazine-card__image-wrapper relative overflow-hidden bg-gray-200 dark:bg-muted mb-5 z-0 ${
           isHero ? 'aspect-[16/9]' : isLarge ? 'aspect-[3/2]' : isFeatured ? 'aspect-[16/9]' : isCompact ? 'aspect-[4/3]' : 'aspect-[3/2]'
         }`}>
           <ImageWithFallback 
             src={imageUrl} 
             alt={title} 
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+            className="magazine-card__image w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
           />
           {/* Dark overlay on hover */}
-          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 z-10" />
+          <div className="magazine-card__overlay absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 z-10" />
           
           {/* Category badge */}
           {!sponsored && (
-            <div className="absolute top-4 left-4 z-20">
-              <span className="bg-brand-red text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 shadow-lg">
+            <div className="magazine-card__badge-wrapper absolute top-4 left-4 z-20">
+              <span className="magazine-card__category-badge bg-brand-red text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 shadow-lg">
                 {category}
               </span>
             </div>
@@ -70,12 +76,12 @@ export const MagazineArticleCard: React.FC<MagazineArticleCardProps> = ({
 
           {/* Sponsored badge */}
           {sponsored && (
-            <div className="absolute top-4 left-4 flex items-center gap-2 z-20">
-              <span className="bg-gray-700 text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 shadow-lg">
+            <div className="magazine-card__sponsor-wrapper absolute top-4 left-4 flex items-center gap-2 z-20">
+              <span className="magazine-card__sponsor-badge bg-gray-700 text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 shadow-lg">
                 Geborg
               </span>
               {sponsorLogo && (
-                <div className="bg-white rounded p-1 shadow-lg w-8 h-8 flex items-center justify-center">
+                <div className="magazine-card__sponsor-logo bg-white rounded p-1 shadow-lg w-8 h-8 flex items-center justify-center">
                   <ImageWithFallback src={sponsorLogo} alt={sponsorName || ''} className="w-full h-full object-contain" />
                 </div>
               )}
@@ -84,10 +90,10 @@ export const MagazineArticleCard: React.FC<MagazineArticleCardProps> = ({
         </div>
         
         {/* Content */}
-        <div className="flex-1 flex flex-col relative z-0">
+        <div className="magazine-card__content flex-1 flex flex-col relative z-0">
           {/* Title */}
           <h3 
-            className={`font-normal text-brand-navy dark:text-foreground mb-2 leading-tight group-hover:text-brand-red dark:group-hover:text-primary transition-colors has-brand-serif-font-family ${
+            className={`magazine-card__title font-normal text-brand-navy dark:text-foreground mb-2 leading-tight group-hover:text-brand-red dark:group-hover:text-primary transition-colors has-brand-serif-font-family ${
               isHero 
                 ? 'text-3xl md:text-4xl' 
                 : isLarge 
@@ -105,7 +111,7 @@ export const MagazineArticleCard: React.FC<MagazineArticleCardProps> = ({
           
           {/* Excerpt - show for hero, large, standard, and featured */}
           {(isHero || isLarge || variant === 'standard' || variant === 'featured') && excerpt && (
-            <p className={`text-gray-600 dark:text-gray-400 mb-3 leading-relaxed flex-1 ${
+            <p className={`magazine-card__excerpt text-gray-600 dark:text-gray-400 mb-3 leading-relaxed flex-1 ${
               isHero ? 'text-lg md:text-xl line-clamp-3' : isLarge ? 'text-base md:text-lg line-clamp-3' : isFeatured ? 'text-base md:text-lg line-clamp-3' : 'text-base line-clamp-2'
             }`}>
               {excerpt}
@@ -113,23 +119,23 @@ export const MagazineArticleCard: React.FC<MagazineArticleCardProps> = ({
           )}
           
           {/* Meta info */}
-          <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mt-auto">
+          <div className="magazine-card__meta flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mt-auto">
             {sponsored ? (
               <>
-                <span className="font-bold text-brand-navy dark:text-foreground">{sponsorName}</span>
-                <span>•</span>
+                <span className="magazine-card__sponsor-name font-bold text-brand-navy dark:text-foreground">{sponsorName}</span>
+                <span className="magazine-card__separator">•</span>
               </>
             ) : (
               <>
-                <span className="font-bold text-brand-navy dark:text-foreground">{author}</span>
-                <span>•</span>
+                <span className="magazine-card__author font-bold text-brand-navy dark:text-foreground">{author}</span>
+                <span className="magazine-card__separator">•</span>
               </>
             )}
-            <span>{date}</span>
+            <span className="magazine-card__date">{date}</span>
             {readTime && (
               <>
-                <span>•</span>
-                <div className="flex items-center gap-1">
+                <span className="magazine-card__separator">•</span>
+                <div className="magazine-card__read-time flex items-center gap-1">
                   <Clock size={14} />
                   <span>{readTime}</span>
                 </div>

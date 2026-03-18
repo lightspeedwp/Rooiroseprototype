@@ -8,7 +8,6 @@ import { PageFAQSection } from '../components/patterns/PageFAQSection';
 import { SUBSCRIBE_FAQS, EEDITIONS_FAQS } from '../data/pageFaqs';
 import { PageContainer } from '../components/common/PageContainer';
 import { HERO_IMAGES } from '../data/heroImages';
-import { QuoteSlider } from '../components/brand-quotes/QuoteSlider';
 import { E_EDITION_SUBSCRIPTIONS } from '../data/subscriptions';
 import { DemoStateSwitcher } from '../components/common/DemoStateSwitcher';
 
@@ -67,7 +66,7 @@ export const SubscribeEEdition = () => {
             <span className="flex items-center gap-2"><Check size={16} className="text-green-600" /> Volledige inhoud van drukkoerant</span>
             <span className="flex items-center gap-2"><Check size={16} className="text-green-600" /> Lees op enige toestel</span>
             <span className="flex items-center gap-2"><Check size={16} className="text-green-600" /> R35 per enkele e-uitgawe</span>
-            <span className="flex items-center gap-2"><Check size={16} className="text-green-600" /> Kies jou streek by intekening</span>
+            <span className="flex items-center gap-2"><Check size={16} className="text-green-600" /> Nasionale tydskrif</span>
           </div>
         </div>
       </div>
@@ -100,7 +99,7 @@ export const SubscribeEEdition = () => {
         )}
 
         {/* ─── Digital Benefits Section ─── */}
-        <div className="mb-16">
+        <div className="bg-white dark:bg-card rounded-xl shadow-sm dark:shadow-[var(--shadow-dark-100)] p-6 md:p-8 mb-8 border border-gray-100 dark:border-border">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-normal font-heading text-brand-navy dark:text-foreground mb-4" style={{ fontVariationSettings: "var(--fvs-h2)", lineHeight: 'var(--lh-h2)', letterSpacing: 'var(--ls-h2)' }}>
               Waarom digitaal kies?
@@ -293,44 +292,6 @@ export const SubscribeEEdition = () => {
           </div>
         </div>
 
-        {/* ─── Regional Variants Information ─── */}
-        <div className="bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-900/30 rounded-xl p-6 md:p-8 mb-16">
-          <div className="flex items-start gap-4">
-            <div className="w-12 h-12 rounded-lg bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center flex-shrink-0">
-              <Globe size={24} className="text-amber-700 dark:text-amber-400" />
-            </div>
-            <div>
-              <h3 className="text-xl font-normal font-heading text-amber-900 dark:text-amber-200 mb-2" style={{ fontVariationSettings: "var(--fvs-h4)", fontSize: 'var(--text-h4)', lineHeight: 'var(--lh-h4)' }}>
-                Kies jou streek
-              </h3>
-              <p className="text-amber-800 dark:text-amber-300 mb-4 leading-relaxed">
-                <em>rooi rose</em> word in 4 streekuitgawes gepubliseer, elk met unieke plaaslike inhoud vir jou gemeenskap. Wanneer jy inteken, kies jy watter streek se inhoud jy wil ontvang:
-              </p>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-amber-800 dark:text-amber-300">
-                <li className="flex items-center gap-2">
-                  <Check size={16} className="text-amber-600 dark:text-amber-400 flex-shrink-0" />
-                  <span><strong>Boland</strong> — Paarl, Stellenbosch, Wellington</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <Check size={16} className="text-amber-600 dark:text-amber-400 flex-shrink-0" />
-                  <span><strong>Overberg</strong> — Hermanus, Gansbaai, Bredasdorp</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <Check size={16} className="text-amber-600 dark:text-amber-400 flex-shrink-0" />
-                  <span><strong>Breede Rivier</strong> — Worcester, Robertson, Montagu</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <Check size={16} className="text-amber-600 dark:text-amber-400 flex-shrink-0" />
-                  <span><strong>Langeberg</strong> — Swellendam, Heidelberg, Riversdale</span>
-                </li>
-              </ul>
-              <p className="text-amber-700 dark:text-amber-400 text-sm mt-4 italic">
-                Jy kan jou streekvoorkeur enige tyd in jou rekening verander.
-              </p>
-            </div>
-          </div>
-        </div>
-
         {/* Pricing Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 items-center mb-8">
           {E_EDITION_SUBSCRIPTIONS.map((option) => (
@@ -409,11 +370,6 @@ export const SubscribeEEdition = () => {
             </div>
           ))}
         </div>
-
-        {/* Brand Quote Slider */}
-        <section className="w-full overflow-hidden">
-          <QuoteSlider className="min-h-[350px] md:min-h-[450px]" />
-        </section>
 
         {/* Secondary Options - More visual separation */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 alignwide mb-8 mt-8">

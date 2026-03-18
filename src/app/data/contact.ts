@@ -28,13 +28,42 @@ export const CONTACT_PAGE_CONTENT = {
   social_proof_text: 'Bly op hoogte van die jongste nuus, sport en plaaslike gebeure deur ons sosiale media-kanale te volg.',
 };
 
+export const CONTACT_FORM = {
+  labels: {
+    name: 'Naam',
+    email: 'E-pos',
+    subject: 'Onderwerp',
+    message: 'Boodskap',
+  },
+  placeholders: {
+    name: 'Jou volle naam',
+    email: 'jou.epos@example.com',
+    subject: 'Waaroor gaan dit?',
+    message: 'Skryf jou boodskap hier...',
+  },
+  validation: {
+    nameMin: 'Naam moet ten minste 2 karakters lank wees.',
+    emailInvalid: 'Voer asseblief \'n geldige e-posadres in.',
+    subjectMin: 'Onderwerp moet ten minste 5 karakters lank wees.',
+    messageMin: 'Boodskap moet ten minste 10 karakters lank wees.',
+  },
+  buttons: {
+    submit: 'Stuur boodskap',
+    submitting: 'Stuur...',
+  },
+  success: {
+    title: 'Boodskap gestuur!',
+    description: 'Dankie vir jou boodskap. Ons sal so spoedig moontlik terugvoer.',
+  },
+};
+
 export const DEPARTMENTS: Department[] = [
   {
     icon: MessageSquare,
     title: 'Redaksie',
     description: 'Nuuswenke, regstellings of redaksionele navrae.',
     links: [
-      { label: 'nuus@diepapier.co.za', href: 'mailto:nuus@diepapier.co.za', type: 'email' },
+      { label: 'nuus@rooirose.co.za', href: 'mailto:nuus@rooirose.co.za', type: 'email' },
     ],
   },
   {
@@ -42,7 +71,7 @@ export const DEPARTMENTS: Department[] = [
     title: 'Advertensies',
     description: 'Adverteer in druk, aanlyn of digitale platforms.',
     links: [
-      { label: 'nico.flietoor@diepapier.co.za', href: 'mailto:nico.flietoor@diepapier.co.za', type: 'email' },
+      { label: 'nico.flietoor@rooirose.co.za', href: 'mailto:nico.flietoor@rooirose.co.za', type: 'email' },
     ],
   },
   {
@@ -50,7 +79,7 @@ export const DEPARTMENTS: Department[] = [
     title: 'Lesersnavrae',
     description: 'Intekeninge, aflewerings of algemene vrae.',
     links: [
-      { label: 'lesers@diepapier.co.za', href: 'mailto:lesers@diepapier.co.za', type: 'email' },
+      { label: 'lesers@rooirose.co.za', href: 'mailto:lesers@rooirose.co.za', type: 'email' },
       { label: '011 713 9000', href: 'tel:+27117139000', type: 'phone' },
     ],
   },
@@ -64,6 +93,15 @@ export const OFFICE_DETAILS = {
   },
   contacts: [
     { label: 'Tel', value: '011 713 9000', href: 'tel:+27117139000' },
-    { label: 'E-pos', value: 'lesers@diepapier.co.za', href: 'mailto:lesers@diepapier.co.za' },
+    { label: 'E-pos', value: 'lesers@rooirose.co.za', href: 'mailto:lesers@rooirose.co.za' },
+  ],
+};
+
+export const OFFICE_HOURS = {
+  title: 'Kantoorure',
+  hours: [
+    { day: 'Maandag – Vrydag', time: '08:00 – 17:00' },
+    { day: 'Saterdag', time: '09:00 – 13:00' },
+    { day: 'Sondag', time: 'Gesluit' },
   ],
 };

@@ -77,3 +77,133 @@
   outline: none;
   box-shadow: 0 0 0 2px white, 0 0 0 4px var(--color-brand-navy);
 }
+
+@layer components {
+  /* ── Error States ──────────────────────────────────────────────── */
+  .error-state {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: var(--base);
+    font-family: var(--font-body);
+    color: var(--contrast);
+    padding: var(--wp--preset--spacing--medium);
+  }
+
+  .error-state__container {
+    text-align: center;
+    max-width: 600px;
+  }
+
+  .error-state__title {
+    margin-bottom: var(--wp--preset--spacing--small);
+    font-size: var(--wp--preset--font-size--x-large);
+    font-weight: 700;
+    color: var(--custom-primary);
+  }
+
+  .error-state__message {
+    font-size: var(--wp--preset--font-size--small);
+    color: var(--muted-foreground);
+    margin-bottom: var(--wp--preset--spacing--small);
+  }
+
+  .error-state__button {
+    padding: var(--wp--preset--spacing--x-small) var(--wp--preset--spacing--small);
+    background: var(--custom-primary);
+    color: var(--base);
+    border: none;
+    border-radius: var(--radius);
+    font-size: var(--wp--preset--font-size--small);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  .error-state__button:hover {
+    background: var(--custom-primary-2);
+  }
+
+  .error-state__button:focus {
+    outline: 3px solid var(--custom-primary);
+    outline-offset: 2px;
+  }
+
+  /* ── Loading States ────────────────────────────────────────────── */
+  .loading-state {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: var(--base);
+    font-family: var(--font-body);
+    color: var(--contrast);
+  }
+
+  .loading-state__container {
+    text-align: center;
+  }
+
+  .loading-state__text {
+    margin-bottom: var(--wp--preset--spacing--small);
+    font-size: var(--wp--preset--font-size--medium);
+  }
+
+  .loading-state__brand {
+    font-size: var(--wp--preset--font-size--small);
+    color: var(--muted-foreground);
+  }
+
+  /* Dark mode support */
+  @media (prefers-color-scheme: dark) {
+    .error-state,
+    .loading-state {
+      background: var(--brand-navy);
+      color: var(--base);
+    }
+
+    .error-state__message,
+    .loading-state__brand {
+      color: var(--base-3);
+    }
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+ * WordPress-Aligned Spacing Utilities (BEM Audit 2026-03-16)
+ * ═══════════════════════════════════════════════════════════════ */
+
+/* Padding Utilities */
+.has-padding-small {
+  padding: var(--wp--preset--spacing--small);
+}
+
+.has-padding-medium {
+  padding: var(--wp--preset--spacing--medium);
+}
+
+.has-padding-large {
+  padding: var(--wp--preset--spacing--large);
+}
+
+.has-padding-x-large {
+  padding: var(--wp--preset--spacing--x-large);
+}
+
+/* Border Radius Utilities */
+.has-border-radius-200 {
+  border-radius: var(--wp--custom--border-radius--200);
+}
+
+.has-border-radius-400 {
+  border-radius: var(--wp--custom--border-radius--400);
+}
+
+.has-border-radius-600 {
+  border-radius: var(--wp--custom--border-radius--600);
+}
+
+.has-border-radius-800 {
+  border-radius: var(--wp--custom--border-radius--800);
+}

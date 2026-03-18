@@ -63,21 +63,21 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="has-brand-sans-font-family">
+    <footer className="footer has-brand-sans-font-family">
       {/* ─── Newsletter CTA Band ─── */}
       <div
-        className="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-border"
+        className="footer__newsletter bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-border"
         style={{ paddingLeft: 'clamp(1rem, 4vw, 2rem)', paddingRight: 'clamp(1rem, 4vw, 2rem)' }}
       >
         <div className="alignwide">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6 py-10 md:py-8">
-            <div className="flex items-center gap-4 text-gray-900 dark:text-white">
-              <div className="w-12 h-12 rounded-full bg-brand-red flex items-center justify-center flex-shrink-0">
+          <div className="footer__newsletter-wrapper flex flex-col md:flex-row items-center justify-between gap-6 py-10 md:py-8">
+            <div className="footer__newsletter-cta flex items-center gap-4 text-gray-900 dark:text-white">
+              <div className="footer__newsletter-icon w-12 h-12 rounded-full bg-brand-red flex items-center justify-center flex-shrink-0">
                 <Mail size={22} className="text-white" />
               </div>
-              <div>
+              <div className="footer__newsletter-text">
                 <p
-                  className="font-normal has-brand-serif-font-family leading-tight text-gray-900 dark:text-white"
+                  className="footer__newsletter-title font-normal has-brand-serif-font-family leading-tight text-gray-900 dark:text-white"
                   style={{
                     fontVariationSettings: "var(--fvs-h4)",
                     lineHeight: 'var(--lh-h4)',
@@ -87,7 +87,7 @@ export const Footer = () => {
                 >
                   Kry ons gratis nuusbrief
                 </p>
-                <p className="text-gray-600 dark:text-gray-400 text-sm mt-1">
+                <p className="footer__newsletter-description text-gray-600 dark:text-gray-400 text-sm mt-1">
                   Ontvang die jongste stories elke week
                 </p>
               </div>
@@ -95,17 +95,17 @@ export const Footer = () => {
             <form
               onSubmit={handleNewsletterSubmit}
               role="search"
-              className="flex w-full md:w-auto gap-2"
+              className="footer__newsletter-form flex w-full md:w-auto gap-2"
             >
               <input
                 type="email"
                 placeholder="Jou e-posadres"
                 aria-label="E-posadres vir nuusbrief"
-                className="flex-1 md:w-72 px-4 py-3 bg-white dark:bg-background border border-gray-300 dark:border-border rounded-lg text-gray-900 dark:text-white text-sm placeholder:text-gray-400 focus-brand transition-colors"
+                className="footer__newsletter-input flex-1 md:w-72 px-4 py-3 bg-white dark:bg-background border border-gray-300 dark:border-border rounded-lg text-gray-900 dark:text-white text-sm placeholder:text-gray-400 focus-brand transition-colors"
               />
               <button
                 type="submit"
-                className="px-6 py-3 bg-brand-red hover:bg-brand-red-hover text-white font-bold text-sm rounded-lg transition-colors whitespace-nowrap flex items-center gap-2"
+                className="footer__newsletter-button px-6 py-3 bg-brand-red hover:bg-brand-red-hover text-white font-bold text-sm rounded-lg transition-colors whitespace-nowrap flex items-center gap-2"
               >
                 Inteken
                 <ArrowRight size={16} />
@@ -117,32 +117,32 @@ export const Footer = () => {
 
       {/* ─── Main Footer Body ─── */}
       <div
-        className="bg-white dark:bg-background border-t border-gray-200 dark:border-border"
+        className="footer__main bg-white dark:bg-background border-t border-gray-200 dark:border-border"
         style={{ paddingLeft: 'clamp(1rem, 4vw, 2rem)', paddingRight: 'clamp(1rem, 4vw, 2rem)' }}
       >
         <div className="alignwide">
           {/* Top section: Brand + Link Columns */}
-          <div className="py-12 border-b border-gray-200 dark:border-border">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10">
+          <div className="footer__content py-12 border-b border-gray-200 dark:border-border">
+            <div className="footer__grid grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10">
 
               {/* Brand column */}
-              <div className="lg:col-span-4">
-                <Link to="/" className="inline-block mb-6">
-                  <Logo variant="default" className="h-9 md:h-10 w-auto" />
+              <div className="footer__brand lg:col-span-4">
+                <Link to="/" className="footer__brand-logo inline-block mb-6">
+                  <Logo variant="default" className="h-[108px] md:h-[120px] w-auto" />
                 </Link>
-                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6 max-w-sm">
+                <p className="footer__brand-description text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6 max-w-sm">
                   {renderWithBrandItalics(FOOTER_CONTENT.brand.description)}
                 </p>
 
                 {/* Social links */}
-                <div className="flex gap-2">
+                <div className="footer__social flex gap-2">
                   {SOCIAL_LINKS.map((social) => (
                     <a
                       key={social.label}
                       href={social.href}
                       target="_blank"
                       rel="noreferrer"
-                      className="w-9 h-9 rounded-full bg-gray-100 dark:bg-gray-900 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-brand-red hover:text-white dark:hover:bg-brand-red dark:hover:text-white transition-[background-color,color] duration-200"
+                      className="footer__social-link w-9 h-9 rounded-full bg-gray-100 dark:bg-gray-900 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-brand-red hover:text-white dark:hover:bg-brand-red dark:hover:text-white transition-[background-color,color] duration-200"
                       title={social.label}
                     >
                       <SocialIcon icon={social.icon} size={16} />
@@ -152,19 +152,19 @@ export const Footer = () => {
               </div>
 
               {/* Link columns */}
-              <div className="lg:col-span-8">
-                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-8">
+              <div className="footer__links lg:col-span-8">
+                <div className="footer__links-grid grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-8">
                   {FOOTER_LINK_COLUMNS.map((column) => (
-                    <div key={column.title}>
-                      <h3 className="text-xs font-bold uppercase tracking-[0.15em] text-brand-red mb-4 has-brand-serif-font-family" style={{ fontVariationSettings: "var(--fvs-h6)", letterSpacing: 'var(--ls-h6)' }}>
+                    <div key={column.title} className="footer__column">
+                      <h3 className="footer__column-title text-xs font-bold uppercase tracking-[0.15em] text-brand-red mb-4 has-brand-serif-font-family" style={{ fontVariationSettings: "var(--fvs-h6)", letterSpacing: 'var(--ls-h6)' }}>
                         {renderWithBrandItalics(column.title)}
                       </h3>
-                      <ul className="space-y-2">
+                      <ul className="footer__column-list space-y-2">
                         {column.links.map((link) => (
-                          <li key={link.href + link.label}>
+                          <li key={link.href + link.label} className="footer__column-item">
                             <Link
                               to={link.href}
-                              className="text-gray-600 dark:text-gray-400 text-sm hover:text-brand-red dark:hover:text-brand-red transition-colors"
+                              className="footer__column-link text-gray-600 dark:text-gray-400 text-sm hover:text-brand-red dark:hover:text-brand-red transition-colors"
                             >
                               {link.label}
                             </Link>
@@ -179,12 +179,12 @@ export const Footer = () => {
           </div>
 
           {/* ─── Contact Info ─── */}
-          <div className="py-6 border-b border-gray-200 dark:border-border">
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-              <div className="flex flex-col gap-2 text-sm text-gray-600 dark:text-gray-400">
-                <p className="font-medium text-gray-900 dark:text-white">Kontak</p>
-                <p className="text-xs leading-relaxed max-w-lg">{FOOTER_CONTENT.contact.address}</p>
-                <a href={`mailto:${FOOTER_CONTENT.contact.email}`} className="text-brand-red hover:underline">
+          <div className="footer__contact py-6 border-b border-gray-200 dark:border-border">
+            <div className="footer__contact-wrapper flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+              <div className="footer__contact-info flex flex-col gap-2 text-sm text-gray-600 dark:text-gray-400">
+                <p className="footer__contact-title font-medium text-gray-900 dark:text-white">Kontak</p>
+                <p className="footer__contact-address text-xs leading-relaxed max-w-lg">{FOOTER_CONTENT.contact.address}</p>
+                <a href={`mailto:${FOOTER_CONTENT.contact.email}`} className="footer__contact-email text-brand-red hover:underline">
                   {FOOTER_CONTENT.contact.email}
                 </a>
               </div>
@@ -192,21 +192,21 @@ export const Footer = () => {
           </div>
 
           {/* ─── Bottom Bar ─── */}
-          <div className="py-6">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className="text-xs text-gray-500 dark:text-gray-500 text-center md:text-left">
+          <div className="footer__bottom py-6">
+            <div className="footer__bottom-wrapper flex flex-col md:flex-row justify-between items-center gap-4">
+              <p className="footer__copyright text-xs text-gray-500 dark:text-gray-500 text-center md:text-left">
                 {renderWithBrandItalics(FOOTER_NAVIGATION.copyright)}
                 <span className="mx-2 text-gray-300 dark:text-gray-700">|</span>
                 <span className="text-gray-500 dark:text-gray-500">
                   {FOOTER_CONTENT.bottom.publicationInfo}
                 </span>
               </p>
-              <nav className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-xs text-gray-500 dark:text-gray-500">
+              <nav className="footer__legal flex flex-wrap justify-center gap-x-5 gap-y-2 text-xs text-gray-500 dark:text-gray-500">
                 {FOOTER_LEGAL_LINKS.map((link) => (
                   <Link
                     key={link.href}
                     to={link.href}
-                    className="hover:text-brand-red dark:hover:text-brand-red transition-colors"
+                    className="footer__legal-link hover:text-brand-red dark:hover:text-brand-red transition-colors"
                   >
                     {link.label}
                   </Link>

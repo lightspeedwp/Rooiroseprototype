@@ -41,8 +41,8 @@ export const ThankYouAdvertisingPage = () => {
 
       <p className="text-gray-600 dark:text-gray-400 text-sm text-center mb-8">
         As jy enige vrae het in die tussentyd, kontak ons gerus by{' '}
-        <a href="mailto:adverteer@diepapier.co.za" className="text-text-link-red hover:underline font-medium">
-          adverteer@diepapier.co.za
+        <a href="mailto:adverteer@rooirose.co.za" className="text-text-link-red hover:underline font-medium">
+          adverteer@rooirose.co.za
         </a>
       </p>
     </ThankYouLayout>
